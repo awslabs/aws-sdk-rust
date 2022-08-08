@@ -329,6 +329,16 @@ pub(crate) fn reflens_structure_crate_output_list_aggregate_discovered_resources
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_conformance_pack_compliance_scores_output_next_token(
+    input: &crate::output::ListConformancePackComplianceScoresOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_discovered_resources_output_next_token(
     input: &crate::output::ListDiscoveredResourcesOutput,
 ) -> std::option::Option<&std::string::String> {

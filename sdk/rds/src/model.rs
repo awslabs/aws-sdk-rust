@@ -943,7 +943,19 @@ pub struct DbInstance {
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     /// <p>Log types vary by DB engine. For information about the log types for each DB engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -1003,6 +1015,9 @@ pub struct DbInstance {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub network_type: std::option::Option<std::string::String>,
+    /// <p>The status of the policy state of the activity stream.</p>
+    pub activity_stream_policy_status:
+        std::option::Option<crate::model::ActivityStreamPolicyStatus>,
 }
 impl DbInstance {
     /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -1260,7 +1275,19 @@ impl DbInstance {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
@@ -1366,6 +1393,12 @@ impl DbInstance {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn network_type(&self) -> std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>The status of the policy state of the activity stream.</p>
+    pub fn activity_stream_policy_status(
+        &self,
+    ) -> std::option::Option<&crate::model::ActivityStreamPolicyStatus> {
+        self.activity_stream_policy_status.as_ref()
     }
 }
 impl std::fmt::Debug for DbInstance {
@@ -1503,6 +1536,10 @@ impl std::fmt::Debug for DbInstance {
         );
         formatter.field("backup_target", &self.backup_target);
         formatter.field("network_type", &self.network_type);
+        formatter.field(
+            "activity_stream_policy_status",
+            &self.activity_stream_policy_status,
+        );
         formatter.finish()
     }
 }
@@ -1602,6 +1639,8 @@ pub mod db_instance {
         pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
         pub(crate) backup_target: std::option::Option<std::string::String>,
         pub(crate) network_type: std::option::Option<std::string::String>,
+        pub(crate) activity_stream_policy_status:
+            std::option::Option<crate::model::ActivityStreamPolicyStatus>,
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2388,12 +2427,36 @@ pub mod db_instance {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -2735,6 +2798,22 @@ pub mod db_instance {
             self.network_type = input;
             self
         }
+        /// <p>The status of the policy state of the activity stream.</p>
+        pub fn activity_stream_policy_status(
+            mut self,
+            input: crate::model::ActivityStreamPolicyStatus,
+        ) -> Self {
+            self.activity_stream_policy_status = Some(input);
+            self
+        }
+        /// <p>The status of the policy state of the activity stream.</p>
+        pub fn set_activity_stream_policy_status(
+            mut self,
+            input: std::option::Option<crate::model::ActivityStreamPolicyStatus>,
+        ) -> Self {
+            self.activity_stream_policy_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbInstance`](crate::model::DbInstance).
         pub fn build(self) -> crate::model::DbInstance {
             crate::model::DbInstance {
@@ -2818,6 +2897,7 @@ pub mod db_instance {
                 custom_iam_instance_profile: self.custom_iam_instance_profile,
                 backup_target: self.backup_target,
                 network_type: self.network_type,
+                activity_stream_policy_status: self.activity_stream_policy_status,
             }
         }
     }
@@ -2826,6 +2906,69 @@ impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::model::DbInstance).
     pub fn builder() -> crate::model::db_instance::Builder {
         crate::model::db_instance::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ActivityStreamPolicyStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Locked,
+    #[allow(missing_docs)] // documentation missing in model
+    LockingPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    Unlocked,
+    #[allow(missing_docs)] // documentation missing in model
+    UnlockingPolicy,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ActivityStreamPolicyStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "locked" => ActivityStreamPolicyStatus::Locked,
+            "locking-policy" => ActivityStreamPolicyStatus::LockingPolicy,
+            "unlocked" => ActivityStreamPolicyStatus::Unlocked,
+            "unlocking-policy" => ActivityStreamPolicyStatus::UnlockingPolicy,
+            other => ActivityStreamPolicyStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ActivityStreamPolicyStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActivityStreamPolicyStatus::from(s))
+    }
+}
+impl ActivityStreamPolicyStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActivityStreamPolicyStatus::Locked => "locked",
+            ActivityStreamPolicyStatus::LockingPolicy => "locking-policy",
+            ActivityStreamPolicyStatus::Unlocked => "unlocked",
+            ActivityStreamPolicyStatus::UnlockingPolicy => "unlocking-policy",
+            ActivityStreamPolicyStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["locked", "locking-policy", "unlocked", "unlocking-policy"]
+    }
+}
+impl AsRef<str> for ActivityStreamPolicyStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4841,7 +4984,8 @@ impl DbParameterGroupStatus {
 pub struct VpcSecurityGroupMembership {
     /// <p>The name of the VPC security group.</p>
     pub vpc_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p>
+    /// <p>Currently, the only valid status is <code>active</code>.</p>
     pub status: std::option::Option<std::string::String>,
 }
 impl VpcSecurityGroupMembership {
@@ -4849,7 +4993,8 @@ impl VpcSecurityGroupMembership {
     pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
         self.vpc_security_group_id.as_deref()
     }
-    /// <p>The status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p>
+    /// <p>Currently, the only valid status is <code>active</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -4885,12 +5030,14 @@ pub mod vpc_security_group_membership {
             self.vpc_security_group_id = input;
             self
         }
-        /// <p>The status of the VPC security group.</p>
+        /// <p>The membership status of the VPC security group.</p>
+        /// <p>Currently, the only valid status is <code>active</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the VPC security group.</p>
+        /// <p>The membership status of the VPC security group.</p>
+        /// <p>Currently, the only valid status is <code>active</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -5157,7 +5304,19 @@ pub struct DbCluster {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
@@ -5464,7 +5623,19 @@ impl DbCluster {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -6618,13 +6789,37 @@ pub mod db_cluster {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
         /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
         /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -7037,7 +7232,7 @@ impl AsRef<str> for WriteForwardingStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingConfigurationInfo {
-    /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub min_capacity: std::option::Option<i32>,
     /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub max_capacity: std::option::Option<i32>,
@@ -7054,7 +7249,7 @@ pub struct ScalingConfigurationInfo {
     pub seconds_before_timeout: std::option::Option<i32>,
 }
 impl ScalingConfigurationInfo {
-    /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+    /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
     pub fn min_capacity(&self) -> std::option::Option<i32> {
         self.min_capacity
     }
@@ -7108,12 +7303,12 @@ pub mod scaling_configuration_info {
         pub(crate) seconds_before_timeout: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+        /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
         pub fn min_capacity(mut self, input: i32) -> Self {
             self.min_capacity = Some(input);
             self
         }
-        /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
+        /// <p>The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
         pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.min_capacity = input;
             self
@@ -13145,7 +13340,7 @@ pub struct DbProxy {
     pub db_proxy_arn: std::option::Option<std::string::String>,
     /// <p>The current status of this proxy. A status of <code>available</code> means the proxy is ready to handle requests. Other values indicate that you must wait for the proxy to be ready, or take some action to resolve an issue.</p>
     pub status: std::option::Option<crate::model::DbProxyStatus>,
-    /// <p>The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
     pub engine_family: std::option::Option<std::string::String>,
     /// <p>Provides the VPC ID of the DB proxy.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -13185,7 +13380,7 @@ impl DbProxy {
     pub fn status(&self) -> std::option::Option<&crate::model::DbProxyStatus> {
         self.status.as_ref()
     }
-    /// <p>The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
     pub fn engine_family(&self) -> std::option::Option<&str> {
         self.engine_family.as_deref()
     }
@@ -13316,12 +13511,12 @@ pub mod db_proxy {
             self.status = input;
             self
         }
-        /// <p>The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
         pub fn engine_family(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_family = Some(input.into());
             self
         }
-        /// <p>The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL databases.</p>
         pub fn set_engine_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14884,6 +15079,61 @@ impl Certificate {
     /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
     pub fn builder() -> crate::model::certificate::Builder {
         crate::model::certificate::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AuditPolicyState {
+    #[allow(missing_docs)] // documentation missing in model
+    LockedPolicy,
+    #[allow(missing_docs)] // documentation missing in model
+    UnlockedPolicy,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AuditPolicyState {
+    fn from(s: &str) -> Self {
+        match s {
+            "locked" => AuditPolicyState::LockedPolicy,
+            "unlocked" => AuditPolicyState::UnlockedPolicy,
+            other => AuditPolicyState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AuditPolicyState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AuditPolicyState::from(s))
+    }
+}
+impl AuditPolicyState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AuditPolicyState::LockedPolicy => "locked",
+            AuditPolicyState::UnlockedPolicy => "unlocked",
+            AuditPolicyState::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["locked", "unlocked"]
+    }
+}
+impl AsRef<str> for AuditPolicyState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -18039,7 +18289,7 @@ impl ExportTask {
     }
 }
 
-/// <p>This data type is used as a response element in the <code>DescribeEvents</code> action.</p>
+/// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
@@ -18291,7 +18541,7 @@ impl AsRef<str> for SourceType {
     }
 }
 
-/// <p>Contains the results of a successful invocation of the <code>DescribeEventCategories</code> operation.</p>
+/// <p>Contains the results of a successful invocation of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html">DescribeEventCategories</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventCategoriesMap {

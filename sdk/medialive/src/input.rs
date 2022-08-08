@@ -7623,6 +7623,178 @@ impl PurchaseOfferingInput {
     }
 }
 
+/// See [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+pub mod reboot_input_device_input {
+
+    /// A builder for [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) force: std::option::Option<crate::model::RebootInputDeviceForce>,
+        pub(crate) input_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+        pub fn force(mut self, input: crate::model::RebootInputDeviceForce) -> Self {
+            self.force = Some(input);
+            self
+        }
+        /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+        pub fn set_force(
+            mut self,
+            input: std::option::Option<crate::model::RebootInputDeviceForce>,
+        ) -> Self {
+            self.force = input;
+            self
+        }
+        /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
+            self
+        }
+        /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::RebootInputDeviceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::RebootInputDeviceInput {
+                force: self.force,
+                input_device_id: self.input_device_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RebootInputDeviceInputOperationOutputAlias = crate::operation::RebootInputDevice;
+#[doc(hidden)]
+pub type RebootInputDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RebootInputDeviceInput {
+    /// Consumes the builder and constructs an Operation<[`RebootInputDevice`](crate::operation::RebootInputDevice)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RebootInputDevice,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::RebootInputDeviceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_61 = &_input.input_device_id;
+                let input_61 = input_61.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "input_device_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let input_device_id = aws_smithy_http::label::fmt_string(input_61, false);
+                if input_device_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "input_device_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/prod/inputDevices/{InputDeviceId}/reboot",
+                    InputDeviceId = input_device_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::RebootInputDeviceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_reboot_input_device(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RebootInputDevice::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RebootInputDevice",
+            "medialive",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+    pub fn builder() -> crate::input::reboot_input_device_input::Builder {
+        crate::input::reboot_input_device_input::Builder::default()
+    }
+}
+
 /// See [`RejectInputDeviceTransferInput`](crate::input::RejectInputDeviceTransferInput).
 pub mod reject_input_device_transfer_input {
 
@@ -7683,14 +7855,14 @@ impl RejectInputDeviceTransferInput {
                 _input: &crate::input::RejectInputDeviceTransferInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_61 = &_input.input_device_id;
-                let input_61 = input_61.as_ref().ok_or(
+                let input_62 = &_input.input_device_id;
+                let input_62 = input_62.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let input_device_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let input_device_id = aws_smithy_http::label::fmt_string(input_62, false);
                 if input_device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
@@ -7823,14 +7995,14 @@ impl StartChannelInput {
                 _input: &crate::input::StartChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_62 = &_input.channel_id;
-                let input_62 = input_62.as_ref().ok_or(
+                let input_63 = &_input.channel_id;
+                let input_63 = input_63.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let channel_id = aws_smithy_http::label::fmt_string(input_63, false);
                 if channel_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
@@ -7909,6 +8081,153 @@ impl StartChannelInput {
     }
 }
 
+/// See [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+pub mod start_input_device_maintenance_window_input {
+
+    /// A builder for [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) input_device_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_device_id = Some(input.into());
+            self
+        }
+        /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_device_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::StartInputDeviceMaintenanceWindowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartInputDeviceMaintenanceWindowInput {
+                input_device_id: self.input_device_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartInputDeviceMaintenanceWindowInputOperationOutputAlias =
+    crate::operation::StartInputDeviceMaintenanceWindow;
+#[doc(hidden)]
+pub type StartInputDeviceMaintenanceWindowInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl StartInputDeviceMaintenanceWindowInput {
+    /// Consumes the builder and constructs an Operation<[`StartInputDeviceMaintenanceWindow`](crate::operation::StartInputDeviceMaintenanceWindow)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartInputDeviceMaintenanceWindow,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartInputDeviceMaintenanceWindowInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_64 = &_input.input_device_id;
+                let input_64 = input_64.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "input_device_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let input_device_id = aws_smithy_http::label::fmt_string(input_64, false);
+                if input_device_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "input_device_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/prod/inputDevices/{InputDeviceId}/startInputDeviceMaintenanceWindow",
+                    InputDeviceId = input_device_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartInputDeviceMaintenanceWindowInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartInputDeviceMaintenanceWindow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartInputDeviceMaintenanceWindow",
+            "medialive",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+    pub fn builder() -> crate::input::start_input_device_maintenance_window_input::Builder {
+        crate::input::start_input_device_maintenance_window_input::Builder::default()
+    }
+}
+
 /// See [`StartMultiplexInput`](crate::input::StartMultiplexInput).
 pub mod start_multiplex_input {
 
@@ -7963,14 +8282,14 @@ impl StartMultiplexInput {
                 _input: &crate::input::StartMultiplexInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_63 = &_input.multiplex_id;
-                let input_63 = input_63.as_ref().ok_or(
+                let input_65 = &_input.multiplex_id;
+                let input_65 = input_65.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let multiplex_id = aws_smithy_http::label::fmt_string(input_63, false);
+                let multiplex_id = aws_smithy_http::label::fmt_string(input_65, false);
                 if multiplex_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
@@ -8103,14 +8422,14 @@ impl StopChannelInput {
                 _input: &crate::input::StopChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_64 = &_input.channel_id;
-                let input_64 = input_64.as_ref().ok_or(
+                let input_66 = &_input.channel_id;
+                let input_66 = input_66.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_id = aws_smithy_http::label::fmt_string(input_64, false);
+                let channel_id = aws_smithy_http::label::fmt_string(input_66, false);
                 if channel_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
@@ -8243,14 +8562,14 @@ impl StopMultiplexInput {
                 _input: &crate::input::StopMultiplexInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_65 = &_input.multiplex_id;
-                let input_65 = input_65.as_ref().ok_or(
+                let input_67 = &_input.multiplex_id;
+                let input_67 = input_67.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let multiplex_id = aws_smithy_http::label::fmt_string(input_65, false);
+                let multiplex_id = aws_smithy_http::label::fmt_string(input_67, false);
                 if multiplex_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
@@ -8431,14 +8750,14 @@ impl TransferInputDeviceInput {
                 _input: &crate::input::TransferInputDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_66 = &_input.input_device_id;
-                let input_66 = input_66.as_ref().ok_or(
+                let input_68 = &_input.input_device_id;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let input_device_id = aws_smithy_http::label::fmt_string(input_66, false);
+                let input_device_id = aws_smithy_http::label::fmt_string(input_68, false);
                 if input_device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
@@ -8729,14 +9048,14 @@ impl UpdateChannelInput {
                 _input: &crate::input::UpdateChannelInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_67 = &_input.channel_id;
-                let input_67 = input_67.as_ref().ok_or(
+                let input_69 = &_input.channel_id;
+                let input_69 = input_69.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_id = aws_smithy_http::label::fmt_string(input_67, false);
+                let channel_id = aws_smithy_http::label::fmt_string(input_69, false);
                 if channel_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
@@ -8916,14 +9235,14 @@ impl UpdateChannelClassInput {
                 _input: &crate::input::UpdateChannelClassInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_68 = &_input.channel_id;
-                let input_68 = input_68.as_ref().ok_or(
+                let input_70 = &_input.channel_id;
+                let input_70 = input_70.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let channel_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let channel_id = aws_smithy_http::label::fmt_string(input_70, false);
                 if channel_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
@@ -9202,14 +9521,14 @@ impl UpdateInputInput {
                 _input: &crate::input::UpdateInputInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_69 = &_input.input_id;
-                let input_69 = input_69.as_ref().ok_or(
+                let input_71 = &_input.input_id;
+                let input_71 = input_71.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let input_id = aws_smithy_http::label::fmt_string(input_69, false);
+                let input_id = aws_smithy_http::label::fmt_string(input_71, false);
                 if input_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_id",
@@ -9405,14 +9724,14 @@ impl UpdateInputDeviceInput {
                 _input: &crate::input::UpdateInputDeviceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_70 = &_input.input_device_id;
-                let input_70 = input_70.as_ref().ok_or(
+                let input_72 = &_input.input_device_id;
+                let input_72 = input_72.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let input_device_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let input_device_id = aws_smithy_http::label::fmt_string(input_72, false);
                 if input_device_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_device_id",
@@ -9616,14 +9935,14 @@ impl UpdateInputSecurityGroupInput {
                 _input: &crate::input::UpdateInputSecurityGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.input_security_group_id;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_73 = &_input.input_security_group_id;
+                let input_73 = input_73.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_security_group_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let input_security_group_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let input_security_group_id = aws_smithy_http::label::fmt_string(input_73, false);
                 if input_security_group_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "input_security_group_id",
@@ -9799,14 +10118,14 @@ impl UpdateMultiplexInput {
                 _input: &crate::input::UpdateMultiplexInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_72 = &_input.multiplex_id;
-                let input_72 = input_72.as_ref().ok_or(
+                let input_74 = &_input.multiplex_id;
+                let input_74 = input_74.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let multiplex_id = aws_smithy_http::label::fmt_string(input_72, false);
+                let multiplex_id = aws_smithy_http::label::fmt_string(input_74, false);
                 if multiplex_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
@@ -9984,28 +10303,28 @@ impl UpdateMultiplexProgramInput {
                 _input: &crate::input::UpdateMultiplexProgramInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_73 = &_input.multiplex_id;
-                let input_73 = input_73.as_ref().ok_or(
+                let input_75 = &_input.multiplex_id;
+                let input_75 = input_75.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let multiplex_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let multiplex_id = aws_smithy_http::label::fmt_string(input_75, false);
                 if multiplex_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "multiplex_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_74 = &_input.program_name;
-                let input_74 = input_74.as_ref().ok_or(
+                let input_76 = &_input.program_name;
+                let input_76 = input_76.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let program_name = aws_smithy_http::label::fmt_string(input_74, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_76, false);
                 if program_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "program_name",
@@ -10185,14 +10504,14 @@ impl UpdateReservationInput {
                 _input: &crate::input::UpdateReservationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_75 = &_input.reservation_id;
-                let input_75 = input_75.as_ref().ok_or(
+                let input_77 = &_input.reservation_id;
+                let input_77 = input_77.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "reservation_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let reservation_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let reservation_id = aws_smithy_http::label::fmt_string(input_77, false);
                 if reservation_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "reservation_id",
@@ -10779,6 +11098,27 @@ impl std::fmt::Debug for StartMultiplexInput {
     }
 }
 
+/// Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartInputDeviceMaintenanceWindowInput {
+    /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    pub input_device_id: std::option::Option<std::string::String>,
+}
+impl StartInputDeviceMaintenanceWindowInput {
+    /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StartInputDeviceMaintenanceWindowInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartInputDeviceMaintenanceWindowInput");
+        formatter.field("input_device_id", &self.input_device_id);
+        formatter.finish()
+    }
+}
+
 /// Placeholder documentation for StartChannelRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -10816,6 +11156,34 @@ impl RejectInputDeviceTransferInput {
 impl std::fmt::Debug for RejectInputDeviceTransferInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RejectInputDeviceTransferInput");
+        formatter.field("input_device_id", &self.input_device_id);
+        formatter.finish()
+    }
+}
+
+/// A request to reboot an AWS Elemental device.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RebootInputDeviceInput {
+    /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+    pub force: std::option::Option<crate::model::RebootInputDeviceForce>,
+    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    pub input_device_id: std::option::Option<std::string::String>,
+}
+impl RebootInputDeviceInput {
+    /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+    pub fn force(&self) -> std::option::Option<&crate::model::RebootInputDeviceForce> {
+        self.force.as_ref()
+    }
+    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    pub fn input_device_id(&self) -> std::option::Option<&str> {
+        self.input_device_id.as_deref()
+    }
+}
+impl std::fmt::Debug for RebootInputDeviceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RebootInputDeviceInput");
+        formatter.field("force", &self.force);
         formatter.field("input_device_id", &self.input_device_id);
         formatter.finish()
     }

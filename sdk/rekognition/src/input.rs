@@ -1067,14 +1067,14 @@ pub mod create_stream_processor_input {
         ///
         /// To override the contents of this collection use [`set_regions_of_interest`](Self::set_regions_of_interest).
         ///
-        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
         pub fn regions_of_interest(mut self, input: crate::model::RegionOfInterest) -> Self {
             let mut v = self.regions_of_interest.unwrap_or_default();
             v.push(input);
             self.regions_of_interest = Some(v);
             self
         }
-        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+        /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
         pub fn set_regions_of_interest(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
@@ -8520,6 +8520,7 @@ pub mod start_project_version_input {
     pub struct Builder {
         pub(crate) project_version_arn: std::option::Option<std::string::String>,
         pub(crate) min_inference_units: std::option::Option<i32>,
+        pub(crate) max_inference_units: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
@@ -8535,14 +8536,28 @@ pub mod start_project_version_input {
             self.project_version_arn = input;
             self
         }
-        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+        /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
+        /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
         pub fn min_inference_units(mut self, input: i32) -> Self {
             self.min_inference_units = Some(input);
             self
         }
-        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+        /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+        /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
+        /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
         pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.min_inference_units = input;
+            self
+        }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+        pub fn max_inference_units(mut self, input: i32) -> Self {
+            self.max_inference_units = Some(input);
+            self
+        }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+        pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_inference_units = input;
             self
         }
         /// Consumes the builder and constructs a [`StartProjectVersionInput`](crate::input::StartProjectVersionInput).
@@ -8553,6 +8568,7 @@ pub mod start_project_version_input {
             Ok(crate::input::StartProjectVersionInput {
                 project_version_arn: self.project_version_arn,
                 min_inference_units: self.min_inference_units,
+                max_inference_units: self.max_inference_units,
             })
         }
     }
@@ -10617,17 +10633,27 @@ impl std::fmt::Debug for StartSegmentDetectionInput {
 pub struct StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub project_version_arn: std::option::Option<std::string::String>,
-    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub min_inference_units: std::option::Option<i32>,
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+    pub max_inference_units: std::option::Option<i32>,
 }
 impl StartProjectVersionInput {
     /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
     pub fn project_version_arn(&self) -> std::option::Option<&str> {
         self.project_version_arn.as_deref()
     }
-    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(&self) -> std::option::Option<i32> {
         self.min_inference_units
+    }
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+    pub fn max_inference_units(&self) -> std::option::Option<i32> {
+        self.max_inference_units
     }
 }
 impl std::fmt::Debug for StartProjectVersionInput {
@@ -10635,6 +10661,7 @@ impl std::fmt::Debug for StartProjectVersionInput {
         let mut formatter = f.debug_struct("StartProjectVersionInput");
         formatter.field("project_version_arn", &self.project_version_arn);
         formatter.field("min_inference_units", &self.min_inference_units);
+        formatter.field("max_inference_units", &self.max_inference_units);
         formatter.finish()
     }
 }
@@ -12207,7 +12234,7 @@ pub struct CreateStreamProcessorInput {
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected. </p>
     /// <p> </p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub regions_of_interest: std::option::Option<std::vec::Vec<crate::model::RegionOfInterest>>,
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub data_sharing_preference:
@@ -12254,7 +12281,7 @@ impl CreateStreamProcessorInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. </p>
     pub fn regions_of_interest(&self) -> std::option::Option<&[crate::model::RegionOfInterest]> {
         self.regions_of_interest.as_deref()
     }

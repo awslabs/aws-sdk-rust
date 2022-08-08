@@ -335,6 +335,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceBundle {
     }
 }
 
+/// Operation shape for `CreateWorkspaceImage`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_workspace_image`](crate::client::Client::create_workspace_image).
+///
+/// See [`crate::client::fluent_builders::CreateWorkspaceImage`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateWorkspaceImage {
+    _private: (),
+}
+impl CreateWorkspaceImage {
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+    pub fn builder() -> crate::input::create_workspace_image_input::Builder {
+        crate::input::create_workspace_image_input::Builder::default()
+    }
+    /// Creates a new `CreateWorkspaceImage` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceImage {
+    type Output = std::result::Result<
+        crate::output::CreateWorkspaceImageOutput,
+        crate::error::CreateWorkspaceImageError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_workspace_image_error(response)
+        } else {
+            crate::operation_deser::parse_create_workspace_image_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateWorkspaces`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1445,6 +1479,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClientProperties {
             crate::operation_deser::parse_modify_client_properties_error(response)
         } else {
             crate::operation_deser::parse_modify_client_properties_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ModifySamlProperties`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_saml_properties`](crate::client::Client::modify_saml_properties).
+///
+/// See [`crate::client::fluent_builders::ModifySamlProperties`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifySamlProperties {
+    _private: (),
+}
+impl ModifySamlProperties {
+    /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+    pub fn builder() -> crate::input::modify_saml_properties_input::Builder {
+        crate::input::modify_saml_properties_input::Builder::default()
+    }
+    /// Creates a new `ModifySamlProperties` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifySamlProperties {
+    type Output = std::result::Result<
+        crate::output::ModifySamlPropertiesOutput,
+        crate::error::ModifySamlPropertiesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_saml_properties_error(response)
+        } else {
+            crate::operation_deser::parse_modify_saml_properties_response(response)
         }
     }
 }

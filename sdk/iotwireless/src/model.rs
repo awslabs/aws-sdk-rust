@@ -402,6 +402,219 @@ impl UpdateAbpV11 {
     }
 }
 
+/// <p>Message delivery status event configuration object for enabling and disabling relevant topics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MessageDeliveryStatusEventConfiguration {
+    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    pub wireless_device_id_event_topic:
+        std::option::Option<crate::model::EventNotificationTopicStatus>,
+}
+impl MessageDeliveryStatusEventConfiguration {
+    /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
+        self.sidewalk.as_ref()
+    }
+    /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+    pub fn wireless_device_id_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+        self.wireless_device_id_event_topic.as_ref()
+    }
+}
+impl std::fmt::Debug for MessageDeliveryStatusEventConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageDeliveryStatusEventConfiguration");
+        formatter.field("sidewalk", &self.sidewalk);
+        formatter.field(
+            "wireless_device_id_event_topic",
+            &self.wireless_device_id_event_topic,
+        );
+        formatter.finish()
+    }
+}
+/// See [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
+pub mod message_delivery_status_event_configuration {
+
+    /// A builder for [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sidewalk:
+            std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        pub(crate) wireless_device_id_event_topic:
+            std::option::Option<crate::model::EventNotificationTopicStatus>,
+    }
+    impl Builder {
+        /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+        pub fn sidewalk(
+            mut self,
+            input: crate::model::SidewalkEventNotificationConfigurations,
+        ) -> Self {
+            self.sidewalk = Some(input);
+            self
+        }
+        /// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+        pub fn set_sidewalk(
+            mut self,
+            input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
+        ) -> Self {
+            self.sidewalk = input;
+            self
+        }
+        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        pub fn wireless_device_id_event_topic(
+            mut self,
+            input: crate::model::EventNotificationTopicStatus,
+        ) -> Self {
+            self.wireless_device_id_event_topic = Some(input);
+            self
+        }
+        /// <p>Enum to denote whether the wireless device id device registration state event topic is enabled or disabled.</p>
+        pub fn set_wireless_device_id_event_topic(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
+        ) -> Self {
+            self.wireless_device_id_event_topic = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
+        pub fn build(self) -> crate::model::MessageDeliveryStatusEventConfiguration {
+            crate::model::MessageDeliveryStatusEventConfiguration {
+                sidewalk: self.sidewalk,
+                wireless_device_id_event_topic: self.wireless_device_id_event_topic,
+            }
+        }
+    }
+}
+impl MessageDeliveryStatusEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
+    pub fn builder() -> crate::model::message_delivery_status_event_configuration::Builder {
+        crate::model::message_delivery_status_event_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EventNotificationTopicStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EventNotificationTopicStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "Disabled" => EventNotificationTopicStatus::Disabled,
+            "Enabled" => EventNotificationTopicStatus::Enabled,
+            other => EventNotificationTopicStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EventNotificationTopicStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventNotificationTopicStatus::from(s))
+    }
+}
+impl EventNotificationTopicStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventNotificationTopicStatus::Disabled => "Disabled",
+            EventNotificationTopicStatus::Enabled => "Enabled",
+            EventNotificationTopicStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Disabled", "Enabled"]
+    }
+}
+impl AsRef<str> for EventNotificationTopicStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SidewalkEventNotificationConfigurations {
+    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
+}
+impl SidewalkEventNotificationConfigurations {
+    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+    pub fn amazon_id_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+        self.amazon_id_event_topic.as_ref()
+    }
+}
+impl std::fmt::Debug for SidewalkEventNotificationConfigurations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SidewalkEventNotificationConfigurations");
+        formatter.field("amazon_id_event_topic", &self.amazon_id_event_topic);
+        formatter.finish()
+    }
+}
+/// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
+pub mod sidewalk_event_notification_configurations {
+
+    /// A builder for [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) amazon_id_event_topic:
+            std::option::Option<crate::model::EventNotificationTopicStatus>,
+    }
+    impl Builder {
+        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        pub fn amazon_id_event_topic(
+            mut self,
+            input: crate::model::EventNotificationTopicStatus,
+        ) -> Self {
+            self.amazon_id_event_topic = Some(input);
+            self
+        }
+        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+        pub fn set_amazon_id_event_topic(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
+        ) -> Self {
+            self.amazon_id_event_topic = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
+        pub fn build(self) -> crate::model::SidewalkEventNotificationConfigurations {
+            crate::model::SidewalkEventNotificationConfigurations {
+                amazon_id_event_topic: self.amazon_id_event_topic,
+            }
+        }
+    }
+}
+impl SidewalkEventNotificationConfigurations {
+    /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
+    pub fn builder() -> crate::model::sidewalk_event_notification_configurations::Builder {
+        crate::model::sidewalk_event_notification_configurations::Builder::default()
+    }
+}
+
 /// <p>Connection status event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -499,61 +712,6 @@ impl ConnectionStatusEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
     pub fn builder() -> crate::model::connection_status_event_configuration::Builder {
         crate::model::connection_status_event_configuration::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum EventNotificationTopicStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Disabled,
-    #[allow(missing_docs)] // documentation missing in model
-    Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for EventNotificationTopicStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Disabled" => EventNotificationTopicStatus::Disabled,
-            "Enabled" => EventNotificationTopicStatus::Enabled,
-            other => EventNotificationTopicStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for EventNotificationTopicStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventNotificationTopicStatus::from(s))
-    }
-}
-impl EventNotificationTopicStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventNotificationTopicStatus::Disabled => "Disabled",
-            EventNotificationTopicStatus::Enabled => "Enabled",
-            EventNotificationTopicStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["Disabled", "Enabled"]
-    }
-}
-impl AsRef<str> for EventNotificationTopicStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -872,69 +1030,6 @@ impl ProximityEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
     pub fn builder() -> crate::model::proximity_event_configuration::Builder {
         crate::model::proximity_event_configuration::Builder::default()
-    }
-}
-
-/// <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration object for Sidewalk-related event topics.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkEventNotificationConfigurations {
-    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
-    pub amazon_id_event_topic: std::option::Option<crate::model::EventNotificationTopicStatus>,
-}
-impl SidewalkEventNotificationConfigurations {
-    /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
-    pub fn amazon_id_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
-        self.amazon_id_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for SidewalkEventNotificationConfigurations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkEventNotificationConfigurations");
-        formatter.field("amazon_id_event_topic", &self.amazon_id_event_topic);
-        formatter.finish()
-    }
-}
-/// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-pub mod sidewalk_event_notification_configurations {
-
-    /// A builder for [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) amazon_id_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
-    }
-    impl Builder {
-        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
-        pub fn amazon_id_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
-            self.amazon_id_event_topic = Some(input);
-            self
-        }
-        /// <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
-        pub fn set_amazon_id_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.amazon_id_event_topic = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-        pub fn build(self) -> crate::model::SidewalkEventNotificationConfigurations {
-            crate::model::SidewalkEventNotificationConfigurations {
-                amazon_id_event_topic: self.amazon_id_event_topic,
-            }
-        }
-    }
-}
-impl SidewalkEventNotificationConfigurations {
-    /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-    pub fn builder() -> crate::model::sidewalk_event_notification_configurations::Builder {
-        crate::model::sidewalk_event_notification_configurations::Builder::default()
     }
 }
 
@@ -2371,6 +2466,137 @@ impl LoRaWanFuotaTask {
     }
 }
 
+/// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
+    /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+    pub sidewalk: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+}
+impl MessageDeliveryStatusResourceTypeEventConfiguration {
+    /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+    pub fn sidewalk(
+        &self,
+    ) -> std::option::Option<&crate::model::SidewalkResourceTypeEventConfiguration> {
+        self.sidewalk.as_ref()
+    }
+}
+impl std::fmt::Debug for MessageDeliveryStatusResourceTypeEventConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageDeliveryStatusResourceTypeEventConfiguration");
+        formatter.field("sidewalk", &self.sidewalk);
+        formatter.finish()
+    }
+}
+/// See [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
+pub mod message_delivery_status_resource_type_event_configuration {
+
+    /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sidewalk:
+            std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+    }
+    impl Builder {
+        /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+        pub fn sidewalk(
+            mut self,
+            input: crate::model::SidewalkResourceTypeEventConfiguration,
+        ) -> Self {
+            self.sidewalk = Some(input);
+            self
+        }
+        /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+        pub fn set_sidewalk(
+            mut self,
+            input: std::option::Option<crate::model::SidewalkResourceTypeEventConfiguration>,
+        ) -> Self {
+            self.sidewalk = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
+        pub fn build(self) -> crate::model::MessageDeliveryStatusResourceTypeEventConfiguration {
+            crate::model::MessageDeliveryStatusResourceTypeEventConfiguration {
+                sidewalk: self.sidewalk,
+            }
+        }
+    }
+}
+impl MessageDeliveryStatusResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
+    pub fn builder(
+    ) -> crate::model::message_delivery_status_resource_type_event_configuration::Builder {
+        crate::model::message_delivery_status_resource_type_event_configuration::Builder::default()
+    }
+}
+
+/// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SidewalkResourceTypeEventConfiguration {
+    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    pub wireless_device_event_topic:
+        std::option::Option<crate::model::EventNotificationTopicStatus>,
+}
+impl SidewalkResourceTypeEventConfiguration {
+    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+    pub fn wireless_device_event_topic(
+        &self,
+    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
+        self.wireless_device_event_topic.as_ref()
+    }
+}
+impl std::fmt::Debug for SidewalkResourceTypeEventConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SidewalkResourceTypeEventConfiguration");
+        formatter.field(
+            "wireless_device_event_topic",
+            &self.wireless_device_event_topic,
+        );
+        formatter.finish()
+    }
+}
+/// See [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
+pub mod sidewalk_resource_type_event_configuration {
+
+    /// A builder for [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) wireless_device_event_topic:
+            std::option::Option<crate::model::EventNotificationTopicStatus>,
+    }
+    impl Builder {
+        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        pub fn wireless_device_event_topic(
+            mut self,
+            input: crate::model::EventNotificationTopicStatus,
+        ) -> Self {
+            self.wireless_device_event_topic = Some(input);
+            self
+        }
+        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
+        pub fn set_wireless_device_event_topic(
+            mut self,
+            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
+        ) -> Self {
+            self.wireless_device_event_topic = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
+        pub fn build(self) -> crate::model::SidewalkResourceTypeEventConfiguration {
+            crate::model::SidewalkResourceTypeEventConfiguration {
+                wireless_device_event_topic: self.wireless_device_event_topic,
+            }
+        }
+    }
+}
+impl SidewalkResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::sidewalk_resource_type_event_configuration::Builder {
+        crate::model::sidewalk_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// <p>Connection status resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2697,73 +2923,6 @@ impl ProximityResourceTypeEventConfiguration {
     /// Creates a new builder-style object to manufacture [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
     pub fn builder() -> crate::model::proximity_resource_type_event_configuration::Builder {
         crate::model::proximity_resource_type_event_configuration::Builder::default()
-    }
-}
-
-/// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
-    pub wireless_device_event_topic:
-        std::option::Option<crate::model::EventNotificationTopicStatus>,
-}
-impl SidewalkResourceTypeEventConfiguration {
-    /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
-    pub fn wireless_device_event_topic(
-        &self,
-    ) -> std::option::Option<&crate::model::EventNotificationTopicStatus> {
-        self.wireless_device_event_topic.as_ref()
-    }
-}
-impl std::fmt::Debug for SidewalkResourceTypeEventConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("SidewalkResourceTypeEventConfiguration");
-        formatter.field(
-            "wireless_device_event_topic",
-            &self.wireless_device_event_topic,
-        );
-        formatter.finish()
-    }
-}
-/// See [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-pub mod sidewalk_resource_type_event_configuration {
-
-    /// A builder for [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) wireless_device_event_topic:
-            std::option::Option<crate::model::EventNotificationTopicStatus>,
-    }
-    impl Builder {
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn wireless_device_event_topic(
-            mut self,
-            input: crate::model::EventNotificationTopicStatus,
-        ) -> Self {
-            self.wireless_device_event_topic = Some(input);
-            self
-        }
-        /// <p>Enum to denote whether the wireless device join event topic is enabled or disabled.</p>
-        pub fn set_wireless_device_event_topic(
-            mut self,
-            input: std::option::Option<crate::model::EventNotificationTopicStatus>,
-        ) -> Self {
-            self.wireless_device_event_topic = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-        pub fn build(self) -> crate::model::SidewalkResourceTypeEventConfiguration {
-            crate::model::SidewalkResourceTypeEventConfiguration {
-                wireless_device_event_topic: self.wireless_device_event_topic,
-            }
-        }
-    }
-}
-impl SidewalkResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::sidewalk_resource_type_event_configuration::Builder {
-        crate::model::sidewalk_resource_type_event_configuration::Builder::default()
     }
 }
 
@@ -3218,6 +3377,8 @@ pub struct SidewalkSendDataToDevice {
     pub seq: std::option::Option<i32>,
     /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
     pub message_type: std::option::Option<crate::model::MessageType>,
+    /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
+    pub ack_mode_retry_duration_secs: std::option::Option<i32>,
 }
 impl SidewalkSendDataToDevice {
     /// <p>The sequence number.</p>
@@ -3228,12 +3389,20 @@ impl SidewalkSendDataToDevice {
     pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
         self.message_type.as_ref()
     }
+    /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
+    pub fn ack_mode_retry_duration_secs(&self) -> std::option::Option<i32> {
+        self.ack_mode_retry_duration_secs
+    }
 }
 impl std::fmt::Debug for SidewalkSendDataToDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkSendDataToDevice");
         formatter.field("seq", &self.seq);
         formatter.field("message_type", &self.message_type);
+        formatter.field(
+            "ack_mode_retry_duration_secs",
+            &self.ack_mode_retry_duration_secs,
+        );
         formatter.finish()
     }
 }
@@ -3245,6 +3414,7 @@ pub mod sidewalk_send_data_to_device {
     pub struct Builder {
         pub(crate) seq: std::option::Option<i32>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
+        pub(crate) ack_mode_retry_duration_secs: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The sequence number.</p>
@@ -3270,11 +3440,22 @@ pub mod sidewalk_send_data_to_device {
             self.message_type = input;
             self
         }
+        /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
+        pub fn ack_mode_retry_duration_secs(mut self, input: i32) -> Self {
+            self.ack_mode_retry_duration_secs = Some(input);
+            self
+        }
+        /// <p>The duration of time in seconds for which you want to retry sending the ACK.</p>
+        pub fn set_ack_mode_retry_duration_secs(mut self, input: std::option::Option<i32>) -> Self {
+            self.ack_mode_retry_duration_secs = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
         pub fn build(self) -> crate::model::SidewalkSendDataToDevice {
             crate::model::SidewalkSendDataToDevice {
                 seq: self.seq,
                 message_type: self.message_type,
+                ack_mode_retry_duration_secs: self.ack_mode_retry_duration_secs,
             }
         }
     }
@@ -6216,6 +6397,9 @@ pub struct EventNotificationItemConfigurations {
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Connection status event configuration for an event configuration item.</p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+    /// <p>Message delivery status event configuration for an event configuration item.</p>
+    pub message_delivery_status:
+        std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
 impl EventNotificationItemConfigurations {
     /// <p>Device registration state event configuration for an event configuration item.</p>
@@ -6238,6 +6422,12 @@ impl EventNotificationItemConfigurations {
     ) -> std::option::Option<&crate::model::ConnectionStatusEventConfiguration> {
         self.connection_status.as_ref()
     }
+    /// <p>Message delivery status event configuration for an event configuration item.</p>
+    pub fn message_delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
+        self.message_delivery_status.as_ref()
+    }
 }
 impl std::fmt::Debug for EventNotificationItemConfigurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6246,6 +6436,7 @@ impl std::fmt::Debug for EventNotificationItemConfigurations {
         formatter.field("proximity", &self.proximity);
         formatter.field("join", &self.join);
         formatter.field("connection_status", &self.connection_status);
+        formatter.field("message_delivery_status", &self.message_delivery_status);
         formatter.finish()
     }
 }
@@ -6261,6 +6452,8 @@ pub mod event_notification_item_configurations {
         pub(crate) join: std::option::Option<crate::model::JoinEventConfiguration>,
         pub(crate) connection_status:
             std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        pub(crate) message_delivery_status:
+            std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
     }
     impl Builder {
         /// <p>Device registration state event configuration for an event configuration item.</p>
@@ -6321,6 +6514,22 @@ pub mod event_notification_item_configurations {
             self.connection_status = input;
             self
         }
+        /// <p>Message delivery status event configuration for an event configuration item.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusEventConfiguration,
+        ) -> Self {
+            self.message_delivery_status = Some(input);
+            self
+        }
+        /// <p>Message delivery status event configuration for an event configuration item.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        ) -> Self {
+            self.message_delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
         pub fn build(self) -> crate::model::EventNotificationItemConfigurations {
             crate::model::EventNotificationItemConfigurations {
@@ -6328,6 +6537,7 @@ pub mod event_notification_item_configurations {
                 proximity: self.proximity,
                 join: self.join,
                 connection_status: self.connection_status,
+                message_delivery_status: self.message_delivery_status,
             }
         }
     }
@@ -9956,17 +10166,31 @@ impl LoRaWanDeviceProfile {
 pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     pub add_gw_metadata: bool,
+    /// <p>The DrMin value.</p>
+    pub dr_min: std::option::Option<i32>,
+    /// <p>The DrMax value.</p>
+    pub dr_max: std::option::Option<i32>,
 }
 impl LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     pub fn add_gw_metadata(&self) -> bool {
         self.add_gw_metadata
     }
+    /// <p>The DrMin value.</p>
+    pub fn dr_min(&self) -> std::option::Option<i32> {
+        self.dr_min
+    }
+    /// <p>The DrMax value.</p>
+    pub fn dr_max(&self) -> std::option::Option<i32> {
+        self.dr_max
+    }
 }
 impl std::fmt::Debug for LoRaWanServiceProfile {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LoRaWanServiceProfile");
         formatter.field("add_gw_metadata", &self.add_gw_metadata);
+        formatter.field("dr_min", &self.dr_min);
+        formatter.field("dr_max", &self.dr_max);
         formatter.finish()
     }
 }
@@ -9977,6 +10201,8 @@ pub mod lo_ra_wan_service_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add_gw_metadata: std::option::Option<bool>,
+        pub(crate) dr_min: std::option::Option<i32>,
+        pub(crate) dr_max: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The AddGWMetaData value.</p>
@@ -9989,10 +10215,32 @@ pub mod lo_ra_wan_service_profile {
             self.add_gw_metadata = input;
             self
         }
+        /// <p>The DrMin value.</p>
+        pub fn dr_min(mut self, input: i32) -> Self {
+            self.dr_min = Some(input);
+            self
+        }
+        /// <p>The DrMin value.</p>
+        pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
+            self.dr_min = input;
+            self
+        }
+        /// <p>The DrMax value.</p>
+        pub fn dr_max(mut self, input: i32) -> Self {
+            self.dr_max = Some(input);
+            self
+        }
+        /// <p>The DrMax value.</p>
+        pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
+            self.dr_max = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
         pub fn build(self) -> crate::model::LoRaWanServiceProfile {
             crate::model::LoRaWanServiceProfile {
                 add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
+                dr_min: self.dr_min,
+                dr_max: self.dr_max,
             }
         }
     }

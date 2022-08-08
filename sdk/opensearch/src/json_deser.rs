@@ -4365,6 +4365,14 @@ where
                                     .map(|v| v.to_i32()),
                                 );
                             }
+                            "Throughput" => {
+                                builder = builder.set_throughput(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

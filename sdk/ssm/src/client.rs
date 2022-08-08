@@ -202,7 +202,7 @@ impl Client {
     ///   - [`attachments(Vec<AttachmentsSource>)`](crate::client::fluent_builders::CreateDocument::attachments) / [`set_attachments(Option<Vec<AttachmentsSource>>)`](crate::client::fluent_builders::CreateDocument::set_attachments): <p>A list of key-value pairs that describe attachments to a version of a document.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_name): <p>A name for the SSM document.</p> <important>   <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>   <ul>    <li> <p> <code>aws-</code> </p> </li>    <li> <p> <code>amazon</code> </p> </li>    <li> <p> <code>amzn</code> </p> </li>   </ul>  </important>
     ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_display_name): <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
-    ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_version_name): <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_version_name): <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     ///   - [`document_type(DocumentType)`](crate::client::fluent_builders::CreateDocument::document_type) / [`set_document_type(Option<DocumentType>)`](crate::client::fluent_builders::CreateDocument::set_document_type): <p>The type of document to create.</p> <note>   <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>  </note>
     ///   - [`document_format(DocumentFormat)`](crate::client::fluent_builders::CreateDocument::document_format) / [`set_document_format(Option<DocumentFormat>)`](crate::client::fluent_builders::CreateDocument::set_document_format): <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     ///   - [`target_type(impl Into<String>)`](crate::client::fluent_builders::CreateDocument::target_type) / [`set_target_type(Option<String>)`](crate::client::fluent_builders::CreateDocument::set_target_type): <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
@@ -1387,7 +1387,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetServiceSetting`](crate::client::fluent_builders::GetServiceSetting) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::GetServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::GetServiceSetting::set_setting_id): <p>The ID of the service setting to get. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
+    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::GetServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::GetServiceSetting::set_setting_id): <p>The ID of the service setting to get. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>   <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>  </ul>
     /// - On success, responds with [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput) with field(s):
     ///   - [`service_setting(Option<ServiceSetting>)`](crate::output::GetServiceSettingOutput::service_setting): <p>The query result of the current service setting.</p>
     /// - On failure, responds with [`SdkError<GetServiceSettingError>`](crate::error::GetServiceSettingError)
@@ -1793,7 +1793,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ResetServiceSetting`](crate::client::fluent_builders::ResetServiceSetting) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::ResetServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::ResetServiceSetting::set_setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
+    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::ResetServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::ResetServiceSetting::set_setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>   <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>  </ul>
     /// - On success, responds with [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput) with field(s):
     ///   - [`service_setting(Option<ServiceSetting>)`](crate::output::ResetServiceSettingOutput::service_setting): <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     /// - On failure, responds with [`SdkError<ResetServiceSettingError>`](crate::error::ResetServiceSettingError)
@@ -1905,7 +1905,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target(impl Into<String>)`](crate::client::fluent_builders::StartSession::target) / [`set_target(Option<String>)`](crate::client::fluent_builders::StartSession::set_target): <p>The managed node to connect to for the session.</p>
-    ///   - [`document_name(impl Into<String>)`](crate::client::fluent_builders::StartSession::document_name) / [`set_document_name(Option<String>)`](crate::client::fluent_builders::StartSession::set_document_name): <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+    ///   - [`document_name(impl Into<String>)`](crate::client::fluent_builders::StartSession::document_name) / [`set_document_name(Option<String>)`](crate::client::fluent_builders::StartSession::set_document_name): <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::StartSession::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::StartSession::set_reason): <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::StartSession::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::StartSession::set_parameters): <p>The values you want to specify for the parameters defined in the Session document.</p>
     /// - On success, responds with [`StartSessionOutput`](crate::output::StartSessionOutput) with field(s):
@@ -2219,8 +2219,8 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateServiceSetting`](crate::client::fluent_builders::UpdateServiceSetting) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::UpdateServiceSetting::set_setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
-    ///   - [`setting_value(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSetting::setting_value) / [`set_setting_value(Option<String>)`](crate::client::fluent_builders::UpdateServiceSetting::set_setting_value): <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>  <ul>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>  </ul>
+    ///   - [`setting_id(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSetting::setting_id) / [`set_setting_id(Option<String>)`](crate::client::fluent_builders::UpdateServiceSetting::set_setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>   <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>  </ul>
+    ///   - [`setting_value(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceSetting::setting_value) / [`set_setting_value(Option<String>)`](crate::client::fluent_builders::UpdateServiceSetting::set_setting_value): <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>   <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>  </ul>
     /// - On success, responds with [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput)
 
     /// - On failure, responds with [`SdkError<UpdateServiceSettingError>`](crate::error::UpdateServiceSettingError)
@@ -2237,7 +2237,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AddTagsToResource`.
     ///
-    /// <p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:</p>
+    /// <p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata that you can assign to your automations, documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:</p>
     /// <ul>
     /// <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li>
     /// <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li>
@@ -3272,12 +3272,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
@@ -10323,9 +10323,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
@@ -10336,9 +10337,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
@@ -12050,7 +12052,7 @@ pub mod fluent_builders {
     /// <li> <p>Id: The patch, association, or custom compliance ID.</p> </li>
     /// <li> <p>Title: A title.</p> </li>
     /// <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li>
-    /// <li> <p>Severity: A patch severity. For example, <code>critical</code>.</p> </li>
+    /// <li> <p>Severity: A patch severity. For example, <code>Critical</code>.</p> </li>
     /// <li> <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
     /// <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
     /// <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li>
@@ -13351,9 +13353,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
@@ -13364,9 +13367,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
@@ -14412,12 +14416,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target(input);
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(input.into());
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16775,9 +16779,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
@@ -16788,9 +16793,10 @@ pub mod fluent_builders {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
@@ -16798,13 +16804,13 @@ pub mod fluent_builders {
         }
         /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
         /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
         /// </ul>
         pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_value(input.into());
@@ -16812,13 +16818,13 @@ pub mod fluent_builders {
         }
         /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
         /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
         /// </ul>
         pub fn set_setting_value(
             mut self,

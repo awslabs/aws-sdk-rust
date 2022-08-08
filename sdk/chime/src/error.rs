@@ -30917,6 +30917,165 @@ impl std::error::Error for UpdateVoiceConnectorGroupError {
     }
 }
 
+/// Error type for the `ValidateE911Address` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ValidateE911AddressError {
+    /// Kind of error that occurred.
+    pub kind: ValidateE911AddressErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ValidateE911Address` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ValidateE911AddressErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The client is permanently forbidden from making the request.</p>
+    ForbiddenException(crate::error::ForbiddenException),
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
+    NotFoundException(crate::error::NotFoundException),
+    /// <p>The service encountered an unexpected error.</p>
+    ServiceFailureException(crate::error::ServiceFailureException),
+    /// <p>The service is currently unavailable.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The client exceeded its request rate limit.</p>
+    ThrottledClientException(crate::error::ThrottledClientException),
+    /// <p>The client is not currently authorized to make the request.</p>
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ValidateE911AddressError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ValidateE911AddressErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            ValidateE911AddressErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ValidateE911AddressError {
+    fn code(&self) -> Option<&str> {
+        ValidateE911AddressError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ValidateE911AddressError {
+    /// Creates a new `ValidateE911AddressError`.
+    pub fn new(kind: ValidateE911AddressErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ValidateE911AddressError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ValidateE911AddressErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ValidateE911AddressError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ValidateE911AddressErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::ServiceFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::ThrottledClientException`.
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::ThrottledClientException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ValidateE911AddressErrorKind::UnauthorizedClientException`.
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateE911AddressErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for ValidateE911AddressError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ValidateE911AddressErrorKind::BadRequestException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::NotFoundException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            ValidateE911AddressErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The client is not currently authorized to make the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -31427,91 +31586,6 @@ impl ForbiddenException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConflictException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub code: std::option::Option<crate::model::ErrorCode>,
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl ConflictException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
-        self.code.as_ref()
-    }
-}
-impl std::fmt::Debug for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ConflictException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ConflictException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConflictException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConflictException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException).
-pub mod conflict_exception {
-
-    /// A builder for [`ConflictException`](crate::error::ConflictException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<crate::model::ErrorCode>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn code(mut self, input: crate::model::ErrorCode) -> Self {
-            self.code = Some(input);
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
-        pub fn build(self) -> crate::error::ConflictException {
-            crate::error::ConflictException {
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
-    pub fn builder() -> crate::error::conflict_exception::Builder {
-        crate::error::conflict_exception::Builder::default()
-    }
-}
-
 /// <p>The input parameters don't match the service's restrictions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -31544,8 +31618,8 @@ impl BadRequestException {
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -31594,6 +31668,91 @@ impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
     pub fn builder() -> crate::error::bad_request_exception::Builder {
         crate::error::bad_request_exception::Builder::default()
+    }
+}
+
+/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<crate::model::ErrorCode>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl ConflictException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.code.as_ref()
+    }
+}
+impl std::fmt::Debug for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ConflictException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConflictException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConflictException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConflictException {}
+/// See [`ConflictException`](crate::error::ConflictException).
+pub mod conflict_exception {
+
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
+        pub fn build(self) -> crate::error::ConflictException {
+            crate::error::ConflictException {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl ConflictException {
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
+    pub fn builder() -> crate::error::conflict_exception::Builder {
+        crate::error::conflict_exception::Builder::default()
     }
 }
 

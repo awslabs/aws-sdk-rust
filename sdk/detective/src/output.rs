@@ -32,6 +32,36 @@ impl UpdateOrganizationConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDatasourcePackagesOutput {}
+impl std::fmt::Debug for UpdateDatasourcePackagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDatasourcePackagesOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
+pub mod update_datasource_packages_output {
+
+    /// A builder for [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
+        pub fn build(self) -> crate::output::UpdateDatasourcePackagesOutput {
+            crate::output::UpdateDatasourcePackagesOutput {}
+        }
+    }
+}
+impl UpdateDatasourcePackagesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput).
+    pub fn builder() -> crate::output::update_datasource_packages_output::Builder {
+        crate::output::update_datasource_packages_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
 impl std::fmt::Debug for UntagResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -226,13 +256,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationAdminAccountsOutput {
-    /// <p>The list of delegated administrator accounts.</p>
+    /// <p>The list of Detective administrator accounts.</p>
     pub administrators: std::option::Option<std::vec::Vec<crate::model::Administrator>>,
     /// <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsOutput {
-    /// <p>The list of delegated administrator accounts.</p>
+    /// <p>The list of Detective administrator accounts.</p>
     pub fn administrators(&self) -> std::option::Option<&[crate::model::Administrator]> {
         self.administrators.as_deref()
     }
@@ -263,14 +293,14 @@ pub mod list_organization_admin_accounts_output {
         ///
         /// To override the contents of this collection use [`set_administrators`](Self::set_administrators).
         ///
-        /// <p>The list of delegated administrator accounts.</p>
+        /// <p>The list of Detective administrator accounts.</p>
         pub fn administrators(mut self, input: crate::model::Administrator) -> Self {
             let mut v = self.administrators.unwrap_or_default();
             v.push(input);
             self.administrators = Some(v);
             self
         }
-        /// <p>The list of delegated administrator accounts.</p>
+        /// <p>The list of Detective administrator accounts.</p>
         pub fn set_administrators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Administrator>>,
@@ -555,6 +585,114 @@ impl ListGraphsOutput {
     /// Creates a new builder-style object to manufacture [`ListGraphsOutput`](crate::output::ListGraphsOutput).
     pub fn builder() -> crate::output::list_graphs_output::Builder {
         crate::output::list_graphs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasourcePackagesOutput {
+    /// <p>Details on the data source packages active in the behavior graph.</p>
+    pub datasource_packages: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DatasourcePackage,
+            crate::model::DatasourcePackageIngestDetail,
+        >,
+    >,
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListDatasourcePackagesOutput {
+    /// <p>Details on the data source packages active in the behavior graph.</p>
+    pub fn datasource_packages(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DatasourcePackage,
+            crate::model::DatasourcePackageIngestDetail,
+        >,
+    > {
+        self.datasource_packages.as_ref()
+    }
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListDatasourcePackagesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasourcePackagesOutput");
+        formatter.field("datasource_packages", &self.datasource_packages);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput).
+pub mod list_datasource_packages_output {
+
+    /// A builder for [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) datasource_packages: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DatasourcePackage,
+                crate::model::DatasourcePackageIngestDetail,
+            >,
+        >,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `datasource_packages`.
+        ///
+        /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
+        ///
+        /// <p>Details on the data source packages active in the behavior graph.</p>
+        pub fn datasource_packages(
+            mut self,
+            k: crate::model::DatasourcePackage,
+            v: crate::model::DatasourcePackageIngestDetail,
+        ) -> Self {
+            let mut hash_map = self.datasource_packages.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.datasource_packages = Some(hash_map);
+            self
+        }
+        /// <p>Details on the data source packages active in the behavior graph.</p>
+        pub fn set_datasource_packages(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DatasourcePackage,
+                    crate::model::DatasourcePackageIngestDetail,
+                >,
+            >,
+        ) -> Self {
+            self.datasource_packages = input;
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput).
+        pub fn build(self) -> crate::output::ListDatasourcePackagesOutput {
+            crate::output::ListDatasourcePackagesOutput {
+                datasource_packages: self.datasource_packages,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListDatasourcePackagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput).
+    pub fn builder() -> crate::output::list_datasource_packages_output::Builder {
+        crate::output::list_datasource_packages_output::Builder::default()
     }
 }
 
@@ -1063,6 +1201,200 @@ impl CreateGraphOutput {
     /// Creates a new builder-style object to manufacture [`CreateGraphOutput`](crate::output::CreateGraphOutput).
     pub fn builder() -> crate::output::create_graph_output::Builder {
         crate::output::create_graph_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetMembershipDatasourcesOutput {
+    /// <p>Details on the data source package history for an member of the behavior graph.</p>
+    pub membership_datasources:
+        std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+    /// <p>Graphs that data source package information could not be retrieved for.</p>
+    pub unprocessed_graphs: std::option::Option<std::vec::Vec<crate::model::UnprocessedGraph>>,
+}
+impl BatchGetMembershipDatasourcesOutput {
+    /// <p>Details on the data source package history for an member of the behavior graph.</p>
+    pub fn membership_datasources(
+        &self,
+    ) -> std::option::Option<&[crate::model::MembershipDatasources]> {
+        self.membership_datasources.as_deref()
+    }
+    /// <p>Graphs that data source package information could not be retrieved for.</p>
+    pub fn unprocessed_graphs(&self) -> std::option::Option<&[crate::model::UnprocessedGraph]> {
+        self.unprocessed_graphs.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetMembershipDatasourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetMembershipDatasourcesOutput");
+        formatter.field("membership_datasources", &self.membership_datasources);
+        formatter.field("unprocessed_graphs", &self.unprocessed_graphs);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput).
+pub mod batch_get_membership_datasources_output {
+
+    /// A builder for [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) membership_datasources:
+            std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+        pub(crate) unprocessed_graphs:
+            std::option::Option<std::vec::Vec<crate::model::UnprocessedGraph>>,
+    }
+    impl Builder {
+        /// Appends an item to `membership_datasources`.
+        ///
+        /// To override the contents of this collection use [`set_membership_datasources`](Self::set_membership_datasources).
+        ///
+        /// <p>Details on the data source package history for an member of the behavior graph.</p>
+        pub fn membership_datasources(
+            mut self,
+            input: crate::model::MembershipDatasources,
+        ) -> Self {
+            let mut v = self.membership_datasources.unwrap_or_default();
+            v.push(input);
+            self.membership_datasources = Some(v);
+            self
+        }
+        /// <p>Details on the data source package history for an member of the behavior graph.</p>
+        pub fn set_membership_datasources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+        ) -> Self {
+            self.membership_datasources = input;
+            self
+        }
+        /// Appends an item to `unprocessed_graphs`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_graphs`](Self::set_unprocessed_graphs).
+        ///
+        /// <p>Graphs that data source package information could not be retrieved for.</p>
+        pub fn unprocessed_graphs(mut self, input: crate::model::UnprocessedGraph) -> Self {
+            let mut v = self.unprocessed_graphs.unwrap_or_default();
+            v.push(input);
+            self.unprocessed_graphs = Some(v);
+            self
+        }
+        /// <p>Graphs that data source package information could not be retrieved for.</p>
+        pub fn set_unprocessed_graphs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedGraph>>,
+        ) -> Self {
+            self.unprocessed_graphs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput).
+        pub fn build(self) -> crate::output::BatchGetMembershipDatasourcesOutput {
+            crate::output::BatchGetMembershipDatasourcesOutput {
+                membership_datasources: self.membership_datasources,
+                unprocessed_graphs: self.unprocessed_graphs,
+            }
+        }
+    }
+}
+impl BatchGetMembershipDatasourcesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput).
+    pub fn builder() -> crate::output::batch_get_membership_datasources_output::Builder {
+        crate::output::batch_get_membership_datasources_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetGraphMemberDatasourcesOutput {
+    /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+    pub member_datasources: std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+    /// <p>Accounts that data source package information could not be retrieved for.</p>
+    pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+}
+impl BatchGetGraphMemberDatasourcesOutput {
+    /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+    pub fn member_datasources(
+        &self,
+    ) -> std::option::Option<&[crate::model::MembershipDatasources]> {
+        self.member_datasources.as_deref()
+    }
+    /// <p>Accounts that data source package information could not be retrieved for.</p>
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::model::UnprocessedAccount]> {
+        self.unprocessed_accounts.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetGraphMemberDatasourcesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetGraphMemberDatasourcesOutput");
+        formatter.field("member_datasources", &self.member_datasources);
+        formatter.field("unprocessed_accounts", &self.unprocessed_accounts);
+        formatter.finish()
+    }
+}
+/// See [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput).
+pub mod batch_get_graph_member_datasources_output {
+
+    /// A builder for [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) member_datasources:
+            std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+        pub(crate) unprocessed_accounts:
+            std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+    }
+    impl Builder {
+        /// Appends an item to `member_datasources`.
+        ///
+        /// To override the contents of this collection use [`set_member_datasources`](Self::set_member_datasources).
+        ///
+        /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+        pub fn member_datasources(mut self, input: crate::model::MembershipDatasources) -> Self {
+            let mut v = self.member_datasources.unwrap_or_default();
+            v.push(input);
+            self.member_datasources = Some(v);
+            self
+        }
+        /// <p>Details on the status of data source packages for members of the behavior graph.</p>
+        pub fn set_member_datasources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MembershipDatasources>>,
+        ) -> Self {
+            self.member_datasources = input;
+            self
+        }
+        /// Appends an item to `unprocessed_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_accounts`](Self::set_unprocessed_accounts).
+        ///
+        /// <p>Accounts that data source package information could not be retrieved for.</p>
+        pub fn unprocessed_accounts(mut self, input: crate::model::UnprocessedAccount) -> Self {
+            let mut v = self.unprocessed_accounts.unwrap_or_default();
+            v.push(input);
+            self.unprocessed_accounts = Some(v);
+            self
+        }
+        /// <p>Accounts that data source package information could not be retrieved for.</p>
+        pub fn set_unprocessed_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+        ) -> Self {
+            self.unprocessed_accounts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput).
+        pub fn build(self) -> crate::output::BatchGetGraphMemberDatasourcesOutput {
+            crate::output::BatchGetGraphMemberDatasourcesOutput {
+                member_datasources: self.member_datasources,
+                unprocessed_accounts: self.unprocessed_accounts,
+            }
+        }
+    }
+}
+impl BatchGetGraphMemberDatasourcesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput).
+    pub fn builder() -> crate::output::batch_get_graph_member_datasources_output::Builder {
+        crate::output::batch_get_graph_member_datasources_output::Builder::default()
     }
 }
 

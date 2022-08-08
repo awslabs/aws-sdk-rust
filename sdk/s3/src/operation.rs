@@ -1553,6 +1553,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAcl {
     }
 }
 
+/// Operation shape for `GetObjectAttributes`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_object_attributes`](crate::client::Client::get_object_attributes).
+///
+/// See [`crate::client::fluent_builders::GetObjectAttributes`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetObjectAttributes {
+    _private: (),
+}
+impl GetObjectAttributes {
+    /// Creates a new builder-style object to manufacture [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+    pub fn builder() -> crate::input::get_object_attributes_input::Builder {
+        crate::input::get_object_attributes_input::Builder::default()
+    }
+    /// Creates a new `GetObjectAttributes` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetObjectAttributes {
+    type Output = std::result::Result<
+        crate::output::GetObjectAttributesOutput,
+        crate::error::GetObjectAttributesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_object_attributes_error(response)
+        } else {
+            crate::operation_deser::parse_get_object_attributes_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetObjectLegalHold`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

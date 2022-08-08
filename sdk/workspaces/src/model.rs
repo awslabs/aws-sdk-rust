@@ -1646,6 +1646,263 @@ impl AsRef<str> for ReconnectEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DeletableSamlProperty {
+    #[allow(missing_docs)] // documentation missing in model
+    SamlPropertiesRelayStateParameterName,
+    #[allow(missing_docs)] // documentation missing in model
+    SamlPropertiesUserAccessUrl,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DeletableSamlProperty {
+    fn from(s: &str) -> Self {
+        match s {
+            "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME" => {
+                DeletableSamlProperty::SamlPropertiesRelayStateParameterName
+            }
+            "SAML_PROPERTIES_USER_ACCESS_URL" => DeletableSamlProperty::SamlPropertiesUserAccessUrl,
+            other => DeletableSamlProperty::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DeletableSamlProperty {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeletableSamlProperty::from(s))
+    }
+}
+impl DeletableSamlProperty {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeletableSamlProperty::SamlPropertiesRelayStateParameterName => {
+                "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"
+            }
+            DeletableSamlProperty::SamlPropertiesUserAccessUrl => "SAML_PROPERTIES_USER_ACCESS_URL",
+            DeletableSamlProperty::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME",
+            "SAML_PROPERTIES_USER_ACCESS_URL",
+        ]
+    }
+}
+impl AsRef<str> for DeletableSamlProperty {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SamlProperties {
+    /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
+    /// <ul>
+    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
+    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
+    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::SamlStatusEnum>,
+    /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
+    pub user_access_url: std::option::Option<std::string::String>,
+    /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
+    /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
+    pub relay_state_parameter_name: std::option::Option<std::string::String>,
+}
+impl SamlProperties {
+    /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
+    /// <ul>
+    /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
+    /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
+    /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::SamlStatusEnum> {
+        self.status.as_ref()
+    }
+    /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
+    pub fn user_access_url(&self) -> std::option::Option<&str> {
+        self.user_access_url.as_deref()
+    }
+    /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
+    /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
+    pub fn relay_state_parameter_name(&self) -> std::option::Option<&str> {
+        self.relay_state_parameter_name.as_deref()
+    }
+}
+impl std::fmt::Debug for SamlProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SamlProperties");
+        formatter.field("status", &self.status);
+        formatter.field("user_access_url", &self.user_access_url);
+        formatter.field(
+            "relay_state_parameter_name",
+            &self.relay_state_parameter_name,
+        );
+        formatter.finish()
+    }
+}
+/// See [`SamlProperties`](crate::model::SamlProperties).
+pub mod saml_properties {
+
+    /// A builder for [`SamlProperties`](crate::model::SamlProperties).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::SamlStatusEnum>,
+        pub(crate) user_access_url: std::option::Option<std::string::String>,
+        pub(crate) relay_state_parameter_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
+        /// <ul>
+        /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
+        /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
+        /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::SamlStatusEnum) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Indicates the status of SAML 2.0 authentication. These statuses include the following.</p>
+        /// <ul>
+        /// <li> <p>If the setting is <code>DISABLED</code>, end users will be directed to login with their directory credentials.</p> </li>
+        /// <li> <p>If the setting is <code>ENABLED</code>, end users will be directed to login via the user access URL. Users attempting to connect to WorkSpaces from a client application that does not support SAML 2.0 authentication will not be able to connect.</p> </li>
+        /// <li> <p>If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will be directed to login via the user access URL on supported client applications, but will not prevent clients that do not support SAML 2.0 authentication from connecting as if SAML 2.0 authentication was disabled.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::SamlStatusEnum>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
+        pub fn user_access_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_access_url = Some(input.into());
+            self
+        }
+        /// <p>The SAML 2.0 identity provider (IdP) user access URL is the URL a user would navigate to in their web browser in order to federate from the IdP and directly access the application, without any SAML 2.0 service provider (SP) bindings.</p>
+        pub fn set_user_access_url(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_access_url = input;
+            self
+        }
+        /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
+        /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
+        pub fn relay_state_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.relay_state_parameter_name = Some(input.into());
+            self
+        }
+        /// <p>The relay state parameter name supported by the SAML 2.0 identity provider (IdP). When the end user is redirected to the user access URL from the WorkSpaces client application, this relay state parameter name is appended as a query parameter to the URL along with the relay state endpoint to return the user to the client application session.</p>
+        /// <p>To use SAML 2.0 authentication with WorkSpaces, the IdP must support IdP-initiated deep linking for the relay state URL. Consult your IdP documentation for more information.</p>
+        pub fn set_relay_state_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.relay_state_parameter_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SamlProperties`](crate::model::SamlProperties).
+        pub fn build(self) -> crate::model::SamlProperties {
+            crate::model::SamlProperties {
+                status: self.status,
+                user_access_url: self.user_access_url,
+                relay_state_parameter_name: self.relay_state_parameter_name,
+            }
+        }
+    }
+}
+impl SamlProperties {
+    /// Creates a new builder-style object to manufacture [`SamlProperties`](crate::model::SamlProperties).
+    pub fn builder() -> crate::model::saml_properties::Builder {
+        crate::model::saml_properties::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SamlStatusEnum {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    EnabledWithDirectoryLoginFallback,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SamlStatusEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => SamlStatusEnum::Disabled,
+            "ENABLED" => SamlStatusEnum::Enabled,
+            "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK" => {
+                SamlStatusEnum::EnabledWithDirectoryLoginFallback
+            }
+            other => SamlStatusEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SamlStatusEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SamlStatusEnum::from(s))
+    }
+}
+impl SamlStatusEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SamlStatusEnum::Disabled => "DISABLED",
+            SamlStatusEnum::Enabled => "ENABLED",
+            SamlStatusEnum::EnabledWithDirectoryLoginFallback => {
+                "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"
+            }
+            SamlStatusEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "DISABLED",
+            "ENABLED",
+            "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK",
+        ]
+    }
+}
+impl AsRef<str> for SamlStatusEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Describes an Amazon WorkSpaces client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1888,7 +2145,7 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultClientBrandingAttributes {
-    /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub logo_url: std::option::Option<std::string::String>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
@@ -1906,12 +2163,12 @@ pub struct DefaultClientBrandingAttributes {
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub forgot_password_link: std::option::Option<std::string::String>,
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DefaultClientBrandingAttributes {
-    /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+    /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     pub fn logo_url(&self) -> std::option::Option<&str> {
         self.logo_url.as_deref()
     }
@@ -1937,7 +2194,7 @@ impl DefaultClientBrandingAttributes {
     pub fn forgot_password_link(&self) -> std::option::Option<&str> {
         self.forgot_password_link.as_deref()
     }
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1971,12 +2228,12 @@ pub mod default_client_branding_attributes {
         >,
     }
     impl Builder {
-        /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+        /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.logo_url = Some(input.into());
             self
         }
-        /// <p>The logo URL. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
+        /// <p>The logo. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
         pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logo_url = input;
             self
@@ -2041,7 +2298,7 @@ pub mod default_client_branding_attributes {
         ///
         /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
         ///
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn login_message(
             mut self,
             k: impl Into<std::string::String>,
@@ -2052,7 +2309,7 @@ pub mod default_client_branding_attributes {
             self.login_message = Some(hash_map);
             self
         }
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn set_login_message(
             mut self,
             input: std::option::Option<
@@ -2113,7 +2370,7 @@ pub struct IosClientBrandingAttributes {
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub forgot_password_link: std::option::Option<std::string::String>,
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2156,7 +2413,7 @@ impl IosClientBrandingAttributes {
     pub fn forgot_password_link(&self) -> std::option::Option<&str> {
         self.forgot_password_link.as_deref()
     }
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2292,7 +2549,7 @@ pub mod ios_client_branding_attributes {
         ///
         /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
         ///
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn login_message(
             mut self,
             k: impl Into<std::string::String>,
@@ -2303,7 +2560,7 @@ pub mod ios_client_branding_attributes {
             self.login_message = Some(hash_map);
             self
         }
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn set_login_message(
             mut self,
             input: std::option::Option<
@@ -2358,7 +2615,7 @@ pub struct DefaultImportClientBrandingAttributes {
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub forgot_password_link: std::option::Option<std::string::String>,
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2389,7 +2646,7 @@ impl DefaultImportClientBrandingAttributes {
     pub fn forgot_password_link(&self) -> std::option::Option<&str> {
         self.forgot_password_link.as_deref()
     }
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2493,7 +2750,7 @@ pub mod default_import_client_branding_attributes {
         ///
         /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
         ///
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn login_message(
             mut self,
             k: impl Into<std::string::String>,
@@ -2504,7 +2761,7 @@ pub mod default_import_client_branding_attributes {
             self.login_message = Some(hash_map);
             self
         }
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn set_login_message(
             mut self,
             input: std::option::Option<
@@ -2565,7 +2822,7 @@ pub struct IosImportClientBrandingAttributes {
     pub support_link: std::option::Option<std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub forgot_password_link: std::option::Option<std::string::String>,
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub login_message:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2608,7 +2865,7 @@ impl IosImportClientBrandingAttributes {
     pub fn forgot_password_link(&self) -> std::option::Option<&str> {
         self.forgot_password_link.as_deref()
     }
-    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+    /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2744,7 +3001,7 @@ pub mod ios_import_client_branding_attributes {
         ///
         /// To override the contents of this collection use [`set_login_message`](Self::set_login_message).
         ///
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn login_message(
             mut self,
             k: impl Into<std::string::String>,
@@ -2755,7 +3012,7 @@ pub mod ios_import_client_branding_attributes {
             self.login_message = Some(hash_map);
             self
         }
-        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. </p>
+        /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
         pub fn set_login_message(
             mut self,
             input: std::option::Option<
@@ -4452,6 +4709,8 @@ pub struct WorkspaceDirectory {
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
+    /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+    pub saml_properties: std::option::Option<crate::model::SamlProperties>,
 }
 impl WorkspaceDirectory {
     /// <p>The directory identifier.</p>
@@ -4524,6 +4783,10 @@ impl WorkspaceDirectory {
     ) -> std::option::Option<&crate::model::SelfservicePermissions> {
         self.selfservice_permissions.as_ref()
     }
+    /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+    pub fn saml_properties(&self) -> std::option::Option<&crate::model::SamlProperties> {
+        self.saml_properties.as_ref()
+    }
 }
 impl std::fmt::Debug for WorkspaceDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4553,6 +4816,7 @@ impl std::fmt::Debug for WorkspaceDirectory {
         );
         formatter.field("tenancy", &self.tenancy);
         formatter.field("selfservice_permissions", &self.selfservice_permissions);
+        formatter.field("saml_properties", &self.saml_properties);
         formatter.finish()
     }
 }
@@ -4581,6 +4845,7 @@ pub mod workspace_directory {
         pub(crate) tenancy: std::option::Option<crate::model::Tenancy>,
         pub(crate) selfservice_permissions:
             std::option::Option<crate::model::SelfservicePermissions>,
+        pub(crate) saml_properties: std::option::Option<crate::model::SamlProperties>,
     }
     impl Builder {
         /// <p>The directory identifier.</p>
@@ -4809,6 +5074,19 @@ pub mod workspace_directory {
             self.selfservice_permissions = input;
             self
         }
+        /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+        pub fn saml_properties(mut self, input: crate::model::SamlProperties) -> Self {
+            self.saml_properties = Some(input);
+            self
+        }
+        /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+        pub fn set_saml_properties(
+            mut self,
+            input: std::option::Option<crate::model::SamlProperties>,
+        ) -> Self {
+            self.saml_properties = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkspaceDirectory`](crate::model::WorkspaceDirectory).
         pub fn build(self) -> crate::model::WorkspaceDirectory {
             crate::model::WorkspaceDirectory {
@@ -4828,6 +5106,7 @@ pub mod workspace_directory {
                 workspace_access_properties: self.workspace_access_properties,
                 tenancy: self.tenancy,
                 selfservice_permissions: self.selfservice_permissions,
+                saml_properties: self.saml_properties,
             }
         }
     }

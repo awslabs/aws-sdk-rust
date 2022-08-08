@@ -1591,6 +1591,47 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RebootInputDeviceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::RebootInputDeviceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RebootInputDeviceErrorKind::BadGatewayException(inner) => {
+                    Error::BadGatewayException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::GatewayTimeoutException(inner) => {
+                    Error::GatewayTimeoutException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::InternalServerErrorException(inner) => {
+                    Error::InternalServerErrorException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::UnprocessableEntityException(inner) => {
+                    Error::UnprocessableEntityException(inner)
+                }
+                crate::error::RebootInputDeviceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectInputDeviceTransferError, R>>
     for Error
 where
@@ -1669,6 +1710,34 @@ where
                 }
                 crate::error::StartChannelErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::StartInputDeviceMaintenanceWindowError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::StartInputDeviceMaintenanceWindowError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException(inner) => Error::BadGatewayException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+                crate::error::StartInputDeviceMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }

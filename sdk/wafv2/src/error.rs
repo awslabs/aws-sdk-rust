@@ -161,6 +161,8 @@ pub enum CheckCapacityErrorKind {
     ),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
+    /// <p>The operation isn't valid. </p>
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
     /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
     /// <ul>
     /// <li> <p>You specified a parameter name or value that isn't valid.</p> </li>
@@ -189,6 +191,7 @@ impl std::fmt::Display for CheckCapacityError {
                 _inner.fmt(f)
             }
             CheckCapacityErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            CheckCapacityErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
             CheckCapacityErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
             CheckCapacityErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
             CheckCapacityErrorKind::WafLimitsExceededException(_inner) => _inner.fmt(f),
@@ -263,6 +266,13 @@ impl CheckCapacityError {
             CheckCapacityErrorKind::WafInternalErrorException(_)
         )
     }
+    /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInvalidOperationException`.
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckCapacityErrorKind::WafInvalidOperationException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CheckCapacityErrorKind::WafInvalidParameterException`.
     pub fn is_waf_invalid_parameter_exception(&self) -> bool {
         matches!(
@@ -313,6 +323,7 @@ impl std::error::Error for CheckCapacityError {
                 Some(_inner)
             }
             CheckCapacityErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            CheckCapacityErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafLimitsExceededException(_inner) => Some(_inner),
@@ -1304,7 +1315,6 @@ pub struct DeleteIPSetError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteIPSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -1759,7 +1769,6 @@ pub struct DeleteRegexPatternSetError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteRegexPatternSetErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -1940,7 +1949,6 @@ pub struct DeleteRuleGroupError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleGroupErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -2119,7 +2127,6 @@ pub struct DeleteWebACLError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteWebACLErrorKind {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
     WafInternalErrorException(crate::error::WafInternalErrorException),
@@ -8542,7 +8549,6 @@ impl WafLogDestinationPermissionIssueException {
 }
 
 /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-/// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAssociatedItemException {

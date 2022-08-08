@@ -174,6 +174,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     StageV2,
     #[allow(missing_docs)] // documentation missing in model
+    AthenaDataCatalog,
+    #[allow(missing_docs)] // documentation missing in model
+    AthenaWorkGroup,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
     LaunchConfiguration,
@@ -218,9 +222,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCompliance,
     #[allow(missing_docs)] // documentation missing in model
+    DmsCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     DmsEventSubscription,
     #[allow(missing_docs)] // documentation missing in model
     DmsReplicationSubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    DetectiveGraph,
     #[allow(missing_docs)] // documentation missing in model
     Table,
     #[allow(missing_docs)] // documentation missing in model
@@ -255,6 +263,10 @@ pub enum ResourceType {
     Subnet,
     #[allow(missing_docs)] // documentation missing in model
     TransitGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayAttachment,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayRouteTable,
     #[allow(missing_docs)] // documentation missing in model
     Vpc,
     #[allow(missing_docs)] // documentation missing in model
@@ -301,6 +313,12 @@ pub enum ResourceType {
     LoadBalancerV2,
     #[allow(missing_docs)] // documentation missing in model
     Domain,
+    #[allow(missing_docs)] // documentation missing in model
+    GlobalAcceleratorAccelerator,
+    #[allow(missing_docs)] // documentation missing in model
+    GlobalAcceleratorEndpointGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    GlobalAcceleratorListener,
     #[allow(missing_docs)] // documentation missing in model
     GuardDutyDetector,
     #[allow(missing_docs)] // documentation missing in model
@@ -443,6 +461,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ApiGateway::Stage" => ResourceType::Stage,
             "AWS::ApiGatewayV2::Api" => ResourceType::Api,
             "AWS::ApiGatewayV2::Stage" => ResourceType::StageV2,
+            "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
+            "AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
             "AWS::AutoScaling::AutoScalingGroup" => ResourceType::AutoScalingGroup,
             "AWS::AutoScaling::LaunchConfiguration" => ResourceType::LaunchConfiguration,
             "AWS::AutoScaling::ScalingPolicy" => ResourceType::ScalingPolicy,
@@ -465,8 +485,10 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
+            "AWS::DMS::Certificate" => ResourceType::DmsCertificate,
             "AWS::DMS::EventSubscription" => ResourceType::DmsEventSubscription,
             "AWS::DMS::ReplicationSubnetGroup" => ResourceType::DmsReplicationSubnetGroup,
+            "AWS::Detective::Graph" => ResourceType::DetectiveGraph,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
             "AWS::EC2::EIP" => ResourceType::Eip,
@@ -484,6 +506,8 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
             "AWS::EC2::Subnet" => ResourceType::Subnet,
             "AWS::EC2::TransitGateway" => ResourceType::TransitGateway,
+            "AWS::EC2::TransitGatewayAttachment" => ResourceType::TransitGatewayAttachment,
+            "AWS::EC2::TransitGatewayRouteTable" => ResourceType::TransitGatewayRouteTable,
             "AWS::EC2::VPC" => ResourceType::Vpc,
             "AWS::EC2::VPCEndpoint" => ResourceType::VpcEndpoint,
             "AWS::EC2::VPCEndpointService" => ResourceType::VpcEndpointService,
@@ -507,6 +531,9 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ElasticLoadBalancingV2::Listener" => ResourceType::ListenerV2,
             "AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::LoadBalancerV2,
             "AWS::Elasticsearch::Domain" => ResourceType::Domain,
+            "AWS::GlobalAccelerator::Accelerator" => ResourceType::GlobalAcceleratorAccelerator,
+            "AWS::GlobalAccelerator::EndpointGroup" => ResourceType::GlobalAcceleratorEndpointGroup,
+            "AWS::GlobalAccelerator::Listener" => ResourceType::GlobalAcceleratorListener,
             "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
             "AWS::IAM::Group" => ResourceType::Group,
             "AWS::IAM::Policy" => ResourceType::Policy,
@@ -599,6 +626,8 @@ impl ResourceType {
             ResourceType::Stage => "AWS::ApiGateway::Stage",
             ResourceType::Api => "AWS::ApiGatewayV2::Api",
             ResourceType::StageV2 => "AWS::ApiGatewayV2::Stage",
+            ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
+            ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
             ResourceType::AutoScalingGroup => "AWS::AutoScaling::AutoScalingGroup",
             ResourceType::LaunchConfiguration => "AWS::AutoScaling::LaunchConfiguration",
             ResourceType::ScalingPolicy => "AWS::AutoScaling::ScalingPolicy",
@@ -621,8 +650,10 @@ impl ResourceType {
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
+            ResourceType::DmsCertificate => "AWS::DMS::Certificate",
             ResourceType::DmsEventSubscription => "AWS::DMS::EventSubscription",
             ResourceType::DmsReplicationSubnetGroup => "AWS::DMS::ReplicationSubnetGroup",
+            ResourceType::DetectiveGraph => "AWS::Detective::Graph",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
             ResourceType::Eip => "AWS::EC2::EIP",
@@ -640,6 +671,8 @@ impl ResourceType {
             ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
             ResourceType::Subnet => "AWS::EC2::Subnet",
             ResourceType::TransitGateway => "AWS::EC2::TransitGateway",
+            ResourceType::TransitGatewayAttachment => "AWS::EC2::TransitGatewayAttachment",
+            ResourceType::TransitGatewayRouteTable => "AWS::EC2::TransitGatewayRouteTable",
             ResourceType::Vpc => "AWS::EC2::VPC",
             ResourceType::VpcEndpoint => "AWS::EC2::VPCEndpoint",
             ResourceType::VpcEndpointService => "AWS::EC2::VPCEndpointService",
@@ -663,6 +696,9 @@ impl ResourceType {
             ResourceType::ListenerV2 => "AWS::ElasticLoadBalancingV2::Listener",
             ResourceType::LoadBalancerV2 => "AWS::ElasticLoadBalancingV2::LoadBalancer",
             ResourceType::Domain => "AWS::Elasticsearch::Domain",
+            ResourceType::GlobalAcceleratorAccelerator => "AWS::GlobalAccelerator::Accelerator",
+            ResourceType::GlobalAcceleratorEndpointGroup => "AWS::GlobalAccelerator::EndpointGroup",
+            ResourceType::GlobalAcceleratorListener => "AWS::GlobalAccelerator::Listener",
             ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
             ResourceType::Group => "AWS::IAM::Group",
             ResourceType::Policy => "AWS::IAM::Policy",
@@ -746,6 +782,8 @@ impl ResourceType {
             "AWS::ApiGateway::Stage",
             "AWS::ApiGatewayV2::Api",
             "AWS::ApiGatewayV2::Stage",
+            "AWS::Athena::DataCatalog",
+            "AWS::Athena::WorkGroup",
             "AWS::AutoScaling::AutoScalingGroup",
             "AWS::AutoScaling::LaunchConfiguration",
             "AWS::AutoScaling::ScalingPolicy",
@@ -768,8 +806,10 @@ impl ResourceType {
             "AWS::CodePipeline::Pipeline",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
+            "AWS::DMS::Certificate",
             "AWS::DMS::EventSubscription",
             "AWS::DMS::ReplicationSubnetGroup",
+            "AWS::Detective::Graph",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CustomerGateway",
             "AWS::EC2::EIP",
@@ -787,6 +827,8 @@ impl ResourceType {
             "AWS::EC2::SecurityGroup",
             "AWS::EC2::Subnet",
             "AWS::EC2::TransitGateway",
+            "AWS::EC2::TransitGatewayAttachment",
+            "AWS::EC2::TransitGatewayRouteTable",
             "AWS::EC2::VPC",
             "AWS::EC2::VPCEndpoint",
             "AWS::EC2::VPCEndpointService",
@@ -810,6 +852,9 @@ impl ResourceType {
             "AWS::ElasticLoadBalancingV2::Listener",
             "AWS::ElasticLoadBalancingV2::LoadBalancer",
             "AWS::Elasticsearch::Domain",
+            "AWS::GlobalAccelerator::Accelerator",
+            "AWS::GlobalAccelerator::EndpointGroup",
+            "AWS::GlobalAccelerator::Listener",
             "AWS::GuardDuty::Detector",
             "AWS::IAM::Group",
             "AWS::IAM::Policy",
@@ -1629,7 +1674,7 @@ pub struct RemediationConfiguration {
     pub retry_attempt_seconds: std::option::Option<i64>,
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Name of the service that owns the service linked rule, if applicable.</p>
+    /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub created_by_service: std::option::Option<std::string::String>,
 }
 impl RemediationConfiguration {
@@ -1685,7 +1730,7 @@ impl RemediationConfiguration {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Name of the service that owns the service linked rule, if applicable.</p>
+    /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub fn created_by_service(&self) -> std::option::Option<&str> {
         self.created_by_service.as_deref()
     }
@@ -1884,12 +1929,12 @@ pub mod remediation_configuration {
             self.arn = input;
             self
         }
-        /// <p>Name of the service that owns the service linked rule, if applicable.</p>
+        /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
         pub fn created_by_service(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by_service = Some(input.into());
             self
         }
-        /// <p>Name of the service that owns the service linked rule, if applicable.</p>
+        /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
         pub fn set_created_by_service(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3873,14 +3918,14 @@ pub struct DeliveryChannel {
     /// <p>The name of the delivery channel. By default, Config assigns the name "default" when creating the delivery channel. To change the delivery channel name, you must use the DeleteDeliveryChannel action to delete your current delivery channel, and then you must use the PutDeliveryChannel command to create a delivery channel that has the desired name.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
-    /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+    /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The prefix for the specified Amazon S3 bucket.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS ) KMS key (KMS key) used to encrypt objects delivered by Config. Must belong to the same Region as the destination S3 bucket.</p>
     pub s3_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
-    /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+    /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The options for how often Config delivers configuration snapshots to the Amazon S3 bucket.</p>
     pub config_snapshot_delivery_properties:
@@ -3892,7 +3937,7 @@ impl DeliveryChannel {
         self.name.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
-    /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+    /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -3905,7 +3950,7 @@ impl DeliveryChannel {
         self.s3_kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
-    /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+    /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -3957,13 +4002,13 @@ pub mod delivery_channel {
             self
         }
         /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
-        /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+        /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket to which Config delivers configuration snapshots and configuration history files.</p>
-        /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the Config Developer Guide.</p>
+        /// <p>If you specify a bucket that belongs to another Amazon Web Services account, that bucket must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3998,13 +4043,13 @@ pub mod delivery_channel {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
-        /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+        /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Config sends notifications about configuration changes.</p>
-        /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the Config Developer Guide.</p>
+        /// <p>If you choose a topic from another account, the topic must have policies that grant access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4811,10 +4856,11 @@ impl AccountAggregationSource {
     }
 }
 
-/// <p>An Config rule represents an Lambda function that you create for a custom rule or a predefined function for an Config managed rule. The function evaluates configuration items to assess whether your Amazon Web Services resources comply with your desired configurations. This function can run when Config detects a configuration change to an Amazon Web Services resource and at a periodic frequency that you choose (for example, every 24 hours).</p> <note>
+/// <p>Config rules evaluate the configuration settings of your Amazon Web Services resources. A rule can run when Config detects a configuration change to an Amazon Web Services resource or at a periodic frequency that you choose (for example, every 24 hours). There are two types of rules: Config Managed Rules and Config Custom Rules. Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
+/// <p>Custom rules are rules that you can create using either Guard or Lambda functions. Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda uses custom code that you upload to evaluate a custom rule. It is invoked by events that are published to it by an event source, which Config invokes when the custom rule is initiated.</p>
+/// <p>For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.</p> <note>
 /// <p>You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
 /// </note>
-/// <p>For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigRule {
@@ -4830,7 +4876,7 @@ pub struct ConfigRule {
     /// <p>The scope can be empty. </p>
     /// </note>
     pub scope: std::option::Option<crate::model::Scope>,
-    /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+    /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
     pub source: std::option::Option<crate::model::Source>,
     /// <p>A string, in JSON format, that is passed to the Config rule Lambda function.</p>
     pub input_parameters: std::option::Option<std::string::String>,
@@ -4848,7 +4894,7 @@ pub struct ConfigRule {
     /// <p>Config temporarily sets the state of a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes the rule, the rule and all of its evaluations are erased and are no longer available.</p>
     pub config_rule_state: std::option::Option<crate::model::ConfigRuleState>,
     /// <p>Service principal name of the service that created the rule.</p> <note>
-    /// <p>The field is populated only if the service linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
     /// </note>
     pub created_by: std::option::Option<std::string::String>,
 }
@@ -4875,7 +4921,7 @@ impl ConfigRule {
     pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
         self.scope.as_ref()
     }
-    /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+    /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::Source> {
         self.source.as_ref()
     }
@@ -4903,7 +4949,7 @@ impl ConfigRule {
         self.config_rule_state.as_ref()
     }
     /// <p>Service principal name of the service that created the rule.</p> <note>
-    /// <p>The field is populated only if the service linked rule is created by a service. The field is empty if you create your own rule.</p>
+    /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
     /// </note>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
@@ -5010,12 +5056,12 @@ pub mod config_rule {
             self.scope = input;
             self
         }
-        /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+        /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>Provides the rule owner (Amazon Web Services or customer), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
+        /// <p>Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the notifications that cause the function to evaluate your Amazon Web Services resources.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
@@ -5081,14 +5127,14 @@ pub mod config_rule {
             self
         }
         /// <p>Service principal name of the service that created the rule.</p> <note>
-        /// <p>The field is populated only if the service linked rule is created by a service. The field is empty if you create your own rule.</p>
+        /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
         /// </note>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
         }
         /// <p>Service principal name of the service that created the rule.</p> <note>
-        /// <p>The field is populated only if the service linked rule is created by a service. The field is empty if you create your own rule.</p>
+        /// <p>The field is populated only if the service-linked rule is created by a service. The field is empty if you create your own rule.</p>
         /// </note>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
@@ -5181,13 +5227,13 @@ impl AsRef<str> for ConfigRuleState {
     }
 }
 
-/// <p>Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or customer), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.</p>
+/// <p>Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
-    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
-    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
+    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
+    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List of Config Managed Rules</a>.</p>
     /// <p>For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
@@ -5201,8 +5247,8 @@ pub struct Source {
 }
 impl Source {
     /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
-    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
-    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
+    /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
+    /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
     }
@@ -5245,15 +5291,15 @@ pub mod source {
     }
     impl Builder {
         /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
-        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
-        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
+        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
+        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
             self.owner = Some(input);
             self
         }
         /// <p>Indicates whether Amazon Web Services or the customer owns and manages the Config rule.</p>
-        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the Config developer guide.</p>
-        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the Config developer guide.</p>
+        /// <p>Config Managed Rules are predefined rules owned by Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config Managed Rules</a> in the <i>Config developer guide</i>.</p>
+        /// <p>Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config Custom Rules </a> in the <i>Config developer guide</i>.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
@@ -6243,6 +6289,273 @@ impl ResourceIdentifier {
     /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
     pub fn builder() -> crate::model::resource_identifier::Builder {
         crate::model::resource_identifier::Builder::default()
+    }
+}
+
+/// <p>A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your conformance packs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConformancePackComplianceScore {
+    /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+    pub score: std::option::Option<std::string::String>,
+    /// <p>The name of the conformance pack.</p>
+    pub conformance_pack_name: std::option::Option<std::string::String>,
+    /// <p>The time that the conformance pack compliance score was last updated.</p>
+    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ConformancePackComplianceScore {
+    /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+    pub fn score(&self) -> std::option::Option<&str> {
+        self.score.as_deref()
+    }
+    /// <p>The name of the conformance pack.</p>
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
+        self.conformance_pack_name.as_deref()
+    }
+    /// <p>The time that the conformance pack compliance score was last updated.</p>
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+}
+impl std::fmt::Debug for ConformancePackComplianceScore {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConformancePackComplianceScore");
+        formatter.field("score", &self.score);
+        formatter.field("conformance_pack_name", &self.conformance_pack_name);
+        formatter.field("last_updated_time", &self.last_updated_time);
+        formatter.finish()
+    }
+}
+/// See [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
+pub mod conformance_pack_compliance_score {
+
+    /// A builder for [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) score: std::option::Option<std::string::String>,
+        pub(crate) conformance_pack_name: std::option::Option<std::string::String>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+        pub fn score(mut self, input: impl Into<std::string::String>) -> Self {
+            self.score = Some(input.into());
+            self
+        }
+        /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+        pub fn set_score(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.score = input;
+            self
+        }
+        /// <p>The name of the conformance pack.</p>
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.conformance_pack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the conformance pack.</p>
+        pub fn set_conformance_pack_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.conformance_pack_name = input;
+            self
+        }
+        /// <p>The time that the conformance pack compliance score was last updated.</p>
+        pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_time = Some(input);
+            self
+        }
+        /// <p>The time that the conformance pack compliance score was last updated.</p>
+        pub fn set_last_updated_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
+        pub fn build(self) -> crate::model::ConformancePackComplianceScore {
+            crate::model::ConformancePackComplianceScore {
+                score: self.score,
+                conformance_pack_name: self.conformance_pack_name,
+                last_updated_time: self.last_updated_time,
+            }
+        }
+    }
+}
+impl ConformancePackComplianceScore {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
+    pub fn builder() -> crate::model::conformance_pack_compliance_score::Builder {
+        crate::model::conformance_pack_compliance_score::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortBy {
+    #[allow(missing_docs)] // documentation missing in model
+    Score,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "SCORE" => SortBy::Score,
+            other => SortBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortBy::from(s))
+    }
+}
+impl SortBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortBy::Score => "SCORE",
+            SortBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["SCORE"]
+    }
+}
+impl AsRef<str> for SortBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
+    Ascending,
+    #[allow(missing_docs)] // documentation missing in model
+    Descending,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SortOrder {
+    fn from(s: &str) -> Self {
+        match s {
+            "ASCENDING" => SortOrder::Ascending,
+            "DESCENDING" => SortOrder::Descending,
+            other => SortOrder::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Ascending => "ASCENDING",
+            SortOrder::Descending => "DESCENDING",
+            SortOrder::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ASCENDING", "DESCENDING"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConformancePackComplianceScoresFilters {
+    /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
+    pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ConformancePackComplianceScoresFilters {
+    /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.conformance_pack_names.as_deref()
+    }
+}
+impl std::fmt::Debug for ConformancePackComplianceScoresFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConformancePackComplianceScoresFilters");
+        formatter.field("conformance_pack_names", &self.conformance_pack_names);
+        formatter.finish()
+    }
+}
+/// See [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
+pub mod conformance_pack_compliance_scores_filters {
+
+    /// A builder for [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `conformance_pack_names`.
+        ///
+        /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).
+        ///
+        /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
+        pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.conformance_pack_names.unwrap_or_default();
+            v.push(input.into());
+            self.conformance_pack_names = Some(v);
+            self
+        }
+        /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
+        pub fn set_conformance_pack_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.conformance_pack_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
+        pub fn build(self) -> crate::model::ConformancePackComplianceScoresFilters {
+            crate::model::ConformancePackComplianceScoresFilters {
+                conformance_pack_names: self.conformance_pack_names,
+            }
+        }
+    }
+}
+impl ConformancePackComplianceScoresFilters {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
+    pub fn builder() -> crate::model::conformance_pack_compliance_scores_filters::Builder {
+        crate::model::conformance_pack_compliance_scores_filters::Builder::default()
     }
 }
 

@@ -5387,6 +5387,21 @@ where
                                     crate::json_deser::deser_structure_crate_model_s3_path(tokens)?,
                                 );
                             }
+                            "AuthenticationType" => {
+                                builder = builder.set_authentication_type(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::SharePointOnlineAuthenticationType::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

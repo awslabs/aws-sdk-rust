@@ -3472,6 +3472,216 @@ impl DeleteThreatIntelSetInput {
     }
 }
 
+/// See [`DescribeMalwareScansInput`](crate::input::DescribeMalwareScansInput).
+pub mod describe_malware_scans_input {
+
+    /// A builder for [`DescribeMalwareScansInput`](crate::input::DescribeMalwareScansInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
+        pub(crate) sort_criteria: std::option::Option<crate::model::SortCriteria>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.filter_criteria = Some(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.filter_criteria = input;
+            self
+        }
+        /// <p>Represents the criteria used for sorting scan entries.</p>
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.sort_criteria = Some(input);
+            self
+        }
+        /// <p>Represents the criteria used for sorting scan entries.</p>
+        pub fn set_sort_criteria(
+            mut self,
+            input: std::option::Option<crate::model::SortCriteria>,
+        ) -> Self {
+            self.sort_criteria = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMalwareScansInput`](crate::input::DescribeMalwareScansInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeMalwareScansInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeMalwareScansInput {
+                detector_id: self.detector_id,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                filter_criteria: self.filter_criteria,
+                sort_criteria: self.sort_criteria,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeMalwareScansInputOperationOutputAlias = crate::operation::DescribeMalwareScans;
+#[doc(hidden)]
+pub type DescribeMalwareScansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeMalwareScansInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeMalwareScans`](crate::operation::DescribeMalwareScans)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeMalwareScans,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeMalwareScansInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_20 = &_input.detector_id;
+                let input_20 = input_20.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let detector_id = aws_smithy_http::label::fmt_string(input_20, false);
+                if detector_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/detector/{DetectorId}/malware-scans",
+                    DetectorId = detector_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeMalwareScansInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_malware_scans(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeMalwareScans::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeMalwareScans",
+            "guardduty",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeMalwareScansInput`](crate::input::DescribeMalwareScansInput).
+    pub fn builder() -> crate::input::describe_malware_scans_input::Builder {
+        crate::input::describe_malware_scans_input::Builder::default()
+    }
+}
+
 /// See [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput).
 pub mod describe_organization_configuration_input {
 
@@ -3530,14 +3740,14 @@ impl DescribeOrganizationConfigurationInput {
                 _input: &crate::input::DescribeOrganizationConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_20 = &_input.detector_id;
-                let input_20 = input_20.as_ref().ok_or(
+                let input_21 = &_input.detector_id;
+                let input_21 = input_21.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_21, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -3689,28 +3899,28 @@ impl DescribePublishingDestinationInput {
                 _input: &crate::input::DescribePublishingDestinationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.detector_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_22 = &_input.detector_id;
+                let input_22 = input_22.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_22, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_22 = &_input.destination_id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_23 = &_input.destination_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let destination_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let destination_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if destination_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
@@ -3989,14 +4199,14 @@ impl DisassociateFromAdministratorAccountInput {
                 _input: &crate::input::DisassociateFromAdministratorAccountInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.detector_id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_24 = &_input.detector_id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_24, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -4133,14 +4343,14 @@ impl DisassociateFromMasterAccountInput {
                 _input: &crate::input::DisassociateFromMasterAccountInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_24 = &_input.detector_id;
-                let input_24 = input_24.as_ref().ok_or(
+                let input_25 = &_input.detector_id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_25, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -4294,14 +4504,14 @@ impl DisassociateMembersInput {
                 _input: &crate::input::DisassociateMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_25 = &_input.detector_id;
-                let input_25 = input_25.as_ref().ok_or(
+                let input_26 = &_input.detector_id;
+                let input_26 = input_26.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_26, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -4592,14 +4802,14 @@ impl GetAdministratorAccountInput {
                 _input: &crate::input::GetAdministratorAccountInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_26 = &_input.detector_id;
-                let input_26 = input_26.as_ref().ok_or(
+                let input_27 = &_input.detector_id;
+                let input_27 = input_27.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_27, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -4732,14 +4942,14 @@ impl GetDetectorInput {
                 _input: &crate::input::GetDetectorInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_27 = &_input.detector_id;
-                let input_27 = input_27.as_ref().ok_or(
+                let input_28 = &_input.detector_id;
+                let input_28 = input_28.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_28, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -4879,28 +5089,28 @@ impl GetFilterInput {
                 _input: &crate::input::GetFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_28 = &_input.detector_id;
-                let input_28 = input_28.as_ref().ok_or(
+                let input_29 = &_input.detector_id;
+                let input_29 = input_29.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_29, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_29 = &_input.filter_name;
-                let input_29 = input_29.as_ref().ok_or(
+                let input_30 = &_input.filter_name;
+                let input_30 = input_30.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let filter_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let filter_name = aws_smithy_http::label::fmt_string(input_30, false);
                 if filter_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
@@ -5068,14 +5278,14 @@ impl GetFindingsInput {
                 _input: &crate::input::GetFindingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_30 = &_input.detector_id;
-                let input_30 = input_30.as_ref().ok_or(
+                let input_31 = &_input.detector_id;
+                let input_31 = input_31.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_31, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -5262,14 +5472,14 @@ impl GetFindingsStatisticsInput {
                 _input: &crate::input::GetFindingsStatisticsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_31 = &_input.detector_id;
-                let input_31 = input_31.as_ref().ok_or(
+                let input_32 = &_input.detector_id;
+                let input_32 = input_32.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_32, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -5536,28 +5746,28 @@ impl GetIpSetInput {
                 _input: &crate::input::GetIpSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_32 = &_input.detector_id;
-                let input_32 = input_32.as_ref().ok_or(
+                let input_33 = &_input.detector_id;
+                let input_33 = input_33.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_33, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_33 = &_input.ip_set_id;
-                let input_33 = input_33.as_ref().ok_or(
+                let input_34 = &_input.ip_set_id;
+                let input_34 = input_34.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let ip_set_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let ip_set_id = aws_smithy_http::label::fmt_string(input_34, false);
                 if ip_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
@@ -5635,6 +5845,146 @@ impl GetIpSetInput {
     }
 }
 
+/// See [`GetMalwareScanSettingsInput`](crate::input::GetMalwareScanSettingsInput).
+pub mod get_malware_scan_settings_input {
+
+    /// A builder for [`GetMalwareScanSettingsInput`](crate::input::GetMalwareScanSettingsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMalwareScanSettingsInput`](crate::input::GetMalwareScanSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetMalwareScanSettingsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetMalwareScanSettingsInput {
+                detector_id: self.detector_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetMalwareScanSettingsInputOperationOutputAlias = crate::operation::GetMalwareScanSettings;
+#[doc(hidden)]
+pub type GetMalwareScanSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetMalwareScanSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`GetMalwareScanSettings`](crate::operation::GetMalwareScanSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetMalwareScanSettings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetMalwareScanSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_35 = &_input.detector_id;
+                let input_35 = input_35.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let detector_id = aws_smithy_http::label::fmt_string(input_35, false);
+                if detector_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/detector/{DetectorId}/malware-scan-settings",
+                    DetectorId = detector_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetMalwareScanSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMalwareScanSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMalwareScanSettings",
+            "guardduty",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetMalwareScanSettingsInput`](crate::input::GetMalwareScanSettingsInput).
+    pub fn builder() -> crate::input::get_malware_scan_settings_input::Builder {
+        crate::input::get_malware_scan_settings_input::Builder::default()
+    }
+}
+
 /// See [`GetMasterAccountInput`](crate::input::GetMasterAccountInput).
 pub mod get_master_account_input {
 
@@ -5689,14 +6039,14 @@ impl GetMasterAccountInput {
                 _input: &crate::input::GetMasterAccountInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_34 = &_input.detector_id;
-                let input_34 = input_34.as_ref().ok_or(
+                let input_36 = &_input.detector_id;
+                let input_36 = input_36.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_36, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -5850,14 +6200,14 @@ impl GetMemberDetectorsInput {
                 _input: &crate::input::GetMemberDetectorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_35 = &_input.detector_id;
-                let input_35 = input_35.as_ref().ok_or(
+                let input_37 = &_input.detector_id;
+                let input_37 = input_37.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_37, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -6024,14 +6374,14 @@ impl GetMembersInput {
                 _input: &crate::input::GetMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_36 = &_input.detector_id;
-                let input_36 = input_36.as_ref().ok_or(
+                let input_38 = &_input.detector_id;
+                let input_38 = input_38.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_38, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -6202,14 +6552,14 @@ impl GetRemainingFreeTrialDaysInput {
                 _input: &crate::input::GetRemainingFreeTrialDaysInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_37 = &_input.detector_id;
-                let input_37 = input_37.as_ref().ok_or(
+                let input_39 = &_input.detector_id;
+                let input_39 = input_39.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_39, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -6370,28 +6720,28 @@ impl GetThreatIntelSetInput {
                 _input: &crate::input::GetThreatIntelSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_38 = &_input.detector_id;
-                let input_38 = input_38.as_ref().ok_or(
+                let input_40 = &_input.detector_id;
+                let input_40 = input_40.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_40, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_39 = &_input.threat_intel_set_id;
-                let input_39 = input_39.as_ref().ok_or(
+                let input_41 = &_input.threat_intel_set_id;
+                let input_41 = input_41.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_41, false);
                 if threat_intel_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
@@ -6591,14 +6941,14 @@ impl GetUsageStatisticsInput {
                 _input: &crate::input::GetUsageStatisticsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_40 = &_input.detector_id;
-                let input_40 = input_40.as_ref().ok_or(
+                let input_42 = &_input.detector_id;
+                let input_42 = input_42.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_42, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -6790,14 +7140,14 @@ impl InviteMembersInput {
                 _input: &crate::input::InviteMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_41 = &_input.detector_id;
-                let input_41 = input_41.as_ref().ok_or(
+                let input_43 = &_input.detector_id;
+                let input_43 = input_43.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_43, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -6970,8 +7320,8 @@ impl ListDetectorsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_42) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
+                if let Some(inner_44) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
                 }
                 Ok(())
             }
@@ -7118,14 +7468,14 @@ impl ListFiltersInput {
                 _input: &crate::input::ListFiltersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_43 = &_input.detector_id;
-                let input_43 = input_43.as_ref().ok_or(
+                let input_45 = &_input.detector_id;
+                let input_45 = input_45.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_45, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -7151,8 +7501,8 @@ impl ListFiltersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_44) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_44));
+                if let Some(inner_46) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
                 }
                 Ok(())
             }
@@ -7429,14 +7779,14 @@ impl ListFindingsInput {
                 _input: &crate::input::ListFindingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_45 = &_input.detector_id;
-                let input_45 = input_45.as_ref().ok_or(
+                let input_47 = &_input.detector_id;
+                let input_47 = input_47.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_47, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -7609,8 +7959,8 @@ impl ListInvitationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_46) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_46));
+                if let Some(inner_48) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
                 Ok(())
             }
@@ -7756,14 +8106,14 @@ impl ListIpSetsInput {
                 _input: &crate::input::ListIpSetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_47 = &_input.detector_id;
-                let input_47 = input_47.as_ref().ok_or(
+                let input_49 = &_input.detector_id;
+                let input_49 = input_49.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_49, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -7789,8 +8139,8 @@ impl ListIpSetsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_48) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
+                if let Some(inner_50) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
                 }
                 Ok(())
             }
@@ -7952,14 +8302,14 @@ impl ListMembersInput {
                 _input: &crate::input::ListMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_49 = &_input.detector_id;
-                let input_49 = input_49.as_ref().ok_or(
+                let input_51 = &_input.detector_id;
+                let input_51 = input_51.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_51, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -7985,13 +8335,13 @@ impl ListMembersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_50) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_50));
+                if let Some(inner_52) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_52));
                 }
-                if let Some(inner_51) = &_input.only_associated {
+                if let Some(inner_53) = &_input.only_associated {
                     query.push_kv(
                         "onlyAssociated",
-                        &aws_smithy_http::query::fmt_string(&inner_51),
+                        &aws_smithy_http::query::fmt_string(&inner_53),
                     );
                 }
                 Ok(())
@@ -8145,8 +8495,8 @@ impl ListOrganizationAdminAccountsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_52) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_52));
+                if let Some(inner_54) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
                 }
                 Ok(())
             }
@@ -8296,14 +8646,14 @@ impl ListPublishingDestinationsInput {
                 _input: &crate::input::ListPublishingDestinationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_53 = &_input.detector_id;
-                let input_53 = input_53.as_ref().ok_or(
+                let input_55 = &_input.detector_id;
+                let input_55 = input_55.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_55, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -8329,8 +8679,8 @@ impl ListPublishingDestinationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_54) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
+                if let Some(inner_56) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
                 }
                 Ok(())
             }
@@ -8453,14 +8803,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_55 = &_input.resource_arn;
-                let input_55 = input_55.as_ref().ok_or(
+                let input_57 = &_input.resource_arn;
+                let input_57 = input_57.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_55, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_57, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8613,14 +8963,14 @@ impl ListThreatIntelSetsInput {
                 _input: &crate::input::ListThreatIntelSetsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_56 = &_input.detector_id;
-                let input_56 = input_56.as_ref().ok_or(
+                let input_58 = &_input.detector_id;
+                let input_58 = input_58.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_58, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -8646,8 +8996,8 @@ impl ListThreatIntelSetsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_57) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_57));
+                if let Some(inner_59) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
                 Ok(())
             }
@@ -8791,14 +9141,14 @@ impl StartMonitoringMembersInput {
                 _input: &crate::input::StartMonitoringMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_58 = &_input.detector_id;
-                let input_58 = input_58.as_ref().ok_or(
+                let input_60 = &_input.detector_id;
+                let input_60 = input_60.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_60, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -8968,14 +9318,14 @@ impl StopMonitoringMembersInput {
                 _input: &crate::input::StopMonitoringMembersInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_59 = &_input.detector_id;
-                let input_59 = input_59.as_ref().ok_or(
+                let input_61 = &_input.detector_id;
+                let input_61 = input_61.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_61, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -9153,14 +9503,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_60 = &_input.resource_arn;
-                let input_60 = input_60.as_ref().ok_or(
+                let input_62 = &_input.resource_arn;
+                let input_62 = input_62.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_60, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_62, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -9324,14 +9674,14 @@ impl UnarchiveFindingsInput {
                 _input: &crate::input::UnarchiveFindingsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_61 = &_input.detector_id;
-                let input_61 = input_61.as_ref().ok_or(
+                let input_63 = &_input.detector_id;
+                let input_63 = input_63.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_63, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -9499,14 +9849,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_62 = &_input.resource_arn;
-                let input_62 = input_62.as_ref().ok_or(
+                let input_64 = &_input.resource_arn;
+                let input_64 = input_64.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_62, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_64, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -9522,9 +9872,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_63) = &_input.tag_keys {
-                    for inner_64 in inner_63 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_64));
+                if let Some(inner_65) = &_input.tag_keys {
+                    for inner_66 in inner_65 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_66));
                     }
                 }
                 Ok(())
@@ -9694,14 +10044,14 @@ impl UpdateDetectorInput {
                 _input: &crate::input::UpdateDetectorInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_65 = &_input.detector_id;
-                let input_65 = input_65.as_ref().ok_or(
+                let input_67 = &_input.detector_id;
+                let input_67 = input_67.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_65, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_67, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -9910,28 +10260,28 @@ impl UpdateFilterInput {
                 _input: &crate::input::UpdateFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_66 = &_input.detector_id;
-                let input_66 = input_66.as_ref().ok_or(
+                let input_68 = &_input.detector_id;
+                let input_68 = input_68.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_66, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_68, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_67 = &_input.filter_name;
-                let input_67 = input_67.as_ref().ok_or(
+                let input_69 = &_input.filter_name;
+                let input_69 = input_69.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let filter_name = aws_smithy_http::label::fmt_string(input_67, false);
+                let filter_name = aws_smithy_http::label::fmt_string(input_69, false);
                 if filter_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "filter_name",
@@ -10124,14 +10474,14 @@ impl UpdateFindingsFeedbackInput {
                 _input: &crate::input::UpdateFindingsFeedbackInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_68 = &_input.detector_id;
-                let input_68 = input_68.as_ref().ok_or(
+                let input_70 = &_input.detector_id;
+                let input_70 = input_70.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_70, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -10328,28 +10678,28 @@ impl UpdateIpSetInput {
                 _input: &crate::input::UpdateIpSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_69 = &_input.detector_id;
-                let input_69 = input_69.as_ref().ok_or(
+                let input_71 = &_input.detector_id;
+                let input_71 = input_71.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_69, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_71, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_70 = &_input.ip_set_id;
-                let input_70 = input_70.as_ref().ok_or(
+                let input_72 = &_input.ip_set_id;
+                let input_72 = input_72.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let ip_set_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let ip_set_id = aws_smithy_http::label::fmt_string(input_72, false);
                 if ip_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ip_set_id",
@@ -10443,6 +10793,199 @@ impl UpdateIpSetInput {
     }
 }
 
+/// See [`UpdateMalwareScanSettingsInput`](crate::input::UpdateMalwareScanSettingsInput).
+pub mod update_malware_scan_settings_input {
+
+    /// A builder for [`UpdateMalwareScanSettingsInput`](crate::input::UpdateMalwareScanSettingsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
+        pub(crate) ebs_snapshot_preservation:
+            std::option::Option<crate::model::EbsSnapshotPreservation>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+        pub fn scan_resource_criteria(mut self, input: crate::model::ScanResourceCriteria) -> Self {
+            self.scan_resource_criteria = Some(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+        pub fn set_scan_resource_criteria(
+            mut self,
+            input: std::option::Option<crate::model::ScanResourceCriteria>,
+        ) -> Self {
+            self.scan_resource_criteria = input;
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn ebs_snapshot_preservation(
+            mut self,
+            input: crate::model::EbsSnapshotPreservation,
+        ) -> Self {
+            self.ebs_snapshot_preservation = Some(input);
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn set_ebs_snapshot_preservation(
+            mut self,
+            input: std::option::Option<crate::model::EbsSnapshotPreservation>,
+        ) -> Self {
+            self.ebs_snapshot_preservation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMalwareScanSettingsInput`](crate::input::UpdateMalwareScanSettingsInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateMalwareScanSettingsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateMalwareScanSettingsInput {
+                detector_id: self.detector_id,
+                scan_resource_criteria: self.scan_resource_criteria,
+                ebs_snapshot_preservation: self.ebs_snapshot_preservation,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateMalwareScanSettingsInputOperationOutputAlias =
+    crate::operation::UpdateMalwareScanSettings;
+#[doc(hidden)]
+pub type UpdateMalwareScanSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateMalwareScanSettingsInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMalwareScanSettings`](crate::operation::UpdateMalwareScanSettings)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateMalwareScanSettings,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateMalwareScanSettingsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_73 = &_input.detector_id;
+                let input_73 = input_73.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let detector_id = aws_smithy_http::label::fmt_string(input_73, false);
+                if detector_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "detector_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/detector/{DetectorId}/malware-scan-settings",
+                    DetectorId = detector_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateMalwareScanSettingsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_malware_scan_settings(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateMalwareScanSettings::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateMalwareScanSettings",
+            "guardduty",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateMalwareScanSettingsInput`](crate::input::UpdateMalwareScanSettingsInput).
+    pub fn builder() -> crate::input::update_malware_scan_settings_input::Builder {
+        crate::input::update_malware_scan_settings_input::Builder::default()
+    }
+}
+
 /// See [`UpdateMemberDetectorsInput`](crate::input::UpdateMemberDetectorsInput).
 pub mod update_member_detectors_input {
 
@@ -10533,14 +11076,14 @@ impl UpdateMemberDetectorsInput {
                 _input: &crate::input::UpdateMemberDetectorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_71 = &_input.detector_id;
-                let input_71 = input_71.as_ref().ok_or(
+                let input_74 = &_input.detector_id;
+                let input_74 = input_74.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_74, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -10724,14 +11267,14 @@ impl UpdateOrganizationConfigurationInput {
                 _input: &crate::input::UpdateOrganizationConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_72 = &_input.detector_id;
-                let input_72 = input_72.as_ref().ok_or(
+                let input_75 = &_input.detector_id;
+                let input_75 = input_75.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_72, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_75, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
@@ -10913,28 +11456,28 @@ impl UpdatePublishingDestinationInput {
                 _input: &crate::input::UpdatePublishingDestinationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_73 = &_input.detector_id;
-                let input_73 = input_73.as_ref().ok_or(
+                let input_76 = &_input.detector_id;
+                let input_76 = input_76.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_76, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_74 = &_input.destination_id;
-                let input_74 = input_74.as_ref().ok_or(
+                let input_77 = &_input.destination_id;
+                let input_77 = input_77.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let destination_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let destination_id = aws_smithy_http::label::fmt_string(input_77, false);
                 if destination_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "destination_id",
@@ -11132,28 +11675,28 @@ impl UpdateThreatIntelSetInput {
                 _input: &crate::input::UpdateThreatIntelSetInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_75 = &_input.detector_id;
-                let input_75 = input_75.as_ref().ok_or(
+                let input_78 = &_input.detector_id;
+                let input_78 = input_78.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let detector_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let detector_id = aws_smithy_http::label::fmt_string(input_78, false);
                 if detector_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "detector_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_76 = &_input.threat_intel_set_id;
-                let input_76 = input_76.as_ref().ok_or(
+                let input_79 = &_input.threat_intel_set_id;
+                let input_79 = input_79.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_76, false);
+                let threat_intel_set_id = aws_smithy_http::label::fmt_string(input_79, false);
                 if threat_intel_set_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "threat_intel_set_id",
@@ -11403,6 +11946,45 @@ impl std::fmt::Debug for UpdateMemberDetectorsInput {
         formatter.field("detector_id", &self.detector_id);
         formatter.field("account_ids", &self.account_ids);
         formatter.field("data_sources", &self.data_sources);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMalwareScanSettingsInput {
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+    pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
+    /// <p>An enum value representing possible snapshot preservations.</p>
+    pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
+}
+impl UpdateMalwareScanSettingsInput {
+    /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+    pub fn scan_resource_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::ScanResourceCriteria> {
+        self.scan_resource_criteria.as_ref()
+    }
+    /// <p>An enum value representing possible snapshot preservations.</p>
+    pub fn ebs_snapshot_preservation(
+        &self,
+    ) -> std::option::Option<&crate::model::EbsSnapshotPreservation> {
+        self.ebs_snapshot_preservation.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateMalwareScanSettingsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMalwareScanSettingsInput");
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("scan_resource_criteria", &self.scan_resource_criteria);
+        formatter.field("ebs_snapshot_preservation", &self.ebs_snapshot_preservation);
         formatter.finish()
     }
 }
@@ -12418,6 +13000,27 @@ impl std::fmt::Debug for GetMasterAccountInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMalwareScanSettingsInput {
+    /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+    pub detector_id: std::option::Option<std::string::String>,
+}
+impl GetMalwareScanSettingsInput {
+    /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetMalwareScanSettingsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMalwareScanSettingsInput");
+        formatter.field("detector_id", &self.detector_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     pub detector_id: std::option::Option<std::string::String>,
@@ -12754,6 +13357,55 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeOrganizationConfigurationInput");
         formatter.field("detector_id", &self.detector_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeMalwareScansInput {
+    /// <p>The unique ID of the detector that the request is associated with.</p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    pub max_results: i32,
+    /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+    pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
+    /// <p>Represents the criteria used for sorting scan entries.</p>
+    pub sort_criteria: std::option::Option<crate::model::SortCriteria>,
+}
+impl DescribeMalwareScansInput {
+    /// <p>The unique ID of the detector that the request is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    pub fn max_results(&self) -> i32 {
+        self.max_results
+    }
+    /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+        self.filter_criteria.as_ref()
+    }
+    /// <p>Represents the criteria used for sorting scan entries.</p>
+    pub fn sort_criteria(&self) -> std::option::Option<&crate::model::SortCriteria> {
+        self.sort_criteria.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeMalwareScansInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeMalwareScansInput");
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("filter_criteria", &self.filter_criteria);
+        formatter.field("sort_criteria", &self.sort_criteria);
         formatter.finish()
     }
 }

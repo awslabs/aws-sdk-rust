@@ -3358,9 +3358,7 @@ pub struct Extensions {
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::model::GeneralName>>,
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
-    /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
-    /// </note>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub custom_extensions: std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,
 }
 impl Extensions {
@@ -3382,9 +3380,7 @@ impl Extensions {
         self.subject_alternative_names.as_deref()
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
-    /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
-    /// </note>
+    /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn custom_extensions(&self) -> std::option::Option<&[crate::model::CustomExtension]> {
         self.custom_extensions.as_deref()
     }
@@ -3491,9 +3487,7 @@ pub mod extensions {
         /// To override the contents of this collection use [`set_custom_extensions`](Self::set_custom_extensions).
         ///
         /// <p></p>
-        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
-        /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
-        /// </note>
+        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
         pub fn custom_extensions(mut self, input: crate::model::CustomExtension) -> Self {
             let mut v = self.custom_extensions.unwrap_or_default();
             v.push(input);
@@ -3501,9 +3495,7 @@ pub mod extensions {
             self
         }
         /// <p></p>
-        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p> <note>
-        /// <p>The OID value of a <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CustomExtension.html">CustomExtension</a> must not match the OID of a predefined extension.</p>
-        /// </note>
+        /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
         pub fn set_custom_extensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomExtension>>,

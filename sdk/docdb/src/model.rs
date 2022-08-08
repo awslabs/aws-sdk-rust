@@ -62,6 +62,8 @@ pub struct DbCluster {
     pub db_cluster_arn: std::option::Option<std::string::String>,
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
+    /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+    pub clone_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
@@ -185,6 +187,10 @@ impl DbCluster {
     pub fn associated_roles(&self) -> std::option::Option<&[crate::model::DbClusterRole]> {
         self.associated_roles.as_deref()
     }
+    /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+    pub fn clone_group_id(&self) -> std::option::Option<&str> {
+        self.clone_group_id.as_deref()
+    }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
@@ -238,6 +244,7 @@ impl std::fmt::Debug for DbCluster {
         formatter.field("db_cluster_resource_id", &self.db_cluster_resource_id);
         formatter.field("db_cluster_arn", &self.db_cluster_arn);
         formatter.field("associated_roles", &self.associated_roles);
+        formatter.field("clone_group_id", &self.clone_group_id);
         formatter.field("cluster_create_time", &self.cluster_create_time);
         formatter.field(
             "enabled_cloudwatch_logs_exports",
@@ -285,6 +292,7 @@ pub mod db_cluster {
         pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
         pub(crate) associated_roles:
             std::option::Option<std::vec::Vec<crate::model::DbClusterRole>>,
+        pub(crate) clone_group_id: std::option::Option<std::string::String>,
         pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled_cloudwatch_logs_exports:
             std::option::Option<std::vec::Vec<std::string::String>>,
@@ -672,6 +680,19 @@ pub mod db_cluster {
             self.associated_roles = input;
             self
         }
+        /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+        pub fn clone_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.clone_group_id = Some(input.into());
+            self
+        }
+        /// <p>Identifies the clone group to which the DB cluster is associated.</p>
+        pub fn set_clone_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.clone_group_id = input;
+            self
+        }
         /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
         pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cluster_create_time = Some(input);
@@ -748,6 +769,7 @@ pub mod db_cluster {
                 db_cluster_resource_id: self.db_cluster_resource_id,
                 db_cluster_arn: self.db_cluster_arn,
                 associated_roles: self.associated_roles,
+                clone_group_id: self.clone_group_id,
                 cluster_create_time: self.cluster_create_time,
                 enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
                 deletion_protection: self.deletion_protection.unwrap_or_default(),
@@ -2106,6 +2128,8 @@ pub struct DbInstance {
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub promotion_tier: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) for the instance.</p>
@@ -2210,6 +2234,10 @@ impl DbInstance {
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
+    /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(&self) -> std::option::Option<i32> {
         self.promotion_tier
@@ -2255,6 +2283,7 @@ impl std::fmt::Debug for DbInstance {
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("dbi_resource_id", &self.dbi_resource_id);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("promotion_tier", &self.promotion_tier);
         formatter.field("db_instance_arn", &self.db_instance_arn);
         formatter.field(
@@ -2296,6 +2325,7 @@ pub mod db_instance {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
         pub(crate) ca_certificate_identifier: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) promotion_tier: std::option::Option<i32>,
         pub(crate) db_instance_arn: std::option::Option<std::string::String>,
         pub(crate) enabled_cloudwatch_logs_exports:
@@ -2601,6 +2631,16 @@ pub mod db_instance {
             self.ca_certificate_identifier = input;
             self
         }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
+            self
+        }
         /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         pub fn promotion_tier(mut self, input: i32) -> Self {
             self.promotion_tier = Some(input);
@@ -2672,6 +2712,7 @@ pub mod db_instance {
                 kms_key_id: self.kms_key_id,
                 dbi_resource_id: self.dbi_resource_id,
                 ca_certificate_identifier: self.ca_certificate_identifier,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 promotion_tier: self.promotion_tier,
                 db_instance_arn: self.db_instance_arn,
                 enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,

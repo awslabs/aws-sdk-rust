@@ -138,7 +138,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProtection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProtection::set_name): <p>Friendly name for the <code>Protection</code> you are creating.</p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProtection::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateProtection::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>   <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>   <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>   <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>   <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>  </ul>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProtection::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CreateProtection::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>   <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>   <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>   <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>   <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>  </ul>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProtection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProtection::set_tags): <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
     /// - On success, responds with [`CreateProtectionOutput`](crate::output::CreateProtectionOutput) with field(s):
     ///   - [`protection_id(Option<String>)`](crate::output::CreateProtectionOutput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
@@ -206,7 +206,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`attack_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAttack::attack_id) / [`set_attack_id(Option<String>)`](crate::client::fluent_builders::DescribeAttack::set_attack_id): <p>The unique identifier (ID) for the attack.</p>
     /// - On success, responds with [`DescribeAttackOutput`](crate::output::DescribeAttackOutput) with field(s):
-    ///   - [`attack(Option<AttackDetail>)`](crate::output::DescribeAttackOutput::attack): <p>The attack that is described.</p>
+    ///   - [`attack(Option<AttackDetail>)`](crate::output::DescribeAttackOutput::attack): <p>The attack that you requested. </p>
     /// - On failure, responds with [`SdkError<DescribeAttackError>`](crate::error::DescribeAttackError)
     pub fn describe_attack(&self) -> fluent_builders::DescribeAttack {
         fluent_builders::DescribeAttack::new(self.handle.clone())
@@ -216,7 +216,7 @@ impl Client {
     /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAttackStatistics::send) it.
 
     /// - On success, responds with [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput) with field(s):
-    ///   - [`time_range(Option<TimeRange>)`](crate::output::DescribeAttackStatisticsOutput::time_range): <p>The time range. </p>
+    ///   - [`time_range(Option<TimeRange>)`](crate::output::DescribeAttackStatisticsOutput::time_range): <p>The time range of the attack.</p>
     ///   - [`data_items(Option<Vec<AttackStatisticsDataItem>>)`](crate::output::DescribeAttackStatisticsOutput::data_items): <p>The data that describes the attacks detected during the time period.</p>
     /// - On failure, responds with [`SdkError<DescribeAttackStatisticsError>`](crate::error::DescribeAttackStatisticsError)
     pub fn describe_attack_statistics(&self) -> fluent_builders::DescribeAttackStatistics {
@@ -248,10 +248,10 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeProtection`](crate::client::fluent_builders::DescribeProtection) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`protection_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProtection::protection_id) / [`set_protection_id(Option<String>)`](crate::client::fluent_builders::DescribeProtection::set_protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeProtection::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeProtection::set_resource_arn): <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    ///   - [`protection_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProtection::protection_id) / [`set_protection_id(Option<String>)`](crate::client::fluent_builders::DescribeProtection::set_protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeProtection::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DescribeProtection::set_resource_arn): <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     /// - On success, responds with [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput) with field(s):
-    ///   - [`protection(Option<Protection>)`](crate::output::DescribeProtectionOutput::protection): <p>The <code>Protection</code> object that is described.</p>
+    ///   - [`protection(Option<Protection>)`](crate::output::DescribeProtectionOutput::protection): <p>The <code>Protection</code> that you requested. </p>
     /// - On failure, responds with [`SdkError<DescribeProtectionError>`](crate::error::DescribeProtectionError)
     pub fn describe_protection(&self) -> fluent_builders::DescribeProtection {
         fluent_builders::DescribeProtection::new(self.handle.clone())
@@ -279,7 +279,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DisableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse::set_resource_arn): <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     /// - On success, responds with [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
 
     /// - On failure, responds with [`SdkError<DisableApplicationLayerAutomaticResponseError>`](crate::error::DisableApplicationLayerAutomaticResponseError)
@@ -332,7 +332,7 @@ impl Client {
     /// Constructs a fluent builder for the [`EnableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::set_resource_arn): <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     ///   - [`action(ResponseAction)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::action) / [`set_action(Option<ResponseAction>)`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse::set_action): <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     /// - On success, responds with [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
 
@@ -384,6 +384,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProtectionGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProtectionGroups::set_next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProtectionGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProtectionGroups::set_max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    ///   - [`inclusion_filters(InclusionProtectionGroupFilters)`](crate::client::fluent_builders::ListProtectionGroups::inclusion_filters) / [`set_inclusion_filters(Option<InclusionProtectionGroupFilters>)`](crate::client::fluent_builders::ListProtectionGroups::set_inclusion_filters): <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
     /// - On success, responds with [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput) with field(s):
     ///   - [`protection_groups(Option<Vec<ProtectionGroup>>)`](crate::output::ListProtectionGroupsOutput::protection_groups): <p></p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProtectionGroupsOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
@@ -397,6 +398,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProtections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProtections::set_next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProtections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProtections::set_max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    ///   - [`inclusion_filters(InclusionProtectionFilters)`](crate::client::fluent_builders::ListProtections::inclusion_filters) / [`set_inclusion_filters(Option<InclusionProtectionFilters>)`](crate::client::fluent_builders::ListProtections::set_inclusion_filters): <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
     /// - On success, responds with [`ListProtectionsOutput`](crate::output::ListProtectionsOutput) with field(s):
     ///   - [`protections(Option<Vec<Protection>>)`](crate::output::ListProtectionsOutput::protections): <p>The array of enabled <code>Protection</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProtectionsOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
@@ -512,7 +514,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateDRTLogBucket`.
     ///
     /// <p>Authorizes the Shield Response Team (SRT) to access the specified Amazon S3 bucket containing log data such as Application Load Balancer access logs, CloudFront logs, or logs from third party sources. You can associate up to 10 Amazon S3 buckets with your subscription.</p>
-    /// <p>To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
+    /// <p>To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDRTLogBucket {
         handle: std::sync::Arc<super::Handle>,
@@ -570,7 +572,7 @@ pub mod fluent_builders {
     /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed policy to the role that you'll specify in the request. You can access this policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>. For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding and removing IAM identity permissions</a>. The role must also trust the service principal <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM JSON policy elements: Principal</a>.</p>
     /// <p>The SRT will have access only to your WAF and Shield resources. By submitting this request, you authorize the SRT to inspect your WAF and Shield configuration and create and update WAF rules and web ACLs on your behalf. The SRT takes these actions only if explicitly authorized by you.</p>
     /// <p>You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code> request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a user permissions to pass a role to an Amazon Web Services service</a>. </p>
-    /// <p>To use the services of the SRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
+    /// <p>To use the services of the SRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDRTRole {
         handle: std::sync::Arc<super::Handle>,
@@ -767,7 +769,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProtection`.
     ///
-    /// <p>Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route&nbsp;53 hosted zone.</p>
+    /// <p>Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront distribution, Amazon Route&nbsp;53 hosted zone, Global Accelerator standard accelerator, Elastic IP Address, Application Load Balancer, or a Classic Load Balancer. You can protect Amazon EC2 instances and Network Load Balancers by association with protected Amazon EC2 Elastic IP addresses.</p>
     /// <p>You can add protection to only a single resource with each <code>CreateProtection</code> request. You can add protection to multiple resources at once through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding Shield Advanced protection to Amazon Web Services resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProtection {
@@ -824,7 +826,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
         /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
         /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
@@ -838,7 +840,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
         /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
         /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
@@ -1005,8 +1007,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSubscription`.
     ///
-    /// <p>Activates Shield Advanced for an account.</p>
-    /// <p>When you initally create a subscription, your subscription is set to be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. </p>
+    /// <p>Activates Shield Advanced for an account.</p> <note>
+    /// <p>For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against the organization's payer account, regardless of whether the payer account itself is subscribed. </p>
+    /// </note>
+    /// <p>When you initially create a subscription, your subscription is set to be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscription {
         handle: std::sync::Arc<super::Handle>,
@@ -1428,12 +1432,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.protection_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1441,12 +1445,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_id(input);
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1553,7 +1557,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableApplicationLayerAutomaticResponse`.
     ///
-    /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
+    /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableApplicationLayerAutomaticResponse {
         handle: std::sync::Arc<super::Handle>,
@@ -1595,12 +1599,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1817,13 +1821,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableApplicationLayerAutomaticResponse`.
     ///
-    /// <p>Enable the Shield Advanced automatic application layer DDoS mitigation for the resource. </p> <note>
-    /// <p>This feature is available for Amazon CloudFront distributions only.</p>
+    /// <p>Enable the Shield Advanced automatic application layer DDoS mitigation for the protected resource. </p> <note>
+    /// <p>This feature is available for Amazon CloudFront distributions and Application Load Balancers only.</p>
     /// </note>
-    /// <p>This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks that it detects for the resource. Shield Advanced applies the rules in a Shield rule group inside the web ACL that you've associated with the resource. For information about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield Advanced automatic application layer DDoS mitigation</a>.</p>
+    /// <p>This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks that it detects for the resource. Shield Advanced applies the rules in a Shield rule group inside the web ACL that you've associated with the resource. For information about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield Advanced automatic application layer DDoS mitigation</a>.</p> <note>
     /// <p>Don't use this action to make changes to automatic mitigation settings when it's already enabled for a resource. Instead, use <code>UpdateApplicationLayerAutomaticResponse</code>.</p>
-    /// <p>To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a>.</p>
-    /// <p>You can also do this through the WAF console or the WAF API, but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.</p>
+    /// </note>
+    /// <p>To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a>. You can also associate the web ACL to the resource through the WAF console or the WAF API, but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableApplicationLayerAutomaticResponse {
         handle: std::sync::Arc<super::Handle>,
@@ -1865,12 +1869,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2094,7 +2098,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProtectionGroups`.
     ///
-    /// <p>Retrieves the <code>ProtectionGroup</code> objects for the account.</p>
+    /// <p>Retrieves <code>ProtectionGroup</code> objects for the account. You can retrieve all protection groups or you can provide filtering criteria and retrieve just the subset of protection groups that match the criteria. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtectionGroups {
         handle: std::sync::Arc<super::Handle>,
@@ -2168,10 +2172,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
+        /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+        pub fn inclusion_filters(
+            mut self,
+            input: crate::model::InclusionProtectionGroupFilters,
+        ) -> Self {
+            self.inner = self.inner.inclusion_filters(input);
+            self
+        }
+        /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+        pub fn set_inclusion_filters(
+            mut self,
+            input: std::option::Option<crate::model::InclusionProtectionGroupFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_inclusion_filters(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListProtections`.
     ///
-    /// <p>Lists all <code>Protection</code> objects for the account.</p>
+    /// <p>Retrieves <code>Protection</code> objects for the account. You can retrieve all protections or you can provide filtering criteria and retrieve just the subset of protections that match the criteria. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtections {
         handle: std::sync::Arc<super::Handle>,
@@ -2243,6 +2263,22 @@ pub mod fluent_builders {
         /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+        pub fn inclusion_filters(
+            mut self,
+            input: crate::model::InclusionProtectionFilters,
+        ) -> Self {
+            self.inner = self.inner.inclusion_filters(input);
+            self
+        }
+        /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+        pub fn set_inclusion_filters(
+            mut self,
+            input: std::option::Option<crate::model::InclusionProtectionFilters>,
+        ) -> Self {
+            self.inner = self.inner.set_inclusion_filters(input);
             self
         }
     }
@@ -2783,7 +2819,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSubscription`.
     ///
-    /// <p>Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty parameters are not updated.</p>
+    /// <p>Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty parameters are not updated.</p> <note>
+    /// <p>For accounts that are members of an Organizations organization, Shield Advanced subscriptions are billed against the organization's payer account, regardless of whether the payer account itself is subscribed. </p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubscription {
         handle: std::sync::Arc<super::Handle>,

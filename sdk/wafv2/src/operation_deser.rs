@@ -165,6 +165,24 @@ pub fn parse_check_capacity_error(
                 tmp
             }),
         },
+        "WAFInvalidOperationException" => crate::error::CheckCapacityError {
+            meta: generic,
+            kind: crate::error::CheckCapacityErrorKind::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CheckCapacityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "WAFInvalidParameterException" => crate::error::CheckCapacityError {
             meta: generic,
             kind: crate::error::CheckCapacityErrorKind::WafInvalidParameterException({

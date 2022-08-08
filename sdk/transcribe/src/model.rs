@@ -18,8 +18,6 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ArSa,
     #[allow(missing_docs)] // documentation missing in model
-    CyGb,
-    #[allow(missing_docs)] // documentation missing in model
     DaDk,
     #[allow(missing_docs)] // documentation missing in model
     DeCh,
@@ -53,10 +51,6 @@ pub enum LanguageCode {
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
-    #[allow(missing_docs)] // documentation missing in model
-    GaIe,
-    #[allow(missing_docs)] // documentation missing in model
-    GdGb,
     #[allow(missing_docs)] // documentation missing in model
     HeIl,
     #[allow(missing_docs)] // documentation missing in model
@@ -100,7 +94,6 @@ impl std::convert::From<&str> for LanguageCode {
             "af-ZA" => LanguageCode::AfZa,
             "ar-AE" => LanguageCode::ArAe,
             "ar-SA" => LanguageCode::ArSa,
-            "cy-GB" => LanguageCode::CyGb,
             "da-DK" => LanguageCode::DaDk,
             "de-CH" => LanguageCode::DeCh,
             "de-DE" => LanguageCode::DeDe,
@@ -118,8 +111,6 @@ impl std::convert::From<&str> for LanguageCode {
             "fa-IR" => LanguageCode::FaIr,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
-            "ga-IE" => LanguageCode::GaIe,
-            "gd-GB" => LanguageCode::GdGb,
             "he-IL" => LanguageCode::HeIl,
             "hi-IN" => LanguageCode::HiIn,
             "id-ID" => LanguageCode::IdId,
@@ -155,7 +146,6 @@ impl LanguageCode {
             LanguageCode::AfZa => "af-ZA",
             LanguageCode::ArAe => "ar-AE",
             LanguageCode::ArSa => "ar-SA",
-            LanguageCode::CyGb => "cy-GB",
             LanguageCode::DaDk => "da-DK",
             LanguageCode::DeCh => "de-CH",
             LanguageCode::DeDe => "de-DE",
@@ -173,8 +163,6 @@ impl LanguageCode {
             LanguageCode::FaIr => "fa-IR",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
-            LanguageCode::GaIe => "ga-IE",
-            LanguageCode::GdGb => "gd-GB",
             LanguageCode::HeIl => "he-IL",
             LanguageCode::HiIn => "hi-IN",
             LanguageCode::IdId => "id-ID",
@@ -198,11 +186,11 @@ impl LanguageCode {
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
-            "af-ZA", "ar-AE", "ar-SA", "cy-GB", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU",
-            "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US",
-            "fa-IR", "fr-CA", "fr-FR", "ga-IE", "gd-GB", "he-IL", "hi-IN", "id-ID", "it-IT",
-            "ja-JP", "ko-KR", "ms-MY", "nl-NL", "pt-BR", "pt-PT", "ru-RU", "ta-IN", "te-IN",
-            "th-TH", "tr-TR", "zh-CN", "zh-TW",
+            "af-ZA", "ar-AE", "ar-SA", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB",
+            "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES", "es-US", "fa-IR",
+            "fr-CA", "fr-FR", "he-IL", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY",
+            "nl-NL", "pt-BR", "pt-PT", "ru-RU", "ta-IN", "te-IN", "th-TH", "tr-TR", "zh-CN",
+            "zh-TW",
         ]
     }
 }

@@ -1524,14 +1524,14 @@ impl ListDataSourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessControlConfigurationsOutput {
-    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The details of your access control configurations.</p>
     pub access_control_configurations:
         std::option::Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
 }
 impl ListAccessControlConfigurationsOutput {
-    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1564,12 +1564,12 @@ pub mod list_access_control_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
     }
     impl Builder {
-        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of access control configurations.</p>
+        /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

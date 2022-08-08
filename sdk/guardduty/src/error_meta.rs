@@ -385,6 +385,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMalwareScansError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeMalwareScansError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeMalwareScansErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DescribeMalwareScansErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::DescribeMalwareScansErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigurationError, R>>
     for Error
@@ -678,6 +702,30 @@ where
                     Error::InternalServerErrorException(inner)
                 }
                 crate::error::GetIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMalwareScanSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetMalwareScanSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMalwareScanSettingsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetMalwareScanSettingsErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::GetMalwareScanSettingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -1224,6 +1272,30 @@ where
                     Error::InternalServerErrorException(inner)
                 }
                 crate::error::UpdateIPSetErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMalwareScanSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateMalwareScanSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateMalwareScanSettingsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateMalwareScanSettingsErrorKind::InternalServerErrorException(
+                    inner,
+                ) => Error::InternalServerErrorException(inner),
+                crate::error::UpdateMalwareScanSettingsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

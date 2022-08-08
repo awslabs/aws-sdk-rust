@@ -935,7 +935,7 @@ impl StartChangeSetInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -944,6 +944,9 @@ impl StartChangeSetInput {
         >,
         aws_smithy_http::operation::BuildError,
     > {
+        if self.client_request_token.is_none() {
+            self.client_request_token = Some(_config.make_token.make_idempotency_token());
+        }
         let mut request = {
             fn uri_base(
                 _input: &crate::input::StartChangeSetInput,

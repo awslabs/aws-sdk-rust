@@ -2989,6 +2989,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
+/// Operation shape for `ModifyActivityStream`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`modify_activity_stream`](crate::client::Client::modify_activity_stream).
+///
+/// See [`crate::client::fluent_builders::ModifyActivityStream`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyActivityStream {
+    _private: (),
+}
+impl ModifyActivityStream {
+    /// Creates a new builder-style object to manufacture [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
+    pub fn builder() -> crate::input::modify_activity_stream_input::Builder {
+        crate::input::modify_activity_stream_input::Builder::default()
+    }
+    /// Creates a new `ModifyActivityStream` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ModifyActivityStream {
+    type Output = std::result::Result<
+        crate::output::ModifyActivityStreamOutput,
+        crate::error::ModifyActivityStreamError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_activity_stream_error(response)
+        } else {
+            crate::operation_deser::parse_modify_activity_stream_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ModifyCertificates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

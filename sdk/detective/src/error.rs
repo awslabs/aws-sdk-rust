@@ -122,6 +122,256 @@ impl std::error::Error for AcceptInvitationError {
     }
 }
 
+/// Error type for the `BatchGetGraphMemberDatasources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetGraphMemberDatasourcesError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetGraphMemberDatasourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetGraphMemberDatasources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetGraphMemberDatasourcesErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request refers to a nonexistent resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetGraphMemberDatasourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetGraphMemberDatasourcesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchGetGraphMemberDatasourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetGraphMemberDatasourcesError {
+    fn code(&self) -> Option<&str> {
+        BatchGetGraphMemberDatasourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetGraphMemberDatasourcesError {
+    /// Creates a new `BatchGetGraphMemberDatasourcesError`.
+    pub fn new(
+        kind: BatchGetGraphMemberDatasourcesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetGraphMemberDatasourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetGraphMemberDatasourcesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetGraphMemberDatasourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetGraphMemberDatasourcesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetGraphMemberDatasourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetGraphMemberDatasourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetGraphMemberDatasourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetGraphMemberDatasourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetGraphMemberDatasourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchGetGraphMemberDatasourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `BatchGetMembershipDatasources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct BatchGetMembershipDatasourcesError {
+    /// Kind of error that occurred.
+    pub kind: BatchGetMembershipDatasourcesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `BatchGetMembershipDatasources` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum BatchGetMembershipDatasourcesErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request refers to a nonexistent resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for BatchGetMembershipDatasourcesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            BatchGetMembershipDatasourcesErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            BatchGetMembershipDatasourcesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            BatchGetMembershipDatasourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for BatchGetMembershipDatasourcesError {
+    fn code(&self) -> Option<&str> {
+        BatchGetMembershipDatasourcesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl BatchGetMembershipDatasourcesError {
+    /// Creates a new `BatchGetMembershipDatasourcesError`.
+    pub fn new(
+        kind: BatchGetMembershipDatasourcesErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `BatchGetMembershipDatasourcesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: BatchGetMembershipDatasourcesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `BatchGetMembershipDatasourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: BatchGetMembershipDatasourcesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `BatchGetMembershipDatasourcesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMembershipDatasourcesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `BatchGetMembershipDatasourcesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchGetMembershipDatasourcesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for BatchGetMembershipDatasourcesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            BatchGetMembershipDatasourcesErrorKind::InternalServerException(_inner) => Some(_inner),
+            BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            BatchGetMembershipDatasourcesErrorKind::ValidationException(_inner) => Some(_inner),
+            BatchGetMembershipDatasourcesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateGraph` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1208,6 +1458,121 @@ impl std::error::Error for GetMembersError {
     }
 }
 
+/// Error type for the `ListDatasourcePackages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListDatasourcePackagesError {
+    /// Kind of error that occurred.
+    pub kind: ListDatasourcePackagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListDatasourcePackages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListDatasourcePackagesErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request refers to a nonexistent resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListDatasourcePackagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListDatasourcePackagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListDatasourcePackagesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListDatasourcePackagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListDatasourcePackagesError {
+    fn code(&self) -> Option<&str> {
+        ListDatasourcePackagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListDatasourcePackagesError {
+    /// Creates a new `ListDatasourcePackagesError`.
+    pub fn new(kind: ListDatasourcePackagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListDatasourcePackagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListDatasourcePackagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListDatasourcePackagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListDatasourcePackagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListDatasourcePackagesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasourcePackagesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasourcePackagesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasourcePackagesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListDatasourcePackagesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDatasourcePackagesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListDatasourcePackagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListDatasourcePackagesErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListDatasourcePackagesErrorKind::ValidationException(_inner) => Some(_inner),
+            ListDatasourcePackagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListGraphs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2241,6 +2606,141 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
+/// Error type for the `UpdateDatasourcePackages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateDatasourcePackagesError {
+    /// Kind of error that occurred.
+    pub kind: UpdateDatasourcePackagesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateDatasourcePackages` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateDatasourcePackagesErrorKind {
+    /// <p>The request was valid but failed because of a problem with the service.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The request refers to a nonexistent resource.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>This request cannot be completed for one of the following reasons.</p>
+    /// <ul>
+    /// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+    /// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+    /// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
+    /// </ul>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>The request parameters are invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateDatasourcePackagesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateDatasourcePackagesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateDatasourcePackagesErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateDatasourcePackagesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateDatasourcePackagesError {
+    fn code(&self) -> Option<&str> {
+        UpdateDatasourcePackagesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateDatasourcePackagesError {
+    /// Creates a new `UpdateDatasourcePackagesError`.
+    pub fn new(kind: UpdateDatasourcePackagesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateDatasourcePackagesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateDatasourcePackagesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateDatasourcePackagesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateDatasourcePackagesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasourcePackagesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateDatasourcePackagesErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatasourcePackagesErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateDatasourcePackagesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateDatasourcePackagesErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            UpdateDatasourcePackagesErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateDatasourcePackagesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `UpdateOrganizationConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2373,11 +2873,27 @@ impl std::error::Error for UpdateOrganizationConfigurationError {
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
+    /// <p>The error code associated with the validation failure.</p>
+    pub error_code: std::option::Option<crate::model::ErrorCode>,
+    /// <p> An explanation of why validation failed.</p>
+    pub error_code_reason: std::option::Option<std::string::String>,
+}
+impl ValidationException {
+    /// <p>The error code associated with the validation failure.</p>
+    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+        self.error_code.as_ref()
+    }
+    /// <p> An explanation of why validation failed.</p>
+    pub fn error_code_reason(&self) -> std::option::Option<&str> {
+        self.error_code_reason.as_deref()
+    }
 }
 impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
         formatter.field("message", &self.message);
+        formatter.field("error_code", &self.error_code);
+        formatter.field("error_code_reason", &self.error_code_reason);
         formatter.finish()
     }
 }
@@ -2404,6 +2920,8 @@ pub mod validation_exception {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) error_code_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -2416,10 +2934,38 @@ pub mod validation_exception {
             self.message = input;
             self
         }
+        /// <p>The error code associated with the validation failure.</p>
+        pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.error_code = Some(input);
+            self
+        }
+        /// <p>The error code associated with the validation failure.</p>
+        pub fn set_error_code(
+            mut self,
+            input: std::option::Option<crate::model::ErrorCode>,
+        ) -> Self {
+            self.error_code = input;
+            self
+        }
+        /// <p> An explanation of why validation failed.</p>
+        pub fn error_code_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code_reason = Some(input.into());
+            self
+        }
+        /// <p> An explanation of why validation failed.</p>
+        pub fn set_error_code_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_code_reason = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
                 message: self.message,
+                error_code: self.error_code,
+                error_code_reason: self.error_code_reason,
             }
         }
     }
@@ -2559,6 +3105,105 @@ impl InternalServerException {
     }
 }
 
+/// <p>This request cannot be completed for one of the following reasons.</p>
+/// <ul>
+/// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
+/// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
+/// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
+/// </ul>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The type of resource that has exceeded the service quota.</p>
+    pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl ServiceQuotaExceededException {
+    /// <p>The type of resource that has exceeded the service quota.</p>
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+        self.resources.as_deref()
+    }
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.field("resources", &self.resources);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The type of resource that has exceeded the service quota.</p>
+        pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resources.unwrap_or_default();
+            v.push(input.into());
+            self.resources = Some(v);
+            self
+        }
+        /// <p>The type of resource that has exceeded the service quota.</p>
+        pub fn set_resources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+                resources: self.resources,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The request refers to a nonexistent resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2582,8 +3227,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -2620,75 +3265,6 @@ impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
-    }
-}
-
-/// <p>This request cannot be completed for one of the following reasons.</p>
-/// <ul>
-/// <li> <p>The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior graph cannot have more than 1200 member accounts.</p> </li>
-/// <li> <p>The request would cause the data rate for the behavior graph to exceed the maximum allowed.</p> </li>
-/// <li> <p>Detective is unable to verify the data rate for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty.</p> </li>
-/// </ul>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceQuotaExceededException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceQuotaExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceQuotaExceededException {}
-/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-pub mod service_quota_exceeded_exception {
-
-    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
-            crate::error::ServiceQuotaExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl ServiceQuotaExceededException {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
-    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
-        crate::error::service_quota_exceeded_exception::Builder::default()
     }
 }
 

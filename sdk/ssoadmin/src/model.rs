@@ -146,7 +146,7 @@ impl AccessControlAttribute {
     }
 }
 
-/// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the Amazon Web Services Single Sign-On User Guide.</p>
+/// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlAttributeValue {
@@ -282,20 +282,20 @@ impl Tag {
     }
 }
 
-/// <p>Specifies the configuration of the Amazon Web Services managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an Amazon Web Services managed IAM policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>Identity and Access Management User Guide</i>.</p> <important>
-/// <p>Policies used as permissions boundaries do not provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>Identity and Access Management User Guide</i>.</p>
+/// <p>Specifies the configuration of the Amazon Web Services managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an Amazon Web Services managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>Identity and Access Management User Guide</i>.</p> <important>
+/// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>Identity and Access Management User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PermissionsBoundary {
-    /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub customer_managed_policy_reference:
         std::option::Option<crate::model::CustomerManagedPolicyReference>,
     /// <p>The Amazon Web Services managed policy ARN that you want to attach to a permission set as a permissions boundary.</p>
     pub managed_policy_arn: std::option::Option<std::string::String>,
 }
 impl PermissionsBoundary {
-    /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+    /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
     pub fn customer_managed_policy_reference(
         &self,
     ) -> std::option::Option<&crate::model::CustomerManagedPolicyReference> {
@@ -328,7 +328,7 @@ pub mod permissions_boundary {
         pub(crate) managed_policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
         pub fn customer_managed_policy_reference(
             mut self,
             input: crate::model::CustomerManagedPolicyReference,
@@ -336,7 +336,7 @@ pub mod permissions_boundary {
             self.customer_managed_policy_reference = Some(input);
             self
         }
-        /// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+        /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
         pub fn set_customer_managed_policy_reference(
             mut self,
             input: std::option::Option<crate::model::CustomerManagedPolicyReference>,
@@ -373,21 +373,21 @@ impl PermissionsBoundary {
     }
 }
 
-/// <p>Specifies the name and path of the IAM customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
+/// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each Amazon Web Services account where you want to deploy your permission set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedPolicyReference {
-    /// <p>The name of the policy document.</p>
+    /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The path for the policy. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the Identity and Access Management user guide.</p>
+    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub path: std::option::Option<std::string::String>,
 }
 impl CustomerManagedPolicyReference {
-    /// <p>The name of the policy document.</p>
+    /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The path for the policy. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the Identity and Access Management user guide.</p>
+    /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -410,22 +410,22 @@ pub mod customer_managed_policy_reference {
         pub(crate) path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the policy document.</p>
+        /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the policy document.</p>
+        /// <p>The name of the IAM policy that you have configured in each account where you want to deploy your permission set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The path for the policy. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the Identity and Access Management user guide.</p>
+        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The path for the policy. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the Identity and Access Management user guide.</p>
+        /// <p>The path to the IAM policy that you have configured in each account where you want to deploy your permission set. The default is <code>/</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>Identity and Access Management User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -942,21 +942,21 @@ impl OperationStatusFilter {
     }
 }
 
-/// <p>A structure that stores the details of the Amazon Web Services managed IAM policy.</p>
+/// <p>A structure that stores the details of the Amazon Web Services managed policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachedManagedPolicy {
-    /// <p>The name of the Amazon Web Services managed IAM policy.</p>
+    /// <p>The name of the Amazon Web Services managed policy.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Amazon Web Services managed IAM policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl AttachedManagedPolicy {
-    /// <p>The name of the Amazon Web Services managed IAM policy.</p>
+    /// <p>The name of the Amazon Web Services managed policy.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the Amazon Web Services managed IAM policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -979,22 +979,22 @@ pub mod attached_managed_policy {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon Web Services managed IAM policy.</p>
+        /// <p>The name of the Amazon Web Services managed policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services managed IAM policy.</p>
+        /// <p>The name of the Amazon Web Services managed policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The ARN of the Amazon Web Services managed IAM policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services managed IAM policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1015,21 +1015,21 @@ impl AttachedManagedPolicy {
     }
 }
 
-/// <p>Provides information about the SSO instance.</p>
+/// <p>Provides information about the Amazon Web Services SSO instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceMetadata {
-    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub instance_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the identity store that is connected to the SSO instance.</p>
+    /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
 }
 impl InstanceMetadata {
-    /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>The identifier of the identity store that is connected to the SSO instance.</p>
+    /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
@@ -1052,22 +1052,22 @@ pub mod instance_metadata {
         pub(crate) identity_store_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The ARN of the Amazon Web Services SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
         }
-        /// <p>The identifier of the identity store that is connected to the SSO instance.</p>
+        /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the identity store that is connected to the SSO instance.</p>
+        /// <p>The identifier of the identity store that is connected to the Amazon Web Services SSO instance.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,

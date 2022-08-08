@@ -13328,7 +13328,7 @@ impl AwsWafRegionalWebAclDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsWafRegionalWebAclRulesListDetails {
-    /// <p>The action that AWS WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
+    /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
     pub action: std::option::Option<crate::model::AwsWafRegionalWebAclRulesListActionDetails>,
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     pub override_action:
@@ -13341,7 +13341,7 @@ pub struct AwsWafRegionalWebAclRulesListDetails {
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListDetails {
-    /// <p>The action that AWS WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
+    /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
     pub fn action(
         &self,
     ) -> std::option::Option<&crate::model::AwsWafRegionalWebAclRulesListActionDetails> {
@@ -13393,7 +13393,7 @@ pub mod aws_waf_regional_web_acl_rules_list_details {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The action that AWS WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
+        /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
         pub fn action(
             mut self,
             input: crate::model::AwsWafRegionalWebAclRulesListActionDetails,
@@ -13401,7 +13401,7 @@ pub mod aws_waf_regional_web_acl_rules_list_details {
             self.action = Some(input);
             self
         }
-        /// <p>The action that AWS WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
+        /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::AwsWafRegionalWebAclRulesListActionDetails>,
@@ -14057,7 +14057,7 @@ impl AwsWafRegionalRuleGroupRulesDetails {
     }
 }
 
-/// <p>Describes the action that AWS WAF should take on a web request when it matches the criteria defined in the rule. </p>
+/// <p>Describes the action that WAF should take on a web request when it matches the criteria defined in the rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsWafRegionalRuleGroupRulesActionDetails {
@@ -74219,9 +74219,25 @@ impl AccountDetails {
 pub struct BatchUpdateFindingsUnprocessedFinding {
     /// <p>The identifier of the finding that was not updated.</p>
     pub finding_identifier: std::option::Option<crate::model::AwsSecurityFindingIdentifier>,
-    /// <p>The code associated with the error.</p>
+    /// <p>The code associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
+    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
+    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
+    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
+    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
+    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+    /// </ul>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The message associated with the error.</p>
+    /// <p>The message associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
+    /// <li> <p> <code>Finding Identifier is duplicated</code> </p> </li>
+    /// <li> <p> <code>Finding Not Found</code> </p> </li>
+    /// <li> <p> <code>Finding size exceeded 240 KB</code> </p> </li>
+    /// <li> <p> <code>Internal service failure</code> </p> </li>
+    /// <li> <p> <code>Invalid Input</code> </p> </li>
+    /// </ul>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchUpdateFindingsUnprocessedFinding {
@@ -74231,11 +74247,27 @@ impl BatchUpdateFindingsUnprocessedFinding {
     ) -> std::option::Option<&crate::model::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
-    /// <p>The code associated with the error.</p>
+    /// <p>The code associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
+    /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
+    /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
+    /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
+    /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
+    /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+    /// </ul>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The message associated with the error.</p>
+    /// <p>The message associated with the error. Possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
+    /// <li> <p> <code>Finding Identifier is duplicated</code> </p> </li>
+    /// <li> <p> <code>Finding Not Found</code> </p> </li>
+    /// <li> <p> <code>Finding size exceeded 240 KB</code> </p> </li>
+    /// <li> <p> <code>Internal service failure</code> </p> </li>
+    /// <li> <p> <code>Invalid Input</code> </p> </li>
+    /// </ul>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -74277,22 +74309,54 @@ pub mod batch_update_findings_unprocessed_finding {
             self.finding_identifier = input;
             self
         }
-        /// <p>The code associated with the error.</p>
+        /// <p>The code associated with the error. Possible values are:</p>
+        /// <ul>
+        /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
+        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
+        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
+        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
+        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
+        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+        /// </ul>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>The code associated with the error.</p>
+        /// <p>The code associated with the error. Possible values are:</p>
+        /// <ul>
+        /// <li> <p> <code>ConcurrentUpdateError</code> - Another process or request attempted to update the finding while this request was being processed</p> </li>
+        /// <li> <p> <code>DuplicatedFindingIdentifier</code> - The request included two or more findings with the same <code>FindingIdentifier</code> </p> </li>
+        /// <li> <p> <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the request did not match an existing finding</p> </li>
+        /// <li> <p> <code>FindingSizeExceeded</code> - The finding size was greater than the permissible value of 240 KB</p> </li>
+        /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding</p> </li>
+        /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax</p> </li>
+        /// </ul>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>The message associated with the error.</p>
+        /// <p>The message associated with the error. Possible values are:</p>
+        /// <ul>
+        /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
+        /// <li> <p> <code>Finding Identifier is duplicated</code> </p> </li>
+        /// <li> <p> <code>Finding Not Found</code> </p> </li>
+        /// <li> <p> <code>Finding size exceeded 240 KB</code> </p> </li>
+        /// <li> <p> <code>Internal service failure</code> </p> </li>
+        /// <li> <p> <code>Invalid Input</code> </p> </li>
+        /// </ul>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The message associated with the error.</p>
+        /// <p>The message associated with the error. Possible values are:</p>
+        /// <ul>
+        /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
+        /// <li> <p> <code>Finding Identifier is duplicated</code> </p> </li>
+        /// <li> <p> <code>Finding Not Found</code> </p> </li>
+        /// <li> <p> <code>Finding size exceeded 240 KB</code> </p> </li>
+        /// <li> <p> <code>Internal service failure</code> </p> </li>
+        /// <li> <p> <code>Invalid Input</code> </p> </li>
+        /// </ul>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,

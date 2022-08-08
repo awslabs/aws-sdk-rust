@@ -1628,6 +1628,167 @@ impl std::error::Error for CreateAssetModelError {
     }
 }
 
+/// Error type for the `CreateBulkImportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateBulkImportJobError {
+    /// Kind of error that occurred.
+    pub kind: CreateBulkImportJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateBulkImportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateBulkImportJobErrorKind {
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    LimitExceededException(crate::error::LimitExceededException),
+    /// <p>The resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateBulkImportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateBulkImportJobErrorKind::ConflictingOperationException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateBulkImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateBulkImportJobError {
+    fn code(&self) -> Option<&str> {
+        CreateBulkImportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateBulkImportJobError {
+    /// Creates a new `CreateBulkImportJobError`.
+    pub fn new(kind: CreateBulkImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateBulkImportJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateBulkImportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateBulkImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateBulkImportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::ConflictingOperationException`.
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::ConflictingOperationException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::LimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateBulkImportJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBulkImportJobErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateBulkImportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateBulkImportJobErrorKind::ConflictingOperationException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::InternalFailureException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateDashboard` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3712,6 +3873,133 @@ impl std::error::Error for DescribeAssetPropertyError {
             DescribeAssetPropertyErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeAssetPropertyErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeAssetPropertyErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeBulkImportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeBulkImportJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeBulkImportJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeBulkImportJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeBulkImportJobErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeBulkImportJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeBulkImportJobErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            DescribeBulkImportJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeBulkImportJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeBulkImportJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeBulkImportJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeBulkImportJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeBulkImportJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeBulkImportJobError {
+    /// Creates a new `DescribeBulkImportJobError`.
+    pub fn new(kind: DescribeBulkImportJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeBulkImportJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeBulkImportJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeBulkImportJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeBulkImportJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeBulkImportJobErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBulkImportJobErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBulkImportJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBulkImportJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBulkImportJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBulkImportJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeBulkImportJobErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeBulkImportJobErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeBulkImportJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeBulkImportJobErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeBulkImportJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeBulkImportJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeBulkImportJobErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeBulkImportJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6397,6 +6685,133 @@ impl std::error::Error for ListAssociatedAssetsError {
             ListAssociatedAssetsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListAssociatedAssetsErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListAssociatedAssetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListBulkImportJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListBulkImportJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListBulkImportJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListBulkImportJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListBulkImportJobsErrorKind {
+    /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListBulkImportJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListBulkImportJobsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            ListBulkImportJobsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListBulkImportJobsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListBulkImportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListBulkImportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListBulkImportJobsError {
+    fn code(&self) -> Option<&str> {
+        ListBulkImportJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListBulkImportJobsError {
+    /// Creates a new `ListBulkImportJobsError`.
+    pub fn new(kind: ListBulkImportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListBulkImportJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListBulkImportJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListBulkImportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListBulkImportJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListBulkImportJobsErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBulkImportJobsErrorKind::InternalFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBulkImportJobsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBulkImportJobsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBulkImportJobsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBulkImportJobsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListBulkImportJobsErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListBulkImportJobsErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListBulkImportJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListBulkImportJobsErrorKind::InternalFailureException(_inner) => Some(_inner),
+            ListBulkImportJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListBulkImportJobsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListBulkImportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListBulkImportJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

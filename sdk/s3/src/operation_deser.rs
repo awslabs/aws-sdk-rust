@@ -344,6 +344,10 @@ pub fn parse_create_multipart_upload_response(
             crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_bucket_key_enabled(response.headers())
                                     .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
+        output = output.set_checksum_algorithm(
+            crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_checksum_algorithm(response.headers())
+                                    .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse ChecksumAlgorithm from header `x-amz-checksum-algorithm"))?
+        );
         output = output.set_request_charged(
             crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
@@ -1507,6 +1511,46 @@ pub fn parse_get_object(
                 )
             })?,
         );
+        output = output.set_checksum_crc32(
+            crate::http_serde::deser_header_get_object_get_object_output_checksum_crc32(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32",
+                )
+            })?,
+        );
+        output = output.set_checksum_crc32_c(
+            crate::http_serde::deser_header_get_object_get_object_output_checksum_crc32_c(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha1(
+            crate::http_serde::deser_header_get_object_get_object_output_checksum_sha1(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha256(
+            crate::http_serde::deser_header_get_object_get_object_output_checksum_sha256(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::GetObjectError::unhandled(
+                    "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256",
+                )
+            })?,
+        );
         output = output.set_content_disposition(
             crate::http_serde::deser_header_get_object_get_object_output_content_disposition(
                 response.headers(),
@@ -1870,6 +1914,83 @@ pub fn parse_get_object_acl_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_object_attributes_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetObjectAttributesOutput,
+    crate::error::GetObjectAttributesError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetObjectAttributesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetObjectAttributesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "NoSuchKey" => crate::error::GetObjectAttributesError {
+            meta: generic,
+            kind: crate::error::GetObjectAttributesErrorKind::NoSuchKey({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_key::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetObjectAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetObjectAttributesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_object_attributes_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetObjectAttributesOutput,
+    crate::error::GetObjectAttributesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_object_attributes_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_get_object_attributes(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetObjectAttributesError::unhandled)?;
+        output = output.set_delete_marker(
+            crate::http_serde::deser_header_get_object_attributes_get_object_attributes_output_delete_marker(response.headers())
+                                    .map_err(|_|crate::error::GetObjectAttributesError::unhandled("Failed to parse DeleteMarker from header `x-amz-delete-marker"))?
+        );
+        output = output.set_last_modified(
+            crate::http_serde::deser_header_get_object_attributes_get_object_attributes_output_last_modified(response.headers())
+                                    .map_err(|_|crate::error::GetObjectAttributesError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
+        );
+        output = output.set_request_charged(
+            crate::http_serde::deser_header_get_object_attributes_get_object_attributes_output_request_charged(response.headers())
+                                    .map_err(|_|crate::error::GetObjectAttributesError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
+        );
+        output = output.set_version_id(
+            crate::http_serde::deser_header_get_object_attributes_get_object_attributes_output_version_id(response.headers())
+                                    .map_err(|_|crate::error::GetObjectAttributesError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
+        );
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_legal_hold_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2183,6 +2304,46 @@ pub fn parse_head_object_response(
             .map_err(|_| {
                 crate::error::HeadObjectError::unhandled(
                     "Failed to parse CacheControl from header `Cache-Control",
+                )
+            })?,
+        );
+        output = output.set_checksum_crc32(
+            crate::http_serde::deser_header_head_object_head_object_output_checksum_crc32(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32",
+                )
+            })?,
+        );
+        output = output.set_checksum_crc32_c(
+            crate::http_serde::deser_header_head_object_head_object_output_checksum_crc32_c(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha1(
+            crate::http_serde::deser_header_head_object_head_object_output_checksum_sha1(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha256(
+            crate::http_serde::deser_header_head_object_head_object_output_checksum_sha256(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::HeadObjectError::unhandled(
+                    "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256",
                 )
             })?,
         );
@@ -3289,6 +3450,46 @@ pub fn parse_put_object_response(
             crate::http_serde::deser_header_put_object_put_object_output_bucket_key_enabled(response.headers())
                                     .map_err(|_|crate::error::PutObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
         );
+        output = output.set_checksum_crc32(
+            crate::http_serde::deser_header_put_object_put_object_output_checksum_crc32(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32",
+                )
+            })?,
+        );
+        output = output.set_checksum_crc32_c(
+            crate::http_serde::deser_header_put_object_put_object_output_checksum_crc32_c(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha1(
+            crate::http_serde::deser_header_put_object_put_object_output_checksum_sha1(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha256(
+            crate::http_serde::deser_header_put_object_put_object_output_checksum_sha256(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::PutObjectError::unhandled(
+                    "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256",
+                )
+            })?,
+        );
         output = output.set_e_tag(
             crate::http_serde::deser_header_put_object_put_object_output_e_tag(response.headers())
                 .map_err(|_| {
@@ -3674,6 +3875,46 @@ pub fn parse_upload_part_response(
         output = output.set_bucket_key_enabled(
             crate::http_serde::deser_header_upload_part_upload_part_output_bucket_key_enabled(response.headers())
                                     .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
+        );
+        output = output.set_checksum_crc32(
+            crate::http_serde::deser_header_upload_part_upload_part_output_checksum_crc32(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled(
+                    "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32",
+                )
+            })?,
+        );
+        output = output.set_checksum_crc32_c(
+            crate::http_serde::deser_header_upload_part_upload_part_output_checksum_crc32_c(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled(
+                    "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha1(
+            crate::http_serde::deser_header_upload_part_upload_part_output_checksum_sha1(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled(
+                    "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1",
+                )
+            })?,
+        );
+        output = output.set_checksum_sha256(
+            crate::http_serde::deser_header_upload_part_upload_part_output_checksum_sha256(
+                response.headers(),
+            )
+            .map_err(|_| {
+                crate::error::UploadPartError::unhandled(
+                    "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256",
+                )
+            })?,
         );
         output = output.set_e_tag(
             crate::http_serde::deser_header_upload_part_upload_part_output_e_tag(

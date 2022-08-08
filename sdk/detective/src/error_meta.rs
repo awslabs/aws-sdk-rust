@@ -65,6 +65,56 @@ where
         }
     }
 }
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::error::BatchGetGraphMemberDatasourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::BatchGetGraphMemberDatasourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::BatchGetGraphMemberDatasourcesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::BatchGetGraphMemberDatasourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
+                crate::error::BatchGetGraphMemberDatasourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::BatchGetMembershipDatasourcesErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::BatchGetMembershipDatasourcesErrorKind::ValidationException(
+                    inner,
+                ) => Error::ValidationException(inner),
+                crate::error::BatchGetMembershipDatasourcesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGraphError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -288,6 +338,33 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListDatasourcePackagesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListDatasourcePackagesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListDatasourcePackagesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListDatasourcePackagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGraphsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -502,6 +579,36 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateDatasourcePackagesErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::UpdateDatasourcePackagesErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
+                crate::error::UpdateDatasourcePackagesErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::UpdateDatasourcePackagesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }

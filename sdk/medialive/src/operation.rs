@@ -1437,6 +1437,40 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
     }
 }
 
+/// Operation shape for `RebootInputDevice`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`reboot_input_device`](crate::client::Client::reboot_input_device).
+///
+/// See [`crate::client::fluent_builders::RebootInputDevice`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct RebootInputDevice {
+    _private: (),
+}
+impl RebootInputDevice {
+    /// Creates a new builder-style object to manufacture [`RebootInputDeviceInput`](crate::input::RebootInputDeviceInput).
+    pub fn builder() -> crate::input::reboot_input_device_input::Builder {
+        crate::input::reboot_input_device_input::Builder::default()
+    }
+    /// Creates a new `RebootInputDevice` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for RebootInputDevice {
+    type Output = std::result::Result<
+        crate::output::RebootInputDeviceOutput,
+        crate::error::RebootInputDeviceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_reboot_input_device_error(response)
+        } else {
+            crate::operation_deser::parse_reboot_input_device_response(response)
+        }
+    }
+}
+
 /// Operation shape for `RejectInputDeviceTransfer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1499,6 +1533,40 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
             crate::operation_deser::parse_start_channel_error(response)
         } else {
             crate::operation_deser::parse_start_channel_response(response)
+        }
+    }
+}
+
+/// Operation shape for `StartInputDeviceMaintenanceWindow`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`start_input_device_maintenance_window`](crate::client::Client::start_input_device_maintenance_window).
+///
+/// See [`crate::client::fluent_builders::StartInputDeviceMaintenanceWindow`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartInputDeviceMaintenanceWindow {
+    _private: (),
+}
+impl StartInputDeviceMaintenanceWindow {
+    /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowInput`](crate::input::StartInputDeviceMaintenanceWindowInput).
+    pub fn builder() -> crate::input::start_input_device_maintenance_window_input::Builder {
+        crate::input::start_input_device_maintenance_window_input::Builder::default()
+    }
+    /// Creates a new `StartInputDeviceMaintenanceWindow` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for StartInputDeviceMaintenanceWindow {
+    type Output = std::result::Result<
+        crate::output::StartInputDeviceMaintenanceWindowOutput,
+        crate::error::StartInputDeviceMaintenanceWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_input_device_maintenance_window_error(response)
+        } else {
+            crate::operation_deser::parse_start_input_device_maintenance_window_response(response)
         }
     }
 }

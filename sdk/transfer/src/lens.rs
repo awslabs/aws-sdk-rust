@@ -9,8 +9,48 @@ pub(crate) fn reflens_structure_crate_output_list_accesses_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_agreements_output_next_token(
+    input: &crate::output::ListAgreementsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_certificates_output_next_token(
+    input: &crate::output::ListCertificatesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_connectors_output_next_token(
+    input: &crate::output::ListConnectorsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_executions_output_next_token(
     input: &crate::output::ListExecutionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_structure_crate_output_list_profiles_output_next_token(
+    input: &crate::output::ListProfilesOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -79,10 +119,50 @@ pub(crate) fn lens_structure_crate_output_list_accesses_output_accesses(
     Some(input)
 }
 
+pub(crate) fn lens_structure_crate_output_list_agreements_output_agreements(
+    input: crate::output::ListAgreementsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedAgreement>> {
+    let input = match input.agreements {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_certificates_output_certificates(
+    input: crate::output::ListCertificatesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedCertificate>> {
+    let input = match input.certificates {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_connectors_output_connectors(
+    input: crate::output::ListConnectorsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedConnector>> {
+    let input = match input.connectors {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_structure_crate_output_list_executions_output_executions(
     input: crate::output::ListExecutionsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::ListedExecution>> {
     let input = match input.executions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_profiles_output_profiles(
+    input: crate::output::ListProfilesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::ListedProfile>> {
+    let input = match input.profiles {
         None => return None,
         Some(t) => t,
     };

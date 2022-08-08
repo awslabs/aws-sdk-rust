@@ -13,10 +13,10 @@ pub enum Error {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -1653,6 +1653,33 @@ where
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::ListAggregateDiscoveredResourcesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::ListConformancePackComplianceScoresError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ListConformancePackComplianceScoresError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListConformancePackComplianceScoresErrorKind::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+                crate::error::ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+                crate::error::ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::ListConformancePackComplianceScoresErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
         }

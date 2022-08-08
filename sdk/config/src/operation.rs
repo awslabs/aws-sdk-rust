@@ -2159,6 +2159,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAggregateDiscoveredR
     }
 }
 
+/// Operation shape for `ListConformancePackComplianceScores`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_conformance_pack_compliance_scores`](crate::client::Client::list_conformance_pack_compliance_scores).
+///
+/// See [`crate::client::fluent_builders::ListConformancePackComplianceScores`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListConformancePackComplianceScores {
+    _private: (),
+}
+impl ListConformancePackComplianceScores {
+    /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+    pub fn builder() -> crate::input::list_conformance_pack_compliance_scores_input::Builder {
+        crate::input::list_conformance_pack_compliance_scores_input::Builder::default()
+    }
+    /// Creates a new `ListConformancePackComplianceScores` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListConformancePackComplianceScores {
+    type Output = std::result::Result<
+        crate::output::ListConformancePackComplianceScoresOutput,
+        crate::error::ListConformancePackComplianceScoresError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_conformance_pack_compliance_scores_error(response)
+        } else {
+            crate::operation_deser::parse_list_conformance_pack_compliance_scores_response(response)
+        }
+    }
+}
+
 /// Operation shape for `ListDiscoveredResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

@@ -595,6 +595,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThreatIntelSet {
     }
 }
 
+/// Operation shape for `DescribeMalwareScans`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_malware_scans`](crate::client::Client::describe_malware_scans).
+///
+/// See [`crate::client::fluent_builders::DescribeMalwareScans`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeMalwareScans {
+    _private: (),
+}
+impl DescribeMalwareScans {
+    /// Creates a new builder-style object to manufacture [`DescribeMalwareScansInput`](crate::input::DescribeMalwareScansInput).
+    pub fn builder() -> crate::input::describe_malware_scans_input::Builder {
+        crate::input::describe_malware_scans_input::Builder::default()
+    }
+    /// Creates a new `DescribeMalwareScans` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeMalwareScans {
+    type Output = std::result::Result<
+        crate::output::DescribeMalwareScansOutput,
+        crate::error::DescribeMalwareScansError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_malware_scans_error(response)
+        } else {
+            crate::operation_deser::parse_describe_malware_scans_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DescribeOrganizationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1057,6 +1091,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIPSet {
             crate::operation_deser::parse_get_ip_set_error(response)
         } else {
             crate::operation_deser::parse_get_ip_set_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetMalwareScanSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_malware_scan_settings`](crate::client::Client::get_malware_scan_settings).
+///
+/// See [`crate::client::fluent_builders::GetMalwareScanSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMalwareScanSettings {
+    _private: (),
+}
+impl GetMalwareScanSettings {
+    /// Creates a new builder-style object to manufacture [`GetMalwareScanSettingsInput`](crate::input::GetMalwareScanSettingsInput).
+    pub fn builder() -> crate::input::get_malware_scan_settings_input::Builder {
+        crate::input::get_malware_scan_settings_input::Builder::default()
+    }
+    /// Creates a new `GetMalwareScanSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetMalwareScanSettings {
+    type Output = std::result::Result<
+        crate::output::GetMalwareScanSettingsOutput,
+        crate::error::GetMalwareScanSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_malware_scan_settings_error(response)
+        } else {
+            crate::operation_deser::parse_get_malware_scan_settings_response(response)
         }
     }
 }
@@ -1917,6 +1985,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIPSet {
             crate::operation_deser::parse_update_ip_set_error(response)
         } else {
             crate::operation_deser::parse_update_ip_set_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateMalwareScanSettings`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_malware_scan_settings`](crate::client::Client::update_malware_scan_settings).
+///
+/// See [`crate::client::fluent_builders::UpdateMalwareScanSettings`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateMalwareScanSettings {
+    _private: (),
+}
+impl UpdateMalwareScanSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateMalwareScanSettingsInput`](crate::input::UpdateMalwareScanSettingsInput).
+    pub fn builder() -> crate::input::update_malware_scan_settings_input::Builder {
+        crate::input::update_malware_scan_settings_input::Builder::default()
+    }
+    /// Creates a new `UpdateMalwareScanSettings` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateMalwareScanSettings {
+    type Output = std::result::Result<
+        crate::output::UpdateMalwareScanSettingsOutput,
+        crate::error::UpdateMalwareScanSettingsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_malware_scan_settings_error(response)
+        } else {
+            crate::operation_deser::parse_update_malware_scan_settings_response(response)
         }
     }
 }

@@ -140,6 +140,7 @@ impl Client {
     ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeeting::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeeting::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeeting::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeeting::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeeting::set_tags): <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>  <ul>   <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>   <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>   <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>   <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>  </ul> <important>   <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>  </important>  <p> <b>Minimum permissions</b> </p>  <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>  <p> <code>tag:TagResources</code> </p>  <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>   <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>  </note>
     /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
@@ -158,6 +159,7 @@ impl Client {
     ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tags): <p>The tags in the request.</p>
     /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
     ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
@@ -222,6 +224,16 @@ impl Client {
     pub fn list_attendees(&self) -> fluent_builders::ListAttendees {
         fluent_builders::ListAttendees::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags requested for the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
+        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
     ///
     /// - The fluent builder is configurable:
@@ -242,6 +254,28 @@ impl Client {
     /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)
     pub fn stop_meeting_transcription(&self) -> fluent_builders::StopMeetingTranscription {
         fluent_builders::StopMeetingTranscription::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Lists the requested tags.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    pub fn tag_resource(&self) -> fluent_builders::TagResource {
+        fluent_builders::TagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource that you're removing tags from.</p>
+    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys being removed from the resources.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
+        fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateAttendeeCapabilities`](crate::client::fluent_builders::UpdateAttendeeCapabilities) operation.
     ///
@@ -678,6 +712,51 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tenant_ids(input);
             self
         }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+        /// <ul>
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+        /// </ul> <important>
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+        /// </important>
+        /// <p> <b>Minimum permissions</b> </p>
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+        /// <p> <code>tag:TagResources</code> </p>
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// </note>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+        /// <ul>
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+        /// </ul> <important>
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+        /// </important>
+        /// <p> <b>Minimum permissions</b> </p>
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+        /// <p> <code>tag:TagResources</code> </p>
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// </note>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
     ///
@@ -851,6 +930,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tenant_ids(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags in the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The tags in the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1165,6 +1261,59 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListTagsForResource`.
+    ///
+    /// <p>Returns a list of the tags available for the specified resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListTagsForResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_tags_for_resource_input::Builder,
+    }
+    impl ListTagsForResource {
+        /// Creates a new `ListTagsForResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListTagsForResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `StartMeetingTranscription`.
     ///
     /// <p>Starts transcription for the specified <code>meetingId</code>.</p>
@@ -1284,6 +1433,154 @@ pub mod fluent_builders {
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
         pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_meeting_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `TagResource`.
+    ///
+    /// <p>The resource that supports tags.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct TagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::tag_resource_input::Builder,
+    }
+    impl TagResource {
+        /// Creates a new `TagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::TagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Lists the requested tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>Lists the requested tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UntagResource`.
+    ///
+    /// <p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p>
+    /// <ul>
+    /// <li> <p>To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.</p> </li>
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the calling AWS account.</p> </li>
+    /// </ul>
+    /// <p> <b>Minimum permissions</b> </p>
+    /// <p>In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p> <code>tag:UntagResource</code> </p>
+    /// <p> <code>ChimeSDKMeetings:DeleteTags</code> </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UntagResource {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::untag_resource_input::Builder,
+    }
+    impl UntagResource {
+        /// Creates a new `UntagResource`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UntagResourceOutput,
+            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the resource that you're removing tags from.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the resource that you're removing tags from.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
+            self
+        }
+        /// Appends an item to `TagKeys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys being removed from the resources.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
+            self
+        }
+        /// <p>The tag keys being removed from the resources.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }

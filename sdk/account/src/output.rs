@@ -2,6 +2,93 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutContactInformationOutput {}
+impl std::fmt::Debug for PutContactInformationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutContactInformationOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
+pub mod put_contact_information_output {
+
+    /// A builder for [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
+        pub fn build(self) -> crate::output::PutContactInformationOutput {
+            crate::output::PutContactInformationOutput {}
+        }
+    }
+}
+impl PutContactInformationOutput {
+    /// Creates a new builder-style object to manufacture [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
+    pub fn builder() -> crate::output::put_contact_information_output::Builder {
+        crate::output::put_contact_information_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetContactInformationOutput {
+    /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    pub contact_information: std::option::Option<crate::model::ContactInformation>,
+}
+impl GetContactInformationOutput {
+    /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+    pub fn contact_information(&self) -> std::option::Option<&crate::model::ContactInformation> {
+        self.contact_information.as_ref()
+    }
+}
+impl std::fmt::Debug for GetContactInformationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetContactInformationOutput");
+        formatter.field("contact_information", &self.contact_information);
+        formatter.finish()
+    }
+}
+/// See [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
+pub mod get_contact_information_output {
+
+    /// A builder for [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) contact_information: std::option::Option<crate::model::ContactInformation>,
+    }
+    impl Builder {
+        /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+        pub fn contact_information(mut self, input: crate::model::ContactInformation) -> Self {
+            self.contact_information = Some(input);
+            self
+        }
+        /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
+        pub fn set_contact_information(
+            mut self,
+            input: std::option::Option<crate::model::ContactInformation>,
+        ) -> Self {
+            self.contact_information = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
+        pub fn build(self) -> crate::output::GetContactInformationOutput {
+            crate::output::GetContactInformationOutput {
+                contact_information: self.contact_information,
+            }
+        }
+    }
+}
+impl GetContactInformationOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
+    pub fn builder() -> crate::output::get_contact_information_output::Builder {
+        crate::output::get_contact_information_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlternateContactOutput {}
 impl std::fmt::Debug for PutAlternateContactOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

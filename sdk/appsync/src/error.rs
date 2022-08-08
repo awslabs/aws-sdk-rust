@@ -2325,6 +2325,121 @@ impl std::error::Error for DisassociateApiError {
     }
 }
 
+/// Error type for the `EvaluateMappingTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct EvaluateMappingTemplateError {
+    /// Kind of error that occurred.
+    pub kind: EvaluateMappingTemplateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `EvaluateMappingTemplate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum EvaluateMappingTemplateErrorKind {
+    /// <p>You don't have access to perform this operation on this resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal AppSync error occurred. Try your request again.</p>
+    InternalFailureException(crate::error::InternalFailureException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for EvaluateMappingTemplateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            EvaluateMappingTemplateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            EvaluateMappingTemplateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            EvaluateMappingTemplateErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            EvaluateMappingTemplateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for EvaluateMappingTemplateError {
+    fn code(&self) -> Option<&str> {
+        EvaluateMappingTemplateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl EvaluateMappingTemplateError {
+    /// Creates a new `EvaluateMappingTemplateError`.
+    pub fn new(kind: EvaluateMappingTemplateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `EvaluateMappingTemplateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: EvaluateMappingTemplateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `EvaluateMappingTemplateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: EvaluateMappingTemplateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `EvaluateMappingTemplateErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EvaluateMappingTemplateErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EvaluateMappingTemplateErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EvaluateMappingTemplateErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `EvaluateMappingTemplateErrorKind::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            EvaluateMappingTemplateErrorKind::InternalFailureException(_)
+        )
+    }
+}
+impl std::error::Error for EvaluateMappingTemplateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            EvaluateMappingTemplateErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            EvaluateMappingTemplateErrorKind::BadRequestException(_inner) => Some(_inner),
+            EvaluateMappingTemplateErrorKind::InternalFailureException(_inner) => Some(_inner),
+            EvaluateMappingTemplateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `FlushApiCache` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

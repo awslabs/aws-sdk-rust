@@ -5405,6 +5405,291 @@ impl DashboardSummary {
     }
 }
 
+/// <p>Contains a job summary information.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobSummary {
+    /// <p>The ID of the job.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The unique name that helps identify the job request.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::JobStatus>,
+}
+impl JobSummary {
+    /// <p>The ID of the job.</p>
+    pub fn id(&self) -> std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for JobSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobSummary");
+        formatter.field("id", &self.id);
+        formatter.field("name", &self.name);
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`JobSummary`](crate::model::JobSummary).
+pub mod job_summary {
+
+    /// A builder for [`JobSummary`](crate::model::JobSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::JobStatus>,
+    }
+    impl Builder {
+        /// <p>The ID of the job.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the job.</p>
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::JobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobSummary`](crate::model::JobSummary).
+        pub fn build(self) -> crate::model::JobSummary {
+            crate::model::JobSummary {
+                id: self.id,
+                name: self.name,
+                status: self.status,
+            }
+        }
+    }
+}
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    CompletedWithFailures,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELLED" => JobStatus::Cancelled,
+            "COMPLETED" => JobStatus::Completed,
+            "COMPLETED_WITH_FAILURES" => JobStatus::CompletedWithFailures,
+            "FAILED" => JobStatus::Failed,
+            "PENDING" => JobStatus::Pending,
+            "RUNNING" => JobStatus::Running,
+            other => JobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JobStatus::from(s))
+    }
+}
+impl JobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            JobStatus::Cancelled => "CANCELLED",
+            JobStatus::Completed => "COMPLETED",
+            JobStatus::CompletedWithFailures => "COMPLETED_WITH_FAILURES",
+            JobStatus::Failed => "FAILED",
+            JobStatus::Pending => "PENDING",
+            JobStatus::Running => "RUNNING",
+            JobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELLED",
+            "COMPLETED",
+            "COMPLETED_WITH_FAILURES",
+            "FAILED",
+            "PENDING",
+            "RUNNING",
+        ]
+    }
+}
+impl AsRef<str> for JobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ListBulkImportJobsFilter {
+    #[allow(missing_docs)] // documentation missing in model
+    All,
+    #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    CompletedWithFailures,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ListBulkImportJobsFilter {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => ListBulkImportJobsFilter::All,
+            "CANCELLED" => ListBulkImportJobsFilter::Cancelled,
+            "COMPLETED" => ListBulkImportJobsFilter::Completed,
+            "COMPLETED_WITH_FAILURES" => ListBulkImportJobsFilter::CompletedWithFailures,
+            "FAILED" => ListBulkImportJobsFilter::Failed,
+            "PENDING" => ListBulkImportJobsFilter::Pending,
+            "RUNNING" => ListBulkImportJobsFilter::Running,
+            other => ListBulkImportJobsFilter::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ListBulkImportJobsFilter {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListBulkImportJobsFilter::from(s))
+    }
+}
+impl ListBulkImportJobsFilter {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListBulkImportJobsFilter::All => "ALL",
+            ListBulkImportJobsFilter::Cancelled => "CANCELLED",
+            ListBulkImportJobsFilter::Completed => "COMPLETED",
+            ListBulkImportJobsFilter::CompletedWithFailures => "COMPLETED_WITH_FAILURES",
+            ListBulkImportJobsFilter::Failed => "FAILED",
+            ListBulkImportJobsFilter::Pending => "PENDING",
+            ListBulkImportJobsFilter::Running => "RUNNING",
+            ListBulkImportJobsFilter::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALL",
+            "CANCELLED",
+            "COMPLETED",
+            "COMPLETED_WITH_FAILURES",
+            "FAILED",
+            "PENDING",
+            "RUNNING",
+        ]
+    }
+}
+impl AsRef<str> for ListBulkImportJobsFilter {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains a summary of an associated asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7689,6 +7974,431 @@ impl ImageLocation {
     /// Creates a new builder-style object to manufacture [`ImageLocation`](crate::model::ImageLocation).
     pub fn builder() -> crate::model::image_location::Builder {
         crate::model::image_location::Builder::default()
+    }
+}
+
+/// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JobConfiguration {
+    /// <p>The file format of the data in Amazon S3.</p>
+    pub file_format: std::option::Option<crate::model::FileFormat>,
+}
+impl JobConfiguration {
+    /// <p>The file format of the data in Amazon S3.</p>
+    pub fn file_format(&self) -> std::option::Option<&crate::model::FileFormat> {
+        self.file_format.as_ref()
+    }
+}
+impl std::fmt::Debug for JobConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JobConfiguration");
+        formatter.field("file_format", &self.file_format);
+        formatter.finish()
+    }
+}
+/// See [`JobConfiguration`](crate::model::JobConfiguration).
+pub mod job_configuration {
+
+    /// A builder for [`JobConfiguration`](crate::model::JobConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_format: std::option::Option<crate::model::FileFormat>,
+    }
+    impl Builder {
+        /// <p>The file format of the data in Amazon S3.</p>
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.file_format = Some(input);
+            self
+        }
+        /// <p>The file format of the data in Amazon S3.</p>
+        pub fn set_file_format(
+            mut self,
+            input: std::option::Option<crate::model::FileFormat>,
+        ) -> Self {
+            self.file_format = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JobConfiguration`](crate::model::JobConfiguration).
+        pub fn build(self) -> crate::model::JobConfiguration {
+            crate::model::JobConfiguration {
+                file_format: self.file_format,
+            }
+        }
+    }
+}
+impl JobConfiguration {
+    /// Creates a new builder-style object to manufacture [`JobConfiguration`](crate::model::JobConfiguration).
+    pub fn builder() -> crate::model::job_configuration::Builder {
+        crate::model::job_configuration::Builder::default()
+    }
+}
+
+/// <p>The file format of the data.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FileFormat {
+    /// <p>The .csv file format.</p>
+    pub csv: std::option::Option<crate::model::Csv>,
+}
+impl FileFormat {
+    /// <p>The .csv file format.</p>
+    pub fn csv(&self) -> std::option::Option<&crate::model::Csv> {
+        self.csv.as_ref()
+    }
+}
+impl std::fmt::Debug for FileFormat {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FileFormat");
+        formatter.field("csv", &self.csv);
+        formatter.finish()
+    }
+}
+/// See [`FileFormat`](crate::model::FileFormat).
+pub mod file_format {
+
+    /// A builder for [`FileFormat`](crate::model::FileFormat).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) csv: std::option::Option<crate::model::Csv>,
+    }
+    impl Builder {
+        /// <p>The .csv file format.</p>
+        pub fn csv(mut self, input: crate::model::Csv) -> Self {
+            self.csv = Some(input);
+            self
+        }
+        /// <p>The .csv file format.</p>
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::Csv>) -> Self {
+            self.csv = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FileFormat`](crate::model::FileFormat).
+        pub fn build(self) -> crate::model::FileFormat {
+            crate::model::FileFormat { csv: self.csv }
+        }
+    }
+}
+impl FileFormat {
+    /// Creates a new builder-style object to manufacture [`FileFormat`](crate::model::FileFormat).
+    pub fn builder() -> crate::model::file_format::Builder {
+        crate::model::file_format::Builder::default()
+    }
+}
+
+/// <p>A .csv file.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Csv {
+    /// <p>The column names specified in the .csv file.</p>
+    pub column_names: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
+}
+impl Csv {
+    /// <p>The column names specified in the .csv file.</p>
+    pub fn column_names(&self) -> std::option::Option<&[crate::model::ColumnName]> {
+        self.column_names.as_deref()
+    }
+}
+impl std::fmt::Debug for Csv {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Csv");
+        formatter.field("column_names", &self.column_names);
+        formatter.finish()
+    }
+}
+/// See [`Csv`](crate::model::Csv).
+pub mod csv {
+
+    /// A builder for [`Csv`](crate::model::Csv).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) column_names: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
+    }
+    impl Builder {
+        /// Appends an item to `column_names`.
+        ///
+        /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
+        ///
+        /// <p>The column names specified in the .csv file.</p>
+        pub fn column_names(mut self, input: crate::model::ColumnName) -> Self {
+            let mut v = self.column_names.unwrap_or_default();
+            v.push(input);
+            self.column_names = Some(v);
+            self
+        }
+        /// <p>The column names specified in the .csv file.</p>
+        pub fn set_column_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ColumnName>>,
+        ) -> Self {
+            self.column_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Csv`](crate::model::Csv).
+        pub fn build(self) -> crate::model::Csv {
+            crate::model::Csv {
+                column_names: self.column_names,
+            }
+        }
+    }
+}
+impl Csv {
+    /// Creates a new builder-style object to manufacture [`Csv`](crate::model::Csv).
+    pub fn builder() -> crate::model::csv::Builder {
+        crate::model::csv::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ColumnName {
+    #[allow(missing_docs)] // documentation missing in model
+    Alias,
+    #[allow(missing_docs)] // documentation missing in model
+    AssetId,
+    #[allow(missing_docs)] // documentation missing in model
+    DataType,
+    #[allow(missing_docs)] // documentation missing in model
+    PropertyId,
+    #[allow(missing_docs)] // documentation missing in model
+    Quality,
+    #[allow(missing_docs)] // documentation missing in model
+    TimestampNanoOffset,
+    #[allow(missing_docs)] // documentation missing in model
+    TimestampSeconds,
+    #[allow(missing_docs)] // documentation missing in model
+    Value,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ColumnName {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALIAS" => ColumnName::Alias,
+            "ASSET_ID" => ColumnName::AssetId,
+            "DATA_TYPE" => ColumnName::DataType,
+            "PROPERTY_ID" => ColumnName::PropertyId,
+            "QUALITY" => ColumnName::Quality,
+            "TIMESTAMP_NANO_OFFSET" => ColumnName::TimestampNanoOffset,
+            "TIMESTAMP_SECONDS" => ColumnName::TimestampSeconds,
+            "VALUE" => ColumnName::Value,
+            other => ColumnName::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ColumnName {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ColumnName::from(s))
+    }
+}
+impl ColumnName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ColumnName::Alias => "ALIAS",
+            ColumnName::AssetId => "ASSET_ID",
+            ColumnName::DataType => "DATA_TYPE",
+            ColumnName::PropertyId => "PROPERTY_ID",
+            ColumnName::Quality => "QUALITY",
+            ColumnName::TimestampNanoOffset => "TIMESTAMP_NANO_OFFSET",
+            ColumnName::TimestampSeconds => "TIMESTAMP_SECONDS",
+            ColumnName::Value => "VALUE",
+            ColumnName::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ALIAS",
+            "ASSET_ID",
+            "DATA_TYPE",
+            "PROPERTY_ID",
+            "QUALITY",
+            "TIMESTAMP_NANO_OFFSET",
+            "TIMESTAMP_SECONDS",
+            "VALUE",
+        ]
+    }
+}
+impl AsRef<str> for ColumnName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ErrorReportLocation {
+    /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl ErrorReportLocation {
+    /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for ErrorReportLocation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ErrorReportLocation");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`ErrorReportLocation`](crate::model::ErrorReportLocation).
+pub mod error_report_location {
+
+    /// A builder for [`ErrorReportLocation`](crate::model::ErrorReportLocation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::model::ErrorReportLocation).
+        pub fn build(self) -> crate::model::ErrorReportLocation {
+            crate::model::ErrorReportLocation {
+                bucket: self.bucket,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl ErrorReportLocation {
+    /// Creates a new builder-style object to manufacture [`ErrorReportLocation`](crate::model::ErrorReportLocation).
+    pub fn builder() -> crate::model::error_report_location::Builder {
+        crate::model::error_report_location::Builder::default()
+    }
+}
+
+/// <p>The file in Amazon S3 where your data is saved. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct File {
+    /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+    pub version_id: std::option::Option<std::string::String>,
+}
+impl File {
+    /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+}
+impl std::fmt::Debug for File {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("File");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.field("version_id", &self.version_id);
+        formatter.finish()
+    }
+}
+/// See [`File`](crate::model::File).
+pub mod file {
+
+    /// A builder for [`File`](crate::model::File).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The key of the Amazon S3 object that contains your data. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`File`](crate::model::File).
+        pub fn build(self) -> crate::model::File {
+            crate::model::File {
+                bucket: self.bucket,
+                key: self.key,
+                version_id: self.version_id,
+            }
+        }
+    }
+}
+impl File {
+    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
+    pub fn builder() -> crate::model::file::Builder {
+        crate::model::file::Builder::default()
     }
 }
 

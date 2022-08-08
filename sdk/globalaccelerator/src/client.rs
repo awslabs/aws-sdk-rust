@@ -130,12 +130,12 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateAccelerator`](crate::client::fluent_builders::CreateAccelerator) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccelerator::set_name): <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateAccelerator::set_ip_address_type): <p>The value for the address type must be IPv4.</p>
-    ///   - [`ip_addresses(Vec<String>)`](crate::client::fluent_builders::CreateAccelerator::ip_addresses) / [`set_ip_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAccelerator::set_ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccelerator::set_name): <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateAccelerator::set_ip_address_type): <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
+    ///   - [`ip_addresses(Vec<String>)`](crate::client::fluent_builders::CreateAccelerator::ip_addresses) / [`set_ip_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAccelerator::set_ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>  <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>  <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateAccelerator::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateAccelerator::set_enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccelerator::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateAccelerator::set_idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccelerator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccelerator::set_tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAccelerator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAccelerator::set_tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// - On success, responds with [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::output::CreateAcceleratorOutput::accelerator): <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
     /// - On failure, responds with [`SdkError<CreateAcceleratorError>`](crate::error::CreateAcceleratorError)
@@ -146,11 +146,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_name): <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_ip_address_type): <p>The value for the address type must be IPv4.</p>
-    ///   - [`ip_addresses(Vec<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::ip_addresses) / [`set_ip_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_ip_address_type): <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
+    ///   - [`ip_addresses(Vec<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::ip_addresses) / [`set_ip_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>  <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>  <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCustomRoutingAccelerator::set_tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// - On success, responds with [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::output::CreateCustomRoutingAcceleratorOutput::accelerator): <p>The accelerator that is created.</p>
     /// - On failure, responds with [`SdkError<CreateCustomRoutingAcceleratorError>`](crate::error::CreateCustomRoutingAcceleratorError)
@@ -163,7 +163,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`listener_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::listener_arn) / [`set_listener_arn(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::set_listener_arn): <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
-    ///   - [`endpoint_group_region(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::endpoint_group_region) / [`set_endpoint_group_region(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::set_endpoint_group_region): <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    ///   - [`endpoint_group_region(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::endpoint_group_region) / [`set_endpoint_group_region(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::set_endpoint_group_region): <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     ///   - [`destination_configurations(Vec<CustomRoutingDestinationConfiguration>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::destination_configurations) / [`set_destination_configurations(Option<Vec<CustomRoutingDestinationConfiguration>>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::set_destination_configurations): <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup::set_idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     /// - On success, responds with [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput) with field(s):
@@ -190,16 +190,16 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`listener_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointGroup::listener_arn) / [`set_listener_arn(Option<String>)`](crate::client::fluent_builders::CreateEndpointGroup::set_listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
-    ///   - [`endpoint_group_region(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointGroup::endpoint_group_region) / [`set_endpoint_group_region(Option<String>)`](crate::client::fluent_builders::CreateEndpointGroup::set_endpoint_group_region): <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    ///   - [`endpoint_group_region(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointGroup::endpoint_group_region) / [`set_endpoint_group_region(Option<String>)`](crate::client::fluent_builders::CreateEndpointGroup::set_endpoint_group_region): <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     ///   - [`endpoint_configurations(Vec<EndpointConfiguration>)`](crate::client::fluent_builders::CreateEndpointGroup::endpoint_configurations) / [`set_endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::client::fluent_builders::CreateEndpointGroup::set_endpoint_configurations): <p>The list of endpoint objects.</p>
-    ///   - [`traffic_dial_percentage(f32)`](crate::client::fluent_builders::CreateEndpointGroup::traffic_dial_percentage) / [`set_traffic_dial_percentage(Option<f32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_traffic_dial_percentage): <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
-    ///   - [`health_check_port(i32)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_port) / [`set_health_check_port(Option<i32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_port): <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
-    ///   - [`health_check_protocol(HealthCheckProtocol)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_protocol) / [`set_health_check_protocol(Option<HealthCheckProtocol>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_protocol): <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+    ///   - [`traffic_dial_percentage(f32)`](crate::client::fluent_builders::CreateEndpointGroup::traffic_dial_percentage) / [`set_traffic_dial_percentage(Option<f32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_traffic_dial_percentage): <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
+    ///   - [`health_check_port(i32)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_port) / [`set_health_check_port(Option<i32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_port): <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+    ///   - [`health_check_protocol(HealthCheckProtocol)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_protocol) / [`set_health_check_protocol(Option<HealthCheckProtocol>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_protocol): <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     ///   - [`health_check_path(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_path) / [`set_health_check_path(Option<String>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_path): <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::CreateEndpointGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_health_check_interval_seconds): <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
     ///   - [`threshold_count(i32)`](crate::client::fluent_builders::CreateEndpointGroup::threshold_count) / [`set_threshold_count(Option<i32>)`](crate::client::fluent_builders::CreateEndpointGroup::set_threshold_count): <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateEndpointGroup::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateEndpointGroup::set_idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    ///   - [`port_overrides(Vec<PortOverride>)`](crate::client::fluent_builders::CreateEndpointGroup::port_overrides) / [`set_port_overrides(Option<Vec<PortOverride>>)`](crate::client::fluent_builders::CreateEndpointGroup::set_port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`port_overrides(Vec<PortOverride>)`](crate::client::fluent_builders::CreateEndpointGroup::port_overrides) / [`set_port_overrides(Option<Vec<PortOverride>>)`](crate::client::fluent_builders::CreateEndpointGroup::set_port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// - On success, responds with [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::output::CreateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was created.</p>
     /// - On failure, responds with [`SdkError<CreateEndpointGroupError>`](crate::error::CreateEndpointGroupError)
@@ -212,7 +212,7 @@ impl Client {
     ///   - [`accelerator_arn(impl Into<String>)`](crate::client::fluent_builders::CreateListener::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::client::fluent_builders::CreateListener::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of your accelerator.</p>
     ///   - [`port_ranges(Vec<PortRange>)`](crate::client::fluent_builders::CreateListener::port_ranges) / [`set_port_ranges(Option<Vec<PortRange>>)`](crate::client::fluent_builders::CreateListener::set_port_ranges): <p>The list of port ranges to support for connections from clients to your accelerator.</p>
     ///   - [`protocol(Protocol)`](crate::client::fluent_builders::CreateListener::protocol) / [`set_protocol(Option<Protocol>)`](crate::client::fluent_builders::CreateListener::set_protocol): <p>The protocol for connections from clients to your accelerator.</p>
-    ///   - [`client_affinity(ClientAffinity)`](crate::client::fluent_builders::CreateListener::client_affinity) / [`set_client_affinity(Option<ClientAffinity>)`](crate::client::fluent_builders::CreateListener::set_client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
+    ///   - [`client_affinity(ClientAffinity)`](crate::client::fluent_builders::CreateListener::client_affinity) / [`set_client_affinity(Option<ClientAffinity>)`](crate::client::fluent_builders::CreateListener::set_client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
     ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateListener::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateListener::set_idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     /// - On success, responds with [`CreateListenerOutput`](crate::output::CreateListenerOutput) with field(s):
     ///   - [`listener(Option<Listener>)`](crate::output::CreateListenerOutput::listener): <p>The listener that you've created.</p>
@@ -589,8 +589,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAccelerator::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::client::fluent_builders::UpdateAccelerator::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccelerator::set_name): <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::UpdateAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::UpdateAccelerator::set_ip_address_type): <p>The IP address type, which must be IPv4.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccelerator::set_name): <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::UpdateAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::UpdateAccelerator::set_ip_address_type): <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateAccelerator::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateAccelerator::set_enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     /// - On success, responds with [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<Accelerator>)`](crate::output::UpdateAcceleratorOutput::accelerator): <p>Information about the updated accelerator.</p>
@@ -602,9 +602,9 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
-    ///   - [`flow_logs_enabled(bool)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_enabled) / [`set_flow_logs_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    ///   - [`flow_logs_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_s3_bucket) / [`set_flow_logs_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
-    ///   - [`flow_logs_s3_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_s3_prefix) / [`set_flow_logs_s3_prefix(Option<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_s3_prefix): <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>  <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>  <p>s3-bucket_name//AWSLogs/aws_account_id</p>
+    ///   - [`flow_logs_enabled(bool)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_enabled) / [`set_flow_logs_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    ///   - [`flow_logs_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_s3_bucket) / [`set_flow_logs_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
+    ///   - [`flow_logs_s3_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::flow_logs_s3_prefix) / [`set_flow_logs_s3_prefix(Option<String>)`](crate::client::fluent_builders::UpdateAcceleratorAttributes::set_flow_logs_s3_prefix): <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>  <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>  <p>s3-bucket_name//AWSLogs/aws_account_id</p>
     /// - On success, responds with [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<AcceleratorAttributes>)`](crate::output::UpdateAcceleratorAttributesOutput::accelerator_attributes): <p>Updated attributes for the accelerator.</p>
     /// - On failure, responds with [`SdkError<UpdateAcceleratorAttributesError>`](crate::error::UpdateAcceleratorAttributesError)
@@ -615,8 +615,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_name): <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
-    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_ip_address_type): <p>The value for the address type must be IPv4.</p>
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_name): <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::ip_address_type) / [`set_ip_address_type(Option<IpAddressType>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_ip_address_type): <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator::set_enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
     /// - On success, responds with [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput) with field(s):
     ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::output::UpdateCustomRoutingAcceleratorOutput::accelerator): <p>Information about the updated custom routing accelerator.</p>
@@ -630,8 +630,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`accelerator_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::accelerator_arn) / [`set_accelerator_arn(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_accelerator_arn): <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
-    ///   - [`flow_logs_enabled(bool)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::flow_logs_enabled) / [`set_flow_logs_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
-    ///   - [`flow_logs_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::flow_logs_s3_bucket) / [`set_flow_logs_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+    ///   - [`flow_logs_enabled(bool)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::flow_logs_enabled) / [`set_flow_logs_enabled(Option<bool>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
+    ///   - [`flow_logs_s3_bucket(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::flow_logs_s3_bucket) / [`set_flow_logs_s3_bucket(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
     ///   - [`flow_logs_s3_prefix(impl Into<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::flow_logs_s3_prefix) / [`set_flow_logs_s3_prefix(Option<String>)`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes::set_flow_logs_s3_prefix): <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>  <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>  <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     /// - On success, responds with [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput) with field(s):
     ///   - [`accelerator_attributes(Option<CustomRoutingAcceleratorAttributes>)`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput::accelerator_attributes): <p>Updated custom routing accelerator.</p>
@@ -657,13 +657,13 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`endpoint_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointGroup::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     ///   - [`endpoint_configurations(Vec<EndpointConfiguration>)`](crate::client::fluent_builders::UpdateEndpointGroup::endpoint_configurations) / [`set_endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_endpoint_configurations): <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    ///   - [`traffic_dial_percentage(f32)`](crate::client::fluent_builders::UpdateEndpointGroup::traffic_dial_percentage) / [`set_traffic_dial_percentage(Option<f32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_traffic_dial_percentage): <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
-    ///   - [`health_check_port(i32)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_port) / [`set_health_check_port(Option<i32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_port): <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
-    ///   - [`health_check_protocol(HealthCheckProtocol)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_protocol) / [`set_health_check_protocol(Option<HealthCheckProtocol>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_protocol): <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+    ///   - [`traffic_dial_percentage(f32)`](crate::client::fluent_builders::UpdateEndpointGroup::traffic_dial_percentage) / [`set_traffic_dial_percentage(Option<f32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_traffic_dial_percentage): <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
+    ///   - [`health_check_port(i32)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_port) / [`set_health_check_port(Option<i32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_port): <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+    ///   - [`health_check_protocol(HealthCheckProtocol)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_protocol) / [`set_health_check_protocol(Option<HealthCheckProtocol>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_protocol): <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     ///   - [`health_check_path(impl Into<String>)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_path) / [`set_health_check_path(Option<String>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_path): <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     ///   - [`health_check_interval_seconds(i32)`](crate::client::fluent_builders::UpdateEndpointGroup::health_check_interval_seconds) / [`set_health_check_interval_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_health_check_interval_seconds): <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
     ///   - [`threshold_count(i32)`](crate::client::fluent_builders::UpdateEndpointGroup::threshold_count) / [`set_threshold_count(Option<i32>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_threshold_count): <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
-    ///   - [`port_overrides(Vec<PortOverride>)`](crate::client::fluent_builders::UpdateEndpointGroup::port_overrides) / [`set_port_overrides(Option<Vec<PortOverride>>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`port_overrides(Vec<PortOverride>)`](crate::client::fluent_builders::UpdateEndpointGroup::port_overrides) / [`set_port_overrides(Option<Vec<PortOverride>>)`](crate::client::fluent_builders::UpdateEndpointGroup::set_port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// - On success, responds with [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput) with field(s):
     ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::output::UpdateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was updated.</p>
     /// - On failure, responds with [`SdkError<UpdateEndpointGroupError>`](crate::error::UpdateEndpointGroupError)
@@ -676,7 +676,7 @@ impl Client {
     ///   - [`listener_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateListener::listener_arn) / [`set_listener_arn(Option<String>)`](crate::client::fluent_builders::UpdateListener::set_listener_arn): <p>The Amazon Resource Name (ARN) of the listener to update.</p>
     ///   - [`port_ranges(Vec<PortRange>)`](crate::client::fluent_builders::UpdateListener::port_ranges) / [`set_port_ranges(Option<Vec<PortRange>>)`](crate::client::fluent_builders::UpdateListener::set_port_ranges): <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
     ///   - [`protocol(Protocol)`](crate::client::fluent_builders::UpdateListener::protocol) / [`set_protocol(Option<Protocol>)`](crate::client::fluent_builders::UpdateListener::set_protocol): <p>The updated protocol for the connections from clients to the accelerator.</p>
-    ///   - [`client_affinity(ClientAffinity)`](crate::client::fluent_builders::UpdateListener::client_affinity) / [`set_client_affinity(Option<ClientAffinity>)`](crate::client::fluent_builders::UpdateListener::set_client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
+    ///   - [`client_affinity(ClientAffinity)`](crate::client::fluent_builders::UpdateListener::client_affinity) / [`set_client_affinity(Option<ClientAffinity>)`](crate::client::fluent_builders::UpdateListener::set_client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
     /// - On success, responds with [`UpdateListenerOutput`](crate::output::UpdateListenerOutput) with field(s):
     ///   - [`listener(Option<Listener>)`](crate::output::UpdateListenerOutput::listener): <p>Information for the updated listener.</p>
     /// - On failure, responds with [`SdkError<UpdateListenerError>`](crate::error::UpdateListenerError)
@@ -784,9 +784,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AdvertiseByoipCidr`.
     ///
-    /// <p>Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP addresses (BYOIP). It can take a few minutes before traffic to the specified addresses starts routing to AWS because of propagation delays. </p>
+    /// <p>Advertises an IPv4 address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP). It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services because of propagation delays. </p>
     /// <p>To stop advertising the BYOIP address range, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html"> WithdrawByoipCidr</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AdvertiseByoipCidr {
         handle: std::sync::Arc<super::Handle>,
@@ -962,7 +962,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAccelerator`.
     ///
     /// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. </p> <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify <code>--region us-west-2</code> on AWS CLI commands.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccelerator {
@@ -1003,22 +1003,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -1030,18 +1030,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
+        /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
+        /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
         /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip_addresses(input.into());
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
+        /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
+        /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
         /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1079,13 +1081,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1098,7 +1100,7 @@ pub mod fluent_builders {
     ///
     /// <p>Create a custom routing accelerator. A custom routing accelerator directs traffic to one of possibly thousands of Amazon EC2 instance destinations running in a single or multiple virtual private clouds (VPC) subnet endpoints.</p>
     /// <p>Be aware that, by default, all destination EC2 instances in a VPC subnet endpoint cannot receive traffic. To enable all destinations to receive traffic, or to specify individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"> AllowCustomRoutingTraffic</a> operation.</p> <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify <code>--region us-west-2</code> on AWS CLI commands.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingAccelerator {
@@ -1149,12 +1151,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -1166,18 +1168,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
+        /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
+        /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
         /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ip_addresses(input.into());
             self
         }
-        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
-        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator. </p>
+        /// <p>After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.</p>
+        /// <p>You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
         /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1215,13 +1219,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>Create tags for an accelerator.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1232,7 +1236,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCustomRoutingEndpointGroup`.
     ///
-    /// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one AWS Region. </p>
+    /// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one Amazon Web Services Region. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCustomRoutingEndpointGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -1282,12 +1286,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_group_region(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1421,7 +1425,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpointGroup`.
     ///
-    /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS Region. A resource must be valid and active when you add it as an endpoint.</p>
+    /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one Amazon Web Services Region. A resource must be valid and active when you add it as an endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointGroup {
         handle: std::sync::Arc<super::Handle>,
@@ -1471,12 +1475,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_listener_arn(input);
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_group_region(input.into());
             self
         }
-        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+        /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1504,36 +1508,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_configurations(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
             self.inner = self.inner.traffic_dial_percentage(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_traffic_dial_percentage(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn health_check_port(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_port(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_port(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
             self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -1595,13 +1599,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             self.inner = self.inner.port_overrides(input);
             self
         }
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -1693,7 +1697,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
         /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
@@ -1701,7 +1705,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
         /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
@@ -1729,7 +1733,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete an accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p> <important>
     /// <p>When you create an accelerator, by default, Global Accelerator provides you with a set of two static IP addresses. Alternatively, you can bring your own IP address ranges to Global Accelerator and assign IP addresses from those ranges. </p>
-    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity and access management</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccelerator {
@@ -1788,7 +1792,7 @@ pub mod fluent_builders {
     ///
     /// <p>Delete a custom routing accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set <code>Enabled</code> to false.</p> <important>
     /// <p>When you create a custom routing accelerator, by default, Global Accelerator provides you with a set of two static IP addresses. </p>
-    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity and access management</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCustomRoutingAccelerator {
@@ -2183,9 +2187,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeprovisionByoipCidr`.
     ///
-    /// <p>Releases the specified address range that you provisioned to use with your AWS resources through bring your own IP addresses (BYOIP) and deletes the corresponding address pool. </p>
+    /// <p>Releases the specified address range that you provisioned to use with your Amazon Web Services resources through bring your own IP addresses (BYOIP) and deletes the corresponding address pool. </p>
     /// <p>Before you can release an address range, you must stop advertising it by using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">WithdrawByoipCidr</a> and you must not have any accelerators that are using static IP addresses allocated from its address range. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeprovisionByoipCidr {
         handle: std::sync::Arc<super::Handle>,
@@ -2684,7 +2688,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccelerators`.
     ///
-    /// <p>List the accelerators for an AWS account. </p>
+    /// <p>List the accelerators for an Amazon Web Services account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccelerators {
         handle: std::sync::Arc<super::Handle>,
@@ -2822,7 +2826,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCustomRoutingAccelerators`.
     ///
-    /// <p>List the custom routing accelerators for an AWS account. </p>
+    /// <p>List the custom routing accelerators for an Amazon Web Services account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCustomRoutingAccelerators {
         handle: std::sync::Arc<super::Handle>,
@@ -3410,7 +3414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List all tags for an accelerator. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3463,8 +3467,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ProvisionByoipCidr`.
     ///
-    /// <p>Provisions an IP address range to use with your AWS resources through bring your own IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html"> AdvertiseByoipCidr</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>Provisions an IP address range to use with your Amazon Web Services resources through bring your own IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html"> AdvertiseByoipCidr</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionByoipCidr {
         handle: std::sync::Arc<super::Handle>,
@@ -3607,7 +3611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to an accelerator resource. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3678,7 +3682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Remove tags from a Global Accelerator resource. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from an accelerator that was already removed.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource {
         handle: std::sync::Arc<super::Handle>,
@@ -3749,7 +3753,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAccelerator`.
     ///
     /// <p>Update an accelerator. </p> <important>
-    /// <p>Global Accelerator is a global service that supports endpoints in multiple AWS Regions but you must specify the US West (Oregon) Region to create or update accelerators.</p>
+    /// <p>Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify <code>--region us-west-2</code> on AWS CLI commands.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccelerator {
@@ -3803,22 +3807,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The IP address type, which must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The IP address type, which must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -3895,23 +3899,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn flow_logs_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.flow_logs_enabled(input);
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_flow_logs_enabled(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
         pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_logs_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3920,14 +3924,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_logs_s3_prefix(input.into());
             self
         }
         /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>
-        /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
         /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
@@ -3992,22 +3996,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_arn(input);
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+        /// <p>The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.inner = self.inner.ip_address_type(input);
             self
         }
-        /// <p>The value for the address type must be IPv4.</p>
+        /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -4086,23 +4090,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn flow_logs_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.flow_logs_enabled(input);
             self
         }
         /// <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_flow_logs_enabled(input);
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
         pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_logs_s3_bucket(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4275,36 +4279,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_configurations(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
             self.inner = self.inner.traffic_dial_percentage(input);
             self
         }
-        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
+        /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
         /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
         /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.inner = self.inner.set_traffic_dial_percentage(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn health_check_port(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_port(input);
             self
         }
-        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+        /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_port(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn health_check_protocol(mut self, input: crate::model::HealthCheckProtocol) -> Self {
             self.inner = self.inner.health_check_protocol(input);
             self
         }
-        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+        /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -4353,13 +4357,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
         ///
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: crate::model::PortOverride) -> Self {
             self.inner = self.inner.port_overrides(input);
             self
         }
         /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -4448,7 +4452,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
         /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn client_affinity(mut self, input: crate::model::ClientAffinity) -> Self {
@@ -4456,7 +4460,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>
-        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>
         /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>
         /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
@@ -4470,8 +4474,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `WithdrawByoipCidr`.
     ///
     /// <p>Stops advertising an address range that is provisioned as an address pool. You can perform this operation at most once every 10 seconds, even if you specify different address ranges each time.</p>
-    /// <p>It can take a few minutes before traffic to the specified addresses stops routing to AWS because of propagation delays.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// <p>It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services because of propagation delays.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct WithdrawByoipCidr {
         handle: std::sync::Arc<super::Handle>,

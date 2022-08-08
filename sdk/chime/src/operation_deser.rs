@@ -29954,3 +29954,164 @@ pub fn parse_update_voice_connector_group_response(
         output.build()
     })
 }
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_validate_e911_address_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ValidateE911AddressOutput,
+    crate::error::ValidateE911AddressError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ValidateE911AddressError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ValidateE911AddressError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottledClientException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => crate::error::ValidateE911AddressError {
+            meta: generic,
+            kind: crate::error::ValidateE911AddressErrorKind::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ValidateE911AddressError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_validate_e911_address_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ValidateE911AddressOutput,
+    crate::error::ValidateE911AddressError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::validate_e911_address_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_validate_e911_address(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ValidateE911AddressError::unhandled)?;
+        output.build()
+    })
+}

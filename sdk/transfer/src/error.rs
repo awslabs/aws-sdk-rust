@@ -133,6 +133,403 @@ impl std::error::Error for CreateAccessError {
     }
 }
 
+/// Error type for the `CreateAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateAgreementError {
+    /// Kind of error that occurred.
+    pub kind: CreateAgreementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAgreementErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAgreementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAgreementErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateAgreementError {
+    fn code(&self) -> Option<&str> {
+        CreateAgreementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAgreementError {
+    /// Creates a new `CreateAgreementError`.
+    pub fn new(kind: CreateAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateAgreementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAgreementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAgreementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgreementErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgreementErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgreementErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgreementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateAgreementErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgreementErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateAgreementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAgreementErrorKind::InternalServiceError(_inner) => Some(_inner),
+            CreateAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            CreateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateConnectorError {
+    /// Kind of error that occurred.
+    pub kind: CreateConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateConnectorErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateConnectorErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateConnectorError {
+    fn code(&self) -> Option<&str> {
+        CreateConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateConnectorError {
+    /// Creates a new `CreateConnectorError`.
+    pub fn new(kind: CreateConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectorErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectorErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateConnectorErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConnectorErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateConnectorErrorKind::InternalServiceError(_inner) => Some(_inner),
+            CreateConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            CreateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `CreateProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateProfileError {
+    /// Kind of error that occurred.
+    pub kind: CreateProfileErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateProfileErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateProfileErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            CreateProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            CreateProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateProfileError {
+    fn code(&self) -> Option<&str> {
+        CreateProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateProfileError {
+    /// Creates a new `CreateProfileError`.
+    pub fn new(kind: CreateProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateProfileError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, CreateProfileErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateProfileErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateProfileErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateProfileErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateProfileErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for CreateProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateProfileErrorKind::InternalServiceError(_inner) => Some(_inner),
+            CreateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            CreateProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateServer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -672,6 +1069,507 @@ impl std::error::Error for DeleteAccessError {
             DeleteAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAgreementError {
+    /// Kind of error that occurred.
+    pub kind: DeleteAgreementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAgreementErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteAgreementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAgreementErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteAgreementErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteAgreementError {
+    fn code(&self) -> Option<&str> {
+        DeleteAgreementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAgreementError {
+    /// Creates a new `DeleteAgreementError`.
+    pub fn new(kind: DeleteAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteAgreementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAgreementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAgreementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteAgreementErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAgreementErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAgreementErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAgreementErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAgreementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAgreementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteAgreementErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAgreementErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteAgreementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAgreementErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteCertificateError {
+    /// Kind of error that occurred.
+    pub kind: DeleteCertificateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteCertificateErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteCertificateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteCertificateErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteCertificateError {
+    fn code(&self) -> Option<&str> {
+        DeleteCertificateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteCertificateError {
+    /// Creates a new `DeleteCertificateError`.
+    pub fn new(kind: DeleteCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteCertificateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteCertificateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteCertificateErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCertificateErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteCertificateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteCertificateErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteConnectorError {
+    /// Kind of error that occurred.
+    pub kind: DeleteConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteConnectorErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteConnectorErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteConnectorError {
+    fn code(&self) -> Option<&str> {
+        DeleteConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteConnectorError {
+    /// Creates a new `DeleteConnectorError`.
+    pub fn new(kind: DeleteConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectorErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteConnectorErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConnectorErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteConnectorErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DeleteProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteProfileError {
+    /// Kind of error that occurred.
+    pub kind: DeleteProfileErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DeleteProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteProfileErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteProfileErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DeleteProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DeleteProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteProfileError {
+    fn code(&self) -> Option<&str> {
+        DeleteProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteProfileError {
+    /// Creates a new `DeleteProfileError`.
+    pub fn new(kind: DeleteProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DeleteProfileError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DeleteProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteProfileErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProfileErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProfileErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DeleteProfileErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProfileErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteProfileErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DeleteProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DeleteProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1321,6 +2219,384 @@ impl std::error::Error for DescribeAccessError {
     }
 }
 
+/// Error type for the `DescribeAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeAgreementError {
+    /// Kind of error that occurred.
+    pub kind: DescribeAgreementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAgreementErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeAgreementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAgreementErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeAgreementErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeAgreementError {
+    fn code(&self) -> Option<&str> {
+        DescribeAgreementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAgreementError {
+    /// Creates a new `DescribeAgreementError`.
+    pub fn new(kind: DescribeAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeAgreementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAgreementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAgreementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeAgreementErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgreementErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAgreementErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgreementErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAgreementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgreementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeAgreementErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgreementErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAgreementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAgreementErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeCertificateError {
+    /// Kind of error that occurred.
+    pub kind: DescribeCertificateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeCertificateErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeCertificateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeCertificateErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeCertificateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeCertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeCertificateError {
+    fn code(&self) -> Option<&str> {
+        DescribeCertificateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeCertificateError {
+    /// Creates a new `DescribeCertificateError`.
+    pub fn new(kind: DescribeCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeCertificateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeCertificateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCertificateErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCertificateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCertificateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeCertificateErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCertificateErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeCertificateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeCertificateErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeConnectorError {
+    /// Kind of error that occurred.
+    pub kind: DescribeConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeConnectorErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeConnectorErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeConnectorError {
+    fn code(&self) -> Option<&str> {
+        DescribeConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeConnectorError {
+    /// Creates a new `DescribeConnectorError`.
+    pub fn new(kind: DescribeConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectorErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeConnectorErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeConnectorErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeConnectorErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1443,6 +2719,132 @@ impl std::error::Error for DescribeExecutionError {
             DescribeExecutionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DescribeExecutionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DescribeExecutionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `DescribeProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeProfileError {
+    /// Kind of error that occurred.
+    pub kind: DescribeProfileErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeProfileErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeProfileErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            DescribeProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            DescribeProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeProfileError {
+    fn code(&self) -> Option<&str> {
+        DescribeProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeProfileError {
+    /// Creates a new `DescribeProfileError`.
+    pub fn new(kind: DescribeProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeProfileError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeProfileErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeProfileErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeProfileErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeProfileErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeProfileErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeProfileErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeProfileErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeProfileErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeProfileErrorKind::InternalServiceError(_inner) => Some(_inner),
+            DescribeProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            DescribeProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1945,6 +3347,132 @@ impl std::error::Error for DescribeWorkflowError {
     }
 }
 
+/// Error type for the `ImportCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ImportCertificateError {
+    /// Kind of error that occurred.
+    pub kind: ImportCertificateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ImportCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportCertificateErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportCertificateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportCertificateErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ImportCertificateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ImportCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ImportCertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ImportCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ImportCertificateError {
+    fn code(&self) -> Option<&str> {
+        ImportCertificateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportCertificateError {
+    /// Creates a new `ImportCertificateError`.
+    pub fn new(kind: ImportCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ImportCertificateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ImportCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportCertificateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportCertificateErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportCertificateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportCertificateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ImportCertificateErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportCertificateErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ImportCertificateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportCertificateErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ImportCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ImportCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ImportCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ImportCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ImportSshPublicKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2227,6 +3755,411 @@ impl std::error::Error for ListAccessesError {
     }
 }
 
+/// Error type for the `ListAgreements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAgreementsError {
+    /// Kind of error that occurred.
+    pub kind: ListAgreementsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListAgreements` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAgreementsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAgreementsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAgreementsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListAgreementsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListAgreementsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListAgreementsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListAgreementsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListAgreementsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListAgreementsError {
+    fn code(&self) -> Option<&str> {
+        ListAgreementsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAgreementsError {
+    /// Creates a new `ListAgreementsError`.
+    pub fn new(kind: ListAgreementsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListAgreementsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAgreementsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListAgreementsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAgreementsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListAgreementsErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListAgreementsErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `ListAgreementsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgreementsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAgreementsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgreementsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAgreementsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgreementsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListAgreementsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgreementsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListAgreementsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAgreementsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListAgreementsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListAgreementsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListAgreementsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListAgreementsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListAgreementsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListCertificates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListCertificatesError {
+    /// Kind of error that occurred.
+    pub kind: ListCertificatesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListCertificates` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListCertificatesErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListCertificatesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListCertificatesErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListCertificatesError {
+    fn code(&self) -> Option<&str> {
+        ListCertificatesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListCertificatesError {
+    /// Creates a new `ListCertificatesError`.
+    pub fn new(kind: ListCertificatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListCertificatesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListCertificatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListCertificatesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListCertificatesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCertificatesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListCertificatesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListCertificatesErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListCertificatesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListCertificatesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListCertificatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListCertificatesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListConnectors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListConnectorsError {
+    /// Kind of error that occurred.
+    pub kind: ListConnectorsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListConnectors` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListConnectorsErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListConnectorsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListConnectorsErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListConnectorsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListConnectorsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListConnectorsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListConnectorsErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListConnectorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListConnectorsError {
+    fn code(&self) -> Option<&str> {
+        ListConnectorsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListConnectorsError {
+    /// Creates a new `ListConnectorsError`.
+    pub fn new(kind: ListConnectorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListConnectorsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListConnectorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListConnectorsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListConnectorsErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConnectorsErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConnectorsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConnectorsErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListConnectorsErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConnectorsErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListConnectorsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListConnectorsErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListConnectorsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListConnectorsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListConnectorsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListConnectorsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListConnectorsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2357,6 +4290,140 @@ impl std::error::Error for ListExecutionsError {
             ListExecutionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ListExecutionsErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             ListExecutionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ListProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListProfilesError {
+    /// Kind of error that occurred.
+    pub kind: ListProfilesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListProfiles` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListProfilesErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>The <code>NextToken</code> parameter that was passed is invalid.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListProfilesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListProfilesErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            ListProfilesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            ListProfilesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListProfilesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListProfilesErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            ListProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListProfilesError {
+    fn code(&self) -> Option<&str> {
+        ListProfilesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListProfilesError {
+    /// Creates a new `ListProfilesError`.
+    pub fn new(kind: ListProfilesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListProfilesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListProfilesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListProfilesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListProfilesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListProfilesErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListProfilesErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `ListProfilesErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProfilesErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProfilesErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProfilesErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProfilesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProfilesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListProfilesErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProfilesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for ListProfilesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListProfilesErrorKind::InternalServiceError(_inner) => Some(_inner),
+            ListProfilesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
+            ListProfilesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListProfilesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListProfilesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3129,6 +5196,143 @@ impl std::error::Error for SendWorkflowStepStateError {
     }
 }
 
+/// Error type for the `StartFileTransfer` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartFileTransferError {
+    /// Kind of error that occurred.
+    pub kind: StartFileTransferErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartFileTransfer` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartFileTransferErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p>The request was denied due to request throttling.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartFileTransferError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartFileTransferErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            StartFileTransferErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            StartFileTransferErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartFileTransferErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            StartFileTransferErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            StartFileTransferErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartFileTransferError {
+    fn code(&self) -> Option<&str> {
+        StartFileTransferError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartFileTransferError {
+    /// Creates a new `StartFileTransferError`.
+    pub fn new(kind: StartFileTransferErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartFileTransferError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartFileTransferErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartFileTransferError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartFileTransferErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartFileTransferErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFileTransferErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFileTransferErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFileTransferErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFileTransferErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFileTransferErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFileTransferErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFileTransferErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartFileTransferErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartFileTransferErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for StartFileTransferError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartFileTransferErrorKind::InternalServiceError(_inner) => Some(_inner),
+            StartFileTransferErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            StartFileTransferErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartFileTransferErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StartFileTransferErrorKind::ThrottlingException(_inner) => Some(_inner),
+            StartFileTransferErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartServer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3884,6 +6088,529 @@ impl std::error::Error for UpdateAccessError {
             UpdateAccessErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateAccessErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateAccessErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateAgreementError {
+    /// Kind of error that occurred.
+    pub kind: UpdateAgreementErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateAgreement` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAgreementErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateAgreementError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAgreementErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateAgreementError {
+    fn code(&self) -> Option<&str> {
+        UpdateAgreementError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAgreementError {
+    /// Creates a new `UpdateAgreementError`.
+    pub fn new(kind: UpdateAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateAgreementError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAgreementErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAgreementErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgreementErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgreementErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgreementErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgreementErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateAgreementErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgreementErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAgreementError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAgreementErrorKind::InternalServiceError(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateAgreementErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateCertificateError {
+    /// Kind of error that occurred.
+    pub kind: UpdateCertificateErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateCertificate` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateCertificateErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateCertificateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateCertificateErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            UpdateCertificateErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateCertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateCertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateCertificateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateCertificateError {
+    fn code(&self) -> Option<&str> {
+        UpdateCertificateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateCertificateError {
+    /// Creates a new `UpdateCertificateError`.
+    pub fn new(kind: UpdateCertificateErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateCertificateError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateCertificateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateCertificateError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateCertificateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCertificateErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCertificateErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCertificateErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCertificateErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateCertificateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateCertificateErrorKind::InternalServiceError(_inner) => Some(_inner),
+            UpdateCertificateErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateCertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateCertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateCertificateErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateConnectorError {
+    /// Kind of error that occurred.
+    pub kind: UpdateConnectorErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateConnector` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateConnectorErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The requested resource does not exist.</p>
+    ResourceExistsException(crate::error::ResourceExistsException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateConnectorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateConnectorErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::ResourceExistsException(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateConnectorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateConnectorError {
+    fn code(&self) -> Option<&str> {
+        UpdateConnectorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateConnectorError {
+    /// Creates a new `UpdateConnectorError`.
+    pub fn new(kind: UpdateConnectorErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateConnectorError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateConnectorError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateConnectorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorErrorKind::InternalServiceError(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ResourceExistsException`.
+    pub fn is_resource_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorErrorKind::ResourceExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateConnectorErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConnectorErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateConnectorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateConnectorErrorKind::InternalServiceError(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::ResourceExistsException(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateConnectorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateProfileError {
+    /// Kind of error that occurred.
+    pub kind: UpdateProfileErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateProfile` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateProfileErrorKind {
+    /// <p>This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.</p>
+    InternalServiceError(crate::error::InternalServiceError),
+    /// <p>This exception is thrown when the client submits a malformed request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The request has failed because the Amazon Web ServicesTransfer Family service is not available.</p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateProfileErrorKind::InternalServiceError(_inner) => _inner.fmt(f),
+            UpdateProfileErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateProfileErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            UpdateProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateProfileError {
+    fn code(&self) -> Option<&str> {
+        UpdateProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateProfileError {
+    /// Creates a new `UpdateProfileError`.
+    pub fn new(kind: UpdateProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateProfileError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::InternalServiceError`.
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, UpdateProfileErrorKind::InternalServiceError(_))
+    }
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateProfileErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateProfileErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateProfileErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateProfileErrorKind::ServiceUnavailableException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateProfileErrorKind::InternalServiceError(_inner) => Some(_inner),
+            UpdateProfileErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateProfileErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            UpdateProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

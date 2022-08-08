@@ -768,6 +768,17 @@ impl Client {
     pub fn purchase_offering(&self) -> fluent_builders::PurchaseOffering {
         fluent_builders::PurchaseOffering::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`RebootInputDevice`](crate::client::fluent_builders::RebootInputDevice) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`force(RebootInputDeviceForce)`](crate::client::fluent_builders::RebootInputDevice::force) / [`set_force(Option<RebootInputDeviceForce>)`](crate::client::fluent_builders::RebootInputDevice::set_force): Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::RebootInputDevice::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::RebootInputDevice::set_input_device_id): The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// - On success, responds with [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<RebootInputDeviceError>`](crate::error::RebootInputDeviceError)
+    pub fn reboot_input_device(&self) -> fluent_builders::RebootInputDevice {
+        fluent_builders::RebootInputDevice::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`RejectInputDeviceTransfer`](crate::client::fluent_builders::RejectInputDeviceTransfer) operation.
     ///
     /// - The fluent builder is configurable:
@@ -804,6 +815,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::error::StartChannelError)
     pub fn start_channel(&self) -> fluent_builders::StartChannel {
         fluent_builders::StartChannel::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`StartInputDeviceMaintenanceWindow`](crate::client::fluent_builders::StartInputDeviceMaintenanceWindow) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`input_device_id(impl Into<String>)`](crate::client::fluent_builders::StartInputDeviceMaintenanceWindow::input_device_id) / [`set_input_device_id(Option<String>)`](crate::client::fluent_builders::StartInputDeviceMaintenanceWindow::set_input_device_id): The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    /// - On success, responds with [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput)
+
+    /// - On failure, responds with [`SdkError<StartInputDeviceMaintenanceWindowError>`](crate::error::StartInputDeviceMaintenanceWindowError)
+    pub fn start_input_device_maintenance_window(
+        &self,
+    ) -> fluent_builders::StartInputDeviceMaintenanceWindow {
+        fluent_builders::StartInputDeviceMaintenanceWindow::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`StartMultiplex`](crate::client::fluent_builders::StartMultiplex) operation.
     ///
@@ -4498,6 +4521,75 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `RebootInputDevice`.
+    ///
+    /// Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device’s connection status will change to connected.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct RebootInputDevice {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::reboot_input_device_input::Builder,
+    }
+    impl RebootInputDevice {
+        /// Creates a new `RebootInputDevice`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::RebootInputDeviceOutput,
+            aws_smithy_http::result::SdkError<crate::error::RebootInputDeviceError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+        pub fn force(mut self, input: crate::model::RebootInputDeviceForce) -> Self {
+            self.inner = self.inner.force(input);
+            self
+        }
+        /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+        pub fn set_force(
+            mut self,
+            input: std::option::Option<crate::model::RebootInputDeviceForce>,
+        ) -> Self {
+            self.inner = self.inner.set_force(input);
+            self
+        }
+        /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input.into());
+            self
+        }
+        /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `RejectInputDeviceTransfer`.
     ///
     /// Reject the transfer of the specified input device to your AWS account.
@@ -4604,6 +4696,62 @@ pub mod fluent_builders {
         /// A request to start a channel
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `StartInputDeviceMaintenanceWindow`.
+    ///
+    /// Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance.
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct StartInputDeviceMaintenanceWindow {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::start_input_device_maintenance_window_input::Builder,
+    }
+    impl StartInputDeviceMaintenanceWindow {
+        /// Creates a new `StartInputDeviceMaintenanceWindow`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartInputDeviceMaintenanceWindowOutput,
+            aws_smithy_http::result::SdkError<crate::error::StartInputDeviceMaintenanceWindowError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+        pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_device_id(input.into());
+            self
+        }
+        /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+        pub fn set_input_device_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_input_device_id(input);
             self
         }
     }

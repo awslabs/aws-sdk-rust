@@ -595,14 +595,14 @@ impl ListPermissionSetProvisioningStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedPoliciesInPermissionSetOutput {
-    /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
+    /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
     pub attached_managed_policies:
         std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedPoliciesInPermissionSetOutput {
-    /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
+    /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
     pub fn attached_managed_policies(
         &self,
     ) -> std::option::Option<&[crate::model::AttachedManagedPolicy]> {
@@ -636,7 +636,7 @@ pub mod list_managed_policies_in_permission_set_output {
         ///
         /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
         ///
-        /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
+        /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
         pub fn attached_managed_policies(
             mut self,
             input: crate::model::AttachedManagedPolicy,
@@ -646,7 +646,7 @@ pub mod list_managed_policies_in_permission_set_output {
             self.attached_managed_policies = Some(v);
             self
         }
-        /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
+        /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
         pub fn set_attached_managed_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
@@ -684,13 +684,13 @@ impl ListManagedPoliciesInPermissionSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstancesOutput {
-    /// <p>Lists the SSO instances that the caller has access to.</p>
+    /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
-    /// <p>Lists the SSO instances that the caller has access to.</p>
+    /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
     pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceMetadata]> {
         self.instances.as_deref()
     }
@@ -721,14 +721,14 @@ pub mod list_instances_output {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p>Lists the SSO instances that the caller has access to.</p>
+        /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
         pub fn instances(mut self, input: crate::model::InstanceMetadata) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input);
             self.instances = Some(v);
             self
         }
-        /// <p>Lists the SSO instances that the caller has access to.</p>
+        /// <p>Lists the Amazon Web Services SSO instances that the caller has access to.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
@@ -766,14 +766,14 @@ impl ListInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
-    /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+    /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
     pub customer_managed_policy_references:
         std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
-    /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+    /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
     pub fn customer_managed_policy_references(
         &self,
     ) -> std::option::Option<&[crate::model::CustomerManagedPolicyReference]> {
@@ -811,7 +811,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
         ///
         /// To override the contents of this collection use [`set_customer_managed_policy_references`](Self::set_customer_managed_policy_references).
         ///
-        /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+        /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
         pub fn customer_managed_policy_references(
             mut self,
             input: crate::model::CustomerManagedPolicyReference,
@@ -821,7 +821,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
             self.customer_managed_policy_references = Some(v);
             self
         }
-        /// <p>Specifies the names and paths of the IAM customer managed policies that you have attached to your permission set.</p>
+        /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
         pub fn set_customer_managed_policy_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
@@ -1276,11 +1276,11 @@ impl GetPermissionsBoundaryForPermissionSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInlinePolicyForPermissionSetOutput {
-    /// <p>The IAM inline policy that is attached to the permission set.</p>
+    /// <p>The inline policy that is attached to the permission set.</p>
     pub inline_policy: std::option::Option<std::string::String>,
 }
 impl GetInlinePolicyForPermissionSetOutput {
-    /// <p>The IAM inline policy that is attached to the permission set.</p>
+    /// <p>The inline policy that is attached to the permission set.</p>
     pub fn inline_policy(&self) -> std::option::Option<&str> {
         self.inline_policy.as_deref()
     }
@@ -1301,12 +1301,12 @@ pub mod get_inline_policy_for_permission_set_output {
         pub(crate) inline_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM inline policy that is attached to the permission set.</p>
+        /// <p>The inline policy that is attached to the permission set.</p>
         pub fn inline_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inline_policy = Some(input.into());
             self
         }
-        /// <p>The IAM inline policy that is attached to the permission set.</p>
+        /// <p>The inline policy that is attached to the permission set.</p>
         pub fn set_inline_policy(
             mut self,
             input: std::option::Option<std::string::String>,

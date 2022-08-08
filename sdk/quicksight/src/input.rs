@@ -13096,16 +13096,16 @@ pub mod generate_embed_url_for_anonymous_user_input {
         ///
         /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
         ///
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_domains.unwrap_or_default();
             v.push(input.into());
             self.allowed_domains = Some(v);
             self
         }
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn set_allowed_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13326,16 +13326,16 @@ pub mod generate_embed_url_for_registered_user_input {
         ///
         /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
         ///
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_domains.unwrap_or_default();
             v.push(input.into());
             self.allowed_domains = Some(v);
             self
         }
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn set_allowed_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16603,12 +16603,12 @@ pub mod list_namespaces_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -28240,7 +28240,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListNamespacesInput {
     /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>A pagination token that can be used in a subsequent request.</p>
+    /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -28250,7 +28250,7 @@ impl ListNamespacesInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>A pagination token that can be used in a subsequent request.</p>
+    /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -28944,8 +28944,8 @@ pub struct GenerateEmbedUrlForRegisteredUserInput {
     /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
     pub experience_configuration:
         std::option::Option<crate::model::RegisteredUserEmbeddingExperienceConfiguration>,
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-    /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub allowed_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GenerateEmbedUrlForRegisteredUserInput {
@@ -28967,8 +28967,8 @@ impl GenerateEmbedUrlForRegisteredUserInput {
     ) -> std::option::Option<&crate::model::RegisteredUserEmbeddingExperienceConfiguration> {
         self.experience_configuration.as_ref()
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-    /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn allowed_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_domains.as_deref()
     }
@@ -29006,8 +29006,8 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     /// <p>The configuration of the experience that you are embedding.</p>
     pub experience_configuration:
         std::option::Option<crate::model::AnonymousUserEmbeddingExperienceConfiguration>,
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-    /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub allowed_domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GenerateEmbedUrlForAnonymousUserInput {
@@ -29038,8 +29038,8 @@ impl GenerateEmbedUrlForAnonymousUserInput {
     ) -> std::option::Option<&crate::model::AnonymousUserEmbeddingExperienceConfiguration> {
         self.experience_configuration.as_ref()
     }
-    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-    /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+    /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     pub fn allowed_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_domains.as_deref()
     }

@@ -2431,6 +2431,25 @@ impl Client {
     pub fn update_voice_connector_group(&self) -> fluent_builders::UpdateVoiceConnectorGroup {
         fluent_builders::UpdateVoiceConnectorGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ValidateE911Address`](crate::client::fluent_builders::ValidateE911Address) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_aws_account_id): <p>The AWS account ID.</p>
+    ///   - [`street_number(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::street_number) / [`set_street_number(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_street_number): <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    ///   - [`street_info(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::street_info) / [`set_street_info(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_street_info): <p>The address street information, such as <code>8th Avenue</code>.</p>
+    ///   - [`city(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::city) / [`set_city(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_city): <p>The address city, such as <code>Portland</code>.</p>
+    ///   - [`state(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::state) / [`set_state(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_state): <p>The address state, such as <code>ME</code>.</p>
+    ///   - [`country(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::country) / [`set_country(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_country): <p>The address country, such as <code>US</code>. </p>
+    ///   - [`postal_code(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::postal_code) / [`set_postal_code(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_postal_code): <p>The address postal code, such as <code>04352</code>.</p>
+    /// - On success, responds with [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput) with field(s):
+    ///   - [`validation_result(i32)`](crate::output::ValidateE911AddressOutput::validation_result): <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    ///   - [`address_external_id(Option<String>)`](crate::output::ValidateE911AddressOutput::address_external_id): <p>The ID that represents the address.</p>
+    ///   - [`address(Option<Address>)`](crate::output::ValidateE911AddressOutput::address): <p>The validated address.</p>
+    ///   - [`candidate_address_list(Option<Vec<CandidateAddress>>)`](crate::output::ValidateE911AddressOutput::candidate_address_list): <p>The list of address suggestions.</p>
+    /// - On failure, responds with [`SdkError<ValidateE911AddressError>`](crate::error::ValidateE911AddressError)
+    pub fn validate_e911_address(&self) -> fluent_builders::ValidateE911Address {
+        fluent_builders::ValidateE911Address::new(self.handle.clone())
+    }
 }
 pub mod fluent_builders {
 
@@ -13462,7 +13481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutVoiceConnectorStreamingConfiguration`.
     ///
-    /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
+    /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorStreamingConfiguration {
         handle: std::sync::Arc<super::Handle>,
@@ -16591,6 +16610,125 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
         ) -> Self {
             self.inner = self.inner.set_voice_connector_items(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ValidateE911Address`.
+    ///
+    /// <p>Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ValidateE911Address {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::validate_e911_address_input::Builder,
+    }
+    impl ValidateE911Address {
+        /// Creates a new `ValidateE911Address`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ValidateE911AddressOutput,
+            aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The AWS account ID.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
+            self
+        }
+        /// <p>The AWS account ID.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_aws_account_id(input);
+            self
+        }
+        /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+        pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.street_number(input.into());
+            self
+        }
+        /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+        pub fn set_street_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_street_number(input);
+            self
+        }
+        /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+        pub fn street_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.street_info(input.into());
+            self
+        }
+        /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+        pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_street_info(input);
+            self
+        }
+        /// <p>The address city, such as <code>Portland</code>.</p>
+        pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.city(input.into());
+            self
+        }
+        /// <p>The address city, such as <code>Portland</code>.</p>
+        pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_city(input);
+            self
+        }
+        /// <p>The address state, such as <code>ME</code>.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state(input.into());
+            self
+        }
+        /// <p>The address state, such as <code>ME</code>.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The address country, such as <code>US</code>. </p>
+        pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.country(input.into());
+            self
+        }
+        /// <p>The address country, such as <code>US</code>. </p>
+        pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_country(input);
+            self
+        }
+        /// <p>The address postal code, such as <code>04352</code>.</p>
+        pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.postal_code(input.into());
+            self
+        }
+        /// <p>The address postal code, such as <code>04352</code>.</p>
+        pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_postal_code(input);
             self
         }
     }

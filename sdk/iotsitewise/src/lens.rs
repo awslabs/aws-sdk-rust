@@ -109,6 +109,16 @@ pub(crate) fn reflens_structure_crate_output_list_associated_assets_output_next_
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_bulk_import_jobs_output_next_token(
+    input: &crate::output::ListBulkImportJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_dashboards_output_next_token(
     input: &crate::output::ListDashboardsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -243,6 +253,16 @@ pub(crate) fn lens_structure_crate_output_list_associated_assets_output_asset_su
     input: crate::output::ListAssociatedAssetsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>> {
     let input = match input.asset_summaries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_bulk_import_jobs_output_job_summaries(
+    input: crate::output::ListBulkImportJobsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::JobSummary>> {
+    let input = match input.job_summaries {
         None => return None,
         Some(t) => t,
     };

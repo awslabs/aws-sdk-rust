@@ -12903,6 +12903,7 @@ pub struct SharePointConfiguration {
     /// <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
+    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p> <code>TRUE</code> to index document attachments.</p>
     pub crawl_attachments: bool,
@@ -12925,6 +12926,8 @@ pub struct SharePointConfiguration {
     pub disable_local_groups: bool,
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint.</p>
     pub ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+    /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
+    pub authentication_type: std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
 }
 impl SharePointConfiguration {
     /// <p>The version of Microsoft SharePoint that you use.</p>
@@ -12936,6 +12939,7 @@ impl SharePointConfiguration {
         self.urls.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
+    /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -12981,6 +12985,12 @@ impl SharePointConfiguration {
     pub fn ssl_certificate_s3_path(&self) -> std::option::Option<&crate::model::S3Path> {
         self.ssl_certificate_s3_path.as_ref()
     }
+    /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
+    pub fn authentication_type(
+        &self,
+    ) -> std::option::Option<&crate::model::SharePointOnlineAuthenticationType> {
+        self.authentication_type.as_ref()
+    }
 }
 impl std::fmt::Debug for SharePointConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12997,6 +13007,7 @@ impl std::fmt::Debug for SharePointConfiguration {
         formatter.field("document_title_field_name", &self.document_title_field_name);
         formatter.field("disable_local_groups", &self.disable_local_groups);
         formatter.field("ssl_certificate_s3_path", &self.ssl_certificate_s3_path);
+        formatter.field("authentication_type", &self.authentication_type);
         formatter.finish()
     }
 }
@@ -13019,6 +13030,8 @@ pub mod share_point_configuration {
         pub(crate) document_title_field_name: std::option::Option<std::string::String>,
         pub(crate) disable_local_groups: std::option::Option<bool>,
         pub(crate) ssl_certificate_s3_path: std::option::Option<crate::model::S3Path>,
+        pub(crate) authentication_type:
+            std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
     }
     impl Builder {
         /// <p>The version of Microsoft SharePoint that you use.</p>
@@ -13054,11 +13067,13 @@ pub mod share_point_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
+        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. If you use SharePoint Server, you also need to provide the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a Microsoft SharePoint Data Source</a>.</p>
+        /// <p>You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication for a SharePoint data source</a>.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -13199,6 +13214,22 @@ pub mod share_point_configuration {
             self.ssl_certificate_s3_path = input;
             self
         }
+        /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
+        pub fn authentication_type(
+            mut self,
+            input: crate::model::SharePointOnlineAuthenticationType,
+        ) -> Self {
+            self.authentication_type = Some(input);
+            self
+        }
+        /// <p>Whether you want to connect to SharePoint using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret. You can use OAuth authentication for SharePoint Online.</p>
+        pub fn set_authentication_type(
+            mut self,
+            input: std::option::Option<crate::model::SharePointOnlineAuthenticationType>,
+        ) -> Self {
+            self.authentication_type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SharePointConfiguration`](crate::model::SharePointConfiguration).
         pub fn build(self) -> crate::model::SharePointConfiguration {
             crate::model::SharePointConfiguration {
@@ -13214,6 +13245,7 @@ pub mod share_point_configuration {
                 document_title_field_name: self.document_title_field_name,
                 disable_local_groups: self.disable_local_groups.unwrap_or_default(),
                 ssl_certificate_s3_path: self.ssl_certificate_s3_path,
+                authentication_type: self.authentication_type,
             }
         }
     }
@@ -13222,6 +13254,61 @@ impl SharePointConfiguration {
     /// Creates a new builder-style object to manufacture [`SharePointConfiguration`](crate::model::SharePointConfiguration).
     pub fn builder() -> crate::model::share_point_configuration::Builder {
         crate::model::share_point_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SharePointOnlineAuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
+    HttpBasic,
+    #[allow(missing_docs)] // documentation missing in model
+    Oauth2,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SharePointOnlineAuthenticationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "HTTP_BASIC" => SharePointOnlineAuthenticationType::HttpBasic,
+            "OAUTH2" => SharePointOnlineAuthenticationType::Oauth2,
+            other => SharePointOnlineAuthenticationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SharePointOnlineAuthenticationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SharePointOnlineAuthenticationType::from(s))
+    }
+}
+impl SharePointOnlineAuthenticationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SharePointOnlineAuthenticationType::HttpBasic => "HTTP_BASIC",
+            SharePointOnlineAuthenticationType::Oauth2 => "OAUTH2",
+            SharePointOnlineAuthenticationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HTTP_BASIC", "OAUTH2"]
+    }
+}
+impl AsRef<str> for SharePointOnlineAuthenticationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -9,6 +9,8 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p> The request has invalid or missing parameters. </p>
@@ -22,6 +24,7 @@ impl std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -206,6 +209,9 @@ where
                 crate::error::CreateAssessmentErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::CreateAssessmentErrorKind::ServiceQuotaExceededException(inner) => {
+                    Error::ServiceQuotaExceededException(inner)
+                }
                 crate::error::CreateAssessmentErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
@@ -236,6 +242,9 @@ where
                 crate::error::CreateAssessmentFrameworkErrorKind::ResourceNotFoundException(
                     inner,
                 ) => Error::ResourceNotFoundException(inner),
+                crate::error::CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
                 crate::error::CreateAssessmentFrameworkErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }
@@ -292,6 +301,9 @@ where
                 }
                 crate::error::CreateControlErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateControlErrorKind::ServiceQuotaExceededException(inner) => {
+                    Error::ServiceQuotaExceededException(inner)
                 }
                 crate::error::CreateControlErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
@@ -1556,6 +1568,9 @@ where
                 crate::error::UpdateAssessmentStatusErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }
+                crate::error::UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException(
+                    inner,
+                ) => Error::ServiceQuotaExceededException(inner),
                 crate::error::UpdateAssessmentStatusErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }

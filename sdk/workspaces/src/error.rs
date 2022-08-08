@@ -1482,6 +1482,165 @@ impl std::error::Error for CreateWorkspaceBundleError {
     }
 }
 
+/// Error type for the `CreateWorkspaceImage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateWorkspaceImageError {
+    /// Kind of error that occurred.
+    pub kind: CreateWorkspaceImageErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `CreateWorkspaceImage` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateWorkspaceImageErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>The state of the resource is not valid for this operation.</p>
+    InvalidResourceStateException(crate::error::InvalidResourceStateException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
+    /// <p>The specified resource already exists.</p>
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>Your resource limits have been exceeded.</p>
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateWorkspaceImageError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateWorkspaceImageErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::InvalidResourceStateException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateWorkspaceImageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for CreateWorkspaceImageError {
+    fn code(&self) -> Option<&str> {
+        CreateWorkspaceImageError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateWorkspaceImageError {
+    /// Creates a new `CreateWorkspaceImageError`.
+    pub fn new(kind: CreateWorkspaceImageErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `CreateWorkspaceImageError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateWorkspaceImageErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `CreateWorkspaceImageError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateWorkspaceImageErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::InvalidResourceStateException`.
+    pub fn is_invalid_resource_state_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::InvalidResourceStateException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::OperationNotSupportedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::ResourceAlreadyExistsException`.
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::ResourceLimitExceededException`.
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `CreateWorkspaceImageErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateWorkspaceImageErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for CreateWorkspaceImageError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateWorkspaceImageErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::InvalidResourceStateException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateWorkspaceImageErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `CreateWorkspaces` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5406,6 +5565,132 @@ impl std::error::Error for ModifyClientPropertiesError {
             }
             ModifyClientPropertiesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             ModifyClientPropertiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `ModifySamlProperties` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifySamlPropertiesError {
+    /// Kind of error that occurred.
+    pub kind: ModifySamlPropertiesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ModifySamlProperties` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifySamlPropertiesErrorKind {
+    /// <p>The user is not authorized to access a resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>One or more parameter values are not valid.</p>
+    InvalidParameterValuesException(crate::error::InvalidParameterValuesException),
+    /// <p>This operation is not supported.</p>
+    OperationNotSupportedException(crate::error::OperationNotSupportedException),
+    /// <p>The resource could not be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ModifySamlPropertiesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifySamlPropertiesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ModifySamlPropertiesErrorKind::InvalidParameterValuesException(_inner) => _inner.fmt(f),
+            ModifySamlPropertiesErrorKind::OperationNotSupportedException(_inner) => _inner.fmt(f),
+            ModifySamlPropertiesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ModifySamlPropertiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ModifySamlPropertiesError {
+    fn code(&self) -> Option<&str> {
+        ModifySamlPropertiesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifySamlPropertiesError {
+    /// Creates a new `ModifySamlPropertiesError`.
+    pub fn new(kind: ModifySamlPropertiesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ModifySamlPropertiesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifySamlPropertiesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ModifySamlPropertiesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifySamlPropertiesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ModifySamlPropertiesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifySamlPropertiesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifySamlPropertiesErrorKind::InvalidParameterValuesException`.
+    pub fn is_invalid_parameter_values_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifySamlPropertiesErrorKind::InvalidParameterValuesException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifySamlPropertiesErrorKind::OperationNotSupportedException`.
+    pub fn is_operation_not_supported_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifySamlPropertiesErrorKind::OperationNotSupportedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ModifySamlPropertiesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifySamlPropertiesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ModifySamlPropertiesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifySamlPropertiesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ModifySamlPropertiesErrorKind::InvalidParameterValuesException(_inner) => Some(_inner),
+            ModifySamlPropertiesErrorKind::OperationNotSupportedException(_inner) => Some(_inner),
+            ModifySamlPropertiesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ModifySamlPropertiesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

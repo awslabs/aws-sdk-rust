@@ -683,6 +683,24 @@ pub fn parse_create_assessment_error(
                 tmp
             }),
         },
+        "ServiceQuotaExceededException" => crate::error::CreateAssessmentError {
+            meta: generic,
+            kind: crate::error::CreateAssessmentErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAssessmentError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationException" => crate::error::CreateAssessmentError {
             meta: generic,
             kind: crate::error::CreateAssessmentErrorKind::ValidationException({
@@ -792,6 +810,26 @@ pub fn parse_create_assessment_framework_error(
                 }
                 tmp
             }),
+        },
+        "ServiceQuotaExceededException" => crate::error::CreateAssessmentFrameworkError {
+            meta: generic,
+            kind: crate::error::CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_quota_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAssessmentFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
         },
         "ValidationException" => crate::error::CreateAssessmentFrameworkError {
             meta: generic,
@@ -1002,6 +1040,24 @@ pub fn parse_create_control_error(
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateControlError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::CreateControlError {
+            meta: generic,
+            kind: crate::error::CreateControlErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateControlError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5812,6 +5868,24 @@ pub fn parse_update_assessment_status_error(
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::UpdateAssessmentStatusError {
+            meta: generic,
+            kind: crate::error::UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssessmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

@@ -224,6 +224,7 @@ impl Client {
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateDBInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_auto_minor_version_upgrade): <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>  <p>Default: <code>false</code> </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDBInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDBInstance::set_tags): <p>The tags to be assigned to the instance. You can assign up to 10 tags to an instance.</p>
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_db_cluster_identifier): <p>The identifier of the cluster that the instance will belong to.</p>
+    ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::CreateDBInstance::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     ///   - [`promotion_tier(i32)`](crate::client::fluent_builders::CreateDBInstance::promotion_tier) / [`set_promotion_tier(Option<i32>)`](crate::client::fluent_builders::CreateDBInstance::set_promotion_tier): <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>  <p>Default: 1</p>  <p>Valid values: 0-15</p>
     ///   - [`enable_performance_insights(bool)`](crate::client::fluent_builders::CreateDBInstance::enable_performance_insights) / [`set_enable_performance_insights(Option<bool>)`](crate::client::fluent_builders::CreateDBInstance::set_enable_performance_insights): <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
     ///   - [`performance_insights_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateDBInstance::performance_insights_kms_key_id) / [`set_performance_insights_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateDBInstance::set_performance_insights_kms_key_id): <p>The KMS key identifier for encryption of Performance Insights data.</p>  <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>  <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
@@ -692,6 +693,7 @@ impl Client {
     ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::ModifyDBInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_auto_minor_version_upgrade): <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     ///   - [`new_db_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::new_db_instance_identifier) / [`set_new_db_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_new_db_instance_identifier): <p> The new instance identifier for the instance when renaming an instance. When you change the instance identifier, an instance reboot occurs immediately if you set <code>Apply Immediately</code> to <code>true</code>. It occurs during the next maintenance window if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored as a lowercase string. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
     ///   - [`ca_certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::ca_certificate_identifier) / [`set_ca_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_ca_certificate_identifier): <p>Indicates the certificate that needs to be associated with the instance.</p>
+    ///   - [`copy_tags_to_snapshot(bool)`](crate::client::fluent_builders::ModifyDBInstance::copy_tags_to_snapshot) / [`set_copy_tags_to_snapshot(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_copy_tags_to_snapshot): <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     ///   - [`promotion_tier(i32)`](crate::client::fluent_builders::ModifyDBInstance::promotion_tier) / [`set_promotion_tier(Option<i32>)`](crate::client::fluent_builders::ModifyDBInstance::set_promotion_tier): <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>  <p>Default: 1</p>  <p>Valid values: 0-15</p>
     ///   - [`enable_performance_insights(bool)`](crate::client::fluent_builders::ModifyDBInstance::enable_performance_insights) / [`set_enable_performance_insights(Option<bool>)`](crate::client::fluent_builders::ModifyDBInstance::set_enable_performance_insights): <p>A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using Amazon Performance Insights</a>.</p>
     ///   - [`performance_insights_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::ModifyDBInstance::performance_insights_kms_key_id) / [`set_performance_insights_kms_key_id(Option<String>)`](crate::client::fluent_builders::ModifyDBInstance::set_performance_insights_kms_key_id): <p>The KMS key identifier for encryption of Performance Insights data.</p>  <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>  <p>If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.</p>
@@ -826,6 +828,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::db_cluster_identifier) / [`set_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_db_cluster_identifier): <p>The name of the new cluster to be created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`restore_type(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::restore_type) / [`set_restore_type(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_restore_type): <p>The type of restore to be performed. You can specify one of the following values:</p>  <ul>   <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>   <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>  </ul>  <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>  <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     ///   - [`source_db_cluster_identifier(impl Into<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::source_db_cluster_identifier) / [`set_source_db_cluster_identifier(Option<String>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_source_db_cluster_identifier): <p>The identifier of the source cluster from which to restore.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>  </ul>
     ///   - [`restore_to_time(DateTime)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::restore_to_time) / [`set_restore_to_time(Option<DateTime>)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_restore_to_time): <p>The date and time to restore the cluster to.</p>  <p>Valid values: A time in Universal Coordinated Time (UTC) format.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be before the latest restorable time for the instance.</p> </li>   <li> <p>Must be specified if the <code>UseLatestRestorableTime</code> parameter is not provided.</p> </li>   <li> <p>Cannot be specified if the <code>UseLatestRestorableTime</code> parameter is <code>true</code>.</p> </li>   <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code>.</p> </li>  </ul>  <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
     ///   - [`use_latest_restorable_time(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::use_latest_restorable_time) / [`set_use_latest_restorable_time(bool)`](crate::client::fluent_builders::RestoreDBClusterToPointInTime::set_use_latest_restorable_time): <p>A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and <code>false</code> otherwise. </p>  <p>Default: <code>false</code> </p>  <p>Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.</p>
@@ -2236,6 +2239,16 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_db_cluster_identifier(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
@@ -5942,6 +5955,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ca_certificate_identifier(input);
             self
         }
+        /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_copy_tags_to_snapshot(input);
+            self
+        }
         /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         /// <p>Default: 1</p>
         /// <p>Valid values: 0-15</p>
@@ -6988,6 +7011,28 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_db_cluster_identifier(input);
+            self
+        }
+        /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+        /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+        /// </ul>
+        /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+        /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+        pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_type(input.into());
+            self
+        }
+        /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+        /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+        /// </ul>
+        /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+        /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+        pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_restore_type(input);
             self
         }
         /// <p>The identifier of the source cluster from which to restore.</p>

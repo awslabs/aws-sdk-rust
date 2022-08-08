@@ -452,6 +452,9 @@ impl Client {
     ///   - [`insufficient_data_actions(Vec<String>)`](crate::client::fluent_builders::PutCompositeAlarm::insufficient_data_actions) / [`set_insufficient_data_actions(Option<Vec<String>>)`](crate::client::fluent_builders::PutCompositeAlarm::set_insufficient_data_actions): <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
     ///   - [`ok_actions(Vec<String>)`](crate::client::fluent_builders::PutCompositeAlarm::ok_actions) / [`set_ok_actions(Option<Vec<String>>)`](crate::client::fluent_builders::PutCompositeAlarm::set_ok_actions): <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::PutCompositeAlarm::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::PutCompositeAlarm::set_tags): <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+    ///   - [`actions_suppressor(impl Into<String>)`](crate::client::fluent_builders::PutCompositeAlarm::actions_suppressor) / [`set_actions_suppressor(Option<String>)`](crate::client::fluent_builders::PutCompositeAlarm::set_actions_suppressor): <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    ///   - [`actions_suppressor_wait_period(i32)`](crate::client::fluent_builders::PutCompositeAlarm::actions_suppressor_wait_period) / [`set_actions_suppressor_wait_period(Option<i32>)`](crate::client::fluent_builders::PutCompositeAlarm::set_actions_suppressor_wait_period): <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>   <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>  </important>
+    ///   - [`actions_suppressor_extension_period(i32)`](crate::client::fluent_builders::PutCompositeAlarm::actions_suppressor_extension_period) / [`set_actions_suppressor_extension_period(Option<i32>)`](crate::client::fluent_builders::PutCompositeAlarm::set_actions_suppressor_extension_period): <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>   <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>  </important>
     /// - On success, responds with [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput)
 
     /// - On failure, responds with [`SdkError<PutCompositeAlarmError>`](crate::error::PutCompositeAlarmError)
@@ -3346,6 +3349,53 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn actions_suppressor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.actions_suppressor(input.into());
+            self
+        }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn set_actions_suppressor(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_actions_suppressor(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_wait_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.actions_suppressor_wait_period(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_wait_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_actions_suppressor_wait_period(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_extension_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.actions_suppressor_extension_period(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_extension_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.inner = self.inner.set_actions_suppressor_extension_period(input);
             self
         }
     }

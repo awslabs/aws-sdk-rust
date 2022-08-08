@@ -22,7 +22,7 @@ pub enum AssociateDRTLogBucketErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Exception that indicates that the operation would exceed a limit.</p>
     LimitsExceededException(crate::error::LimitsExceededException),
-    /// <p>The ARN of the role that you specifed does not exist.</p>
+    /// <p>The ARN of the role that you specified does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
@@ -2455,7 +2455,7 @@ pub enum DisassociateDRTLogBucketErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Exception that indicates that the operation would not cause any change to occur.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The ARN of the role that you specifed does not exist.</p>
+    /// <p>The ARN of the role that you specified does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),
@@ -5353,7 +5353,7 @@ impl LimitsExceededException {
     }
 }
 
-/// <p>The ARN of the role that you specifed does not exist.</p>
+/// <p>The ARN of the role that you specified does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAssociatedRoleException {

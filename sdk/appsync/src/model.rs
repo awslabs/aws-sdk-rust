@@ -1633,7 +1633,7 @@ pub struct CognitoUserPoolConfig {
     pub user_pool_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub aws_region: std::option::Option<std::string::String>,
-    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub app_id_client_regex: std::option::Option<std::string::String>,
 }
 impl CognitoUserPoolConfig {
@@ -1645,7 +1645,7 @@ impl CognitoUserPoolConfig {
     pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
         self.app_id_client_regex.as_deref()
     }
@@ -1690,12 +1690,12 @@ pub mod cognito_user_pool_config {
             self.aws_region = input;
             self
         }
-        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_id_client_regex = Some(input.into());
             self
         }
-        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn set_app_id_client_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1914,7 +1914,7 @@ pub struct UserPoolConfig {
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     pub default_action: std::option::Option<crate::model::DefaultAction>,
-    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub app_id_client_regex: std::option::Option<std::string::String>,
 }
 impl UserPoolConfig {
@@ -1930,7 +1930,7 @@ impl UserPoolConfig {
     pub fn default_action(&self) -> std::option::Option<&crate::model::DefaultAction> {
         self.default_action.as_ref()
     }
-    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
         self.app_id_client_regex.as_deref()
     }
@@ -1990,12 +1990,12 @@ pub mod user_pool_config {
             self.default_action = input;
             self
         }
-        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_id_client_regex = Some(input.into());
             self
         }
-        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID.</p>
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
         pub fn set_app_id_client_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5107,5 +5107,59 @@ impl AssociationStatus {
 impl AsRef<str> for AssociationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Contains the list of errors generated when attempting to evaluate a mapping template.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ErrorDetail {
+    /// <p>The error payload.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl ErrorDetail {
+    /// <p>The error payload.</p>
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Debug for ErrorDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ErrorDetail");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+/// See [`ErrorDetail`](crate::model::ErrorDetail).
+pub mod error_detail {
+
+    /// A builder for [`ErrorDetail`](crate::model::ErrorDetail).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The error payload.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The error payload.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ErrorDetail`](crate::model::ErrorDetail).
+        pub fn build(self) -> crate::model::ErrorDetail {
+            crate::model::ErrorDetail {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
     }
 }

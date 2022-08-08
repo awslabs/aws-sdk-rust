@@ -40,12 +40,16 @@ pub mod create_token_input {
             self.client_secret = input;
             self
         }
-        /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+        /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
+        /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
+        /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
         pub fn grant_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_type = Some(input.into());
             self
         }
-        /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+        /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
+        /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
+        /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
         pub fn set_grant_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_type = input;
             self
@@ -70,12 +74,14 @@ pub mod create_token_input {
             self.code = input;
             self
         }
-        /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
         pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.refresh_token = Some(input.into());
             self
         }
-        /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+        /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+        /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
         pub fn set_refresh_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -416,12 +422,12 @@ pub mod start_device_authorization_input {
         pub(crate) start_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+        /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+        /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -439,12 +445,12 @@ pub mod start_device_authorization_input {
             self.client_secret = input;
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+        /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -577,15 +583,15 @@ impl StartDeviceAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeviceAuthorizationInput {
-    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub client_secret: std::option::Option<std::string::String>,
-    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
     pub start_url: std::option::Option<std::string::String>,
 }
 impl StartDeviceAuthorizationInput {
-    /// <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    /// <p>The unique identifier string for the client that is registered with Amazon Web Services SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -593,7 +599,7 @@ impl StartDeviceAuthorizationInput {
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
-    /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
     pub fn start_url(&self) -> std::option::Option<&str> {
         self.start_url.as_deref()
     }
@@ -651,13 +657,16 @@ pub struct CreateTokenInput {
     pub client_id: std::option::Option<std::string::String>,
     /// <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
     pub client_secret: std::option::Option<std::string::String>,
-    /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+    /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
+    /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
+    /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub grant_type: std::option::Option<std::string::String>,
     /// <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
     pub device_code: std::option::Option<std::string::String>,
     /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
     pub refresh_token: std::option::Option<std::string::String>,
     /// <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub scope: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -673,7 +682,9 @@ impl CreateTokenInput {
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
-    /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+    /// <p>Supports grant types for the authorization code, refresh token, and device code request. For device code requests, specify the following value:</p>
+    /// <p> <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code> </p>
+    /// <p>For information about how to obtain the device code, see the <code>StartDeviceAuthorization</code> topic.</p>
     pub fn grant_type(&self) -> std::option::Option<&str> {
         self.grant_type.as_deref()
     }
@@ -685,7 +696,8 @@ impl CreateTokenInput {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+    /// <p>Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the features and limitations of the current Amazon Web Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon Web Services SSO OIDC API Reference</a>.</p>
+    /// <p>The token used to obtain an access token in the event that the access token is invalid or expired.</p>
     pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }

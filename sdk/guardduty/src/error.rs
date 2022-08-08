@@ -1859,6 +1859,110 @@ impl std::error::Error for DeleteThreatIntelSetError {
     }
 }
 
+/// Error type for the `DescribeMalwareScans` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeMalwareScansError {
+    /// Kind of error that occurred.
+    pub kind: DescribeMalwareScansErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeMalwareScans` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeMalwareScansErrorKind {
+    /// <p>A bad request exception object.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal server error exception object.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeMalwareScansError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeMalwareScansErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DescribeMalwareScansErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            DescribeMalwareScansErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeMalwareScansError {
+    fn code(&self) -> Option<&str> {
+        DescribeMalwareScansError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeMalwareScansError {
+    /// Creates a new `DescribeMalwareScansError`.
+    pub fn new(kind: DescribeMalwareScansErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeMalwareScansError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeMalwareScansErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeMalwareScansError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeMalwareScansErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeMalwareScansErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMalwareScansErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeMalwareScansErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMalwareScansErrorKind::InternalServerErrorException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeMalwareScansError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeMalwareScansErrorKind::BadRequestException(_inner) => Some(_inner),
+            DescribeMalwareScansErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            DescribeMalwareScansErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DescribeOrganizationConfiguration` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3349,6 +3453,110 @@ impl std::error::Error for GetIPSetError {
             GetIPSetErrorKind::BadRequestException(_inner) => Some(_inner),
             GetIPSetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             GetIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetMalwareScanSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMalwareScanSettingsError {
+    /// Kind of error that occurred.
+    pub kind: GetMalwareScanSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetMalwareScanSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMalwareScanSettingsErrorKind {
+    /// <p>A bad request exception object.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal server error exception object.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMalwareScanSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMalwareScanSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetMalwareScanSettingsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            GetMalwareScanSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetMalwareScanSettingsError {
+    fn code(&self) -> Option<&str> {
+        GetMalwareScanSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMalwareScanSettingsError {
+    /// Creates a new `GetMalwareScanSettingsError`.
+    pub fn new(kind: GetMalwareScanSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetMalwareScanSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMalwareScanSettingsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetMalwareScanSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMalwareScanSettingsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetMalwareScanSettingsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMalwareScanSettingsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetMalwareScanSettingsErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMalwareScanSettingsErrorKind::InternalServerErrorException(_)
+        )
+    }
+}
+impl std::error::Error for GetMalwareScanSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMalwareScanSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetMalwareScanSettingsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            GetMalwareScanSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -6029,6 +6237,114 @@ impl std::error::Error for UpdateIPSetError {
             UpdateIPSetErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateIPSetErrorKind::InternalServerErrorException(_inner) => Some(_inner),
             UpdateIPSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UpdateMalwareScanSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateMalwareScanSettingsError {
+    /// Kind of error that occurred.
+    pub kind: UpdateMalwareScanSettingsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateMalwareScanSettings` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateMalwareScanSettingsErrorKind {
+    /// <p>A bad request exception object.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>An internal server error exception object.</p>
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateMalwareScanSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateMalwareScanSettingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateMalwareScanSettingsErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateMalwareScanSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateMalwareScanSettingsError {
+    fn code(&self) -> Option<&str> {
+        UpdateMalwareScanSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateMalwareScanSettingsError {
+    /// Creates a new `UpdateMalwareScanSettingsError`.
+    pub fn new(kind: UpdateMalwareScanSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateMalwareScanSettingsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateMalwareScanSettingsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateMalwareScanSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateMalwareScanSettingsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateMalwareScanSettingsErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMalwareScanSettingsErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateMalwareScanSettingsErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMalwareScanSettingsErrorKind::InternalServerErrorException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateMalwareScanSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateMalwareScanSettingsErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateMalwareScanSettingsErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            UpdateMalwareScanSettingsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

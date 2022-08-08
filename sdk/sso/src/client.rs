@@ -70,8 +70,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`role_name(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::role_name) / [`set_role_name(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_role_name): <p>The friendly name of the role that is assigned to the user.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
-    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_account_id): <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::GetRoleCredentials::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::GetRoleCredentials::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`GetRoleCredentialsOutput`](crate::output::GetRoleCredentialsOutput) with field(s):
     ///   - [`role_credentials(Option<RoleCredentials>)`](crate::output::GetRoleCredentialsOutput::role_credentials): <p>The credentials for the role that is assigned to the user.</p>
     /// - On failure, responds with [`SdkError<GetRoleCredentialsError>`](crate::error::GetRoleCredentialsError)
@@ -84,8 +84,8 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_next_token): <p>The page token from the previous response output when you request subsequent pages.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccountRoles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccountRoles::set_max_results): <p>The number of items that clients can request per page.</p>
-    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_account_id): <p>The identifier for the AWS account that is assigned to the user.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
+    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListAccountRoles::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListAccountRoles::set_account_id): <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
     /// - On success, responds with [`ListAccountRolesOutput`](crate::output::ListAccountRolesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountRolesOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`role_list(Option<Vec<RoleInfo>>)`](crate::output::ListAccountRolesOutput::role_list): <p>A paginated response with the list of roles and the next token if more results are available.</p>
@@ -99,7 +99,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_next_token): <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccounts::set_max_results): <p>This is the number of items clients can request per page.</p>
-    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`ListAccountsOutput`](crate::output::ListAccountsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::output::ListAccountsOutput::next_token): <p>The page token client that is used to retrieve the list of accounts.</p>
     ///   - [`account_list(Option<Vec<AccountInfo>>)`](crate::output::ListAccountsOutput::account_list): <p>A paginated response with the list of account information and the next token if more results are available.</p>
@@ -110,7 +110,7 @@ impl Client {
     /// Constructs a fluent builder for the [`Logout`](crate::client::fluent_builders::Logout) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::Logout::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::Logout::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+    ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::Logout::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::Logout::set_access_token): <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
     /// - On success, responds with [`LogoutOutput`](crate::output::LogoutOutput)
 
     /// - On failure, responds with [`SdkError<LogoutError>`](crate::error::LogoutError)
@@ -177,22 +177,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_name(input);
             self
         }
-        /// <p>The identifier for the AWS account that is assigned to the user.</p>
+        /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The identifier for the AWS account that is assigned to the user.</p>
+        /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -200,7 +200,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccountRoles`.
     ///
-    /// <p>Lists all roles that are assigned to the user for a given AWS account.</p>
+    /// <p>Lists all roles that are assigned to the user for a given Amazon Web Services account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountRoles {
         handle: std::sync::Arc<super::Handle>,
@@ -266,22 +266,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
         }
-        /// <p>The identifier for the AWS account that is assigned to the user.</p>
+        /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input.into());
             self
         }
-        /// <p>The identifier for the AWS account that is assigned to the user.</p>
+        /// <p>The identifier for the Amazon Web Services account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_account_id(input);
             self
@@ -289,7 +289,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccounts`.
     ///
-    /// <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>AWS SSO User Guide</i>. This operation returns a paginated response.</p>
+    /// <p>Lists all Amazon Web Services accounts assigned to the user. These Amazon Web Services accounts are assigned by the administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>Amazon Web Services SSO User Guide</i>. This operation returns a paginated response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts {
         handle: std::sync::Arc<super::Handle>,
@@ -355,12 +355,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -368,7 +368,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Logout`.
     ///
-    /// <p>Removes the client- and server-side session that is associated with the user.</p>
+    /// <p>Removes the locally stored SSO tokens from the client-side cache and sends an API call to the Amazon Web Services SSO service to invalidate the corresponding server-side Amazon Web Services SSO sign in session.</p> <note>
+    /// <p>If a user uses Amazon Web Services SSO to access the AWS CLI, the user’s Amazon Web Services SSO sign in session is used to obtain an IAM session, as specified in the corresponding Amazon Web Services SSO permission set. More specifically, Amazon Web Services SSO assumes an IAM role in the target account on behalf of the user, and the corresponding temporary Amazon Web Services credentials are returned to the client.</p>
+    /// <p>After user logout, any existing IAM role sessions that were created by using Amazon Web Services SSO permission sets continue based on the duration configured in the permission set. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/authconcept.html">User authentications</a> in the <i>Amazon Web Services SSO User Guide</i>.</p>
+    /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Logout {
         handle: std::sync::Arc<super::Handle>,
@@ -408,12 +411,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self

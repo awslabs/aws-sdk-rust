@@ -4999,7 +4999,7 @@ impl ListTagsForResourceOutput {
 pub struct ListNamespacesOutput {
     /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
-    /// <p>A pagination token that can be used in a subsequent request.</p>
+    /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -5011,7 +5011,7 @@ impl ListNamespacesOutput {
     pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceInfoV2]> {
         self.namespaces.as_deref()
     }
-    /// <p>A pagination token that can be used in a subsequent request.</p>
+    /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5065,12 +5065,12 @@ pub mod list_namespaces_output {
             self.namespaces = input;
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

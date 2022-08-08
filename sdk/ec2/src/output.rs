@@ -1217,7 +1217,9 @@ impl RunScheduledInstancesOutput {
     }
 }
 
-/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
+/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p> <note>
+/// <p>We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunInstancesOutput {
@@ -23700,7 +23702,7 @@ pub struct DescribeImageAttributeOutput {
     pub tpm_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub uefi_data: std::option::Option<crate::model::AttributeValue>,
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub last_launched_time: std::option::Option<crate::model::AttributeValue>,
@@ -23752,7 +23754,7 @@ impl DescribeImageAttributeOutput {
     pub fn uefi_data(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.uefi_data.as_ref()
     }
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
     /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn last_launched_time(&self) -> std::option::Option<&crate::model::AttributeValue> {
@@ -23957,14 +23959,14 @@ pub mod describe_image_attribute_output {
             self.uefi_data = input;
             self
         }
-        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
         /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
         /// </note>
         pub fn last_launched_time(mut self, input: crate::model::AttributeValue) -> Self {
             self.last_launched_time = Some(input);
             self
         }
-        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used, there is a 24-hour delay before that usage is reported.</p> <note>
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
         /// <p> <code>lastLaunchedTime</code> data is available starting April 2017.</p>
         /// </note>
         pub fn set_last_launched_time(

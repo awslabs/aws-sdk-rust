@@ -33588,6 +33588,282 @@ impl UpdateVoiceConnectorGroupInput {
     }
 }
 
+/// See [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
+pub mod validate_e911_address_input {
+
+    /// A builder for [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_account_id: std::option::Option<std::string::String>,
+        pub(crate) street_number: std::option::Option<std::string::String>,
+        pub(crate) street_info: std::option::Option<std::string::String>,
+        pub(crate) city: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) country: std::option::Option<std::string::String>,
+        pub(crate) postal_code: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The AWS account ID.</p>
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
+            self
+        }
+        /// <p>The AWS account ID.</p>
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
+            self
+        }
+        /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+        pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_number = Some(input.into());
+            self
+        }
+        /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+        pub fn set_street_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.street_number = input;
+            self
+        }
+        /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+        pub fn street_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_info = Some(input.into());
+            self
+        }
+        /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+        pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_info = input;
+            self
+        }
+        /// <p>The address city, such as <code>Portland</code>.</p>
+        pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
+            self.city = Some(input.into());
+            self
+        }
+        /// <p>The address city, such as <code>Portland</code>.</p>
+        pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.city = input;
+            self
+        }
+        /// <p>The address state, such as <code>ME</code>.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p>The address state, such as <code>ME</code>.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The address country, such as <code>US</code>. </p>
+        pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country = Some(input.into());
+            self
+        }
+        /// <p>The address country, such as <code>US</code>. </p>
+        pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country = input;
+            self
+        }
+        /// <p>The address postal code, such as <code>04352</code>.</p>
+        pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.postal_code = Some(input.into());
+            self
+        }
+        /// <p>The address postal code, such as <code>04352</code>.</p>
+        pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.postal_code = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ValidateE911AddressInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ValidateE911AddressInput {
+                aws_account_id: self.aws_account_id,
+                street_number: self.street_number,
+                street_info: self.street_info,
+                city: self.city,
+                state: self.state,
+                country: self.country,
+                postal_code: self.postal_code,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ValidateE911AddressInputOperationOutputAlias = crate::operation::ValidateE911Address;
+#[doc(hidden)]
+pub type ValidateE911AddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ValidateE911AddressInput {
+    /// Consumes the builder and constructs an Operation<[`ValidateE911Address`](crate::operation::ValidateE911Address)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ValidateE911Address,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ValidateE911AddressInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/emergency-calling/address").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ValidateE911AddressInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_validate_e911_address(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ValidateE911Address::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ValidateE911Address",
+            "chime",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
+    pub fn builder() -> crate::input::validate_e911_address_input::Builder {
+        crate::input::validate_e911_address_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidateE911AddressInput {
+    /// <p>The AWS account ID.</p>
+    pub aws_account_id: std::option::Option<std::string::String>,
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    pub street_number: std::option::Option<std::string::String>,
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    pub street_info: std::option::Option<std::string::String>,
+    /// <p>The address city, such as <code>Portland</code>.</p>
+    pub city: std::option::Option<std::string::String>,
+    /// <p>The address state, such as <code>ME</code>.</p>
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The address country, such as <code>US</code>. </p>
+    pub country: std::option::Option<std::string::String>,
+    /// <p>The address postal code, such as <code>04352</code>.</p>
+    pub postal_code: std::option::Option<std::string::String>,
+}
+impl ValidateE911AddressInput {
+    /// <p>The AWS account ID.</p>
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    pub fn street_number(&self) -> std::option::Option<&str> {
+        self.street_number.as_deref()
+    }
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    pub fn street_info(&self) -> std::option::Option<&str> {
+        self.street_info.as_deref()
+    }
+    /// <p>The address city, such as <code>Portland</code>.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The address state, such as <code>ME</code>.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The address country, such as <code>US</code>. </p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+    /// <p>The address postal code, such as <code>04352</code>.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+}
+impl std::fmt::Debug for ValidateE911AddressInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidateE911AddressInput");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("street_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_info", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

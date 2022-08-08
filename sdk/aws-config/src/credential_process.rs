@@ -7,13 +7,13 @@
 
 use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials, RefreshableCredentials};
 use aws_smithy_json::deserialize::Token;
-use aws_smithy_types::date_time::Format;
-use aws_smithy_types::DateTime;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::{credentials, Credentials};
 use std::fmt;
 use std::process::Command;
 use std::time::SystemTime;
+use time::format_description::well_known::Rfc3339;
+use time::OffsetDateTime;
 
 #[derive(Clone)]
 pub(crate) struct CommandWithSensitiveArgs<T>(T);
@@ -232,19 +232,18 @@ pub(crate) fn parse_credential_process_json_credentials(
         secret_access_key.ok_or(InvalidJsonCredentials::MissingField("SecretAccessKey"))?;
     let session_token = session_token.ok_or(InvalidJsonCredentials::MissingField("Token"))?;
     let expiration = expiration.ok_or(InvalidJsonCredentials::MissingField("Expiration"))?;
-    let expiration = SystemTime::try_from(
-        DateTime::from_str(expiration.as_ref(), Format::DateTime).map_err(|err| {
+    let expiration =
+        SystemTime::try_from(OffsetDateTime::parse(&expiration, &Rfc3339).map_err(|err| {
             InvalidJsonCredentials::InvalidField {
                 field: "Expiration",
                 err: err.into(),
             }
-        })?,
-    )
-    .map_err(|_| {
-        InvalidJsonCredentials::Other(
-            "credential expiration time cannot be represented by a DateTime".into(),
-        )
-    })?;
+        })?)
+        .map_err(|_| {
+            InvalidJsonCredentials::Other(
+                "credential expiration time cannot be represented by a DateTime".into(),
+            )
+        })?;
     Ok(RefreshableCredentials {
         access_key_id,
         secret_access_key,
@@ -256,10 +255,10 @@ pub(crate) fn parse_credential_process_json_credentials(
 #[cfg(test)]
 mod test {
     use crate::credential_process::CredentialProcessProvider;
-    use aws_smithy_types::date_time::Format;
-    use aws_smithy_types::DateTime;
     use aws_types::credentials::ProvideCredentials;
     use std::time::SystemTime;
+    use time::format_description::well_known::Rfc3339;
+    use time::OffsetDateTime;
 
     #[tokio::test]
     async fn test_credential_process() {
@@ -274,7 +273,7 @@ mod test {
             creds.expiry(),
             Some(
                 SystemTime::try_from(
-                    DateTime::from_str("2022-05-02T18:36:00+00:00", Format::DateTime)
+                    OffsetDateTime::parse("2022-05-02T18:36:00+00:00", &Rfc3339)
                         .expect("static datetime")
                 )
                 .expect("static datetime")

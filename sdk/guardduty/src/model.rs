@@ -88,6 +88,9 @@ pub struct OrganizationDataSourceConfigurations {
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfiguration>,
     /// <p>Describes the configuration of Kubernetes data sources for new members of the organization.</p>
     pub kubernetes: std::option::Option<crate::model::OrganizationKubernetesConfiguration>,
+    /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
+    pub malware_protection:
+        std::option::Option<crate::model::OrganizationMalwareProtectionConfiguration>,
 }
 impl OrganizationDataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
@@ -100,12 +103,19 @@ impl OrganizationDataSourceConfigurations {
     ) -> std::option::Option<&crate::model::OrganizationKubernetesConfiguration> {
         self.kubernetes.as_ref()
     }
+    /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationMalwareProtectionConfiguration> {
+        self.malware_protection.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationDataSourceConfigurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationDataSourceConfigurations");
         formatter.field("s3_logs", &self.s3_logs);
         formatter.field("kubernetes", &self.kubernetes);
+        formatter.field("malware_protection", &self.malware_protection);
         formatter.finish()
     }
 }
@@ -118,6 +128,8 @@ pub mod organization_data_source_configurations {
         pub(crate) s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfiguration>,
         pub(crate) kubernetes:
             std::option::Option<crate::model::OrganizationKubernetesConfiguration>,
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::OrganizationMalwareProtectionConfiguration>,
     }
     impl Builder {
         /// <p>Describes whether S3 data event logs are enabled for new members of the organization.</p>
@@ -149,11 +161,28 @@ pub mod organization_data_source_configurations {
             self.kubernetes = input;
             self
         }
+        /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::OrganizationMalwareProtectionConfiguration,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of Malware Protection for new members of the organization.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationMalwareProtectionConfiguration>,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrganizationDataSourceConfigurations`](crate::model::OrganizationDataSourceConfigurations).
         pub fn build(self) -> crate::model::OrganizationDataSourceConfigurations {
             crate::model::OrganizationDataSourceConfigurations {
                 s3_logs: self.s3_logs,
                 kubernetes: self.kubernetes,
+                malware_protection: self.malware_protection,
             }
         }
     }
@@ -162,6 +191,184 @@ impl OrganizationDataSourceConfigurations {
     /// Creates a new builder-style object to manufacture [`OrganizationDataSourceConfigurations`](crate::model::OrganizationDataSourceConfigurations).
     pub fn builder() -> crate::model::organization_data_source_configurations::Builder {
         crate::model::organization_data_source_configurations::Builder::default()
+    }
+}
+
+/// <p>Organization-wide Malware Protection configurations.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationMalwareProtectionConfiguration {
+    /// <p>Whether Malware Protection for EC2 instances with findings should be auto-enabled for new members joining the organization.</p>
+    pub scan_ec2_instance_with_findings:
+        std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindings>,
+}
+impl OrganizationMalwareProtectionConfiguration {
+    /// <p>Whether Malware Protection for EC2 instances with findings should be auto-enabled for new members joining the organization.</p>
+    pub fn scan_ec2_instance_with_findings(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationScanEc2InstanceWithFindings> {
+        self.scan_ec2_instance_with_findings.as_ref()
+    }
+}
+impl std::fmt::Debug for OrganizationMalwareProtectionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationMalwareProtectionConfiguration");
+        formatter.field(
+            "scan_ec2_instance_with_findings",
+            &self.scan_ec2_instance_with_findings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OrganizationMalwareProtectionConfiguration`](crate::model::OrganizationMalwareProtectionConfiguration).
+pub mod organization_malware_protection_configuration {
+
+    /// A builder for [`OrganizationMalwareProtectionConfiguration`](crate::model::OrganizationMalwareProtectionConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_ec2_instance_with_findings:
+            std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindings>,
+    }
+    impl Builder {
+        /// <p>Whether Malware Protection for EC2 instances with findings should be auto-enabled for new members joining the organization.</p>
+        pub fn scan_ec2_instance_with_findings(
+            mut self,
+            input: crate::model::OrganizationScanEc2InstanceWithFindings,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = Some(input);
+            self
+        }
+        /// <p>Whether Malware Protection for EC2 instances with findings should be auto-enabled for new members joining the organization.</p>
+        pub fn set_scan_ec2_instance_with_findings(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindings>,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationMalwareProtectionConfiguration`](crate::model::OrganizationMalwareProtectionConfiguration).
+        pub fn build(self) -> crate::model::OrganizationMalwareProtectionConfiguration {
+            crate::model::OrganizationMalwareProtectionConfiguration {
+                scan_ec2_instance_with_findings: self.scan_ec2_instance_with_findings,
+            }
+        }
+    }
+}
+impl OrganizationMalwareProtectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`OrganizationMalwareProtectionConfiguration`](crate::model::OrganizationMalwareProtectionConfiguration).
+    pub fn builder() -> crate::model::organization_malware_protection_configuration::Builder {
+        crate::model::organization_malware_protection_configuration::Builder::default()
+    }
+}
+
+/// <p>Organization-wide EC2 instances with findings scan configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationScanEc2InstanceWithFindings {
+    /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumes>,
+}
+impl OrganizationScanEc2InstanceWithFindings {
+    /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn ebs_volumes(&self) -> std::option::Option<&crate::model::OrganizationEbsVolumes> {
+        self.ebs_volumes.as_ref()
+    }
+}
+impl std::fmt::Debug for OrganizationScanEc2InstanceWithFindings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationScanEc2InstanceWithFindings");
+        formatter.field("ebs_volumes", &self.ebs_volumes);
+        formatter.finish()
+    }
+}
+/// See [`OrganizationScanEc2InstanceWithFindings`](crate::model::OrganizationScanEc2InstanceWithFindings).
+pub mod organization_scan_ec2_instance_with_findings {
+
+    /// A builder for [`OrganizationScanEc2InstanceWithFindings`](crate::model::OrganizationScanEc2InstanceWithFindings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumes>,
+    }
+    impl Builder {
+        /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn ebs_volumes(mut self, input: crate::model::OrganizationEbsVolumes) -> Self {
+            self.ebs_volumes = Some(input);
+            self
+        }
+        /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn set_ebs_volumes(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationEbsVolumes>,
+        ) -> Self {
+            self.ebs_volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationScanEc2InstanceWithFindings`](crate::model::OrganizationScanEc2InstanceWithFindings).
+        pub fn build(self) -> crate::model::OrganizationScanEc2InstanceWithFindings {
+            crate::model::OrganizationScanEc2InstanceWithFindings {
+                ebs_volumes: self.ebs_volumes,
+            }
+        }
+    }
+}
+impl OrganizationScanEc2InstanceWithFindings {
+    /// Creates a new builder-style object to manufacture [`OrganizationScanEc2InstanceWithFindings`](crate::model::OrganizationScanEc2InstanceWithFindings).
+    pub fn builder() -> crate::model::organization_scan_ec2_instance_with_findings::Builder {
+        crate::model::organization_scan_ec2_instance_with_findings::Builder::default()
+    }
+}
+
+/// <p>Organization-wide EBS volumes scan configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationEbsVolumes {
+    /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub auto_enable: bool,
+}
+impl OrganizationEbsVolumes {
+    /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
+impl std::fmt::Debug for OrganizationEbsVolumes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationEbsVolumes");
+        formatter.field("auto_enable", &self.auto_enable);
+        formatter.finish()
+    }
+}
+/// See [`OrganizationEbsVolumes`](crate::model::OrganizationEbsVolumes).
+pub mod organization_ebs_volumes {
+
+    /// A builder for [`OrganizationEbsVolumes`](crate::model::OrganizationEbsVolumes).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auto_enable: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.auto_enable = Some(input);
+            self
+        }
+        /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_enable = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationEbsVolumes`](crate::model::OrganizationEbsVolumes).
+        pub fn build(self) -> crate::model::OrganizationEbsVolumes {
+            crate::model::OrganizationEbsVolumes {
+                auto_enable: self.auto_enable.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl OrganizationEbsVolumes {
+    /// Creates a new builder-style object to manufacture [`OrganizationEbsVolumes`](crate::model::OrganizationEbsVolumes).
+    pub fn builder() -> crate::model::organization_ebs_volumes::Builder {
+        crate::model::organization_ebs_volumes::Builder::default()
     }
 }
 
@@ -417,6 +624,8 @@ pub struct DataSourceConfigurations {
     pub s3_logs: std::option::Option<crate::model::S3LogsConfiguration>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub kubernetes: std::option::Option<crate::model::KubernetesConfiguration>,
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub malware_protection: std::option::Option<crate::model::MalwareProtectionConfiguration>,
 }
 impl DataSourceConfigurations {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
@@ -427,12 +636,19 @@ impl DataSourceConfigurations {
     pub fn kubernetes(&self) -> std::option::Option<&crate::model::KubernetesConfiguration> {
         self.kubernetes.as_ref()
     }
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MalwareProtectionConfiguration> {
+        self.malware_protection.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfigurations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceConfigurations");
         formatter.field("s3_logs", &self.s3_logs);
         formatter.field("kubernetes", &self.kubernetes);
+        formatter.field("malware_protection", &self.malware_protection);
         formatter.finish()
     }
 }
@@ -444,6 +660,8 @@ pub mod data_source_configurations {
     pub struct Builder {
         pub(crate) s3_logs: std::option::Option<crate::model::S3LogsConfiguration>,
         pub(crate) kubernetes: std::option::Option<crate::model::KubernetesConfiguration>,
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::MalwareProtectionConfiguration>,
     }
     impl Builder {
         /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
@@ -472,11 +690,28 @@ pub mod data_source_configurations {
             self.kubernetes = input;
             self
         }
+        /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::MalwareProtectionConfiguration,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<crate::model::MalwareProtectionConfiguration>,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfigurations`](crate::model::DataSourceConfigurations).
         pub fn build(self) -> crate::model::DataSourceConfigurations {
             crate::model::DataSourceConfigurations {
                 s3_logs: self.s3_logs,
                 kubernetes: self.kubernetes,
+                malware_protection: self.malware_protection,
             }
         }
     }
@@ -485,6 +720,127 @@ impl DataSourceConfigurations {
     /// Creates a new builder-style object to manufacture [`DataSourceConfigurations`](crate::model::DataSourceConfigurations).
     pub fn builder() -> crate::model::data_source_configurations::Builder {
         crate::model::data_source_configurations::Builder::default()
+    }
+}
+
+/// <p>Describes whether Malware Protection will be enabled as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalwareProtectionConfiguration {
+    /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    pub scan_ec2_instance_with_findings:
+        std::option::Option<crate::model::ScanEc2InstanceWithFindings>,
+}
+impl MalwareProtectionConfiguration {
+    /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    pub fn scan_ec2_instance_with_findings(
+        &self,
+    ) -> std::option::Option<&crate::model::ScanEc2InstanceWithFindings> {
+        self.scan_ec2_instance_with_findings.as_ref()
+    }
+}
+impl std::fmt::Debug for MalwareProtectionConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MalwareProtectionConfiguration");
+        formatter.field(
+            "scan_ec2_instance_with_findings",
+            &self.scan_ec2_instance_with_findings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`MalwareProtectionConfiguration`](crate::model::MalwareProtectionConfiguration).
+pub mod malware_protection_configuration {
+
+    /// A builder for [`MalwareProtectionConfiguration`](crate::model::MalwareProtectionConfiguration).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_ec2_instance_with_findings:
+            std::option::Option<crate::model::ScanEc2InstanceWithFindings>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+        pub fn scan_ec2_instance_with_findings(
+            mut self,
+            input: crate::model::ScanEc2InstanceWithFindings,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+        pub fn set_scan_ec2_instance_with_findings(
+            mut self,
+            input: std::option::Option<crate::model::ScanEc2InstanceWithFindings>,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalwareProtectionConfiguration`](crate::model::MalwareProtectionConfiguration).
+        pub fn build(self) -> crate::model::MalwareProtectionConfiguration {
+            crate::model::MalwareProtectionConfiguration {
+                scan_ec2_instance_with_findings: self.scan_ec2_instance_with_findings,
+            }
+        }
+    }
+}
+impl MalwareProtectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`MalwareProtectionConfiguration`](crate::model::MalwareProtectionConfiguration).
+    pub fn builder() -> crate::model::malware_protection_configuration::Builder {
+        crate::model::malware_protection_configuration::Builder::default()
+    }
+}
+
+/// <p>Describes whether Malware Protection for EC2 instances with findings will be enabled as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanEc2InstanceWithFindings {
+    /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
+    pub ebs_volumes: bool,
+}
+impl ScanEc2InstanceWithFindings {
+    /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
+    pub fn ebs_volumes(&self) -> bool {
+        self.ebs_volumes
+    }
+}
+impl std::fmt::Debug for ScanEc2InstanceWithFindings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanEc2InstanceWithFindings");
+        formatter.field("ebs_volumes", &self.ebs_volumes);
+        formatter.finish()
+    }
+}
+/// See [`ScanEc2InstanceWithFindings`](crate::model::ScanEc2InstanceWithFindings).
+pub mod scan_ec2_instance_with_findings {
+
+    /// A builder for [`ScanEc2InstanceWithFindings`](crate::model::ScanEc2InstanceWithFindings).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ebs_volumes: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
+        pub fn ebs_volumes(mut self, input: bool) -> Self {
+            self.ebs_volumes = Some(input);
+            self
+        }
+        /// <p>Describes the configuration for scanning EBS volumes as data source.</p>
+        pub fn set_ebs_volumes(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanEc2InstanceWithFindings`](crate::model::ScanEc2InstanceWithFindings).
+        pub fn build(self) -> crate::model::ScanEc2InstanceWithFindings {
+            crate::model::ScanEc2InstanceWithFindings {
+                ebs_volumes: self.ebs_volumes.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ScanEc2InstanceWithFindings {
+    /// Creates a new builder-style object to manufacture [`ScanEc2InstanceWithFindings`](crate::model::ScanEc2InstanceWithFindings).
+    pub fn builder() -> crate::model::scan_ec2_instance_with_findings::Builder {
+        crate::model::scan_ec2_instance_with_findings::Builder::default()
     }
 }
 
@@ -652,6 +1008,373 @@ impl S3LogsConfiguration {
     /// Creates a new builder-style object to manufacture [`S3LogsConfiguration`](crate::model::S3LogsConfiguration).
     pub fn builder() -> crate::model::s3_logs_configuration::Builder {
         crate::model::s3_logs_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EbsSnapshotPreservation {
+    #[allow(missing_docs)] // documentation missing in model
+    NoRetention,
+    #[allow(missing_docs)] // documentation missing in model
+    RetentionWithFinding,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EbsSnapshotPreservation {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO_RETENTION" => EbsSnapshotPreservation::NoRetention,
+            "RETENTION_WITH_FINDING" => EbsSnapshotPreservation::RetentionWithFinding,
+            other => EbsSnapshotPreservation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EbsSnapshotPreservation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EbsSnapshotPreservation::from(s))
+    }
+}
+impl EbsSnapshotPreservation {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EbsSnapshotPreservation::NoRetention => "NO_RETENTION",
+            EbsSnapshotPreservation::RetentionWithFinding => "RETENTION_WITH_FINDING",
+            EbsSnapshotPreservation::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NO_RETENTION", "RETENTION_WITH_FINDING"]
+    }
+}
+impl AsRef<str> for EbsSnapshotPreservation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains information about criteria used to filter resources before triggering malware scan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanResourceCriteria {
+    /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+    pub include: std::option::Option<
+        std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+    >,
+    /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+    pub exclude: std::option::Option<
+        std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+    >,
+}
+impl ScanResourceCriteria {
+    /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+    pub fn include(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+    > {
+        self.include.as_ref()
+    }
+    /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+    pub fn exclude(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+    > {
+        self.exclude.as_ref()
+    }
+}
+impl std::fmt::Debug for ScanResourceCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanResourceCriteria");
+        formatter.field("include", &self.include);
+        formatter.field("exclude", &self.exclude);
+        formatter.finish()
+    }
+}
+/// See [`ScanResourceCriteria`](crate::model::ScanResourceCriteria).
+pub mod scan_resource_criteria {
+
+    /// A builder for [`ScanResourceCriteria`](crate::model::ScanResourceCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) include: std::option::Option<
+            std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+        >,
+        pub(crate) exclude: std::option::Option<
+            std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `include`.
+        ///
+        /// To override the contents of this collection use [`set_include`](Self::set_include).
+        ///
+        /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+        pub fn include(
+            mut self,
+            k: crate::model::ScanCriterionKey,
+            v: crate::model::ScanCondition,
+        ) -> Self {
+            let mut hash_map = self.include.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.include = Some(hash_map);
+            self
+        }
+        /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+        pub fn set_include(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ScanCriterionKey,
+                    crate::model::ScanCondition,
+                >,
+            >,
+        ) -> Self {
+            self.include = input;
+            self
+        }
+        /// Adds a key-value pair to `exclude`.
+        ///
+        /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
+        ///
+        /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+        pub fn exclude(
+            mut self,
+            k: crate::model::ScanCriterionKey,
+            v: crate::model::ScanCondition,
+        ) -> Self {
+            let mut hash_map = self.exclude.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.exclude = Some(hash_map);
+            self
+        }
+        /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+        pub fn set_exclude(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::ScanCriterionKey,
+                    crate::model::ScanCondition,
+                >,
+            >,
+        ) -> Self {
+            self.exclude = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanResourceCriteria`](crate::model::ScanResourceCriteria).
+        pub fn build(self) -> crate::model::ScanResourceCriteria {
+            crate::model::ScanResourceCriteria {
+                include: self.include,
+                exclude: self.exclude,
+            }
+        }
+    }
+}
+impl ScanResourceCriteria {
+    /// Creates a new builder-style object to manufacture [`ScanResourceCriteria`](crate::model::ScanResourceCriteria).
+    pub fn builder() -> crate::model::scan_resource_criteria::Builder {
+        crate::model::scan_resource_criteria::Builder::default()
+    }
+}
+
+/// <p>Contains information about the condition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanCondition {
+    /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+    pub map_equals: std::option::Option<std::vec::Vec<crate::model::ScanConditionPair>>,
+}
+impl ScanCondition {
+    /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+    pub fn map_equals(&self) -> std::option::Option<&[crate::model::ScanConditionPair]> {
+        self.map_equals.as_deref()
+    }
+}
+impl std::fmt::Debug for ScanCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanCondition");
+        formatter.field("map_equals", &self.map_equals);
+        formatter.finish()
+    }
+}
+/// See [`ScanCondition`](crate::model::ScanCondition).
+pub mod scan_condition {
+
+    /// A builder for [`ScanCondition`](crate::model::ScanCondition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) map_equals: std::option::Option<std::vec::Vec<crate::model::ScanConditionPair>>,
+    }
+    impl Builder {
+        /// Appends an item to `map_equals`.
+        ///
+        /// To override the contents of this collection use [`set_map_equals`](Self::set_map_equals).
+        ///
+        /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+        pub fn map_equals(mut self, input: crate::model::ScanConditionPair) -> Self {
+            let mut v = self.map_equals.unwrap_or_default();
+            v.push(input);
+            self.map_equals = Some(v);
+            self
+        }
+        /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+        pub fn set_map_equals(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ScanConditionPair>>,
+        ) -> Self {
+            self.map_equals = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanCondition`](crate::model::ScanCondition).
+        pub fn build(self) -> crate::model::ScanCondition {
+            crate::model::ScanCondition {
+                map_equals: self.map_equals,
+            }
+        }
+    }
+}
+impl ScanCondition {
+    /// Creates a new builder-style object to manufacture [`ScanCondition`](crate::model::ScanCondition).
+    pub fn builder() -> crate::model::scan_condition::Builder {
+        crate::model::scan_condition::Builder::default()
+    }
+}
+
+/// <p>Represents key, value pair to be matched against given resource property.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanConditionPair {
+    /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl ScanConditionPair {
+    /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for ScanConditionPair {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanConditionPair");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ScanConditionPair`](crate::model::ScanConditionPair).
+pub mod scan_condition_pair {
+
+    /// A builder for [`ScanConditionPair`](crate::model::ScanConditionPair).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanConditionPair`](crate::model::ScanConditionPair).
+        pub fn build(self) -> crate::model::ScanConditionPair {
+            crate::model::ScanConditionPair {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ScanConditionPair {
+    /// Creates a new builder-style object to manufacture [`ScanConditionPair`](crate::model::ScanConditionPair).
+    pub fn builder() -> crate::model::scan_condition_pair::Builder {
+        crate::model::scan_condition_pair::Builder::default()
+    }
+}
+
+/// <p>An enum value representing possible resource properties to match with given scan condition.</p>
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanCriterionKey {
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2InstanceTag,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanCriterionKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "EC2_INSTANCE_TAG" => ScanCriterionKey::Ec2InstanceTag,
+            other => ScanCriterionKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanCriterionKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanCriterionKey::from(s))
+    }
+}
+impl ScanCriterionKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanCriterionKey::Ec2InstanceTag => "EC2_INSTANCE_TAG",
+            ScanCriterionKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["EC2_INSTANCE_TAG"]
+    }
+}
+impl AsRef<str> for ScanCriterionKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2390,6 +3113,8 @@ pub enum DataSource {
     #[allow(missing_docs)] // documentation missing in model
     DnsLogs,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2MalwareScan,
+    #[allow(missing_docs)] // documentation missing in model
     FlowLogs,
     #[allow(missing_docs)] // documentation missing in model
     KubernetesAuditLogs,
@@ -2403,6 +3128,7 @@ impl std::convert::From<&str> for DataSource {
         match s {
             "CLOUD_TRAIL" => DataSource::CloudTrail,
             "DNS_LOGS" => DataSource::DnsLogs,
+            "EC2_MALWARE_SCAN" => DataSource::Ec2MalwareScan,
             "FLOW_LOGS" => DataSource::FlowLogs,
             "KUBERNETES_AUDIT_LOGS" => DataSource::KubernetesAuditLogs,
             "S3_LOGS" => DataSource::S3Logs,
@@ -2423,6 +3149,7 @@ impl DataSource {
         match self {
             DataSource::CloudTrail => "CLOUD_TRAIL",
             DataSource::DnsLogs => "DNS_LOGS",
+            DataSource::Ec2MalwareScan => "EC2_MALWARE_SCAN",
             DataSource::FlowLogs => "FLOW_LOGS",
             DataSource::KubernetesAuditLogs => "KUBERNETES_AUDIT_LOGS",
             DataSource::S3Logs => "S3_LOGS",
@@ -2434,6 +3161,7 @@ impl DataSource {
         &[
             "CLOUD_TRAIL",
             "DNS_LOGS",
+            "EC2_MALWARE_SCAN",
             "FLOW_LOGS",
             "KUBERNETES_AUDIT_LOGS",
             "S3_LOGS",
@@ -2957,6 +3685,8 @@ pub struct DataSourcesFreeTrial {
     pub s3_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub kubernetes: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub malware_protection: std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {
     /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
@@ -2979,6 +3709,12 @@ impl DataSourcesFreeTrial {
     pub fn kubernetes(&self) -> std::option::Option<&crate::model::KubernetesDataSourceFreeTrial> {
         self.kubernetes.as_ref()
     }
+    /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MalwareProtectionDataSourceFreeTrial> {
+        self.malware_protection.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourcesFreeTrial {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2988,6 +3724,7 @@ impl std::fmt::Debug for DataSourcesFreeTrial {
         formatter.field("flow_logs", &self.flow_logs);
         formatter.field("s3_logs", &self.s3_logs);
         formatter.field("kubernetes", &self.kubernetes);
+        formatter.field("malware_protection", &self.malware_protection);
         formatter.finish()
     }
 }
@@ -3002,6 +3739,8 @@ pub mod data_sources_free_trial {
         pub(crate) flow_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
         pub(crate) s3_logs: std::option::Option<crate::model::DataSourceFreeTrial>,
         pub(crate) kubernetes: std::option::Option<crate::model::KubernetesDataSourceFreeTrial>,
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
     }
     impl Builder {
         /// <p>Describes whether any AWS CloudTrail management event logs are enabled as data sources.</p>
@@ -3069,6 +3808,22 @@ pub mod data_sources_free_trial {
             self.kubernetes = input;
             self
         }
+        /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::MalwareProtectionDataSourceFreeTrial,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>Describes whether Malware Protection is enabled as a data source.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<crate::model::MalwareProtectionDataSourceFreeTrial>,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial).
         pub fn build(self) -> crate::model::DataSourcesFreeTrial {
             crate::model::DataSourcesFreeTrial {
@@ -3077,6 +3832,7 @@ pub mod data_sources_free_trial {
                 flow_logs: self.flow_logs,
                 s3_logs: self.s3_logs,
                 kubernetes: self.kubernetes,
+                malware_protection: self.malware_protection,
             }
         }
     }
@@ -3085,6 +3841,126 @@ impl DataSourcesFreeTrial {
     /// Creates a new builder-style object to manufacture [`DataSourcesFreeTrial`](crate::model::DataSourcesFreeTrial).
     pub fn builder() -> crate::model::data_sources_free_trial::Builder {
         crate::model::data_sources_free_trial::Builder::default()
+    }
+}
+
+/// <p>Provides details about Malware Protection when it is enabled as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalwareProtectionDataSourceFreeTrial {
+    /// <p>Describes whether Malware Protection for EC2 instances with findings is enabled as a data source.</p>
+    pub scan_ec2_instance_with_findings: std::option::Option<crate::model::DataSourceFreeTrial>,
+}
+impl MalwareProtectionDataSourceFreeTrial {
+    /// <p>Describes whether Malware Protection for EC2 instances with findings is enabled as a data source.</p>
+    pub fn scan_ec2_instance_with_findings(
+        &self,
+    ) -> std::option::Option<&crate::model::DataSourceFreeTrial> {
+        self.scan_ec2_instance_with_findings.as_ref()
+    }
+}
+impl std::fmt::Debug for MalwareProtectionDataSourceFreeTrial {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MalwareProtectionDataSourceFreeTrial");
+        formatter.field(
+            "scan_ec2_instance_with_findings",
+            &self.scan_ec2_instance_with_findings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`MalwareProtectionDataSourceFreeTrial`](crate::model::MalwareProtectionDataSourceFreeTrial).
+pub mod malware_protection_data_source_free_trial {
+
+    /// A builder for [`MalwareProtectionDataSourceFreeTrial`](crate::model::MalwareProtectionDataSourceFreeTrial).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_ec2_instance_with_findings:
+            std::option::Option<crate::model::DataSourceFreeTrial>,
+    }
+    impl Builder {
+        /// <p>Describes whether Malware Protection for EC2 instances with findings is enabled as a data source.</p>
+        pub fn scan_ec2_instance_with_findings(
+            mut self,
+            input: crate::model::DataSourceFreeTrial,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = Some(input);
+            self
+        }
+        /// <p>Describes whether Malware Protection for EC2 instances with findings is enabled as a data source.</p>
+        pub fn set_scan_ec2_instance_with_findings(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceFreeTrial>,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalwareProtectionDataSourceFreeTrial`](crate::model::MalwareProtectionDataSourceFreeTrial).
+        pub fn build(self) -> crate::model::MalwareProtectionDataSourceFreeTrial {
+            crate::model::MalwareProtectionDataSourceFreeTrial {
+                scan_ec2_instance_with_findings: self.scan_ec2_instance_with_findings,
+            }
+        }
+    }
+}
+impl MalwareProtectionDataSourceFreeTrial {
+    /// Creates a new builder-style object to manufacture [`MalwareProtectionDataSourceFreeTrial`](crate::model::MalwareProtectionDataSourceFreeTrial).
+    pub fn builder() -> crate::model::malware_protection_data_source_free_trial::Builder {
+        crate::model::malware_protection_data_source_free_trial::Builder::default()
+    }
+}
+
+/// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceFreeTrial {
+    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    pub free_trial_days_remaining: i32,
+}
+impl DataSourceFreeTrial {
+    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+    pub fn free_trial_days_remaining(&self) -> i32 {
+        self.free_trial_days_remaining
+    }
+}
+impl std::fmt::Debug for DataSourceFreeTrial {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceFreeTrial");
+        formatter.field("free_trial_days_remaining", &self.free_trial_days_remaining);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
+pub mod data_source_free_trial {
+
+    /// A builder for [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) free_trial_days_remaining: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+        pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
+            self.free_trial_days_remaining = Some(input);
+            self
+        }
+        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
+        pub fn set_free_trial_days_remaining(mut self, input: std::option::Option<i32>) -> Self {
+            self.free_trial_days_remaining = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
+        pub fn build(self) -> crate::model::DataSourceFreeTrial {
+            crate::model::DataSourceFreeTrial {
+                free_trial_days_remaining: self.free_trial_days_remaining.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl DataSourceFreeTrial {
+    /// Creates a new builder-style object to manufacture [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
+    pub fn builder() -> crate::model::data_source_free_trial::Builder {
+        crate::model::data_source_free_trial::Builder::default()
     }
 }
 
@@ -3142,60 +4018,6 @@ impl KubernetesDataSourceFreeTrial {
     /// Creates a new builder-style object to manufacture [`KubernetesDataSourceFreeTrial`](crate::model::KubernetesDataSourceFreeTrial).
     pub fn builder() -> crate::model::kubernetes_data_source_free_trial::Builder {
         crate::model::kubernetes_data_source_free_trial::Builder::default()
-    }
-}
-
-/// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceFreeTrial {
-    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    pub free_trial_days_remaining: i32,
-}
-impl DataSourceFreeTrial {
-    /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    pub fn free_trial_days_remaining(&self) -> i32 {
-        self.free_trial_days_remaining
-    }
-}
-impl std::fmt::Debug for DataSourceFreeTrial {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceFreeTrial");
-        formatter.field("free_trial_days_remaining", &self.free_trial_days_remaining);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
-pub mod data_source_free_trial {
-
-    /// A builder for [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) free_trial_days_remaining: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-        pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
-            self.free_trial_days_remaining = Some(input);
-            self
-        }
-        /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-        pub fn set_free_trial_days_remaining(mut self, input: std::option::Option<i32>) -> Self {
-            self.free_trial_days_remaining = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
-        pub fn build(self) -> crate::model::DataSourceFreeTrial {
-            crate::model::DataSourceFreeTrial {
-                free_trial_days_remaining: self.free_trial_days_remaining.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl DataSourceFreeTrial {
-    /// Creates a new builder-style object to manufacture [`DataSourceFreeTrial`](crate::model::DataSourceFreeTrial).
-    pub fn builder() -> crate::model::data_source_free_trial::Builder {
-        crate::model::data_source_free_trial::Builder::default()
     }
 }
 
@@ -3291,6 +4113,8 @@ pub struct DataSourceConfigurationsResult {
     pub s3_logs: std::option::Option<crate::model::S3LogsConfigurationResult>,
     /// <p>An object that contains information on the status of all Kubernetes data sources.</p>
     pub kubernetes: std::option::Option<crate::model::KubernetesConfigurationResult>,
+    /// <p>Describes the configuration of Malware Protection data sources.</p>
+    pub malware_protection: std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
 }
 impl DataSourceConfigurationsResult {
     /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
@@ -3313,6 +4137,12 @@ impl DataSourceConfigurationsResult {
     pub fn kubernetes(&self) -> std::option::Option<&crate::model::KubernetesConfigurationResult> {
         self.kubernetes.as_ref()
     }
+    /// <p>Describes the configuration of Malware Protection data sources.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::MalwareProtectionConfigurationResult> {
+        self.malware_protection.as_ref()
+    }
 }
 impl std::fmt::Debug for DataSourceConfigurationsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3322,6 +4152,7 @@ impl std::fmt::Debug for DataSourceConfigurationsResult {
         formatter.field("flow_logs", &self.flow_logs);
         formatter.field("s3_logs", &self.s3_logs);
         formatter.field("kubernetes", &self.kubernetes);
+        formatter.field("malware_protection", &self.malware_protection);
         formatter.finish()
     }
 }
@@ -3336,6 +4167,8 @@ pub mod data_source_configurations_result {
         pub(crate) flow_logs: std::option::Option<crate::model::FlowLogsConfigurationResult>,
         pub(crate) s3_logs: std::option::Option<crate::model::S3LogsConfigurationResult>,
         pub(crate) kubernetes: std::option::Option<crate::model::KubernetesConfigurationResult>,
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
     }
     impl Builder {
         /// <p>An object that contains information on the status of CloudTrail as a data source.</p>
@@ -3403,6 +4236,22 @@ pub mod data_source_configurations_result {
             self.kubernetes = input;
             self
         }
+        /// <p>Describes the configuration of Malware Protection data sources.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::MalwareProtectionConfigurationResult,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of Malware Protection data sources.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<crate::model::MalwareProtectionConfigurationResult>,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfigurationsResult`](crate::model::DataSourceConfigurationsResult).
         pub fn build(self) -> crate::model::DataSourceConfigurationsResult {
             crate::model::DataSourceConfigurationsResult {
@@ -3411,6 +4260,7 @@ pub mod data_source_configurations_result {
                 flow_logs: self.flow_logs,
                 s3_logs: self.s3_logs,
                 kubernetes: self.kubernetes,
+                malware_protection: self.malware_protection,
             }
         }
     }
@@ -3419,6 +4269,261 @@ impl DataSourceConfigurationsResult {
     /// Creates a new builder-style object to manufacture [`DataSourceConfigurationsResult`](crate::model::DataSourceConfigurationsResult).
     pub fn builder() -> crate::model::data_source_configurations_result::Builder {
         crate::model::data_source_configurations_result::Builder::default()
+    }
+}
+
+/// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MalwareProtectionConfigurationResult {
+    /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    pub scan_ec2_instance_with_findings:
+        std::option::Option<crate::model::ScanEc2InstanceWithFindingsResult>,
+    /// <p>The GuardDuty Malware Protection service role.</p>
+    pub service_role: std::option::Option<std::string::String>,
+}
+impl MalwareProtectionConfigurationResult {
+    /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+    pub fn scan_ec2_instance_with_findings(
+        &self,
+    ) -> std::option::Option<&crate::model::ScanEc2InstanceWithFindingsResult> {
+        self.scan_ec2_instance_with_findings.as_ref()
+    }
+    /// <p>The GuardDuty Malware Protection service role.</p>
+    pub fn service_role(&self) -> std::option::Option<&str> {
+        self.service_role.as_deref()
+    }
+}
+impl std::fmt::Debug for MalwareProtectionConfigurationResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MalwareProtectionConfigurationResult");
+        formatter.field(
+            "scan_ec2_instance_with_findings",
+            &self.scan_ec2_instance_with_findings,
+        );
+        formatter.field("service_role", &self.service_role);
+        formatter.finish()
+    }
+}
+/// See [`MalwareProtectionConfigurationResult`](crate::model::MalwareProtectionConfigurationResult).
+pub mod malware_protection_configuration_result {
+
+    /// A builder for [`MalwareProtectionConfigurationResult`](crate::model::MalwareProtectionConfigurationResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_ec2_instance_with_findings:
+            std::option::Option<crate::model::ScanEc2InstanceWithFindingsResult>,
+        pub(crate) service_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+        pub fn scan_ec2_instance_with_findings(
+            mut self,
+            input: crate::model::ScanEc2InstanceWithFindingsResult,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of Malware Protection for EC2 instances with findings.</p>
+        pub fn set_scan_ec2_instance_with_findings(
+            mut self,
+            input: std::option::Option<crate::model::ScanEc2InstanceWithFindingsResult>,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = input;
+            self
+        }
+        /// <p>The GuardDuty Malware Protection service role.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_role = Some(input.into());
+            self
+        }
+        /// <p>The GuardDuty Malware Protection service role.</p>
+        pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MalwareProtectionConfigurationResult`](crate::model::MalwareProtectionConfigurationResult).
+        pub fn build(self) -> crate::model::MalwareProtectionConfigurationResult {
+            crate::model::MalwareProtectionConfigurationResult {
+                scan_ec2_instance_with_findings: self.scan_ec2_instance_with_findings,
+                service_role: self.service_role,
+            }
+        }
+    }
+}
+impl MalwareProtectionConfigurationResult {
+    /// Creates a new builder-style object to manufacture [`MalwareProtectionConfigurationResult`](crate::model::MalwareProtectionConfigurationResult).
+    pub fn builder() -> crate::model::malware_protection_configuration_result::Builder {
+        crate::model::malware_protection_configuration_result::Builder::default()
+    }
+}
+
+/// <p>An object that contains information on the status of whether Malware Protection for EC2 instances with findings will be enabled as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanEc2InstanceWithFindingsResult {
+    /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+    pub ebs_volumes: std::option::Option<crate::model::EbsVolumesResult>,
+}
+impl ScanEc2InstanceWithFindingsResult {
+    /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+    pub fn ebs_volumes(&self) -> std::option::Option<&crate::model::EbsVolumesResult> {
+        self.ebs_volumes.as_ref()
+    }
+}
+impl std::fmt::Debug for ScanEc2InstanceWithFindingsResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanEc2InstanceWithFindingsResult");
+        formatter.field("ebs_volumes", &self.ebs_volumes);
+        formatter.finish()
+    }
+}
+/// See [`ScanEc2InstanceWithFindingsResult`](crate::model::ScanEc2InstanceWithFindingsResult).
+pub mod scan_ec2_instance_with_findings_result {
+
+    /// A builder for [`ScanEc2InstanceWithFindingsResult`](crate::model::ScanEc2InstanceWithFindingsResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ebs_volumes: std::option::Option<crate::model::EbsVolumesResult>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+        pub fn ebs_volumes(mut self, input: crate::model::EbsVolumesResult) -> Self {
+            self.ebs_volumes = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+        pub fn set_ebs_volumes(
+            mut self,
+            input: std::option::Option<crate::model::EbsVolumesResult>,
+        ) -> Self {
+            self.ebs_volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanEc2InstanceWithFindingsResult`](crate::model::ScanEc2InstanceWithFindingsResult).
+        pub fn build(self) -> crate::model::ScanEc2InstanceWithFindingsResult {
+            crate::model::ScanEc2InstanceWithFindingsResult {
+                ebs_volumes: self.ebs_volumes,
+            }
+        }
+    }
+}
+impl ScanEc2InstanceWithFindingsResult {
+    /// Creates a new builder-style object to manufacture [`ScanEc2InstanceWithFindingsResult`](crate::model::ScanEc2InstanceWithFindingsResult).
+    pub fn builder() -> crate::model::scan_ec2_instance_with_findings_result::Builder {
+        crate::model::scan_ec2_instance_with_findings_result::Builder::default()
+    }
+}
+
+/// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EbsVolumesResult {
+    /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+    pub status: std::option::Option<crate::model::DataSourceStatus>,
+}
+impl EbsVolumesResult {
+    /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::DataSourceStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for EbsVolumesResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EbsVolumesResult");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`EbsVolumesResult`](crate::model::EbsVolumesResult).
+pub mod ebs_volumes_result {
+
+    /// A builder for [`EbsVolumesResult`](crate::model::EbsVolumesResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::DataSourceStatus>,
+    }
+    impl Builder {
+        /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+        pub fn status(mut self, input: crate::model::DataSourceStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EbsVolumesResult`](crate::model::EbsVolumesResult).
+        pub fn build(self) -> crate::model::EbsVolumesResult {
+            crate::model::EbsVolumesResult {
+                status: self.status,
+            }
+        }
+    }
+}
+impl EbsVolumesResult {
+    /// Creates a new builder-style object to manufacture [`EbsVolumesResult`](crate::model::EbsVolumesResult).
+    pub fn builder() -> crate::model::ebs_volumes_result::Builder {
+        crate::model::ebs_volumes_result::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataSourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataSourceStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => DataSourceStatus::Disabled,
+            "ENABLED" => DataSourceStatus::Enabled,
+            other => DataSourceStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataSourceStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataSourceStatus::from(s))
+    }
+}
+impl DataSourceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataSourceStatus::Disabled => "DISABLED",
+            DataSourceStatus::Enabled => "ENABLED",
+            DataSourceStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for DataSourceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3539,61 +4644,6 @@ impl KubernetesAuditLogsConfigurationResult {
     /// Creates a new builder-style object to manufacture [`KubernetesAuditLogsConfigurationResult`](crate::model::KubernetesAuditLogsConfigurationResult).
     pub fn builder() -> crate::model::kubernetes_audit_logs_configuration_result::Builder {
         crate::model::kubernetes_audit_logs_configuration_result::Builder::default()
-    }
-}
-
-#[allow(missing_docs)] // documentation missing in model
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum DataSourceStatus {
-    #[allow(missing_docs)] // documentation missing in model
-    Disabled,
-    #[allow(missing_docs)] // documentation missing in model
-    Enabled,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for DataSourceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => DataSourceStatus::Disabled,
-            "ENABLED" => DataSourceStatus::Enabled,
-            other => DataSourceStatus::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for DataSourceStatus {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSourceStatus::from(s))
-    }
-}
-impl DataSourceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataSourceStatus::Disabled => "DISABLED",
-            DataSourceStatus::Enabled => "ENABLED",
-            DataSourceStatus::Unknown(s) => s.as_ref(),
-        }
-    }
-    /// Returns all the `&str` values of the enum members.
-    pub fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
-    }
-}
-impl AsRef<str> for DataSourceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -4569,6 +5619,10 @@ pub struct Service {
     pub user_feedback: std::option::Option<std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
     pub additional_info: std::option::Option<crate::model::ServiceAdditionalInfo>,
+    /// <p>The name of the feature that generated a finding.</p>
+    pub feature_name: std::option::Option<std::string::String>,
+    /// <p>Returns details from the malware scan that created a finding.</p>
+    pub ebs_volume_scan_details: std::option::Option<crate::model::EbsVolumeScanDetails>,
 }
 impl Service {
     /// <p>Information about the activity that is described in a finding.</p>
@@ -4615,6 +5669,16 @@ impl Service {
     pub fn additional_info(&self) -> std::option::Option<&crate::model::ServiceAdditionalInfo> {
         self.additional_info.as_ref()
     }
+    /// <p>The name of the feature that generated a finding.</p>
+    pub fn feature_name(&self) -> std::option::Option<&str> {
+        self.feature_name.as_deref()
+    }
+    /// <p>Returns details from the malware scan that created a finding.</p>
+    pub fn ebs_volume_scan_details(
+        &self,
+    ) -> std::option::Option<&crate::model::EbsVolumeScanDetails> {
+        self.ebs_volume_scan_details.as_ref()
+    }
 }
 impl std::fmt::Debug for Service {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4630,6 +5694,8 @@ impl std::fmt::Debug for Service {
         formatter.field("service_name", &self.service_name);
         formatter.field("user_feedback", &self.user_feedback);
         formatter.field("additional_info", &self.additional_info);
+        formatter.field("feature_name", &self.feature_name);
+        formatter.field("ebs_volume_scan_details", &self.ebs_volume_scan_details);
         formatter.finish()
     }
 }
@@ -4650,6 +5716,8 @@ pub mod service {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) user_feedback: std::option::Option<std::string::String>,
         pub(crate) additional_info: std::option::Option<crate::model::ServiceAdditionalInfo>,
+        pub(crate) feature_name: std::option::Option<std::string::String>,
+        pub(crate) ebs_volume_scan_details: std::option::Option<crate::model::EbsVolumeScanDetails>,
     }
     impl Builder {
         /// <p>Information about the activity that is described in a finding.</p>
@@ -4777,6 +5845,32 @@ pub mod service {
             self.additional_info = input;
             self
         }
+        /// <p>The name of the feature that generated a finding.</p>
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the feature that generated a finding.</p>
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
+            self
+        }
+        /// <p>Returns details from the malware scan that created a finding.</p>
+        pub fn ebs_volume_scan_details(
+            mut self,
+            input: crate::model::EbsVolumeScanDetails,
+        ) -> Self {
+            self.ebs_volume_scan_details = Some(input);
+            self
+        }
+        /// <p>Returns details from the malware scan that created a finding.</p>
+        pub fn set_ebs_volume_scan_details(
+            mut self,
+            input: std::option::Option<crate::model::EbsVolumeScanDetails>,
+        ) -> Self {
+            self.ebs_volume_scan_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
@@ -4791,6 +5885,8 @@ pub mod service {
                 service_name: self.service_name,
                 user_feedback: self.user_feedback,
                 additional_info: self.additional_info,
+                feature_name: self.feature_name,
+                ebs_volume_scan_details: self.ebs_volume_scan_details,
             }
         }
     }
@@ -4799,6 +5895,912 @@ impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
+    }
+}
+
+/// <p>Contains details from the malware scan that created a finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EbsVolumeScanDetails {
+    /// <p>Unique Id of the malware scan that generated the finding.</p>
+    pub scan_id: std::option::Option<std::string::String>,
+    /// <p>Returns the start date and time of the malware scan.</p>
+    pub scan_started_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Returns the completion date and time of the malware scan.</p>
+    pub scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>GuardDuty finding ID that triggered a malware scan.</p>
+    pub trigger_finding_id: std::option::Option<std::string::String>,
+    /// <p>Contains list of threat intelligence sources used to detect threats.</p>
+    pub sources: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Contains a complete view providing malware scan result details.</p>
+    pub scan_detections: std::option::Option<crate::model::ScanDetections>,
+}
+impl EbsVolumeScanDetails {
+    /// <p>Unique Id of the malware scan that generated the finding.</p>
+    pub fn scan_id(&self) -> std::option::Option<&str> {
+        self.scan_id.as_deref()
+    }
+    /// <p>Returns the start date and time of the malware scan.</p>
+    pub fn scan_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scan_started_at.as_ref()
+    }
+    /// <p>Returns the completion date and time of the malware scan.</p>
+    pub fn scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scan_completed_at.as_ref()
+    }
+    /// <p>GuardDuty finding ID that triggered a malware scan.</p>
+    pub fn trigger_finding_id(&self) -> std::option::Option<&str> {
+        self.trigger_finding_id.as_deref()
+    }
+    /// <p>Contains list of threat intelligence sources used to detect threats.</p>
+    pub fn sources(&self) -> std::option::Option<&[std::string::String]> {
+        self.sources.as_deref()
+    }
+    /// <p>Contains a complete view providing malware scan result details.</p>
+    pub fn scan_detections(&self) -> std::option::Option<&crate::model::ScanDetections> {
+        self.scan_detections.as_ref()
+    }
+}
+impl std::fmt::Debug for EbsVolumeScanDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EbsVolumeScanDetails");
+        formatter.field("scan_id", &self.scan_id);
+        formatter.field("scan_started_at", &self.scan_started_at);
+        formatter.field("scan_completed_at", &self.scan_completed_at);
+        formatter.field("trigger_finding_id", &self.trigger_finding_id);
+        formatter.field("sources", &self.sources);
+        formatter.field("scan_detections", &self.scan_detections);
+        formatter.finish()
+    }
+}
+/// See [`EbsVolumeScanDetails`](crate::model::EbsVolumeScanDetails).
+pub mod ebs_volume_scan_details {
+
+    /// A builder for [`EbsVolumeScanDetails`](crate::model::EbsVolumeScanDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_id: std::option::Option<std::string::String>,
+        pub(crate) scan_started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) trigger_finding_id: std::option::Option<std::string::String>,
+        pub(crate) sources: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) scan_detections: std::option::Option<crate::model::ScanDetections>,
+    }
+    impl Builder {
+        /// <p>Unique Id of the malware scan that generated the finding.</p>
+        pub fn scan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scan_id = Some(input.into());
+            self
+        }
+        /// <p>Unique Id of the malware scan that generated the finding.</p>
+        pub fn set_scan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scan_id = input;
+            self
+        }
+        /// <p>Returns the start date and time of the malware scan.</p>
+        pub fn scan_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scan_started_at = Some(input);
+            self
+        }
+        /// <p>Returns the start date and time of the malware scan.</p>
+        pub fn set_scan_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scan_started_at = input;
+            self
+        }
+        /// <p>Returns the completion date and time of the malware scan.</p>
+        pub fn scan_completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scan_completed_at = Some(input);
+            self
+        }
+        /// <p>Returns the completion date and time of the malware scan.</p>
+        pub fn set_scan_completed_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scan_completed_at = input;
+            self
+        }
+        /// <p>GuardDuty finding ID that triggered a malware scan.</p>
+        pub fn trigger_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.trigger_finding_id = Some(input.into());
+            self
+        }
+        /// <p>GuardDuty finding ID that triggered a malware scan.</p>
+        pub fn set_trigger_finding_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.trigger_finding_id = input;
+            self
+        }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>Contains list of threat intelligence sources used to detect threats.</p>
+        pub fn sources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.sources.unwrap_or_default();
+            v.push(input.into());
+            self.sources = Some(v);
+            self
+        }
+        /// <p>Contains list of threat intelligence sources used to detect threats.</p>
+        pub fn set_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.sources = input;
+            self
+        }
+        /// <p>Contains a complete view providing malware scan result details.</p>
+        pub fn scan_detections(mut self, input: crate::model::ScanDetections) -> Self {
+            self.scan_detections = Some(input);
+            self
+        }
+        /// <p>Contains a complete view providing malware scan result details.</p>
+        pub fn set_scan_detections(
+            mut self,
+            input: std::option::Option<crate::model::ScanDetections>,
+        ) -> Self {
+            self.scan_detections = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EbsVolumeScanDetails`](crate::model::EbsVolumeScanDetails).
+        pub fn build(self) -> crate::model::EbsVolumeScanDetails {
+            crate::model::EbsVolumeScanDetails {
+                scan_id: self.scan_id,
+                scan_started_at: self.scan_started_at,
+                scan_completed_at: self.scan_completed_at,
+                trigger_finding_id: self.trigger_finding_id,
+                sources: self.sources,
+                scan_detections: self.scan_detections,
+            }
+        }
+    }
+}
+impl EbsVolumeScanDetails {
+    /// Creates a new builder-style object to manufacture [`EbsVolumeScanDetails`](crate::model::EbsVolumeScanDetails).
+    pub fn builder() -> crate::model::ebs_volume_scan_details::Builder {
+        crate::model::ebs_volume_scan_details::Builder::default()
+    }
+}
+
+/// <p>Contains a complete view providing malware scan result details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanDetections {
+    /// <p>Total number of scanned files.</p>
+    pub scanned_item_count: std::option::Option<crate::model::ScannedItemCount>,
+    /// <p>Total number of infected files.</p>
+    pub threats_detected_item_count: std::option::Option<crate::model::ThreatsDetectedItemCount>,
+    /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+    pub highest_severity_threat_details:
+        std::option::Option<crate::model::HighestSeverityThreatDetails>,
+    /// <p>Contains details about identified threats organized by threat name.</p>
+    pub threat_detected_by_name: std::option::Option<crate::model::ThreatDetectedByName>,
+}
+impl ScanDetections {
+    /// <p>Total number of scanned files.</p>
+    pub fn scanned_item_count(&self) -> std::option::Option<&crate::model::ScannedItemCount> {
+        self.scanned_item_count.as_ref()
+    }
+    /// <p>Total number of infected files.</p>
+    pub fn threats_detected_item_count(
+        &self,
+    ) -> std::option::Option<&crate::model::ThreatsDetectedItemCount> {
+        self.threats_detected_item_count.as_ref()
+    }
+    /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+    pub fn highest_severity_threat_details(
+        &self,
+    ) -> std::option::Option<&crate::model::HighestSeverityThreatDetails> {
+        self.highest_severity_threat_details.as_ref()
+    }
+    /// <p>Contains details about identified threats organized by threat name.</p>
+    pub fn threat_detected_by_name(
+        &self,
+    ) -> std::option::Option<&crate::model::ThreatDetectedByName> {
+        self.threat_detected_by_name.as_ref()
+    }
+}
+impl std::fmt::Debug for ScanDetections {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanDetections");
+        formatter.field("scanned_item_count", &self.scanned_item_count);
+        formatter.field(
+            "threats_detected_item_count",
+            &self.threats_detected_item_count,
+        );
+        formatter.field(
+            "highest_severity_threat_details",
+            &self.highest_severity_threat_details,
+        );
+        formatter.field("threat_detected_by_name", &self.threat_detected_by_name);
+        formatter.finish()
+    }
+}
+/// See [`ScanDetections`](crate::model::ScanDetections).
+pub mod scan_detections {
+
+    /// A builder for [`ScanDetections`](crate::model::ScanDetections).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scanned_item_count: std::option::Option<crate::model::ScannedItemCount>,
+        pub(crate) threats_detected_item_count:
+            std::option::Option<crate::model::ThreatsDetectedItemCount>,
+        pub(crate) highest_severity_threat_details:
+            std::option::Option<crate::model::HighestSeverityThreatDetails>,
+        pub(crate) threat_detected_by_name: std::option::Option<crate::model::ThreatDetectedByName>,
+    }
+    impl Builder {
+        /// <p>Total number of scanned files.</p>
+        pub fn scanned_item_count(mut self, input: crate::model::ScannedItemCount) -> Self {
+            self.scanned_item_count = Some(input);
+            self
+        }
+        /// <p>Total number of scanned files.</p>
+        pub fn set_scanned_item_count(
+            mut self,
+            input: std::option::Option<crate::model::ScannedItemCount>,
+        ) -> Self {
+            self.scanned_item_count = input;
+            self
+        }
+        /// <p>Total number of infected files.</p>
+        pub fn threats_detected_item_count(
+            mut self,
+            input: crate::model::ThreatsDetectedItemCount,
+        ) -> Self {
+            self.threats_detected_item_count = Some(input);
+            self
+        }
+        /// <p>Total number of infected files.</p>
+        pub fn set_threats_detected_item_count(
+            mut self,
+            input: std::option::Option<crate::model::ThreatsDetectedItemCount>,
+        ) -> Self {
+            self.threats_detected_item_count = input;
+            self
+        }
+        /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+        pub fn highest_severity_threat_details(
+            mut self,
+            input: crate::model::HighestSeverityThreatDetails,
+        ) -> Self {
+            self.highest_severity_threat_details = Some(input);
+            self
+        }
+        /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+        pub fn set_highest_severity_threat_details(
+            mut self,
+            input: std::option::Option<crate::model::HighestSeverityThreatDetails>,
+        ) -> Self {
+            self.highest_severity_threat_details = input;
+            self
+        }
+        /// <p>Contains details about identified threats organized by threat name.</p>
+        pub fn threat_detected_by_name(
+            mut self,
+            input: crate::model::ThreatDetectedByName,
+        ) -> Self {
+            self.threat_detected_by_name = Some(input);
+            self
+        }
+        /// <p>Contains details about identified threats organized by threat name.</p>
+        pub fn set_threat_detected_by_name(
+            mut self,
+            input: std::option::Option<crate::model::ThreatDetectedByName>,
+        ) -> Self {
+            self.threat_detected_by_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanDetections`](crate::model::ScanDetections).
+        pub fn build(self) -> crate::model::ScanDetections {
+            crate::model::ScanDetections {
+                scanned_item_count: self.scanned_item_count,
+                threats_detected_item_count: self.threats_detected_item_count,
+                highest_severity_threat_details: self.highest_severity_threat_details,
+                threat_detected_by_name: self.threat_detected_by_name,
+            }
+        }
+    }
+}
+impl ScanDetections {
+    /// Creates a new builder-style object to manufacture [`ScanDetections`](crate::model::ScanDetections).
+    pub fn builder() -> crate::model::scan_detections::Builder {
+        crate::model::scan_detections::Builder::default()
+    }
+}
+
+/// <p>Contains details about identified threats organized by threat name.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThreatDetectedByName {
+    /// <p>Total number of infected files identified.</p>
+    pub item_count: i32,
+    /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+    pub unique_threat_name_count: i32,
+    /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+    pub shortened: bool,
+    /// <p>List of identified threats with details, organized by threat name.</p>
+    pub threat_names: std::option::Option<std::vec::Vec<crate::model::ScanThreatName>>,
+}
+impl ThreatDetectedByName {
+    /// <p>Total number of infected files identified.</p>
+    pub fn item_count(&self) -> i32 {
+        self.item_count
+    }
+    /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+    pub fn unique_threat_name_count(&self) -> i32 {
+        self.unique_threat_name_count
+    }
+    /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+    pub fn shortened(&self) -> bool {
+        self.shortened
+    }
+    /// <p>List of identified threats with details, organized by threat name.</p>
+    pub fn threat_names(&self) -> std::option::Option<&[crate::model::ScanThreatName]> {
+        self.threat_names.as_deref()
+    }
+}
+impl std::fmt::Debug for ThreatDetectedByName {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThreatDetectedByName");
+        formatter.field("item_count", &self.item_count);
+        formatter.field("unique_threat_name_count", &self.unique_threat_name_count);
+        formatter.field("shortened", &self.shortened);
+        formatter.field("threat_names", &self.threat_names);
+        formatter.finish()
+    }
+}
+/// See [`ThreatDetectedByName`](crate::model::ThreatDetectedByName).
+pub mod threat_detected_by_name {
+
+    /// A builder for [`ThreatDetectedByName`](crate::model::ThreatDetectedByName).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) item_count: std::option::Option<i32>,
+        pub(crate) unique_threat_name_count: std::option::Option<i32>,
+        pub(crate) shortened: std::option::Option<bool>,
+        pub(crate) threat_names: std::option::Option<std::vec::Vec<crate::model::ScanThreatName>>,
+    }
+    impl Builder {
+        /// <p>Total number of infected files identified.</p>
+        pub fn item_count(mut self, input: i32) -> Self {
+            self.item_count = Some(input);
+            self
+        }
+        /// <p>Total number of infected files identified.</p>
+        pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.item_count = input;
+            self
+        }
+        /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+        pub fn unique_threat_name_count(mut self, input: i32) -> Self {
+            self.unique_threat_name_count = Some(input);
+            self
+        }
+        /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+        pub fn set_unique_threat_name_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.unique_threat_name_count = input;
+            self
+        }
+        /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+        pub fn shortened(mut self, input: bool) -> Self {
+            self.shortened = Some(input);
+            self
+        }
+        /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+        pub fn set_shortened(mut self, input: std::option::Option<bool>) -> Self {
+            self.shortened = input;
+            self
+        }
+        /// Appends an item to `threat_names`.
+        ///
+        /// To override the contents of this collection use [`set_threat_names`](Self::set_threat_names).
+        ///
+        /// <p>List of identified threats with details, organized by threat name.</p>
+        pub fn threat_names(mut self, input: crate::model::ScanThreatName) -> Self {
+            let mut v = self.threat_names.unwrap_or_default();
+            v.push(input);
+            self.threat_names = Some(v);
+            self
+        }
+        /// <p>List of identified threats with details, organized by threat name.</p>
+        pub fn set_threat_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ScanThreatName>>,
+        ) -> Self {
+            self.threat_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThreatDetectedByName`](crate::model::ThreatDetectedByName).
+        pub fn build(self) -> crate::model::ThreatDetectedByName {
+            crate::model::ThreatDetectedByName {
+                item_count: self.item_count.unwrap_or_default(),
+                unique_threat_name_count: self.unique_threat_name_count.unwrap_or_default(),
+                shortened: self.shortened.unwrap_or_default(),
+                threat_names: self.threat_names,
+            }
+        }
+    }
+}
+impl ThreatDetectedByName {
+    /// Creates a new builder-style object to manufacture [`ThreatDetectedByName`](crate::model::ThreatDetectedByName).
+    pub fn builder() -> crate::model::threat_detected_by_name::Builder {
+        crate::model::threat_detected_by_name::Builder::default()
+    }
+}
+
+/// <p>Contains files infected with the given threat providing details of malware name and severity.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanThreatName {
+    /// <p>The name of the identified threat.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Severity of threat identified as part of the malware scan.</p>
+    pub severity: std::option::Option<std::string::String>,
+    /// <p>Total number of files infected with given threat.</p>
+    pub item_count: i32,
+    /// <p>List of infected files in EBS volume with details.</p>
+    pub file_paths: std::option::Option<std::vec::Vec<crate::model::ScanFilePath>>,
+}
+impl ScanThreatName {
+    /// <p>The name of the identified threat.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Severity of threat identified as part of the malware scan.</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>Total number of files infected with given threat.</p>
+    pub fn item_count(&self) -> i32 {
+        self.item_count
+    }
+    /// <p>List of infected files in EBS volume with details.</p>
+    pub fn file_paths(&self) -> std::option::Option<&[crate::model::ScanFilePath]> {
+        self.file_paths.as_deref()
+    }
+}
+impl std::fmt::Debug for ScanThreatName {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanThreatName");
+        formatter.field("name", &self.name);
+        formatter.field("severity", &self.severity);
+        formatter.field("item_count", &self.item_count);
+        formatter.field("file_paths", &self.file_paths);
+        formatter.finish()
+    }
+}
+/// See [`ScanThreatName`](crate::model::ScanThreatName).
+pub mod scan_threat_name {
+
+    /// A builder for [`ScanThreatName`](crate::model::ScanThreatName).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) severity: std::option::Option<std::string::String>,
+        pub(crate) item_count: std::option::Option<i32>,
+        pub(crate) file_paths: std::option::Option<std::vec::Vec<crate::model::ScanFilePath>>,
+    }
+    impl Builder {
+        /// <p>The name of the identified threat.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the identified threat.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Severity of threat identified as part of the malware scan.</p>
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
+            self
+        }
+        /// <p>Severity of threat identified as part of the malware scan.</p>
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
+            self
+        }
+        /// <p>Total number of files infected with given threat.</p>
+        pub fn item_count(mut self, input: i32) -> Self {
+            self.item_count = Some(input);
+            self
+        }
+        /// <p>Total number of files infected with given threat.</p>
+        pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.item_count = input;
+            self
+        }
+        /// Appends an item to `file_paths`.
+        ///
+        /// To override the contents of this collection use [`set_file_paths`](Self::set_file_paths).
+        ///
+        /// <p>List of infected files in EBS volume with details.</p>
+        pub fn file_paths(mut self, input: crate::model::ScanFilePath) -> Self {
+            let mut v = self.file_paths.unwrap_or_default();
+            v.push(input);
+            self.file_paths = Some(v);
+            self
+        }
+        /// <p>List of infected files in EBS volume with details.</p>
+        pub fn set_file_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ScanFilePath>>,
+        ) -> Self {
+            self.file_paths = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanThreatName`](crate::model::ScanThreatName).
+        pub fn build(self) -> crate::model::ScanThreatName {
+            crate::model::ScanThreatName {
+                name: self.name,
+                severity: self.severity,
+                item_count: self.item_count.unwrap_or_default(),
+                file_paths: self.file_paths,
+            }
+        }
+    }
+}
+impl ScanThreatName {
+    /// Creates a new builder-style object to manufacture [`ScanThreatName`](crate::model::ScanThreatName).
+    pub fn builder() -> crate::model::scan_threat_name::Builder {
+        crate::model::scan_threat_name::Builder::default()
+    }
+}
+
+/// <p>Contains details of infected file including name, file path and hash.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanFilePath {
+    /// <p>The file path of the infected file.</p>
+    pub file_path: std::option::Option<std::string::String>,
+    /// <p>EBS volume Arn details of the infected file.</p>
+    pub volume_arn: std::option::Option<std::string::String>,
+    /// <p>The hash value of the infected file.</p>
+    pub hash: std::option::Option<std::string::String>,
+    /// <p>File name of the infected file.</p>
+    pub file_name: std::option::Option<std::string::String>,
+}
+impl ScanFilePath {
+    /// <p>The file path of the infected file.</p>
+    pub fn file_path(&self) -> std::option::Option<&str> {
+        self.file_path.as_deref()
+    }
+    /// <p>EBS volume Arn details of the infected file.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The hash value of the infected file.</p>
+    pub fn hash(&self) -> std::option::Option<&str> {
+        self.hash.as_deref()
+    }
+    /// <p>File name of the infected file.</p>
+    pub fn file_name(&self) -> std::option::Option<&str> {
+        self.file_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ScanFilePath {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanFilePath");
+        formatter.field("file_path", &self.file_path);
+        formatter.field("volume_arn", &self.volume_arn);
+        formatter.field("hash", &self.hash);
+        formatter.field("file_name", &self.file_name);
+        formatter.finish()
+    }
+}
+/// See [`ScanFilePath`](crate::model::ScanFilePath).
+pub mod scan_file_path {
+
+    /// A builder for [`ScanFilePath`](crate::model::ScanFilePath).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_path: std::option::Option<std::string::String>,
+        pub(crate) volume_arn: std::option::Option<std::string::String>,
+        pub(crate) hash: std::option::Option<std::string::String>,
+        pub(crate) file_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The file path of the infected file.</p>
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_path = Some(input.into());
+            self
+        }
+        /// <p>The file path of the infected file.</p>
+        pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_path = input;
+            self
+        }
+        /// <p>EBS volume Arn details of the infected file.</p>
+        pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_arn = Some(input.into());
+            self
+        }
+        /// <p>EBS volume Arn details of the infected file.</p>
+        pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_arn = input;
+            self
+        }
+        /// <p>The hash value of the infected file.</p>
+        pub fn hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hash = Some(input.into());
+            self
+        }
+        /// <p>The hash value of the infected file.</p>
+        pub fn set_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hash = input;
+            self
+        }
+        /// <p>File name of the infected file.</p>
+        pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.file_name = Some(input.into());
+            self
+        }
+        /// <p>File name of the infected file.</p>
+        pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanFilePath`](crate::model::ScanFilePath).
+        pub fn build(self) -> crate::model::ScanFilePath {
+            crate::model::ScanFilePath {
+                file_path: self.file_path,
+                volume_arn: self.volume_arn,
+                hash: self.hash,
+                file_name: self.file_name,
+            }
+        }
+    }
+}
+impl ScanFilePath {
+    /// Creates a new builder-style object to manufacture [`ScanFilePath`](crate::model::ScanFilePath).
+    pub fn builder() -> crate::model::scan_file_path::Builder {
+        crate::model::scan_file_path::Builder::default()
+    }
+}
+
+/// <p>Contains details of the highest severity threat detected during scan and number of infected files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HighestSeverityThreatDetails {
+    /// <p>Severity level of the highest severity threat detected.</p>
+    pub severity: std::option::Option<std::string::String>,
+    /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+    pub threat_name: std::option::Option<std::string::String>,
+    /// <p>Total number of infected files with the highest severity threat detected.</p>
+    pub count: i32,
+}
+impl HighestSeverityThreatDetails {
+    /// <p>Severity level of the highest severity threat detected.</p>
+    pub fn severity(&self) -> std::option::Option<&str> {
+        self.severity.as_deref()
+    }
+    /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+    pub fn threat_name(&self) -> std::option::Option<&str> {
+        self.threat_name.as_deref()
+    }
+    /// <p>Total number of infected files with the highest severity threat detected.</p>
+    pub fn count(&self) -> i32 {
+        self.count
+    }
+}
+impl std::fmt::Debug for HighestSeverityThreatDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HighestSeverityThreatDetails");
+        formatter.field("severity", &self.severity);
+        formatter.field("threat_name", &self.threat_name);
+        formatter.field("count", &self.count);
+        formatter.finish()
+    }
+}
+/// See [`HighestSeverityThreatDetails`](crate::model::HighestSeverityThreatDetails).
+pub mod highest_severity_threat_details {
+
+    /// A builder for [`HighestSeverityThreatDetails`](crate::model::HighestSeverityThreatDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) severity: std::option::Option<std::string::String>,
+        pub(crate) threat_name: std::option::Option<std::string::String>,
+        pub(crate) count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Severity level of the highest severity threat detected.</p>
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.severity = Some(input.into());
+            self
+        }
+        /// <p>Severity level of the highest severity threat detected.</p>
+        pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.severity = input;
+            self
+        }
+        /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+        pub fn threat_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.threat_name = Some(input.into());
+            self
+        }
+        /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
+        pub fn set_threat_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.threat_name = input;
+            self
+        }
+        /// <p>Total number of infected files with the highest severity threat detected.</p>
+        pub fn count(mut self, input: i32) -> Self {
+            self.count = Some(input);
+            self
+        }
+        /// <p>Total number of infected files with the highest severity threat detected.</p>
+        pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HighestSeverityThreatDetails`](crate::model::HighestSeverityThreatDetails).
+        pub fn build(self) -> crate::model::HighestSeverityThreatDetails {
+            crate::model::HighestSeverityThreatDetails {
+                severity: self.severity,
+                threat_name: self.threat_name,
+                count: self.count.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl HighestSeverityThreatDetails {
+    /// Creates a new builder-style object to manufacture [`HighestSeverityThreatDetails`](crate::model::HighestSeverityThreatDetails).
+    pub fn builder() -> crate::model::highest_severity_threat_details::Builder {
+        crate::model::highest_severity_threat_details::Builder::default()
+    }
+}
+
+/// <p>Contains total number of infected files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ThreatsDetectedItemCount {
+    /// <p>Total number of infected files.</p>
+    pub files: i32,
+}
+impl ThreatsDetectedItemCount {
+    /// <p>Total number of infected files.</p>
+    pub fn files(&self) -> i32 {
+        self.files
+    }
+}
+impl std::fmt::Debug for ThreatsDetectedItemCount {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ThreatsDetectedItemCount");
+        formatter.field("files", &self.files);
+        formatter.finish()
+    }
+}
+/// See [`ThreatsDetectedItemCount`](crate::model::ThreatsDetectedItemCount).
+pub mod threats_detected_item_count {
+
+    /// A builder for [`ThreatsDetectedItemCount`](crate::model::ThreatsDetectedItemCount).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) files: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Total number of infected files.</p>
+        pub fn files(mut self, input: i32) -> Self {
+            self.files = Some(input);
+            self
+        }
+        /// <p>Total number of infected files.</p>
+        pub fn set_files(mut self, input: std::option::Option<i32>) -> Self {
+            self.files = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ThreatsDetectedItemCount`](crate::model::ThreatsDetectedItemCount).
+        pub fn build(self) -> crate::model::ThreatsDetectedItemCount {
+            crate::model::ThreatsDetectedItemCount {
+                files: self.files.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ThreatsDetectedItemCount {
+    /// Creates a new builder-style object to manufacture [`ThreatsDetectedItemCount`](crate::model::ThreatsDetectedItemCount).
+    pub fn builder() -> crate::model::threats_detected_item_count::Builder {
+        crate::model::threats_detected_item_count::Builder::default()
+    }
+}
+
+/// <p>Total number of scanned files.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScannedItemCount {
+    /// <p>Total GB of files scanned for malware.</p>
+    pub total_gb: i32,
+    /// <p>Number of files scanned.</p>
+    pub files: i32,
+    /// <p>Total number of scanned volumes.</p>
+    pub volumes: i32,
+}
+impl ScannedItemCount {
+    /// <p>Total GB of files scanned for malware.</p>
+    pub fn total_gb(&self) -> i32 {
+        self.total_gb
+    }
+    /// <p>Number of files scanned.</p>
+    pub fn files(&self) -> i32 {
+        self.files
+    }
+    /// <p>Total number of scanned volumes.</p>
+    pub fn volumes(&self) -> i32 {
+        self.volumes
+    }
+}
+impl std::fmt::Debug for ScannedItemCount {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScannedItemCount");
+        formatter.field("total_gb", &self.total_gb);
+        formatter.field("files", &self.files);
+        formatter.field("volumes", &self.volumes);
+        formatter.finish()
+    }
+}
+/// See [`ScannedItemCount`](crate::model::ScannedItemCount).
+pub mod scanned_item_count {
+
+    /// A builder for [`ScannedItemCount`](crate::model::ScannedItemCount).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_gb: std::option::Option<i32>,
+        pub(crate) files: std::option::Option<i32>,
+        pub(crate) volumes: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Total GB of files scanned for malware.</p>
+        pub fn total_gb(mut self, input: i32) -> Self {
+            self.total_gb = Some(input);
+            self
+        }
+        /// <p>Total GB of files scanned for malware.</p>
+        pub fn set_total_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_gb = input;
+            self
+        }
+        /// <p>Number of files scanned.</p>
+        pub fn files(mut self, input: i32) -> Self {
+            self.files = Some(input);
+            self
+        }
+        /// <p>Number of files scanned.</p>
+        pub fn set_files(mut self, input: std::option::Option<i32>) -> Self {
+            self.files = input;
+            self
+        }
+        /// <p>Total number of scanned volumes.</p>
+        pub fn volumes(mut self, input: i32) -> Self {
+            self.volumes = Some(input);
+            self
+        }
+        /// <p>Total number of scanned volumes.</p>
+        pub fn set_volumes(mut self, input: std::option::Option<i32>) -> Self {
+            self.volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScannedItemCount`](crate::model::ScannedItemCount).
+        pub fn build(self) -> crate::model::ScannedItemCount {
+            crate::model::ScannedItemCount {
+                total_gb: self.total_gb.unwrap_or_default(),
+                files: self.files.unwrap_or_default(),
+                volumes: self.volumes.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ScannedItemCount {
+    /// Creates a new builder-style object to manufacture [`ScannedItemCount`](crate::model::ScannedItemCount).
+    pub fn builder() -> crate::model::scanned_item_count::Builder {
+        crate::model::scanned_item_count::Builder::default()
     }
 }
 
@@ -6885,6 +8887,12 @@ pub struct Resource {
     pub kubernetes_details: std::option::Option<crate::model::KubernetesDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
     pub resource_type: std::option::Option<std::string::String>,
+    /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+    pub ebs_volume_details: std::option::Option<crate::model::EbsVolumeDetails>,
+    /// <p>Contains information about the details of the ECS Cluster.</p>
+    pub ecs_cluster_details: std::option::Option<crate::model::EcsClusterDetails>,
+    /// <p>Details of a container.</p>
+    pub container_details: std::option::Option<crate::model::Container>,
 }
 impl Resource {
     /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
@@ -6911,6 +8919,18 @@ impl Resource {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
+    /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+    pub fn ebs_volume_details(&self) -> std::option::Option<&crate::model::EbsVolumeDetails> {
+        self.ebs_volume_details.as_ref()
+    }
+    /// <p>Contains information about the details of the ECS Cluster.</p>
+    pub fn ecs_cluster_details(&self) -> std::option::Option<&crate::model::EcsClusterDetails> {
+        self.ecs_cluster_details.as_ref()
+    }
+    /// <p>Details of a container.</p>
+    pub fn container_details(&self) -> std::option::Option<&crate::model::Container> {
+        self.container_details.as_ref()
+    }
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6921,6 +8941,9 @@ impl std::fmt::Debug for Resource {
         formatter.field("eks_cluster_details", &self.eks_cluster_details);
         formatter.field("kubernetes_details", &self.kubernetes_details);
         formatter.field("resource_type", &self.resource_type);
+        formatter.field("ebs_volume_details", &self.ebs_volume_details);
+        formatter.field("ecs_cluster_details", &self.ecs_cluster_details);
+        formatter.field("container_details", &self.container_details);
         formatter.finish()
     }
 }
@@ -6937,6 +8960,9 @@ pub mod resource {
         pub(crate) eks_cluster_details: std::option::Option<crate::model::EksClusterDetails>,
         pub(crate) kubernetes_details: std::option::Option<crate::model::KubernetesDetails>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
+        pub(crate) ebs_volume_details: std::option::Option<crate::model::EbsVolumeDetails>,
+        pub(crate) ecs_cluster_details: std::option::Option<crate::model::EcsClusterDetails>,
+        pub(crate) container_details: std::option::Option<crate::model::Container>,
     }
     impl Builder {
         /// <p>The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
@@ -7023,6 +9049,45 @@ pub mod resource {
             self.resource_type = input;
             self
         }
+        /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+        pub fn ebs_volume_details(mut self, input: crate::model::EbsVolumeDetails) -> Self {
+            self.ebs_volume_details = Some(input);
+            self
+        }
+        /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+        pub fn set_ebs_volume_details(
+            mut self,
+            input: std::option::Option<crate::model::EbsVolumeDetails>,
+        ) -> Self {
+            self.ebs_volume_details = input;
+            self
+        }
+        /// <p>Contains information about the details of the ECS Cluster.</p>
+        pub fn ecs_cluster_details(mut self, input: crate::model::EcsClusterDetails) -> Self {
+            self.ecs_cluster_details = Some(input);
+            self
+        }
+        /// <p>Contains information about the details of the ECS Cluster.</p>
+        pub fn set_ecs_cluster_details(
+            mut self,
+            input: std::option::Option<crate::model::EcsClusterDetails>,
+        ) -> Self {
+            self.ecs_cluster_details = input;
+            self
+        }
+        /// <p>Details of a container.</p>
+        pub fn container_details(mut self, input: crate::model::Container) -> Self {
+            self.container_details = Some(input);
+            self
+        }
+        /// <p>Details of a container.</p>
+        pub fn set_container_details(
+            mut self,
+            input: std::option::Option<crate::model::Container>,
+        ) -> Self {
+            self.container_details = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
@@ -7032,6 +9097,9 @@ pub mod resource {
                 eks_cluster_details: self.eks_cluster_details,
                 kubernetes_details: self.kubernetes_details,
                 resource_type: self.resource_type,
+                ebs_volume_details: self.ebs_volume_details,
+                ecs_cluster_details: self.ecs_cluster_details,
+                container_details: self.container_details,
             }
         }
     }
@@ -7040,411 +9108,6 @@ impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
-    }
-}
-
-/// <p>Details about Kubernetes resources such as a Kubernetes user or workload resource involved in a Kubernetes finding.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KubernetesDetails {
-    /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    pub kubernetes_user_details: std::option::Option<crate::model::KubernetesUserDetails>,
-    /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub kubernetes_workload_details: std::option::Option<crate::model::KubernetesWorkloadDetails>,
-}
-impl KubernetesDetails {
-    /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-    pub fn kubernetes_user_details(
-        &self,
-    ) -> std::option::Option<&crate::model::KubernetesUserDetails> {
-        self.kubernetes_user_details.as_ref()
-    }
-    /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-    pub fn kubernetes_workload_details(
-        &self,
-    ) -> std::option::Option<&crate::model::KubernetesWorkloadDetails> {
-        self.kubernetes_workload_details.as_ref()
-    }
-}
-impl std::fmt::Debug for KubernetesDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KubernetesDetails");
-        formatter.field("kubernetes_user_details", &self.kubernetes_user_details);
-        formatter.field(
-            "kubernetes_workload_details",
-            &self.kubernetes_workload_details,
-        );
-        formatter.finish()
-    }
-}
-/// See [`KubernetesDetails`](crate::model::KubernetesDetails).
-pub mod kubernetes_details {
-
-    /// A builder for [`KubernetesDetails`](crate::model::KubernetesDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) kubernetes_user_details:
-            std::option::Option<crate::model::KubernetesUserDetails>,
-        pub(crate) kubernetes_workload_details:
-            std::option::Option<crate::model::KubernetesWorkloadDetails>,
-    }
-    impl Builder {
-        /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-        pub fn kubernetes_user_details(
-            mut self,
-            input: crate::model::KubernetesUserDetails,
-        ) -> Self {
-            self.kubernetes_user_details = Some(input);
-            self
-        }
-        /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
-        pub fn set_kubernetes_user_details(
-            mut self,
-            input: std::option::Option<crate::model::KubernetesUserDetails>,
-        ) -> Self {
-            self.kubernetes_user_details = input;
-            self
-        }
-        /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-        pub fn kubernetes_workload_details(
-            mut self,
-            input: crate::model::KubernetesWorkloadDetails,
-        ) -> Self {
-            self.kubernetes_workload_details = Some(input);
-            self
-        }
-        /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-        pub fn set_kubernetes_workload_details(
-            mut self,
-            input: std::option::Option<crate::model::KubernetesWorkloadDetails>,
-        ) -> Self {
-            self.kubernetes_workload_details = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`KubernetesDetails`](crate::model::KubernetesDetails).
-        pub fn build(self) -> crate::model::KubernetesDetails {
-            crate::model::KubernetesDetails {
-                kubernetes_user_details: self.kubernetes_user_details,
-                kubernetes_workload_details: self.kubernetes_workload_details,
-            }
-        }
-    }
-}
-impl KubernetesDetails {
-    /// Creates a new builder-style object to manufacture [`KubernetesDetails`](crate::model::KubernetesDetails).
-    pub fn builder() -> crate::model::kubernetes_details::Builder {
-        crate::model::kubernetes_details::Builder::default()
-    }
-}
-
-/// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KubernetesWorkloadDetails {
-    /// <p>Kubernetes workload name.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-    pub r#type: std::option::Option<std::string::String>,
-    /// <p>Kubernetes workload ID.</p>
-    pub uid: std::option::Option<std::string::String>,
-    /// <p>Kubernetes namespace that the workload is part of.</p>
-    pub namespace: std::option::Option<std::string::String>,
-    /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-    pub host_network: bool,
-    /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
-    /// <p>Volumes used by the Kubernetes workload.</p>
-    pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-}
-impl KubernetesWorkloadDetails {
-    /// <p>Kubernetes workload name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
-        self.r#type.as_deref()
-    }
-    /// <p>Kubernetes workload ID.</p>
-    pub fn uid(&self) -> std::option::Option<&str> {
-        self.uid.as_deref()
-    }
-    /// <p>Kubernetes namespace that the workload is part of.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
-        self.namespace.as_deref()
-    }
-    /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-    pub fn host_network(&self) -> bool {
-        self.host_network
-    }
-    /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
-        self.containers.as_deref()
-    }
-    /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
-        self.volumes.as_deref()
-    }
-}
-impl std::fmt::Debug for KubernetesWorkloadDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("KubernetesWorkloadDetails");
-        formatter.field("name", &self.name);
-        formatter.field("r#type", &self.r#type);
-        formatter.field("uid", &self.uid);
-        formatter.field("namespace", &self.namespace);
-        formatter.field("host_network", &self.host_network);
-        formatter.field("containers", &self.containers);
-        formatter.field("volumes", &self.volumes);
-        formatter.finish()
-    }
-}
-/// See [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
-pub mod kubernetes_workload_details {
-
-    /// A builder for [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) uid: std::option::Option<std::string::String>,
-        pub(crate) namespace: std::option::Option<std::string::String>,
-        pub(crate) host_network: std::option::Option<bool>,
-        pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
-        pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-    }
-    impl Builder {
-        /// <p>Kubernetes workload name.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>Kubernetes workload name.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>Kubernetes workload ID.</p>
-        pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
-            self.uid = Some(input.into());
-            self
-        }
-        /// <p>Kubernetes workload ID.</p>
-        pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uid = input;
-            self
-        }
-        /// <p>Kubernetes namespace that the workload is part of.</p>
-        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-            self.namespace = Some(input.into());
-            self
-        }
-        /// <p>Kubernetes namespace that the workload is part of.</p>
-        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
-        }
-        /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-        pub fn host_network(mut self, input: bool) -> Self {
-            self.host_network = Some(input);
-            self
-        }
-        /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
-        pub fn set_host_network(mut self, input: std::option::Option<bool>) -> Self {
-            self.host_network = input;
-            self
-        }
-        /// Appends an item to `containers`.
-        ///
-        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
-        ///
-        /// <p>Containers running as part of the Kubernetes workload.</p>
-        pub fn containers(mut self, input: crate::model::Container) -> Self {
-            let mut v = self.containers.unwrap_or_default();
-            v.push(input);
-            self.containers = Some(v);
-            self
-        }
-        /// <p>Containers running as part of the Kubernetes workload.</p>
-        pub fn set_containers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
-        ) -> Self {
-            self.containers = input;
-            self
-        }
-        /// Appends an item to `volumes`.
-        ///
-        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
-        ///
-        /// <p>Volumes used by the Kubernetes workload.</p>
-        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
-            let mut v = self.volumes.unwrap_or_default();
-            v.push(input);
-            self.volumes = Some(v);
-            self
-        }
-        /// <p>Volumes used by the Kubernetes workload.</p>
-        pub fn set_volumes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-        ) -> Self {
-            self.volumes = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
-        pub fn build(self) -> crate::model::KubernetesWorkloadDetails {
-            crate::model::KubernetesWorkloadDetails {
-                name: self.name,
-                r#type: self.r#type,
-                uid: self.uid,
-                namespace: self.namespace,
-                host_network: self.host_network.unwrap_or_default(),
-                containers: self.containers,
-                volumes: self.volumes,
-            }
-        }
-    }
-}
-impl KubernetesWorkloadDetails {
-    /// Creates a new builder-style object to manufacture [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
-    pub fn builder() -> crate::model::kubernetes_workload_details::Builder {
-        crate::model::kubernetes_workload_details::Builder::default()
-    }
-}
-
-/// <p>Volume used by the Kubernetes workload.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Volume {
-    /// <p>Volume name.</p>
-    pub name: std::option::Option<std::string::String>,
-    /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub host_path: std::option::Option<crate::model::HostPath>,
-}
-impl Volume {
-    /// <p>Volume name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
-        self.name.as_deref()
-    }
-    /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub fn host_path(&self) -> std::option::Option<&crate::model::HostPath> {
-        self.host_path.as_ref()
-    }
-}
-impl std::fmt::Debug for Volume {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Volume");
-        formatter.field("name", &self.name);
-        formatter.field("host_path", &self.host_path);
-        formatter.finish()
-    }
-}
-/// See [`Volume`](crate::model::Volume).
-pub mod volume {
-
-    /// A builder for [`Volume`](crate::model::Volume).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) host_path: std::option::Option<crate::model::HostPath>,
-    }
-    impl Builder {
-        /// <p>Volume name.</p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.name = Some(input.into());
-            self
-        }
-        /// <p>Volume name.</p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
-        }
-        /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-        pub fn host_path(mut self, input: crate::model::HostPath) -> Self {
-            self.host_path = Some(input);
-            self
-        }
-        /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-        pub fn set_host_path(mut self, input: std::option::Option<crate::model::HostPath>) -> Self {
-            self.host_path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Volume`](crate::model::Volume).
-        pub fn build(self) -> crate::model::Volume {
-            crate::model::Volume {
-                name: self.name,
-                host_path: self.host_path,
-            }
-        }
-    }
-}
-impl Volume {
-    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
-    pub fn builder() -> crate::model::volume::Builder {
-        crate::model::volume::Builder::default()
-    }
-}
-
-/// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HostPath {
-    /// <p>Path of the file or directory on the host that the volume maps to.</p>
-    pub path: std::option::Option<std::string::String>,
-}
-impl HostPath {
-    /// <p>Path of the file or directory on the host that the volume maps to.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
-        self.path.as_deref()
-    }
-}
-impl std::fmt::Debug for HostPath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HostPath");
-        formatter.field("path", &self.path);
-        formatter.finish()
-    }
-}
-/// See [`HostPath`](crate::model::HostPath).
-pub mod host_path {
-
-    /// A builder for [`HostPath`](crate::model::HostPath).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) path: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Path of the file or directory on the host that the volume maps to.</p>
-        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-            self.path = Some(input.into());
-            self
-        }
-        /// <p>Path of the file or directory on the host that the volume maps to.</p>
-        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HostPath`](crate::model::HostPath).
-        pub fn build(self) -> crate::model::HostPath {
-            crate::model::HostPath { path: self.path }
-        }
-    }
-}
-impl HostPath {
-    /// Creates a new builder-style object to manufacture [`HostPath`](crate::model::HostPath).
-    pub fn builder() -> crate::model::host_path::Builder {
-        crate::model::host_path::Builder::default()
     }
 }
 
@@ -7758,6 +9421,1216 @@ impl VolumeMount {
     }
 }
 
+/// <p>Contains information about the details of the ECS Cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EcsClusterDetails {
+    /// <p>The name of the ECS Cluster.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The status of the ECS cluster.</p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+    pub active_services_count: i32,
+    /// <p>The number of container instances registered into the cluster.</p>
+    pub registered_container_instances_count: i32,
+    /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+    pub running_tasks_count: i32,
+    /// <p>The tags of the ECS Cluster.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Contains information about the details of the ECS Task.</p>
+    pub task_details: std::option::Option<crate::model::EcsTaskDetails>,
+}
+impl EcsClusterDetails {
+    /// <p>The name of the ECS Cluster.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The status of the ECS cluster.</p>
+    pub fn status(&self) -> std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+    pub fn active_services_count(&self) -> i32 {
+        self.active_services_count
+    }
+    /// <p>The number of container instances registered into the cluster.</p>
+    pub fn registered_container_instances_count(&self) -> i32 {
+        self.registered_container_instances_count
+    }
+    /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+    pub fn running_tasks_count(&self) -> i32 {
+        self.running_tasks_count
+    }
+    /// <p>The tags of the ECS Cluster.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>Contains information about the details of the ECS Task.</p>
+    pub fn task_details(&self) -> std::option::Option<&crate::model::EcsTaskDetails> {
+        self.task_details.as_ref()
+    }
+}
+impl std::fmt::Debug for EcsClusterDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EcsClusterDetails");
+        formatter.field("name", &self.name);
+        formatter.field("arn", &self.arn);
+        formatter.field("status", &self.status);
+        formatter.field("active_services_count", &self.active_services_count);
+        formatter.field(
+            "registered_container_instances_count",
+            &self.registered_container_instances_count,
+        );
+        formatter.field("running_tasks_count", &self.running_tasks_count);
+        formatter.field("tags", &self.tags);
+        formatter.field("task_details", &self.task_details);
+        formatter.finish()
+    }
+}
+/// See [`EcsClusterDetails`](crate::model::EcsClusterDetails).
+pub mod ecs_cluster_details {
+
+    /// A builder for [`EcsClusterDetails`](crate::model::EcsClusterDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) active_services_count: std::option::Option<i32>,
+        pub(crate) registered_container_instances_count: std::option::Option<i32>,
+        pub(crate) running_tasks_count: std::option::Option<i32>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) task_details: std::option::Option<crate::model::EcsTaskDetails>,
+    }
+    impl Builder {
+        /// <p>The name of the ECS Cluster.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the ECS Cluster.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) that identifies the cluster.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The status of the ECS cluster.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        /// <p>The status of the ECS cluster.</p>
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+        pub fn active_services_count(mut self, input: i32) -> Self {
+            self.active_services_count = Some(input);
+            self
+        }
+        /// <p>The number of services that are running on the cluster in an ACTIVE state.</p>
+        pub fn set_active_services_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.active_services_count = input;
+            self
+        }
+        /// <p>The number of container instances registered into the cluster.</p>
+        pub fn registered_container_instances_count(mut self, input: i32) -> Self {
+            self.registered_container_instances_count = Some(input);
+            self
+        }
+        /// <p>The number of container instances registered into the cluster.</p>
+        pub fn set_registered_container_instances_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.registered_container_instances_count = input;
+            self
+        }
+        /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+        pub fn running_tasks_count(mut self, input: i32) -> Self {
+            self.running_tasks_count = Some(input);
+            self
+        }
+        /// <p>The number of tasks in the cluster that are in the RUNNING state.</p>
+        pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.running_tasks_count = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the ECS Cluster.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags of the ECS Cluster.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// <p>Contains information about the details of the ECS Task.</p>
+        pub fn task_details(mut self, input: crate::model::EcsTaskDetails) -> Self {
+            self.task_details = Some(input);
+            self
+        }
+        /// <p>Contains information about the details of the ECS Task.</p>
+        pub fn set_task_details(
+            mut self,
+            input: std::option::Option<crate::model::EcsTaskDetails>,
+        ) -> Self {
+            self.task_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsClusterDetails`](crate::model::EcsClusterDetails).
+        pub fn build(self) -> crate::model::EcsClusterDetails {
+            crate::model::EcsClusterDetails {
+                name: self.name,
+                arn: self.arn,
+                status: self.status,
+                active_services_count: self.active_services_count.unwrap_or_default(),
+                registered_container_instances_count: self
+                    .registered_container_instances_count
+                    .unwrap_or_default(),
+                running_tasks_count: self.running_tasks_count.unwrap_or_default(),
+                tags: self.tags,
+                task_details: self.task_details,
+            }
+        }
+    }
+}
+impl EcsClusterDetails {
+    /// Creates a new builder-style object to manufacture [`EcsClusterDetails`](crate::model::EcsClusterDetails).
+    pub fn builder() -> crate::model::ecs_cluster_details::Builder {
+        crate::model::ecs_cluster_details::Builder::default()
+    }
+}
+
+/// <p>Contains information about the task in an ECS cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EcsTaskDetails {
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the task definition that creates the task.</p>
+    pub definition_arn: std::option::Option<std::string::String>,
+    /// <p>The version counter for the task.</p>
+    pub version: std::option::Option<std::string::String>,
+    /// <p>The Unix timestamp for the time when the task was created.</p>
+    pub task_created_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Unix timestamp for the time when the task started.</p>
+    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Contains the tag specified when a task is started.</p>
+    pub started_by: std::option::Option<std::string::String>,
+    /// <p>The tags of the ECS Task.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The list of data volume definitions for the task.</p>
+    pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+    /// <p>The containers that's associated with the task.</p>
+    pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
+    /// <p>The name of the task group that's associated with the task.</p>
+    pub group: std::option::Option<std::string::String>,
+}
+impl EcsTaskDetails {
+    /// <p>The Amazon Resource Name (ARN) of the task.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The ARN of the task definition that creates the task.</p>
+    pub fn definition_arn(&self) -> std::option::Option<&str> {
+        self.definition_arn.as_deref()
+    }
+    /// <p>The version counter for the task.</p>
+    pub fn version(&self) -> std::option::Option<&str> {
+        self.version.as_deref()
+    }
+    /// <p>The Unix timestamp for the time when the task was created.</p>
+    pub fn task_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.task_created_at.as_ref()
+    }
+    /// <p>The Unix timestamp for the time when the task started.</p>
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.started_at.as_ref()
+    }
+    /// <p>Contains the tag specified when a task is started.</p>
+    pub fn started_by(&self) -> std::option::Option<&str> {
+        self.started_by.as_deref()
+    }
+    /// <p>The tags of the ECS Task.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p>The list of data volume definitions for the task.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+    /// <p>The containers that's associated with the task.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+        self.containers.as_deref()
+    }
+    /// <p>The name of the task group that's associated with the task.</p>
+    pub fn group(&self) -> std::option::Option<&str> {
+        self.group.as_deref()
+    }
+}
+impl std::fmt::Debug for EcsTaskDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EcsTaskDetails");
+        formatter.field("arn", &self.arn);
+        formatter.field("definition_arn", &self.definition_arn);
+        formatter.field("version", &self.version);
+        formatter.field("task_created_at", &self.task_created_at);
+        formatter.field("started_at", &self.started_at);
+        formatter.field("started_by", &self.started_by);
+        formatter.field("tags", &self.tags);
+        formatter.field("volumes", &self.volumes);
+        formatter.field("containers", &self.containers);
+        formatter.field("group", &self.group);
+        formatter.finish()
+    }
+}
+/// See [`EcsTaskDetails`](crate::model::EcsTaskDetails).
+pub mod ecs_task_details {
+
+    /// A builder for [`EcsTaskDetails`](crate::model::EcsTaskDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) definition_arn: std::option::Option<std::string::String>,
+        pub(crate) version: std::option::Option<std::string::String>,
+        pub(crate) task_created_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) started_by: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+        pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
+        pub(crate) group: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the task.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the task.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The ARN of the task definition that creates the task.</p>
+        pub fn definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.definition_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the task definition that creates the task.</p>
+        pub fn set_definition_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.definition_arn = input;
+            self
+        }
+        /// <p>The version counter for the task.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
+            self
+        }
+        /// <p>The version counter for the task.</p>
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
+            self
+        }
+        /// <p>The Unix timestamp for the time when the task was created.</p>
+        pub fn task_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.task_created_at = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp for the time when the task was created.</p>
+        pub fn set_task_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.task_created_at = input;
+            self
+        }
+        /// <p>The Unix timestamp for the time when the task started.</p>
+        pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.started_at = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp for the time when the task started.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.started_at = input;
+            self
+        }
+        /// <p>Contains the tag specified when a task is started.</p>
+        pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.started_by = Some(input.into());
+            self
+        }
+        /// <p>Contains the tag specified when a task is started.</p>
+        pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.started_by = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the ECS Task.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags of the ECS Task.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>The list of data volume definitions for the task.</p>
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
+            let mut v = self.volumes.unwrap_or_default();
+            v.push(input);
+            self.volumes = Some(v);
+            self
+        }
+        /// <p>The list of data volume definitions for the task.</p>
+        pub fn set_volumes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+        ) -> Self {
+            self.volumes = input;
+            self
+        }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>The containers that's associated with the task.</p>
+        pub fn containers(mut self, input: crate::model::Container) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>The containers that's associated with the task.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// <p>The name of the task group that's associated with the task.</p>
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group = Some(input.into());
+            self
+        }
+        /// <p>The name of the task group that's associated with the task.</p>
+        pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EcsTaskDetails`](crate::model::EcsTaskDetails).
+        pub fn build(self) -> crate::model::EcsTaskDetails {
+            crate::model::EcsTaskDetails {
+                arn: self.arn,
+                definition_arn: self.definition_arn,
+                version: self.version,
+                task_created_at: self.task_created_at,
+                started_at: self.started_at,
+                started_by: self.started_by,
+                tags: self.tags,
+                volumes: self.volumes,
+                containers: self.containers,
+                group: self.group,
+            }
+        }
+    }
+}
+impl EcsTaskDetails {
+    /// Creates a new builder-style object to manufacture [`EcsTaskDetails`](crate::model::EcsTaskDetails).
+    pub fn builder() -> crate::model::ecs_task_details::Builder {
+        crate::model::ecs_task_details::Builder::default()
+    }
+}
+
+/// <p>Volume used by the Kubernetes workload.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Volume {
+    /// <p>Volume name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+    pub host_path: std::option::Option<crate::model::HostPath>,
+}
+impl Volume {
+    /// <p>Volume name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+    pub fn host_path(&self) -> std::option::Option<&crate::model::HostPath> {
+        self.host_path.as_ref()
+    }
+}
+impl std::fmt::Debug for Volume {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Volume");
+        formatter.field("name", &self.name);
+        formatter.field("host_path", &self.host_path);
+        formatter.finish()
+    }
+}
+/// See [`Volume`](crate::model::Volume).
+pub mod volume {
+
+    /// A builder for [`Volume`](crate::model::Volume).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) host_path: std::option::Option<crate::model::HostPath>,
+    }
+    impl Builder {
+        /// <p>Volume name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Volume name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+        pub fn host_path(mut self, input: crate::model::HostPath) -> Self {
+            self.host_path = Some(input);
+            self
+        }
+        /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+        pub fn set_host_path(mut self, input: std::option::Option<crate::model::HostPath>) -> Self {
+            self.host_path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Volume`](crate::model::Volume).
+        pub fn build(self) -> crate::model::Volume {
+            crate::model::Volume {
+                name: self.name,
+                host_path: self.host_path,
+            }
+        }
+    }
+}
+impl Volume {
+    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
+    pub fn builder() -> crate::model::volume::Builder {
+        crate::model::volume::Builder::default()
+    }
+}
+
+/// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HostPath {
+    /// <p>Path of the file or directory on the host that the volume maps to.</p>
+    pub path: std::option::Option<std::string::String>,
+}
+impl HostPath {
+    /// <p>Path of the file or directory on the host that the volume maps to.</p>
+    pub fn path(&self) -> std::option::Option<&str> {
+        self.path.as_deref()
+    }
+}
+impl std::fmt::Debug for HostPath {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HostPath");
+        formatter.field("path", &self.path);
+        formatter.finish()
+    }
+}
+/// See [`HostPath`](crate::model::HostPath).
+pub mod host_path {
+
+    /// A builder for [`HostPath`](crate::model::HostPath).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) path: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Path of the file or directory on the host that the volume maps to.</p>
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
+            self
+        }
+        /// <p>Path of the file or directory on the host that the volume maps to.</p>
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HostPath`](crate::model::HostPath).
+        pub fn build(self) -> crate::model::HostPath {
+            crate::model::HostPath { path: self.path }
+        }
+    }
+}
+impl HostPath {
+    /// Creates a new builder-style object to manufacture [`HostPath`](crate::model::HostPath).
+    pub fn builder() -> crate::model::host_path::Builder {
+        crate::model::host_path::Builder::default()
+    }
+}
+
+/// <p>Contains information about a tag associated with the EC2 instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Tag {
+    /// <p>The EC2 instance tag key.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The EC2 instance tag value.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The EC2 instance tag key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The EC2 instance tag value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Tag`](crate::model::Tag).
+pub mod tag {
+
+    /// A builder for [`Tag`](crate::model::Tag).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The EC2 instance tag key.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The EC2 instance tag key.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The EC2 instance tag value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The EC2 instance tag value.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
+        pub fn build(self) -> crate::model::Tag {
+            crate::model::Tag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
+/// <p>Contains list of scanned and skipped EBS volumes with details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EbsVolumeDetails {
+    /// <p>List of EBS volumes that were scanned.</p>
+    pub scanned_volume_details: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+    /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+    pub skipped_volume_details: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+}
+impl EbsVolumeDetails {
+    /// <p>List of EBS volumes that were scanned.</p>
+    pub fn scanned_volume_details(&self) -> std::option::Option<&[crate::model::VolumeDetail]> {
+        self.scanned_volume_details.as_deref()
+    }
+    /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+    pub fn skipped_volume_details(&self) -> std::option::Option<&[crate::model::VolumeDetail]> {
+        self.skipped_volume_details.as_deref()
+    }
+}
+impl std::fmt::Debug for EbsVolumeDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EbsVolumeDetails");
+        formatter.field("scanned_volume_details", &self.scanned_volume_details);
+        formatter.field("skipped_volume_details", &self.skipped_volume_details);
+        formatter.finish()
+    }
+}
+/// See [`EbsVolumeDetails`](crate::model::EbsVolumeDetails).
+pub mod ebs_volume_details {
+
+    /// A builder for [`EbsVolumeDetails`](crate::model::EbsVolumeDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scanned_volume_details:
+            std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+        pub(crate) skipped_volume_details:
+            std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+    }
+    impl Builder {
+        /// Appends an item to `scanned_volume_details`.
+        ///
+        /// To override the contents of this collection use [`set_scanned_volume_details`](Self::set_scanned_volume_details).
+        ///
+        /// <p>List of EBS volumes that were scanned.</p>
+        pub fn scanned_volume_details(mut self, input: crate::model::VolumeDetail) -> Self {
+            let mut v = self.scanned_volume_details.unwrap_or_default();
+            v.push(input);
+            self.scanned_volume_details = Some(v);
+            self
+        }
+        /// <p>List of EBS volumes that were scanned.</p>
+        pub fn set_scanned_volume_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+        ) -> Self {
+            self.scanned_volume_details = input;
+            self
+        }
+        /// Appends an item to `skipped_volume_details`.
+        ///
+        /// To override the contents of this collection use [`set_skipped_volume_details`](Self::set_skipped_volume_details).
+        ///
+        /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+        pub fn skipped_volume_details(mut self, input: crate::model::VolumeDetail) -> Self {
+            let mut v = self.skipped_volume_details.unwrap_or_default();
+            v.push(input);
+            self.skipped_volume_details = Some(v);
+            self
+        }
+        /// <p>List of EBS volumes that were skipped from the malware scan.</p>
+        pub fn set_skipped_volume_details(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+        ) -> Self {
+            self.skipped_volume_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EbsVolumeDetails`](crate::model::EbsVolumeDetails).
+        pub fn build(self) -> crate::model::EbsVolumeDetails {
+            crate::model::EbsVolumeDetails {
+                scanned_volume_details: self.scanned_volume_details,
+                skipped_volume_details: self.skipped_volume_details,
+            }
+        }
+    }
+}
+impl EbsVolumeDetails {
+    /// Creates a new builder-style object to manufacture [`EbsVolumeDetails`](crate::model::EbsVolumeDetails).
+    pub fn builder() -> crate::model::ebs_volume_details::Builder {
+        crate::model::ebs_volume_details::Builder::default()
+    }
+}
+
+/// <p>Contains EBS volume details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VolumeDetail {
+    /// <p>EBS volume Arn information.</p>
+    pub volume_arn: std::option::Option<std::string::String>,
+    /// <p>The EBS volume type.</p>
+    pub volume_type: std::option::Option<std::string::String>,
+    /// <p>The device name for the EBS volume.</p>
+    pub device_name: std::option::Option<std::string::String>,
+    /// <p>EBS volume size in GB.</p>
+    pub volume_size_in_gb: i32,
+    /// <p>EBS volume encryption type.</p>
+    pub encryption_type: std::option::Option<std::string::String>,
+    /// <p>Snapshot Arn of the EBS volume.</p>
+    pub snapshot_arn: std::option::Option<std::string::String>,
+    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    pub kms_key_arn: std::option::Option<std::string::String>,
+}
+impl VolumeDetail {
+    /// <p>EBS volume Arn information.</p>
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
+        self.volume_arn.as_deref()
+    }
+    /// <p>The EBS volume type.</p>
+    pub fn volume_type(&self) -> std::option::Option<&str> {
+        self.volume_type.as_deref()
+    }
+    /// <p>The device name for the EBS volume.</p>
+    pub fn device_name(&self) -> std::option::Option<&str> {
+        self.device_name.as_deref()
+    }
+    /// <p>EBS volume size in GB.</p>
+    pub fn volume_size_in_gb(&self) -> i32 {
+        self.volume_size_in_gb
+    }
+    /// <p>EBS volume encryption type.</p>
+    pub fn encryption_type(&self) -> std::option::Option<&str> {
+        self.encryption_type.as_deref()
+    }
+    /// <p>Snapshot Arn of the EBS volume.</p>
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
+    }
+    /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for VolumeDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VolumeDetail");
+        formatter.field("volume_arn", &self.volume_arn);
+        formatter.field("volume_type", &self.volume_type);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("volume_size_in_gb", &self.volume_size_in_gb);
+        formatter.field("encryption_type", &self.encryption_type);
+        formatter.field("snapshot_arn", &self.snapshot_arn);
+        formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.finish()
+    }
+}
+/// See [`VolumeDetail`](crate::model::VolumeDetail).
+pub mod volume_detail {
+
+    /// A builder for [`VolumeDetail`](crate::model::VolumeDetail).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) volume_arn: std::option::Option<std::string::String>,
+        pub(crate) volume_type: std::option::Option<std::string::String>,
+        pub(crate) device_name: std::option::Option<std::string::String>,
+        pub(crate) volume_size_in_gb: std::option::Option<i32>,
+        pub(crate) encryption_type: std::option::Option<std::string::String>,
+        pub(crate) snapshot_arn: std::option::Option<std::string::String>,
+        pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>EBS volume Arn information.</p>
+        pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_arn = Some(input.into());
+            self
+        }
+        /// <p>EBS volume Arn information.</p>
+        pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_arn = input;
+            self
+        }
+        /// <p>The EBS volume type.</p>
+        pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_type = Some(input.into());
+            self
+        }
+        /// <p>The EBS volume type.</p>
+        pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_type = input;
+            self
+        }
+        /// <p>The device name for the EBS volume.</p>
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_name = Some(input.into());
+            self
+        }
+        /// <p>The device name for the EBS volume.</p>
+        pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_name = input;
+            self
+        }
+        /// <p>EBS volume size in GB.</p>
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.volume_size_in_gb = Some(input);
+            self
+        }
+        /// <p>EBS volume size in GB.</p>
+        pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size_in_gb = input;
+            self
+        }
+        /// <p>EBS volume encryption type.</p>
+        pub fn encryption_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encryption_type = Some(input.into());
+            self
+        }
+        /// <p>EBS volume encryption type.</p>
+        pub fn set_encryption_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.encryption_type = input;
+            self
+        }
+        /// <p>Snapshot Arn of the EBS volume.</p>
+        pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_arn = Some(input.into());
+            self
+        }
+        /// <p>Snapshot Arn of the EBS volume.</p>
+        pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_arn = input;
+            self
+        }
+        /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_arn = Some(input.into());
+            self
+        }
+        /// <p>KMS key Arn used to encrypt the EBS volume.</p>
+        pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VolumeDetail`](crate::model::VolumeDetail).
+        pub fn build(self) -> crate::model::VolumeDetail {
+            crate::model::VolumeDetail {
+                volume_arn: self.volume_arn,
+                volume_type: self.volume_type,
+                device_name: self.device_name,
+                volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
+                encryption_type: self.encryption_type,
+                snapshot_arn: self.snapshot_arn,
+                kms_key_arn: self.kms_key_arn,
+            }
+        }
+    }
+}
+impl VolumeDetail {
+    /// Creates a new builder-style object to manufacture [`VolumeDetail`](crate::model::VolumeDetail).
+    pub fn builder() -> crate::model::volume_detail::Builder {
+        crate::model::volume_detail::Builder::default()
+    }
+}
+
+/// <p>Details about Kubernetes resources such as a Kubernetes user or workload resource involved in a Kubernetes finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KubernetesDetails {
+    /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+    pub kubernetes_user_details: std::option::Option<crate::model::KubernetesUserDetails>,
+    /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+    pub kubernetes_workload_details: std::option::Option<crate::model::KubernetesWorkloadDetails>,
+}
+impl KubernetesDetails {
+    /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+    pub fn kubernetes_user_details(
+        &self,
+    ) -> std::option::Option<&crate::model::KubernetesUserDetails> {
+        self.kubernetes_user_details.as_ref()
+    }
+    /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+    pub fn kubernetes_workload_details(
+        &self,
+    ) -> std::option::Option<&crate::model::KubernetesWorkloadDetails> {
+        self.kubernetes_workload_details.as_ref()
+    }
+}
+impl std::fmt::Debug for KubernetesDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KubernetesDetails");
+        formatter.field("kubernetes_user_details", &self.kubernetes_user_details);
+        formatter.field(
+            "kubernetes_workload_details",
+            &self.kubernetes_workload_details,
+        );
+        formatter.finish()
+    }
+}
+/// See [`KubernetesDetails`](crate::model::KubernetesDetails).
+pub mod kubernetes_details {
+
+    /// A builder for [`KubernetesDetails`](crate::model::KubernetesDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kubernetes_user_details:
+            std::option::Option<crate::model::KubernetesUserDetails>,
+        pub(crate) kubernetes_workload_details:
+            std::option::Option<crate::model::KubernetesWorkloadDetails>,
+    }
+    impl Builder {
+        /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+        pub fn kubernetes_user_details(
+            mut self,
+            input: crate::model::KubernetesUserDetails,
+        ) -> Self {
+            self.kubernetes_user_details = Some(input);
+            self
+        }
+        /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
+        pub fn set_kubernetes_user_details(
+            mut self,
+            input: std::option::Option<crate::model::KubernetesUserDetails>,
+        ) -> Self {
+            self.kubernetes_user_details = input;
+            self
+        }
+        /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+        pub fn kubernetes_workload_details(
+            mut self,
+            input: crate::model::KubernetesWorkloadDetails,
+        ) -> Self {
+            self.kubernetes_workload_details = Some(input);
+            self
+        }
+        /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+        pub fn set_kubernetes_workload_details(
+            mut self,
+            input: std::option::Option<crate::model::KubernetesWorkloadDetails>,
+        ) -> Self {
+            self.kubernetes_workload_details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KubernetesDetails`](crate::model::KubernetesDetails).
+        pub fn build(self) -> crate::model::KubernetesDetails {
+            crate::model::KubernetesDetails {
+                kubernetes_user_details: self.kubernetes_user_details,
+                kubernetes_workload_details: self.kubernetes_workload_details,
+            }
+        }
+    }
+}
+impl KubernetesDetails {
+    /// Creates a new builder-style object to manufacture [`KubernetesDetails`](crate::model::KubernetesDetails).
+    pub fn builder() -> crate::model::kubernetes_details::Builder {
+        crate::model::kubernetes_details::Builder::default()
+    }
+}
+
+/// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct KubernetesWorkloadDetails {
+    /// <p>Kubernetes workload name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>Kubernetes workload ID.</p>
+    pub uid: std::option::Option<std::string::String>,
+    /// <p>Kubernetes namespace that the workload is part of.</p>
+    pub namespace: std::option::Option<std::string::String>,
+    /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
+    pub host_network: bool,
+    /// <p>Containers running as part of the Kubernetes workload.</p>
+    pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
+    /// <p>Volumes used by the Kubernetes workload.</p>
+    pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+}
+impl KubernetesWorkloadDetails {
+    /// <p>Kubernetes workload name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
+    pub fn r#type(&self) -> std::option::Option<&str> {
+        self.r#type.as_deref()
+    }
+    /// <p>Kubernetes workload ID.</p>
+    pub fn uid(&self) -> std::option::Option<&str> {
+        self.uid.as_deref()
+    }
+    /// <p>Kubernetes namespace that the workload is part of.</p>
+    pub fn namespace(&self) -> std::option::Option<&str> {
+        self.namespace.as_deref()
+    }
+    /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
+    pub fn host_network(&self) -> bool {
+        self.host_network
+    }
+    /// <p>Containers running as part of the Kubernetes workload.</p>
+    pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
+        self.containers.as_deref()
+    }
+    /// <p>Volumes used by the Kubernetes workload.</p>
+    pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
+        self.volumes.as_deref()
+    }
+}
+impl std::fmt::Debug for KubernetesWorkloadDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("KubernetesWorkloadDetails");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("uid", &self.uid);
+        formatter.field("namespace", &self.namespace);
+        formatter.field("host_network", &self.host_network);
+        formatter.field("containers", &self.containers);
+        formatter.field("volumes", &self.volumes);
+        formatter.finish()
+    }
+}
+/// See [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
+pub mod kubernetes_workload_details {
+
+    /// A builder for [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) uid: std::option::Option<std::string::String>,
+        pub(crate) namespace: std::option::Option<std::string::String>,
+        pub(crate) host_network: std::option::Option<bool>,
+        pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
+        pub(crate) volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+    }
+    impl Builder {
+        /// <p>Kubernetes workload name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Kubernetes workload name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>Kubernetes workload ID.</p>
+        pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uid = Some(input.into());
+            self
+        }
+        /// <p>Kubernetes workload ID.</p>
+        pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uid = input;
+            self
+        }
+        /// <p>Kubernetes namespace that the workload is part of.</p>
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
+            self
+        }
+        /// <p>Kubernetes namespace that the workload is part of.</p>
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
+            self
+        }
+        /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
+        pub fn host_network(mut self, input: bool) -> Self {
+            self.host_network = Some(input);
+            self
+        }
+        /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
+        pub fn set_host_network(mut self, input: std::option::Option<bool>) -> Self {
+            self.host_network = input;
+            self
+        }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>Containers running as part of the Kubernetes workload.</p>
+        pub fn containers(mut self, input: crate::model::Container) -> Self {
+            let mut v = self.containers.unwrap_or_default();
+            v.push(input);
+            self.containers = Some(v);
+            self
+        }
+        /// <p>Containers running as part of the Kubernetes workload.</p>
+        pub fn set_containers(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Container>>,
+        ) -> Self {
+            self.containers = input;
+            self
+        }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>Volumes used by the Kubernetes workload.</p>
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
+            let mut v = self.volumes.unwrap_or_default();
+            v.push(input);
+            self.volumes = Some(v);
+            self
+        }
+        /// <p>Volumes used by the Kubernetes workload.</p>
+        pub fn set_volumes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+        ) -> Self {
+            self.volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
+        pub fn build(self) -> crate::model::KubernetesWorkloadDetails {
+            crate::model::KubernetesWorkloadDetails {
+                name: self.name,
+                r#type: self.r#type,
+                uid: self.uid,
+                namespace: self.namespace,
+                host_network: self.host_network.unwrap_or_default(),
+                containers: self.containers,
+                volumes: self.volumes,
+            }
+        }
+    }
+}
+impl KubernetesWorkloadDetails {
+    /// Creates a new builder-style object to manufacture [`KubernetesWorkloadDetails`](crate::model::KubernetesWorkloadDetails).
+    pub fn builder() -> crate::model::kubernetes_workload_details::Builder {
+        crate::model::kubernetes_workload_details::Builder::default()
+    }
+}
+
 /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8017,79 +10890,6 @@ impl EksClusterDetails {
     /// Creates a new builder-style object to manufacture [`EksClusterDetails`](crate::model::EksClusterDetails).
     pub fn builder() -> crate::model::eks_cluster_details::Builder {
         crate::model::eks_cluster_details::Builder::default()
-    }
-}
-
-/// <p>Contains information about a tag associated with the EC2 instance.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
-    /// <p>The EC2 instance tag key.</p>
-    pub key: std::option::Option<std::string::String>,
-    /// <p>The EC2 instance tag value.</p>
-    pub value: std::option::Option<std::string::String>,
-}
-impl Tag {
-    /// <p>The EC2 instance tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
-        self.key.as_deref()
-    }
-    /// <p>The EC2 instance tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
-        self.value.as_deref()
-    }
-}
-impl std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &self.key);
-        formatter.field("value", &self.value);
-        formatter.finish()
-    }
-}
-/// See [`Tag`](crate::model::Tag).
-pub mod tag {
-
-    /// A builder for [`Tag`](crate::model::Tag).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) value: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The EC2 instance tag key.</p>
-        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-            self.key = Some(input.into());
-            self
-        }
-        /// <p>The EC2 instance tag key.</p>
-        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
-        }
-        /// <p>The EC2 instance tag value.</p>
-        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-            self.value = Some(input.into());
-            self
-        }
-        /// <p>The EC2 instance tag value.</p>
-        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
-        pub fn build(self) -> crate::model::Tag {
-            crate::model::Tag {
-                key: self.key,
-                value: self.value,
-            }
-        }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -10224,6 +13024,9 @@ pub struct OrganizationDataSourceConfigurationsResult {
     pub s3_logs: std::option::Option<crate::model::OrganizationS3LogsConfigurationResult>,
     /// <p>Describes the configuration of Kubernetes data sources.</p>
     pub kubernetes: std::option::Option<crate::model::OrganizationKubernetesConfigurationResult>,
+    /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+    pub malware_protection:
+        std::option::Option<crate::model::OrganizationMalwareProtectionConfigurationResult>,
 }
 impl OrganizationDataSourceConfigurationsResult {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
@@ -10238,12 +13041,19 @@ impl OrganizationDataSourceConfigurationsResult {
     ) -> std::option::Option<&crate::model::OrganizationKubernetesConfigurationResult> {
         self.kubernetes.as_ref()
     }
+    /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+    pub fn malware_protection(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationMalwareProtectionConfigurationResult> {
+        self.malware_protection.as_ref()
+    }
 }
 impl std::fmt::Debug for OrganizationDataSourceConfigurationsResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrganizationDataSourceConfigurationsResult");
         formatter.field("s3_logs", &self.s3_logs);
         formatter.field("kubernetes", &self.kubernetes);
+        formatter.field("malware_protection", &self.malware_protection);
         formatter.finish()
     }
 }
@@ -10257,6 +13067,8 @@ pub mod organization_data_source_configurations_result {
             std::option::Option<crate::model::OrganizationS3LogsConfigurationResult>,
         pub(crate) kubernetes:
             std::option::Option<crate::model::OrganizationKubernetesConfigurationResult>,
+        pub(crate) malware_protection:
+            std::option::Option<crate::model::OrganizationMalwareProtectionConfigurationResult>,
     }
     impl Builder {
         /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
@@ -10291,11 +13103,30 @@ pub mod organization_data_source_configurations_result {
             self.kubernetes = input;
             self
         }
+        /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+        pub fn malware_protection(
+            mut self,
+            input: crate::model::OrganizationMalwareProtectionConfigurationResult,
+        ) -> Self {
+            self.malware_protection = Some(input);
+            self
+        }
+        /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
+        pub fn set_malware_protection(
+            mut self,
+            input: std::option::Option<
+                crate::model::OrganizationMalwareProtectionConfigurationResult,
+            >,
+        ) -> Self {
+            self.malware_protection = input;
+            self
+        }
         /// Consumes the builder and constructs a [`OrganizationDataSourceConfigurationsResult`](crate::model::OrganizationDataSourceConfigurationsResult).
         pub fn build(self) -> crate::model::OrganizationDataSourceConfigurationsResult {
             crate::model::OrganizationDataSourceConfigurationsResult {
                 s3_logs: self.s3_logs,
                 kubernetes: self.kubernetes,
+                malware_protection: self.malware_protection,
             }
         }
     }
@@ -10304,6 +13135,185 @@ impl OrganizationDataSourceConfigurationsResult {
     /// Creates a new builder-style object to manufacture [`OrganizationDataSourceConfigurationsResult`](crate::model::OrganizationDataSourceConfigurationsResult).
     pub fn builder() -> crate::model::organization_data_source_configurations_result::Builder {
         crate::model::organization_data_source_configurations_result::Builder::default()
+    }
+}
+
+/// <p>An object that contains information on the status of all Malware Protection data source for an organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationMalwareProtectionConfigurationResult {
+    /// <p>Describes the configuration for scanning EC2 instances with findings for an organization.</p>
+    pub scan_ec2_instance_with_findings:
+        std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindingsResult>,
+}
+impl OrganizationMalwareProtectionConfigurationResult {
+    /// <p>Describes the configuration for scanning EC2 instances with findings for an organization.</p>
+    pub fn scan_ec2_instance_with_findings(
+        &self,
+    ) -> std::option::Option<&crate::model::OrganizationScanEc2InstanceWithFindingsResult> {
+        self.scan_ec2_instance_with_findings.as_ref()
+    }
+}
+impl std::fmt::Debug for OrganizationMalwareProtectionConfigurationResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationMalwareProtectionConfigurationResult");
+        formatter.field(
+            "scan_ec2_instance_with_findings",
+            &self.scan_ec2_instance_with_findings,
+        );
+        formatter.finish()
+    }
+}
+/// See [`OrganizationMalwareProtectionConfigurationResult`](crate::model::OrganizationMalwareProtectionConfigurationResult).
+pub mod organization_malware_protection_configuration_result {
+
+    /// A builder for [`OrganizationMalwareProtectionConfigurationResult`](crate::model::OrganizationMalwareProtectionConfigurationResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_ec2_instance_with_findings:
+            std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindingsResult>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration for scanning EC2 instances with findings for an organization.</p>
+        pub fn scan_ec2_instance_with_findings(
+            mut self,
+            input: crate::model::OrganizationScanEc2InstanceWithFindingsResult,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = Some(input);
+            self
+        }
+        /// <p>Describes the configuration for scanning EC2 instances with findings for an organization.</p>
+        pub fn set_scan_ec2_instance_with_findings(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationScanEc2InstanceWithFindingsResult>,
+        ) -> Self {
+            self.scan_ec2_instance_with_findings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationMalwareProtectionConfigurationResult`](crate::model::OrganizationMalwareProtectionConfigurationResult).
+        pub fn build(self) -> crate::model::OrganizationMalwareProtectionConfigurationResult {
+            crate::model::OrganizationMalwareProtectionConfigurationResult {
+                scan_ec2_instance_with_findings: self.scan_ec2_instance_with_findings,
+            }
+        }
+    }
+}
+impl OrganizationMalwareProtectionConfigurationResult {
+    /// Creates a new builder-style object to manufacture [`OrganizationMalwareProtectionConfigurationResult`](crate::model::OrganizationMalwareProtectionConfigurationResult).
+    pub fn builder() -> crate::model::organization_malware_protection_configuration_result::Builder
+    {
+        crate::model::organization_malware_protection_configuration_result::Builder::default()
+    }
+}
+
+/// <p>An object that contains information on the status of scanning EC2 instances with findings for an organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationScanEc2InstanceWithFindingsResult {
+    /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
+    pub ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumesResult>,
+}
+impl OrganizationScanEc2InstanceWithFindingsResult {
+    /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
+    pub fn ebs_volumes(&self) -> std::option::Option<&crate::model::OrganizationEbsVolumesResult> {
+        self.ebs_volumes.as_ref()
+    }
+}
+impl std::fmt::Debug for OrganizationScanEc2InstanceWithFindingsResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationScanEc2InstanceWithFindingsResult");
+        formatter.field("ebs_volumes", &self.ebs_volumes);
+        formatter.finish()
+    }
+}
+/// See [`OrganizationScanEc2InstanceWithFindingsResult`](crate::model::OrganizationScanEc2InstanceWithFindingsResult).
+pub mod organization_scan_ec2_instance_with_findings_result {
+
+    /// A builder for [`OrganizationScanEc2InstanceWithFindingsResult`](crate::model::OrganizationScanEc2InstanceWithFindingsResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ebs_volumes: std::option::Option<crate::model::OrganizationEbsVolumesResult>,
+    }
+    impl Builder {
+        /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
+        pub fn ebs_volumes(mut self, input: crate::model::OrganizationEbsVolumesResult) -> Self {
+            self.ebs_volumes = Some(input);
+            self
+        }
+        /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
+        pub fn set_ebs_volumes(
+            mut self,
+            input: std::option::Option<crate::model::OrganizationEbsVolumesResult>,
+        ) -> Self {
+            self.ebs_volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationScanEc2InstanceWithFindingsResult`](crate::model::OrganizationScanEc2InstanceWithFindingsResult).
+        pub fn build(self) -> crate::model::OrganizationScanEc2InstanceWithFindingsResult {
+            crate::model::OrganizationScanEc2InstanceWithFindingsResult {
+                ebs_volumes: self.ebs_volumes,
+            }
+        }
+    }
+}
+impl OrganizationScanEc2InstanceWithFindingsResult {
+    /// Creates a new builder-style object to manufacture [`OrganizationScanEc2InstanceWithFindingsResult`](crate::model::OrganizationScanEc2InstanceWithFindingsResult).
+    pub fn builder() -> crate::model::organization_scan_ec2_instance_with_findings_result::Builder {
+        crate::model::organization_scan_ec2_instance_with_findings_result::Builder::default()
+    }
+}
+
+/// <p>An object that contains information on the status of whether EBS volumes scanning will be enabled as a data source for an organization.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OrganizationEbsVolumesResult {
+    /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub auto_enable: bool,
+}
+impl OrganizationEbsVolumesResult {
+    /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
+impl std::fmt::Debug for OrganizationEbsVolumesResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OrganizationEbsVolumesResult");
+        formatter.field("auto_enable", &self.auto_enable);
+        formatter.finish()
+    }
+}
+/// See [`OrganizationEbsVolumesResult`](crate::model::OrganizationEbsVolumesResult).
+pub mod organization_ebs_volumes_result {
+
+    /// A builder for [`OrganizationEbsVolumesResult`](crate::model::OrganizationEbsVolumesResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auto_enable: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.auto_enable = Some(input);
+            self
+        }
+        /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
+        pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_enable = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OrganizationEbsVolumesResult`](crate::model::OrganizationEbsVolumesResult).
+        pub fn build(self) -> crate::model::OrganizationEbsVolumesResult {
+            crate::model::OrganizationEbsVolumesResult {
+                auto_enable: self.auto_enable.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl OrganizationEbsVolumesResult {
+    /// Creates a new builder-style object to manufacture [`OrganizationEbsVolumesResult`](crate::model::OrganizationEbsVolumesResult).
+    pub fn builder() -> crate::model::organization_ebs_volumes_result::Builder {
+        crate::model::organization_ebs_volumes_result::Builder::default()
     }
 }
 
@@ -10480,6 +13490,954 @@ impl OrganizationS3LogsConfigurationResult {
     /// Creates a new builder-style object to manufacture [`OrganizationS3LogsConfigurationResult`](crate::model::OrganizationS3LogsConfigurationResult).
     pub fn builder() -> crate::model::organization_s3_logs_configuration_result::Builder {
         crate::model::organization_s3_logs_configuration_result::Builder::default()
+    }
+}
+
+/// <p>Contains information about a malware scan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Scan {
+    /// <p>The unique ID of the detector that the request is associated with.</p>
+    pub detector_id: std::option::Option<std::string::String>,
+    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    pub admin_detector_id: std::option::Option<std::string::String>,
+    /// <p>The unique scan ID associated with a scan entry.</p>
+    pub scan_id: std::option::Option<std::string::String>,
+    /// <p>An enum value representing possible scan statuses.</p>
+    pub scan_status: std::option::Option<crate::model::ScanStatus>,
+    /// <p>Represents the reason for FAILED scan status.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The timestamp of when the scan was triggered.</p>
+    pub scan_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The timestamp of when the scan was finished.</p>
+    pub scan_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Represents the reason the scan was triggered.</p>
+    pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
+    /// <p>Represents the resources that were scanned in the scan entry.</p>
+    pub resource_details: std::option::Option<crate::model::ResourceDetails>,
+    /// <p>Represents the result of the scan.</p>
+    pub scan_result_details: std::option::Option<crate::model::ScanResultDetails>,
+    /// <p>The ID for the account that belongs to the scan.</p>
+    pub account_id: std::option::Option<std::string::String>,
+    /// <p>Represents total bytes that were scanned.</p>
+    pub total_bytes: i64,
+    /// <p>Represents the number of files that were scanned.</p>
+    pub file_count: i64,
+    /// <p>List of volumes that were attached to the original instance to be scanned.</p>
+    pub attached_volumes: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+}
+impl Scan {
+    /// <p>The unique ID of the detector that the request is associated with.</p>
+    pub fn detector_id(&self) -> std::option::Option<&str> {
+        self.detector_id.as_deref()
+    }
+    /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+    pub fn admin_detector_id(&self) -> std::option::Option<&str> {
+        self.admin_detector_id.as_deref()
+    }
+    /// <p>The unique scan ID associated with a scan entry.</p>
+    pub fn scan_id(&self) -> std::option::Option<&str> {
+        self.scan_id.as_deref()
+    }
+    /// <p>An enum value representing possible scan statuses.</p>
+    pub fn scan_status(&self) -> std::option::Option<&crate::model::ScanStatus> {
+        self.scan_status.as_ref()
+    }
+    /// <p>Represents the reason for FAILED scan status.</p>
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
+    /// <p>The timestamp of when the scan was triggered.</p>
+    pub fn scan_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scan_start_time.as_ref()
+    }
+    /// <p>The timestamp of when the scan was finished.</p>
+    pub fn scan_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.scan_end_time.as_ref()
+    }
+    /// <p>Represents the reason the scan was triggered.</p>
+    pub fn trigger_details(&self) -> std::option::Option<&crate::model::TriggerDetails> {
+        self.trigger_details.as_ref()
+    }
+    /// <p>Represents the resources that were scanned in the scan entry.</p>
+    pub fn resource_details(&self) -> std::option::Option<&crate::model::ResourceDetails> {
+        self.resource_details.as_ref()
+    }
+    /// <p>Represents the result of the scan.</p>
+    pub fn scan_result_details(&self) -> std::option::Option<&crate::model::ScanResultDetails> {
+        self.scan_result_details.as_ref()
+    }
+    /// <p>The ID for the account that belongs to the scan.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+    /// <p>Represents total bytes that were scanned.</p>
+    pub fn total_bytes(&self) -> i64 {
+        self.total_bytes
+    }
+    /// <p>Represents the number of files that were scanned.</p>
+    pub fn file_count(&self) -> i64 {
+        self.file_count
+    }
+    /// <p>List of volumes that were attached to the original instance to be scanned.</p>
+    pub fn attached_volumes(&self) -> std::option::Option<&[crate::model::VolumeDetail]> {
+        self.attached_volumes.as_deref()
+    }
+}
+impl std::fmt::Debug for Scan {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Scan");
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("admin_detector_id", &self.admin_detector_id);
+        formatter.field("scan_id", &self.scan_id);
+        formatter.field("scan_status", &self.scan_status);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("scan_start_time", &self.scan_start_time);
+        formatter.field("scan_end_time", &self.scan_end_time);
+        formatter.field("trigger_details", &self.trigger_details);
+        formatter.field("resource_details", &self.resource_details);
+        formatter.field("scan_result_details", &self.scan_result_details);
+        formatter.field("account_id", &self.account_id);
+        formatter.field("total_bytes", &self.total_bytes);
+        formatter.field("file_count", &self.file_count);
+        formatter.field("attached_volumes", &self.attached_volumes);
+        formatter.finish()
+    }
+}
+/// See [`Scan`](crate::model::Scan).
+pub mod scan {
+
+    /// A builder for [`Scan`](crate::model::Scan).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) detector_id: std::option::Option<std::string::String>,
+        pub(crate) admin_detector_id: std::option::Option<std::string::String>,
+        pub(crate) scan_id: std::option::Option<std::string::String>,
+        pub(crate) scan_status: std::option::Option<crate::model::ScanStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) scan_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) scan_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) trigger_details: std::option::Option<crate::model::TriggerDetails>,
+        pub(crate) resource_details: std::option::Option<crate::model::ResourceDetails>,
+        pub(crate) scan_result_details: std::option::Option<crate::model::ScanResultDetails>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+        pub(crate) total_bytes: std::option::Option<i64>,
+        pub(crate) file_count: std::option::Option<i64>,
+        pub(crate) attached_volumes: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+    }
+    impl Builder {
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.detector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_id = input;
+            self
+        }
+        /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+        pub fn admin_detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.admin_detector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique detector ID of the administrator account that the request is associated with. Note that this value will be the same as the one used for <code>DetectorId</code> if the account is an administrator.</p>
+        pub fn set_admin_detector_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.admin_detector_id = input;
+            self
+        }
+        /// <p>The unique scan ID associated with a scan entry.</p>
+        pub fn scan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scan_id = Some(input.into());
+            self
+        }
+        /// <p>The unique scan ID associated with a scan entry.</p>
+        pub fn set_scan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.scan_id = input;
+            self
+        }
+        /// <p>An enum value representing possible scan statuses.</p>
+        pub fn scan_status(mut self, input: crate::model::ScanStatus) -> Self {
+            self.scan_status = Some(input);
+            self
+        }
+        /// <p>An enum value representing possible scan statuses.</p>
+        pub fn set_scan_status(
+            mut self,
+            input: std::option::Option<crate::model::ScanStatus>,
+        ) -> Self {
+            self.scan_status = input;
+            self
+        }
+        /// <p>Represents the reason for FAILED scan status.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        /// <p>Represents the reason for FAILED scan status.</p>
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The timestamp of when the scan was triggered.</p>
+        pub fn scan_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scan_start_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the scan was triggered.</p>
+        pub fn set_scan_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scan_start_time = input;
+            self
+        }
+        /// <p>The timestamp of when the scan was finished.</p>
+        pub fn scan_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.scan_end_time = Some(input);
+            self
+        }
+        /// <p>The timestamp of when the scan was finished.</p>
+        pub fn set_scan_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.scan_end_time = input;
+            self
+        }
+        /// <p>Represents the reason the scan was triggered.</p>
+        pub fn trigger_details(mut self, input: crate::model::TriggerDetails) -> Self {
+            self.trigger_details = Some(input);
+            self
+        }
+        /// <p>Represents the reason the scan was triggered.</p>
+        pub fn set_trigger_details(
+            mut self,
+            input: std::option::Option<crate::model::TriggerDetails>,
+        ) -> Self {
+            self.trigger_details = input;
+            self
+        }
+        /// <p>Represents the resources that were scanned in the scan entry.</p>
+        pub fn resource_details(mut self, input: crate::model::ResourceDetails) -> Self {
+            self.resource_details = Some(input);
+            self
+        }
+        /// <p>Represents the resources that were scanned in the scan entry.</p>
+        pub fn set_resource_details(
+            mut self,
+            input: std::option::Option<crate::model::ResourceDetails>,
+        ) -> Self {
+            self.resource_details = input;
+            self
+        }
+        /// <p>Represents the result of the scan.</p>
+        pub fn scan_result_details(mut self, input: crate::model::ScanResultDetails) -> Self {
+            self.scan_result_details = Some(input);
+            self
+        }
+        /// <p>Represents the result of the scan.</p>
+        pub fn set_scan_result_details(
+            mut self,
+            input: std::option::Option<crate::model::ScanResultDetails>,
+        ) -> Self {
+            self.scan_result_details = input;
+            self
+        }
+        /// <p>The ID for the account that belongs to the scan.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The ID for the account that belongs to the scan.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// <p>Represents total bytes that were scanned.</p>
+        pub fn total_bytes(mut self, input: i64) -> Self {
+            self.total_bytes = Some(input);
+            self
+        }
+        /// <p>Represents total bytes that were scanned.</p>
+        pub fn set_total_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.total_bytes = input;
+            self
+        }
+        /// <p>Represents the number of files that were scanned.</p>
+        pub fn file_count(mut self, input: i64) -> Self {
+            self.file_count = Some(input);
+            self
+        }
+        /// <p>Represents the number of files that were scanned.</p>
+        pub fn set_file_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.file_count = input;
+            self
+        }
+        /// Appends an item to `attached_volumes`.
+        ///
+        /// To override the contents of this collection use [`set_attached_volumes`](Self::set_attached_volumes).
+        ///
+        /// <p>List of volumes that were attached to the original instance to be scanned.</p>
+        pub fn attached_volumes(mut self, input: crate::model::VolumeDetail) -> Self {
+            let mut v = self.attached_volumes.unwrap_or_default();
+            v.push(input);
+            self.attached_volumes = Some(v);
+            self
+        }
+        /// <p>List of volumes that were attached to the original instance to be scanned.</p>
+        pub fn set_attached_volumes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeDetail>>,
+        ) -> Self {
+            self.attached_volumes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Scan`](crate::model::Scan).
+        pub fn build(self) -> crate::model::Scan {
+            crate::model::Scan {
+                detector_id: self.detector_id,
+                admin_detector_id: self.admin_detector_id,
+                scan_id: self.scan_id,
+                scan_status: self.scan_status,
+                failure_reason: self.failure_reason,
+                scan_start_time: self.scan_start_time,
+                scan_end_time: self.scan_end_time,
+                trigger_details: self.trigger_details,
+                resource_details: self.resource_details,
+                scan_result_details: self.scan_result_details,
+                account_id: self.account_id,
+                total_bytes: self.total_bytes.unwrap_or_default(),
+                file_count: self.file_count.unwrap_or_default(),
+                attached_volumes: self.attached_volumes,
+            }
+        }
+    }
+}
+impl Scan {
+    /// Creates a new builder-style object to manufacture [`Scan`](crate::model::Scan).
+    pub fn builder() -> crate::model::scan::Builder {
+        crate::model::scan::Builder::default()
+    }
+}
+
+/// <p>Represents the result of the scan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanResultDetails {
+    /// <p>An enum value representing possible scan results.</p>
+    pub scan_result: std::option::Option<crate::model::ScanResult>,
+}
+impl ScanResultDetails {
+    /// <p>An enum value representing possible scan results.</p>
+    pub fn scan_result(&self) -> std::option::Option<&crate::model::ScanResult> {
+        self.scan_result.as_ref()
+    }
+}
+impl std::fmt::Debug for ScanResultDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanResultDetails");
+        formatter.field("scan_result", &self.scan_result);
+        formatter.finish()
+    }
+}
+/// See [`ScanResultDetails`](crate::model::ScanResultDetails).
+pub mod scan_result_details {
+
+    /// A builder for [`ScanResultDetails`](crate::model::ScanResultDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_result: std::option::Option<crate::model::ScanResult>,
+    }
+    impl Builder {
+        /// <p>An enum value representing possible scan results.</p>
+        pub fn scan_result(mut self, input: crate::model::ScanResult) -> Self {
+            self.scan_result = Some(input);
+            self
+        }
+        /// <p>An enum value representing possible scan results.</p>
+        pub fn set_scan_result(
+            mut self,
+            input: std::option::Option<crate::model::ScanResult>,
+        ) -> Self {
+            self.scan_result = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanResultDetails`](crate::model::ScanResultDetails).
+        pub fn build(self) -> crate::model::ScanResultDetails {
+            crate::model::ScanResultDetails {
+                scan_result: self.scan_result,
+            }
+        }
+    }
+}
+impl ScanResultDetails {
+    /// Creates a new builder-style object to manufacture [`ScanResultDetails`](crate::model::ScanResultDetails).
+    pub fn builder() -> crate::model::scan_result_details::Builder {
+        crate::model::scan_result_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanResult {
+    #[allow(missing_docs)] // documentation missing in model
+    Clean,
+    #[allow(missing_docs)] // documentation missing in model
+    Infected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanResult {
+    fn from(s: &str) -> Self {
+        match s {
+            "CLEAN" => ScanResult::Clean,
+            "INFECTED" => ScanResult::Infected,
+            other => ScanResult::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanResult {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanResult::from(s))
+    }
+}
+impl ScanResult {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanResult::Clean => "CLEAN",
+            ScanResult::Infected => "INFECTED",
+            ScanResult::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CLEAN", "INFECTED"]
+    }
+}
+impl AsRef<str> for ScanResult {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Represents the resources that were scanned in the scan entry.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceDetails {
+    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    pub instance_arn: std::option::Option<std::string::String>,
+}
+impl ResourceDetails {
+    /// <p>InstanceArn that was scanned in the scan entry.</p>
+    pub fn instance_arn(&self) -> std::option::Option<&str> {
+        self.instance_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ResourceDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceDetails");
+        formatter.field("instance_arn", &self.instance_arn);
+        formatter.finish()
+    }
+}
+/// See [`ResourceDetails`](crate::model::ResourceDetails).
+pub mod resource_details {
+
+    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>InstanceArn that was scanned in the scan entry.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_arn = Some(input.into());
+            self
+        }
+        /// <p>InstanceArn that was scanned in the scan entry.</p>
+        pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
+        pub fn build(self) -> crate::model::ResourceDetails {
+            crate::model::ResourceDetails {
+                instance_arn: self.instance_arn,
+            }
+        }
+    }
+}
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>Represents the reason the scan was triggered.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TriggerDetails {
+    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    pub guard_duty_finding_id: std::option::Option<std::string::String>,
+    /// <p>The description of the scan trigger.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl TriggerDetails {
+    /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+    pub fn guard_duty_finding_id(&self) -> std::option::Option<&str> {
+        self.guard_duty_finding_id.as_deref()
+    }
+    /// <p>The description of the scan trigger.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
+impl std::fmt::Debug for TriggerDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TriggerDetails");
+        formatter.field("guard_duty_finding_id", &self.guard_duty_finding_id);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`TriggerDetails`](crate::model::TriggerDetails).
+pub mod trigger_details {
+
+    /// A builder for [`TriggerDetails`](crate::model::TriggerDetails).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) guard_duty_finding_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+        pub fn guard_duty_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.guard_duty_finding_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the GuardDuty finding that triggered the BirdDog scan.</p>
+        pub fn set_guard_duty_finding_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.guard_duty_finding_id = input;
+            self
+        }
+        /// <p>The description of the scan trigger.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the scan trigger.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TriggerDetails`](crate::model::TriggerDetails).
+        pub fn build(self) -> crate::model::TriggerDetails {
+            crate::model::TriggerDetails {
+                guard_duty_finding_id: self.guard_duty_finding_id,
+                description: self.description,
+            }
+        }
+    }
+}
+impl TriggerDetails {
+    /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails).
+    pub fn builder() -> crate::model::trigger_details::Builder {
+        crate::model::trigger_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ScanStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ScanStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => ScanStatus::Completed,
+            "FAILED" => ScanStatus::Failed,
+            "RUNNING" => ScanStatus::Running,
+            other => ScanStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ScanStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScanStatus::from(s))
+    }
+}
+impl ScanStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScanStatus::Completed => "COMPLETED",
+            ScanStatus::Failed => "FAILED",
+            ScanStatus::Running => "RUNNING",
+            ScanStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "RUNNING"]
+    }
+}
+impl AsRef<str> for ScanStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterCriteria {
+    /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+    pub filter_criterion: std::option::Option<std::vec::Vec<crate::model::FilterCriterion>>,
+}
+impl FilterCriteria {
+    /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+    pub fn filter_criterion(&self) -> std::option::Option<&[crate::model::FilterCriterion]> {
+        self.filter_criterion.as_deref()
+    }
+}
+impl std::fmt::Debug for FilterCriteria {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterCriteria");
+        formatter.field("filter_criterion", &self.filter_criterion);
+        formatter.finish()
+    }
+}
+/// See [`FilterCriteria`](crate::model::FilterCriteria).
+pub mod filter_criteria {
+
+    /// A builder for [`FilterCriteria`](crate::model::FilterCriteria).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filter_criterion:
+            std::option::Option<std::vec::Vec<crate::model::FilterCriterion>>,
+    }
+    impl Builder {
+        /// Appends an item to `filter_criterion`.
+        ///
+        /// To override the contents of this collection use [`set_filter_criterion`](Self::set_filter_criterion).
+        ///
+        /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+        pub fn filter_criterion(mut self, input: crate::model::FilterCriterion) -> Self {
+            let mut v = self.filter_criterion.unwrap_or_default();
+            v.push(input);
+            self.filter_criterion = Some(v);
+            self
+        }
+        /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+        pub fn set_filter_criterion(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FilterCriterion>>,
+        ) -> Self {
+            self.filter_criterion = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterCriteria`](crate::model::FilterCriteria).
+        pub fn build(self) -> crate::model::FilterCriteria {
+            crate::model::FilterCriteria {
+                filter_criterion: self.filter_criterion,
+            }
+        }
+    }
+}
+impl FilterCriteria {
+    /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
+    pub fn builder() -> crate::model::filter_criteria::Builder {
+        crate::model::filter_criteria::Builder::default()
+    }
+}
+
+/// <p>Represents a condition that when matched will be added to the response of the operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterCriterion {
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    pub criterion_key: std::option::Option<crate::model::CriterionKey>,
+    /// <p>Contains information about the condition.</p>
+    pub filter_condition: std::option::Option<crate::model::FilterCondition>,
+}
+impl FilterCriterion {
+    /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+    pub fn criterion_key(&self) -> std::option::Option<&crate::model::CriterionKey> {
+        self.criterion_key.as_ref()
+    }
+    /// <p>Contains information about the condition.</p>
+    pub fn filter_condition(&self) -> std::option::Option<&crate::model::FilterCondition> {
+        self.filter_condition.as_ref()
+    }
+}
+impl std::fmt::Debug for FilterCriterion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterCriterion");
+        formatter.field("criterion_key", &self.criterion_key);
+        formatter.field("filter_condition", &self.filter_condition);
+        formatter.finish()
+    }
+}
+/// See [`FilterCriterion`](crate::model::FilterCriterion).
+pub mod filter_criterion {
+
+    /// A builder for [`FilterCriterion`](crate::model::FilterCriterion).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) criterion_key: std::option::Option<crate::model::CriterionKey>,
+        pub(crate) filter_condition: std::option::Option<crate::model::FilterCondition>,
+    }
+    impl Builder {
+        /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+        pub fn criterion_key(mut self, input: crate::model::CriterionKey) -> Self {
+            self.criterion_key = Some(input);
+            self
+        }
+        /// <p>An enum value representing possible scan properties to match with given scan entries.</p>
+        pub fn set_criterion_key(
+            mut self,
+            input: std::option::Option<crate::model::CriterionKey>,
+        ) -> Self {
+            self.criterion_key = input;
+            self
+        }
+        /// <p>Contains information about the condition.</p>
+        pub fn filter_condition(mut self, input: crate::model::FilterCondition) -> Self {
+            self.filter_condition = Some(input);
+            self
+        }
+        /// <p>Contains information about the condition.</p>
+        pub fn set_filter_condition(
+            mut self,
+            input: std::option::Option<crate::model::FilterCondition>,
+        ) -> Self {
+            self.filter_condition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterCriterion`](crate::model::FilterCriterion).
+        pub fn build(self) -> crate::model::FilterCriterion {
+            crate::model::FilterCriterion {
+                criterion_key: self.criterion_key,
+                filter_condition: self.filter_condition,
+            }
+        }
+    }
+}
+impl FilterCriterion {
+    /// Creates a new builder-style object to manufacture [`FilterCriterion`](crate::model::FilterCriterion).
+    pub fn builder() -> crate::model::filter_criterion::Builder {
+        crate::model::filter_criterion::Builder::default()
+    }
+}
+
+/// <p>Contains information about the condition.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct FilterCondition {
+    /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+    pub equals_value: std::option::Option<std::string::String>,
+    /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub greater_than: i64,
+    /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub less_than: i64,
+}
+impl FilterCondition {
+    /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn equals_value(&self) -> std::option::Option<&str> {
+        self.equals_value.as_deref()
+    }
+    /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn greater_than(&self) -> i64 {
+        self.greater_than
+    }
+    /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn less_than(&self) -> i64 {
+        self.less_than
+    }
+}
+impl std::fmt::Debug for FilterCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("FilterCondition");
+        formatter.field("equals_value", &self.equals_value);
+        formatter.field("greater_than", &self.greater_than);
+        formatter.field("less_than", &self.less_than);
+        formatter.finish()
+    }
+}
+/// See [`FilterCondition`](crate::model::FilterCondition).
+pub mod filter_condition {
+
+    /// A builder for [`FilterCondition`](crate::model::FilterCondition).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) equals_value: std::option::Option<std::string::String>,
+        pub(crate) greater_than: std::option::Option<i64>,
+        pub(crate) less_than: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn equals_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.equals_value = Some(input.into());
+            self
+        }
+        /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn set_equals_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.equals_value = input;
+            self
+        }
+        /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn greater_than(mut self, input: i64) -> Self {
+            self.greater_than = Some(input);
+            self
+        }
+        /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.greater_than = input;
+            self
+        }
+        /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn less_than(mut self, input: i64) -> Self {
+            self.less_than = Some(input);
+            self
+        }
+        /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+        pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
+            self.less_than = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition).
+        pub fn build(self) -> crate::model::FilterCondition {
+            crate::model::FilterCondition {
+                equals_value: self.equals_value,
+                greater_than: self.greater_than.unwrap_or_default(),
+                less_than: self.less_than.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl FilterCondition {
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
+    pub fn builder() -> crate::model::filter_condition::Builder {
+        crate::model::filter_condition::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CriterionKey {
+    #[allow(missing_docs)] // documentation missing in model
+    AccountId,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2InstanceArn,
+    #[allow(missing_docs)] // documentation missing in model
+    GuarddutyFindingId,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanId,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanStartTime,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanStatus,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CriterionKey {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_ID" => CriterionKey::AccountId,
+            "EC2_INSTANCE_ARN" => CriterionKey::Ec2InstanceArn,
+            "GUARDDUTY_FINDING_ID" => CriterionKey::GuarddutyFindingId,
+            "SCAN_ID" => CriterionKey::ScanId,
+            "SCAN_START_TIME" => CriterionKey::ScanStartTime,
+            "SCAN_STATUS" => CriterionKey::ScanStatus,
+            other => CriterionKey::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CriterionKey {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CriterionKey::from(s))
+    }
+}
+impl CriterionKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CriterionKey::AccountId => "ACCOUNT_ID",
+            CriterionKey::Ec2InstanceArn => "EC2_INSTANCE_ARN",
+            CriterionKey::GuarddutyFindingId => "GUARDDUTY_FINDING_ID",
+            CriterionKey::ScanId => "SCAN_ID",
+            CriterionKey::ScanStartTime => "SCAN_START_TIME",
+            CriterionKey::ScanStatus => "SCAN_STATUS",
+            CriterionKey::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_ID",
+            "EC2_INSTANCE_ARN",
+            "GUARDDUTY_FINDING_ID",
+            "SCAN_ID",
+            "SCAN_START_TIME",
+            "SCAN_STATUS",
+        ]
+    }
+}
+impl AsRef<str> for CriterionKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

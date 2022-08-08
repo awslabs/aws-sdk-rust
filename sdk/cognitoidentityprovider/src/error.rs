@@ -4797,6 +4797,8 @@ pub struct AssociateSoftwareTokenError {
 pub enum AssociateSoftwareTokenErrorKind {
     /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -4816,6 +4818,7 @@ impl std::fmt::Display for AssociateSoftwareTokenError {
             AssociateSoftwareTokenErrorKind::ConcurrentModificationException(_inner) => {
                 _inner.fmt(f)
             }
+            AssociateSoftwareTokenErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             AssociateSoftwareTokenErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             AssociateSoftwareTokenErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             AssociateSoftwareTokenErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -4884,6 +4887,13 @@ impl AssociateSoftwareTokenError {
             AssociateSoftwareTokenErrorKind::ConcurrentModificationException(_)
         )
     }
+    /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateSoftwareTokenErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AssociateSoftwareTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -4926,6 +4936,7 @@ impl std::error::Error for AssociateSoftwareTokenError {
             AssociateSoftwareTokenErrorKind::ConcurrentModificationException(_inner) => {
                 Some(_inner)
             }
+            AssociateSoftwareTokenErrorKind::ForbiddenException(_inner) => Some(_inner),
             AssociateSoftwareTokenErrorKind::InternalErrorException(_inner) => Some(_inner),
             AssociateSoftwareTokenErrorKind::InvalidParameterException(_inner) => Some(_inner),
             AssociateSoftwareTokenErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -4951,6 +4962,8 @@ pub struct ChangePasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ChangePasswordErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -4977,6 +4990,7 @@ pub enum ChangePasswordErrorKind {
 impl std::fmt::Display for ChangePasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ChangePasswordErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ChangePasswordErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ChangePasswordErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ChangePasswordErrorKind::InvalidPasswordException(_inner) => _inner.fmt(f),
@@ -5040,6 +5054,10 @@ impl ChangePasswordError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ChangePasswordErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ChangePasswordErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ChangePasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -5115,6 +5133,7 @@ impl ChangePasswordError {
 impl std::error::Error for ChangePasswordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ChangePasswordErrorKind::ForbiddenException(_inner) => Some(_inner),
             ChangePasswordErrorKind::InternalErrorException(_inner) => Some(_inner),
             ChangePasswordErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ChangePasswordErrorKind::InvalidPasswordException(_inner) => Some(_inner),
@@ -5143,6 +5162,8 @@ pub struct ConfirmDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmDeviceErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -5173,6 +5194,7 @@ pub enum ConfirmDeviceErrorKind {
 impl std::fmt::Display for ConfirmDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ConfirmDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ConfirmDeviceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ConfirmDeviceErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             ConfirmDeviceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -5238,6 +5260,10 @@ impl ConfirmDeviceError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ConfirmDeviceErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ConfirmDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -5324,6 +5350,7 @@ impl ConfirmDeviceError {
 impl std::error::Error for ConfirmDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ConfirmDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
             ConfirmDeviceErrorKind::InternalErrorException(_inner) => Some(_inner),
             ConfirmDeviceErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
             ConfirmDeviceErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -5358,6 +5385,8 @@ pub enum ConfirmForgotPasswordErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -5392,6 +5421,7 @@ impl std::fmt::Display for ConfirmForgotPasswordError {
         match &self.kind {
             ConfirmForgotPasswordErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             ConfirmForgotPasswordErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
+            ConfirmForgotPasswordErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ConfirmForgotPasswordErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             ConfirmForgotPasswordErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -5471,6 +5501,13 @@ impl ConfirmForgotPasswordError {
         matches!(
             &self.kind,
             ConfirmForgotPasswordErrorKind::ExpiredCodeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmForgotPasswordErrorKind::ForbiddenException(_)
         )
     }
     /// Returns `true` if the error kind is `ConfirmForgotPasswordErrorKind::InternalErrorException`.
@@ -5570,6 +5607,7 @@ impl std::error::Error for ConfirmForgotPasswordError {
         match &self.kind {
             ConfirmForgotPasswordErrorKind::CodeMismatchException(_inner) => Some(_inner),
             ConfirmForgotPasswordErrorKind::ExpiredCodeException(_inner) => Some(_inner),
+            ConfirmForgotPasswordErrorKind::ForbiddenException(_inner) => Some(_inner),
             ConfirmForgotPasswordErrorKind::InternalErrorException(_inner) => Some(_inner),
             ConfirmForgotPasswordErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
             ConfirmForgotPasswordErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -5607,6 +5645,8 @@ pub enum ConfirmSignUpErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -5638,6 +5678,7 @@ impl std::fmt::Display for ConfirmSignUpError {
             ConfirmSignUpErrorKind::AliasExistsException(_inner) => _inner.fmt(f),
             ConfirmSignUpErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             ConfirmSignUpErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
+            ConfirmSignUpErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ConfirmSignUpErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ConfirmSignUpErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             ConfirmSignUpErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -5714,6 +5755,10 @@ impl ConfirmSignUpError {
     /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::ExpiredCodeException`.
     pub fn is_expired_code_exception(&self) -> bool {
         matches!(&self.kind, ConfirmSignUpErrorKind::ExpiredCodeException(_))
+    }
+    /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ConfirmSignUpErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ConfirmSignUpErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -5796,6 +5841,7 @@ impl std::error::Error for ConfirmSignUpError {
             ConfirmSignUpErrorKind::AliasExistsException(_inner) => Some(_inner),
             ConfirmSignUpErrorKind::CodeMismatchException(_inner) => Some(_inner),
             ConfirmSignUpErrorKind::ExpiredCodeException(_inner) => Some(_inner),
+            ConfirmSignUpErrorKind::ForbiddenException(_inner) => Some(_inner),
             ConfirmSignUpErrorKind::InternalErrorException(_inner) => Some(_inner),
             ConfirmSignUpErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
             ConfirmSignUpErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -7352,6 +7398,8 @@ pub struct DeleteUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -7374,6 +7422,7 @@ pub enum DeleteUserErrorKind {
 impl std::fmt::Display for DeleteUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteUserErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -7436,6 +7485,10 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteUserErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `DeleteUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, DeleteUserErrorKind::InternalErrorException(_))
@@ -7484,6 +7537,7 @@ impl DeleteUserError {
 impl std::error::Error for DeleteUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteUserErrorKind::ForbiddenException(_inner) => Some(_inner),
             DeleteUserErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteUserErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteUserErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -7510,6 +7564,8 @@ pub struct DeleteUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserAttributesErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -7532,6 +7588,7 @@ pub enum DeleteUserAttributesErrorKind {
 impl std::fmt::Display for DeleteUserAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteUserAttributesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             DeleteUserAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             DeleteUserAttributesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             DeleteUserAttributesErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -7594,6 +7651,13 @@ impl DeleteUserAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserAttributesErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DeleteUserAttributesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -7654,6 +7718,7 @@ impl DeleteUserAttributesError {
 impl std::error::Error for DeleteUserAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteUserAttributesErrorKind::ForbiddenException(_inner) => Some(_inner),
             DeleteUserAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             DeleteUserAttributesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             DeleteUserAttributesErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -9065,6 +9130,8 @@ pub struct ForgetDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ForgetDeviceErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -9089,6 +9156,7 @@ pub enum ForgetDeviceErrorKind {
 impl std::fmt::Display for ForgetDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ForgetDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ForgetDeviceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ForgetDeviceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ForgetDeviceErrorKind::InvalidUserPoolConfigurationException(_inner) => _inner.fmt(f),
@@ -9152,6 +9220,10 @@ impl ForgetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ForgetDeviceErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ForgetDeviceErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `ForgetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ForgetDeviceErrorKind::InternalErrorException(_))
@@ -9210,6 +9282,7 @@ impl ForgetDeviceError {
 impl std::error::Error for ForgetDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ForgetDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
             ForgetDeviceErrorKind::InternalErrorException(_inner) => Some(_inner),
             ForgetDeviceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ForgetDeviceErrorKind::InvalidUserPoolConfigurationException(_inner) => Some(_inner),
@@ -9239,6 +9312,8 @@ pub struct ForgotPasswordError {
 pub enum ForgotPasswordErrorKind {
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -9274,6 +9349,7 @@ impl std::fmt::Display for ForgotPasswordError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ForgotPasswordErrorKind::CodeDeliveryFailureException(_inner) => _inner.fmt(f),
+            ForgotPasswordErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             ForgotPasswordErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
@@ -9349,6 +9425,10 @@ impl ForgotPasswordError {
             &self.kind,
             ForgotPasswordErrorKind::CodeDeliveryFailureException(_)
         )
+    }
+    /// Returns `true` if the error kind is `ForgotPasswordErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ForgotPasswordErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ForgotPasswordErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -9446,6 +9526,7 @@ impl std::error::Error for ForgotPasswordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ForgotPasswordErrorKind::CodeDeliveryFailureException(_inner) => Some(_inner),
+            ForgotPasswordErrorKind::ForbiddenException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::InternalErrorException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => Some(_inner),
             ForgotPasswordErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
@@ -9610,6 +9691,8 @@ pub struct GetDeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeviceErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -9634,6 +9717,7 @@ pub enum GetDeviceErrorKind {
 impl std::fmt::Display for GetDeviceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GetDeviceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             GetDeviceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetDeviceErrorKind::InvalidUserPoolConfigurationException(_inner) => _inner.fmt(f),
@@ -9697,6 +9781,10 @@ impl GetDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetDeviceErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetDeviceErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `GetDeviceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetDeviceErrorKind::InternalErrorException(_))
@@ -9743,6 +9831,7 @@ impl GetDeviceError {
 impl std::error::Error for GetDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetDeviceErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetDeviceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetDeviceErrorKind::InvalidUserPoolConfigurationException(_inner) => Some(_inner),
@@ -10304,6 +10393,8 @@ pub struct GetUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -10326,6 +10417,7 @@ pub enum GetUserErrorKind {
 impl std::fmt::Display for GetUserError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetUserErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GetUserErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             GetUserErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GetUserErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -10388,6 +10480,10 @@ impl GetUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GetUserErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GetUserErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `GetUserErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, GetUserErrorKind::InternalErrorException(_))
@@ -10427,6 +10523,7 @@ impl GetUserError {
 impl std::error::Error for GetUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetUserErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetUserErrorKind::InternalErrorException(_inner) => Some(_inner),
             GetUserErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GetUserErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -10455,6 +10552,8 @@ pub struct GetUserAttributeVerificationCodeError {
 pub enum GetUserAttributeVerificationCodeErrorKind {
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -10496,6 +10595,7 @@ impl std::fmt::Display for GetUserAttributeVerificationCodeError {
             GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(_inner) => {
                 _inner.fmt(f)
             }
+            GetUserAttributeVerificationCodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GetUserAttributeVerificationCodeErrorKind::InternalErrorException(_inner) => {
                 _inner.fmt(f)
             }
@@ -10603,6 +10703,13 @@ impl GetUserAttributeVerificationCodeError {
         matches!(
             &self.kind,
             GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUserAttributeVerificationCodeErrorKind::ForbiddenException(_)
         )
     }
     /// Returns `true` if the error kind is `GetUserAttributeVerificationCodeErrorKind::InternalErrorException`.
@@ -10717,6 +10824,7 @@ impl std::error::Error for GetUserAttributeVerificationCodeError {
             GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(_inner) => {
                 Some(_inner)
             }
+            GetUserAttributeVerificationCodeErrorKind::ForbiddenException(_inner) => Some(_inner),
             GetUserAttributeVerificationCodeErrorKind::InternalErrorException(_inner) => {
                 Some(_inner)
             }
@@ -10917,6 +11025,8 @@ pub struct GlobalSignOutError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GlobalSignOutErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -10937,6 +11047,7 @@ pub enum GlobalSignOutErrorKind {
 impl std::fmt::Display for GlobalSignOutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GlobalSignOutErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             GlobalSignOutErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             GlobalSignOutErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             GlobalSignOutErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -10998,6 +11109,10 @@ impl GlobalSignOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `GlobalSignOutErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, GlobalSignOutErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `GlobalSignOutErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -11051,6 +11166,7 @@ impl GlobalSignOutError {
 impl std::error::Error for GlobalSignOutError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GlobalSignOutErrorKind::ForbiddenException(_inner) => Some(_inner),
             GlobalSignOutErrorKind::InternalErrorException(_inner) => Some(_inner),
             GlobalSignOutErrorKind::InvalidParameterException(_inner) => Some(_inner),
             GlobalSignOutErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -11076,6 +11192,8 @@ pub struct InitiateAuthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitiateAuthErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -11112,6 +11230,7 @@ pub enum InitiateAuthErrorKind {
 impl std::fmt::Display for InitiateAuthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            InitiateAuthErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             InitiateAuthErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             InitiateAuthErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
             InitiateAuthErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -11181,6 +11300,10 @@ impl InitiateAuthError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `InitiateAuthErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, InitiateAuthErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `InitiateAuthErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -11275,6 +11398,7 @@ impl InitiateAuthError {
 impl std::error::Error for InitiateAuthError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            InitiateAuthErrorKind::ForbiddenException(_inner) => Some(_inner),
             InitiateAuthErrorKind::InternalErrorException(_inner) => Some(_inner),
             InitiateAuthErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
             InitiateAuthErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -11307,6 +11431,8 @@ pub struct ListDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDevicesErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -11331,6 +11457,7 @@ pub enum ListDevicesErrorKind {
 impl std::fmt::Display for ListDevicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            ListDevicesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ListDevicesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ListDevicesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             ListDevicesErrorKind::InvalidUserPoolConfigurationException(_inner) => _inner.fmt(f),
@@ -11394,6 +11521,10 @@ impl ListDevicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `ListDevicesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, ListDevicesErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `ListDevicesErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, ListDevicesErrorKind::InternalErrorException(_))
@@ -11452,6 +11583,7 @@ impl ListDevicesError {
 impl std::error::Error for ListDevicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            ListDevicesErrorKind::ForbiddenException(_inner) => Some(_inner),
             ListDevicesErrorKind::InternalErrorException(_inner) => Some(_inner),
             ListDevicesErrorKind::InvalidParameterException(_inner) => Some(_inner),
             ListDevicesErrorKind::InvalidUserPoolConfigurationException(_inner) => Some(_inner),
@@ -12679,6 +12811,8 @@ pub struct ResendConfirmationCodeError {
 pub enum ResendConfirmationCodeErrorKind {
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -12714,6 +12848,7 @@ impl std::fmt::Display for ResendConfirmationCodeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(_inner) => _inner.fmt(f),
+            ResendConfirmationCodeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             ResendConfirmationCodeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => {
                 _inner.fmt(f)
@@ -12794,6 +12929,13 @@ impl ResendConfirmationCodeError {
         matches!(
             &self.kind,
             ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResendConfirmationCodeErrorKind::ForbiddenException(_)
         )
     }
     /// Returns `true` if the error kind is `ResendConfirmationCodeErrorKind::InternalErrorException`.
@@ -12892,6 +13034,7 @@ impl std::error::Error for ResendConfirmationCodeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(_inner) => Some(_inner),
+            ResendConfirmationCodeErrorKind::ForbiddenException(_inner) => Some(_inner),
             ResendConfirmationCodeErrorKind::InternalErrorException(_inner) => Some(_inner),
             ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => {
                 Some(_inner)
@@ -12935,6 +13078,8 @@ pub enum RespondToAuthChallengeErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -12980,6 +13125,7 @@ impl std::fmt::Display for RespondToAuthChallengeError {
             RespondToAuthChallengeErrorKind::AliasExistsException(_inner) => _inner.fmt(f),
             RespondToAuthChallengeErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             RespondToAuthChallengeErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
+            RespondToAuthChallengeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             RespondToAuthChallengeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             RespondToAuthChallengeErrorKind::InvalidLambdaResponseException(_inner) => {
                 _inner.fmt(f)
@@ -13082,6 +13228,13 @@ impl RespondToAuthChallengeError {
         matches!(
             &self.kind,
             RespondToAuthChallengeErrorKind::ExpiredCodeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RespondToAuthChallengeErrorKind::ForbiddenException(_)
         )
     }
     /// Returns `true` if the error kind is `RespondToAuthChallengeErrorKind::InternalErrorException`.
@@ -13210,6 +13363,7 @@ impl std::error::Error for RespondToAuthChallengeError {
             RespondToAuthChallengeErrorKind::AliasExistsException(_inner) => Some(_inner),
             RespondToAuthChallengeErrorKind::CodeMismatchException(_inner) => Some(_inner),
             RespondToAuthChallengeErrorKind::ExpiredCodeException(_inner) => Some(_inner),
+            RespondToAuthChallengeErrorKind::ForbiddenException(_inner) => Some(_inner),
             RespondToAuthChallengeErrorKind::InternalErrorException(_inner) => Some(_inner),
             RespondToAuthChallengeErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
             RespondToAuthChallengeErrorKind::InvalidParameterException(_inner) => Some(_inner),
@@ -13253,6 +13407,8 @@ pub struct RevokeTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeTokenErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -13271,6 +13427,7 @@ pub enum RevokeTokenErrorKind {
 impl std::fmt::Display for RevokeTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            RevokeTokenErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             RevokeTokenErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             RevokeTokenErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             RevokeTokenErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -13331,6 +13488,10 @@ impl RevokeTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `RevokeTokenErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, RevokeTokenErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `RevokeTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(&self.kind, RevokeTokenErrorKind::InternalErrorException(_))
@@ -13371,6 +13532,7 @@ impl RevokeTokenError {
 impl std::error::Error for RevokeTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            RevokeTokenErrorKind::ForbiddenException(_inner) => Some(_inner),
             RevokeTokenErrorKind::InternalErrorException(_inner) => Some(_inner),
             RevokeTokenErrorKind::InvalidParameterException(_inner) => Some(_inner),
             RevokeTokenErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -13708,6 +13870,8 @@ pub struct SetUserMFAPreferenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetUserMFAPreferenceErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -13728,6 +13892,7 @@ pub enum SetUserMFAPreferenceErrorKind {
 impl std::fmt::Display for SetUserMFAPreferenceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            SetUserMFAPreferenceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             SetUserMFAPreferenceErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             SetUserMFAPreferenceErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             SetUserMFAPreferenceErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -13789,6 +13954,13 @@ impl SetUserMFAPreferenceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetUserMFAPreferenceErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `SetUserMFAPreferenceErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -13842,6 +14014,7 @@ impl SetUserMFAPreferenceError {
 impl std::error::Error for SetUserMFAPreferenceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            SetUserMFAPreferenceErrorKind::ForbiddenException(_inner) => Some(_inner),
             SetUserMFAPreferenceErrorKind::InternalErrorException(_inner) => Some(_inner),
             SetUserMFAPreferenceErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetUserMFAPreferenceErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -14036,6 +14209,8 @@ pub struct SetUserSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetUserSettingsErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -14056,6 +14231,7 @@ pub enum SetUserSettingsErrorKind {
 impl std::fmt::Display for SetUserSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            SetUserSettingsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             SetUserSettingsErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             SetUserSettingsErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             SetUserSettingsErrorKind::NotAuthorizedException(_inner) => _inner.fmt(f),
@@ -14117,6 +14293,10 @@ impl SetUserSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `SetUserSettingsErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, SetUserSettingsErrorKind::ForbiddenException(_))
+    }
     /// Returns `true` if the error kind is `SetUserSettingsErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -14170,6 +14350,7 @@ impl SetUserSettingsError {
 impl std::error::Error for SetUserSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            SetUserSettingsErrorKind::ForbiddenException(_inner) => Some(_inner),
             SetUserSettingsErrorKind::InternalErrorException(_inner) => Some(_inner),
             SetUserSettingsErrorKind::InvalidParameterException(_inner) => Some(_inner),
             SetUserSettingsErrorKind::NotAuthorizedException(_inner) => Some(_inner),
@@ -14197,6 +14378,8 @@ pub struct SignUpError {
 pub enum SignUpErrorKind {
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -14232,6 +14415,7 @@ impl std::fmt::Display for SignUpError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             SignUpErrorKind::CodeDeliveryFailureException(_inner) => _inner.fmt(f),
+            SignUpErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             SignUpErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             SignUpErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
             SignUpErrorKind::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
@@ -14302,6 +14486,10 @@ impl SignUpError {
     /// Returns `true` if the error kind is `SignUpErrorKind::CodeDeliveryFailureException`.
     pub fn is_code_delivery_failure_exception(&self) -> bool {
         matches!(&self.kind, SignUpErrorKind::CodeDeliveryFailureException(_))
+    }
+    /// Returns `true` if the error kind is `SignUpErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(&self.kind, SignUpErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `SignUpErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -14375,6 +14563,7 @@ impl std::error::Error for SignUpError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             SignUpErrorKind::CodeDeliveryFailureException(_inner) => Some(_inner),
+            SignUpErrorKind::ForbiddenException(_inner) => Some(_inner),
             SignUpErrorKind::InternalErrorException(_inner) => Some(_inner),
             SignUpErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => Some(_inner),
             SignUpErrorKind::InvalidLambdaResponseException(_inner) => Some(_inner),
@@ -15133,6 +15322,8 @@ pub struct UpdateDeviceStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDeviceStatusErrorKind {
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -15157,6 +15348,7 @@ pub enum UpdateDeviceStatusErrorKind {
 impl std::fmt::Display for UpdateDeviceStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateDeviceStatusErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             UpdateDeviceStatusErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateDeviceStatusErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(_inner) => {
@@ -15221,6 +15413,13 @@ impl UpdateDeviceStatusError {
     /// Returns the error code if it's available.
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeviceStatusErrorKind::ForbiddenException(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateDeviceStatusErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
@@ -15289,6 +15488,7 @@ impl UpdateDeviceStatusError {
 impl std::error::Error for UpdateDeviceStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateDeviceStatusErrorKind::ForbiddenException(_inner) => Some(_inner),
             UpdateDeviceStatusErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateDeviceStatusErrorKind::InvalidParameterException(_inner) => Some(_inner),
             UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(_inner) => {
@@ -15746,6 +15946,8 @@ pub enum UpdateUserAttributesErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
@@ -15786,6 +15988,7 @@ impl std::fmt::Display for UpdateUserAttributesError {
             UpdateUserAttributesErrorKind::CodeDeliveryFailureException(_inner) => _inner.fmt(f),
             UpdateUserAttributesErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             UpdateUserAttributesErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
+            UpdateUserAttributesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             UpdateUserAttributesErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => {
                 _inner.fmt(f)
@@ -15886,6 +16089,13 @@ impl UpdateUserAttributesError {
         matches!(
             &self.kind,
             UpdateUserAttributesErrorKind::ExpiredCodeException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserAttributesErrorKind::ForbiddenException(_)
         )
     }
     /// Returns `true` if the error kind is `UpdateUserAttributesErrorKind::InternalErrorException`.
@@ -15994,6 +16204,7 @@ impl std::error::Error for UpdateUserAttributesError {
             UpdateUserAttributesErrorKind::CodeDeliveryFailureException(_inner) => Some(_inner),
             UpdateUserAttributesErrorKind::CodeMismatchException(_inner) => Some(_inner),
             UpdateUserAttributesErrorKind::ExpiredCodeException(_inner) => Some(_inner),
+            UpdateUserAttributesErrorKind::ForbiddenException(_inner) => Some(_inner),
             UpdateUserAttributesErrorKind::InternalErrorException(_inner) => Some(_inner),
             UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(_inner) => {
                 Some(_inner)
@@ -16552,6 +16763,8 @@ pub enum VerifySoftwareTokenErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
     EnableSoftwareTokenMfaException(crate::error::EnableSoftwareTokenMfaException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -16580,6 +16793,7 @@ impl std::fmt::Display for VerifySoftwareTokenError {
         match &self.kind {
             VerifySoftwareTokenErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(_inner) => _inner.fmt(f),
+            VerifySoftwareTokenErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             VerifySoftwareTokenErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             VerifySoftwareTokenErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException(_inner) => {
@@ -16662,6 +16876,13 @@ impl VerifySoftwareTokenError {
             VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(_)
         )
     }
+    /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySoftwareTokenErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `VerifySoftwareTokenErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -16738,6 +16959,7 @@ impl std::error::Error for VerifySoftwareTokenError {
         match &self.kind {
             VerifySoftwareTokenErrorKind::CodeMismatchException(_inner) => Some(_inner),
             VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(_inner) => Some(_inner),
+            VerifySoftwareTokenErrorKind::ForbiddenException(_inner) => Some(_inner),
             VerifySoftwareTokenErrorKind::InternalErrorException(_inner) => Some(_inner),
             VerifySoftwareTokenErrorKind::InvalidParameterException(_inner) => Some(_inner),
             VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException(_inner) => {
@@ -16774,6 +16996,8 @@ pub enum VerifyUserAttributeErrorKind {
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
@@ -16801,6 +17025,7 @@ impl std::fmt::Display for VerifyUserAttributeError {
             VerifyUserAttributeErrorKind::AliasExistsException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::CodeMismatchException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::ExpiredCodeException(_inner) => _inner.fmt(f),
+            VerifyUserAttributeErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::InternalErrorException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
             VerifyUserAttributeErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
@@ -16885,6 +17110,13 @@ impl VerifyUserAttributeError {
             VerifyUserAttributeErrorKind::ExpiredCodeException(_)
         )
     }
+    /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifyUserAttributeErrorKind::ForbiddenException(_)
+        )
+    }
     /// Returns `true` if the error kind is `VerifyUserAttributeErrorKind::InternalErrorException`.
     pub fn is_internal_error_exception(&self) -> bool {
         matches!(
@@ -16955,6 +17187,7 @@ impl std::error::Error for VerifyUserAttributeError {
             VerifyUserAttributeErrorKind::AliasExistsException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::CodeMismatchException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::ExpiredCodeException(_inner) => Some(_inner),
+            VerifyUserAttributeErrorKind::ForbiddenException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::InternalErrorException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::InvalidParameterException(_inner) => Some(_inner),
             VerifyUserAttributeErrorKind::LimitExceededException(_inner) => Some(_inner),
@@ -17545,6 +17778,70 @@ impl InternalErrorException {
     }
 }
 
+/// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ForbiddenException {
+    /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ForbiddenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ForbiddenException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ForbiddenException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ForbiddenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ForbiddenException")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ForbiddenException {}
+/// See [`ForbiddenException`](crate::error::ForbiddenException).
+pub mod forbidden_exception {
+
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The message returned when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
+        pub fn build(self) -> crate::error::ForbiddenException {
+            crate::error::ForbiddenException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ForbiddenException {
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
+    pub fn builder() -> crate::error::forbidden_exception::Builder {
+        crate::error::forbidden_exception::Builder::default()
+    }
+}
+
 /// <p>This exception is thrown if a code has expired.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17568,8 +17865,8 @@ impl ExpiredCodeException {
 impl std::fmt::Display for ExpiredCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredCodeException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -17632,8 +17929,8 @@ impl CodeMismatchException {
 impl std::fmt::Display for CodeMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CodeMismatchException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -17677,7 +17974,7 @@ impl CodeMismatchException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasExistsException {
-    /// <p>The message sent to the user when an alias exists.</p>
+    /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AliasExistsException {
@@ -17696,8 +17993,8 @@ impl AliasExistsException {
 impl std::fmt::Display for AliasExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AliasExistsException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -17712,12 +18009,12 @@ pub mod alias_exists_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message sent to the user when an alias exists.</p>
+        /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message sent to the user when an alias exists.</p>
+        /// <p>The message that Amazon Cognito sends to the user when the value of an alias attribute is already linked to another user profile.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -17763,8 +18060,8 @@ impl std::fmt::Display for SoftwareTokenMfaNotFoundException {
             f,
             "SoftwareTokenMfaNotFoundException [SoftwareTokenMFANotFoundException]"
         )?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -17827,8 +18124,8 @@ impl InvalidUserPoolConfigurationException {
 impl std::fmt::Display for InvalidUserPoolConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUserPoolConfigurationException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -17894,8 +18191,8 @@ impl std::fmt::Display for EnableSoftwareTokenMfaException {
             f,
             "EnableSoftwareTokenMfaException [EnableSoftwareTokenMFAException]"
         )?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -17958,8 +18255,8 @@ impl ScopeDoesNotExistException {
 impl std::fmt::Display for ScopeDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScopeDoesNotExistException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -18022,8 +18319,8 @@ impl InvalidOAuthFlowException {
 impl std::fmt::Display for InvalidOAuthFlowException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidOAuthFlowException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -18086,8 +18383,8 @@ impl ConcurrentModificationException {
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -18150,8 +18447,8 @@ impl UserPoolTaggingException {
 impl std::fmt::Display for UserPoolTaggingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserPoolTaggingException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -18214,8 +18511,8 @@ impl UserImportInProgressException {
 impl std::fmt::Display for UserImportInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserImportInProgressException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -18278,8 +18575,8 @@ impl InvalidSmsRoleTrustRelationshipException {
 impl std::fmt::Display for InvalidSmsRoleTrustRelationshipException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSmsRoleTrustRelationshipException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }
@@ -18342,8 +18639,8 @@ impl InvalidSmsRoleAccessPolicyException {
 impl std::fmt::Display for InvalidSmsRoleAccessPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSmsRoleAccessPolicyException")?;
-        if let Some(inner_22) = &self.message {
-            write!(f, ": {}", inner_22)?;
+        if let Some(inner_23) = &self.message {
+            write!(f, ": {}", inner_23)?;
         }
         Ok(())
     }
@@ -18406,8 +18703,8 @@ impl InvalidEmailRoleAccessPolicyException {
 impl std::fmt::Display for InvalidEmailRoleAccessPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEmailRoleAccessPolicyException")?;
-        if let Some(inner_23) = &self.message {
-            write!(f, ": {}", inner_23)?;
+        if let Some(inner_24) = &self.message {
+            write!(f, ": {}", inner_24)?;
         }
         Ok(())
     }
@@ -18470,8 +18767,8 @@ impl UserLambdaValidationException {
 impl std::fmt::Display for UserLambdaValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserLambdaValidationException")?;
-        if let Some(inner_24) = &self.message {
-            write!(f, ": {}", inner_24)?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
         }
         Ok(())
     }
@@ -18534,8 +18831,8 @@ impl UnexpectedLambdaException {
 impl std::fmt::Display for UnexpectedLambdaException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnexpectedLambdaException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -18598,8 +18895,8 @@ impl InvalidLambdaResponseException {
 impl std::fmt::Display for InvalidLambdaResponseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLambdaResponseException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -18662,8 +18959,8 @@ impl CodeDeliveryFailureException {
 impl std::fmt::Display for CodeDeliveryFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CodeDeliveryFailureException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }
@@ -18726,8 +19023,8 @@ impl UnsupportedIdentityProviderException {
 impl std::fmt::Display for UnsupportedIdentityProviderException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedIdentityProviderException")?;
-        if let Some(inner_28) = &self.message {
-            write!(f, ": {}", inner_28)?;
+        if let Some(inner_29) = &self.message {
+            write!(f, ": {}", inner_29)?;
         }
         Ok(())
     }
@@ -18790,8 +19087,8 @@ impl UserPoolAddOnNotEnabledException {
 impl std::fmt::Display for UserPoolAddOnNotEnabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UserPoolAddOnNotEnabledException")?;
-        if let Some(inner_29) = &self.message {
-            write!(f, ": {}", inner_29)?;
+        if let Some(inner_30) = &self.message {
+            write!(f, ": {}", inner_30)?;
         }
         Ok(())
     }
@@ -18854,8 +19151,8 @@ impl PreconditionNotMetException {
 impl std::fmt::Display for PreconditionNotMetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PreconditionNotMetException")?;
-        if let Some(inner_30) = &self.message {
-            write!(f, ": {}", inner_30)?;
+        if let Some(inner_31) = &self.message {
+            write!(f, ": {}", inner_31)?;
         }
         Ok(())
     }
@@ -18918,8 +19215,8 @@ impl UsernameExistsException {
 impl std::fmt::Display for UsernameExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UsernameExistsException")?;
-        if let Some(inner_31) = &self.message {
-            write!(f, ": {}", inner_31)?;
+        if let Some(inner_32) = &self.message {
+            write!(f, ": {}", inner_32)?;
         }
         Ok(())
     }
@@ -18982,8 +19279,8 @@ impl InvalidPasswordException {
 impl std::fmt::Display for InvalidPasswordException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPasswordException")?;
-        if let Some(inner_32) = &self.message {
-            write!(f, ": {}", inner_32)?;
+        if let Some(inner_33) = &self.message {
+            write!(f, ": {}", inner_33)?;
         }
         Ok(())
     }
@@ -19046,8 +19343,8 @@ impl UnsupportedTokenTypeException {
 impl std::fmt::Display for UnsupportedTokenTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedTokenTypeException")?;
-        if let Some(inner_33) = &self.message {
-            write!(f, ": {}", inner_33)?;
+        if let Some(inner_34) = &self.message {
+            write!(f, ": {}", inner_34)?;
         }
         Ok(())
     }
@@ -19110,8 +19407,8 @@ impl UnsupportedOperationException {
 impl std::fmt::Display for UnsupportedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperationException")?;
-        if let Some(inner_34) = &self.message {
-            write!(f, ": {}", inner_34)?;
+        if let Some(inner_35) = &self.message {
+            write!(f, ": {}", inner_35)?;
         }
         Ok(())
     }
@@ -19174,8 +19471,8 @@ impl UnauthorizedException {
 impl std::fmt::Display for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedException")?;
-        if let Some(inner_35) = &self.message {
-            write!(f, ": {}", inner_35)?;
+        if let Some(inner_36) = &self.message {
+            write!(f, ": {}", inner_36)?;
         }
         Ok(())
     }
@@ -19238,8 +19535,8 @@ impl MfaMethodNotFoundException {
 impl std::fmt::Display for MfaMethodNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MfaMethodNotFoundException [MFAMethodNotFoundException]")?;
-        if let Some(inner_36) = &self.message {
-            write!(f, ": {}", inner_36)?;
+        if let Some(inner_37) = &self.message {
+            write!(f, ": {}", inner_37)?;
         }
         Ok(())
     }
@@ -19302,8 +19599,8 @@ impl DuplicateProviderException {
 impl std::fmt::Display for DuplicateProviderException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateProviderException")?;
-        if let Some(inner_37) = &self.message {
-            write!(f, ": {}", inner_37)?;
+        if let Some(inner_38) = &self.message {
+            write!(f, ": {}", inner_38)?;
         }
         Ok(())
     }
@@ -19366,8 +19663,8 @@ impl GroupExistsException {
 impl std::fmt::Display for GroupExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GroupExistsException")?;
-        if let Some(inner_38) = &self.message {
-            write!(f, ": {}", inner_38)?;
+        if let Some(inner_39) = &self.message {
+            write!(f, ": {}", inner_39)?;
         }
         Ok(())
     }
@@ -19430,8 +19727,8 @@ impl TooManyFailedAttemptsException {
 impl std::fmt::Display for TooManyFailedAttemptsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyFailedAttemptsException")?;
-        if let Some(inner_39) = &self.message {
-            write!(f, ": {}", inner_39)?;
+        if let Some(inner_40) = &self.message {
+            write!(f, ": {}", inner_40)?;
         }
         Ok(())
     }
@@ -19494,8 +19791,8 @@ impl UnsupportedUserStateException {
 impl std::fmt::Display for UnsupportedUserStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedUserStateException")?;
-        if let Some(inner_40) = &self.message {
-            write!(f, ": {}", inner_40)?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
         }
         Ok(())
     }

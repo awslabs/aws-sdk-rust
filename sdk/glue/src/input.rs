@@ -4764,6 +4764,7 @@ pub mod create_job_input {
         pub(crate) code_gen_configuration_nodes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
+        pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
     }
     impl Builder {
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -5084,6 +5085,23 @@ pub mod create_job_input {
             self.code_gen_configuration_nodes = input;
             self
         }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.execution_class = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.execution_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput).
         pub fn build(
             self,
@@ -5109,6 +5127,7 @@ pub mod create_job_input {
                 number_of_workers: self.number_of_workers,
                 worker_type: self.worker_type,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
+                execution_class: self.execution_class,
             })
         }
     }
@@ -27689,6 +27708,7 @@ pub mod start_job_run_input {
         pub(crate) notification_property: std::option::Option<crate::model::NotificationProperty>,
         pub(crate) worker_type: std::option::Option<crate::model::WorkerType>,
         pub(crate) number_of_workers: std::option::Option<i32>,
+        pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
     }
     impl Builder {
         /// <p>The name of the job definition to use.</p>
@@ -27851,6 +27871,23 @@ pub mod start_job_run_input {
             self.number_of_workers = input;
             self
         }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.execution_class = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.execution_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartJobRunInput`](crate::input::StartJobRunInput).
         pub fn build(
             self,
@@ -27867,6 +27904,7 @@ pub mod start_job_run_input {
                 notification_property: self.notification_property,
                 worker_type: self.worker_type,
                 number_of_workers: self.number_of_workers,
+                execution_class: self.execution_class,
             })
         }
     }
@@ -34473,6 +34511,10 @@ pub struct StartJobRunInput {
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub number_of_workers: std::option::Option<i32>,
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl StartJobRunInput {
     /// <p>The name of the job definition to use.</p>
@@ -34538,6 +34580,12 @@ impl StartJobRunInput {
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
+        self.execution_class.as_ref()
+    }
 }
 impl std::fmt::Debug for StartJobRunInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34552,6 +34600,7 @@ impl std::fmt::Debug for StartJobRunInput {
         formatter.field("notification_property", &self.notification_property);
         formatter.field("worker_type", &self.worker_type);
         formatter.field("number_of_workers", &self.number_of_workers);
+        formatter.field("execution_class", &self.execution_class);
         formatter.finish()
     }
 }
@@ -39678,6 +39727,10 @@ pub struct CreateJobInput {
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl CreateJobInput {
     /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -39795,6 +39848,12 @@ impl CreateJobInput {
     > {
         self.code_gen_configuration_nodes.as_ref()
     }
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
+        self.execution_class.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -39822,6 +39881,7 @@ impl std::fmt::Debug for CreateJobInput {
             "code_gen_configuration_nodes",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("execution_class", &self.execution_class);
         formatter.finish()
     }
 }

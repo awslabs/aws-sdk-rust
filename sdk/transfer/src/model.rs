@@ -302,7 +302,7 @@ impl WorkflowDetails {
     }
 }
 
-/// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+/// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowDetail {
@@ -391,6 +391,8 @@ impl WorkflowDetail {
 )]
 pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
+    As2,
+    #[allow(missing_docs)] // documentation missing in model
     Ftp,
     #[allow(missing_docs)] // documentation missing in model
     Ftps,
@@ -402,6 +404,7 @@ pub enum Protocol {
 impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
         match s {
+            "AS2" => Protocol::As2,
             "FTP" => Protocol::Ftp,
             "FTPS" => Protocol::Ftps,
             "SFTP" => Protocol::Sftp,
@@ -420,6 +423,7 @@ impl Protocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Protocol::As2 => "AS2",
             Protocol::Ftp => "FTP",
             Protocol::Ftps => "FTPS",
             Protocol::Sftp => "SFTP",
@@ -428,7 +432,7 @@ impl Protocol {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["FTP", "FTPS", "SFTP"]
+        &["AS2", "FTP", "FTPS", "SFTP"]
     }
 }
 impl AsRef<str> for Protocol {
@@ -445,7 +449,7 @@ pub struct IdentityProviderDetails {
     pub url: std::option::Option<std::string::String>,
     /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
     pub invocation_role: std::option::Option<std::string::String>,
-    /// <p>The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
     pub function: std::option::Option<std::string::String>,
@@ -459,7 +463,7 @@ impl IdentityProviderDetails {
     pub fn invocation_role(&self) -> std::option::Option<&str> {
         self.invocation_role.as_deref()
     }
-    /// <p>The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -513,12 +517,12 @@ pub mod identity_provider_details {
             self.invocation_role = input;
             self
         }
-        /// <p>The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.</p>
+        /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Amazon Web Services Directory Service directory that you want to stop sharing.</p>
+        /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -846,6 +850,8 @@ pub struct ProtocolDetails {
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
     pub set_stat_option: std::option::Option<crate::model::SetStatOption>,
+    /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
+    pub as2_transports: std::option::Option<std::vec::Vec<crate::model::As2Transport>>,
 }
 impl ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
@@ -877,6 +883,10 @@ impl ProtocolDetails {
     pub fn set_stat_option(&self) -> std::option::Option<&crate::model::SetStatOption> {
         self.set_stat_option.as_ref()
     }
+    /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
+    pub fn as2_transports(&self) -> std::option::Option<&[crate::model::As2Transport]> {
+        self.as2_transports.as_deref()
+    }
 }
 impl std::fmt::Debug for ProtocolDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -887,6 +897,7 @@ impl std::fmt::Debug for ProtocolDetails {
             &self.tls_session_resumption_mode,
         );
         formatter.field("set_stat_option", &self.set_stat_option);
+        formatter.field("as2_transports", &self.as2_transports);
         formatter.finish()
     }
 }
@@ -900,6 +911,7 @@ pub mod protocol_details {
         pub(crate) tls_session_resumption_mode:
             std::option::Option<crate::model::TlsSessionResumptionMode>,
         pub(crate) set_stat_option: std::option::Option<crate::model::SetStatOption>,
+        pub(crate) as2_transports: std::option::Option<std::vec::Vec<crate::model::As2Transport>>,
     }
     impl Builder {
         /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
@@ -971,12 +983,32 @@ pub mod protocol_details {
             self.set_stat_option = input;
             self
         }
+        /// Appends an item to `as2_transports`.
+        ///
+        /// To override the contents of this collection use [`set_as2_transports`](Self::set_as2_transports).
+        ///
+        /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
+        pub fn as2_transports(mut self, input: crate::model::As2Transport) -> Self {
+            let mut v = self.as2_transports.unwrap_or_default();
+            v.push(input);
+            self.as2_transports = Some(v);
+            self
+        }
+        /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
+        pub fn set_as2_transports(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::As2Transport>>,
+        ) -> Self {
+            self.as2_transports = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProtocolDetails`](crate::model::ProtocolDetails).
         pub fn build(self) -> crate::model::ProtocolDetails {
             crate::model::ProtocolDetails {
                 passive_ip: self.passive_ip,
                 tls_session_resumption_mode: self.tls_session_resumption_mode,
                 set_stat_option: self.set_stat_option,
+                as2_transports: self.as2_transports,
             }
         }
     }
@@ -985,6 +1017,57 @@ impl ProtocolDetails {
     /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::model::ProtocolDetails).
     pub fn builder() -> crate::model::protocol_details::Builder {
         crate::model::protocol_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum As2Transport {
+    #[allow(missing_docs)] // documentation missing in model
+    Http,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for As2Transport {
+    fn from(s: &str) -> Self {
+        match s {
+            "HTTP" => As2Transport::Http,
+            other => As2Transport::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for As2Transport {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(As2Transport::from(s))
+    }
+}
+impl As2Transport {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            As2Transport::Http => "HTTP",
+            As2Transport::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["HTTP"]
+    }
+}
+impl AsRef<str> for As2Transport {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1097,6 +1180,595 @@ impl TlsSessionResumptionMode {
     }
 }
 impl AsRef<str> for TlsSessionResumptionMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Contains the details for a connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct As2ConnectorConfig {
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub local_profile_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the partner for the connector.</p>
+    pub partner_profile_id: std::option::Option<std::string::String>,
+    /// <p>A short description to help identify the connector.</p>
+    pub message_subject: std::option::Option<std::string::String>,
+    /// <p>Specifies whether the AS2 file is compressed.</p>
+    pub compression: std::option::Option<crate::model::CompressionEnum>,
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlg>,
+    /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+    pub signing_algorithm: std::option::Option<crate::model::SigningAlg>,
+    /// <p>The signing algorithm for the MDN response.</p>
+    pub mdn_signing_algorithm: std::option::Option<crate::model::MdnSigningAlg>,
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// </ul>
+    pub mdn_response: std::option::Option<crate::model::MdnResponse>,
+}
+impl As2ConnectorConfig {
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
+        self.local_profile_id.as_deref()
+    }
+    /// <p>A unique identifier for the partner for the connector.</p>
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
+        self.partner_profile_id.as_deref()
+    }
+    /// <p>A short description to help identify the connector.</p>
+    pub fn message_subject(&self) -> std::option::Option<&str> {
+        self.message_subject.as_deref()
+    }
+    /// <p>Specifies whether the AS2 file is compressed.</p>
+    pub fn compression(&self) -> std::option::Option<&crate::model::CompressionEnum> {
+        self.compression.as_ref()
+    }
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    pub fn encryption_algorithm(&self) -> std::option::Option<&crate::model::EncryptionAlg> {
+        self.encryption_algorithm.as_ref()
+    }
+    /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::model::SigningAlg> {
+        self.signing_algorithm.as_ref()
+    }
+    /// <p>The signing algorithm for the MDN response.</p>
+    pub fn mdn_signing_algorithm(&self) -> std::option::Option<&crate::model::MdnSigningAlg> {
+        self.mdn_signing_algorithm.as_ref()
+    }
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+    /// </ul>
+    pub fn mdn_response(&self) -> std::option::Option<&crate::model::MdnResponse> {
+        self.mdn_response.as_ref()
+    }
+}
+impl std::fmt::Debug for As2ConnectorConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("As2ConnectorConfig");
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("message_subject", &self.message_subject);
+        formatter.field("compression", &self.compression);
+        formatter.field("encryption_algorithm", &self.encryption_algorithm);
+        formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("mdn_signing_algorithm", &self.mdn_signing_algorithm);
+        formatter.field("mdn_response", &self.mdn_response);
+        formatter.finish()
+    }
+}
+/// See [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
+pub mod as2_connector_config {
+
+    /// A builder for [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) local_profile_id: std::option::Option<std::string::String>,
+        pub(crate) partner_profile_id: std::option::Option<std::string::String>,
+        pub(crate) message_subject: std::option::Option<std::string::String>,
+        pub(crate) compression: std::option::Option<crate::model::CompressionEnum>,
+        pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlg>,
+        pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlg>,
+        pub(crate) mdn_signing_algorithm: std::option::Option<crate::model::MdnSigningAlg>,
+        pub(crate) mdn_response: std::option::Option<crate::model::MdnResponse>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn set_local_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.local_profile_id = input;
+            self
+        }
+        /// <p>A unique identifier for the partner for the connector.</p>
+        pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partner_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the partner for the connector.</p>
+        pub fn set_partner_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partner_profile_id = input;
+            self
+        }
+        /// <p>A short description to help identify the connector.</p>
+        pub fn message_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_subject = Some(input.into());
+            self
+        }
+        /// <p>A short description to help identify the connector.</p>
+        pub fn set_message_subject(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.message_subject = input;
+            self
+        }
+        /// <p>Specifies whether the AS2 file is compressed.</p>
+        pub fn compression(mut self, input: crate::model::CompressionEnum) -> Self {
+            self.compression = Some(input);
+            self
+        }
+        /// <p>Specifies whether the AS2 file is compressed.</p>
+        pub fn set_compression(
+            mut self,
+            input: std::option::Option<crate::model::CompressionEnum>,
+        ) -> Self {
+            self.compression = input;
+            self
+        }
+        /// <p>The algorithm that is used to encrypt the file.</p>
+        pub fn encryption_algorithm(mut self, input: crate::model::EncryptionAlg) -> Self {
+            self.encryption_algorithm = Some(input);
+            self
+        }
+        /// <p>The algorithm that is used to encrypt the file.</p>
+        pub fn set_encryption_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::EncryptionAlg>,
+        ) -> Self {
+            self.encryption_algorithm = input;
+            self
+        }
+        /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+        pub fn signing_algorithm(mut self, input: crate::model::SigningAlg) -> Self {
+            self.signing_algorithm = Some(input);
+            self
+        }
+        /// <p>The algorithm that is used to sign the AS2 transfers for this partner profile.</p>
+        pub fn set_signing_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::SigningAlg>,
+        ) -> Self {
+            self.signing_algorithm = input;
+            self
+        }
+        /// <p>The signing algorithm for the MDN response.</p>
+        pub fn mdn_signing_algorithm(mut self, input: crate::model::MdnSigningAlg) -> Self {
+            self.mdn_signing_algorithm = Some(input);
+            self
+        }
+        /// <p>The signing algorithm for the MDN response.</p>
+        pub fn set_mdn_signing_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::MdnSigningAlg>,
+        ) -> Self {
+            self.mdn_signing_algorithm = input;
+            self
+        }
+        /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+        /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+        /// </ul>
+        pub fn mdn_response(mut self, input: crate::model::MdnResponse) -> Self {
+            self.mdn_response = Some(input);
+            self
+        }
+        /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+        /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
+        /// </ul>
+        pub fn set_mdn_response(
+            mut self,
+            input: std::option::Option<crate::model::MdnResponse>,
+        ) -> Self {
+            self.mdn_response = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
+        pub fn build(self) -> crate::model::As2ConnectorConfig {
+            crate::model::As2ConnectorConfig {
+                local_profile_id: self.local_profile_id,
+                partner_profile_id: self.partner_profile_id,
+                message_subject: self.message_subject,
+                compression: self.compression,
+                encryption_algorithm: self.encryption_algorithm,
+                signing_algorithm: self.signing_algorithm,
+                mdn_signing_algorithm: self.mdn_signing_algorithm,
+                mdn_response: self.mdn_response,
+            }
+        }
+    }
+}
+impl As2ConnectorConfig {
+    /// Creates a new builder-style object to manufacture [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
+    pub fn builder() -> crate::model::as2_connector_config::Builder {
+        crate::model::as2_connector_config::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MdnResponse {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Sync,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MdnResponse {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => MdnResponse::None,
+            "SYNC" => MdnResponse::Sync,
+            other => MdnResponse::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MdnResponse {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MdnResponse::from(s))
+    }
+}
+impl MdnResponse {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MdnResponse::None => "NONE",
+            MdnResponse::Sync => "SYNC",
+            MdnResponse::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SYNC"]
+    }
+}
+impl AsRef<str> for MdnResponse {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MdnSigningAlg {
+    #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha1,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha256,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha384,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha512,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MdnSigningAlg {
+    fn from(s: &str) -> Self {
+        match s {
+            "DEFAULT" => MdnSigningAlg::Default,
+            "NONE" => MdnSigningAlg::None,
+            "SHA1" => MdnSigningAlg::Sha1,
+            "SHA256" => MdnSigningAlg::Sha256,
+            "SHA384" => MdnSigningAlg::Sha384,
+            "SHA512" => MdnSigningAlg::Sha512,
+            other => MdnSigningAlg::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MdnSigningAlg {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MdnSigningAlg::from(s))
+    }
+}
+impl MdnSigningAlg {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MdnSigningAlg::Default => "DEFAULT",
+            MdnSigningAlg::None => "NONE",
+            MdnSigningAlg::Sha1 => "SHA1",
+            MdnSigningAlg::Sha256 => "SHA256",
+            MdnSigningAlg::Sha384 => "SHA384",
+            MdnSigningAlg::Sha512 => "SHA512",
+            MdnSigningAlg::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DEFAULT", "NONE", "SHA1", "SHA256", "SHA384", "SHA512"]
+    }
+}
+impl AsRef<str> for MdnSigningAlg {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SigningAlg {
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha1,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha256,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha384,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha512,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SigningAlg {
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => SigningAlg::None,
+            "SHA1" => SigningAlg::Sha1,
+            "SHA256" => SigningAlg::Sha256,
+            "SHA384" => SigningAlg::Sha384,
+            "SHA512" => SigningAlg::Sha512,
+            other => SigningAlg::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SigningAlg {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SigningAlg::from(s))
+    }
+}
+impl SigningAlg {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SigningAlg::None => "NONE",
+            SigningAlg::Sha1 => "SHA1",
+            SigningAlg::Sha256 => "SHA256",
+            SigningAlg::Sha384 => "SHA384",
+            SigningAlg::Sha512 => "SHA512",
+            SigningAlg::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NONE", "SHA1", "SHA256", "SHA384", "SHA512"]
+    }
+}
+impl AsRef<str> for SigningAlg {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum EncryptionAlg {
+    #[allow(missing_docs)] // documentation missing in model
+    Aes128Cbc,
+    #[allow(missing_docs)] // documentation missing in model
+    Aes192Cbc,
+    #[allow(missing_docs)] // documentation missing in model
+    Aes256Cbc,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for EncryptionAlg {
+    fn from(s: &str) -> Self {
+        match s {
+            "AES128_CBC" => EncryptionAlg::Aes128Cbc,
+            "AES192_CBC" => EncryptionAlg::Aes192Cbc,
+            "AES256_CBC" => EncryptionAlg::Aes256Cbc,
+            other => EncryptionAlg::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for EncryptionAlg {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EncryptionAlg::from(s))
+    }
+}
+impl EncryptionAlg {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EncryptionAlg::Aes128Cbc => "AES128_CBC",
+            EncryptionAlg::Aes192Cbc => "AES192_CBC",
+            EncryptionAlg::Aes256Cbc => "AES256_CBC",
+            EncryptionAlg::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["AES128_CBC", "AES192_CBC", "AES256_CBC"]
+    }
+}
+impl AsRef<str> for EncryptionAlg {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CompressionEnum {
+    #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Zlib,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CompressionEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => CompressionEnum::Disabled,
+            "ZLIB" => CompressionEnum::Zlib,
+            other => CompressionEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CompressionEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CompressionEnum::from(s))
+    }
+}
+impl CompressionEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CompressionEnum::Disabled => "DISABLED",
+            CompressionEnum::Zlib => "ZLIB",
+            CompressionEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ZLIB"]
+    }
+}
+impl AsRef<str> for CompressionEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AgreementStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AgreementStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => AgreementStatusType::Active,
+            "INACTIVE" => AgreementStatusType::Inactive,
+            other => AgreementStatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AgreementStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AgreementStatusType::from(s))
+    }
+}
+impl AgreementStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AgreementStatusType::Active => "ACTIVE",
+            AgreementStatusType::Inactive => "INACTIVE",
+            AgreementStatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE"]
+    }
+}
+impl AsRef<str> for AgreementStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1331,9 +2003,9 @@ pub struct ListedUser {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
     /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
     /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
     /// </note>
@@ -1353,11 +2025,11 @@ impl ListedUser {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
     /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
     /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
     /// </note>
@@ -1424,12 +2096,12 @@ pub mod listed_user {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -1437,7 +2109,7 @@ pub mod listed_user {
             self.home_directory_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
         /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
         /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
         /// </note>
@@ -1445,7 +2117,7 @@ pub mod listed_user {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p> <note>
         /// <p>The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>. </p>
         /// <p>The policies attached to this role determine the level of access you want to provide your users when transferring files into and out of your S3 buckets or EFS file systems.</p>
         /// </note>
@@ -1501,18 +2173,18 @@ pub struct ListedServer {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub domain: std::option::Option<crate::model::Domain>,
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
     /// <p>Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Specifies the unique system assigned identifier for the servers that were listed.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+    /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
@@ -1527,10 +2199,10 @@ impl ListedServer {
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
@@ -1540,7 +2212,7 @@ impl ListedServer {
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
@@ -1548,7 +2220,7 @@ impl ListedServer {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+    /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
@@ -1608,18 +2280,18 @@ pub mod listed_server {
             self.domain = input;
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -1640,12 +2312,12 @@ pub mod listed_server {
             self.endpoint_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
@@ -1660,13 +2332,13 @@ pub mod listed_server {
             self.server_id = input;
             self
         }
-        /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+        /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
         /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+        /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
         /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
@@ -1921,6 +2593,175 @@ impl AsRef<str> for Domain {
     }
 }
 
+/// <p>Returns the properties of the profile that was specified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedProfile {
+    /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the AS2 process.</p>
+    pub as2_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub profile_type: std::option::Option<crate::model::ProfileType>,
+}
+impl ListedProfile {
+    /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>The unique identifier for the AS2 process.</p>
+    pub fn as2_id(&self) -> std::option::Option<&str> {
+        self.as2_id.as_deref()
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
+        self.profile_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ListedProfile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedProfile");
+        formatter.field("arn", &self.arn);
+        formatter.field("profile_id", &self.profile_id);
+        formatter.field("as2_id", &self.as2_id);
+        formatter.field("profile_type", &self.profile_type);
+        formatter.finish()
+    }
+}
+/// See [`ListedProfile`](crate::model::ListedProfile).
+pub mod listed_profile {
+
+    /// A builder for [`ListedProfile`](crate::model::ListedProfile).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+        pub(crate) as2_id: std::option::Option<std::string::String>,
+        pub(crate) profile_type: std::option::Option<crate::model::ProfileType>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>A unique identifier for the local or partner AS2 profile.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the local or partner AS2 profile.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// <p>The unique identifier for the AS2 process.</p>
+        pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.as2_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the AS2 process.</p>
+        pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.as2_id = input;
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
+            self.profile_type = Some(input);
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn set_profile_type(
+            mut self,
+            input: std::option::Option<crate::model::ProfileType>,
+        ) -> Self {
+            self.profile_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedProfile`](crate::model::ListedProfile).
+        pub fn build(self) -> crate::model::ListedProfile {
+            crate::model::ListedProfile {
+                arn: self.arn,
+                profile_id: self.profile_id,
+                as2_id: self.as2_id,
+                profile_type: self.profile_type,
+            }
+        }
+    }
+}
+impl ListedProfile {
+    /// Creates a new builder-style object to manufacture [`ListedProfile`](crate::model::ListedProfile).
+    pub fn builder() -> crate::model::listed_profile::Builder {
+        crate::model::listed_profile::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ProfileType {
+    #[allow(missing_docs)] // documentation missing in model
+    Local,
+    #[allow(missing_docs)] // documentation missing in model
+    Partner,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ProfileType {
+    fn from(s: &str) -> Self {
+        match s {
+            "LOCAL" => ProfileType::Local,
+            "PARTNER" => ProfileType::Partner,
+            other => ProfileType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ProfileType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProfileType::from(s))
+    }
+}
+impl ProfileType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProfileType::Local => "LOCAL",
+            ProfileType::Partner => "PARTNER",
+            ProfileType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LOCAL", "PARTNER"]
+    }
+}
+impl AsRef<str> for ProfileType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Returns properties of the execution that is specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1929,7 +2770,7 @@ pub struct ListedExecution {
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub initial_file_location: std::option::Option<crate::model::FileLocation>,
-    /// <p>A container object for the session details associated with a workflow.</p>
+    /// <p>A container object for the session details that are associated with a workflow.</p>
     pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
@@ -1943,7 +2784,7 @@ impl ListedExecution {
     pub fn initial_file_location(&self) -> std::option::Option<&crate::model::FileLocation> {
         self.initial_file_location.as_ref()
     }
-    /// <p>A container object for the session details associated with a workflow.</p>
+    /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(&self) -> std::option::Option<&crate::model::ServiceMetadata> {
         self.service_metadata.as_ref()
     }
@@ -1997,12 +2838,12 @@ pub mod listed_execution {
             self.initial_file_location = input;
             self
         }
-        /// <p>A container object for the session details associated with a workflow.</p>
+        /// <p>A container object for the session details that are associated with a workflow.</p>
         pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
             self.service_metadata = Some(input);
             self
         }
-        /// <p>A container object for the session details associated with a workflow.</p>
+        /// <p>A container object for the session details that are associated with a workflow.</p>
         pub fn set_service_metadata(
             mut self,
             input: std::option::Option<crate::model::ServiceMetadata>,
@@ -2109,7 +2950,7 @@ impl AsRef<str> for ExecutionStatus {
     }
 }
 
-/// <p>A container object for the session details associated with a workflow.</p>
+/// <p>A container object for the session details that are associated with a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceMetadata {
@@ -2262,13 +3103,13 @@ impl UserDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileLocation {
-    /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+    /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
     pub s3_file_location: std::option::Option<crate::model::S3FileLocation>,
     /// <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
     pub efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
 }
 impl FileLocation {
-    /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+    /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
     pub fn s3_file_location(&self) -> std::option::Option<&crate::model::S3FileLocation> {
         self.s3_file_location.as_ref()
     }
@@ -2295,12 +3136,12 @@ pub mod file_location {
         pub(crate) efs_file_location: std::option::Option<crate::model::EfsFileLocation>,
     }
     impl Builder {
-        /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+        /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
         pub fn s3_file_location(mut self, input: crate::model::S3FileLocation) -> Self {
             self.s3_file_location = Some(input);
             self
         }
-        /// <p>Specifies the S3 details for the file being used, such as bucket, Etag, and so forth.</p>
+        /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
         pub fn set_s3_file_location(
             mut self,
             input: std::option::Option<crate::model::S3FileLocation>,
@@ -2414,13 +3255,13 @@ impl EfsFileLocation {
     }
 }
 
-/// <p>Specifies the details for the file location for the file being used in the workflow. Only applicable if you are using S3 storage.</p>
+/// <p>Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using S3 storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3FileLocation {
     /// <p>Specifies the S3 bucket that contains the file being used.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Specifies the file version.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -2432,7 +3273,7 @@ impl S3FileLocation {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -2477,12 +3318,12 @@ pub mod s3_file_location {
             self.bucket = input;
             self
         }
-        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2525,6 +3366,649 @@ impl S3FileLocation {
     }
 }
 
+/// <p>Returns details of the connector that is specified.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedConnector {
+    /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the connector.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub url: std::option::Option<std::string::String>,
+}
+impl ListedConnector {
+    /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+}
+impl std::fmt::Debug for ListedConnector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedConnector");
+        formatter.field("arn", &self.arn);
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("url", &self.url);
+        formatter.finish()
+    }
+}
+/// See [`ListedConnector`](crate::model::ListedConnector).
+pub mod listed_connector {
+
+    /// A builder for [`ListedConnector`](crate::model::ListedConnector).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedConnector`](crate::model::ListedConnector).
+        pub fn build(self) -> crate::model::ListedConnector {
+            crate::model::ListedConnector {
+                arn: self.arn,
+                connector_id: self.connector_id,
+                url: self.url,
+            }
+        }
+    }
+}
+impl ListedConnector {
+    /// Creates a new builder-style object to manufacture [`ListedConnector`](crate::model::ListedConnector).
+    pub fn builder() -> crate::model::listed_connector::Builder {
+        crate::model::listed_connector::Builder::default()
+    }
+}
+
+/// <p>Describes the properties of a certificate.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedCertificate {
+    /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub usage: std::option::Option<crate::model::CertificateUsageType>,
+    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    pub status: std::option::Option<crate::model::CertificateStatusType>,
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub active_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    pub r#type: std::option::Option<crate::model::CertificateType>,
+    /// <p>The name or short description that's used to identify the certificate.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl ListedCertificate {
+    /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub fn usage(&self) -> std::option::Option<&crate::model::CertificateUsageType> {
+        self.usage.as_ref()
+    }
+    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.active_date.as_ref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.inactive_date.as_ref()
+    }
+    /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name or short description that's used to identify the certificate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
+impl std::fmt::Debug for ListedCertificate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedCertificate");
+        formatter.field("arn", &self.arn);
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.field("usage", &self.usage);
+        formatter.field("status", &self.status);
+        formatter.field("active_date", &self.active_date);
+        formatter.field("inactive_date", &self.inactive_date);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`ListedCertificate`](crate::model::ListedCertificate).
+pub mod listed_certificate {
+
+    /// A builder for [`ListedCertificate`](crate::model::ListedCertificate).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+        pub(crate) usage: std::option::Option<crate::model::CertificateUsageType>,
+        pub(crate) status: std::option::Option<crate::model::CertificateStatusType>,
+        pub(crate) active_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) r#type: std::option::Option<crate::model::CertificateType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn usage(mut self, input: crate::model::CertificateUsageType) -> Self {
+            self.usage = Some(input);
+            self
+        }
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn set_usage(
+            mut self,
+            input: std::option::Option<crate::model::CertificateUsageType>,
+        ) -> Self {
+            self.usage = input;
+            self
+        }
+        /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+        pub fn status(mut self, input: crate::model::CertificateStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CertificateStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.active_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn set_active_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.active_date = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inactive_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn set_inactive_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inactive_date = input;
+            self
+        }
+        /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+        pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::CertificateType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name or short description that's used to identify the certificate.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The name or short description that's used to identify the certificate.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedCertificate`](crate::model::ListedCertificate).
+        pub fn build(self) -> crate::model::ListedCertificate {
+            crate::model::ListedCertificate {
+                arn: self.arn,
+                certificate_id: self.certificate_id,
+                usage: self.usage,
+                status: self.status,
+                active_date: self.active_date,
+                inactive_date: self.inactive_date,
+                r#type: self.r#type,
+                description: self.description,
+            }
+        }
+    }
+}
+impl ListedCertificate {
+    /// Creates a new builder-style object to manufacture [`ListedCertificate`](crate::model::ListedCertificate).
+    pub fn builder() -> crate::model::listed_certificate::Builder {
+        crate::model::listed_certificate::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateType {
+    #[allow(missing_docs)] // documentation missing in model
+    Certificate,
+    #[allow(missing_docs)] // documentation missing in model
+    CertificateWithPrivateKey,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CertificateType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CERTIFICATE" => CertificateType::Certificate,
+            "CERTIFICATE_WITH_PRIVATE_KEY" => CertificateType::CertificateWithPrivateKey,
+            other => CertificateType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CertificateType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateType::from(s))
+    }
+}
+impl CertificateType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateType::Certificate => "CERTIFICATE",
+            CertificateType::CertificateWithPrivateKey => "CERTIFICATE_WITH_PRIVATE_KEY",
+            CertificateType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CERTIFICATE", "CERTIFICATE_WITH_PRIVATE_KEY"]
+    }
+}
+impl AsRef<str> for CertificateType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateStatusType {
+    #[allow(missing_docs)] // documentation missing in model
+    Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Inactive,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingRotation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CertificateStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => CertificateStatusType::Active,
+            "INACTIVE" => CertificateStatusType::Inactive,
+            "PENDING_ROTATION" => CertificateStatusType::PendingRotation,
+            other => CertificateStatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CertificateStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateStatusType::from(s))
+    }
+}
+impl CertificateStatusType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateStatusType::Active => "ACTIVE",
+            CertificateStatusType::Inactive => "INACTIVE",
+            CertificateStatusType::PendingRotation => "PENDING_ROTATION",
+            CertificateStatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "INACTIVE", "PENDING_ROTATION"]
+    }
+}
+impl AsRef<str> for CertificateStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CertificateUsageType {
+    #[allow(missing_docs)] // documentation missing in model
+    Encryption,
+    #[allow(missing_docs)] // documentation missing in model
+    Signing,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CertificateUsageType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENCRYPTION" => CertificateUsageType::Encryption,
+            "SIGNING" => CertificateUsageType::Signing,
+            other => CertificateUsageType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CertificateUsageType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CertificateUsageType::from(s))
+    }
+}
+impl CertificateUsageType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CertificateUsageType::Encryption => "ENCRYPTION",
+            CertificateUsageType::Signing => "SIGNING",
+            CertificateUsageType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ENCRYPTION", "SIGNING"]
+    }
+}
+impl AsRef<str> for CertificateUsageType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the properties of an agreement.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListedAgreement {
+    /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub status: std::option::Option<crate::model::AgreementStatusType>,
+    /// <p>The unique identifier for the agreement.</p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub local_profile_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the partner process.</p>
+    pub partner_profile_id: std::option::Option<std::string::String>,
+}
+impl ListedAgreement {
+    /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgreementStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The unique identifier for the agreement.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
+        self.local_profile_id.as_deref()
+    }
+    /// <p>A unique identifier for the partner process.</p>
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
+        self.partner_profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ListedAgreement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListedAgreement");
+        formatter.field("arn", &self.arn);
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.finish()
+    }
+}
+/// See [`ListedAgreement`](crate::model::ListedAgreement).
+pub mod listed_agreement {
+
+    /// A builder for [`ListedAgreement`](crate::model::ListedAgreement).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AgreementStatusType>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) local_profile_id: std::option::Option<std::string::String>,
+        pub(crate) partner_profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn status(mut self, input: crate::model::AgreementStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AgreementStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The unique identifier for the agreement.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the agreement.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn set_local_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.local_profile_id = input;
+            self
+        }
+        /// <p>A unique identifier for the partner process.</p>
+        pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partner_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the partner process.</p>
+        pub fn set_partner_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partner_profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListedAgreement`](crate::model::ListedAgreement).
+        pub fn build(self) -> crate::model::ListedAgreement {
+            crate::model::ListedAgreement {
+                arn: self.arn,
+                agreement_id: self.agreement_id,
+                description: self.description,
+                status: self.status,
+                server_id: self.server_id,
+                local_profile_id: self.local_profile_id,
+                partner_profile_id: self.partner_profile_id,
+            }
+        }
+    }
+}
+impl ListedAgreement {
+    /// Creates a new builder-style object to manufacture [`ListedAgreement`](crate::model::ListedAgreement).
+    pub fn builder() -> crate::model::listed_agreement::Builder {
+        crate::model::listed_agreement::Builder::default()
+    }
+}
+
 /// <p>Lists the properties for one or more specified associated accesses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2532,14 +4016,14 @@ pub struct ListedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl ListedAccess {
@@ -2548,18 +4032,18 @@ impl ListedAccess {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -2601,12 +4085,12 @@ pub mod listed_access {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -2614,28 +4098,28 @@ pub mod listed_access {
             self.home_directory_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -2841,10 +4325,10 @@ impl DescribedWorkflow {
 pub struct WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>Details for a step that performs a file copy.</p>
@@ -2867,10 +4351,10 @@ pub struct WorkflowStep {
 impl WorkflowStep {
     /// <p> Currently, the following step types are supported. </p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
         self.r#type.as_ref()
@@ -2926,10 +4410,10 @@ pub mod workflow_step {
     impl Builder {
         /// <p> Currently, the following step types are supported. </p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::WorkflowStepType) -> Self {
             self.r#type = Some(input);
@@ -2937,10 +4421,10 @@ pub mod workflow_step {
         }
         /// <p> Currently, the following step types are supported. </p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -3732,7 +5216,7 @@ impl InputFileLocation {
 pub struct S3InputFileLocation {
     /// <p>Specifies the S3 bucket for the customer input file.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub key: std::option::Option<std::string::String>,
 }
 impl S3InputFileLocation {
@@ -3740,7 +5224,7 @@ impl S3InputFileLocation {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -3773,12 +5257,12 @@ pub mod s3_input_file_location {
             self.bucket = input;
             self
         }
-        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name assigned to the file when it was created in S3. You use the object key to retrieve the object.</p>
+        /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3871,17 +5355,17 @@ pub struct DescribedUser {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File System (Amazon EFS) file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
     pub ssh_public_keys: std::option::Option<std::vec::Vec<crate::model::SshPublicKey>>,
@@ -3900,18 +5384,18 @@ impl DescribedUser {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -3919,7 +5403,7 @@ impl DescribedUser {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -4000,7 +5484,7 @@ pub mod described_user {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         pub fn home_directory_mappings(
             mut self,
@@ -4011,7 +5495,7 @@ pub mod described_user {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         pub fn set_home_directory_mappings(
             mut self,
@@ -4020,12 +5504,12 @@ pub mod described_user {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -4033,12 +5517,12 @@ pub mod described_user {
             self.home_directory_type = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -4056,12 +5540,12 @@ pub mod described_user {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -4256,7 +5740,7 @@ pub struct DescribedServer {
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub domain: std::option::Option<crate::model::Domain>,
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
@@ -4264,18 +5748,18 @@ pub struct DescribedServer {
     pub host_key_fingerprint: std::option::Option<std::string::String>,
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
@@ -4289,14 +5773,14 @@ pub struct DescribedServer {
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+    /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub state: std::option::Option<crate::model::State>,
     /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub user_count: std::option::Option<i32>,
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl DescribedServer {
@@ -4317,7 +5801,7 @@ impl DescribedServer {
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
@@ -4335,26 +5819,26 @@ impl DescribedServer {
     ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
@@ -4376,7 +5860,7 @@ impl DescribedServer {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+    /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::State> {
         self.state.as_ref()
@@ -4389,7 +5873,7 @@ impl DescribedServer {
     pub fn user_count(&self) -> std::option::Option<i32> {
         self.user_count
     }
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
@@ -4498,12 +5982,12 @@ pub mod described_server {
             self.domain = input;
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             self.endpoint_details = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -4553,18 +6037,18 @@ pub mod described_server {
             self.identity_provider_details = input;
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -4572,17 +6056,17 @@ pub mod described_server {
             self.identity_provider_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn post_authentication_login_banner(
@@ -4592,7 +6076,7 @@ pub mod described_server {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn set_post_authentication_login_banner(
@@ -4602,7 +6086,7 @@ pub mod described_server {
             self.post_authentication_login_banner = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
@@ -4611,7 +6095,7 @@ pub mod described_server {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
@@ -4672,13 +6156,13 @@ pub mod described_server {
             self.server_id = input;
             self
         }
-        /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+        /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
         /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+        /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
         /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
@@ -4713,12 +6197,12 @@ pub mod described_server {
             self.user_count = input;
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -4947,6 +6431,176 @@ impl DescribedSecurityPolicy {
     }
 }
 
+/// <p>The details for a local or partner AS2 profile. profile.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedProfile {
+    /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub profile_type: std::option::Option<crate::model::ProfileType>,
+    /// <p>The unique identifier for the AS2 process.</p>
+    pub as2_id: std::option::Option<std::string::String>,
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribedProfile {
+    /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
+        self.profile_type.as_ref()
+    }
+    /// <p>The unique identifier for the AS2 process.</p>
+    pub fn as2_id(&self) -> std::option::Option<&str> {
+        self.as2_id.as_deref()
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_ids.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribedProfile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedProfile");
+        formatter.field("arn", &self.arn);
+        formatter.field("profile_id", &self.profile_id);
+        formatter.field("profile_type", &self.profile_type);
+        formatter.field("as2_id", &self.as2_id);
+        formatter.field("certificate_ids", &self.certificate_ids);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribedProfile`](crate::model::DescribedProfile).
+pub mod described_profile {
+
+    /// A builder for [`DescribedProfile`](crate::model::DescribedProfile).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+        pub(crate) profile_type: std::option::Option<crate::model::ProfileType>,
+        pub(crate) as2_id: std::option::Option<std::string::String>,
+        pub(crate) certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) for the profile.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>A unique identifier for the local or partner AS2 profile.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the local or partner AS2 profile.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
+            self.profile_type = Some(input);
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn set_profile_type(
+            mut self,
+            input: std::option::Option<crate::model::ProfileType>,
+        ) -> Self {
+            self.profile_type = input;
+            self
+        }
+        /// <p>The unique identifier for the AS2 process.</p>
+        pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.as2_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the AS2 process.</p>
+        pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.as2_id = input;
+            self
+        }
+        /// Appends an item to `certificate_ids`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
+        ///
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.certificate_ids.unwrap_or_default();
+            v.push(input.into());
+            self.certificate_ids = Some(v);
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.certificate_ids = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for profiles.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedProfile`](crate::model::DescribedProfile).
+        pub fn build(self) -> crate::model::DescribedProfile {
+            crate::model::DescribedProfile {
+                arn: self.arn,
+                profile_id: self.profile_id,
+                profile_type: self.profile_type,
+                as2_id: self.as2_id,
+                certificate_ids: self.certificate_ids,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribedProfile {
+    /// Creates a new builder-style object to manufacture [`DescribedProfile`](crate::model::DescribedProfile).
+    pub fn builder() -> crate::model::described_profile::Builder {
+        crate::model::described_profile::Builder::default()
+    }
+}
+
 /// <p>The details for an execution object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4955,7 +6609,7 @@ pub struct DescribedExecution {
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub initial_file_location: std::option::Option<crate::model::FileLocation>,
-    /// <p>A container object for the session details associated with a workflow.</p>
+    /// <p>A container object for the session details that are associated with a workflow.</p>
     pub service_metadata: std::option::Option<crate::model::ServiceMetadata>,
     /// <p>The IAM role associated with the execution.</p>
     pub execution_role: std::option::Option<std::string::String>,
@@ -4977,7 +6631,7 @@ impl DescribedExecution {
     pub fn initial_file_location(&self) -> std::option::Option<&crate::model::FileLocation> {
         self.initial_file_location.as_ref()
     }
-    /// <p>A container object for the session details associated with a workflow.</p>
+    /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(&self) -> std::option::Option<&crate::model::ServiceMetadata> {
         self.service_metadata.as_ref()
     }
@@ -5057,12 +6711,12 @@ pub mod described_execution {
             self.initial_file_location = input;
             self
         }
-        /// <p>A container object for the session details associated with a workflow.</p>
+        /// <p>A container object for the session details that are associated with a workflow.</p>
         pub fn service_metadata(mut self, input: crate::model::ServiceMetadata) -> Self {
             self.service_metadata = Some(input);
             self
         }
-        /// <p>A container object for the session details associated with a workflow.</p>
+        /// <p>A container object for the session details that are associated with a workflow.</p>
         pub fn set_service_metadata(
             mut self,
             input: std::option::Option<crate::model::ServiceMetadata>,
@@ -5255,24 +6909,24 @@ impl ExecutionResults {
 pub struct ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
     pub step_type: std::option::Option<crate::model::WorkflowStepType>,
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
     pub outputs: std::option::Option<std::string::String>,
-    /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+    /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub error: std::option::Option<crate::model::ExecutionError>,
 }
 impl ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul>
     pub fn step_type(&self) -> std::option::Option<&crate::model::WorkflowStepType> {
         self.step_type.as_ref()
@@ -5281,7 +6935,7 @@ impl ExecutionStepResult {
     pub fn outputs(&self) -> std::option::Option<&str> {
         self.outputs.as_deref()
     }
-    /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+    /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::ExecutionError> {
         self.error.as_ref()
     }
@@ -5308,10 +6962,10 @@ pub mod execution_step_result {
     impl Builder {
         /// <p>One of the available step types.</p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul>
         pub fn step_type(mut self, input: crate::model::WorkflowStepType) -> Self {
             self.step_type = Some(input);
@@ -5319,10 +6973,10 @@ pub mod execution_step_result {
         }
         /// <p>One of the available step types.</p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul>
         pub fn set_step_type(
             mut self,
@@ -5341,12 +6995,12 @@ pub mod execution_step_result {
             self.outputs = input;
             self
         }
-        /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+        /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
         pub fn error(mut self, input: crate::model::ExecutionError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>Specifies the details for an error, if it occurred during execution of the specified workfow step.</p>
+        /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::ExecutionError>,
@@ -5587,17 +7241,17 @@ impl AsRef<str> for ExecutionErrorType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+    /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl LoggingConfiguration {
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+    /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -5620,22 +7274,22 @@ pub mod logging_configuration {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
-        /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+        /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the CloudWatch logging group for the Amazon Web Services Transfer server to which this workflow belongs.</p>
+        /// <p>The name of the CloudWatch logging group for the Transfer Family server to which this workflow belongs.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5659,6 +7313,769 @@ impl LoggingConfiguration {
     }
 }
 
+/// <p>Describes the parameters for the connector, as identified by the <code>ConnectorId</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedConnector {
+    /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The unique identifier for the connector.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub url: std::option::Option<std::string::String>,
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub access_role: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub logging_role: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for connectors.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribedConnector {
+    /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub fn as2_config(&self) -> std::option::Option<&crate::model::As2ConnectorConfig> {
+        self.as2_config.as_ref()
+    }
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for connectors.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribedConnector {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedConnector");
+        formatter.field("arn", &self.arn);
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("url", &self.url);
+        formatter.field("as2_config", &self.as2_config);
+        formatter.field("access_role", &self.access_role);
+        formatter.field("logging_role", &self.logging_role);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribedConnector`](crate::model::DescribedConnector).
+pub mod described_connector {
+
+    /// A builder for [`DescribedConnector`](crate::model::DescribedConnector).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+        pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn as2_config(mut self, input: crate::model::As2ConnectorConfig) -> Self {
+            self.as2_config = Some(input);
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn set_as2_config(
+            mut self,
+            input: std::option::Option<crate::model::As2ConnectorConfig>,
+        ) -> Self {
+            self.as2_config = input;
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logging_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logging_role = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for connectors.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for connectors.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedConnector`](crate::model::DescribedConnector).
+        pub fn build(self) -> crate::model::DescribedConnector {
+            crate::model::DescribedConnector {
+                arn: self.arn,
+                connector_id: self.connector_id,
+                url: self.url,
+                as2_config: self.as2_config,
+                access_role: self.access_role,
+                logging_role: self.logging_role,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribedConnector {
+    /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::model::DescribedConnector).
+    pub fn builder() -> crate::model::described_connector::Builder {
+        crate::model::described_connector::Builder::default()
+    }
+}
+
+/// <p>Describes the properties of a certificate.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedCertificate {
+    /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub usage: std::option::Option<crate::model::CertificateUsageType>,
+    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    pub status: std::option::Option<crate::model::CertificateStatusType>,
+    /// <p>The file name for the certificate.</p>
+    pub certificate: std::option::Option<std::string::String>,
+    /// <p>The list of certificates that make up the chain for the certificate.</p>
+    pub certificate_chain: std::option::Option<std::string::String>,
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub active_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The serial number for the certificate.</p>
+    pub serial: std::option::Option<std::string::String>,
+    /// <p>The earliest date that the certificate is valid.</p>
+    pub not_before_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The final date that the certificate is valid.</p>
+    pub not_after_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    pub r#type: std::option::Option<crate::model::CertificateType>,
+    /// <p>The name or description that's used to identity the certificate. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribedCertificate {
+    /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub fn usage(&self) -> std::option::Option<&crate::model::CertificateUsageType> {
+        self.usage.as_ref()
+    }
+    /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::CertificateStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>The file name for the certificate.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>The list of certificates that make up the chain for the certificate.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.active_date.as_ref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.inactive_date.as_ref()
+    }
+    /// <p>The serial number for the certificate.</p>
+    pub fn serial(&self) -> std::option::Option<&str> {
+        self.serial.as_deref()
+    }
+    /// <p>The earliest date that the certificate is valid.</p>
+    pub fn not_before_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.not_before_date.as_ref()
+    }
+    /// <p>The final date that the certificate is valid.</p>
+    pub fn not_after_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.not_after_date.as_ref()
+    }
+    /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::CertificateType> {
+        self.r#type.as_ref()
+    }
+    /// <p>The name or description that's used to identity the certificate. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribedCertificate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedCertificate");
+        formatter.field("arn", &self.arn);
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.field("usage", &self.usage);
+        formatter.field("status", &self.status);
+        formatter.field("certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("certificate_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("active_date", &self.active_date);
+        formatter.field("inactive_date", &self.inactive_date);
+        formatter.field("serial", &self.serial);
+        formatter.field("not_before_date", &self.not_before_date);
+        formatter.field("not_after_date", &self.not_after_date);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribedCertificate`](crate::model::DescribedCertificate).
+pub mod described_certificate {
+
+    /// A builder for [`DescribedCertificate`](crate::model::DescribedCertificate).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+        pub(crate) usage: std::option::Option<crate::model::CertificateUsageType>,
+        pub(crate) status: std::option::Option<crate::model::CertificateStatusType>,
+        pub(crate) certificate: std::option::Option<std::string::String>,
+        pub(crate) certificate_chain: std::option::Option<std::string::String>,
+        pub(crate) active_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) serial: std::option::Option<std::string::String>,
+        pub(crate) not_before_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) not_after_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) r#type: std::option::Option<crate::model::CertificateType>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) for the certificate.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn usage(mut self, input: crate::model::CertificateUsageType) -> Self {
+            self.usage = Some(input);
+            self
+        }
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn set_usage(
+            mut self,
+            input: std::option::Option<crate::model::CertificateUsageType>,
+        ) -> Self {
+            self.usage = input;
+            self
+        }
+        /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+        pub fn status(mut self, input: crate::model::CertificateStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CertificateStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The file name for the certificate.</p>
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate = Some(input.into());
+            self
+        }
+        /// <p>The file name for the certificate.</p>
+        pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate = input;
+            self
+        }
+        /// <p>The list of certificates that make up the chain for the certificate.</p>
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_chain = Some(input.into());
+            self
+        }
+        /// <p>The list of certificates that make up the chain for the certificate.</p>
+        pub fn set_certificate_chain(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_chain = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.active_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn set_active_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.active_date = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inactive_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn set_inactive_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inactive_date = input;
+            self
+        }
+        /// <p>The serial number for the certificate.</p>
+        pub fn serial(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial = Some(input.into());
+            self
+        }
+        /// <p>The serial number for the certificate.</p>
+        pub fn set_serial(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial = input;
+            self
+        }
+        /// <p>The earliest date that the certificate is valid.</p>
+        pub fn not_before_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.not_before_date = Some(input);
+            self
+        }
+        /// <p>The earliest date that the certificate is valid.</p>
+        pub fn set_not_before_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.not_before_date = input;
+            self
+        }
+        /// <p>The final date that the certificate is valid.</p>
+        pub fn not_after_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.not_after_date = Some(input);
+            self
+        }
+        /// <p>The final date that the certificate is valid.</p>
+        pub fn set_not_after_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.not_after_date = input;
+            self
+        }
+        /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+        pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::CertificateType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The name or description that's used to identity the certificate. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The name or description that's used to identity the certificate. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedCertificate`](crate::model::DescribedCertificate).
+        pub fn build(self) -> crate::model::DescribedCertificate {
+            crate::model::DescribedCertificate {
+                arn: self.arn,
+                certificate_id: self.certificate_id,
+                usage: self.usage,
+                status: self.status,
+                certificate: self.certificate,
+                certificate_chain: self.certificate_chain,
+                active_date: self.active_date,
+                inactive_date: self.inactive_date,
+                serial: self.serial,
+                not_before_date: self.not_before_date,
+                not_after_date: self.not_after_date,
+                r#type: self.r#type,
+                description: self.description,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribedCertificate {
+    /// Creates a new builder-style object to manufacture [`DescribedCertificate`](crate::model::DescribedCertificate).
+    pub fn builder() -> crate::model::described_certificate::Builder {
+        crate::model::described_certificate::Builder::default()
+    }
+}
+
+/// <p>Describes the properties of an agreement.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribedAgreement {
+    /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+    /// <p>The name or short description that's used to identify the agreement.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub status: std::option::Option<crate::model::AgreementStatusType>,
+    /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub local_profile_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the partner in the agreement.</p>
+    pub partner_profile_id: std::option::Option<std::string::String>,
+    /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
+    pub base_directory: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub access_role: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl DescribedAgreement {
+    /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+    pub fn arn(&self) -> std::option::Option<&str> {
+        self.arn.as_deref()
+    }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+    /// <p>The name or short description that's used to identify the agreement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgreementStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>A unique identifier for the AS2 process.</p>
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
+        self.local_profile_id.as_deref()
+    }
+    /// <p>A unique identifier for the partner in the agreement.</p>
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
+        self.partner_profile_id.as_deref()
+    }
+    /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
+    pub fn base_directory(&self) -> std::option::Option<&str> {
+        self.base_directory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribedAgreement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribedAgreement");
+        formatter.field("arn", &self.arn);
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("base_directory", &self.base_directory);
+        formatter.field("access_role", &self.access_role);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`DescribedAgreement`](crate::model::DescribedAgreement).
+pub mod described_agreement {
+
+    /// A builder for [`DescribedAgreement`](crate::model::DescribedAgreement).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AgreementStatusType>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) local_profile_id: std::option::Option<std::string::String>,
+        pub(crate) partner_profile_id: std::option::Option<std::string::String>,
+        pub(crate) base_directory: std::option::Option<std::string::String>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        /// <p>The unique Amazon Resource Name (ARN) for the agreement.</p>
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// <p>The name or short description that's used to identify the agreement.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The name or short description that's used to identify the agreement.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn status(mut self, input: crate::model::AgreementStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The current status of the agreement, either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AgreementStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This identifier indicates the specific server that the agreement uses.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the AS2 process.</p>
+        pub fn set_local_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.local_profile_id = input;
+            self
+        }
+        /// <p>A unique identifier for the partner in the agreement.</p>
+        pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partner_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the partner in the agreement.</p>
+        pub fn set_partner_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partner_profile_id = input;
+            self
+        }
+        /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
+        pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_directory = Some(input.into());
+            self
+        }
+        /// <p>The landing directory (folder) for files that are transferred by using the AS2 protocol.</p>
+        pub fn set_base_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.base_directory = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribedAgreement`](crate::model::DescribedAgreement).
+        pub fn build(self) -> crate::model::DescribedAgreement {
+            crate::model::DescribedAgreement {
+                arn: self.arn,
+                agreement_id: self.agreement_id,
+                description: self.description,
+                status: self.status,
+                server_id: self.server_id,
+                local_profile_id: self.local_profile_id,
+                partner_profile_id: self.partner_profile_id,
+                base_directory: self.base_directory,
+                access_role: self.access_role,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl DescribedAgreement {
+    /// Creates a new builder-style object to manufacture [`DescribedAgreement`](crate::model::DescribedAgreement).
+    pub fn builder() -> crate::model::described_agreement::Builder {
+        crate::model::described_agreement::Builder::default()
+    }
+}
+
 /// <p>Describes the properties of the access that was specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5666,22 +8083,22 @@ pub struct DescribedAccess {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down the associated access to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DescribedAccess {
@@ -5690,18 +8107,18 @@ impl DescribedAccess {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down the associated access to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -5709,14 +8126,14 @@ impl DescribedAccess {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -5769,7 +8186,7 @@ pub mod described_access {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down the associated access to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         pub fn home_directory_mappings(
             mut self,
@@ -5780,7 +8197,7 @@ pub mod described_access {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down the associated access to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         pub fn set_home_directory_mappings(
             mut self,
@@ -5789,12 +8206,12 @@ pub mod described_access {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -5802,12 +8219,12 @@ pub mod described_access {
             self.home_directory_type = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -5825,28 +8242,28 @@ pub mod described_access {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self

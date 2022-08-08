@@ -7830,6 +7830,98 @@ pub fn parse_list_tags_for_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_activity_stream_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyActivityStreamOutput,
+    crate::error::ModifyActivityStreamError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ModifyActivityStreamError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "DBInstanceNotFound" => crate::error::ModifyActivityStreamError {
+            meta: generic,
+            kind: crate::error::ModifyActivityStreamErrorKind::DbInstanceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidDBInstanceState" => crate::error::ModifyActivityStreamError {
+            meta: generic,
+            kind: crate::error::ModifyActivityStreamErrorKind::InvalidDbInstanceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundFault" => crate::error::ModifyActivityStreamError {
+            meta: generic,
+            kind: crate::error::ModifyActivityStreamErrorKind::ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ModifyActivityStreamError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_activity_stream_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyActivityStreamOutput,
+    crate::error::ModifyActivityStreamError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_activity_stream_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_crate_operation_modify_activity_stream(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_certificates_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

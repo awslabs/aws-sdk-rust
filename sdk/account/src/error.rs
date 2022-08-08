@@ -289,6 +289,151 @@ impl std::error::Error for GetAlternateContactError {
     }
 }
 
+/// Error type for the `GetContactInformation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetContactInformationError {
+    /// Kind of error that occurred.
+    pub kind: GetContactInformationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetContactInformation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetContactInformationErrorKind {
+    /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation failed because it specified a resource that can't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The operation failed because one of the input parameters was invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetContactInformationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetContactInformationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetContactInformationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetContactInformationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            GetContactInformationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            GetContactInformationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetContactInformationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetContactInformationError {
+    fn code(&self) -> Option<&str> {
+        GetContactInformationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            GetContactInformationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            GetContactInformationErrorKind::TooManyRequestsException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl GetContactInformationError {
+    /// Creates a new `GetContactInformationError`.
+    pub fn new(kind: GetContactInformationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetContactInformationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetContactInformationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetContactInformationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetContactInformationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetContactInformationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactInformationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContactInformationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactInformationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContactInformationErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactInformationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContactInformationErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactInformationErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetContactInformationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContactInformationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetContactInformationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetContactInformationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetContactInformationErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetContactInformationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetContactInformationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            GetContactInformationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetContactInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `PutAlternateContact` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -419,6 +564,140 @@ impl std::error::Error for PutAlternateContactError {
             PutAlternateContactErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutAlternateContactErrorKind::ValidationException(_inner) => Some(_inner),
             PutAlternateContactErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `PutContactInformation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutContactInformationError {
+    /// Kind of error that occurred.
+    pub kind: PutContactInformationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `PutContactInformation` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutContactInformationErrorKind {
+    /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The operation failed because one of the input parameters was invalid.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutContactInformationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutContactInformationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutContactInformationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutContactInformationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            PutContactInformationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            PutContactInformationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for PutContactInformationError {
+    fn code(&self) -> Option<&str> {
+        PutContactInformationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            PutContactInformationErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            PutContactInformationErrorKind::TooManyRequestsException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl PutContactInformationError {
+    /// Creates a new `PutContactInformationError`.
+    pub fn new(kind: PutContactInformationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `PutContactInformationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutContactInformationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `PutContactInformationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutContactInformationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `PutContactInformationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutContactInformationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutContactInformationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutContactInformationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutContactInformationErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutContactInformationErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `PutContactInformationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutContactInformationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for PutContactInformationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutContactInformationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutContactInformationErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutContactInformationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            PutContactInformationErrorKind::ValidationException(_inner) => Some(_inner),
+            PutContactInformationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

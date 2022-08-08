@@ -5455,6 +5455,12 @@ pub struct JourneyResponse {
     pub refresh_on_segment_update: bool,
     /// <p>The channel-specific configurations for the journey.</p>
     pub journey_channel_settings: std::option::Option<crate::model::JourneyChannelSettings>,
+    /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+    pub sending_schedule: bool,
+    /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub open_hours: std::option::Option<crate::model::OpenHours>,
+    /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub closed_days: std::option::Option<crate::model::ClosedDays>,
 }
 impl JourneyResponse {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
@@ -5550,6 +5556,18 @@ impl JourneyResponse {
     ) -> std::option::Option<&crate::model::JourneyChannelSettings> {
         self.journey_channel_settings.as_ref()
     }
+    /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+    pub fn sending_schedule(&self) -> bool {
+        self.sending_schedule
+    }
+    /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn open_hours(&self) -> std::option::Option<&crate::model::OpenHours> {
+        self.open_hours.as_ref()
+    }
+    /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn closed_days(&self) -> std::option::Option<&crate::model::ClosedDays> {
+        self.closed_days.as_ref()
+    }
 }
 impl std::fmt::Debug for JourneyResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5572,6 +5590,9 @@ impl std::fmt::Debug for JourneyResponse {
         formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
         formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
         formatter.field("journey_channel_settings", &self.journey_channel_settings);
+        formatter.field("sending_schedule", &self.sending_schedule);
+        formatter.field("open_hours", &self.open_hours);
+        formatter.field("closed_days", &self.closed_days);
         formatter.finish()
     }
 }
@@ -5604,6 +5625,9 @@ pub mod journey_response {
         pub(crate) refresh_on_segment_update: std::option::Option<bool>,
         pub(crate) journey_channel_settings:
             std::option::Option<crate::model::JourneyChannelSettings>,
+        pub(crate) sending_schedule: std::option::Option<bool>,
+        pub(crate) open_hours: std::option::Option<crate::model::OpenHours>,
+        pub(crate) closed_days: std::option::Option<crate::model::ClosedDays>,
     }
     impl Builder {
         /// Adds a key-value pair to `activities`.
@@ -5875,6 +5899,42 @@ pub mod journey_response {
             self.journey_channel_settings = input;
             self
         }
+        /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+        pub fn sending_schedule(mut self, input: bool) -> Self {
+            self.sending_schedule = Some(input);
+            self
+        }
+        /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+        pub fn set_sending_schedule(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_schedule = input;
+            self
+        }
+        /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn open_hours(mut self, input: crate::model::OpenHours) -> Self {
+            self.open_hours = Some(input);
+            self
+        }
+        /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn set_open_hours(
+            mut self,
+            input: std::option::Option<crate::model::OpenHours>,
+        ) -> Self {
+            self.open_hours = input;
+            self
+        }
+        /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn closed_days(mut self, input: crate::model::ClosedDays) -> Self {
+            self.closed_days = Some(input);
+            self
+        }
+        /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn set_closed_days(
+            mut self,
+            input: std::option::Option<crate::model::ClosedDays>,
+        ) -> Self {
+            self.closed_days = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JourneyResponse`](crate::model::JourneyResponse).
         pub fn build(self) -> crate::model::JourneyResponse {
             crate::model::JourneyResponse {
@@ -5896,6 +5956,9 @@ pub mod journey_response {
                 wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
                 refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
                 journey_channel_settings: self.journey_channel_settings,
+                sending_schedule: self.sending_schedule.unwrap_or_default(),
+                open_hours: self.open_hours,
+                closed_days: self.closed_days,
             }
         }
     }
@@ -5904,6 +5967,740 @@ impl JourneyResponse {
     /// Creates a new builder-style object to manufacture [`JourneyResponse`](crate::model::JourneyResponse).
     pub fn builder() -> crate::model::journey_response::Builder {
         crate::model::journey_response::Builder::default()
+    }
+}
+
+/// <p>The time when journey will stop sending messages.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClosedDays {
+    /// <p>Rules for Email Channel.</p>
+    pub email: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+    /// <p>Rules for SMS Channel.</p>
+    pub sms: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+    /// <p>Rules for Push Channel.</p>
+    pub push: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+    /// <p>Rules for Voice Channel.</p>
+    pub voice: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+    /// <p>Rules for Custom Channel.</p>
+    pub custom: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+}
+impl ClosedDays {
+    /// <p>Rules for Email Channel.</p>
+    pub fn email(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
+        self.email.as_deref()
+    }
+    /// <p>Rules for SMS Channel.</p>
+    pub fn sms(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
+        self.sms.as_deref()
+    }
+    /// <p>Rules for Push Channel.</p>
+    pub fn push(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
+        self.push.as_deref()
+    }
+    /// <p>Rules for Voice Channel.</p>
+    pub fn voice(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
+        self.voice.as_deref()
+    }
+    /// <p>Rules for Custom Channel.</p>
+    pub fn custom(&self) -> std::option::Option<&[crate::model::ClosedDaysRule]> {
+        self.custom.as_deref()
+    }
+}
+impl std::fmt::Debug for ClosedDays {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClosedDays");
+        formatter.field("email", &self.email);
+        formatter.field("sms", &self.sms);
+        formatter.field("push", &self.push);
+        formatter.field("voice", &self.voice);
+        formatter.field("custom", &self.custom);
+        formatter.finish()
+    }
+}
+/// See [`ClosedDays`](crate::model::ClosedDays).
+pub mod closed_days {
+
+    /// A builder for [`ClosedDays`](crate::model::ClosedDays).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) email: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        pub(crate) sms: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        pub(crate) push: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        pub(crate) voice: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        pub(crate) custom: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+    }
+    impl Builder {
+        /// Appends an item to `email`.
+        ///
+        /// To override the contents of this collection use [`set_email`](Self::set_email).
+        ///
+        /// <p>Rules for Email Channel.</p>
+        pub fn email(mut self, input: crate::model::ClosedDaysRule) -> Self {
+            let mut v = self.email.unwrap_or_default();
+            v.push(input);
+            self.email = Some(v);
+            self
+        }
+        /// <p>Rules for Email Channel.</p>
+        pub fn set_email(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        ) -> Self {
+            self.email = input;
+            self
+        }
+        /// Appends an item to `sms`.
+        ///
+        /// To override the contents of this collection use [`set_sms`](Self::set_sms).
+        ///
+        /// <p>Rules for SMS Channel.</p>
+        pub fn sms(mut self, input: crate::model::ClosedDaysRule) -> Self {
+            let mut v = self.sms.unwrap_or_default();
+            v.push(input);
+            self.sms = Some(v);
+            self
+        }
+        /// <p>Rules for SMS Channel.</p>
+        pub fn set_sms(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        ) -> Self {
+            self.sms = input;
+            self
+        }
+        /// Appends an item to `push`.
+        ///
+        /// To override the contents of this collection use [`set_push`](Self::set_push).
+        ///
+        /// <p>Rules for Push Channel.</p>
+        pub fn push(mut self, input: crate::model::ClosedDaysRule) -> Self {
+            let mut v = self.push.unwrap_or_default();
+            v.push(input);
+            self.push = Some(v);
+            self
+        }
+        /// <p>Rules for Push Channel.</p>
+        pub fn set_push(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        ) -> Self {
+            self.push = input;
+            self
+        }
+        /// Appends an item to `voice`.
+        ///
+        /// To override the contents of this collection use [`set_voice`](Self::set_voice).
+        ///
+        /// <p>Rules for Voice Channel.</p>
+        pub fn voice(mut self, input: crate::model::ClosedDaysRule) -> Self {
+            let mut v = self.voice.unwrap_or_default();
+            v.push(input);
+            self.voice = Some(v);
+            self
+        }
+        /// <p>Rules for Voice Channel.</p>
+        pub fn set_voice(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        ) -> Self {
+            self.voice = input;
+            self
+        }
+        /// Appends an item to `custom`.
+        ///
+        /// To override the contents of this collection use [`set_custom`](Self::set_custom).
+        ///
+        /// <p>Rules for Custom Channel.</p>
+        pub fn custom(mut self, input: crate::model::ClosedDaysRule) -> Self {
+            let mut v = self.custom.unwrap_or_default();
+            v.push(input);
+            self.custom = Some(v);
+            self
+        }
+        /// <p>Rules for Custom Channel.</p>
+        pub fn set_custom(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ClosedDaysRule>>,
+        ) -> Self {
+            self.custom = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClosedDays`](crate::model::ClosedDays).
+        pub fn build(self) -> crate::model::ClosedDays {
+            crate::model::ClosedDays {
+                email: self.email,
+                sms: self.sms,
+                push: self.push,
+                voice: self.voice,
+                custom: self.custom,
+            }
+        }
+    }
+}
+impl ClosedDays {
+    /// Creates a new builder-style object to manufacture [`ClosedDays`](crate::model::ClosedDays).
+    pub fn builder() -> crate::model::closed_days::Builder {
+        crate::model::closed_days::Builder::default()
+    }
+}
+
+/// <p>Closed Days Rule. Part of Journey sending schedule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ClosedDaysRule {
+    /// <p>Name of the rule.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Start Datetime in ISO 8601 format.</p>
+    pub start_date_time: std::option::Option<std::string::String>,
+    /// <p>End Datetime in ISO 8601 format.</p>
+    pub end_date_time: std::option::Option<std::string::String>,
+}
+impl ClosedDaysRule {
+    /// <p>Name of the rule.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Start Datetime in ISO 8601 format.</p>
+    pub fn start_date_time(&self) -> std::option::Option<&str> {
+        self.start_date_time.as_deref()
+    }
+    /// <p>End Datetime in ISO 8601 format.</p>
+    pub fn end_date_time(&self) -> std::option::Option<&str> {
+        self.end_date_time.as_deref()
+    }
+}
+impl std::fmt::Debug for ClosedDaysRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ClosedDaysRule");
+        formatter.field("name", &self.name);
+        formatter.field("start_date_time", &self.start_date_time);
+        formatter.field("end_date_time", &self.end_date_time);
+        formatter.finish()
+    }
+}
+/// See [`ClosedDaysRule`](crate::model::ClosedDaysRule).
+pub mod closed_days_rule {
+
+    /// A builder for [`ClosedDaysRule`](crate::model::ClosedDaysRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) start_date_time: std::option::Option<std::string::String>,
+        pub(crate) end_date_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Name of the rule.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Name of the rule.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Start Datetime in ISO 8601 format.</p>
+        pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_date_time = Some(input.into());
+            self
+        }
+        /// <p>Start Datetime in ISO 8601 format.</p>
+        pub fn set_start_date_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.start_date_time = input;
+            self
+        }
+        /// <p>End Datetime in ISO 8601 format.</p>
+        pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date_time = Some(input.into());
+            self
+        }
+        /// <p>End Datetime in ISO 8601 format.</p>
+        pub fn set_end_date_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.end_date_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ClosedDaysRule`](crate::model::ClosedDaysRule).
+        pub fn build(self) -> crate::model::ClosedDaysRule {
+            crate::model::ClosedDaysRule {
+                name: self.name,
+                start_date_time: self.start_date_time,
+                end_date_time: self.end_date_time,
+            }
+        }
+    }
+}
+impl ClosedDaysRule {
+    /// Creates a new builder-style object to manufacture [`ClosedDaysRule`](crate::model::ClosedDaysRule).
+    pub fn builder() -> crate::model::closed_days_rule::Builder {
+        crate::model::closed_days_rule::Builder::default()
+    }
+}
+
+/// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OpenHours {
+    /// <p>Rules for Email Channel.</p>
+    pub email: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    >,
+    /// <p>Rules for SMS Channel.</p>
+    pub sms: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    >,
+    /// <p>Rules for Push Channel.</p>
+    pub push: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    >,
+    /// <p>Rules for Voice Channel.</p>
+    pub voice: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    >,
+    /// <p>Rules for Custom Channel.</p>
+    pub custom: std::option::Option<
+        std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    >,
+}
+impl OpenHours {
+    /// <p>Rules for Email Channel.</p>
+    pub fn email(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    > {
+        self.email.as_ref()
+    }
+    /// <p>Rules for SMS Channel.</p>
+    pub fn sms(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    > {
+        self.sms.as_ref()
+    }
+    /// <p>Rules for Push Channel.</p>
+    pub fn push(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    > {
+        self.push.as_ref()
+    }
+    /// <p>Rules for Voice Channel.</p>
+    pub fn voice(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    > {
+        self.voice.as_ref()
+    }
+    /// <p>Rules for Custom Channel.</p>
+    pub fn custom(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::model::DayOfWeek,
+            std::vec::Vec<crate::model::OpenHoursRule>,
+        >,
+    > {
+        self.custom.as_ref()
+    }
+}
+impl std::fmt::Debug for OpenHours {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OpenHours");
+        formatter.field("email", &self.email);
+        formatter.field("sms", &self.sms);
+        formatter.field("push", &self.push);
+        formatter.field("voice", &self.voice);
+        formatter.field("custom", &self.custom);
+        formatter.finish()
+    }
+}
+/// See [`OpenHours`](crate::model::OpenHours).
+pub mod open_hours {
+
+    /// A builder for [`OpenHours`](crate::model::OpenHours).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) email: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DayOfWeek,
+                std::vec::Vec<crate::model::OpenHoursRule>,
+            >,
+        >,
+        pub(crate) sms: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DayOfWeek,
+                std::vec::Vec<crate::model::OpenHoursRule>,
+            >,
+        >,
+        pub(crate) push: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DayOfWeek,
+                std::vec::Vec<crate::model::OpenHoursRule>,
+            >,
+        >,
+        pub(crate) voice: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DayOfWeek,
+                std::vec::Vec<crate::model::OpenHoursRule>,
+            >,
+        >,
+        pub(crate) custom: std::option::Option<
+            std::collections::HashMap<
+                crate::model::DayOfWeek,
+                std::vec::Vec<crate::model::OpenHoursRule>,
+            >,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `email`.
+        ///
+        /// To override the contents of this collection use [`set_email`](Self::set_email).
+        ///
+        /// <p>Rules for Email Channel.</p>
+        pub fn email(
+            mut self,
+            k: crate::model::DayOfWeek,
+            v: std::vec::Vec<crate::model::OpenHoursRule>,
+        ) -> Self {
+            let mut hash_map = self.email.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.email = Some(hash_map);
+            self
+        }
+        /// <p>Rules for Email Channel.</p>
+        pub fn set_email(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DayOfWeek,
+                    std::vec::Vec<crate::model::OpenHoursRule>,
+                >,
+            >,
+        ) -> Self {
+            self.email = input;
+            self
+        }
+        /// Adds a key-value pair to `sms`.
+        ///
+        /// To override the contents of this collection use [`set_sms`](Self::set_sms).
+        ///
+        /// <p>Rules for SMS Channel.</p>
+        pub fn sms(
+            mut self,
+            k: crate::model::DayOfWeek,
+            v: std::vec::Vec<crate::model::OpenHoursRule>,
+        ) -> Self {
+            let mut hash_map = self.sms.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.sms = Some(hash_map);
+            self
+        }
+        /// <p>Rules for SMS Channel.</p>
+        pub fn set_sms(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DayOfWeek,
+                    std::vec::Vec<crate::model::OpenHoursRule>,
+                >,
+            >,
+        ) -> Self {
+            self.sms = input;
+            self
+        }
+        /// Adds a key-value pair to `push`.
+        ///
+        /// To override the contents of this collection use [`set_push`](Self::set_push).
+        ///
+        /// <p>Rules for Push Channel.</p>
+        pub fn push(
+            mut self,
+            k: crate::model::DayOfWeek,
+            v: std::vec::Vec<crate::model::OpenHoursRule>,
+        ) -> Self {
+            let mut hash_map = self.push.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.push = Some(hash_map);
+            self
+        }
+        /// <p>Rules for Push Channel.</p>
+        pub fn set_push(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DayOfWeek,
+                    std::vec::Vec<crate::model::OpenHoursRule>,
+                >,
+            >,
+        ) -> Self {
+            self.push = input;
+            self
+        }
+        /// Adds a key-value pair to `voice`.
+        ///
+        /// To override the contents of this collection use [`set_voice`](Self::set_voice).
+        ///
+        /// <p>Rules for Voice Channel.</p>
+        pub fn voice(
+            mut self,
+            k: crate::model::DayOfWeek,
+            v: std::vec::Vec<crate::model::OpenHoursRule>,
+        ) -> Self {
+            let mut hash_map = self.voice.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.voice = Some(hash_map);
+            self
+        }
+        /// <p>Rules for Voice Channel.</p>
+        pub fn set_voice(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DayOfWeek,
+                    std::vec::Vec<crate::model::OpenHoursRule>,
+                >,
+            >,
+        ) -> Self {
+            self.voice = input;
+            self
+        }
+        /// Adds a key-value pair to `custom`.
+        ///
+        /// To override the contents of this collection use [`set_custom`](Self::set_custom).
+        ///
+        /// <p>Rules for Custom Channel.</p>
+        pub fn custom(
+            mut self,
+            k: crate::model::DayOfWeek,
+            v: std::vec::Vec<crate::model::OpenHoursRule>,
+        ) -> Self {
+            let mut hash_map = self.custom.unwrap_or_default();
+            hash_map.insert(k, v);
+            self.custom = Some(hash_map);
+            self
+        }
+        /// <p>Rules for Custom Channel.</p>
+        pub fn set_custom(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    crate::model::DayOfWeek,
+                    std::vec::Vec<crate::model::OpenHoursRule>,
+                >,
+            >,
+        ) -> Self {
+            self.custom = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpenHours`](crate::model::OpenHours).
+        pub fn build(self) -> crate::model::OpenHours {
+            crate::model::OpenHours {
+                email: self.email,
+                sms: self.sms,
+                push: self.push,
+                voice: self.voice,
+                custom: self.custom,
+            }
+        }
+    }
+}
+impl OpenHours {
+    /// Creates a new builder-style object to manufacture [`OpenHours`](crate::model::OpenHours).
+    pub fn builder() -> crate::model::open_hours::Builder {
+        crate::model::open_hours::Builder::default()
+    }
+}
+
+/// <p>List of OpenHours Rules.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OpenHoursRule {
+    /// <p>Local start time in ISO 8601 format.</p>
+    pub start_time: std::option::Option<std::string::String>,
+    /// <p>Local start time in ISO 8601 format.</p>
+    pub end_time: std::option::Option<std::string::String>,
+}
+impl OpenHoursRule {
+    /// <p>Local start time in ISO 8601 format.</p>
+    pub fn start_time(&self) -> std::option::Option<&str> {
+        self.start_time.as_deref()
+    }
+    /// <p>Local start time in ISO 8601 format.</p>
+    pub fn end_time(&self) -> std::option::Option<&str> {
+        self.end_time.as_deref()
+    }
+}
+impl std::fmt::Debug for OpenHoursRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OpenHoursRule");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`OpenHoursRule`](crate::model::OpenHoursRule).
+pub mod open_hours_rule {
+
+    /// A builder for [`OpenHoursRule`](crate::model::OpenHoursRule).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<std::string::String>,
+        pub(crate) end_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Local start time in ISO 8601 format.</p>
+        pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_time = Some(input.into());
+            self
+        }
+        /// <p>Local start time in ISO 8601 format.</p>
+        pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Local start time in ISO 8601 format.</p>
+        pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_time = Some(input.into());
+            self
+        }
+        /// <p>Local start time in ISO 8601 format.</p>
+        pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OpenHoursRule`](crate::model::OpenHoursRule).
+        pub fn build(self) -> crate::model::OpenHoursRule {
+            crate::model::OpenHoursRule {
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl OpenHoursRule {
+    /// Creates a new builder-style object to manufacture [`OpenHoursRule`](crate::model::OpenHoursRule).
+    pub fn builder() -> crate::model::open_hours_rule::Builder {
+        crate::model::open_hours_rule::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DayOfWeek {
+    #[allow(missing_docs)] // documentation missing in model
+    Friday,
+    #[allow(missing_docs)] // documentation missing in model
+    Monday,
+    #[allow(missing_docs)] // documentation missing in model
+    Saturday,
+    #[allow(missing_docs)] // documentation missing in model
+    Sunday,
+    #[allow(missing_docs)] // documentation missing in model
+    Thursday,
+    #[allow(missing_docs)] // documentation missing in model
+    Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DayOfWeek {
+    fn from(s: &str) -> Self {
+        match s {
+            "FRIDAY" => DayOfWeek::Friday,
+            "MONDAY" => DayOfWeek::Monday,
+            "SATURDAY" => DayOfWeek::Saturday,
+            "SUNDAY" => DayOfWeek::Sunday,
+            "THURSDAY" => DayOfWeek::Thursday,
+            "TUESDAY" => DayOfWeek::Tuesday,
+            "WEDNESDAY" => DayOfWeek::Wednesday,
+            other => DayOfWeek::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DayOfWeek {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DayOfWeek::from(s))
+    }
+}
+impl DayOfWeek {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DayOfWeek::Friday => "FRIDAY",
+            DayOfWeek::Monday => "MONDAY",
+            DayOfWeek::Saturday => "SATURDAY",
+            DayOfWeek::Sunday => "SUNDAY",
+            DayOfWeek::Thursday => "THURSDAY",
+            DayOfWeek::Tuesday => "TUESDAY",
+            DayOfWeek::Wednesday => "WEDNESDAY",
+            DayOfWeek::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FRIDAY",
+            "MONDAY",
+            "SATURDAY",
+            "SUNDAY",
+            "THURSDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+        ]
+    }
+}
+impl AsRef<str> for DayOfWeek {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -9368,6 +10165,12 @@ pub struct WriteJourneyRequest {
     pub refresh_on_segment_update: bool,
     /// <p>The channel-specific configurations for the journey.</p>
     pub journey_channel_settings: std::option::Option<crate::model::JourneyChannelSettings>,
+    /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+    pub sending_schedule: bool,
+    /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub open_hours: std::option::Option<crate::model::OpenHours>,
+    /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub closed_days: std::option::Option<crate::model::ClosedDays>,
 }
 impl WriteJourneyRequest {
     /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
@@ -9447,6 +10250,18 @@ impl WriteJourneyRequest {
     ) -> std::option::Option<&crate::model::JourneyChannelSettings> {
         self.journey_channel_settings.as_ref()
     }
+    /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+    pub fn sending_schedule(&self) -> bool {
+        self.sending_schedule
+    }
+    /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn open_hours(&self) -> std::option::Option<&crate::model::OpenHours> {
+        self.open_hours.as_ref()
+    }
+    /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+    pub fn closed_days(&self) -> std::option::Option<&crate::model::ClosedDays> {
+        self.closed_days.as_ref()
+    }
 }
 impl std::fmt::Debug for WriteJourneyRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9466,6 +10281,9 @@ impl std::fmt::Debug for WriteJourneyRequest {
         formatter.field("wait_for_quiet_time", &self.wait_for_quiet_time);
         formatter.field("refresh_on_segment_update", &self.refresh_on_segment_update);
         formatter.field("journey_channel_settings", &self.journey_channel_settings);
+        formatter.field("sending_schedule", &self.sending_schedule);
+        formatter.field("open_hours", &self.open_hours);
+        formatter.field("closed_days", &self.closed_days);
         formatter.finish()
     }
 }
@@ -9493,6 +10311,9 @@ pub mod write_journey_request {
         pub(crate) refresh_on_segment_update: std::option::Option<bool>,
         pub(crate) journey_channel_settings:
             std::option::Option<crate::model::JourneyChannelSettings>,
+        pub(crate) sending_schedule: std::option::Option<bool>,
+        pub(crate) open_hours: std::option::Option<crate::model::OpenHours>,
+        pub(crate) closed_days: std::option::Option<crate::model::ClosedDays>,
     }
     impl Builder {
         /// Adds a key-value pair to `activities`.
@@ -9714,6 +10535,42 @@ pub mod write_journey_request {
             self.journey_channel_settings = input;
             self
         }
+        /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+        pub fn sending_schedule(mut self, input: bool) -> Self {
+            self.sending_schedule = Some(input);
+            self
+        }
+        /// <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+        pub fn set_sending_schedule(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_schedule = input;
+            self
+        }
+        /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn open_hours(mut self, input: crate::model::OpenHours) -> Self {
+            self.open_hours = Some(input);
+            self
+        }
+        /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn set_open_hours(
+            mut self,
+            input: std::option::Option<crate::model::OpenHours>,
+        ) -> Self {
+            self.open_hours = input;
+            self
+        }
+        /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn closed_days(mut self, input: crate::model::ClosedDays) -> Self {
+            self.closed_days = Some(input);
+            self
+        }
+        /// <p>The time when journey will stop sending messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
+        pub fn set_closed_days(
+            mut self,
+            input: std::option::Option<crate::model::ClosedDays>,
+        ) -> Self {
+            self.closed_days = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
         pub fn build(self) -> crate::model::WriteJourneyRequest {
             crate::model::WriteJourneyRequest {
@@ -9732,6 +10589,9 @@ pub mod write_journey_request {
                 wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
                 refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
                 journey_channel_settings: self.journey_channel_settings,
+                sending_schedule: self.sending_schedule.unwrap_or_default(),
+                open_hours: self.open_hours,
+                closed_days: self.closed_days,
             }
         }
     }

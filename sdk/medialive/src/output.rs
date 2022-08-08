@@ -1724,6 +1724,36 @@ impl StartMultiplexOutput {
     }
 }
 
+/// Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartInputDeviceMaintenanceWindowOutput {}
+impl std::fmt::Debug for StartInputDeviceMaintenanceWindowOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartInputDeviceMaintenanceWindowOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+pub mod start_input_device_maintenance_window_output {
+
+    /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+        pub fn build(self) -> crate::output::StartInputDeviceMaintenanceWindowOutput {
+            crate::output::StartInputDeviceMaintenanceWindowOutput {}
+        }
+    }
+}
+impl StartInputDeviceMaintenanceWindowOutput {
+    /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+    pub fn builder() -> crate::output::start_input_device_maintenance_window_output::Builder {
+        crate::output::start_input_device_maintenance_window_output::Builder::default()
+    }
+}
+
 /// Placeholder documentation for StartChannelResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2213,6 +2243,36 @@ impl RejectInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
     pub fn builder() -> crate::output::reject_input_device_transfer_output::Builder {
         crate::output::reject_input_device_transfer_output::Builder::default()
+    }
+}
+
+/// Placeholder documentation for RebootInputDeviceResponse
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RebootInputDeviceOutput {}
+impl std::fmt::Debug for RebootInputDeviceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RebootInputDeviceOutput");
+        formatter.finish()
+    }
+}
+/// See [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+pub mod reboot_input_device_output {
+
+    /// A builder for [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+        pub fn build(self) -> crate::output::RebootInputDeviceOutput {
+            crate::output::RebootInputDeviceOutput {}
+        }
+    }
+}
+impl RebootInputDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+    pub fn builder() -> crate::output::reboot_input_device_output::Builder {
+        crate::output::reboot_input_device_output::Builder::default()
     }
 }
 

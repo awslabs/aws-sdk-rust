@@ -130,7 +130,7 @@ impl Client {
     /// - On success, responds with [`DescribeEntityOutput`](crate::output::DescribeEntityOutput) with field(s):
     ///   - [`entity_type(Option<String>)`](crate::output::DescribeEntityOutput::entity_type): <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     ///   - [`entity_identifier(Option<String>)`](crate::output::DescribeEntityOutput::entity_identifier): <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    ///   - [`entity_arn(Option<String>)`](crate::output::DescribeEntityOutput::entity_arn): <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+    ///   - [`entity_arn(Option<String>)`](crate::output::DescribeEntityOutput::entity_arn): <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     ///   - [`last_modified_date(Option<String>)`](crate::output::DescribeEntityOutput::last_modified_date): <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     ///   - [`details(Option<String>)`](crate::output::DescribeEntityOutput::details): <p>This stringified JSON object includes the details of the entity.</p>
     /// - On failure, responds with [`SdkError<DescribeEntityError>`](crate::error::DescribeEntityError)

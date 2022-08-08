@@ -6667,4 +6667,42 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ValidateE911AddressErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::UnauthorizedClientException(inner) => {
+                    Error::UnauthorizedClientException(inner)
+                }
+                crate::error::ValidateE911AddressErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

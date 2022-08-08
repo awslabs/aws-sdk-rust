@@ -95,7 +95,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_web_acl_arn): <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>  </ul>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>   <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput)
 
     /// - On failure, responds with [`SdkError<AssociateWebACLError>`](crate::error::AssociateWebACLError)
@@ -105,7 +105,7 @@ impl Client {
     /// Constructs a fluent builder for the [`CheckCapacity`](crate::client::fluent_builders::CheckCapacity) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::CheckCapacity::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CheckCapacity::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CheckCapacity::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CheckCapacity::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CheckCapacity::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CheckCapacity::set_rules): <p>An array of <code>Rule</code> that you're configuring to use in a rule group or web ACL. </p>
     /// - On success, responds with [`CheckCapacityOutput`](crate::output::CheckCapacityOutput) with field(s):
     ///   - [`capacity(i64)`](crate::output::CheckCapacityOutput::capacity): <p>The capacity required by the rules and scope.</p>
@@ -117,7 +117,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
     ///   - [`ip_address_version(IpAddressVersion)`](crate::client::fluent_builders::CreateIPSet::ip_address_version) / [`set_ip_address_version(Option<IpAddressVersion>)`](crate::client::fluent_builders::CreateIPSet::set_ip_address_version): <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::CreateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIPSet::set_addresses): <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Example address strings: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>  <p>Example JSON <code>Addresses</code> specifications: </p>  <ul>   <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>   <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>   <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>   <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>  </ul>
@@ -132,7 +132,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_description): <p>A description of the set that helps with identification. </p>
     ///   - [`regular_expression_list(Vec<Regex>)`](crate::client::fluent_builders::CreateRegexPatternSet::regular_expression_list) / [`set_regular_expression_list(Option<Vec<Regex>>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_regular_expression_list): <p>Array of regular expression strings. </p>
     ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRegexPatternSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRegexPatternSet::set_tags): <p>An array of key:value pairs to associate with the resource.</p>
@@ -146,7 +146,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`capacity(i64)`](crate::client::fluent_builders::CreateRuleGroup::capacity) / [`set_capacity(i64)`](crate::client::fluent_builders::CreateRuleGroup::set_capacity): <p>The web ACL capacity units (WCUs) required for this rule group.</p>  <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>  <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRuleGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRuleGroup::set_description): <p>A description of the rule group that helps with identification. </p>
     ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateRuleGroup::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateRuleGroup::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
@@ -163,7 +163,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::CreateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::CreateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`default_action(DefaultAction)`](crate::client::fluent_builders::CreateWebACL::default_action) / [`set_default_action(Option<DefaultAction>)`](crate::client::fluent_builders::CreateWebACL::set_default_action): <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWebACL::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWebACL::set_description): <p>A description of the web ACL that helps with identification. </p>
     ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::CreateWebACL::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::CreateWebACL::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
@@ -194,7 +194,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteIPSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteIPSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput)
@@ -227,7 +227,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteRegexPatternSet::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput)
@@ -240,7 +240,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteRuleGroup::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteRuleGroup::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
@@ -253,7 +253,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DeleteWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DeleteWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::DeleteWebACL::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::DeleteWebACL::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     /// - On success, responds with [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput)
@@ -267,7 +267,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`vendor_name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::vendor_name) / [`set_vendor_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_vendor_name): <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_name): <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::DescribeManagedRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::DescribeManagedRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`version_name(impl Into<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::version_name) / [`set_version_name(Option<String>)`](crate::client::fluent_builders::DescribeManagedRuleGroup::set_version_name): <p>The version of the rule group. You can only use a version that is not scheduled for expiration. If you don't provide this, WAF uses the vendor's default version. </p>
     /// - On success, responds with [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput) with field(s):
     ///   - [`version_name(Option<String>)`](crate::output::DescribeManagedRuleGroupOutput::version_name): <p>The managed rule group's version. </p>
@@ -284,7 +284,7 @@ impl Client {
     /// Constructs a fluent builder for the [`DisassociateWebACL`](crate::client::fluent_builders::DisassociateWebACL) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>  </ul>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebACL::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebACL::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web ACL. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>   <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWebACLError>`](crate::error::DisassociateWebACLError)
@@ -306,7 +306,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     /// - On success, responds with [`GetIpSetOutput`](crate::output::GetIpSetOutput) with field(s):
     ///   - [`ip_set(Option<IpSet>)`](crate::output::GetIpSetOutput::ip_set): <p></p>
@@ -329,7 +329,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetManagedRuleSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetManagedRuleSet::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetManagedRuleSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetManagedRuleSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetManagedRuleSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetManagedRuleSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetManagedRuleSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetManagedRuleSet::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     /// - On success, responds with [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput) with field(s):
     ///   - [`managed_rule_set(Option<ManagedRuleSet>)`](crate::output::GetManagedRuleSetOutput::managed_rule_set): <p>The managed rule set that you requested. </p>
@@ -362,7 +362,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetRateBasedStatementManagedKeys`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`web_acl_name(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::web_acl_name) / [`set_web_acl_name(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_web_acl_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_web_acl_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`rule_group_rule_name(impl Into<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::rule_group_rule_name) / [`set_rule_group_rule_name(Option<String>)`](crate::client::fluent_builders::GetRateBasedStatementManagedKeys::set_rule_group_rule_name): <p>The name of the rule group reference statement in your web ACL. This is required only when you have the rate-based rule nested inside a rule group. </p>
@@ -380,7 +380,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     /// - On success, responds with [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput) with field(s):
     ///   - [`regex_pattern_set(Option<RegexPatternSet>)`](crate::output::GetRegexPatternSetOutput::regex_pattern_set): <p></p>
@@ -393,7 +393,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRuleGroup::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRuleGroup::set_arn): <p>The Amazon Resource Name (ARN) of the entity.</p>
     /// - On success, responds with [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput) with field(s):
@@ -408,7 +408,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_web_acl_arn): <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
     ///   - [`rule_metric_name(impl Into<String>)`](crate::client::fluent_builders::GetSampledRequests::rule_metric_name) / [`set_rule_metric_name(Option<String>)`](crate::client::fluent_builders::GetSampledRequests::set_rule_metric_name): <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetSampledRequests::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetSampledRequests::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetSampledRequests::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetSampledRequests::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`time_window(TimeWindow)`](crate::client::fluent_builders::GetSampledRequests::time_window) / [`set_time_window(Option<TimeWindow>)`](crate::client::fluent_builders::GetSampledRequests::set_time_window): <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
     ///   - [`max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::max_items) / [`set_max_items(i64)`](crate::client::fluent_builders::GetSampledRequests::set_max_items): <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     /// - On success, responds with [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput) with field(s):
@@ -423,7 +423,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::GetWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::GetWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     /// - On success, responds with [`GetWebAclOutput`](crate::output::GetWebAclOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclOutput::web_acl): <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
@@ -436,7 +436,7 @@ impl Client {
     /// Constructs a fluent builder for the [`GetWebACLForResource`](crate::client::fluent_builders::GetWebACLForResource) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetWebACLForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetWebACLForResource::set_resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetWebACLForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetWebACLForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>  <p>The ARN must be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>   <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>   <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>  </ul>
     /// - On success, responds with [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput) with field(s):
     ///   - [`web_acl(Option<WebAcl>)`](crate::output::GetWebAclForResourceOutput::web_acl): <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     /// - On failure, responds with [`SdkError<GetWebACLForResourceError>`](crate::error::GetWebACLForResourceError)
@@ -446,7 +446,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListAvailableManagedRuleGroups`](crate::client::fluent_builders::ListAvailableManagedRuleGroups) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroups::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput) with field(s):
@@ -463,7 +463,7 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`vendor_name(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::vendor_name) / [`set_vendor_name(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_vendor_name): <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_name): <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListAvailableManagedRuleGroupVersions::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput) with field(s):
@@ -479,7 +479,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListIPSets`](crate::client::fluent_builders::ListIPSets) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListIPSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListIPSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListIPSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListIPSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListIPSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListIPSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListIPSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListIPSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListIpSetsOutput`](crate::output::ListIpSetsOutput) with field(s):
@@ -492,7 +492,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListLoggingConfigurations`](crate::client::fluent_builders::ListLoggingConfigurations) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListLoggingConfigurations::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListLoggingConfigurations::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput) with field(s):
@@ -505,7 +505,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListManagedRuleSets`](crate::client::fluent_builders::ListManagedRuleSets) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListManagedRuleSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListManagedRuleSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListManagedRuleSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListManagedRuleSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListManagedRuleSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListManagedRuleSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListManagedRuleSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListManagedRuleSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput) with field(s):
@@ -531,7 +531,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListRegexPatternSets`](crate::client::fluent_builders::ListRegexPatternSets) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRegexPatternSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRegexPatternSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRegexPatternSets::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRegexPatternSets::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRegexPatternSets::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRegexPatternSets::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListRegexPatternSets::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRegexPatternSets::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput) with field(s):
@@ -545,7 +545,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`web_acl_arn(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::web_acl_arn) / [`set_web_acl_arn(Option<String>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_web_acl_arn): <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListResourcesForWebACL::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_resource_type): <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    ///   - [`resource_type(ResourceType)`](crate::client::fluent_builders::ListResourcesForWebACL::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::client::fluent_builders::ListResourcesForWebACL::set_resource_type): <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// - On success, responds with [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput) with field(s):
     ///   - [`resource_arns(Option<Vec<String>>)`](crate::output::ListResourcesForWebAclOutput::resource_arns): <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     /// - On failure, responds with [`SdkError<ListResourcesForWebACLError>`](crate::error::ListResourcesForWebACLError)
@@ -555,7 +555,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListRuleGroups`](crate::client::fluent_builders::ListRuleGroups) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListRuleGroups::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListRuleGroups::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListRuleGroups::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListRuleGroups::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListRuleGroups::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListRuleGroups::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput) with field(s):
@@ -581,7 +581,7 @@ impl Client {
     /// Constructs a fluent builder for the [`ListWebACLs`](crate::client::fluent_builders::ListWebACLs) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListWebACLs::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListWebACLs::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::ListWebACLs::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::ListWebACLs::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`next_marker(impl Into<String>)`](crate::client::fluent_builders::ListWebACLs::next_marker) / [`set_next_marker(Option<String>)`](crate::client::fluent_builders::ListWebACLs::set_next_marker): <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     ///   - [`limit(i32)`](crate::client::fluent_builders::ListWebACLs::limit) / [`set_limit(Option<i32>)`](crate::client::fluent_builders::ListWebACLs::set_limit): <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// - On success, responds with [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput) with field(s):
@@ -605,7 +605,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutManagedRuleSetVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::PutManagedRuleSetVersions::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     ///   - [`recommended_version(impl Into<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::recommended_version) / [`set_recommended_version(Option<String>)`](crate::client::fluent_builders::PutManagedRuleSetVersions::set_recommended_version): <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
@@ -653,7 +653,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_name): <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateIPSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateIPSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIPSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIPSet::set_description): <p>A description of the IP set that helps with identification. </p>
     ///   - [`addresses(Vec<String>)`](crate::client::fluent_builders::UpdateIPSet::addresses) / [`set_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIPSet::set_addresses): <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>  <p>Example address strings: </p>  <ul>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>   <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>  </ul>  <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>  <p>Example JSON <code>Addresses</code> specifications: </p>  <ul>   <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>   <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>   <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>   <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>  </ul>
@@ -668,7 +668,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_name): <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>  <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_id): <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     ///   - [`lock_token(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::lock_token) / [`set_lock_token(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_lock_token): <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     ///   - [`version_to_expire(impl Into<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::version_to_expire) / [`set_version_to_expire(Option<String>)`](crate::client::fluent_builders::UpdateManagedRuleSetVersionExpiryDate::set_version_to_expire): <p>The version that you want to remove from your list of offerings for the named managed rule group. </p>
@@ -687,7 +687,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_name): <p>The name of the set. You cannot change the name after you create the set.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRegexPatternSet::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_id): <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_description): <p>A description of the set that helps with identification. </p>
     ///   - [`regular_expression_list(Vec<Regex>)`](crate::client::fluent_builders::UpdateRegexPatternSet::regular_expression_list) / [`set_regular_expression_list(Option<Vec<Regex>>)`](crate::client::fluent_builders::UpdateRegexPatternSet::set_regular_expression_list): <p></p>
@@ -702,7 +702,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_name): <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateRuleGroup::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateRuleGroup::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_id): <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRuleGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRuleGroup::set_description): <p>A description of the rule group that helps with identification. </p>
     ///   - [`rules(Vec<Rule>)`](crate::client::fluent_builders::UpdateRuleGroup::rules) / [`set_rules(Option<Vec<Rule>>)`](crate::client::fluent_builders::UpdateRuleGroup::set_rules): <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
@@ -719,7 +719,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_name): <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
-    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
+    ///   - [`scope(Scope)`](crate::client::fluent_builders::UpdateWebACL::scope) / [`set_scope(Option<Scope>)`](crate::client::fluent_builders::UpdateWebACL::set_scope): <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>  <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>  <ul>   <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>   <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>  </ul>
     ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_id): <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     ///   - [`default_action(DefaultAction)`](crate::client::fluent_builders::UpdateWebACL::default_action) / [`set_default_action(Option<DefaultAction>)`](crate::client::fluent_builders::UpdateWebACL::set_default_action): <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWebACL::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWebACL::set_description): <p>A description of the web ACL that helps with identification. </p>
@@ -744,7 +744,7 @@ pub mod fluent_builders {
     //! the `send` method can be called to initiate the request.
     /// Fluent builder constructing a request to `AssociateWebACL`.
     ///
-    /// <p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// <p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -802,6 +802,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
         /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
@@ -813,6 +814,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
         /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -862,7 +864,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -872,7 +874,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -952,7 +954,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -962,7 +964,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1112,7 +1114,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1122,7 +1124,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1230,7 +1232,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1240,7 +1242,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1352,7 +1354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWebACL`.
     ///
     /// <p>Creates a <code>WebACL</code> per the specifications provided.</p>
-    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
+    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebACL {
         handle: std::sync::Arc<super::Handle>,
@@ -1402,7 +1404,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1412,7 +1414,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1652,7 +1654,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1662,7 +1664,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1854,7 +1856,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1864,7 +1866,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1947,7 +1949,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -1957,7 +1959,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2055,7 +2057,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2065,7 +2067,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2158,7 +2160,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2168,7 +2170,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2191,7 +2193,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateWebACL`.
     ///
-    /// <p>Disassociates the specified regional application resource from any existing web ACL association. A resource can have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// <p>Disassociates the specified regional application resource from any existing web ACL association. A resource can have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     /// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebACL {
@@ -2238,6 +2240,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
         /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
@@ -2249,6 +2252,7 @@ pub mod fluent_builders {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
         /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -2374,7 +2378,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2384,7 +2388,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2515,7 +2519,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2525,7 +2529,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2711,7 +2715,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2721,7 +2725,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2827,7 +2831,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2837,7 +2841,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2910,7 +2914,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -2920,7 +2924,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3017,7 +3021,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_metric_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3027,7 +3031,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3113,7 +3117,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3123,7 +3127,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3186,12 +3190,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
+        /// <p>The ARN must be in one of the following formats:</p>
+        /// <ul>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose web ACL you want to retrieve. </p>
+        /// <p>The ARN must be in one of the following formats:</p>
+        /// <ul>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Amazon API Gateway REST API: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+        /// <li> <p>For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code> </p> </li>
+        /// <li> <p>For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code> </p> </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3239,7 +3257,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3249,7 +3267,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3344,7 +3362,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3354,7 +3372,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3427,7 +3445,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3437,7 +3455,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3510,7 +3528,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3520,7 +3538,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3596,7 +3614,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3606,7 +3624,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3753,7 +3771,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3763,7 +3781,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3846,12 +3864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -3902,7 +3920,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -3912,7 +3930,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4059,7 +4077,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4069,7 +4087,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4226,7 +4244,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4236,7 +4254,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4587,7 +4605,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4597,7 +4615,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4744,7 +4762,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4754,7 +4772,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4868,7 +4886,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4878,7 +4896,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -4992,7 +5010,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -5002,7 +5020,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -5106,7 +5124,7 @@ pub mod fluent_builders {
     /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p> <note>
     /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call. To modify the web ACL, retrieve it by calling <code>GetWebACL</code>, update the settings as needed, and then provide the complete web ACL specification to this call.</p>
     /// </note>
-    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
+    /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebACL {
         handle: std::sync::Arc<super::Handle>,
@@ -5156,7 +5174,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -5166,7 +5184,7 @@ pub mod fluent_builders {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
         /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
         /// <ul>
         /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>

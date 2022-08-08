@@ -14451,6 +14451,8 @@ pub mod update_event_configuration_by_resource_types_input {
         pub(crate) join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
         pub(crate) connection_status:
             std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+        pub(crate) message_delivery_status:
+            std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
@@ -14518,6 +14520,24 @@ pub mod update_event_configuration_by_resource_types_input {
             self.connection_status = input;
             self
         }
+        /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+        ) -> Self {
+            self.message_delivery_status = Some(input);
+            self
+        }
+        /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<
+                crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+            >,
+        ) -> Self {
+            self.message_delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput).
         pub fn build(
             self,
@@ -14530,6 +14550,7 @@ pub mod update_event_configuration_by_resource_types_input {
                 proximity: self.proximity,
                 join: self.join,
                 connection_status: self.connection_status,
+                message_delivery_status: self.message_delivery_status,
             })
         }
     }
@@ -15940,6 +15961,8 @@ pub mod update_resource_event_configuration_input {
         pub(crate) join: std::option::Option<crate::model::JoinEventConfiguration>,
         pub(crate) connection_status:
             std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        pub(crate) message_delivery_status:
+            std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
     }
     impl Builder {
         /// <p>Resource identifier to opt in for event messaging.</p>
@@ -16036,6 +16059,22 @@ pub mod update_resource_event_configuration_input {
             self.connection_status = input;
             self
         }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusEventConfiguration,
+        ) -> Self {
+            self.message_delivery_status = Some(input);
+            self
+        }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        ) -> Self {
+            self.message_delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput).
         pub fn build(
             self,
@@ -16051,6 +16090,7 @@ pub mod update_resource_event_configuration_input {
                 proximity: self.proximity,
                 join: self.join,
                 connection_status: self.connection_status,
+                message_delivery_status: self.message_delivery_status,
             })
         }
     }
@@ -16742,6 +16782,9 @@ pub struct UpdateResourceEventConfigurationInput {
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Event configuration for the connection status event.</p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub message_delivery_status:
+        std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
 impl UpdateResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
@@ -16776,6 +16819,12 @@ impl UpdateResourceEventConfigurationInput {
     ) -> std::option::Option<&crate::model::ConnectionStatusEventConfiguration> {
         self.connection_status.as_ref()
     }
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub fn message_delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
+        self.message_delivery_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16787,6 +16836,7 @@ impl std::fmt::Debug for UpdateResourceEventConfigurationInput {
         formatter.field("proximity", &self.proximity);
         formatter.field("join", &self.join);
         formatter.field("connection_status", &self.connection_status);
+        formatter.field("message_delivery_status", &self.message_delivery_status);
         formatter.finish()
     }
 }
@@ -17089,6 +17139,9 @@ pub struct UpdateEventConfigurationByResourceTypesInput {
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub connection_status:
         std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+    /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+    pub message_delivery_status:
+        std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
 impl UpdateEventConfigurationByResourceTypesInput {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
@@ -17114,6 +17167,13 @@ impl UpdateEventConfigurationByResourceTypesInput {
     ) -> std::option::Option<&crate::model::ConnectionStatusResourceTypeEventConfiguration> {
         self.connection_status.as_ref()
     }
+    /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+    pub fn message_delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>
+    {
+        self.message_delivery_status.as_ref()
+    }
 }
 impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -17122,6 +17182,7 @@ impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesInput {
         formatter.field("proximity", &self.proximity);
         formatter.field("join", &self.join);
         formatter.field("connection_status", &self.connection_status);
+        formatter.field("message_delivery_status", &self.message_delivery_status);
         formatter.finish()
     }
 }

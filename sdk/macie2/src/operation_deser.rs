@@ -5487,6 +5487,367 @@ pub fn parse_get_member_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_reveal_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRevealConfigurationOutput,
+    crate::error::GetRevealConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetRevealConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::GetRevealConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::GetRevealConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::GetRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::GetRevealConfigurationErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::GetRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::GetRevealConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetRevealConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_reveal_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetRevealConfigurationOutput,
+    crate::error::GetRevealConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_reveal_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_reveal_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetRevealConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sensitive_data_occurrences_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSensitiveDataOccurrencesOutput,
+    crate::error::GetSensitiveDataOccurrencesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetSensitiveDataOccurrencesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_quota_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ThrottlingException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnprocessableEntityException" => crate::error::GetSensitiveDataOccurrencesError {
+            meta: generic,
+            kind: crate::error::GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unprocessable_entity_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        _ => crate::error::GetSensitiveDataOccurrencesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sensitive_data_occurrences_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSensitiveDataOccurrencesOutput,
+    crate::error::GetSensitiveDataOccurrencesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_sensitive_data_occurrences_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_sensitive_data_occurrences(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sensitive_data_occurrences_availability_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSensitiveDataOccurrencesAvailabilityOutput,
+    crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetSensitiveDataOccurrencesAvailabilityError { meta: generic, kind: crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::GetSensitiveDataOccurrencesAvailabilityError { meta: generic, kind: crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::GetSensitiveDataOccurrencesAvailabilityError { meta: generic, kind: crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::GetSensitiveDataOccurrencesAvailabilityError { meta: generic, kind: crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetSensitiveDataOccurrencesAvailabilityError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_sensitive_data_occurrences_availability_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSensitiveDataOccurrencesAvailabilityOutput,
+    crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_sensitive_data_occurrences_availability_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_sensitive_data_occurrences_availability(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesAvailabilityError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_usage_statistics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -8411,6 +8772,118 @@ pub fn parse_update_organization_configuration_response(
         let mut output =
             crate::output::update_organization_configuration_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_reveal_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateRevealConfigurationOutput,
+    crate::error::UpdateRevealConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateRevealConfigurationError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateRevealConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerException" => crate::error::UpdateRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateRevealConfigurationErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ThrottlingException" => crate::error::UpdateRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateRevealConfigurationErrorKind::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateRevealConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateRevealConfigurationErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateRevealConfigurationError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_reveal_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateRevealConfigurationOutput,
+    crate::error::UpdateRevealConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_reveal_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_update_reveal_configuration(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateRevealConfigurationError::unhandled)?;
         output.build()
     })
 }

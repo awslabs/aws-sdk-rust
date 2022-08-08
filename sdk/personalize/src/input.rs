@@ -1351,6 +1351,7 @@ pub mod create_dataset_import_job_input {
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) import_mode: std::option::Option<crate::model::ImportMode>,
     }
     impl Builder {
         /// <p>The name for the dataset import job.</p>
@@ -1415,6 +1416,27 @@ pub mod create_dataset_import_job_input {
             self.tags = input;
             self
         }
+        /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
+        /// <ul>
+        /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
+        /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
+        /// </ul>
+        pub fn import_mode(mut self, input: crate::model::ImportMode) -> Self {
+            self.import_mode = Some(input);
+            self
+        }
+        /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
+        /// <ul>
+        /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
+        /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
+        /// </ul>
+        pub fn set_import_mode(
+            mut self,
+            input: std::option::Option<crate::model::ImportMode>,
+        ) -> Self {
+            self.import_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput).
         pub fn build(
             self,
@@ -1426,6 +1448,7 @@ pub mod create_dataset_import_job_input {
                 data_source: self.data_source,
                 role_arn: self.role_arn,
                 tags: self.tags,
+                import_mode: self.import_mode,
             })
         }
     }
@@ -11349,6 +11372,12 @@ pub struct CreateDatasetImportJobInput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset import job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
+    /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
+    /// </ul>
+    pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl CreateDatasetImportJobInput {
     /// <p>The name for the dataset import job.</p>
@@ -11371,6 +11400,14 @@ impl CreateDatasetImportJobInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p>Specify how to add the new records to an existing dataset. The default import mode is <code>FULL</code>. If you haven't imported bulk records into the dataset previously, you can only specify <code>FULL</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data you imported individually is not replaced.</p> </li>
+    /// <li> <p>Specify <code>INCREMENTAL</code> to append the new records to the existing data in your dataset. Amazon Personalize replaces any record with the same ID with the new one.</p> </li>
+    /// </ul>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
+        self.import_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateDatasetImportJobInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11380,6 +11417,7 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
         formatter.field("data_source", &self.data_source);
         formatter.field("role_arn", &self.role_arn);
         formatter.field("tags", &self.tags);
+        formatter.field("import_mode", &self.import_mode);
         formatter.finish()
     }
 }

@@ -4160,8 +4160,10 @@ pub struct EbsOptions {
     pub volume_type: std::option::Option<crate::model::VolumeType>,
     /// <p>Integer to specify the size of an EBS volume.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+    /// <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     pub iops: std::option::Option<i32>,
+    /// <p>The Throughput for GP3 EBS volume (SSD).</p>
+    pub throughput: std::option::Option<i32>,
 }
 impl EbsOptions {
     /// <p>Whether EBS-based storage is enabled.</p>
@@ -4176,9 +4178,13 @@ impl EbsOptions {
     pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+    /// <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
+    }
+    /// <p>The Throughput for GP3 EBS volume (SSD).</p>
+    pub fn throughput(&self) -> std::option::Option<i32> {
+        self.throughput
     }
 }
 impl std::fmt::Debug for EbsOptions {
@@ -4188,6 +4194,7 @@ impl std::fmt::Debug for EbsOptions {
         formatter.field("volume_type", &self.volume_type);
         formatter.field("volume_size", &self.volume_size);
         formatter.field("iops", &self.iops);
+        formatter.field("throughput", &self.throughput);
         formatter.finish()
     }
 }
@@ -4201,6 +4208,7 @@ pub mod ebs_options {
         pub(crate) volume_type: std::option::Option<crate::model::VolumeType>,
         pub(crate) volume_size: std::option::Option<i32>,
         pub(crate) iops: std::option::Option<i32>,
+        pub(crate) throughput: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Whether EBS-based storage is enabled.</p>
@@ -4236,14 +4244,24 @@ pub mod ebs_options {
             self.volume_size = input;
             self
         }
-        /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+        /// <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+        /// <p>The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
+            self
+        }
+        /// <p>The Throughput for GP3 EBS volume (SSD).</p>
+        pub fn throughput(mut self, input: i32) -> Self {
+            self.throughput = Some(input);
+            self
+        }
+        /// <p>The Throughput for GP3 EBS volume (SSD).</p>
+        pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.throughput = input;
             self
         }
         /// Consumes the builder and constructs a [`EbsOptions`](crate::model::EbsOptions).
@@ -4253,6 +4271,7 @@ pub mod ebs_options {
                 volume_type: self.volume_type,
                 volume_size: self.volume_size,
                 iops: self.iops,
+                throughput: self.throughput,
             }
         }
     }
@@ -4264,7 +4283,7 @@ impl EbsOptions {
     }
 }
 
-/// <p>The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.
+/// <p>The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.
 /// </p>
 #[non_exhaustive]
 #[derive(
@@ -4280,6 +4299,8 @@ pub enum VolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Gp2,
     #[allow(missing_docs)] // documentation missing in model
+    Gp3,
+    #[allow(missing_docs)] // documentation missing in model
     Io1,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
@@ -4290,6 +4311,7 @@ impl std::convert::From<&str> for VolumeType {
     fn from(s: &str) -> Self {
         match s {
             "gp2" => VolumeType::Gp2,
+            "gp3" => VolumeType::Gp3,
             "io1" => VolumeType::Io1,
             "standard" => VolumeType::Standard,
             other => VolumeType::Unknown(other.to_owned()),
@@ -4308,6 +4330,7 @@ impl VolumeType {
     pub fn as_str(&self) -> &str {
         match self {
             VolumeType::Gp2 => "gp2",
+            VolumeType::Gp3 => "gp3",
             VolumeType::Io1 => "io1",
             VolumeType::Standard => "standard",
             VolumeType::Unknown(s) => s.as_ref(),
@@ -4315,7 +4338,7 @@ impl VolumeType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["gp2", "io1", "standard"]
+        &["gp2", "gp3", "io1", "standard"]
     }
 }
 impl AsRef<str> for VolumeType {
@@ -9735,6 +9758,7 @@ pub struct StorageType {
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
+    /// <li>gp3</li>
     /// <li>io1</li>
     /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
     /// <p></p>
@@ -9756,6 +9780,7 @@ impl StorageType {
     /// <ol>
     /// <li>standard</li>
     /// <li>gp2</li>
+    /// <li>gp3</li>
     /// <li>io1</li>
     /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
     /// <p></p>
@@ -9815,6 +9840,7 @@ pub mod storage_type {
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
+        /// <li>gp3</li>
         /// <li>io1</li>
         /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
         /// <p></p>
@@ -9826,6 +9852,7 @@ pub mod storage_type {
         /// <ol>
         /// <li>standard</li>
         /// <li>gp2</li>
+        /// <li>gp3</li>
         /// <li>io1</li>
         /// </ol> See <code> <code>VolumeType</code> </code> for more information regarding each EBS storage option.
         /// <p></p>
@@ -9882,6 +9909,8 @@ pub struct StorageTypeLimit {
     /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
     /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
     /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
     /// </ol>
     /// <p></p>
     pub limit_name: std::option::Option<std::string::String>,
@@ -9895,6 +9924,8 @@ impl StorageTypeLimit {
     /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
     /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
     /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
+    /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
     /// </ol>
     /// <p></p>
     pub fn limit_name(&self) -> std::option::Option<&str> {
@@ -9929,6 +9960,8 @@ pub mod storage_type_limit {
         /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
         /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
         /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
         /// </ol>
         /// <p></p>
         pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9941,6 +9974,8 @@ pub mod storage_type_limit {
         /// <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be empty if not applicable.
         /// <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
         /// <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
+        /// <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be empty if not applicable.
         /// </ol>
         /// <p></p>
         pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {

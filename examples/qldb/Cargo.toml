@@ -10,11 +10,11 @@ version = "0.46.0"
 
 [dependencies.aws-sdk-qldb]
 path = "../../sdk/qldb"
-version = "0.16.0"
+version = "0.17.0"
 
 [dependencies.aws-sdk-qldbsession]
 path = "../../sdk/qldbsession"
-version = "0.16.0"
+version = "0.17.0"
 
 [dependencies.tokio]
 version = "1"

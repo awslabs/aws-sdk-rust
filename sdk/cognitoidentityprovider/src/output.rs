@@ -2431,12 +2431,12 @@ impl GlobalSignOutOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUserPoolMfaConfigOutput {
-    /// <p>The SMS text message multi-factor (MFA) configuration.</p>
+    /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
     pub sms_mfa_configuration: std::option::Option<crate::model::SmsMfaConfigType>,
-    /// <p>The software token multi-factor (MFA) configuration.</p>
+    /// <p>The software token multi-factor authentication (MFA) configuration.</p>
     pub software_token_mfa_configuration:
         std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
-    /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -2445,17 +2445,17 @@ pub struct GetUserPoolMfaConfigOutput {
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
 }
 impl GetUserPoolMfaConfigOutput {
-    /// <p>The SMS text message multi-factor (MFA) configuration.</p>
+    /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
     pub fn sms_mfa_configuration(&self) -> std::option::Option<&crate::model::SmsMfaConfigType> {
         self.sms_mfa_configuration.as_ref()
     }
-    /// <p>The software token multi-factor (MFA) configuration.</p>
+    /// <p>The software token multi-factor authentication (MFA) configuration.</p>
     pub fn software_token_mfa_configuration(
         &self,
     ) -> std::option::Option<&crate::model::SoftwareTokenMfaConfigType> {
         self.software_token_mfa_configuration.as_ref()
     }
-    /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+    /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
     /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
     /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -2489,12 +2489,12 @@ pub mod get_user_pool_mfa_config_output {
         pub(crate) mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
     }
     impl Builder {
-        /// <p>The SMS text message multi-factor (MFA) configuration.</p>
+        /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
         pub fn sms_mfa_configuration(mut self, input: crate::model::SmsMfaConfigType) -> Self {
             self.sms_mfa_configuration = Some(input);
             self
         }
-        /// <p>The SMS text message multi-factor (MFA) configuration.</p>
+        /// <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
         pub fn set_sms_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SmsMfaConfigType>,
@@ -2502,7 +2502,7 @@ pub mod get_user_pool_mfa_config_output {
             self.sms_mfa_configuration = input;
             self
         }
-        /// <p>The software token multi-factor (MFA) configuration.</p>
+        /// <p>The software token multi-factor authentication (MFA) configuration.</p>
         pub fn software_token_mfa_configuration(
             mut self,
             input: crate::model::SoftwareTokenMfaConfigType,
@@ -2510,7 +2510,7 @@ pub mod get_user_pool_mfa_config_output {
             self.software_token_mfa_configuration = Some(input);
             self
         }
-        /// <p>The software token multi-factor (MFA) configuration.</p>
+        /// <p>The software token multi-factor authentication (MFA) configuration.</p>
         pub fn set_software_token_mfa_configuration(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaConfigType>,
@@ -2518,7 +2518,7 @@ pub mod get_user_pool_mfa_config_output {
             self.software_token_mfa_configuration = input;
             self
         }
-        /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+        /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -2528,7 +2528,7 @@ pub mod get_user_pool_mfa_config_output {
             self.mfa_configuration = Some(input);
             self
         }
-        /// <p>The multi-factor (MFA) configuration. Valid values include:</p>
+        /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
         /// <ul>
         /// <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>
         /// <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>
@@ -4418,13 +4418,13 @@ impl ChangePasswordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     pub secret_code: std::option::Option<std::string::String>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub session: std::option::Option<std::string::String>,
 }
 impl AssociateSoftwareTokenOutput {
-    /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
+    /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     pub fn secret_code(&self) -> std::option::Option<&str> {
         self.secret_code.as_deref()
     }
@@ -4451,12 +4451,12 @@ pub mod associate_software_token_output {
         pub(crate) session: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
+        /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
         pub fn secret_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_code = Some(input.into());
             self
         }
-        /// <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
+        /// <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
         pub fn set_secret_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_code = input;
             self

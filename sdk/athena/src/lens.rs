@@ -29,6 +29,16 @@ pub(crate) fn reflens_structure_crate_output_list_data_catalogs_output_next_toke
     Some(input)
 }
 
+pub(crate) fn reflens_structure_crate_output_list_engine_versions_output_next_token(
+    input: &crate::output::ListEngineVersionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_structure_crate_output_list_named_queries_output_next_token(
     input: &crate::output::ListNamedQueriesOutput,
 ) -> std::option::Option<&std::string::String> {

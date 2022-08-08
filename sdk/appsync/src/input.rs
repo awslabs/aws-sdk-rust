@@ -3531,6 +3531,159 @@ impl DisassociateApiInput {
     }
 }
 
+/// See [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
+pub mod evaluate_mapping_template_input {
+
+    /// A builder for [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) template: std::option::Option<std::string::String>,
+        pub(crate) context: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template = Some(input.into());
+            self
+        }
+        /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+        pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template = input;
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.context = Some(input.into());
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.context = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::EvaluateMappingTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::EvaluateMappingTemplateInput {
+                template: self.template,
+                context: self.context,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type EvaluateMappingTemplateInputOperationOutputAlias =
+    crate::operation::EvaluateMappingTemplate;
+#[doc(hidden)]
+pub type EvaluateMappingTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl EvaluateMappingTemplateInput {
+    /// Consumes the builder and constructs an Operation<[`EvaluateMappingTemplate`](crate::operation::EvaluateMappingTemplate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EvaluateMappingTemplate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::EvaluateMappingTemplateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/v1/dataplane-evaluatetemplate")
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::EvaluateMappingTemplateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_evaluate_mapping_template(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EvaluateMappingTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EvaluateMappingTemplate",
+            "appsync",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
+    pub fn builder() -> crate::input::evaluate_mapping_template_input::Builder {
+        crate::input::evaluate_mapping_template_input::Builder::default()
+    }
+}
+
 /// See [`FlushApiCacheInput`](crate::input::FlushApiCacheInput).
 pub mod flush_api_cache_input {
 
@@ -10666,6 +10819,34 @@ impl std::fmt::Debug for FlushApiCacheInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FlushApiCacheInput");
         formatter.field("api_id", &self.api_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluateMappingTemplateInput {
+    /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    pub template: std::option::Option<std::string::String>,
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub context: std::option::Option<std::string::String>,
+}
+impl EvaluateMappingTemplateInput {
+    /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    pub fn template(&self) -> std::option::Option<&str> {
+        self.template.as_deref()
+    }
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub fn context(&self) -> std::option::Option<&str> {
+        self.context.as_deref()
+    }
+}
+impl std::fmt::Debug for EvaluateMappingTemplateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluateMappingTemplateInput");
+        formatter.field("template", &self.template);
+        formatter.field("context", &self.context);
         formatter.finish()
     }
 }

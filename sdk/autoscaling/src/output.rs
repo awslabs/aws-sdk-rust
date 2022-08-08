@@ -1640,13 +1640,13 @@ impl DescribeNotificationConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricCollectionTypesOutput {
-    /// <p>One or more metrics.</p>
+    /// <p>The metrics.</p>
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricCollectionType>>,
     /// <p>The granularities for the metrics.</p>
     pub granularities: std::option::Option<std::vec::Vec<crate::model::MetricGranularityType>>,
 }
 impl DescribeMetricCollectionTypesOutput {
-    /// <p>One or more metrics.</p>
+    /// <p>The metrics.</p>
     pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricCollectionType]> {
         self.metrics.as_deref()
     }
@@ -1678,14 +1678,14 @@ pub mod describe_metric_collection_types_output {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>One or more metrics.</p>
+        /// <p>The metrics.</p>
         pub fn metrics(mut self, input: crate::model::MetricCollectionType) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input);
             self.metrics = Some(v);
             self
         }
-        /// <p>One or more metrics.</p>
+        /// <p>The metrics.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricCollectionType>>,
@@ -2119,13 +2119,13 @@ impl DescribeLaunchConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceRefreshesOutput {
-    /// <p>The instance refreshes for the specified group.</p>
+    /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     pub instance_refreshes: std::option::Option<std::vec::Vec<crate::model::InstanceRefresh>>,
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceRefreshesOutput {
-    /// <p>The instance refreshes for the specified group.</p>
+    /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     pub fn instance_refreshes(&self) -> std::option::Option<&[crate::model::InstanceRefresh]> {
         self.instance_refreshes.as_deref()
     }
@@ -2157,14 +2157,14 @@ pub mod describe_instance_refreshes_output {
         ///
         /// To override the contents of this collection use [`set_instance_refreshes`](Self::set_instance_refreshes).
         ///
-        /// <p>The instance refreshes for the specified group.</p>
+        /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
         pub fn instance_refreshes(mut self, input: crate::model::InstanceRefresh) -> Self {
             let mut v = self.instance_refreshes.unwrap_or_default();
             v.push(input);
             self.instance_refreshes = Some(v);
             self
         }
-        /// <p>The instance refreshes for the specified group.</p>
+        /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
         pub fn set_instance_refreshes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceRefresh>>,

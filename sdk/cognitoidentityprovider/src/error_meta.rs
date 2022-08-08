@@ -17,6 +17,8 @@ pub enum Error {
     EnableSoftwareTokenMfaException(crate::error::EnableSoftwareTokenMfaException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
+    /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
+    ForbiddenException(crate::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
     GroupExistsException(crate::error::GroupExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
@@ -98,6 +100,7 @@ impl std::fmt::Display for Error {
             Error::DuplicateProviderException(inner) => inner.fmt(f),
             Error::EnableSoftwareTokenMfaException(inner) => inner.fmt(f),
             Error::ExpiredCodeException(inner) => inner.fmt(f),
+            Error::ForbiddenException(inner) => inner.fmt(f),
             Error::GroupExistsException(inner) => inner.fmt(f),
             Error::InternalErrorException(inner) => inner.fmt(f),
             Error::InvalidEmailRoleAccessPolicyException(inner) => inner.fmt(f),
@@ -1040,6 +1043,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AssociateSoftwareTokenErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+                crate::error::AssociateSoftwareTokenErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::AssociateSoftwareTokenErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::AssociateSoftwareTokenErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::AssociateSoftwareTokenErrorKind::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
@@ -1058,6 +1062,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ChangePasswordError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ChangePasswordErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::ChangePasswordErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -1101,6 +1108,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ConfirmDeviceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ConfirmDeviceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::ConfirmDeviceErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -1158,6 +1168,9 @@ where
                 }
                 crate::error::ConfirmForgotPasswordErrorKind::ExpiredCodeException(inner) => {
                     Error::ExpiredCodeException(inner)
+                }
+                crate::error::ConfirmForgotPasswordErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
                 crate::error::ConfirmForgotPasswordErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
@@ -1221,6 +1234,9 @@ where
                 }
                 crate::error::ConfirmSignUpErrorKind::ExpiredCodeException(inner) => {
                     Error::ExpiredCodeException(inner)
+                }
+                crate::error::ConfirmSignUpErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
                 crate::error::ConfirmSignUpErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
@@ -1613,6 +1629,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteUserErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::DeleteUserErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -1653,6 +1672,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteUserAttributesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::DeleteUserAttributesErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2005,6 +2027,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ForgetDeviceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ForgetDeviceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::ForgetDeviceErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2047,6 +2072,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ForgotPasswordErrorKind::CodeDeliveryFailureException(inner) => {
                     Error::CodeDeliveryFailureException(inner)
+                }
+                crate::error::ForgotPasswordErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
                 crate::error::ForgotPasswordErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
@@ -2128,6 +2156,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDeviceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetDeviceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::GetDeviceErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2280,6 +2311,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetUserError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetUserErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::GetUserErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2325,6 +2359,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::GetUserAttributeVerificationCodeErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+                crate::error::GetUserAttributeVerificationCodeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::GetUserAttributeVerificationCodeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
                 crate::error::GetUserAttributeVerificationCodeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
@@ -2386,6 +2421,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GlobalSignOutError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GlobalSignOutErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::GlobalSignOutErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2420,6 +2458,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InitiateAuthError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::InitiateAuthErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::InitiateAuthErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2475,6 +2516,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDevicesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListDevicesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::ListDevicesErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2793,6 +2837,7 @@ where
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ResendConfirmationCodeErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
+                crate::error::ResendConfirmationCodeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::ResendConfirmationCodeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::ResendConfirmationCodeErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
                 crate::error::ResendConfirmationCodeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
@@ -2825,6 +2870,7 @@ where
                 crate::error::RespondToAuthChallengeErrorKind::AliasExistsException(inner) => Error::AliasExistsException(inner),
                 crate::error::RespondToAuthChallengeErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
                 crate::error::RespondToAuthChallengeErrorKind::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+                crate::error::RespondToAuthChallengeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::RespondToAuthChallengeErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::RespondToAuthChallengeErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
                 crate::error::RespondToAuthChallengeErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -2855,6 +2901,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RevokeTokenError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::RevokeTokenErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::RevokeTokenErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -2945,6 +2994,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SetUserMFAPreferenceErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::SetUserMFAPreferenceErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -3004,6 +3056,9 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetUserSettingsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::SetUserSettingsErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
                 crate::error::SetUserSettingsErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
                 }
@@ -3040,6 +3095,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SignUpErrorKind::CodeDeliveryFailureException(inner) => {
                     Error::CodeDeliveryFailureException(inner)
+                }
+                crate::error::SignUpErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
                 crate::error::SignUpErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)
@@ -3244,6 +3302,7 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateDeviceStatusErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::UpdateDeviceStatusErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::UpdateDeviceStatusErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::UpdateDeviceStatusErrorKind::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
@@ -3356,6 +3415,7 @@ where
                 crate::error::UpdateUserAttributesErrorKind::CodeDeliveryFailureException(inner) => Error::CodeDeliveryFailureException(inner),
                 crate::error::UpdateUserAttributesErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
                 crate::error::UpdateUserAttributesErrorKind::ExpiredCodeException(inner) => Error::ExpiredCodeException(inner),
+                crate::error::UpdateUserAttributesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::UpdateUserAttributesErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::UpdateUserAttributesErrorKind::InvalidEmailRoleAccessPolicyException(inner) => Error::InvalidEmailRoleAccessPolicyException(inner),
                 crate::error::UpdateUserAttributesErrorKind::InvalidLambdaResponseException(inner) => Error::InvalidLambdaResponseException(inner),
@@ -3508,6 +3568,7 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::VerifySoftwareTokenErrorKind::CodeMismatchException(inner) => Error::CodeMismatchException(inner),
                 crate::error::VerifySoftwareTokenErrorKind::EnableSoftwareTokenMfaException(inner) => Error::EnableSoftwareTokenMfaException(inner),
+                crate::error::VerifySoftwareTokenErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
                 crate::error::VerifySoftwareTokenErrorKind::InternalErrorException(inner) => Error::InternalErrorException(inner),
                 crate::error::VerifySoftwareTokenErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::VerifySoftwareTokenErrorKind::InvalidUserPoolConfigurationException(inner) => Error::InvalidUserPoolConfigurationException(inner),
@@ -3541,6 +3602,9 @@ where
                 }
                 crate::error::VerifyUserAttributeErrorKind::ExpiredCodeException(inner) => {
                     Error::ExpiredCodeException(inner)
+                }
+                crate::error::VerifyUserAttributeErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
                 }
                 crate::error::VerifyUserAttributeErrorKind::InternalErrorException(inner) => {
                     Error::InternalErrorException(inner)

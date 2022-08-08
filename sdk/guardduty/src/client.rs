@@ -311,6 +311,22 @@ impl Client {
     pub fn delete_threat_intel_set(&self) -> fluent_builders::DeleteThreatIntelSet {
         fluent_builders::DeleteThreatIntelSet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`DescribeMalwareScans`](crate::client::fluent_builders::DescribeMalwareScans) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeMalwareScans::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::DescribeMalwareScans::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::DescribeMalwareScans::set_detector_id): <p>The unique ID of the detector that the request is associated with.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeMalwareScans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeMalwareScans::set_next_token): <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeMalwareScans::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeMalwareScans::set_max_results): <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+    ///   - [`filter_criteria(FilterCriteria)`](crate::client::fluent_builders::DescribeMalwareScans::filter_criteria) / [`set_filter_criteria(Option<FilterCriteria>)`](crate::client::fluent_builders::DescribeMalwareScans::set_filter_criteria): <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+    ///   - [`sort_criteria(SortCriteria)`](crate::client::fluent_builders::DescribeMalwareScans::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::client::fluent_builders::DescribeMalwareScans::set_sort_criteria): <p>Represents the criteria used for sorting scan entries.</p>
+    /// - On success, responds with [`DescribeMalwareScansOutput`](crate::output::DescribeMalwareScansOutput) with field(s):
+    ///   - [`scans(Option<Vec<Scan>>)`](crate::output::DescribeMalwareScansOutput::scans): <p>Contains information about malware scans.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMalwareScansOutput::next_token): <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    /// - On failure, responds with [`SdkError<DescribeMalwareScansError>`](crate::error::DescribeMalwareScansError)
+    pub fn describe_malware_scans(&self) -> fluent_builders::DescribeMalwareScans {
+        fluent_builders::DescribeMalwareScans::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
     /// - The fluent builder is configurable:
@@ -491,6 +507,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetIPSetError>`](crate::error::GetIPSetError)
     pub fn get_ip_set(&self) -> fluent_builders::GetIPSet {
         fluent_builders::GetIPSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetMalwareScanSettings`](crate::client::fluent_builders::GetMalwareScanSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::GetMalwareScanSettings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::GetMalwareScanSettings::set_detector_id): <p>The unique ID of the detector that the scan setting is associated with.</p>
+    /// - On success, responds with [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput) with field(s):
+    ///   - [`scan_resource_criteria(Option<ScanResourceCriteria>)`](crate::output::GetMalwareScanSettingsOutput::scan_resource_criteria): <p>Represents the criteria to be used in the filter for scanning resources.</p>
+    ///   - [`ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::output::GetMalwareScanSettingsOutput::ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservations.</p>
+    /// - On failure, responds with [`SdkError<GetMalwareScanSettingsError>`](crate::error::GetMalwareScanSettingsError)
+    pub fn get_malware_scan_settings(&self) -> fluent_builders::GetMalwareScanSettings {
+        fluent_builders::GetMalwareScanSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) operation.
     ///
@@ -830,6 +857,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<UpdateIPSetError>`](crate::error::UpdateIPSetError)
     pub fn update_ip_set(&self) -> fluent_builders::UpdateIPSet {
         fluent_builders::UpdateIPSet::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateMalwareScanSettings`](crate::client::fluent_builders::UpdateMalwareScanSettings) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`detector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::detector_id) / [`set_detector_id(Option<String>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_detector_id): <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+    ///   - [`scan_resource_criteria(ScanResourceCriteria)`](crate::client::fluent_builders::UpdateMalwareScanSettings::scan_resource_criteria) / [`set_scan_resource_criteria(Option<ScanResourceCriteria>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_scan_resource_criteria): <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+    ///   - [`ebs_snapshot_preservation(EbsSnapshotPreservation)`](crate::client::fluent_builders::UpdateMalwareScanSettings::ebs_snapshot_preservation) / [`set_ebs_snapshot_preservation(Option<EbsSnapshotPreservation>)`](crate::client::fluent_builders::UpdateMalwareScanSettings::set_ebs_snapshot_preservation): <p>An enum value representing possible snapshot preservations.</p>
+    /// - On success, responds with [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMalwareScanSettingsError>`](crate::error::UpdateMalwareScanSettingsError)
+    pub fn update_malware_scan_settings(&self) -> fluent_builders::UpdateMalwareScanSettings {
+        fluent_builders::UpdateMalwareScanSettings::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateMemberDetectors`](crate::client::fluent_builders::UpdateMemberDetectors) operation.
     ///
@@ -2487,6 +2526,111 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeMalwareScans`.
+    ///
+    /// <p>Returns a list of malware scans.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeMalwareScans {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_malware_scans_input::Builder,
+    }
+    impl DescribeMalwareScans {
+        /// Creates a new `DescribeMalwareScans`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeMalwareScansOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeMalwareScansError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMalwareScansPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeMalwareScansPaginator {
+            crate::paginator::DescribeMalwareScansPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that the request is associated with.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for describing scan entries.</p>
+        pub fn set_filter_criteria(
+            mut self,
+            input: std::option::Option<crate::model::FilterCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_filter_criteria(input);
+            self
+        }
+        /// <p>Represents the criteria used for sorting scan entries.</p>
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
+            self
+        }
+        /// <p>Represents the criteria used for sorting scan entries.</p>
+        pub fn set_sort_criteria(
+            mut self,
+            input: std::option::Option<crate::model::SortCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_criteria(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
     ///
     /// <p>Returns information about the account selected as the delegated administrator for GuardDuty.</p>
@@ -3337,6 +3481,59 @@ pub mod fluent_builders {
         /// <p>The unique ID of the IPSet to retrieve.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip_set_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetMalwareScanSettings`.
+    ///
+    /// <p>Returns the details of the malware scan settings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetMalwareScanSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_malware_scan_settings_input::Builder,
+    }
+    impl GetMalwareScanSettings {
+        /// Creates a new `GetMalwareScanSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMalwareScanSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetMalwareScanSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that the scan setting is associated with.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
             self
         }
     }
@@ -5484,6 +5681,88 @@ pub mod fluent_builders {
         /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
         pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_activate(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateMalwareScanSettings`.
+    ///
+    /// <p>Updates the malware scan settings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateMalwareScanSettings {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_malware_scan_settings_input::Builder,
+    }
+    impl UpdateMalwareScanSettings {
+        /// Creates a new `UpdateMalwareScanSettings`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateMalwareScanSettingsOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateMalwareScanSettingsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+        pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.detector_id(input.into());
+            self
+        }
+        /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.</p>
+        pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_detector_id(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+        pub fn scan_resource_criteria(mut self, input: crate::model::ScanResourceCriteria) -> Self {
+            self.inner = self.inner.scan_resource_criteria(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for selecting resources to scan.</p>
+        pub fn set_scan_resource_criteria(
+            mut self,
+            input: std::option::Option<crate::model::ScanResourceCriteria>,
+        ) -> Self {
+            self.inner = self.inner.set_scan_resource_criteria(input);
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn ebs_snapshot_preservation(
+            mut self,
+            input: crate::model::EbsSnapshotPreservation,
+        ) -> Self {
+            self.inner = self.inner.ebs_snapshot_preservation(input);
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn set_ebs_snapshot_preservation(
+            mut self,
+            input: std::option::Option<crate::model::EbsSnapshotPreservation>,
+        ) -> Self {
+            self.inner = self.inner.set_ebs_snapshot_preservation(input);
             self
         }
     }

@@ -4886,14 +4886,14 @@ impl ListRoleAliasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningTemplateVersionsOutput {
-    /// <p>The list of fleet provisioning template versions.</p>
+    /// <p>The list of provisioning template versions.</p>
     pub versions:
         std::option::Option<std::vec::Vec<crate::model::ProvisioningTemplateVersionSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningTemplateVersionsOutput {
-    /// <p>The list of fleet provisioning template versions.</p>
+    /// <p>The list of provisioning template versions.</p>
     pub fn versions(
         &self,
     ) -> std::option::Option<&[crate::model::ProvisioningTemplateVersionSummary]> {
@@ -4927,14 +4927,14 @@ pub mod list_provisioning_template_versions_output {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>The list of fleet provisioning template versions.</p>
+        /// <p>The list of provisioning template versions.</p>
         pub fn versions(mut self, input: crate::model::ProvisioningTemplateVersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
             v.push(input);
             self.versions = Some(v);
             self
         }
-        /// <p>The list of fleet provisioning template versions.</p>
+        /// <p>The list of provisioning template versions.</p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<
@@ -4974,13 +4974,13 @@ impl ListProvisioningTemplateVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningTemplatesOutput {
-    /// <p>A list of fleet provisioning templates</p>
+    /// <p>A list of provisioning templates</p>
     pub templates: std::option::Option<std::vec::Vec<crate::model::ProvisioningTemplateSummary>>,
     /// <p>A token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningTemplatesOutput {
-    /// <p>A list of fleet provisioning templates</p>
+    /// <p>A list of provisioning templates</p>
     pub fn templates(&self) -> std::option::Option<&[crate::model::ProvisioningTemplateSummary]> {
         self.templates.as_deref()
     }
@@ -5012,14 +5012,14 @@ pub mod list_provisioning_templates_output {
         ///
         /// To override the contents of this collection use [`set_templates`](Self::set_templates).
         ///
-        /// <p>A list of fleet provisioning templates</p>
+        /// <p>A list of provisioning templates</p>
         pub fn templates(mut self, input: crate::model::ProvisioningTemplateSummary) -> Self {
             let mut v = self.templates.unwrap_or_default();
             v.push(input);
             self.templates = Some(v);
             self
         }
-        /// <p>A list of fleet provisioning templates</p>
+        /// <p>A list of provisioning templates</p>
         pub fn set_templates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProvisioningTemplateSummary>>,
@@ -10861,29 +10861,29 @@ impl DescribeRoleAliasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningTemplateVersionOutput {
-    /// <p>The fleet provisioning template version ID.</p>
+    /// <p>The provisioning template version ID.</p>
     pub version_id: std::option::Option<i32>,
-    /// <p>The date when the fleet provisioning template version was created.</p>
+    /// <p>The date when the provisioning template version was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
+    /// <p>The JSON formatted contents of the provisioning template version.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>True if the fleet provisioning template version is the default version.</p>
+    /// <p>True if the provisioning template version is the default version.</p>
     pub is_default_version: bool,
 }
 impl DescribeProvisioningTemplateVersionOutput {
-    /// <p>The fleet provisioning template version ID.</p>
+    /// <p>The provisioning template version ID.</p>
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
-    /// <p>The date when the fleet provisioning template version was created.</p>
+    /// <p>The date when the provisioning template version was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
+    /// <p>The JSON formatted contents of the provisioning template version.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>True if the fleet provisioning template version is the default version.</p>
+    /// <p>True if the provisioning template version is the default version.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
     }
@@ -10910,22 +10910,22 @@ pub mod describe_provisioning_template_version_output {
         pub(crate) is_default_version: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.version_id = Some(input);
             self
         }
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>The date when the fleet provisioning template version was created.</p>
+        /// <p>The date when the provisioning template version was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template version was created.</p>
+        /// <p>The date when the provisioning template version was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10933,12 +10933,12 @@ pub mod describe_provisioning_template_version_output {
             self.creation_date = input;
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
+        /// <p>The JSON formatted contents of the provisioning template version.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template version.</p>
+        /// <p>The JSON formatted contents of the provisioning template version.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10946,12 +10946,12 @@ pub mod describe_provisioning_template_version_output {
             self.template_body = input;
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version.</p>
+        /// <p>True if the provisioning template version is the default version.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version.</p>
+        /// <p>True if the provisioning template version is the default version.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -10978,45 +10978,47 @@ impl DescribeProvisioningTemplateVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningTemplateOutput {
-    /// <p>The ARN of the fleet provisioning template.</p>
+    /// <p>The ARN of the provisioning template.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The date when the fleet provisioning template was created.</p>
+    /// <p>The date when the provisioning template was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the fleet provisioning template was last modified.</p>
+    /// <p>The date when the provisioning template was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The default fleet template version ID.</p>
     pub default_version_id: std::option::Option<i32>,
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>True if the fleet provisioning template is enabled, otherwise false.</p>
+    /// <p>True if the provisioning template is enabled, otherwise false.</p>
     pub enabled: bool,
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub r#type: std::option::Option<crate::model::TemplateType>,
 }
 impl DescribeProvisioningTemplateOutput {
-    /// <p>The ARN of the fleet provisioning template.</p>
+    /// <p>The ARN of the provisioning template.</p>
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date when the fleet provisioning template was created.</p>
+    /// <p>The date when the provisioning template was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The date when the fleet provisioning template was last modified.</p>
+    /// <p>The date when the provisioning template was last modified.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -11024,11 +11026,11 @@ impl DescribeProvisioningTemplateOutput {
     pub fn default_version_id(&self) -> std::option::Option<i32> {
         self.default_version_id
     }
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>True if the fleet provisioning template is enabled, otherwise false.</p>
+    /// <p>True if the provisioning template is enabled, otherwise false.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -11039,6 +11041,10 @@ impl DescribeProvisioningTemplateOutput {
     /// <p>Gets information about a pre-provisioned hook.</p>
     pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
+    }
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.r#type.as_ref()
     }
 }
 impl std::fmt::Debug for DescribeProvisioningTemplateOutput {
@@ -11054,6 +11060,7 @@ impl std::fmt::Debug for DescribeProvisioningTemplateOutput {
         formatter.field("enabled", &self.enabled);
         formatter.field("provisioning_role_arn", &self.provisioning_role_arn);
         formatter.field("pre_provisioning_hook", &self.pre_provisioning_hook);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -11073,24 +11080,25 @@ pub mod describe_provisioning_template_output {
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) provisioning_role_arn: std::option::Option<std::string::String>,
         pub(crate) pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
+        pub(crate) r#type: std::option::Option<crate::model::TemplateType>,
     }
     impl Builder {
-        /// <p>The ARN of the fleet provisioning template.</p>
+        /// <p>The ARN of the provisioning template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the fleet provisioning template.</p>
+        /// <p>The ARN of the provisioning template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11098,22 +11106,22 @@ pub mod describe_provisioning_template_output {
             self.template_name = input;
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The date when the fleet provisioning template was created.</p>
+        /// <p>The date when the provisioning template was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template was created.</p>
+        /// <p>The date when the provisioning template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11121,12 +11129,12 @@ pub mod describe_provisioning_template_output {
             self.creation_date = input;
             self
         }
-        /// <p>The date when the fleet provisioning template was last modified.</p>
+        /// <p>The date when the provisioning template was last modified.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template was last modified.</p>
+        /// <p>The date when the provisioning template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11144,12 +11152,12 @@ pub mod describe_provisioning_template_output {
             self.default_version_id = input;
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11157,12 +11165,12 @@ pub mod describe_provisioning_template_output {
             self.template_body = input;
             self
         }
-        /// <p>True if the fleet provisioning template is enabled, otherwise false.</p>
+        /// <p>True if the provisioning template is enabled, otherwise false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template is enabled, otherwise false.</p>
+        /// <p>True if the provisioning template is enabled, otherwise false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -11193,6 +11201,16 @@ pub mod describe_provisioning_template_output {
             self.pre_provisioning_hook = input;
             self
         }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn r#type(mut self, input: crate::model::TemplateType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProvisioningTemplateOutput`](crate::output::DescribeProvisioningTemplateOutput).
         pub fn build(self) -> crate::output::DescribeProvisioningTemplateOutput {
             crate::output::DescribeProvisioningTemplateOutput {
@@ -11206,6 +11224,7 @@ pub mod describe_provisioning_template_output {
                 enabled: self.enabled.unwrap_or_default(),
                 provisioning_role_arn: self.provisioning_role_arn,
                 pre_provisioning_hook: self.pre_provisioning_hook,
+                r#type: self.r#type,
             }
         }
     }
@@ -16198,11 +16217,11 @@ impl CreateRoleAliasOutput {
 pub struct CreateProvisioningTemplateVersionOutput {
     /// <p>The ARN that identifies the provisioning template.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The version of the fleet provisioning template.</p>
+    /// <p>The version of the provisioning template.</p>
     pub version_id: std::option::Option<i32>,
-    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+    /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub is_default_version: bool,
 }
 impl CreateProvisioningTemplateVersionOutput {
@@ -16210,15 +16229,15 @@ impl CreateProvisioningTemplateVersionOutput {
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The version of the fleet provisioning template.</p>
+    /// <p>The version of the provisioning template.</p>
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
-    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+    /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
     }
@@ -16255,12 +16274,12 @@ pub mod create_provisioning_template_version_output {
             self.template_arn = input;
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16268,22 +16287,22 @@ pub mod create_provisioning_template_version_output {
             self.template_name = input;
             self
         }
-        /// <p>The version of the fleet provisioning template.</p>
+        /// <p>The version of the provisioning template.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.version_id = Some(input);
             self
         }
-        /// <p>The version of the fleet provisioning template.</p>
+        /// <p>The version of the provisioning template.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+        /// <p>True if the provisioning template version is the default version, otherwise false.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+        /// <p>True if the provisioning template version is the default version, otherwise false.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -16312,9 +16331,9 @@ impl CreateProvisioningTemplateVersionOutput {
 pub struct CreateProvisioningTemplateOutput {
     /// <p>The ARN that identifies the provisioning template.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The default version of the fleet provisioning template.</p>
+    /// <p>The default version of the provisioning template.</p>
     pub default_version_id: std::option::Option<i32>,
 }
 impl CreateProvisioningTemplateOutput {
@@ -16322,11 +16341,11 @@ impl CreateProvisioningTemplateOutput {
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The default version of the fleet provisioning template.</p>
+    /// <p>The default version of the provisioning template.</p>
     pub fn default_version_id(&self) -> std::option::Option<i32> {
         self.default_version_id
     }
@@ -16361,12 +16380,12 @@ pub mod create_provisioning_template_output {
             self.template_arn = input;
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16374,12 +16393,12 @@ pub mod create_provisioning_template_output {
             self.template_name = input;
             self
         }
-        /// <p>The default version of the fleet provisioning template.</p>
+        /// <p>The default version of the provisioning template.</p>
         pub fn default_version_id(mut self, input: i32) -> Self {
             self.default_version_id = Some(input);
             self
         }
-        /// <p>The default version of the fleet provisioning template.</p>
+        /// <p>The default version of the provisioning template.</p>
         pub fn set_default_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.default_version_id = input;
             self

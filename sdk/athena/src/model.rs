@@ -2222,6 +2222,722 @@ impl WorkGroupConfiguration {
     }
 }
 
+/// <p>The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryRuntimeStatistics {
+    /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+    pub timeline: std::option::Option<crate::model::QueryRuntimeStatisticsTimeline>,
+    /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+    pub rows: std::option::Option<crate::model::QueryRuntimeStatisticsRows>,
+    /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
+    pub output_stage: std::option::Option<crate::model::QueryStage>,
+}
+impl QueryRuntimeStatistics {
+    /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+    pub fn timeline(&self) -> std::option::Option<&crate::model::QueryRuntimeStatisticsTimeline> {
+        self.timeline.as_ref()
+    }
+    /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+    pub fn rows(&self) -> std::option::Option<&crate::model::QueryRuntimeStatisticsRows> {
+        self.rows.as_ref()
+    }
+    /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
+    pub fn output_stage(&self) -> std::option::Option<&crate::model::QueryStage> {
+        self.output_stage.as_ref()
+    }
+}
+impl std::fmt::Debug for QueryRuntimeStatistics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRuntimeStatistics");
+        formatter.field("timeline", &self.timeline);
+        formatter.field("rows", &self.rows);
+        formatter.field("output_stage", &self.output_stage);
+        formatter.finish()
+    }
+}
+/// See [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
+pub mod query_runtime_statistics {
+
+    /// A builder for [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) timeline: std::option::Option<crate::model::QueryRuntimeStatisticsTimeline>,
+        pub(crate) rows: std::option::Option<crate::model::QueryRuntimeStatisticsRows>,
+        pub(crate) output_stage: std::option::Option<crate::model::QueryStage>,
+    }
+    impl Builder {
+        /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+        pub fn timeline(mut self, input: crate::model::QueryRuntimeStatisticsTimeline) -> Self {
+            self.timeline = Some(input);
+            self
+        }
+        /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+        pub fn set_timeline(
+            mut self,
+            input: std::option::Option<crate::model::QueryRuntimeStatisticsTimeline>,
+        ) -> Self {
+            self.timeline = input;
+            self
+        }
+        /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+        pub fn rows(mut self, input: crate::model::QueryRuntimeStatisticsRows) -> Self {
+            self.rows = Some(input);
+            self
+        }
+        /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+        pub fn set_rows(
+            mut self,
+            input: std::option::Option<crate::model::QueryRuntimeStatisticsRows>,
+        ) -> Self {
+            self.rows = input;
+            self
+        }
+        /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
+        pub fn output_stage(mut self, input: crate::model::QueryStage) -> Self {
+            self.output_stage = Some(input);
+            self
+        }
+        /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
+        pub fn set_output_stage(
+            mut self,
+            input: std::option::Option<crate::model::QueryStage>,
+        ) -> Self {
+            self.output_stage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
+        pub fn build(self) -> crate::model::QueryRuntimeStatistics {
+            crate::model::QueryRuntimeStatistics {
+                timeline: self.timeline,
+                rows: self.rows,
+                output_stage: self.output_stage,
+            }
+        }
+    }
+}
+impl QueryRuntimeStatistics {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatistics`](crate::model::QueryRuntimeStatistics).
+    pub fn builder() -> crate::model::query_runtime_statistics::Builder {
+        crate::model::query_runtime_statistics::Builder::default()
+    }
+}
+
+/// <p>Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryStage {
+    /// <p>The identifier for a stage.</p>
+    pub stage_id: std::option::Option<i64>,
+    /// <p>State of the stage after query execution.</p>
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The number of bytes output from the stage after execution.</p>
+    pub output_bytes: std::option::Option<i64>,
+    /// <p>The number of rows output from the stage after execution.</p>
+    pub output_rows: std::option::Option<i64>,
+    /// <p>The number of bytes input into the stage for execution.</p>
+    pub input_bytes: std::option::Option<i64>,
+    /// <p>The number of rows input into the stage for execution.</p>
+    pub input_rows: std::option::Option<i64>,
+    /// <p>Time taken to execute this stage.</p>
+    pub execution_time: std::option::Option<i64>,
+    /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+    pub query_stage_plan: std::option::Option<crate::model::QueryStagePlanNode>,
+    /// <p>List of sub query stages that form this stage execution plan.</p>
+    pub sub_stages: std::option::Option<std::vec::Vec<crate::model::QueryStage>>,
+}
+impl QueryStage {
+    /// <p>The identifier for a stage.</p>
+    pub fn stage_id(&self) -> std::option::Option<i64> {
+        self.stage_id
+    }
+    /// <p>State of the stage after query execution.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The number of bytes output from the stage after execution.</p>
+    pub fn output_bytes(&self) -> std::option::Option<i64> {
+        self.output_bytes
+    }
+    /// <p>The number of rows output from the stage after execution.</p>
+    pub fn output_rows(&self) -> std::option::Option<i64> {
+        self.output_rows
+    }
+    /// <p>The number of bytes input into the stage for execution.</p>
+    pub fn input_bytes(&self) -> std::option::Option<i64> {
+        self.input_bytes
+    }
+    /// <p>The number of rows input into the stage for execution.</p>
+    pub fn input_rows(&self) -> std::option::Option<i64> {
+        self.input_rows
+    }
+    /// <p>Time taken to execute this stage.</p>
+    pub fn execution_time(&self) -> std::option::Option<i64> {
+        self.execution_time
+    }
+    /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+    pub fn query_stage_plan(&self) -> std::option::Option<&crate::model::QueryStagePlanNode> {
+        self.query_stage_plan.as_ref()
+    }
+    /// <p>List of sub query stages that form this stage execution plan.</p>
+    pub fn sub_stages(&self) -> std::option::Option<&[crate::model::QueryStage]> {
+        self.sub_stages.as_deref()
+    }
+}
+impl std::fmt::Debug for QueryStage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryStage");
+        formatter.field("stage_id", &self.stage_id);
+        formatter.field("state", &self.state);
+        formatter.field("output_bytes", &self.output_bytes);
+        formatter.field("output_rows", &self.output_rows);
+        formatter.field("input_bytes", &self.input_bytes);
+        formatter.field("input_rows", &self.input_rows);
+        formatter.field("execution_time", &self.execution_time);
+        formatter.field("query_stage_plan", &self.query_stage_plan);
+        formatter.field("sub_stages", &self.sub_stages);
+        formatter.finish()
+    }
+}
+/// See [`QueryStage`](crate::model::QueryStage).
+pub mod query_stage {
+
+    /// A builder for [`QueryStage`](crate::model::QueryStage).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stage_id: std::option::Option<i64>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) output_bytes: std::option::Option<i64>,
+        pub(crate) output_rows: std::option::Option<i64>,
+        pub(crate) input_bytes: std::option::Option<i64>,
+        pub(crate) input_rows: std::option::Option<i64>,
+        pub(crate) execution_time: std::option::Option<i64>,
+        pub(crate) query_stage_plan: std::option::Option<crate::model::QueryStagePlanNode>,
+        pub(crate) sub_stages: std::option::Option<std::vec::Vec<crate::model::QueryStage>>,
+    }
+    impl Builder {
+        /// <p>The identifier for a stage.</p>
+        pub fn stage_id(mut self, input: i64) -> Self {
+            self.stage_id = Some(input);
+            self
+        }
+        /// <p>The identifier for a stage.</p>
+        pub fn set_stage_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.stage_id = input;
+            self
+        }
+        /// <p>State of the stage after query execution.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p>State of the stage after query execution.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The number of bytes output from the stage after execution.</p>
+        pub fn output_bytes(mut self, input: i64) -> Self {
+            self.output_bytes = Some(input);
+            self
+        }
+        /// <p>The number of bytes output from the stage after execution.</p>
+        pub fn set_output_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.output_bytes = input;
+            self
+        }
+        /// <p>The number of rows output from the stage after execution.</p>
+        pub fn output_rows(mut self, input: i64) -> Self {
+            self.output_rows = Some(input);
+            self
+        }
+        /// <p>The number of rows output from the stage after execution.</p>
+        pub fn set_output_rows(mut self, input: std::option::Option<i64>) -> Self {
+            self.output_rows = input;
+            self
+        }
+        /// <p>The number of bytes input into the stage for execution.</p>
+        pub fn input_bytes(mut self, input: i64) -> Self {
+            self.input_bytes = Some(input);
+            self
+        }
+        /// <p>The number of bytes input into the stage for execution.</p>
+        pub fn set_input_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.input_bytes = input;
+            self
+        }
+        /// <p>The number of rows input into the stage for execution.</p>
+        pub fn input_rows(mut self, input: i64) -> Self {
+            self.input_rows = Some(input);
+            self
+        }
+        /// <p>The number of rows input into the stage for execution.</p>
+        pub fn set_input_rows(mut self, input: std::option::Option<i64>) -> Self {
+            self.input_rows = input;
+            self
+        }
+        /// <p>Time taken to execute this stage.</p>
+        pub fn execution_time(mut self, input: i64) -> Self {
+            self.execution_time = Some(input);
+            self
+        }
+        /// <p>Time taken to execute this stage.</p>
+        pub fn set_execution_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.execution_time = input;
+            self
+        }
+        /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+        pub fn query_stage_plan(mut self, input: crate::model::QueryStagePlanNode) -> Self {
+            self.query_stage_plan = Some(input);
+            self
+        }
+        /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
+        pub fn set_query_stage_plan(
+            mut self,
+            input: std::option::Option<crate::model::QueryStagePlanNode>,
+        ) -> Self {
+            self.query_stage_plan = input;
+            self
+        }
+        /// Appends an item to `sub_stages`.
+        ///
+        /// To override the contents of this collection use [`set_sub_stages`](Self::set_sub_stages).
+        ///
+        /// <p>List of sub query stages that form this stage execution plan.</p>
+        pub fn sub_stages(mut self, input: crate::model::QueryStage) -> Self {
+            let mut v = self.sub_stages.unwrap_or_default();
+            v.push(input);
+            self.sub_stages = Some(v);
+            self
+        }
+        /// <p>List of sub query stages that form this stage execution plan.</p>
+        pub fn set_sub_stages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::QueryStage>>,
+        ) -> Self {
+            self.sub_stages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryStage`](crate::model::QueryStage).
+        pub fn build(self) -> crate::model::QueryStage {
+            crate::model::QueryStage {
+                stage_id: self.stage_id,
+                state: self.state,
+                output_bytes: self.output_bytes,
+                output_rows: self.output_rows,
+                input_bytes: self.input_bytes,
+                input_rows: self.input_rows,
+                execution_time: self.execution_time,
+                query_stage_plan: self.query_stage_plan,
+                sub_stages: self.sub_stages,
+            }
+        }
+    }
+}
+impl QueryStage {
+    /// Creates a new builder-style object to manufacture [`QueryStage`](crate::model::QueryStage).
+    pub fn builder() -> crate::model::query_stage::Builder {
+        crate::model::query_stage::Builder::default()
+    }
+}
+
+/// <p>Stage plan information such as name, identifier, sub plans, and remote sources.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryStagePlanNode {
+    /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Information about the operation this query stage plan node is performing.</p>
+    pub identifier: std::option::Option<std::string::String>,
+    /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+    pub children: std::option::Option<std::vec::Vec<crate::model::QueryStagePlanNode>>,
+    /// <p>Source plan node IDs.</p>
+    pub remote_sources: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl QueryStagePlanNode {
+    /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the operation this query stage plan node is performing.</p>
+    pub fn identifier(&self) -> std::option::Option<&str> {
+        self.identifier.as_deref()
+    }
+    /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+    pub fn children(&self) -> std::option::Option<&[crate::model::QueryStagePlanNode]> {
+        self.children.as_deref()
+    }
+    /// <p>Source plan node IDs.</p>
+    pub fn remote_sources(&self) -> std::option::Option<&[std::string::String]> {
+        self.remote_sources.as_deref()
+    }
+}
+impl std::fmt::Debug for QueryStagePlanNode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryStagePlanNode");
+        formatter.field("name", &self.name);
+        formatter.field("identifier", &self.identifier);
+        formatter.field("children", &self.children);
+        formatter.field("remote_sources", &self.remote_sources);
+        formatter.finish()
+    }
+}
+/// See [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
+pub mod query_stage_plan_node {
+
+    /// A builder for [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) identifier: std::option::Option<std::string::String>,
+        pub(crate) children: std::option::Option<std::vec::Vec<crate::model::QueryStagePlanNode>>,
+        pub(crate) remote_sources: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Information about the operation this query stage plan node is performing.</p>
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identifier = Some(input.into());
+            self
+        }
+        /// <p>Information about the operation this query stage plan node is performing.</p>
+        pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identifier = input;
+            self
+        }
+        /// Appends an item to `children`.
+        ///
+        /// To override the contents of this collection use [`set_children`](Self::set_children).
+        ///
+        /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+        pub fn children(mut self, input: crate::model::QueryStagePlanNode) -> Self {
+            let mut v = self.children.unwrap_or_default();
+            v.push(input);
+            self.children = Some(v);
+            self
+        }
+        /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
+        pub fn set_children(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::QueryStagePlanNode>>,
+        ) -> Self {
+            self.children = input;
+            self
+        }
+        /// Appends an item to `remote_sources`.
+        ///
+        /// To override the contents of this collection use [`set_remote_sources`](Self::set_remote_sources).
+        ///
+        /// <p>Source plan node IDs.</p>
+        pub fn remote_sources(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.remote_sources.unwrap_or_default();
+            v.push(input.into());
+            self.remote_sources = Some(v);
+            self
+        }
+        /// <p>Source plan node IDs.</p>
+        pub fn set_remote_sources(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.remote_sources = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
+        pub fn build(self) -> crate::model::QueryStagePlanNode {
+            crate::model::QueryStagePlanNode {
+                name: self.name,
+                identifier: self.identifier,
+                children: self.children,
+                remote_sources: self.remote_sources,
+            }
+        }
+    }
+}
+impl QueryStagePlanNode {
+    /// Creates a new builder-style object to manufacture [`QueryStagePlanNode`](crate::model::QueryStagePlanNode).
+    pub fn builder() -> crate::model::query_stage_plan_node::Builder {
+        crate::model::query_stage_plan_node::Builder::default()
+    }
+}
+
+/// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryRuntimeStatisticsRows {
+    /// <p>The number of rows read to execute the query.</p>
+    pub input_rows: std::option::Option<i64>,
+    /// <p>The number of bytes read to execute the query.</p>
+    pub input_bytes: std::option::Option<i64>,
+    /// <p>The number of bytes returned by the query.</p>
+    pub output_bytes: std::option::Option<i64>,
+    /// <p>The number of rows returned by the query.</p>
+    pub output_rows: std::option::Option<i64>,
+}
+impl QueryRuntimeStatisticsRows {
+    /// <p>The number of rows read to execute the query.</p>
+    pub fn input_rows(&self) -> std::option::Option<i64> {
+        self.input_rows
+    }
+    /// <p>The number of bytes read to execute the query.</p>
+    pub fn input_bytes(&self) -> std::option::Option<i64> {
+        self.input_bytes
+    }
+    /// <p>The number of bytes returned by the query.</p>
+    pub fn output_bytes(&self) -> std::option::Option<i64> {
+        self.output_bytes
+    }
+    /// <p>The number of rows returned by the query.</p>
+    pub fn output_rows(&self) -> std::option::Option<i64> {
+        self.output_rows
+    }
+}
+impl std::fmt::Debug for QueryRuntimeStatisticsRows {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRuntimeStatisticsRows");
+        formatter.field("input_rows", &self.input_rows);
+        formatter.field("input_bytes", &self.input_bytes);
+        formatter.field("output_bytes", &self.output_bytes);
+        formatter.field("output_rows", &self.output_rows);
+        formatter.finish()
+    }
+}
+/// See [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
+pub mod query_runtime_statistics_rows {
+
+    /// A builder for [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) input_rows: std::option::Option<i64>,
+        pub(crate) input_bytes: std::option::Option<i64>,
+        pub(crate) output_bytes: std::option::Option<i64>,
+        pub(crate) output_rows: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The number of rows read to execute the query.</p>
+        pub fn input_rows(mut self, input: i64) -> Self {
+            self.input_rows = Some(input);
+            self
+        }
+        /// <p>The number of rows read to execute the query.</p>
+        pub fn set_input_rows(mut self, input: std::option::Option<i64>) -> Self {
+            self.input_rows = input;
+            self
+        }
+        /// <p>The number of bytes read to execute the query.</p>
+        pub fn input_bytes(mut self, input: i64) -> Self {
+            self.input_bytes = Some(input);
+            self
+        }
+        /// <p>The number of bytes read to execute the query.</p>
+        pub fn set_input_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.input_bytes = input;
+            self
+        }
+        /// <p>The number of bytes returned by the query.</p>
+        pub fn output_bytes(mut self, input: i64) -> Self {
+            self.output_bytes = Some(input);
+            self
+        }
+        /// <p>The number of bytes returned by the query.</p>
+        pub fn set_output_bytes(mut self, input: std::option::Option<i64>) -> Self {
+            self.output_bytes = input;
+            self
+        }
+        /// <p>The number of rows returned by the query.</p>
+        pub fn output_rows(mut self, input: i64) -> Self {
+            self.output_rows = Some(input);
+            self
+        }
+        /// <p>The number of rows returned by the query.</p>
+        pub fn set_output_rows(mut self, input: std::option::Option<i64>) -> Self {
+            self.output_rows = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
+        pub fn build(self) -> crate::model::QueryRuntimeStatisticsRows {
+            crate::model::QueryRuntimeStatisticsRows {
+                input_rows: self.input_rows,
+                input_bytes: self.input_bytes,
+                output_bytes: self.output_bytes,
+                output_rows: self.output_rows,
+            }
+        }
+    }
+}
+impl QueryRuntimeStatisticsRows {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsRows`](crate::model::QueryRuntimeStatisticsRows).
+    pub fn builder() -> crate::model::query_runtime_statistics_rows::Builder {
+        crate::model::query_runtime_statistics_rows::Builder::default()
+    }
+}
+
+/// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct QueryRuntimeStatisticsTimeline {
+    /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+    pub query_queue_time_in_millis: std::option::Option<i64>,
+    /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+    pub query_planning_time_in_millis: std::option::Option<i64>,
+    /// <p>The number of milliseconds that the query took to execute.</p>
+    pub engine_execution_time_in_millis: std::option::Option<i64>,
+    /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+    pub service_processing_time_in_millis: std::option::Option<i64>,
+    /// <p>The number of milliseconds that Athena took to run the query.</p>
+    pub total_execution_time_in_millis: std::option::Option<i64>,
+}
+impl QueryRuntimeStatisticsTimeline {
+    /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+    pub fn query_queue_time_in_millis(&self) -> std::option::Option<i64> {
+        self.query_queue_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+    pub fn query_planning_time_in_millis(&self) -> std::option::Option<i64> {
+        self.query_planning_time_in_millis
+    }
+    /// <p>The number of milliseconds that the query took to execute.</p>
+    pub fn engine_execution_time_in_millis(&self) -> std::option::Option<i64> {
+        self.engine_execution_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+    pub fn service_processing_time_in_millis(&self) -> std::option::Option<i64> {
+        self.service_processing_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to run the query.</p>
+    pub fn total_execution_time_in_millis(&self) -> std::option::Option<i64> {
+        self.total_execution_time_in_millis
+    }
+}
+impl std::fmt::Debug for QueryRuntimeStatisticsTimeline {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("QueryRuntimeStatisticsTimeline");
+        formatter.field(
+            "query_queue_time_in_millis",
+            &self.query_queue_time_in_millis,
+        );
+        formatter.field(
+            "query_planning_time_in_millis",
+            &self.query_planning_time_in_millis,
+        );
+        formatter.field(
+            "engine_execution_time_in_millis",
+            &self.engine_execution_time_in_millis,
+        );
+        formatter.field(
+            "service_processing_time_in_millis",
+            &self.service_processing_time_in_millis,
+        );
+        formatter.field(
+            "total_execution_time_in_millis",
+            &self.total_execution_time_in_millis,
+        );
+        formatter.finish()
+    }
+}
+/// See [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
+pub mod query_runtime_statistics_timeline {
+
+    /// A builder for [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_queue_time_in_millis: std::option::Option<i64>,
+        pub(crate) query_planning_time_in_millis: std::option::Option<i64>,
+        pub(crate) engine_execution_time_in_millis: std::option::Option<i64>,
+        pub(crate) service_processing_time_in_millis: std::option::Option<i64>,
+        pub(crate) total_execution_time_in_millis: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+        pub fn query_queue_time_in_millis(mut self, input: i64) -> Self {
+            self.query_queue_time_in_millis = Some(input);
+            self
+        }
+        /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
+        pub fn set_query_queue_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+            self.query_queue_time_in_millis = input;
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+        pub fn query_planning_time_in_millis(mut self, input: i64) -> Self {
+            self.query_planning_time_in_millis = Some(input);
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
+        pub fn set_query_planning_time_in_millis(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.query_planning_time_in_millis = input;
+            self
+        }
+        /// <p>The number of milliseconds that the query took to execute.</p>
+        pub fn engine_execution_time_in_millis(mut self, input: i64) -> Self {
+            self.engine_execution_time_in_millis = Some(input);
+            self
+        }
+        /// <p>The number of milliseconds that the query took to execute.</p>
+        pub fn set_engine_execution_time_in_millis(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.engine_execution_time_in_millis = input;
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+        pub fn service_processing_time_in_millis(mut self, input: i64) -> Self {
+            self.service_processing_time_in_millis = Some(input);
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
+        pub fn set_service_processing_time_in_millis(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.service_processing_time_in_millis = input;
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to run the query.</p>
+        pub fn total_execution_time_in_millis(mut self, input: i64) -> Self {
+            self.total_execution_time_in_millis = Some(input);
+            self
+        }
+        /// <p>The number of milliseconds that Athena took to run the query.</p>
+        pub fn set_total_execution_time_in_millis(
+            mut self,
+            input: std::option::Option<i64>,
+        ) -> Self {
+            self.total_execution_time_in_millis = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
+        pub fn build(self) -> crate::model::QueryRuntimeStatisticsTimeline {
+            crate::model::QueryRuntimeStatisticsTimeline {
+                query_queue_time_in_millis: self.query_queue_time_in_millis,
+                query_planning_time_in_millis: self.query_planning_time_in_millis,
+                engine_execution_time_in_millis: self.engine_execution_time_in_millis,
+                service_processing_time_in_millis: self.service_processing_time_in_millis,
+                total_execution_time_in_millis: self.total_execution_time_in_millis,
+            }
+        }
+    }
+}
+impl QueryRuntimeStatisticsTimeline {
+    /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsTimeline`](crate::model::QueryRuntimeStatisticsTimeline).
+    pub fn builder() -> crate::model::query_runtime_statistics_timeline::Builder {
+        crate::model::query_runtime_statistics_timeline::Builder::default()
+    }
+}
+
 /// <p>The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

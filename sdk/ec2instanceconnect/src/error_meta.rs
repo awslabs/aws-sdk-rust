@@ -11,6 +11,8 @@ pub enum Error {
     Ec2InstanceStateInvalidException(crate::error::Ec2InstanceStateInvalidException),
     /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
     Ec2InstanceTypeInvalidException(crate::error::Ec2InstanceTypeInvalidException),
+    /// <p>The instance is currently unavailable. Wait a few minutes and try again.</p>
+    Ec2InstanceUnavailableException(crate::error::Ec2InstanceUnavailableException),
     /// <p>One of the parameters is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
     /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -37,6 +39,7 @@ impl std::fmt::Display for Error {
             Error::Ec2InstanceNotFoundException(inner) => inner.fmt(f),
             Error::Ec2InstanceStateInvalidException(inner) => inner.fmt(f),
             Error::Ec2InstanceTypeInvalidException(inner) => inner.fmt(f),
+            Error::Ec2InstanceUnavailableException(inner) => inner.fmt(f),
             Error::InvalidArgsException(inner) => inner.fmt(f),
             Error::SerialConsoleAccessDisabledException(inner) => inner.fmt(f),
             Error::SerialConsoleSessionLimitExceededException(inner) => inner.fmt(f),
@@ -61,6 +64,7 @@ where
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(inner) => Error::Ec2InstanceStateInvalidException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceTypeInvalidException(inner) => Error::Ec2InstanceTypeInvalidException(inner),
+                crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => Error::Ec2InstanceUnavailableException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleAccessDisabledException(inner) => Error::SerialConsoleAccessDisabledException(inner),
                 crate::error::SendSerialConsoleSSHPublicKeyErrorKind::SerialConsoleSessionLimitExceededException(inner) => Error::SerialConsoleSessionLimitExceededException(inner),
@@ -91,6 +95,9 @@ where
                 crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceStateInvalidException(
                     inner,
                 ) => Error::Ec2InstanceStateInvalidException(inner),
+                crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException(inner) => {
+                    Error::Ec2InstanceUnavailableException(inner)
+                }
                 crate::error::SendSSHPublicKeyErrorKind::InvalidArgsException(inner) => {
                     Error::InvalidArgsException(inner)
                 }

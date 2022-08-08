@@ -4,7 +4,6 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
-    /// <p>For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution won't get this exception. </p>
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     /// <p>The operation failed because you are inspecting the web request body, headers, or cookies without specifying how to handle oversize components. Rules that inspect the body must either provide an <code>OversizeHandling</code> configuration or they must be preceded by a <code>SizeConstraintStatement</code> that blocks the body content from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code> configuration. </p>
     /// <p>Provide the handling configuration and retry your operation.</p>
@@ -126,6 +125,7 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
                 crate::error::CheckCapacityErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::CheckCapacityErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
                 crate::error::CheckCapacityErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
                 crate::error::CheckCapacityErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
                 crate::error::CheckCapacityErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),

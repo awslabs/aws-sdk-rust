@@ -458,7 +458,7 @@ impl Client {
     ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
     ///   - [`session(impl Into<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::session) / [`set_session(Option<String>)`](crate::client::fluent_builders::AssociateSoftwareToken::set_session): <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     /// - On success, responds with [`AssociateSoftwareTokenOutput`](crate::output::AssociateSoftwareTokenOutput) with field(s):
-    ///   - [`secret_code(Option<String>)`](crate::output::AssociateSoftwareTokenOutput::secret_code): <p>A unique generated shared secret code that is used in the time-based one-time password (TOTP) algorithm to generate a one-time code.</p>
+    ///   - [`secret_code(Option<String>)`](crate::output::AssociateSoftwareTokenOutput::secret_code): <p>A unique generated shared secret code that is used in the TOTP algorithm to generate a one-time code.</p>
     ///   - [`session(Option<String>)`](crate::output::AssociateSoftwareTokenOutput::session): <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     /// - On failure, responds with [`SdkError<AssociateSoftwareTokenError>`](crate::error::AssociateSoftwareTokenError)
     pub fn associate_software_token(&self) -> fluent_builders::AssociateSoftwareToken {
@@ -495,8 +495,8 @@ impl Client {
     ///   - [`client_id(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::client_id) / [`set_client_id(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_client_id): <p>The app client ID of the app associated with the user pool.</p>
     ///   - [`secret_hash(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::secret_hash) / [`set_secret_hash(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_secret_hash): <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_username): <p>The user name of the user for whom you want to enter a code to retrieve a forgotten password.</p>
-    ///   - [`confirmation_code(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::confirmation_code) / [`set_confirmation_code(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_confirmation_code): <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_password): <p>The password sent by a user's request to retrieve a forgotten password.</p>
+    ///   - [`confirmation_code(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::confirmation_code) / [`set_confirmation_code(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_confirmation_code): <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_password): <p>The new password that your user wants to set.</p>
     ///   - [`analytics_metadata(AnalyticsMetadataType)`](crate::client::fluent_builders::ConfirmForgotPassword::analytics_metadata) / [`set_analytics_metadata(Option<AnalyticsMetadataType>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_analytics_metadata): <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code> calls.</p>
     ///   - [`user_context_data(UserContextDataType)`](crate::client::fluent_builders::ConfirmForgotPassword::user_context_data) / [`set_user_context_data(Option<UserContextDataType>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_user_context_data): <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     ///   - [`client_metadata(HashMap<String, String>)`](crate::client::fluent_builders::ConfirmForgotPassword::client_metadata) / [`set_client_metadata(Option<HashMap<String, String>>)`](crate::client::fluent_builders::ConfirmForgotPassword::set_client_metadata): <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>  <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>   <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>   <ul>    <li> <p>Store the ClientMetadata value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the ClientMetadata parameter serves no purpose.</p> </li>    <li> <p>Validate the ClientMetadata value.</p> </li>    <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.</p> </li>   </ul>  </note>
@@ -587,13 +587,13 @@ impl Client {
     ///   - [`alias_attributes(Vec<AliasAttributeType>)`](crate::client::fluent_builders::CreateUserPool::alias_attributes) / [`set_alias_attributes(Option<Vec<AliasAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_alias_attributes): <p>Attributes supported as an alias for this user pool. Possible values: <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
     ///   - [`username_attributes(Vec<UsernameAttributeType>)`](crate::client::fluent_builders::CreateUserPool::username_attributes) / [`set_username_attributes(Option<Vec<UsernameAttributeType>>)`](crate::client::fluent_builders::CreateUserPool::set_username_attributes): <p>Specifies whether a user can use an email address or phone number as a username when they sign up.</p>
     ///   - [`sms_verification_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::sms_verification_message) / [`set_sms_verification_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_sms_verification_message): <p>A string representing the SMS verification message.</p>
-    ///   - [`email_verification_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_message) / [`set_email_verification_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_message): <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-    ///   - [`email_verification_subject(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_subject) / [`set_email_verification_subject(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_subject): <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    ///   - [`email_verification_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_message) / [`set_email_verification_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_message): <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+    ///   - [`email_verification_subject(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::email_verification_subject) / [`set_email_verification_subject(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_email_verification_subject): <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
     ///   - [`verification_message_template(VerificationMessageTemplateType)`](crate::client::fluent_builders::CreateUserPool::verification_message_template) / [`set_verification_message_template(Option<VerificationMessageTemplateType>)`](crate::client::fluent_builders::CreateUserPool::set_verification_message_template): <p>The template for the verification message that the user sees when the app requests permission to access the user's information.</p>
     ///   - [`sms_authentication_message(impl Into<String>)`](crate::client::fluent_builders::CreateUserPool::sms_authentication_message) / [`set_sms_authentication_message(Option<String>)`](crate::client::fluent_builders::CreateUserPool::set_sms_authentication_message): <p>A string representing the SMS authentication message.</p>
     ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::CreateUserPool::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::CreateUserPool::set_mfa_configuration): <p>Specifies MFA configuration details.</p>
-    ///   - [`user_attribute_update_settings(UserAttributeUpdateSettingsType)`](crate::client::fluent_builders::CreateUserPool::user_attribute_update_settings) / [`set_user_attribute_update_settings(Option<UserAttributeUpdateSettingsType>)`](crate::client::fluent_builders::CreateUserPool::set_user_attribute_update_settings): <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
-    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::CreateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_device_configuration): <p>The device configuration.</p>
+    ///   - [`user_attribute_update_settings(UserAttributeUpdateSettingsType)`](crate::client::fluent_builders::CreateUserPool::user_attribute_update_settings) / [`set_user_attribute_update_settings(Option<UserAttributeUpdateSettingsType>)`](crate::client::fluent_builders::CreateUserPool::set_user_attribute_update_settings): <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
+    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::CreateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_device_configuration): <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>   <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>  </note>
     ///   - [`email_configuration(EmailConfigurationType)`](crate::client::fluent_builders::CreateUserPool::email_configuration) / [`set_email_configuration(Option<EmailConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_email_configuration): <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.</p>
     ///   - [`sms_configuration(SmsConfigurationType)`](crate::client::fluent_builders::CreateUserPool::sms_configuration) / [`set_sms_configuration(Option<SmsConfigurationType>)`](crate::client::fluent_builders::CreateUserPool::set_sms_configuration): <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
     ///   - [`user_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateUserPool::user_pool_tags) / [`set_user_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateUserPool::set_user_pool_tags): <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
@@ -620,8 +620,8 @@ impl Client {
     ///   - [`token_validity_units(TokenValidityUnitsType)`](crate::client::fluent_builders::CreateUserPoolClient::token_validity_units) / [`set_token_validity_units(Option<TokenValidityUnitsType>)`](crate::client::fluent_builders::CreateUserPoolClient::set_token_validity_units): <p>The units in which the validity times are represented. The default unit for RefreshToken is days, and default for ID and access tokens are hours.</p>
     ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_read_attributes): <p>The read attributes.</p>
     ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_write_attributes): <p>The user pool attributes that the app client can write to.</p>  <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
-    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::CreateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>   <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>  <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
-    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+    ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::CreateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code> prefix.</p> <note>   <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>  </note>  <p>Valid values include:</p>  <dl>   <dt>   ALLOW_ADMIN_USER_PASSWORD_AUTH  </dt>   <dd>    <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>   </dd>   <dt>   ALLOW_CUSTOM_AUTH  </dt>   <dd>    <p>Enable Lambda trigger based authentication.</p>   </dd>   <dt>   ALLOW_USER_PASSWORD_AUTH  </dt>   <dd>    <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>   </dd>   <dt>   ALLOW_USER_SRP_AUTH  </dt>   <dd>    <p>Enable SRP-based authentication.</p>   </dd>   <dt>   ALLOW_REFRESH_TOKEN_AUTH  </dt>   <dd>    <p>Enable the authflow that refreshes tokens.</p>   </dd>  </dl>  <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
     ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the IdPs.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
     ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::CreateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::CreateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the IdPs.</p>
     ///   - [`default_redirect_uri(impl Into<String>)`](crate::client::fluent_builders::CreateUserPoolClient::default_redirect_uri) / [`set_default_redirect_uri(Option<String>)`](crate::client::fluent_builders::CreateUserPoolClient::set_default_redirect_uri): <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as myapp://example are also supported.</p>
@@ -937,9 +937,9 @@ impl Client {
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetUserPoolMfaConfig::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::client::fluent_builders::GetUserPoolMfaConfig::set_user_pool_id): <p>The user pool ID.</p>
     /// - On success, responds with [`GetUserPoolMfaConfigOutput`](crate::output::GetUserPoolMfaConfigOutput) with field(s):
-    ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message multi-factor (MFA) configuration.</p>
-    ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token multi-factor (MFA) configuration.</p>
-    ///   - [`mfa_configuration(Option<UserPoolMfaType>)`](crate::output::GetUserPoolMfaConfigOutput::mfa_configuration): <p>The multi-factor (MFA) configuration. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>  </ul>
+    ///   - [`sms_mfa_configuration(Option<SmsMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::sms_mfa_configuration): <p>The SMS text message multi-factor authentication (MFA) configuration.</p>
+    ///   - [`software_token_mfa_configuration(Option<SoftwareTokenMfaConfigType>)`](crate::output::GetUserPoolMfaConfigOutput::software_token_mfa_configuration): <p>The software token multi-factor authentication (MFA) configuration.</p>
+    ///   - [`mfa_configuration(Option<UserPoolMfaType>)`](crate::output::GetUserPoolMfaConfigOutput::mfa_configuration): <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>  <ul>   <li> <p> <code>OFF</code> MFA won't be used for any users.</p> </li>   <li> <p> <code>ON</code> MFA is required for all users to sign in.</p> </li>   <li> <p> <code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetUserPoolMfaConfigError>`](crate::error::GetUserPoolMfaConfigError)
     pub fn get_user_pool_mfa_config(&self) -> fluent_builders::GetUserPoolMfaConfig {
         fluent_builders::GetUserPoolMfaConfig::new(self.handle.clone())
@@ -1185,7 +1185,7 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`sms_mfa_settings(SmsMfaSettingsType)`](crate::client::fluent_builders::SetUserMFAPreference::sms_mfa_settings) / [`set_sms_mfa_settings(Option<SmsMfaSettingsType>)`](crate::client::fluent_builders::SetUserMFAPreference::set_sms_mfa_settings): <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-    ///   - [`software_token_mfa_settings(SoftwareTokenMfaSettingsType)`](crate::client::fluent_builders::SetUserMFAPreference::software_token_mfa_settings) / [`set_software_token_mfa_settings(Option<SoftwareTokenMfaSettingsType>)`](crate::client::fluent_builders::SetUserMFAPreference::set_software_token_mfa_settings): <p>The time-based one-time password software token MFA settings.</p>
+    ///   - [`software_token_mfa_settings(SoftwareTokenMfaSettingsType)`](crate::client::fluent_builders::SetUserMFAPreference::software_token_mfa_settings) / [`set_software_token_mfa_settings(Option<SoftwareTokenMfaSettingsType>)`](crate::client::fluent_builders::SetUserMFAPreference::set_software_token_mfa_settings): <p>The time-based one-time password (TOTP) software token MFA settings.</p>
     ///   - [`access_token(impl Into<String>)`](crate::client::fluent_builders::SetUserMFAPreference::access_token) / [`set_access_token(Option<String>)`](crate::client::fluent_builders::SetUserMFAPreference::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.</p>
     /// - On success, responds with [`SetUserMfaPreferenceOutput`](crate::output::SetUserMfaPreferenceOutput)
 
@@ -1374,9 +1374,9 @@ impl Client {
     ///   - [`email_verification_subject(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::email_verification_subject) / [`set_email_verification_subject(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_email_verification_subject): <p>The subject of the email verification message.</p>
     ///   - [`verification_message_template(VerificationMessageTemplateType)`](crate::client::fluent_builders::UpdateUserPool::verification_message_template) / [`set_verification_message_template(Option<VerificationMessageTemplateType>)`](crate::client::fluent_builders::UpdateUserPool::set_verification_message_template): <p>The template for verification messages.</p>
     ///   - [`sms_authentication_message(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPool::sms_authentication_message) / [`set_sms_authentication_message(Option<String>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_authentication_message): <p>The contents of the SMS authentication message.</p>
-    ///   - [`user_attribute_update_settings(UserAttributeUpdateSettingsType)`](crate::client::fluent_builders::UpdateUserPool::user_attribute_update_settings) / [`set_user_attribute_update_settings(Option<UserAttributeUpdateSettingsType>)`](crate::client::fluent_builders::UpdateUserPool::set_user_attribute_update_settings): <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+    ///   - [`user_attribute_update_settings(UserAttributeUpdateSettingsType)`](crate::client::fluent_builders::UpdateUserPool::user_attribute_update_settings) / [`set_user_attribute_update_settings(Option<UserAttributeUpdateSettingsType>)`](crate::client::fluent_builders::UpdateUserPool::set_user_attribute_update_settings): <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
     ///   - [`mfa_configuration(UserPoolMfaType)`](crate::client::fluent_builders::UpdateUserPool::mfa_configuration) / [`set_mfa_configuration(Option<UserPoolMfaType>)`](crate::client::fluent_builders::UpdateUserPool::set_mfa_configuration): <p>Possible values include:</p>  <ul>   <li> <p> <code>OFF</code> - MFA tokens aren't required and can't be specified during user registration.</p> </li>   <li> <p> <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you're initially creating a user pool. You can use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools. </p> </li>   <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>  </ul>
-    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_device_configuration): <p>Device configuration.</p>
+    ///   - [`device_configuration(DeviceConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::device_configuration) / [`set_device_configuration(Option<DeviceConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_device_configuration): <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>   <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>  </note>
     ///   - [`email_configuration(EmailConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::email_configuration) / [`set_email_configuration(Option<EmailConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_email_configuration): <p>The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for email invitation and verification messages from your user pool.</p>
     ///   - [`sms_configuration(SmsConfigurationType)`](crate::client::fluent_builders::UpdateUserPool::sms_configuration) / [`set_sms_configuration(Option<SmsConfigurationType>)`](crate::client::fluent_builders::UpdateUserPool::set_sms_configuration): <p>The SMS configuration with the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.</p>
     ///   - [`user_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateUserPool::user_pool_tags) / [`set_user_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateUserPool::set_user_pool_tags): <p>The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
@@ -1402,7 +1402,7 @@ impl Client {
     ///   - [`read_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::read_attributes) / [`set_read_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_read_attributes): <p>The read-only attributes of the user pool.</p>
     ///   - [`write_attributes(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::write_attributes) / [`set_write_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_write_attributes): <p>The writeable attributes of the user pool.</p>
     ///   - [`explicit_auth_flows(Vec<ExplicitAuthFlowsType>)`](crate::client::fluent_builders::UpdateUserPoolClient::explicit_auth_flows) / [`set_explicit_auth_flows(Option<Vec<ExplicitAuthFlowsType>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_explicit_auth_flows): <p>The authentication flows that are supported by the user pool clients. Flow names without the <code>ALLOW_</code> prefix are no longer supported in favor of new names with the <code>ALLOW_</code> prefix. Note that values with <code>ALLOW_</code> prefix must be used only along with values with the <code>ALLOW_</code> prefix.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>   <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>   <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>   <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>  </ul>
-    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+    ///   - [`supported_identity_providers(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::supported_identity_providers) / [`set_supported_identity_providers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_supported_identity_providers): <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     ///   - [`callback_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::callback_ur_ls) / [`set_callback_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_callback_ur_ls): <p>A list of allowed redirect (callback) URLs for the IdPs.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>  <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     ///   - [`logout_ur_ls(Vec<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::logout_ur_ls) / [`set_logout_ur_ls(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_logout_ur_ls): <p>A list of allowed logout URLs for the IdPs.</p>
     ///   - [`default_redirect_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::default_redirect_uri) / [`set_default_redirect_uri(Option<String>)`](crate::client::fluent_builders::UpdateUserPoolClient::set_default_redirect_uri): <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>  <p>A redirect URI must:</p>  <ul>   <li> <p>Be an absolute URI.</p> </li>   <li> <p>Be registered with the authorization server.</p> </li>   <li> <p>Not include a fragment component.</p> </li>  </ul>  <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>  <p>Amazon Cognito requires HTTPS over HTTP except for <code>http://localhost</code> for testing purposes only.</p>  <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
@@ -4145,7 +4145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateSoftwareToken`.
     ///
-    /// <p>Begins setup of time-based one-time password multi-factor authentication (TOTP MFA) for a user, with a unique private key that Amazon Cognito generates and returns in the API response. You can authorize an <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a challenge response that you received from Amazon Cognito.</p> <note>
+    /// <p>Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique private key that Amazon Cognito generates and returns in the API response. You can authorize an <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a challenge response that you received from Amazon Cognito.</p> <note>
     /// <p>Amazon Cognito disassociates an existing software token when you verify the new token in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html"> VerifySoftwareToken</a> API request. If you don't verify the software token and your user pool doesn't require MFA, the user can then authenticate with user name and password credentials alone. If your user pool requires TOTP MFA, Amazon Cognito generates an <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code> challenge each time your user signs. Complete setup with <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.</p>
     /// <p>After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code> challenge when they authenticate. Respond to this challenge with your user's TOTP.</p>
     /// </note>
@@ -4449,12 +4449,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_username(input);
             self
         }
-        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+        /// <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
         pub fn confirmation_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.confirmation_code(input.into());
             self
         }
-        /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
+        /// <p>The confirmation code from your user's request to reset their password. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
         pub fn set_confirmation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4462,12 +4462,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_confirmation_code(input);
             self
         }
-        /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
+        /// <p>The new password that your user wants to set.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
+        /// <p>The new password that your user wants to set.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
@@ -5361,12 +5361,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sms_verification_message(input);
             self
         }
-        /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_verification_message(input.into());
             self
         }
-        /// <p>A string representing the email verification message. EmailVerificationMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5374,12 +5374,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_verification_message(input);
             self
         }
-        /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_verification_subject(input.into());
             self
         }
-        /// <p>A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
+        /// <p>A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
         pub fn set_email_verification_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5429,7 +5429,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mfa_configuration(input);
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -5437,7 +5437,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_attribute_update_settings(input);
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -5445,7 +5445,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_attribute_update_settings(input);
             self
         }
-        /// <p>The device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn device_configuration(
             mut self,
             input: crate::model::DeviceConfigurationType,
@@ -5453,7 +5455,9 @@ pub mod fluent_builders {
             self.inner = self.inner.device_configuration(input);
             self
         }
-        /// <p>The device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfigurationType>,
@@ -5761,14 +5765,39 @@ pub mod fluent_builders {
         /// <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>
         /// </note>
         /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>
-        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
-        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
-        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
-        /// </ul>
-        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
+        /// <dl>
+        /// <dt>
+        /// ALLOW_ADMIN_USER_PASSWORD_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_CUSTOM_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable Lambda trigger based authentication.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_USER_PASSWORD_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_USER_SRP_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable SRP-based authentication.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_REFRESH_TOKEN_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable the authflow that refreshes tokens.</p>
+        /// </dd>
+        /// </dl>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
         pub fn explicit_auth_flows(mut self, input: crate::model::ExplicitAuthFlowsType) -> Self {
             self.inner = self.inner.explicit_auth_flows(input);
             self
@@ -5777,14 +5806,39 @@ pub mod fluent_builders {
         /// <p>Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code> prefix.</p>
         /// </note>
         /// <p>Valid values include:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p> </li>
-        /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
-        /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
-        /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
-        /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
-        /// </ul>
-        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.</p>
+        /// <dl>
+        /// <dt>
+        /// ALLOW_ADMIN_USER_PASSWORD_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, Amazon Cognito receives the password in the request instead of using the Secure Remote Password (SRP) protocol to verify passwords.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_CUSTOM_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable Lambda trigger based authentication.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_USER_PASSWORD_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_USER_SRP_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable SRP-based authentication.</p>
+        /// </dd>
+        /// <dt>
+        /// ALLOW_REFRESH_TOKEN_AUTH
+        /// </dt>
+        /// <dd>
+        /// <p>Enable the authflow that refreshes tokens.</p>
+        /// </dd>
+        /// </dl>
+        /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.</p>
         pub fn set_explicit_auth_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
@@ -5796,7 +5850,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -5804,7 +5858,7 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_identity_providers(input.into());
             self
         }
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9641,7 +9695,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sms_mfa_settings(input);
             self
         }
-        /// <p>The time-based one-time password software token MFA settings.</p>
+        /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
         pub fn software_token_mfa_settings(
             mut self,
             input: crate::model::SoftwareTokenMfaSettingsType,
@@ -9649,7 +9703,7 @@ pub mod fluent_builders {
             self.inner = self.inner.software_token_mfa_settings(input);
             self
         }
-        /// <p>The time-based one-time password software token MFA settings.</p>
+        /// <p>The time-based one-time password (TOTP) software token MFA settings.</p>
         pub fn set_software_token_mfa_settings(
             mut self,
             input: std::option::Option<crate::model::SoftwareTokenMfaSettingsType>,
@@ -11090,7 +11144,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sms_authentication_message(input);
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -11098,7 +11152,7 @@ pub mod fluent_builders {
             self.inner = self.inner.user_attribute_update_settings(input);
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -11129,7 +11183,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mfa_configuration(input);
             self
         }
-        /// <p>Device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn device_configuration(
             mut self,
             input: crate::model::DeviceConfigurationType,
@@ -11137,7 +11193,9 @@ pub mod fluent_builders {
             self.inner = self.inner.device_configuration(input);
             self
         }
-        /// <p>Device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfigurationType>,
@@ -11441,7 +11499,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -11449,7 +11507,7 @@ pub mod fluent_builders {
             self.inner = self.inner.supported_identity_providers(input.into());
             self
         }
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

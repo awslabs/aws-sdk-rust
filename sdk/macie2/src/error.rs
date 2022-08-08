@@ -5643,6 +5643,437 @@ impl std::error::Error for GetMemberError {
     }
 }
 
+/// Error type for the `GetRevealConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetRevealConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: GetRevealConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetRevealConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetRevealConfigurationErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetRevealConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetRevealConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetRevealConfigurationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetRevealConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetRevealConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            GetRevealConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetRevealConfigurationError {
+    fn code(&self) -> Option<&str> {
+        GetRevealConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetRevealConfigurationError {
+    /// Creates a new `GetRevealConfigurationError`.
+    pub fn new(kind: GetRevealConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetRevealConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetRevealConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetRevealConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetRevealConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetRevealConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevealConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRevealConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevealConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRevealConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevealConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetRevealConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevealConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for GetRevealConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetRevealConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetRevealConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetRevealConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetRevealConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            GetRevealConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetSensitiveDataOccurrences` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSensitiveDataOccurrencesError {
+    /// Kind of error that occurred.
+    pub kind: GetSensitiveDataOccurrencesErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetSensitiveDataOccurrences` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSensitiveDataOccurrencesErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred due to one or more service quotas for an account.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to an unprocessable entity.</p>
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSensitiveDataOccurrencesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSensitiveDataOccurrencesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            GetSensitiveDataOccurrencesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSensitiveDataOccurrencesError {
+    fn code(&self) -> Option<&str> {
+        GetSensitiveDataOccurrencesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSensitiveDataOccurrencesError {
+    /// Creates a new `GetSensitiveDataOccurrencesError`.
+    pub fn new(kind: GetSensitiveDataOccurrencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSensitiveDataOccurrencesError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSensitiveDataOccurrencesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSensitiveDataOccurrencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSensitiveDataOccurrencesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException`.
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for GetSensitiveDataOccurrencesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSensitiveDataOccurrencesErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            GetSensitiveDataOccurrencesErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetSensitiveDataOccurrencesAvailability` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetSensitiveDataOccurrencesAvailabilityError {
+    /// Kind of error that occurred.
+    pub kind: GetSensitiveDataOccurrencesAvailabilityErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetSensitiveDataOccurrencesAvailability` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetSensitiveDataOccurrencesAvailabilityErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because a specified resource wasn't found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetSensitiveDataOccurrencesAvailabilityError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetSensitiveDataOccurrencesAvailabilityError {
+    fn code(&self) -> Option<&str> {
+        GetSensitiveDataOccurrencesAvailabilityError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetSensitiveDataOccurrencesAvailabilityError {
+    /// Creates a new `GetSensitiveDataOccurrencesAvailabilityError`.
+    pub fn new(
+        kind: GetSensitiveDataOccurrencesAvailabilityErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetSensitiveDataOccurrencesAvailabilityError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetSensitiveDataOccurrencesAvailabilityErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetSensitiveDataOccurrencesAvailabilityError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetSensitiveDataOccurrencesAvailabilityErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for GetSensitiveDataOccurrencesAvailabilityError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException(_inner) => {
+                Some(_inner)
+            }
+            GetSensitiveDataOccurrencesAvailabilityErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `GetUsageStatistics` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8883,6 +9314,132 @@ impl std::error::Error for UpdateOrganizationConfigurationError {
     }
 }
 
+/// Error type for the `UpdateRevealConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRevealConfigurationError {
+    /// Kind of error that occurred.
+    pub kind: UpdateRevealConfigurationErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UpdateRevealConfiguration` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRevealConfigurationErrorKind {
+    /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
+    ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateRevealConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRevealConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRevealConfigurationErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateRevealConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateRevealConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateRevealConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UpdateRevealConfigurationError {
+    fn code(&self) -> Option<&str> {
+        UpdateRevealConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateRevealConfigurationError {
+    /// Creates a new `UpdateRevealConfigurationError`.
+    pub fn new(kind: UpdateRevealConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UpdateRevealConfigurationError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRevealConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UpdateRevealConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRevealConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UpdateRevealConfigurationErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRevealConfigurationErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRevealConfigurationErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRevealConfigurationErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRevealConfigurationErrorKind::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRevealConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `UpdateRevealConfigurationErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRevealConfigurationErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateRevealConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRevealConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRevealConfigurationErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateRevealConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateRevealConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateRevealConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9011,6 +9568,134 @@ impl ThrottlingException {
     }
 }
 
+/// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalServerException {
+    /// <p>The explanation of the error that occurred.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalServerException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalServerException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerException")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerException {}
+/// See [`InternalServerException`](crate::error::InternalServerException).
+pub mod internal_server_exception {
+
+    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The explanation of the error that occurred.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The explanation of the error that occurred.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
+        pub fn build(self) -> crate::error::InternalServerException {
+            crate::error::InternalServerException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalServerException {
+    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
+    pub fn builder() -> crate::error::internal_server_exception::Builder {
+        crate::error::internal_server_exception::Builder::default()
+    }
+}
+
+/// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    /// <p>The explanation of the error that occurred.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
+pub mod access_denied_exception {
+
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The explanation of the error that occurred.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>The explanation of the error that occurred.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p>Provides information about an error that occurred due to one or more service quotas for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9034,8 +9719,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -9098,8 +9783,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -9139,70 +9824,6 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Provides information about an error that occurred due to an unknown internal server error, exception, or failure.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalServerException {
-    /// <p>The explanation of the error that occurred.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalServerException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalServerException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServerException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServerException {}
-/// See [`InternalServerException`](crate::error::InternalServerException).
-pub mod internal_server_exception {
-
-    /// A builder for [`InternalServerException`](crate::error::InternalServerException).
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The explanation of the error that occurred.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        /// <p>The explanation of the error that occurred.</p>
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
-        pub fn build(self) -> crate::error::InternalServerException {
-            crate::error::InternalServerException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalServerException {
-    /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
-    pub fn builder() -> crate::error::internal_server_exception::Builder {
-        crate::error::internal_server_exception::Builder::default()
-    }
-}
-
 /// <p>Provides information about an error that occurred due to a versioning conflict for a specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9226,8 +9847,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -9267,66 +9888,87 @@ impl ConflictException {
     }
 }
 
-/// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
+/// <p>Provides information about an error that occurred due to an unprocessable entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
-    /// <p>The explanation of the error that occurred.</p>
+pub struct UnprocessableEntityException {
+    /// <p>The type of error that occurred and prevented Amazon Macie from retrieving occurrences of sensitive data reported by the finding. Possible values are:</p>
+    /// <ul>
+    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
+    /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+    /// </ul>
     pub message: std::option::Option<std::string::String>,
 }
-impl std::fmt::Debug for AccessDeniedException {
+impl std::fmt::Debug for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
+        let mut formatter = f.debug_struct("UnprocessableEntityException");
         formatter.field("message", &self.message);
         formatter.finish()
     }
 }
-impl AccessDeniedException {
+impl UnprocessableEntityException {
     /// Returns the error message.
     pub fn message(&self) -> Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccessDeniedException {
+impl std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        write!(f, "UnprocessableEntityException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }
 }
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
-pub mod access_denied_exception {
+impl std::error::Error for UnprocessableEntityException {}
+/// See [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
+pub mod unprocessable_entity_exception {
 
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
+    /// A builder for [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The explanation of the error that occurred.</p>
+        /// <p>The type of error that occurred and prevented Amazon Macie from retrieving occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// </ul>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The explanation of the error that occurred.</p>
+        /// <p>The type of error that occurred and prevented Amazon Macie from retrieving occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding..</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Amazon Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// </ul>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
+        /// Consumes the builder and constructs a [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
+        pub fn build(self) -> crate::error::UnprocessableEntityException {
+            crate::error::UnprocessableEntityException {
                 message: self.message,
             }
         }
     }
 }
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
+impl UnprocessableEntityException {
+    /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException).
+    pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
+        crate::error::unprocessable_entity_exception::Builder::default()
     }
 }

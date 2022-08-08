@@ -144,8 +144,8 @@ impl Client {
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_description): <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`ignore_words(Vec<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::ignore_words) / [`set_ignore_words(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_name): <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     ///   - [`regex(impl Into<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::regex) / [`set_regex(Option<String>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     ///   - [`severity_levels(Vec<SeverityLevel>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::severity_levels) / [`set_severity_levels(Option<Vec<SeverityLevel>>)`](crate::client::fluent_builders::CreateCustomDataIdentifier::set_severity_levels): <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>  <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
@@ -286,7 +286,7 @@ impl Client {
     ///   - [`job_status(Option<JobStatus>)`](crate::output::DescribeClassificationJobOutput::job_status): <p>The current status of the job. Possible values are:</p>  <ul>  <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>   <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>   <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>   <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>   <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>   <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li> </ul>
     ///   - [`job_type(Option<JobType>)`](crate::output::DescribeClassificationJobOutput::job_type): <p>The schedule for running the job. Possible values are:</p>  <ul>  <li><p>ONE_TIME - The job runs only once.</p></li>   <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li> </ul>
     ///   - [`last_run_error_status(Option<LastRunErrorStatus>)`](crate::output::DescribeClassificationJobOutput::last_run_error_status): <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
-    ///   - [`last_run_time(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::last_run_time): <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+    ///   - [`last_run_time(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::last_run_time): <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
     ///   - [`managed_data_identifier_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
     ///   - [`managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::output::DescribeClassificationJobOutput::managed_data_identifier_selector): <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers.</p></li> </ul>  <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeClassificationJobOutput::name): <p>The custom name of the job.</p>
@@ -449,8 +449,8 @@ impl Client {
     ///   - [`description(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::description): <p>The custom description of the custom data identifier.</p>
     ///   - [`id(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::id): <p>The unique identifier for the custom data identifier.</p>
     ///   - [`ignore_words(Option<Vec<String>>)`](crate::output::GetCustomDataIdentifierOutput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
-    ///   - [`keywords(Option<Vec<String>>)`](crate::output::GetCustomDataIdentifierOutput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
-    ///   - [`maximum_match_distance(i32)`](crate::output::GetCustomDataIdentifierOutput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+    ///   - [`keywords(Option<Vec<String>>)`](crate::output::GetCustomDataIdentifierOutput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::output::GetCustomDataIdentifierOutput::maximum_match_distance): <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     ///   - [`name(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::name): <p>The custom name of the custom data identifier.</p>
     ///   - [`regex(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
     ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::output::GetCustomDataIdentifierOutput::severity_levels): <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
@@ -563,6 +563,41 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetMemberError>`](crate::error::GetMemberError)
     pub fn get_member(&self) -> fluent_builders::GetMember {
         fluent_builders::GetMember::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetRevealConfiguration`](crate::client::fluent_builders::GetRevealConfiguration) operation.
+    ///
+    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetRevealConfiguration::send) it.
+
+    /// - On success, responds with [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<RevealConfiguration>)`](crate::output::GetRevealConfigurationOutput::configuration): <p>The current configuration settings and the status of the configuration for the account.</p>
+    /// - On failure, responds with [`SdkError<GetRevealConfigurationError>`](crate::error::GetRevealConfigurationError)
+    pub fn get_reveal_configuration(&self) -> fluent_builders::GetRevealConfiguration {
+        fluent_builders::GetRevealConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetSensitiveDataOccurrences`](crate::client::fluent_builders::GetSensitiveDataOccurrences) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrences::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrences::set_finding_id): <p>The unique identifier for the finding.</p>
+    /// - On success, responds with [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput) with field(s):
+    ///   - [`error(Option<String>)`](crate::output::GetSensitiveDataOccurrencesOutput::error): <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+    ///   - [`sensitive_data_occurrences(Option<HashMap<String, Vec<DetectedDataDetails>>>)`](crate::output::GetSensitiveDataOccurrencesOutput::sensitive_data_occurrences): <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+    ///   - [`status(Option<RevealRequestStatus>)`](crate::output::GetSensitiveDataOccurrencesOutput::status): <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>  <ul>  <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>   <li><p>PROCESSING - Macie is processing the request.</p></li>   <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li> </ul>
+    /// - On failure, responds with [`SdkError<GetSensitiveDataOccurrencesError>`](crate::error::GetSensitiveDataOccurrencesError)
+    pub fn get_sensitive_data_occurrences(&self) -> fluent_builders::GetSensitiveDataOccurrences {
+        fluent_builders::GetSensitiveDataOccurrences::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`GetSensitiveDataOccurrencesAvailability`](crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`finding_id(impl Into<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability::finding_id) / [`set_finding_id(Option<String>)`](crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability::set_finding_id): <p>The unique identifier for the finding.</p>
+    /// - On success, responds with [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput) with field(s):
+    ///   - [`code(Option<AvailabilityCode>)`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput::code): <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+    ///   - [`reasons(Option<Vec<UnavailabilityReasonCode>>)`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput::reasons): <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>  <ul>  <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>   <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>   <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>   <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>   <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li> </ul>  <p>This value is null if sensitive data can be retrieved for the finding.</p>
+    /// - On failure, responds with [`SdkError<GetSensitiveDataOccurrencesAvailabilityError>`](crate::error::GetSensitiveDataOccurrencesAvailabilityError)
+    pub fn get_sensitive_data_occurrences_availability(
+        &self,
+    ) -> fluent_builders::GetSensitiveDataOccurrencesAvailability {
+        fluent_builders::GetSensitiveDataOccurrencesAvailability::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
@@ -766,8 +801,8 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ignore_words(Vec<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::ignore_words) / [`set_ignore_words(Option<Vec<String>>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
-    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
-    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`keywords(Vec<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::keywords) / [`set_keywords(Option<Vec<String>>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::maximum_match_distance) / [`set_maximum_match_distance(i32)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_maximum_match_distance): <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     ///   - [`regex(impl Into<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::regex) / [`set_regex(Option<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     ///   - [`sample_text(impl Into<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::sample_text) / [`set_sample_text(Option<String>)`](crate::client::fluent_builders::TestCustomDataIdentifier::set_sample_text): <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
     /// - On success, responds with [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput) with field(s):
@@ -848,6 +883,16 @@ impl Client {
         &self,
     ) -> fluent_builders::UpdateOrganizationConfiguration {
         fluent_builders::UpdateOrganizationConfiguration::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateRevealConfiguration`](crate::client::fluent_builders::UpdateRevealConfiguration) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`configuration(RevealConfiguration)`](crate::client::fluent_builders::UpdateRevealConfiguration::configuration) / [`set_configuration(Option<RevealConfiguration>)`](crate::client::fluent_builders::UpdateRevealConfiguration::set_configuration): <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// - On success, responds with [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<RevealConfiguration>)`](crate::output::UpdateRevealConfigurationOutput::configuration): <p>The new configuration settings and the status of the configuration for the account.</p>
+    /// - On failure, responds with [`SdkError<UpdateRevealConfigurationError>`](crate::error::UpdateRevealConfigurationError)
+    pub fn update_reveal_configuration(&self) -> fluent_builders::UpdateRevealConfiguration {
+        fluent_builders::UpdateRevealConfiguration::new(self.handle.clone())
     }
 }
 pub mod fluent_builders {
@@ -1317,12 +1362,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(input.into());
             self
         }
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1330,12 +1375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_match_distance(input);
             self
@@ -3284,6 +3329,157 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetRevealConfiguration`.
+    ///
+    /// <p>Retrieves the status and configuration settings for retrieving (revealing) occurrences of sensitive data reported by findings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetRevealConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_reveal_configuration_input::Builder,
+    }
+    impl GetRevealConfiguration {
+        /// Creates a new `GetRevealConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetRevealConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetRevealConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+    }
+    /// Fluent builder constructing a request to `GetSensitiveDataOccurrences`.
+    ///
+    /// <p>Retrieves (reveals) occurrences of sensitive data reported by a finding.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSensitiveDataOccurrences {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_sensitive_data_occurrences_input::Builder,
+    }
+    impl GetSensitiveDataOccurrences {
+        /// Creates a new `GetSensitiveDataOccurrences`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSensitiveDataOccurrencesOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetSensitiveDataOccurrencesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_finding_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetSensitiveDataOccurrencesAvailability`.
+    ///
+    /// <p>Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetSensitiveDataOccurrencesAvailability {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::get_sensitive_data_occurrences_availability_input::Builder,
+    }
+    impl GetSensitiveDataOccurrencesAvailability {
+        /// Creates a new `GetSensitiveDataOccurrencesAvailability`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetSensitiveDataOccurrencesAvailabilityOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+            >,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.finding_id(input.into());
+            self
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_finding_id(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetUsageStatistics`.
     ///
     /// <p>Retrieves (queries) quotas and aggregated usage data for one or more accounts.</p>
@@ -4474,12 +4670,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.keywords(input.into());
             self
         }
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4487,12 +4683,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_keywords(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_match_distance(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_maximum_match_distance(input);
             self
@@ -4969,6 +5165,62 @@ pub mod fluent_builders {
         /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_enable(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateRevealConfiguration`.
+    ///
+    /// <p>Updates the status and configuration settings for retrieving (revealing) occurrences of sensitive data reported by findings.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateRevealConfiguration {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_reveal_configuration_input::Builder,
+    }
+    impl UpdateRevealConfiguration {
+        /// Creates a new `UpdateRevealConfiguration`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateRevealConfigurationOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateRevealConfigurationError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn configuration(mut self, input: crate::model::RevealConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RevealConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
             self
         }
     }

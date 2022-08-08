@@ -258,7 +258,7 @@ pub struct DescribeEntityOutput {
     pub entity_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub entity_identifier: std::option::Option<std::string::String>,
-    /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+    /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     pub entity_arn: std::option::Option<std::string::String>,
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub last_modified_date: std::option::Option<std::string::String>,
@@ -274,7 +274,7 @@ impl DescribeEntityOutput {
     pub fn entity_identifier(&self) -> std::option::Option<&str> {
         self.entity_identifier.as_deref()
     }
-    /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+    /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     pub fn entity_arn(&self) -> std::option::Option<&str> {
         self.entity_arn.as_deref()
     }
@@ -334,12 +334,12 @@ pub mod describe_entity_output {
             self.entity_identifier = input;
             self
         }
-        /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+        /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
         pub fn entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_arn = Some(input.into());
             self
         }
-        /// <p>The ARN associated to the unique identifier for the change set referenced in this request.</p>
+        /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_arn = input;
             self

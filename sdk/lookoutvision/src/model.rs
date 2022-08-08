@@ -373,7 +373,7 @@ impl ModelPackagingConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GreengrassConfiguration {
-    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported. If you specify <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
+    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
     pub compiler_options: std::option::Option<std::string::String>,
     /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
@@ -392,7 +392,7 @@ pub struct GreengrassConfiguration {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl GreengrassConfiguration {
-    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported. If you specify <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
+    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
     /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
     pub fn compiler_options(&self) -> std::option::Option<&str> {
         self.compiler_options.as_deref()
@@ -456,13 +456,13 @@ pub mod greengrass_configuration {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported. If you specify <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
+        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
         /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
         pub fn compiler_options(mut self, input: impl Into<std::string::String>) -> Self {
             self.compiler_options = Some(input.into());
             self
         }
-        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported. If you specify <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
+        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>, don't specify <code>CompilerOptions</code>.</p>
         /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
         pub fn set_compiler_options(
             mut self,
@@ -671,7 +671,11 @@ pub struct TargetPlatform {
     pub os: std::option::Option<crate::model::TargetPlatformOs>,
     /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
     pub arch: std::option::Option<crate::model::TargetPlatformArch>,
-    /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+    /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU: </p>
+    /// <ul>
+    /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
+    /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
+    /// </ul>
     pub accelerator: std::option::Option<crate::model::TargetPlatformAccelerator>,
 }
 impl TargetPlatform {
@@ -683,7 +687,11 @@ impl TargetPlatform {
     pub fn arch(&self) -> std::option::Option<&crate::model::TargetPlatformArch> {
         self.arch.as_ref()
     }
-    /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+    /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU: </p>
+    /// <ul>
+    /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
+    /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
+    /// </ul>
     pub fn accelerator(&self) -> std::option::Option<&crate::model::TargetPlatformAccelerator> {
         self.accelerator.as_ref()
     }
@@ -734,12 +742,20 @@ pub mod target_platform {
             self.arch = input;
             self
         }
-        /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+        /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU: </p>
+        /// <ul>
+        /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
+        /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
+        /// </ul>
         pub fn accelerator(mut self, input: crate::model::TargetPlatformAccelerator) -> Self {
             self.accelerator = Some(input);
             self
         }
-        /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+        /// <p>The target accelerator for the model. Currently, Amazon Lookout for Vision only supports NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout for Vision uses the CPU for compilation and we highly recommend that you use the <code>GreengrassConfiguration$CompilerOptions</code> field. For example, you can use the following compiler options for CPU: </p>
+        /// <ul>
+        /// <li> <p> <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li>
+        /// <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code> </p> </li>
+        /// </ul>
         pub fn set_accelerator(
             mut self,
             input: std::option::Option<crate::model::TargetPlatformAccelerator>,
@@ -1728,29 +1744,49 @@ impl AsRef<str> for ModelPackagingJobStatus {
     }
 }
 
-/// <p>The prediction results from a call to <code>DetectAnomalies</code>.</p>
+/// <p>The prediction results from a call to <code>DetectAnomalies</code>. <code>DetectAnomalyResult</code> includes classification information for the prediction (<code>IsAnomalous</code> and <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code> also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>). Classification information is calculated separately from segmentation information and you shouldn't assume a relationship between them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub source: std::option::Option<crate::model::ImageSource>,
-    /// <p>True if the image contains an anomaly, otherwise false.</p>
+    /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
     pub is_anomalous: bool,
-    /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
+    /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub confidence: std::option::Option<f32>,
+    /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
+    /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
+    /// <p></p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
+    /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub anomaly_mask: std::option::Option<aws_smithy_types::Blob>,
 }
 impl DetectAnomalyResult {
     /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ImageSource> {
         self.source.as_ref()
     }
-    /// <p>True if the image contains an anomaly, otherwise false.</p>
+    /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
     pub fn is_anomalous(&self) -> bool {
         self.is_anomalous
     }
-    /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
+    /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
+    }
+    /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
+    /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
+    /// <p></p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
+        self.anomalies.as_deref()
+    }
+    /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
+    /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+    pub fn anomaly_mask(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+        self.anomaly_mask.as_ref()
     }
 }
 impl std::fmt::Debug for DetectAnomalyResult {
@@ -1759,6 +1795,8 @@ impl std::fmt::Debug for DetectAnomalyResult {
         formatter.field("source", &self.source);
         formatter.field("is_anomalous", &self.is_anomalous);
         formatter.field("confidence", &self.confidence);
+        formatter.field("anomalies", &self.anomalies);
+        formatter.field("anomaly_mask", &self.anomaly_mask);
         formatter.finish()
     }
 }
@@ -1771,6 +1809,8 @@ pub mod detect_anomaly_result {
         pub(crate) source: std::option::Option<crate::model::ImageSource>,
         pub(crate) is_anomalous: std::option::Option<bool>,
         pub(crate) confidence: std::option::Option<f32>,
+        pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
+        pub(crate) anomaly_mask: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
@@ -1783,24 +1823,64 @@ pub mod detect_anomaly_result {
             self.source = input;
             self
         }
-        /// <p>True if the image contains an anomaly, otherwise false.</p>
+        /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
         pub fn is_anomalous(mut self, input: bool) -> Self {
             self.is_anomalous = Some(input);
             self
         }
-        /// <p>True if the image contains an anomaly, otherwise false.</p>
+        /// <p>True if Amazon Lookout for Vision classifies the image as containing an anomaly, otherwise false.</p>
         pub fn set_is_anomalous(mut self, input: std::option::Option<bool>) -> Self {
             self.is_anomalous = input;
             self
         }
-        /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
+        /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
         pub fn confidence(mut self, input: f32) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The confidence that Amazon Lookout for Vision has in the accuracy of the prediction.</p>
+        /// <p>The confidence that Lookout for Vision has in the accuracy of the classification in <code>IsAnomalous</code>.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.confidence = input;
+            self
+        }
+        /// Appends an item to `anomalies`.
+        ///
+        /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
+        ///
+        /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
+        /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
+        /// <p></p>
+        /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+        pub fn anomalies(mut self, input: crate::model::Anomaly) -> Self {
+            let mut v = self.anomalies.unwrap_or_default();
+            v.push(input);
+            self.anomalies = Some(v);
+            self
+        }
+        /// <p>If the model is an image segmentation model, <code>Anomalies</code> contains a list of anomaly types found in the image. There is one entry for each type of anomaly found (even if multiple instances of an anomaly type exist on the image). The first element in the list is always an anomaly type representing the image background ('background') and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add the background anomaly type to the response, and you don't need to declare a background anomaly type in your dataset.</p>
+        /// <p>If the list has one entry ('background'), no anomalies were found on the image.</p>
+        /// <p></p>
+        /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+        pub fn set_anomalies(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
+        ) -> Self {
+            self.anomalies = input;
+            self
+        }
+        /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
+        /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+        pub fn anomaly_mask(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.anomaly_mask = Some(input);
+            self
+        }
+        /// <p>If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel masks that covers all anomaly types found on the image. Each anomaly type has a different mask color. To map a color to an anomaly type, see the <code>color</code> field of the <code>PixelAnomaly</code> object.</p>
+        /// <p>An image classification model doesn't return an <code>Anomalies</code> list. </p>
+        pub fn set_anomaly_mask(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
+            self.anomaly_mask = input;
             self
         }
         /// Consumes the builder and constructs a [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
@@ -1809,6 +1889,8 @@ pub mod detect_anomaly_result {
                 source: self.source,
                 is_anomalous: self.is_anomalous.unwrap_or_default(),
                 confidence: self.confidence,
+                anomalies: self.anomalies,
+                anomaly_mask: self.anomaly_mask,
             }
         }
     }
@@ -1817,6 +1899,155 @@ impl DetectAnomalyResult {
     /// Creates a new builder-style object to manufacture [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
     pub fn builder() -> crate::model::detect_anomaly_result::Builder {
         crate::model::detect_anomaly_result::Builder::default()
+    }
+}
+
+/// <p>Information about an anomaly type found on an image by an image segmentation model. For more information, see <code>DetectAnomalies</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Anomaly {
+    /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Information about the pixel mask that covers an anomaly type.</p>
+    pub pixel_anomaly: std::option::Option<crate::model::PixelAnomaly>,
+}
+impl Anomaly {
+    /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>Information about the pixel mask that covers an anomaly type.</p>
+    pub fn pixel_anomaly(&self) -> std::option::Option<&crate::model::PixelAnomaly> {
+        self.pixel_anomaly.as_ref()
+    }
+}
+impl std::fmt::Debug for Anomaly {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Anomaly");
+        formatter.field("name", &self.name);
+        formatter.field("pixel_anomaly", &self.pixel_anomaly);
+        formatter.finish()
+    }
+}
+/// See [`Anomaly`](crate::model::Anomaly).
+pub mod anomaly {
+
+    /// A builder for [`Anomaly`](crate::model::Anomaly).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) pixel_anomaly: std::option::Option<crate::model::PixelAnomaly>,
+    }
+    impl Builder {
+        /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Information about the pixel mask that covers an anomaly type.</p>
+        pub fn pixel_anomaly(mut self, input: crate::model::PixelAnomaly) -> Self {
+            self.pixel_anomaly = Some(input);
+            self
+        }
+        /// <p>Information about the pixel mask that covers an anomaly type.</p>
+        pub fn set_pixel_anomaly(
+            mut self,
+            input: std::option::Option<crate::model::PixelAnomaly>,
+        ) -> Self {
+            self.pixel_anomaly = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Anomaly`](crate::model::Anomaly).
+        pub fn build(self) -> crate::model::Anomaly {
+            crate::model::Anomaly {
+                name: self.name,
+                pixel_anomaly: self.pixel_anomaly,
+            }
+        }
+    }
+}
+impl Anomaly {
+    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
+    pub fn builder() -> crate::model::anomaly::Builder {
+        crate::model::anomaly::Builder::default()
+    }
+}
+
+/// <p>Information about the pixels in an anomaly mask. For more information, see <code>Anomaly</code>. <code>PixelAnomaly</code> is only returned by image segmentation models.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PixelAnomaly {
+    /// <p>The percentage area of the image that the anomaly type covers.</p>
+    pub total_percentage_area: std::option::Option<f32>,
+    /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+    pub color: std::option::Option<std::string::String>,
+}
+impl PixelAnomaly {
+    /// <p>The percentage area of the image that the anomaly type covers.</p>
+    pub fn total_percentage_area(&self) -> std::option::Option<f32> {
+        self.total_percentage_area
+    }
+    /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+    pub fn color(&self) -> std::option::Option<&str> {
+        self.color.as_deref()
+    }
+}
+impl std::fmt::Debug for PixelAnomaly {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PixelAnomaly");
+        formatter.field("total_percentage_area", &self.total_percentage_area);
+        formatter.field("color", &self.color);
+        formatter.finish()
+    }
+}
+/// See [`PixelAnomaly`](crate::model::PixelAnomaly).
+pub mod pixel_anomaly {
+
+    /// A builder for [`PixelAnomaly`](crate::model::PixelAnomaly).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_percentage_area: std::option::Option<f32>,
+        pub(crate) color: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The percentage area of the image that the anomaly type covers.</p>
+        pub fn total_percentage_area(mut self, input: f32) -> Self {
+            self.total_percentage_area = Some(input);
+            self
+        }
+        /// <p>The percentage area of the image that the anomaly type covers.</p>
+        pub fn set_total_percentage_area(mut self, input: std::option::Option<f32>) -> Self {
+            self.total_percentage_area = input;
+            self
+        }
+        /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+        pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
+            self.color = Some(input.into());
+            self
+        }
+        /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+        pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.color = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PixelAnomaly`](crate::model::PixelAnomaly).
+        pub fn build(self) -> crate::model::PixelAnomaly {
+            crate::model::PixelAnomaly {
+                total_percentage_area: self.total_percentage_area,
+                color: self.color,
+            }
+        }
+    }
+}
+impl PixelAnomaly {
+    /// Creates a new builder-style object to manufacture [`PixelAnomaly`](crate::model::PixelAnomaly).
+    pub fn builder() -> crate::model::pixel_anomaly::Builder {
+        crate::model::pixel_anomaly::Builder::default()
     }
 }
 
@@ -2600,6 +2831,10 @@ pub struct ModelDescription {
     pub evaluation_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    pub min_inference_units: std::option::Option<i32>,
+    /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+    pub max_inference_units: std::option::Option<i32>,
 }
 impl ModelDescription {
     /// <p>The version of the model</p>
@@ -2650,6 +2885,14 @@ impl ModelDescription {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+    pub fn min_inference_units(&self) -> std::option::Option<i32> {
+        self.min_inference_units
+    }
+    /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+    pub fn max_inference_units(&self) -> std::option::Option<i32> {
+        self.max_inference_units
+    }
 }
 impl std::fmt::Debug for ModelDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2666,6 +2909,8 @@ impl std::fmt::Debug for ModelDescription {
         formatter.field("evaluation_result", &self.evaluation_result);
         formatter.field("evaluation_end_timestamp", &self.evaluation_end_timestamp);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("min_inference_units", &self.min_inference_units);
+        formatter.field("max_inference_units", &self.max_inference_units);
         formatter.finish()
     }
 }
@@ -2687,6 +2932,8 @@ pub mod model_description {
         pub(crate) evaluation_result: std::option::Option<crate::model::OutputS3Object>,
         pub(crate) evaluation_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) min_inference_units: std::option::Option<i32>,
+        pub(crate) max_inference_units: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The version of the model</p>
@@ -2833,6 +3080,26 @@ pub mod model_description {
             self.kms_key_id = input;
             self
         }
+        /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+        pub fn min_inference_units(mut self, input: i32) -> Self {
+            self.min_inference_units = Some(input);
+            self
+        }
+        /// <p>The minimum number of inference units used by the model. For more information, see <code>StartModel</code> </p>
+        pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_inference_units = input;
+            self
+        }
+        /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+        pub fn max_inference_units(mut self, input: i32) -> Self {
+            self.max_inference_units = Some(input);
+            self
+        }
+        /// <p>The maximum number of inference units Amazon Lookout for Vision uses to auto-scale the model. For more information, see <code>StartModel</code>.</p>
+        pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_inference_units = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModelDescription`](crate::model::ModelDescription).
         pub fn build(self) -> crate::model::ModelDescription {
             crate::model::ModelDescription {
@@ -2848,6 +3115,8 @@ pub mod model_description {
                 evaluation_result: self.evaluation_result,
                 evaluation_end_timestamp: self.evaluation_end_timestamp,
                 kms_key_id: self.kms_key_id,
+                min_inference_units: self.min_inference_units,
+                max_inference_units: self.max_inference_units,
             }
         }
     }

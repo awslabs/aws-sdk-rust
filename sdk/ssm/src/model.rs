@@ -7090,7 +7090,7 @@ pub struct Command {
     pub document_version: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
     pub comment: std::option::Option<std::string::String>,
-    /// <p>If this time is reached and the command hasn't already started running, it won't run. Calculated based on the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.</p>
+    /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub expires_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
     pub parameters: std::option::Option<
@@ -7115,6 +7115,7 @@ pub struct Command {
     /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
     /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
@@ -7161,7 +7162,7 @@ impl Command {
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>If this time is reached and the command hasn't already started running, it won't run. Calculated based on the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.</p>
+    /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn expires_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires_after.as_ref()
     }
@@ -7200,6 +7201,7 @@ impl Command {
     /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
     /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
     pub fn status_details(&self) -> std::option::Option<&str> {
         self.status_details.as_deref()
@@ -7370,12 +7372,12 @@ pub mod command {
             self.comment = input;
             self
         }
-        /// <p>If this time is reached and the command hasn't already started running, it won't run. Calculated based on the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.</p>
+        /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn expires_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires_after = Some(input);
             self
         }
-        /// <p>If this time is reached and the command hasn't already started running, it won't run. Calculated based on the <code>ExpiresAfter</code> user input provided as part of the <code>SendCommand</code> API operation.</p>
+        /// <p>If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>. <code>ExpiresAfter</code> is calculated based on the total timeout for the overall command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_expires_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7483,6 +7485,7 @@ pub mod command {
         /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
         /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
@@ -7499,6 +7502,7 @@ pub mod command {
         /// <li> <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li>
         /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
         /// </ul>
         pub fn set_status_details(
             mut self,
@@ -10116,7 +10120,7 @@ impl NonCompliantSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SeveritySummary {
-    /// <p>The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.</p>
+    /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
     pub critical_count: i32,
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
     pub high_count: i32,
@@ -10130,7 +10134,7 @@ pub struct SeveritySummary {
     pub unspecified_count: i32,
 }
 impl SeveritySummary {
-    /// <p>The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.</p>
+    /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
     pub fn critical_count(&self) -> i32 {
         self.critical_count
     }
@@ -10181,12 +10185,12 @@ pub mod severity_summary {
         pub(crate) unspecified_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.</p>
+        /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
         pub fn critical_count(mut self, input: i32) -> Self {
             self.critical_count = Some(input);
             self
         }
-        /// <p>The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.</p>
+        /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
         pub fn set_critical_count(mut self, input: std::option::Option<i32>) -> Self {
             self.critical_count = input;
             self
@@ -13662,6 +13666,7 @@ pub struct CommandInvocation {
     /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
     /// <p> Gets the trace output sent by the agent. </p>
@@ -13723,6 +13728,7 @@ impl CommandInvocation {
     /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+    /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
     /// </ul>
     pub fn status_details(&self) -> std::option::Option<&str> {
         self.status_details.as_deref()
@@ -13911,6 +13917,7 @@ pub mod command_invocation {
         /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
         /// </ul>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
@@ -13927,6 +13934,7 @@ pub mod command_invocation {
         /// <li> <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p> </li>
         /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
         /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
+        /// <li> <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p> </li>
         /// </ul>
         pub fn set_status_details(
             mut self,

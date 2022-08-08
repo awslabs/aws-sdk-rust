@@ -112,7 +112,7 @@ impl StreamProcessorDataSharingPreference {
     }
 }
 
-/// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or object or <code>Polygon</code> to set a region of the screen.</p>
+/// <p>Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen.</p>
 /// <p>A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9664,6 +9664,8 @@ pub struct ProjectVersionDescription {
     pub manifest_summary: std::option::Option<crate::model::GroundTruthManifest>,
     /// <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was used to encrypt the model during training. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
+    pub max_inference_units: std::option::Option<i32>,
 }
 impl ProjectVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the model version. </p>
@@ -9718,6 +9720,10 @@ impl ProjectVersionDescription {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
+    pub fn max_inference_units(&self) -> std::option::Option<i32> {
+        self.max_inference_units
+    }
 }
 impl std::fmt::Debug for ProjectVersionDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9738,6 +9744,7 @@ impl std::fmt::Debug for ProjectVersionDescription {
         formatter.field("evaluation_result", &self.evaluation_result);
         formatter.field("manifest_summary", &self.manifest_summary);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("max_inference_units", &self.max_inference_units);
         formatter.finish()
     }
 }
@@ -9760,6 +9767,7 @@ pub mod project_version_description {
         pub(crate) evaluation_result: std::option::Option<crate::model::EvaluationResult>,
         pub(crate) manifest_summary: std::option::Option<crate::model::GroundTruthManifest>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) max_inference_units: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the model version. </p>
@@ -9925,6 +9933,16 @@ pub mod project_version_description {
             self.kms_key_id = input;
             self
         }
+        /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
+        pub fn max_inference_units(mut self, input: i32) -> Self {
+            self.max_inference_units = Some(input);
+            self
+        }
+        /// <p>The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale the model. For more information, see <code>StartProjectVersion</code>.</p>
+        pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_inference_units = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProjectVersionDescription`](crate::model::ProjectVersionDescription).
         pub fn build(self) -> crate::model::ProjectVersionDescription {
             crate::model::ProjectVersionDescription {
@@ -9941,6 +9959,7 @@ pub mod project_version_description {
                 evaluation_result: self.evaluation_result,
                 manifest_summary: self.manifest_summary,
                 kms_key_id: self.kms_key_id,
+                max_inference_units: self.max_inference_units,
             }
         }
     }

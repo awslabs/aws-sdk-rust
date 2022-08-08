@@ -605,6 +605,7 @@ pub mod create_meeting_input {
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
         pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -724,6 +725,53 @@ pub mod create_meeting_input {
             self.tenant_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+        /// <ul>
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+        /// </ul> <important>
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+        /// </important>
+        /// <p> <b>Minimum permissions</b> </p>
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+        /// <p> <code>tag:TagResources</code> </p>
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// </note>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+        /// <ul>
+        /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+        /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+        /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+        /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+        /// </ul> <important>
+        /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+        /// </important>
+        /// <p> <b>Minimum permissions</b> </p>
+        /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+        /// <p> <code>tag:TagResources</code> </p>
+        /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+        /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+        /// </note>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::input::CreateMeetingInput).
         pub fn build(
             self,
@@ -738,6 +786,7 @@ pub mod create_meeting_input {
                 meeting_features: self.meeting_features,
                 primary_meeting_id: self.primary_meeting_id,
                 tenant_ids: self.tenant_ids,
+                tags: self.tags,
             })
         }
     }
@@ -868,6 +917,7 @@ pub mod create_meeting_with_attendees_input {
             std::option::Option<std::vec::Vec<crate::model::CreateAttendeeRequestItem>>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
         pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -1006,6 +1056,25 @@ pub mod create_meeting_with_attendees_input {
             self.tenant_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags in the request.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags in the request.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput).
         pub fn build(
             self,
@@ -1023,6 +1092,7 @@ pub mod create_meeting_with_attendees_input {
                 attendees: self.attendees,
                 primary_meeting_id: self.primary_meeting_id,
                 tenant_ids: self.tenant_ids,
+                tags: self.tags,
             })
         }
     }
@@ -1930,6 +2000,138 @@ impl ListAttendeesInput {
     }
 }
 
+/// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+pub mod list_tags_for_resource_input {
+
+    /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListTagsForResourceInput {
+                resource_arn: self.resource_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
+#[doc(hidden)]
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListTagsForResourceInput {
+    /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListTagsForResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListTagsForResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/tags").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::ListTagsForResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                if let Some(inner_13) = &_input.resource_arn {
+                    query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_13));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListTagsForResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTagsForResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTagsForResource",
+            "chimesdkmeetings",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+}
+
 /// See [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput).
 pub mod start_meeting_transcription_input {
 
@@ -2006,14 +2208,14 @@ impl StartMeetingTranscriptionInput {
                 _input: &crate::input::StartMeetingTranscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_13 = &_input.meeting_id;
-                let input_13 = input_13.as_ref().ok_or(
+                let input_14 = &_input.meeting_id;
+                let input_14 = input_14.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let meeting_id = aws_smithy_http::label::fmt_string(input_14, false);
                 if meeting_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
@@ -2174,14 +2376,14 @@ impl StopMeetingTranscriptionInput {
                 _input: &crate::input::StopMeetingTranscriptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_14 = &_input.meeting_id;
-                let input_14 = input_14.as_ref().ok_or(
+                let input_15 = &_input.meeting_id;
+                let input_15 = input_15.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let meeting_id = aws_smithy_http::label::fmt_string(input_15, false);
                 if meeting_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
@@ -2269,6 +2471,336 @@ impl StopMeetingTranscriptionInput {
     }
 }
 
+/// See [`TagResourceInput`](crate::input::TagResourceInput).
+pub mod tag_resource_input {
+
+    /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Lists the requested tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Lists the requested tags.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::TagResourceInput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
+#[doc(hidden)]
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl TagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::TagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::TagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/tags").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::TagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_kv("operation", "tag-resource");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::TagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "chimesdkmeetings",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UntagResourceInput`](crate::input::UntagResourceInput).
+pub mod untag_resource_input {
+
+    /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the resource that you're removing tags from.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the resource that you're removing tags from.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys being removed from the resources.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.tag_keys.unwrap_or_default();
+            v.push(input.into());
+            self.tag_keys = Some(v);
+            self
+        }
+        /// <p>The tag keys being removed from the resources.</p>
+        pub fn set_tag_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.tag_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UntagResourceInput {
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
+#[doc(hidden)]
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UntagResourceInput {
+    /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UntagResource,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UntagResourceInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/tags").expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::UntagResourceInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_kv("operation", "untag-resource");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UntagResourceInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "chimesdkmeetings",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+}
+
 /// See [`UpdateAttendeeCapabilitiesInput`](crate::input::UpdateAttendeeCapabilitiesInput).
 pub mod update_attendee_capabilities_input {
 
@@ -2353,28 +2885,28 @@ impl UpdateAttendeeCapabilitiesInput {
                 _input: &crate::input::UpdateAttendeeCapabilitiesInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_15 = &_input.meeting_id;
-                let input_15 = input_15.as_ref().ok_or(
+                let input_16 = &_input.meeting_id;
+                let input_16 = input_16.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let meeting_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let meeting_id = aws_smithy_http::label::fmt_string(input_16, false);
                 if meeting_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "meeting_id",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_16 = &_input.attendee_id;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_17 = &_input.attendee_id;
+                let input_17 = input_17.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let attendee_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let attendee_id = aws_smithy_http::label::fmt_string(input_17, false);
                 if attendee_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "attendee_id",
@@ -2508,6 +3040,62 @@ impl std::fmt::Debug for UpdateAttendeeCapabilitiesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceInput {
+    /// <p>The ARN of the resource that you're removing tags from.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The tag keys being removed from the resources.</p>
+    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UntagResourceInput {
+    /// <p>The ARN of the resource that you're removing tags from.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The tag keys being removed from the resources.</p>
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+        self.tag_keys.as_deref()
+    }
+}
+impl std::fmt::Debug for UntagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tag_keys", &self.tag_keys);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Lists the requested tags.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl TagResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>Lists the requested tags.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for TagResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     pub meeting_id: std::option::Option<std::string::String>,
@@ -2555,6 +3143,27 @@ impl std::fmt::Debug for StartMeetingTranscriptionInput {
             "transcription_configuration",
             &self.transcription_configuration,
         );
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+}
+impl ListTagsForResourceInput {
+    /// <p>The ARN of the resource.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceInput");
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }
@@ -2716,6 +3325,8 @@ pub struct CreateMeetingWithAttendeesInput {
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The tags in the request.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2760,6 +3371,10 @@ impl CreateMeetingWithAttendeesInput {
     pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.tenant_ids.as_deref()
     }
+    /// <p>The tags in the request.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2776,6 +3391,7 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
         formatter.field("attendees", &self.attendees);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -2802,6 +3418,22 @@ pub struct CreateMeetingInput {
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+    /// <ul>
+    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+    /// </ul> <important>
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+    /// </important>
+    /// <p> <b>Minimum permissions</b> </p>
+    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p> <code>tag:TagResources</code> </p>
+    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+    /// </note>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -2842,6 +3474,24 @@ impl CreateMeetingInput {
     pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.tenant_ids.as_deref()
     }
+    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+    /// <ul>
+    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+    /// </ul> <important>
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+    /// </important>
+    /// <p> <b>Minimum permissions</b> </p>
+    /// <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p> <code>tag:TagResources</code> </p>
+    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+    /// </note>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateMeetingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2857,6 +3507,7 @@ impl std::fmt::Debug for CreateMeetingInput {
         formatter.field("meeting_features", &self.meeting_features);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

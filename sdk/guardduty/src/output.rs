@@ -156,6 +156,36 @@ impl UpdateMemberDetectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMalwareScanSettingsOutput {}
+impl std::fmt::Debug for UpdateMalwareScanSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMalwareScanSettingsOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput).
+pub mod update_malware_scan_settings_output {
+
+    /// A builder for [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput).
+        pub fn build(self) -> crate::output::UpdateMalwareScanSettingsOutput {
+            crate::output::UpdateMalwareScanSettingsOutput {}
+        }
+    }
+}
+impl UpdateMalwareScanSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMalwareScanSettingsOutput`](crate::output::UpdateMalwareScanSettingsOutput).
+    pub fn builder() -> crate::output::update_malware_scan_settings_output::Builder {
+        crate::output::update_malware_scan_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetOutput {}
 impl std::fmt::Debug for UpdateIpSetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1964,6 +1994,93 @@ impl GetMasterAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMalwareScanSettingsOutput {
+    /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
+    pub scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
+    /// <p>An enum value representing possible snapshot preservations.</p>
+    pub ebs_snapshot_preservation: std::option::Option<crate::model::EbsSnapshotPreservation>,
+}
+impl GetMalwareScanSettingsOutput {
+    /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
+    pub fn scan_resource_criteria(
+        &self,
+    ) -> std::option::Option<&crate::model::ScanResourceCriteria> {
+        self.scan_resource_criteria.as_ref()
+    }
+    /// <p>An enum value representing possible snapshot preservations.</p>
+    pub fn ebs_snapshot_preservation(
+        &self,
+    ) -> std::option::Option<&crate::model::EbsSnapshotPreservation> {
+        self.ebs_snapshot_preservation.as_ref()
+    }
+}
+impl std::fmt::Debug for GetMalwareScanSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMalwareScanSettingsOutput");
+        formatter.field("scan_resource_criteria", &self.scan_resource_criteria);
+        formatter.field("ebs_snapshot_preservation", &self.ebs_snapshot_preservation);
+        formatter.finish()
+    }
+}
+/// See [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput).
+pub mod get_malware_scan_settings_output {
+
+    /// A builder for [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scan_resource_criteria: std::option::Option<crate::model::ScanResourceCriteria>,
+        pub(crate) ebs_snapshot_preservation:
+            std::option::Option<crate::model::EbsSnapshotPreservation>,
+    }
+    impl Builder {
+        /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
+        pub fn scan_resource_criteria(mut self, input: crate::model::ScanResourceCriteria) -> Self {
+            self.scan_resource_criteria = Some(input);
+            self
+        }
+        /// <p>Represents the criteria to be used in the filter for scanning resources.</p>
+        pub fn set_scan_resource_criteria(
+            mut self,
+            input: std::option::Option<crate::model::ScanResourceCriteria>,
+        ) -> Self {
+            self.scan_resource_criteria = input;
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn ebs_snapshot_preservation(
+            mut self,
+            input: crate::model::EbsSnapshotPreservation,
+        ) -> Self {
+            self.ebs_snapshot_preservation = Some(input);
+            self
+        }
+        /// <p>An enum value representing possible snapshot preservations.</p>
+        pub fn set_ebs_snapshot_preservation(
+            mut self,
+            input: std::option::Option<crate::model::EbsSnapshotPreservation>,
+        ) -> Self {
+            self.ebs_snapshot_preservation = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput).
+        pub fn build(self) -> crate::output::GetMalwareScanSettingsOutput {
+            crate::output::GetMalwareScanSettingsOutput {
+                scan_resource_criteria: self.scan_resource_criteria,
+                ebs_snapshot_preservation: self.ebs_snapshot_preservation,
+            }
+        }
+    }
+}
+impl GetMalwareScanSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetMalwareScanSettingsOutput`](crate::output::GetMalwareScanSettingsOutput).
+    pub fn builder() -> crate::output::get_malware_scan_settings_output::Builder {
+        crate::output::get_malware_scan_settings_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetOutput {
     /// <p>The user-friendly name for the IPSet.</p>
     pub name: std::option::Option<std::string::String>,
@@ -3171,6 +3288,88 @@ impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
     pub fn builder() -> crate::output::describe_organization_configuration_output::Builder {
         crate::output::describe_organization_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeMalwareScansOutput {
+    /// <p>Contains information about malware scans.</p>
+    pub scans: std::option::Option<std::vec::Vec<crate::model::Scan>>,
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeMalwareScansOutput {
+    /// <p>Contains information about malware scans.</p>
+    pub fn scans(&self) -> std::option::Option<&[crate::model::Scan]> {
+        self.scans.as_deref()
+    }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeMalwareScansOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeMalwareScansOutput");
+        formatter.field("scans", &self.scans);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeMalwareScansOutput`](crate::output::DescribeMalwareScansOutput).
+pub mod describe_malware_scans_output {
+
+    /// A builder for [`DescribeMalwareScansOutput`](crate::output::DescribeMalwareScansOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scans: std::option::Option<std::vec::Vec<crate::model::Scan>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `scans`.
+        ///
+        /// To override the contents of this collection use [`set_scans`](Self::set_scans).
+        ///
+        /// <p>Contains information about malware scans.</p>
+        pub fn scans(mut self, input: crate::model::Scan) -> Self {
+            let mut v = self.scans.unwrap_or_default();
+            v.push(input);
+            self.scans = Some(v);
+            self
+        }
+        /// <p>Contains information about malware scans.</p>
+        pub fn set_scans(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Scan>>,
+        ) -> Self {
+            self.scans = input;
+            self
+        }
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeMalwareScansOutput`](crate::output::DescribeMalwareScansOutput).
+        pub fn build(self) -> crate::output::DescribeMalwareScansOutput {
+            crate::output::DescribeMalwareScansOutput {
+                scans: self.scans,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeMalwareScansOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMalwareScansOutput`](crate::output::DescribeMalwareScansOutput).
+    pub fn builder() -> crate::output::describe_malware_scans_output::Builder {
+        crate::output::describe_malware_scans_output::Builder::default()
     }
 }
 

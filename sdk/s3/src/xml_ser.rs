@@ -1133,6 +1133,22 @@ pub fn serialize_structure_crate_model_completed_part(
         let mut inner_writer = scope.start_el("ETag").finish();
         inner_writer.data(var_79.as_ref());
     }
+    if let Some(var_80) = &input.checksum_crc32 {
+        let mut inner_writer = scope.start_el("ChecksumCRC32").finish();
+        inner_writer.data(var_80.as_ref());
+    }
+    if let Some(var_81) = &input.checksum_crc32_c {
+        let mut inner_writer = scope.start_el("ChecksumCRC32C").finish();
+        inner_writer.data(var_81.as_ref());
+    }
+    if let Some(var_82) = &input.checksum_sha1 {
+        let mut inner_writer = scope.start_el("ChecksumSHA1").finish();
+        inner_writer.data(var_82.as_ref());
+    }
+    if let Some(var_83) = &input.checksum_sha256 {
+        let mut inner_writer = scope.start_el("ChecksumSHA256").finish();
+        inner_writer.data(var_83.as_ref());
+    }
     if input.part_number != 0 {
         let mut inner_writer = scope.start_el("PartNumber").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.part_number).encode());
@@ -1147,13 +1163,13 @@ pub fn serialize_structure_crate_model_object_identifier(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_80) = &input.key {
+    if let Some(var_84) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_80.as_ref());
+        inner_writer.data(var_84.as_ref());
     }
-    if let Some(var_81) = &input.version_id {
+    if let Some(var_85) = &input.version_id {
         let mut inner_writer = scope.start_el("VersionId").finish();
-        inner_writer.data(var_81.as_ref());
+        inner_writer.data(var_85.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1165,15 +1181,15 @@ pub fn serialize_structure_crate_model_grant(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_82) = &input.grantee {
+    if let Some(var_86) = &input.grantee {
         let inner_writer = scope
             .start_el("Grantee")
             .write_ns("http://www.w3.org/2001/XMLSchema-instance", Some("xsi"));
-        crate::xml_ser::serialize_structure_crate_model_grantee(var_82, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_grantee(var_86, inner_writer)?
     }
-    if let Some(var_83) = &input.permission {
+    if let Some(var_87) = &input.permission {
         let mut inner_writer = scope.start_el("Permission").finish();
-        inner_writer.data(var_83.as_str());
+        inner_writer.data(var_87.as_str());
     }
     scope.finish();
     Ok(())
@@ -1185,13 +1201,13 @@ pub fn serialize_structure_crate_model_owner(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_84) = &input.display_name {
+    if let Some(var_88) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
-        inner_writer.data(var_84.as_ref());
+        inner_writer.data(var_88.as_ref());
     }
-    if let Some(var_85) = &input.id {
+    if let Some(var_89) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_85.as_ref());
+        inner_writer.data(var_89.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1233,10 +1249,10 @@ pub fn serialize_structure_crate_model_storage_class_analysis(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_86) = &input.data_export {
+    if let Some(var_90) = &input.data_export {
         let inner_writer = scope.start_el("DataExport");
         crate::xml_ser::serialize_structure_crate_model_storage_class_analysis_data_export(
-            var_86,
+            var_90,
             inner_writer,
         )?
     }
@@ -1250,39 +1266,39 @@ pub fn serialize_structure_crate_model_cors_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_87) = &input.id {
+    if let Some(var_91) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_87.as_ref());
+        inner_writer.data(var_91.as_ref());
     }
-    if let Some(var_88) = &input.allowed_headers {
-        for list_item_89 in var_88 {
-            {
-                let mut inner_writer = scope.start_el("AllowedHeader").finish();
-                inner_writer.data(list_item_89.as_ref());
-            }
-        }
-    }
-    if let Some(var_90) = &input.allowed_methods {
-        for list_item_91 in var_90 {
-            {
-                let mut inner_writer = scope.start_el("AllowedMethod").finish();
-                inner_writer.data(list_item_91.as_ref());
-            }
-        }
-    }
-    if let Some(var_92) = &input.allowed_origins {
+    if let Some(var_92) = &input.allowed_headers {
         for list_item_93 in var_92 {
             {
-                let mut inner_writer = scope.start_el("AllowedOrigin").finish();
+                let mut inner_writer = scope.start_el("AllowedHeader").finish();
                 inner_writer.data(list_item_93.as_ref());
             }
         }
     }
-    if let Some(var_94) = &input.expose_headers {
+    if let Some(var_94) = &input.allowed_methods {
         for list_item_95 in var_94 {
             {
-                let mut inner_writer = scope.start_el("ExposeHeader").finish();
+                let mut inner_writer = scope.start_el("AllowedMethod").finish();
                 inner_writer.data(list_item_95.as_ref());
+            }
+        }
+    }
+    if let Some(var_96) = &input.allowed_origins {
+        for list_item_97 in var_96 {
+            {
+                let mut inner_writer = scope.start_el("AllowedOrigin").finish();
+                inner_writer.data(list_item_97.as_ref());
+            }
+        }
+    }
+    if let Some(var_98) = &input.expose_headers {
+        for list_item_99 in var_98 {
+            {
+                let mut inner_writer = scope.start_el("ExposeHeader").finish();
+                inner_writer.data(list_item_99.as_ref());
             }
         }
     }
@@ -1301,10 +1317,10 @@ pub fn serialize_structure_crate_model_server_side_encryption_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_96) = &input.apply_server_side_encryption_by_default {
+    if let Some(var_100) = &input.apply_server_side_encryption_by_default {
         let inner_writer = scope.start_el("ApplyServerSideEncryptionByDefault");
         crate::xml_ser::serialize_structure_crate_model_server_side_encryption_by_default(
-            var_96,
+            var_100,
             inner_writer,
         )?
     }
@@ -1323,18 +1339,18 @@ pub fn serialize_structure_crate_model_intelligent_tiering_filter(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_97) = &input.prefix {
+    if let Some(var_101) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_97.as_ref());
+        inner_writer.data(var_101.as_ref());
     }
-    if let Some(var_98) = &input.tag {
+    if let Some(var_102) = &input.tag {
         let inner_writer = scope.start_el("Tag");
-        crate::xml_ser::serialize_structure_crate_model_tag(var_98, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tag(var_102, inner_writer)?
     }
-    if let Some(var_99) = &input.and {
+    if let Some(var_103) = &input.and {
         let inner_writer = scope.start_el("And");
         crate::xml_ser::serialize_structure_crate_model_intelligent_tiering_and_operator(
-            var_99,
+            var_103,
             inner_writer,
         )?
     }
@@ -1352,9 +1368,9 @@ pub fn serialize_structure_crate_model_tiering(
         let mut inner_writer = scope.start_el("Days").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
-    if let Some(var_100) = &input.access_tier {
+    if let Some(var_104) = &input.access_tier {
         let mut inner_writer = scope.start_el("AccessTier").finish();
-        inner_writer.data(var_100.as_str());
+        inner_writer.data(var_104.as_str());
     }
     scope.finish();
     Ok(())
@@ -1366,10 +1382,10 @@ pub fn serialize_structure_crate_model_inventory_destination(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_101) = &input.s3_bucket_destination {
+    if let Some(var_105) = &input.s3_bucket_destination {
         let inner_writer = scope.start_el("S3BucketDestination");
         crate::xml_ser::serialize_structure_crate_model_inventory_s3_bucket_destination(
-            var_101,
+            var_105,
             inner_writer,
         )?
     }
@@ -1383,9 +1399,9 @@ pub fn serialize_structure_crate_model_inventory_filter(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_102) = &input.prefix {
+    if let Some(var_106) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_102.as_ref());
+        inner_writer.data(var_106.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1397,9 +1413,9 @@ pub fn serialize_structure_crate_model_inventory_schedule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_103) = &input.frequency {
+    if let Some(var_107) = &input.frequency {
         let mut inner_writer = scope.start_el("Frequency").finish();
-        inner_writer.data(var_103.as_str());
+        inner_writer.data(var_107.as_str());
     }
     scope.finish();
     Ok(())
@@ -1411,59 +1427,59 @@ pub fn serialize_structure_crate_model_lifecycle_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_104) = &input.expiration {
+    if let Some(var_108) = &input.expiration {
         let inner_writer = scope.start_el("Expiration");
-        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(var_104, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_lifecycle_expiration(var_108, inner_writer)?
     }
-    if let Some(var_105) = &input.id {
+    if let Some(var_109) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_105.as_ref());
+        inner_writer.data(var_109.as_ref());
     }
-    if let Some(var_106) = &input.prefix {
+    if let Some(var_110) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_106.as_ref());
+        inner_writer.data(var_110.as_ref());
     }
-    if let Some(var_107) = &input.filter {
+    if let Some(var_111) = &input.filter {
         let inner_writer = scope.start_el("Filter");
-        crate::xml_ser::serialize_union_crate_model_lifecycle_rule_filter(var_107, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_lifecycle_rule_filter(var_111, inner_writer)?
     }
-    if let Some(var_108) = &input.status {
+    if let Some(var_112) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_108.as_str());
+        inner_writer.data(var_112.as_str());
     }
-    if let Some(var_109) = &input.transitions {
-        for list_item_110 in var_109 {
+    if let Some(var_113) = &input.transitions {
+        for list_item_114 in var_113 {
             {
                 let inner_writer = scope.start_el("Transition");
                 crate::xml_ser::serialize_structure_crate_model_transition(
-                    list_item_110,
+                    list_item_114,
                     inner_writer,
                 )?
             }
         }
     }
-    if let Some(var_111) = &input.noncurrent_version_transitions {
-        for list_item_112 in var_111 {
+    if let Some(var_115) = &input.noncurrent_version_transitions {
+        for list_item_116 in var_115 {
             {
                 let inner_writer = scope.start_el("NoncurrentVersionTransition");
                 crate::xml_ser::serialize_structure_crate_model_noncurrent_version_transition(
-                    list_item_112,
+                    list_item_116,
                     inner_writer,
                 )?
             }
         }
     }
-    if let Some(var_113) = &input.noncurrent_version_expiration {
+    if let Some(var_117) = &input.noncurrent_version_expiration {
         let inner_writer = scope.start_el("NoncurrentVersionExpiration");
         crate::xml_ser::serialize_structure_crate_model_noncurrent_version_expiration(
-            var_113,
+            var_117,
             inner_writer,
         )?
     }
-    if let Some(var_114) = &input.abort_incomplete_multipart_upload {
+    if let Some(var_118) = &input.abort_incomplete_multipart_upload {
         let inner_writer = scope.start_el("AbortIncompleteMultipartUpload");
         crate::xml_ser::serialize_structure_crate_model_abort_incomplete_multipart_upload(
-            var_114,
+            var_118,
             inner_writer,
         )?
     }
@@ -1477,25 +1493,25 @@ pub fn serialize_structure_crate_model_logging_enabled(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_115) = &input.target_bucket {
+    if let Some(var_119) = &input.target_bucket {
         let mut inner_writer = scope.start_el("TargetBucket").finish();
-        inner_writer.data(var_115.as_ref());
+        inner_writer.data(var_119.as_ref());
     }
-    if let Some(var_116) = &input.target_grants {
+    if let Some(var_120) = &input.target_grants {
         let mut inner_writer = scope.start_el("TargetGrants").finish();
-        for list_item_117 in var_116 {
+        for list_item_121 in var_120 {
             {
                 let inner_writer = inner_writer.start_el("Grant");
                 crate::xml_ser::serialize_structure_crate_model_target_grant(
-                    list_item_117,
+                    list_item_121,
                     inner_writer,
                 )?
             }
         }
     }
-    if let Some(var_118) = &input.target_prefix {
+    if let Some(var_122) = &input.target_prefix {
         let mut inner_writer = scope.start_el("TargetPrefix").finish();
-        inner_writer.data(var_118.as_ref());
+        inner_writer.data(var_122.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1541,26 +1557,26 @@ pub fn serialize_structure_crate_model_topic_configuration(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_119) = &input.id {
+    if let Some(var_123) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_119.as_ref());
+        inner_writer.data(var_123.as_ref());
     }
-    if let Some(var_120) = &input.topic_arn {
+    if let Some(var_124) = &input.topic_arn {
         let mut inner_writer = scope.start_el("Topic").finish();
-        inner_writer.data(var_120.as_ref());
+        inner_writer.data(var_124.as_ref());
     }
-    if let Some(var_121) = &input.events {
-        for list_item_122 in var_121 {
+    if let Some(var_125) = &input.events {
+        for list_item_126 in var_125 {
             {
                 let mut inner_writer = scope.start_el("Event").finish();
-                inner_writer.data(list_item_122.as_str());
+                inner_writer.data(list_item_126.as_str());
             }
         }
     }
-    if let Some(var_123) = &input.filter {
+    if let Some(var_127) = &input.filter {
         let inner_writer = scope.start_el("Filter");
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            var_123,
+            var_127,
             inner_writer,
         )?
     }
@@ -1574,26 +1590,26 @@ pub fn serialize_structure_crate_model_queue_configuration(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_124) = &input.id {
+    if let Some(var_128) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_124.as_ref());
+        inner_writer.data(var_128.as_ref());
     }
-    if let Some(var_125) = &input.queue_arn {
+    if let Some(var_129) = &input.queue_arn {
         let mut inner_writer = scope.start_el("Queue").finish();
-        inner_writer.data(var_125.as_ref());
+        inner_writer.data(var_129.as_ref());
     }
-    if let Some(var_126) = &input.events {
-        for list_item_127 in var_126 {
+    if let Some(var_130) = &input.events {
+        for list_item_131 in var_130 {
             {
                 let mut inner_writer = scope.start_el("Event").finish();
-                inner_writer.data(list_item_127.as_str());
+                inner_writer.data(list_item_131.as_str());
             }
         }
     }
-    if let Some(var_128) = &input.filter {
+    if let Some(var_132) = &input.filter {
         let inner_writer = scope.start_el("Filter");
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            var_128,
+            var_132,
             inner_writer,
         )?
     }
@@ -1607,26 +1623,26 @@ pub fn serialize_structure_crate_model_lambda_function_configuration(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_129) = &input.id {
+    if let Some(var_133) = &input.id {
         let mut inner_writer = scope.start_el("Id").finish();
-        inner_writer.data(var_129.as_ref());
+        inner_writer.data(var_133.as_ref());
     }
-    if let Some(var_130) = &input.lambda_function_arn {
+    if let Some(var_134) = &input.lambda_function_arn {
         let mut inner_writer = scope.start_el("CloudFunction").finish();
-        inner_writer.data(var_130.as_ref());
+        inner_writer.data(var_134.as_ref());
     }
-    if let Some(var_131) = &input.events {
-        for list_item_132 in var_131 {
+    if let Some(var_135) = &input.events {
+        for list_item_136 in var_135 {
             {
                 let mut inner_writer = scope.start_el("Event").finish();
-                inner_writer.data(list_item_132.as_str());
+                inner_writer.data(list_item_136.as_str());
             }
         }
     }
-    if let Some(var_133) = &input.filter {
+    if let Some(var_137) = &input.filter {
         let inner_writer = scope.start_el("Filter");
         crate::xml_ser::serialize_structure_crate_model_notification_configuration_filter(
-            var_133,
+            var_137,
             inner_writer,
         )?
     }
@@ -1651,9 +1667,9 @@ pub fn serialize_structure_crate_model_ownership_controls_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_134) = &input.object_ownership {
+    if let Some(var_138) = &input.object_ownership {
         let mut inner_writer = scope.start_el("ObjectOwnership").finish();
-        inner_writer.data(var_134.as_str());
+        inner_writer.data(var_138.as_str());
     }
     scope.finish();
     Ok(())
@@ -1665,48 +1681,48 @@ pub fn serialize_structure_crate_model_replication_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_135) = &input.id {
+    if let Some(var_139) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_135.as_ref());
+        inner_writer.data(var_139.as_ref());
     }
     if input.priority != 0 {
         let mut inner_writer = scope.start_el("Priority").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.priority).encode());
     }
-    if let Some(var_136) = &input.prefix {
+    if let Some(var_140) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_136.as_ref());
+        inner_writer.data(var_140.as_ref());
     }
-    if let Some(var_137) = &input.filter {
+    if let Some(var_141) = &input.filter {
         let inner_writer = scope.start_el("Filter");
-        crate::xml_ser::serialize_union_crate_model_replication_rule_filter(var_137, inner_writer)?
+        crate::xml_ser::serialize_union_crate_model_replication_rule_filter(var_141, inner_writer)?
     }
-    if let Some(var_138) = &input.status {
+    if let Some(var_142) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_138.as_str());
+        inner_writer.data(var_142.as_str());
     }
-    if let Some(var_139) = &input.source_selection_criteria {
+    if let Some(var_143) = &input.source_selection_criteria {
         let inner_writer = scope.start_el("SourceSelectionCriteria");
         crate::xml_ser::serialize_structure_crate_model_source_selection_criteria(
-            var_139,
+            var_143,
             inner_writer,
         )?
     }
-    if let Some(var_140) = &input.existing_object_replication {
+    if let Some(var_144) = &input.existing_object_replication {
         let inner_writer = scope.start_el("ExistingObjectReplication");
         crate::xml_ser::serialize_structure_crate_model_existing_object_replication(
-            var_140,
+            var_144,
             inner_writer,
         )?
     }
-    if let Some(var_141) = &input.destination {
+    if let Some(var_145) = &input.destination {
         let inner_writer = scope.start_el("Destination");
-        crate::xml_ser::serialize_structure_crate_model_destination(var_141, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_destination(var_145, inner_writer)?
     }
-    if let Some(var_142) = &input.delete_marker_replication {
+    if let Some(var_146) = &input.delete_marker_replication {
         let inner_writer = scope.start_el("DeleteMarkerReplication");
         crate::xml_ser::serialize_structure_crate_model_delete_marker_replication(
-            var_142,
+            var_146,
             inner_writer,
         )?
     }
@@ -1720,13 +1736,13 @@ pub fn serialize_structure_crate_model_tag(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_143) = &input.key {
+    if let Some(var_147) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_143.as_ref());
+        inner_writer.data(var_147.as_ref());
     }
-    if let Some(var_144) = &input.value {
+    if let Some(var_148) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_144.as_ref());
+        inner_writer.data(var_148.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1738,9 +1754,9 @@ pub fn serialize_structure_crate_model_error_document(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_145) = &input.key {
+    if let Some(var_149) = &input.key {
         let mut inner_writer = scope.start_el("Key").finish();
-        inner_writer.data(var_145.as_ref());
+        inner_writer.data(var_149.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1752,9 +1768,9 @@ pub fn serialize_structure_crate_model_index_document(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_146) = &input.suffix {
+    if let Some(var_150) = &input.suffix {
         let mut inner_writer = scope.start_el("Suffix").finish();
-        inner_writer.data(var_146.as_ref());
+        inner_writer.data(var_150.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1766,13 +1782,13 @@ pub fn serialize_structure_crate_model_redirect_all_requests_to(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_147) = &input.host_name {
+    if let Some(var_151) = &input.host_name {
         let mut inner_writer = scope.start_el("HostName").finish();
-        inner_writer.data(var_147.as_ref());
+        inner_writer.data(var_151.as_ref());
     }
-    if let Some(var_148) = &input.protocol {
+    if let Some(var_152) = &input.protocol {
         let mut inner_writer = scope.start_el("Protocol").finish();
-        inner_writer.data(var_148.as_str());
+        inner_writer.data(var_152.as_str());
     }
     scope.finish();
     Ok(())
@@ -1784,13 +1800,13 @@ pub fn serialize_structure_crate_model_routing_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_149) = &input.condition {
+    if let Some(var_153) = &input.condition {
         let inner_writer = scope.start_el("Condition");
-        crate::xml_ser::serialize_structure_crate_model_condition(var_149, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_condition(var_153, inner_writer)?
     }
-    if let Some(var_150) = &input.redirect {
+    if let Some(var_154) = &input.redirect {
         let inner_writer = scope.start_el("Redirect");
-        crate::xml_ser::serialize_structure_crate_model_redirect(var_150, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_redirect(var_154, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1802,9 +1818,9 @@ pub fn serialize_structure_crate_model_object_lock_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_151) = &input.default_retention {
+    if let Some(var_155) = &input.default_retention {
         let inner_writer = scope.start_el("DefaultRetention");
-        crate::xml_ser::serialize_structure_crate_model_default_retention(var_151, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_default_retention(var_155, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1816,9 +1832,9 @@ pub fn serialize_structure_crate_model_glacier_job_parameters(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_152) = &input.tier {
+    if let Some(var_156) = &input.tier {
         let mut inner_writer = scope.start_el("Tier").finish();
-        inner_writer.data(var_152.as_str());
+        inner_writer.data(var_156.as_str());
     }
     scope.finish();
     Ok(())
@@ -1830,21 +1846,21 @@ pub fn serialize_structure_crate_model_select_parameters(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_153) = &input.input_serialization {
+    if let Some(var_157) = &input.input_serialization {
         let inner_writer = scope.start_el("InputSerialization");
-        crate::xml_ser::serialize_structure_crate_model_input_serialization(var_153, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_input_serialization(var_157, inner_writer)?
     }
-    if let Some(var_154) = &input.expression_type {
+    if let Some(var_158) = &input.expression_type {
         let mut inner_writer = scope.start_el("ExpressionType").finish();
-        inner_writer.data(var_154.as_str());
+        inner_writer.data(var_158.as_str());
     }
-    if let Some(var_155) = &input.expression {
+    if let Some(var_159) = &input.expression {
         let mut inner_writer = scope.start_el("Expression").finish();
-        inner_writer.data(var_155.as_ref());
+        inner_writer.data(var_159.as_ref());
     }
-    if let Some(var_156) = &input.output_serialization {
+    if let Some(var_160) = &input.output_serialization {
         let inner_writer = scope.start_el("OutputSerialization");
-        crate::xml_ser::serialize_structure_crate_model_output_serialization(var_156, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_output_serialization(var_160, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1856,9 +1872,9 @@ pub fn serialize_structure_crate_model_output_location(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_157) = &input.s3 {
+    if let Some(var_161) = &input.s3 {
         let inner_writer = scope.start_el("S3");
-        crate::xml_ser::serialize_structure_crate_model_s3_location(var_157, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_location(var_161, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -1870,29 +1886,29 @@ pub fn serialize_structure_crate_model_csv_input(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_158) = &input.file_header_info {
+    if let Some(var_162) = &input.file_header_info {
         let mut inner_writer = scope.start_el("FileHeaderInfo").finish();
-        inner_writer.data(var_158.as_str());
+        inner_writer.data(var_162.as_str());
     }
-    if let Some(var_159) = &input.comments {
+    if let Some(var_163) = &input.comments {
         let mut inner_writer = scope.start_el("Comments").finish();
-        inner_writer.data(var_159.as_ref());
-    }
-    if let Some(var_160) = &input.quote_escape_character {
-        let mut inner_writer = scope.start_el("QuoteEscapeCharacter").finish();
-        inner_writer.data(var_160.as_ref());
-    }
-    if let Some(var_161) = &input.record_delimiter {
-        let mut inner_writer = scope.start_el("RecordDelimiter").finish();
-        inner_writer.data(var_161.as_ref());
-    }
-    if let Some(var_162) = &input.field_delimiter {
-        let mut inner_writer = scope.start_el("FieldDelimiter").finish();
-        inner_writer.data(var_162.as_ref());
-    }
-    if let Some(var_163) = &input.quote_character {
-        let mut inner_writer = scope.start_el("QuoteCharacter").finish();
         inner_writer.data(var_163.as_ref());
+    }
+    if let Some(var_164) = &input.quote_escape_character {
+        let mut inner_writer = scope.start_el("QuoteEscapeCharacter").finish();
+        inner_writer.data(var_164.as_ref());
+    }
+    if let Some(var_165) = &input.record_delimiter {
+        let mut inner_writer = scope.start_el("RecordDelimiter").finish();
+        inner_writer.data(var_165.as_ref());
+    }
+    if let Some(var_166) = &input.field_delimiter {
+        let mut inner_writer = scope.start_el("FieldDelimiter").finish();
+        inner_writer.data(var_166.as_ref());
+    }
+    if let Some(var_167) = &input.quote_character {
+        let mut inner_writer = scope.start_el("QuoteCharacter").finish();
+        inner_writer.data(var_167.as_ref());
     }
     if input.allow_quoted_record_delimiter {
         let mut inner_writer = scope.start_el("AllowQuotedRecordDelimiter").finish();
@@ -1911,9 +1927,9 @@ pub fn serialize_structure_crate_model_json_input(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_164) = &input.r#type {
+    if let Some(var_168) = &input.r#type {
         let mut inner_writer = scope.start_el("Type").finish();
-        inner_writer.data(var_164.as_str());
+        inner_writer.data(var_168.as_str());
     }
     scope.finish();
     Ok(())
@@ -1936,25 +1952,25 @@ pub fn serialize_structure_crate_model_csv_output(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_165) = &input.quote_fields {
+    if let Some(var_169) = &input.quote_fields {
         let mut inner_writer = scope.start_el("QuoteFields").finish();
-        inner_writer.data(var_165.as_str());
+        inner_writer.data(var_169.as_str());
     }
-    if let Some(var_166) = &input.quote_escape_character {
+    if let Some(var_170) = &input.quote_escape_character {
         let mut inner_writer = scope.start_el("QuoteEscapeCharacter").finish();
-        inner_writer.data(var_166.as_ref());
+        inner_writer.data(var_170.as_ref());
     }
-    if let Some(var_167) = &input.record_delimiter {
+    if let Some(var_171) = &input.record_delimiter {
         let mut inner_writer = scope.start_el("RecordDelimiter").finish();
-        inner_writer.data(var_167.as_ref());
+        inner_writer.data(var_171.as_ref());
     }
-    if let Some(var_168) = &input.field_delimiter {
+    if let Some(var_172) = &input.field_delimiter {
         let mut inner_writer = scope.start_el("FieldDelimiter").finish();
-        inner_writer.data(var_168.as_ref());
+        inner_writer.data(var_172.as_ref());
     }
-    if let Some(var_169) = &input.quote_character {
+    if let Some(var_173) = &input.quote_character {
         let mut inner_writer = scope.start_el("QuoteCharacter").finish();
-        inner_writer.data(var_169.as_ref());
+        inner_writer.data(var_173.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1966,9 +1982,9 @@ pub fn serialize_structure_crate_model_json_output(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_170) = &input.record_delimiter {
+    if let Some(var_174) = &input.record_delimiter {
         let mut inner_writer = scope.start_el("RecordDelimiter").finish();
-        inner_writer.data(var_170.as_ref());
+        inner_writer.data(var_174.as_ref());
     }
     scope.finish();
     Ok(())
@@ -1979,26 +1995,26 @@ pub fn serialize_structure_crate_model_grantee(
     writer: aws_smithy_xml::encode::ElWriter,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     let mut writer = writer;
-    if let Some(var_171) = &input.r#type {
-        writer.write_attribute("xsi:type", var_171.as_str());
+    if let Some(var_175) = &input.r#type {
+        writer.write_attribute("xsi:type", var_175.as_str());
     }
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_172) = &input.display_name {
+    if let Some(var_176) = &input.display_name {
         let mut inner_writer = scope.start_el("DisplayName").finish();
-        inner_writer.data(var_172.as_ref());
+        inner_writer.data(var_176.as_ref());
     }
-    if let Some(var_173) = &input.email_address {
+    if let Some(var_177) = &input.email_address {
         let mut inner_writer = scope.start_el("EmailAddress").finish();
-        inner_writer.data(var_173.as_ref());
+        inner_writer.data(var_177.as_ref());
     }
-    if let Some(var_174) = &input.id {
+    if let Some(var_178) = &input.id {
         let mut inner_writer = scope.start_el("ID").finish();
-        inner_writer.data(var_174.as_ref());
+        inner_writer.data(var_178.as_ref());
     }
-    if let Some(var_175) = &input.uri {
+    if let Some(var_179) = &input.uri {
         let mut inner_writer = scope.start_el("URI").finish();
-        inner_writer.data(var_175.as_ref());
+        inner_writer.data(var_179.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2010,15 +2026,15 @@ pub fn serialize_structure_crate_model_analytics_and_operator(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_176) = &input.prefix {
+    if let Some(var_180) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_176.as_ref());
+        inner_writer.data(var_180.as_ref());
     }
-    if let Some(var_177) = &input.tags {
-        for list_item_178 in var_177 {
+    if let Some(var_181) = &input.tags {
+        for list_item_182 in var_181 {
             {
                 let inner_writer = scope.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_178, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_182, inner_writer)?
             }
         }
     }
@@ -2032,14 +2048,14 @@ pub fn serialize_structure_crate_model_storage_class_analysis_data_export(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_179) = &input.output_schema_version {
+    if let Some(var_183) = &input.output_schema_version {
         let mut inner_writer = scope.start_el("OutputSchemaVersion").finish();
-        inner_writer.data(var_179.as_str());
+        inner_writer.data(var_183.as_str());
     }
-    if let Some(var_180) = &input.destination {
+    if let Some(var_184) = &input.destination {
         let inner_writer = scope.start_el("Destination");
         crate::xml_ser::serialize_structure_crate_model_analytics_export_destination(
-            var_180,
+            var_184,
             inner_writer,
         )?
     }
@@ -2053,13 +2069,13 @@ pub fn serialize_structure_crate_model_server_side_encryption_by_default(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_181) = &input.sse_algorithm {
+    if let Some(var_185) = &input.sse_algorithm {
         let mut inner_writer = scope.start_el("SSEAlgorithm").finish();
-        inner_writer.data(var_181.as_str());
+        inner_writer.data(var_185.as_str());
     }
-    if let Some(var_182) = &input.kms_master_key_id {
+    if let Some(var_186) = &input.kms_master_key_id {
         let mut inner_writer = scope.start_el("KMSMasterKeyID").finish();
-        inner_writer.data(var_182.as_ref());
+        inner_writer.data(var_186.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2071,15 +2087,15 @@ pub fn serialize_structure_crate_model_intelligent_tiering_and_operator(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_183) = &input.prefix {
+    if let Some(var_187) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_183.as_ref());
+        inner_writer.data(var_187.as_ref());
     }
-    if let Some(var_184) = &input.tags {
-        for list_item_185 in var_184 {
+    if let Some(var_188) = &input.tags {
+        for list_item_189 in var_188 {
             {
                 let inner_writer = scope.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_185, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_189, inner_writer)?
             }
         }
     }
@@ -2093,25 +2109,25 @@ pub fn serialize_structure_crate_model_inventory_s3_bucket_destination(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_186) = &input.account_id {
+    if let Some(var_190) = &input.account_id {
         let mut inner_writer = scope.start_el("AccountId").finish();
-        inner_writer.data(var_186.as_ref());
+        inner_writer.data(var_190.as_ref());
     }
-    if let Some(var_187) = &input.bucket {
+    if let Some(var_191) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_187.as_ref());
+        inner_writer.data(var_191.as_ref());
     }
-    if let Some(var_188) = &input.format {
+    if let Some(var_192) = &input.format {
         let mut inner_writer = scope.start_el("Format").finish();
-        inner_writer.data(var_188.as_str());
+        inner_writer.data(var_192.as_str());
     }
-    if let Some(var_189) = &input.prefix {
+    if let Some(var_193) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_189.as_ref());
+        inner_writer.data(var_193.as_ref());
     }
-    if let Some(var_190) = &input.encryption {
+    if let Some(var_194) = &input.encryption {
         let inner_writer = scope.start_el("Encryption");
-        crate::xml_ser::serialize_structure_crate_model_inventory_encryption(var_190, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_inventory_encryption(var_194, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2123,10 +2139,10 @@ pub fn serialize_structure_crate_model_lifecycle_expiration(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_191) = &input.date {
+    if let Some(var_195) = &input.date {
         let mut inner_writer = scope.start_el("Date").finish();
         inner_writer.data(
-            var_191
+            var_195
                 .fmt(aws_smithy_types::date_time::Format::DateTime)?
                 .as_ref(),
         );
@@ -2191,10 +2207,10 @@ pub fn serialize_structure_crate_model_transition(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_192) = &input.date {
+    if let Some(var_196) = &input.date {
         let mut inner_writer = scope.start_el("Date").finish();
         inner_writer.data(
-            var_192
+            var_196
                 .fmt(aws_smithy_types::date_time::Format::DateTime)?
                 .as_ref(),
         );
@@ -2203,9 +2219,9 @@ pub fn serialize_structure_crate_model_transition(
         let mut inner_writer = scope.start_el("Days").finish();
         inner_writer.data(aws_smithy_types::primitive::Encoder::from(input.days).encode());
     }
-    if let Some(var_193) = &input.storage_class {
+    if let Some(var_197) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_193.as_str());
+        inner_writer.data(var_197.as_str());
     }
     scope.finish();
     Ok(())
@@ -2222,9 +2238,9 @@ pub fn serialize_structure_crate_model_noncurrent_version_transition(
         inner_writer
             .data(aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
     }
-    if let Some(var_194) = &input.storage_class {
+    if let Some(var_198) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_194.as_str());
+        inner_writer.data(var_198.as_str());
     }
     if input.newer_noncurrent_versions != 0 {
         let mut inner_writer = scope.start_el("NewerNoncurrentVersions").finish();
@@ -2278,15 +2294,15 @@ pub fn serialize_structure_crate_model_target_grant(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_195) = &input.grantee {
+    if let Some(var_199) = &input.grantee {
         let inner_writer = scope
             .start_el("Grantee")
             .write_ns("http://www.w3.org/2001/XMLSchema-instance", Some("xsi"));
-        crate::xml_ser::serialize_structure_crate_model_grantee(var_195, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_grantee(var_199, inner_writer)?
     }
-    if let Some(var_196) = &input.permission {
+    if let Some(var_200) = &input.permission {
         let mut inner_writer = scope.start_el("Permission").finish();
-        inner_writer.data(var_196.as_str());
+        inner_writer.data(var_200.as_str());
     }
     scope.finish();
     Ok(())
@@ -2298,21 +2314,21 @@ pub fn serialize_structure_crate_model_metrics_and_operator(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_197) = &input.prefix {
+    if let Some(var_201) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_197.as_ref());
+        inner_writer.data(var_201.as_ref());
     }
-    if let Some(var_198) = &input.tags {
-        for list_item_199 in var_198 {
+    if let Some(var_202) = &input.tags {
+        for list_item_203 in var_202 {
             {
                 let inner_writer = scope.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_199, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_203, inner_writer)?
             }
         }
     }
-    if let Some(var_200) = &input.access_point_arn {
+    if let Some(var_204) = &input.access_point_arn {
         let mut inner_writer = scope.start_el("AccessPointArn").finish();
-        inner_writer.data(var_200.as_ref());
+        inner_writer.data(var_204.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2324,9 +2340,9 @@ pub fn serialize_structure_crate_model_notification_configuration_filter(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_201) = &input.key {
+    if let Some(var_205) = &input.key {
         let inner_writer = scope.start_el("S3Key");
-        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(var_201, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_s3_key_filter(var_205, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2370,17 +2386,17 @@ pub fn serialize_structure_crate_model_source_selection_criteria(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_202) = &input.sse_kms_encrypted_objects {
+    if let Some(var_206) = &input.sse_kms_encrypted_objects {
         let inner_writer = scope.start_el("SseKmsEncryptedObjects");
         crate::xml_ser::serialize_structure_crate_model_sse_kms_encrypted_objects(
-            var_202,
+            var_206,
             inner_writer,
         )?
     }
-    if let Some(var_203) = &input.replica_modifications {
+    if let Some(var_207) = &input.replica_modifications {
         let inner_writer = scope.start_el("ReplicaModifications");
         crate::xml_ser::serialize_structure_crate_model_replica_modifications(
-            var_203,
+            var_207,
             inner_writer,
         )?
     }
@@ -2394,9 +2410,9 @@ pub fn serialize_structure_crate_model_existing_object_replication(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_204) = &input.status {
+    if let Some(var_208) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_204.as_str());
+        inner_writer.data(var_208.as_str());
     }
     scope.finish();
     Ok(())
@@ -2408,39 +2424,39 @@ pub fn serialize_structure_crate_model_destination(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_205) = &input.bucket {
+    if let Some(var_209) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_205.as_ref());
+        inner_writer.data(var_209.as_ref());
     }
-    if let Some(var_206) = &input.account {
+    if let Some(var_210) = &input.account {
         let mut inner_writer = scope.start_el("Account").finish();
-        inner_writer.data(var_206.as_ref());
+        inner_writer.data(var_210.as_ref());
     }
-    if let Some(var_207) = &input.storage_class {
+    if let Some(var_211) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_207.as_str());
+        inner_writer.data(var_211.as_str());
     }
-    if let Some(var_208) = &input.access_control_translation {
+    if let Some(var_212) = &input.access_control_translation {
         let inner_writer = scope.start_el("AccessControlTranslation");
         crate::xml_ser::serialize_structure_crate_model_access_control_translation(
-            var_208,
+            var_212,
             inner_writer,
         )?
     }
-    if let Some(var_209) = &input.encryption_configuration {
+    if let Some(var_213) = &input.encryption_configuration {
         let inner_writer = scope.start_el("EncryptionConfiguration");
         crate::xml_ser::serialize_structure_crate_model_encryption_configuration(
-            var_209,
+            var_213,
             inner_writer,
         )?
     }
-    if let Some(var_210) = &input.replication_time {
+    if let Some(var_214) = &input.replication_time {
         let inner_writer = scope.start_el("ReplicationTime");
-        crate::xml_ser::serialize_structure_crate_model_replication_time(var_210, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_replication_time(var_214, inner_writer)?
     }
-    if let Some(var_211) = &input.metrics {
+    if let Some(var_215) = &input.metrics {
         let inner_writer = scope.start_el("Metrics");
-        crate::xml_ser::serialize_structure_crate_model_metrics(var_211, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_metrics(var_215, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2452,9 +2468,9 @@ pub fn serialize_structure_crate_model_delete_marker_replication(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_212) = &input.status {
+    if let Some(var_216) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_212.as_str());
+        inner_writer.data(var_216.as_str());
     }
     scope.finish();
     Ok(())
@@ -2466,13 +2482,13 @@ pub fn serialize_structure_crate_model_condition(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_213) = &input.http_error_code_returned_equals {
+    if let Some(var_217) = &input.http_error_code_returned_equals {
         let mut inner_writer = scope.start_el("HttpErrorCodeReturnedEquals").finish();
-        inner_writer.data(var_213.as_ref());
+        inner_writer.data(var_217.as_ref());
     }
-    if let Some(var_214) = &input.key_prefix_equals {
+    if let Some(var_218) = &input.key_prefix_equals {
         let mut inner_writer = scope.start_el("KeyPrefixEquals").finish();
-        inner_writer.data(var_214.as_ref());
+        inner_writer.data(var_218.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2484,25 +2500,25 @@ pub fn serialize_structure_crate_model_redirect(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_215) = &input.host_name {
+    if let Some(var_219) = &input.host_name {
         let mut inner_writer = scope.start_el("HostName").finish();
-        inner_writer.data(var_215.as_ref());
-    }
-    if let Some(var_216) = &input.http_redirect_code {
-        let mut inner_writer = scope.start_el("HttpRedirectCode").finish();
-        inner_writer.data(var_216.as_ref());
-    }
-    if let Some(var_217) = &input.protocol {
-        let mut inner_writer = scope.start_el("Protocol").finish();
-        inner_writer.data(var_217.as_str());
-    }
-    if let Some(var_218) = &input.replace_key_prefix_with {
-        let mut inner_writer = scope.start_el("ReplaceKeyPrefixWith").finish();
-        inner_writer.data(var_218.as_ref());
-    }
-    if let Some(var_219) = &input.replace_key_with {
-        let mut inner_writer = scope.start_el("ReplaceKeyWith").finish();
         inner_writer.data(var_219.as_ref());
+    }
+    if let Some(var_220) = &input.http_redirect_code {
+        let mut inner_writer = scope.start_el("HttpRedirectCode").finish();
+        inner_writer.data(var_220.as_ref());
+    }
+    if let Some(var_221) = &input.protocol {
+        let mut inner_writer = scope.start_el("Protocol").finish();
+        inner_writer.data(var_221.as_str());
+    }
+    if let Some(var_222) = &input.replace_key_prefix_with {
+        let mut inner_writer = scope.start_el("ReplaceKeyPrefixWith").finish();
+        inner_writer.data(var_222.as_ref());
+    }
+    if let Some(var_223) = &input.replace_key_with {
+        let mut inner_writer = scope.start_el("ReplaceKeyWith").finish();
+        inner_writer.data(var_223.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2514,9 +2530,9 @@ pub fn serialize_structure_crate_model_default_retention(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_220) = &input.mode {
+    if let Some(var_224) = &input.mode {
         let mut inner_writer = scope.start_el("Mode").finish();
-        inner_writer.data(var_220.as_str());
+        inner_writer.data(var_224.as_str());
     }
     if input.days != 0 {
         let mut inner_writer = scope.start_el("Days").finish();
@@ -2536,50 +2552,50 @@ pub fn serialize_structure_crate_model_s3_location(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_221) = &input.bucket_name {
+    if let Some(var_225) = &input.bucket_name {
         let mut inner_writer = scope.start_el("BucketName").finish();
-        inner_writer.data(var_221.as_ref());
+        inner_writer.data(var_225.as_ref());
     }
-    if let Some(var_222) = &input.prefix {
+    if let Some(var_226) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_222.as_ref());
+        inner_writer.data(var_226.as_ref());
     }
-    if let Some(var_223) = &input.encryption {
+    if let Some(var_227) = &input.encryption {
         let inner_writer = scope.start_el("Encryption");
-        crate::xml_ser::serialize_structure_crate_model_encryption(var_223, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_encryption(var_227, inner_writer)?
     }
-    if let Some(var_224) = &input.canned_acl {
+    if let Some(var_228) = &input.canned_acl {
         let mut inner_writer = scope.start_el("CannedACL").finish();
-        inner_writer.data(var_224.as_str());
+        inner_writer.data(var_228.as_str());
     }
-    if let Some(var_225) = &input.access_control_list {
+    if let Some(var_229) = &input.access_control_list {
         let mut inner_writer = scope.start_el("AccessControlList").finish();
-        for list_item_226 in var_225 {
+        for list_item_230 in var_229 {
             {
                 let inner_writer = inner_writer.start_el("Grant");
-                crate::xml_ser::serialize_structure_crate_model_grant(list_item_226, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_grant(list_item_230, inner_writer)?
             }
         }
     }
-    if let Some(var_227) = &input.tagging {
+    if let Some(var_231) = &input.tagging {
         let inner_writer = scope.start_el("Tagging");
-        crate::xml_ser::serialize_structure_crate_model_tagging(var_227, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_tagging(var_231, inner_writer)?
     }
-    if let Some(var_228) = &input.user_metadata {
+    if let Some(var_232) = &input.user_metadata {
         let mut inner_writer = scope.start_el("UserMetadata").finish();
-        for list_item_229 in var_228 {
+        for list_item_233 in var_232 {
             {
                 let inner_writer = inner_writer.start_el("MetadataEntry");
                 crate::xml_ser::serialize_structure_crate_model_metadata_entry(
-                    list_item_229,
+                    list_item_233,
                     inner_writer,
                 )?
             }
         }
     }
-    if let Some(var_230) = &input.storage_class {
+    if let Some(var_234) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_230.as_str());
+        inner_writer.data(var_234.as_str());
     }
     scope.finish();
     Ok(())
@@ -2591,10 +2607,10 @@ pub fn serialize_structure_crate_model_analytics_export_destination(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_231) = &input.s3_bucket_destination {
+    if let Some(var_235) = &input.s3_bucket_destination {
         let inner_writer = scope.start_el("S3BucketDestination");
         crate::xml_ser::serialize_structure_crate_model_analytics_s3_bucket_destination(
-            var_231,
+            var_235,
             inner_writer,
         )?
     }
@@ -2608,13 +2624,13 @@ pub fn serialize_structure_crate_model_inventory_encryption(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_232) = &input.sses3 {
+    if let Some(var_236) = &input.sses3 {
         let inner_writer = scope.start_el("SSE-S3");
-        crate::xml_ser::serialize_structure_crate_model_sses3(var_232, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_sses3(var_236, inner_writer)?
     }
-    if let Some(var_233) = &input.ssekms {
+    if let Some(var_237) = &input.ssekms {
         let inner_writer = scope.start_el("SSE-KMS");
-        crate::xml_ser::serialize_structure_crate_model_ssekms(var_233, inner_writer)?
+        crate::xml_ser::serialize_structure_crate_model_ssekms(var_237, inner_writer)?
     }
     scope.finish();
     Ok(())
@@ -2626,15 +2642,15 @@ pub fn serialize_structure_crate_model_lifecycle_rule_and_operator(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_234) = &input.prefix {
+    if let Some(var_238) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_234.as_ref());
+        inner_writer.data(var_238.as_ref());
     }
-    if let Some(var_235) = &input.tags {
-        for list_item_236 in var_235 {
+    if let Some(var_239) = &input.tags {
+        for list_item_240 in var_239 {
             {
                 let inner_writer = scope.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_236, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_240, inner_writer)?
             }
         }
     }
@@ -2659,12 +2675,12 @@ pub fn serialize_structure_crate_model_s3_key_filter(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_237) = &input.filter_rules {
-        for list_item_238 in var_237 {
+    if let Some(var_241) = &input.filter_rules {
+        for list_item_242 in var_241 {
             {
                 let inner_writer = scope.start_el("FilterRule");
                 crate::xml_ser::serialize_structure_crate_model_filter_rule(
-                    list_item_238,
+                    list_item_242,
                     inner_writer,
                 )?
             }
@@ -2680,15 +2696,15 @@ pub fn serialize_structure_crate_model_replication_rule_and_operator(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_239) = &input.prefix {
+    if let Some(var_243) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_239.as_ref());
+        inner_writer.data(var_243.as_ref());
     }
-    if let Some(var_240) = &input.tags {
-        for list_item_241 in var_240 {
+    if let Some(var_244) = &input.tags {
+        for list_item_245 in var_244 {
             {
                 let inner_writer = scope.start_el("Tag");
-                crate::xml_ser::serialize_structure_crate_model_tag(list_item_241, inner_writer)?
+                crate::xml_ser::serialize_structure_crate_model_tag(list_item_245, inner_writer)?
             }
         }
     }
@@ -2702,9 +2718,9 @@ pub fn serialize_structure_crate_model_sse_kms_encrypted_objects(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_242) = &input.status {
+    if let Some(var_246) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_242.as_str());
+        inner_writer.data(var_246.as_str());
     }
     scope.finish();
     Ok(())
@@ -2716,9 +2732,9 @@ pub fn serialize_structure_crate_model_replica_modifications(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_243) = &input.status {
+    if let Some(var_247) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_243.as_str());
+        inner_writer.data(var_247.as_str());
     }
     scope.finish();
     Ok(())
@@ -2730,9 +2746,9 @@ pub fn serialize_structure_crate_model_access_control_translation(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_244) = &input.owner {
+    if let Some(var_248) = &input.owner {
         let mut inner_writer = scope.start_el("Owner").finish();
-        inner_writer.data(var_244.as_str());
+        inner_writer.data(var_248.as_str());
     }
     scope.finish();
     Ok(())
@@ -2744,9 +2760,9 @@ pub fn serialize_structure_crate_model_encryption_configuration(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_245) = &input.replica_kms_key_id {
+    if let Some(var_249) = &input.replica_kms_key_id {
         let mut inner_writer = scope.start_el("ReplicaKmsKeyID").finish();
-        inner_writer.data(var_245.as_ref());
+        inner_writer.data(var_249.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2758,14 +2774,14 @@ pub fn serialize_structure_crate_model_replication_time(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_246) = &input.status {
+    if let Some(var_250) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_246.as_str());
+        inner_writer.data(var_250.as_str());
     }
-    if let Some(var_247) = &input.time {
+    if let Some(var_251) = &input.time {
         let inner_writer = scope.start_el("Time");
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            var_247,
+            var_251,
             inner_writer,
         )?
     }
@@ -2779,14 +2795,14 @@ pub fn serialize_structure_crate_model_metrics(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_248) = &input.status {
+    if let Some(var_252) = &input.status {
         let mut inner_writer = scope.start_el("Status").finish();
-        inner_writer.data(var_248.as_str());
+        inner_writer.data(var_252.as_str());
     }
-    if let Some(var_249) = &input.event_threshold {
+    if let Some(var_253) = &input.event_threshold {
         let inner_writer = scope.start_el("EventThreshold");
         crate::xml_ser::serialize_structure_crate_model_replication_time_value(
-            var_249,
+            var_253,
             inner_writer,
         )?
     }
@@ -2800,17 +2816,17 @@ pub fn serialize_structure_crate_model_encryption(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_250) = &input.encryption_type {
+    if let Some(var_254) = &input.encryption_type {
         let mut inner_writer = scope.start_el("EncryptionType").finish();
-        inner_writer.data(var_250.as_str());
+        inner_writer.data(var_254.as_str());
     }
-    if let Some(var_251) = &input.kms_key_id {
+    if let Some(var_255) = &input.kms_key_id {
         let mut inner_writer = scope.start_el("KMSKeyId").finish();
-        inner_writer.data(var_251.as_ref());
+        inner_writer.data(var_255.as_ref());
     }
-    if let Some(var_252) = &input.kms_context {
+    if let Some(var_256) = &input.kms_context {
         let mut inner_writer = scope.start_el("KMSContext").finish();
-        inner_writer.data(var_252.as_ref());
+        inner_writer.data(var_256.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2822,13 +2838,13 @@ pub fn serialize_structure_crate_model_metadata_entry(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_253) = &input.name {
+    if let Some(var_257) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_253.as_ref());
+        inner_writer.data(var_257.as_ref());
     }
-    if let Some(var_254) = &input.value {
+    if let Some(var_258) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_254.as_ref());
+        inner_writer.data(var_258.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2840,21 +2856,21 @@ pub fn serialize_structure_crate_model_analytics_s3_bucket_destination(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_255) = &input.format {
+    if let Some(var_259) = &input.format {
         let mut inner_writer = scope.start_el("Format").finish();
-        inner_writer.data(var_255.as_str());
+        inner_writer.data(var_259.as_str());
     }
-    if let Some(var_256) = &input.bucket_account_id {
+    if let Some(var_260) = &input.bucket_account_id {
         let mut inner_writer = scope.start_el("BucketAccountId").finish();
-        inner_writer.data(var_256.as_ref());
+        inner_writer.data(var_260.as_ref());
     }
-    if let Some(var_257) = &input.bucket {
+    if let Some(var_261) = &input.bucket {
         let mut inner_writer = scope.start_el("Bucket").finish();
-        inner_writer.data(var_257.as_ref());
+        inner_writer.data(var_261.as_ref());
     }
-    if let Some(var_258) = &input.prefix {
+    if let Some(var_262) = &input.prefix {
         let mut inner_writer = scope.start_el("Prefix").finish();
-        inner_writer.data(var_258.as_ref());
+        inner_writer.data(var_262.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2877,9 +2893,9 @@ pub fn serialize_structure_crate_model_ssekms(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_259) = &input.key_id {
+    if let Some(var_263) = &input.key_id {
         let mut inner_writer = scope.start_el("KeyId").finish();
-        inner_writer.data(var_259.as_ref());
+        inner_writer.data(var_263.as_ref());
     }
     scope.finish();
     Ok(())
@@ -2891,13 +2907,13 @@ pub fn serialize_structure_crate_model_filter_rule(
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_260) = &input.name {
+    if let Some(var_264) = &input.name {
         let mut inner_writer = scope.start_el("Name").finish();
-        inner_writer.data(var_260.as_str());
+        inner_writer.data(var_264.as_str());
     }
-    if let Some(var_261) = &input.value {
+    if let Some(var_265) = &input.value {
         let mut inner_writer = scope.start_el("Value").finish();
-        inner_writer.data(var_261.as_ref());
+        inner_writer.data(var_265.as_ref());
     }
     scope.finish();
     Ok(())

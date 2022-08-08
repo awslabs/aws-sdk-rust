@@ -747,6 +747,8 @@ impl AsRef<str> for RuleGroupType {
 pub struct RuleGroup {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
     pub rule_variables: std::option::Option<crate::model::RuleVariables>,
+    /// <p>The list of a rule group's reference sets.</p>
+    pub reference_sets: std::option::Option<crate::model::ReferenceSets>,
     /// <p>The stateful rules or stateless rules for the rule group. </p>
     pub rules_source: std::option::Option<crate::model::RulesSource>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful rule group must have stateful rule options settings that are compatible with these settings.</p>
@@ -756,6 +758,10 @@ impl RuleGroup {
     /// <p>Settings that are available for use in the rules in the rule group. You can only use these for stateful rule groups. </p>
     pub fn rule_variables(&self) -> std::option::Option<&crate::model::RuleVariables> {
         self.rule_variables.as_ref()
+    }
+    /// <p>The list of a rule group's reference sets.</p>
+    pub fn reference_sets(&self) -> std::option::Option<&crate::model::ReferenceSets> {
+        self.reference_sets.as_ref()
     }
     /// <p>The stateful rules or stateless rules for the rule group. </p>
     pub fn rules_source(&self) -> std::option::Option<&crate::model::RulesSource> {
@@ -770,6 +776,7 @@ impl std::fmt::Debug for RuleGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RuleGroup");
         formatter.field("rule_variables", &self.rule_variables);
+        formatter.field("reference_sets", &self.reference_sets);
         formatter.field("rules_source", &self.rules_source);
         formatter.field("stateful_rule_options", &self.stateful_rule_options);
         formatter.finish()
@@ -782,6 +789,7 @@ pub mod rule_group {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_variables: std::option::Option<crate::model::RuleVariables>,
+        pub(crate) reference_sets: std::option::Option<crate::model::ReferenceSets>,
         pub(crate) rules_source: std::option::Option<crate::model::RulesSource>,
         pub(crate) stateful_rule_options: std::option::Option<crate::model::StatefulRuleOptions>,
     }
@@ -797,6 +805,19 @@ pub mod rule_group {
             input: std::option::Option<crate::model::RuleVariables>,
         ) -> Self {
             self.rule_variables = input;
+            self
+        }
+        /// <p>The list of a rule group's reference sets.</p>
+        pub fn reference_sets(mut self, input: crate::model::ReferenceSets) -> Self {
+            self.reference_sets = Some(input);
+            self
+        }
+        /// <p>The list of a rule group's reference sets.</p>
+        pub fn set_reference_sets(
+            mut self,
+            input: std::option::Option<crate::model::ReferenceSets>,
+        ) -> Self {
+            self.reference_sets = input;
             self
         }
         /// <p>The stateful rules or stateless rules for the rule group. </p>
@@ -829,6 +850,7 @@ pub mod rule_group {
         pub fn build(self) -> crate::model::RuleGroup {
             crate::model::RuleGroup {
                 rule_variables: self.rule_variables,
+                reference_sets: self.reference_sets,
                 rules_source: self.rules_source,
                 stateful_rule_options: self.stateful_rule_options,
             }
@@ -3111,6 +3133,141 @@ impl AsRef<str> for TargetType {
     }
 }
 
+/// <p>Contains a set of IP set references.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReferenceSets {
+    /// <p>The list of IP set references.</p>
+    pub ip_set_references: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
+    >,
+}
+impl ReferenceSets {
+    /// <p>The list of IP set references.</p>
+    pub fn ip_set_references(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
+    > {
+        self.ip_set_references.as_ref()
+    }
+}
+impl std::fmt::Debug for ReferenceSets {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReferenceSets");
+        formatter.field("ip_set_references", &self.ip_set_references);
+        formatter.finish()
+    }
+}
+/// See [`ReferenceSets`](crate::model::ReferenceSets).
+pub mod reference_sets {
+
+    /// A builder for [`ReferenceSets`](crate::model::ReferenceSets).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ip_set_references: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `ip_set_references`.
+        ///
+        /// To override the contents of this collection use [`set_ip_set_references`](Self::set_ip_set_references).
+        ///
+        /// <p>The list of IP set references.</p>
+        pub fn ip_set_references(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::IpSetReference,
+        ) -> Self {
+            let mut hash_map = self.ip_set_references.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.ip_set_references = Some(hash_map);
+            self
+        }
+        /// <p>The list of IP set references.</p>
+        pub fn set_ip_set_references(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::IpSetReference>,
+            >,
+        ) -> Self {
+            self.ip_set_references = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReferenceSets`](crate::model::ReferenceSets).
+        pub fn build(self) -> crate::model::ReferenceSets {
+            crate::model::ReferenceSets {
+                ip_set_references: self.ip_set_references,
+            }
+        }
+    }
+}
+impl ReferenceSets {
+    /// Creates a new builder-style object to manufacture [`ReferenceSets`](crate::model::ReferenceSets).
+    pub fn builder() -> crate::model::reference_sets::Builder {
+        crate::model::reference_sets::Builder::default()
+    }
+}
+
+/// <p>Configures one or more IP set references for a Suricata-compatible rule group. This is used in <code>CreateRuleGroup</code> or <code>UpdateRuleGroup</code>. An IP set reference is a rule variable that references a resource that you create and manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more information about IP set references in Network Firewall, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references">Using IP set references</a> in the <i>Network Firewall Developer Guide</i>.</p>
+/// <p> Network Firewall currently supports only <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> as IP set references. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IpSetReference {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
+    pub reference_arn: std::option::Option<std::string::String>,
+}
+impl IpSetReference {
+    /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
+    pub fn reference_arn(&self) -> std::option::Option<&str> {
+        self.reference_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for IpSetReference {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IpSetReference");
+        formatter.field("reference_arn", &self.reference_arn);
+        formatter.finish()
+    }
+}
+/// See [`IpSetReference`](crate::model::IpSetReference).
+pub mod ip_set_reference {
+
+    /// A builder for [`IpSetReference`](crate::model::IpSetReference).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) reference_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
+        pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reference_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the resource that you are referencing in your rule group.</p>
+        pub fn set_reference_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reference_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IpSetReference`](crate::model::IpSetReference).
+        pub fn build(self) -> crate::model::IpSetReference {
+            crate::model::IpSetReference {
+                reference_arn: self.reference_arn,
+            }
+        }
+    }
+}
+impl IpSetReference {
+    /// Creates a new builder-style object to manufacture [`IpSetReference`](crate::model::IpSetReference).
+    pub fn builder() -> crate::model::ip_set_reference::Builder {
+        crate::model::ip_set_reference::Builder::default()
+    }
+}
+
 /// <p>Settings that are available for use in the rules in the <code>RuleGroup</code> where this is defined. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5023,6 +5180,8 @@ pub struct FirewallStatus {
     pub sync_states: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SyncState>,
     >,
+    /// <p>Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference sets in a firewall.</p>
+    pub capacity_usage_summary: std::option::Option<crate::model::CapacityUsageSummary>,
 }
 impl FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
@@ -5044,6 +5203,12 @@ impl FirewallStatus {
     {
         self.sync_states.as_ref()
     }
+    /// <p>Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference sets in a firewall.</p>
+    pub fn capacity_usage_summary(
+        &self,
+    ) -> std::option::Option<&crate::model::CapacityUsageSummary> {
+        self.capacity_usage_summary.as_ref()
+    }
 }
 impl std::fmt::Debug for FirewallStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5054,6 +5219,7 @@ impl std::fmt::Debug for FirewallStatus {
             &self.configuration_sync_state_summary,
         );
         formatter.field("sync_states", &self.sync_states);
+        formatter.field("capacity_usage_summary", &self.capacity_usage_summary);
         formatter.finish()
     }
 }
@@ -5069,6 +5235,7 @@ pub mod firewall_status {
         pub(crate) sync_states: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::SyncState>,
         >,
+        pub(crate) capacity_usage_summary: std::option::Option<crate::model::CapacityUsageSummary>,
     }
     impl Builder {
         /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you've configured it. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>. </p>
@@ -5129,12 +5296,26 @@ pub mod firewall_status {
             self.sync_states = input;
             self
         }
+        /// <p>Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference sets in a firewall.</p>
+        pub fn capacity_usage_summary(mut self, input: crate::model::CapacityUsageSummary) -> Self {
+            self.capacity_usage_summary = Some(input);
+            self
+        }
+        /// <p>Describes the capacity usage of the resources contained in a firewall's reference sets. Network Firewall calclulates the capacity usage by taking an aggregated count of all of the resources used by all of the reference sets in a firewall.</p>
+        pub fn set_capacity_usage_summary(
+            mut self,
+            input: std::option::Option<crate::model::CapacityUsageSummary>,
+        ) -> Self {
+            self.capacity_usage_summary = input;
+            self
+        }
         /// Consumes the builder and constructs a [`FirewallStatus`](crate::model::FirewallStatus).
         pub fn build(self) -> crate::model::FirewallStatus {
             crate::model::FirewallStatus {
                 status: self.status,
                 configuration_sync_state_summary: self.configuration_sync_state_summary,
                 sync_states: self.sync_states,
+                capacity_usage_summary: self.capacity_usage_summary,
             }
         }
     }
@@ -5143,6 +5324,229 @@ impl FirewallStatus {
     /// Creates a new builder-style object to manufacture [`FirewallStatus`](crate::model::FirewallStatus).
     pub fn builder() -> crate::model::firewall_status::Builder {
         crate::model::firewall_status::Builder::default()
+    }
+}
+
+/// <p>The capacity usage summary of the resources used by the <code>ReferenceSets</code> in a firewall.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CapacityUsageSummary {
+    /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
+    pub cid_rs: std::option::Option<crate::model::CidrSummary>,
+}
+impl CapacityUsageSummary {
+    /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
+    pub fn cid_rs(&self) -> std::option::Option<&crate::model::CidrSummary> {
+        self.cid_rs.as_ref()
+    }
+}
+impl std::fmt::Debug for CapacityUsageSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CapacityUsageSummary");
+        formatter.field("cid_rs", &self.cid_rs);
+        formatter.finish()
+    }
+}
+/// See [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
+pub mod capacity_usage_summary {
+
+    /// A builder for [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cid_rs: std::option::Option<crate::model::CidrSummary>,
+    }
+    impl Builder {
+        /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
+        pub fn cid_rs(mut self, input: crate::model::CidrSummary) -> Self {
+            self.cid_rs = Some(input);
+            self
+        }
+        /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
+        pub fn set_cid_rs(mut self, input: std::option::Option<crate::model::CidrSummary>) -> Self {
+            self.cid_rs = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
+        pub fn build(self) -> crate::model::CapacityUsageSummary {
+            crate::model::CapacityUsageSummary {
+                cid_rs: self.cid_rs,
+            }
+        }
+    }
+}
+impl CapacityUsageSummary {
+    /// Creates a new builder-style object to manufacture [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
+    pub fn builder() -> crate::model::capacity_usage_summary::Builder {
+        crate::model::capacity_usage_summary::Builder::default()
+    }
+}
+
+/// <p>Summarizes the CIDR blocks used by the IP set references in a firewall. Network Firewall calculates the number of CIDRs by taking an aggregated count of all CIDRs used by the IP sets you are referencing.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CidrSummary {
+    /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
+    pub available_cidr_count: std::option::Option<i32>,
+    /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
+    pub utilized_cidr_count: std::option::Option<i32>,
+    /// <p>The list of the IP set references used by a firewall.</p>
+    pub ip_set_references: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::IpSetMetadata>,
+    >,
+}
+impl CidrSummary {
+    /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
+    pub fn available_cidr_count(&self) -> std::option::Option<i32> {
+        self.available_cidr_count
+    }
+    /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
+    pub fn utilized_cidr_count(&self) -> std::option::Option<i32> {
+        self.utilized_cidr_count
+    }
+    /// <p>The list of the IP set references used by a firewall.</p>
+    pub fn ip_set_references(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::IpSetMetadata>,
+    > {
+        self.ip_set_references.as_ref()
+    }
+}
+impl std::fmt::Debug for CidrSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CidrSummary");
+        formatter.field("available_cidr_count", &self.available_cidr_count);
+        formatter.field("utilized_cidr_count", &self.utilized_cidr_count);
+        formatter.field("ip_set_references", &self.ip_set_references);
+        formatter.finish()
+    }
+}
+/// See [`CidrSummary`](crate::model::CidrSummary).
+pub mod cidr_summary {
+
+    /// A builder for [`CidrSummary`](crate::model::CidrSummary).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) available_cidr_count: std::option::Option<i32>,
+        pub(crate) utilized_cidr_count: std::option::Option<i32>,
+        pub(crate) ip_set_references: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::IpSetMetadata>,
+        >,
+    }
+    impl Builder {
+        /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
+        pub fn available_cidr_count(mut self, input: i32) -> Self {
+            self.available_cidr_count = Some(input);
+            self
+        }
+        /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
+        pub fn set_available_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.available_cidr_count = input;
+            self
+        }
+        /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
+        pub fn utilized_cidr_count(mut self, input: i32) -> Self {
+            self.utilized_cidr_count = Some(input);
+            self
+        }
+        /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
+        pub fn set_utilized_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.utilized_cidr_count = input;
+            self
+        }
+        /// Adds a key-value pair to `ip_set_references`.
+        ///
+        /// To override the contents of this collection use [`set_ip_set_references`](Self::set_ip_set_references).
+        ///
+        /// <p>The list of the IP set references used by a firewall.</p>
+        pub fn ip_set_references(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::IpSetMetadata,
+        ) -> Self {
+            let mut hash_map = self.ip_set_references.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.ip_set_references = Some(hash_map);
+            self
+        }
+        /// <p>The list of the IP set references used by a firewall.</p>
+        pub fn set_ip_set_references(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::IpSetMetadata>,
+            >,
+        ) -> Self {
+            self.ip_set_references = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CidrSummary`](crate::model::CidrSummary).
+        pub fn build(self) -> crate::model::CidrSummary {
+            crate::model::CidrSummary {
+                available_cidr_count: self.available_cidr_count,
+                utilized_cidr_count: self.utilized_cidr_count,
+                ip_set_references: self.ip_set_references,
+            }
+        }
+    }
+}
+impl CidrSummary {
+    /// Creates a new builder-style object to manufacture [`CidrSummary`](crate::model::CidrSummary).
+    pub fn builder() -> crate::model::cidr_summary::Builder {
+        crate::model::cidr_summary::Builder::default()
+    }
+}
+
+/// <p>General information about the IP set.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IpSetMetadata {
+    /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+    pub resolved_cidr_count: std::option::Option<i32>,
+}
+impl IpSetMetadata {
+    /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+    pub fn resolved_cidr_count(&self) -> std::option::Option<i32> {
+        self.resolved_cidr_count
+    }
+}
+impl std::fmt::Debug for IpSetMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IpSetMetadata");
+        formatter.field("resolved_cidr_count", &self.resolved_cidr_count);
+        formatter.finish()
+    }
+}
+/// See [`IpSetMetadata`](crate::model::IpSetMetadata).
+pub mod ip_set_metadata {
+
+    /// A builder for [`IpSetMetadata`](crate::model::IpSetMetadata).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resolved_cidr_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+        pub fn resolved_cidr_count(mut self, input: i32) -> Self {
+            self.resolved_cidr_count = Some(input);
+            self
+        }
+        /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+        pub fn set_resolved_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.resolved_cidr_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IpSetMetadata`](crate::model::IpSetMetadata).
+        pub fn build(self) -> crate::model::IpSetMetadata {
+            crate::model::IpSetMetadata {
+                resolved_cidr_count: self.resolved_cidr_count,
+            }
+        }
+    }
+}
+impl IpSetMetadata {
+    /// Creates a new builder-style object to manufacture [`IpSetMetadata`](crate::model::IpSetMetadata).
+    pub fn builder() -> crate::model::ip_set_metadata::Builder {
+        crate::model::ip_set_metadata::Builder::default()
     }
 }
 
@@ -5340,6 +5744,8 @@ impl PerObjectStatus {
 )]
 pub enum PerObjectSyncStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityConstrained,
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -5349,6 +5755,7 @@ pub enum PerObjectSyncStatus {
 impl std::convert::From<&str> for PerObjectSyncStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CAPACITY_CONSTRAINED" => PerObjectSyncStatus::CapacityConstrained,
             "IN_SYNC" => PerObjectSyncStatus::InSync,
             "PENDING" => PerObjectSyncStatus::Pending,
             other => PerObjectSyncStatus::Unknown(other.to_owned()),
@@ -5366,6 +5773,7 @@ impl PerObjectSyncStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PerObjectSyncStatus::CapacityConstrained => "CAPACITY_CONSTRAINED",
             PerObjectSyncStatus::InSync => "IN_SYNC",
             PerObjectSyncStatus::Pending => "PENDING",
             PerObjectSyncStatus::Unknown(s) => s.as_ref(),
@@ -5373,7 +5781,7 @@ impl PerObjectSyncStatus {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["IN_SYNC", "PENDING"]
+        &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
 impl AsRef<str> for PerObjectSyncStatus {
@@ -5553,6 +5961,8 @@ impl AsRef<str> for AttachmentStatus {
 )]
 pub enum ConfigurationSyncState {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityConstrained,
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -5562,6 +5972,7 @@ pub enum ConfigurationSyncState {
 impl std::convert::From<&str> for ConfigurationSyncState {
     fn from(s: &str) -> Self {
         match s {
+            "CAPACITY_CONSTRAINED" => ConfigurationSyncState::CapacityConstrained,
             "IN_SYNC" => ConfigurationSyncState::InSync,
             "PENDING" => ConfigurationSyncState::Pending,
             other => ConfigurationSyncState::Unknown(other.to_owned()),
@@ -5579,6 +5990,7 @@ impl ConfigurationSyncState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConfigurationSyncState::CapacityConstrained => "CAPACITY_CONSTRAINED",
             ConfigurationSyncState::InSync => "IN_SYNC",
             ConfigurationSyncState::Pending => "PENDING",
             ConfigurationSyncState::Unknown(s) => s.as_ref(),
@@ -5586,7 +5998,7 @@ impl ConfigurationSyncState {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["IN_SYNC", "PENDING"]
+        &["CAPACITY_CONSTRAINED", "IN_SYNC", "PENDING"]
     }
 }
 impl AsRef<str> for ConfigurationSyncState {

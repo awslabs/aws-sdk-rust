@@ -16,14 +16,14 @@ pub mod abort_multipart_upload_input {
     impl Builder {
         /// <p>The bucket name to which the upload was taking place. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name to which the upload was taking place. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -48,12 +48,12 @@ pub mod abort_multipart_upload_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -61,12 +61,12 @@ pub mod abort_multipart_upload_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -235,20 +235,27 @@ pub mod complete_multipart_upload_input {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) multipart_upload: std::option::Option<crate::model::CompletedMultipartUpload>,
         pub(crate) upload_id: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -286,12 +293,64 @@ pub mod complete_multipart_upload_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -299,17 +358,56 @@ pub mod complete_multipart_upload_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
+            self
+        }
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_algorithm(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_algorithm = input;
+            self
+        }
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
+            self
+        }
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key = input;
+            self
+        }
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
+            self
+        }
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_key_md5(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key_md5 = input;
             self
         }
         /// Consumes the builder and constructs a [`CompleteMultipartUploadInput`](crate::input::CompleteMultipartUploadInput).
@@ -324,8 +422,15 @@ pub mod complete_multipart_upload_input {
                 key: self.key,
                 multipart_upload: self.multipart_upload,
                 upload_id: self.upload_id,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
+                sse_customer_algorithm: self.sse_customer_algorithm,
+                sse_customer_key: self.sse_customer_key,
+                sse_customer_key_md5: self.sse_customer_key_md5,
             })
         }
     }
@@ -492,6 +597,7 @@ pub mod copy_object_input {
         pub(crate) acl: std::option::Option<crate::model::ObjectCannedAcl>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
         pub(crate) content_encoding: std::option::Option<std::string::String>,
         pub(crate) content_language: std::option::Option<std::string::String>,
@@ -551,14 +657,14 @@ pub mod copy_object_input {
         }
         /// <p>The name of the destination bucket.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the destination bucket.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -574,6 +680,19 @@ pub mod copy_object_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.cache_control = input;
+            self
+        }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Specifies presentational information for the object.</p>
@@ -627,7 +746,7 @@ pub mod copy_object_input {
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
         /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
         /// <region>
         /// :
@@ -650,7 +769,7 @@ pub mod copy_object_input {
         /// <key></key>
         /// </outpost-id>
         /// </account-id>
-        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
         /// </ul>
         /// <p>To copy a specific version of an object, append <code>?versionId=
         /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -660,7 +779,7 @@ pub mod copy_object_input {
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
         /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
         /// <region>
         /// :
@@ -683,7 +802,7 @@ pub mod copy_object_input {
         /// <key></key>
         /// </outpost-id>
         /// </account-id>
-        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
         /// </ul>
         /// <p>To copy a specific version of an object, append <code>?versionId=
         /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -1041,12 +1160,12 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -1090,7 +1209,7 @@ pub mod copy_object_input {
             self.object_lock_retain_until_date = input;
             self
         }
-        /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+        /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
             input: crate::model::ObjectLockLegalHoldStatus,
@@ -1098,7 +1217,7 @@ pub mod copy_object_input {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
-        /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+        /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
         pub fn set_object_lock_legal_hold_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -1106,12 +1225,12 @@ pub mod copy_object_input {
             self.object_lock_legal_hold_status = input;
             self
         }
-        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1119,7 +1238,7 @@ pub mod copy_object_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_source_bucket_owner(
             mut self,
             input: impl Into<std::string::String>,
@@ -1127,7 +1246,7 @@ pub mod copy_object_input {
             self.expected_source_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_source_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1143,6 +1262,7 @@ pub mod copy_object_input {
                 acl: self.acl,
                 bucket: self.bucket,
                 cache_control: self.cache_control,
+                checksum_algorithm: self.checksum_algorithm,
                 content_disposition: self.content_disposition,
                 content_encoding: self.content_encoding,
                 content_language: self.content_language,
@@ -1651,6 +1771,7 @@ pub mod create_multipart_upload_input {
         pub(crate) object_lock_legal_hold_status:
             std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>The canned ACL to apply to the object.</p>
@@ -1670,14 +1791,14 @@ pub mod create_multipart_upload_input {
         }
         /// <p>The name of the bucket to which to initiate the upload</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket to which to initiate the upload</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1965,12 +2086,12 @@ pub mod create_multipart_upload_input {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -2014,7 +2135,7 @@ pub mod create_multipart_upload_input {
             self.object_lock_retain_until_date = input;
             self
         }
-        /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
+        /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
             input: crate::model::ObjectLockLegalHoldStatus,
@@ -2022,7 +2143,7 @@ pub mod create_multipart_upload_input {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
-        /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
+        /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
         pub fn set_object_lock_legal_hold_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -2030,17 +2151,30 @@ pub mod create_multipart_upload_input {
             self.object_lock_legal_hold_status = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateMultipartUploadInput`](crate::input::CreateMultipartUploadInput).
@@ -2078,6 +2212,7 @@ pub mod create_multipart_upload_input {
                 object_lock_retain_until_date: self.object_lock_retain_until_date,
                 object_lock_legal_hold_status: self.object_lock_legal_hold_status,
                 expected_bucket_owner: self.expected_bucket_owner,
+                checksum_algorithm: self.checksum_algorithm,
             })
         }
     }
@@ -2236,12 +2371,12 @@ pub mod delete_bucket_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2400,12 +2535,12 @@ pub mod delete_bucket_analytics_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2572,12 +2707,12 @@ pub mod delete_bucket_cors_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2734,12 +2869,12 @@ pub mod delete_bucket_encryption_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3076,12 +3211,12 @@ pub mod delete_bucket_inventory_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3248,12 +3383,12 @@ pub mod delete_bucket_lifecycle_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3422,12 +3557,12 @@ pub mod delete_bucket_metrics_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3594,12 +3729,12 @@ pub mod delete_bucket_ownership_controls_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3762,12 +3897,12 @@ pub mod delete_bucket_policy_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3924,12 +4059,12 @@ pub mod delete_bucket_replication_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4090,12 +4225,12 @@ pub mod delete_bucket_tagging_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4252,12 +4387,12 @@ pub mod delete_bucket_website_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4411,14 +4546,14 @@ pub mod delete_object_input {
     impl Builder {
         /// <p>The bucket name of the bucket containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name of the bucket containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4453,12 +4588,12 @@ pub mod delete_object_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -4466,22 +4601,22 @@ pub mod delete_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
         }
-        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
         pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.bypass_governance_retention = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4819,18 +4954,19 @@ pub mod delete_objects_input {
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) bypass_governance_retention: std::option::Option<bool>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>The bucket name containing the objects to delete. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name containing the objects to delete. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -4855,12 +4991,12 @@ pub mod delete_objects_input {
             self.mfa = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -4868,27 +5004,44 @@ pub mod delete_objects_input {
             self.request_payer = input;
             self
         }
-        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
         }
-        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
         pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.bypass_governance_retention = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteObjectsInput`](crate::input::DeleteObjectsInput).
@@ -4903,6 +5056,7 @@ pub mod delete_objects_input {
                 request_payer: self.request_payer,
                 bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
+                checksum_algorithm: self.checksum_algorithm,
             })
         }
     }
@@ -4991,20 +5145,6 @@ impl DeleteObjectsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -5067,14 +5207,14 @@ pub mod delete_object_tagging_input {
     impl Builder {
         /// <p>The bucket name containing the objects from which to remove the tags. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name containing the objects from which to remove the tags. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -5099,12 +5239,12 @@ pub mod delete_object_tagging_input {
             self.version_id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5281,12 +5421,12 @@ pub mod delete_public_access_block_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5447,12 +5587,12 @@ pub mod get_bucket_accelerate_configuration_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5615,12 +5755,12 @@ pub mod get_bucket_acl_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5788,12 +5928,12 @@ pub mod get_bucket_analytics_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5961,12 +6101,12 @@ pub mod get_bucket_cors_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6123,12 +6263,12 @@ pub mod get_bucket_encryption_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6464,12 +6604,12 @@ pub mod get_bucket_inventory_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6637,12 +6777,12 @@ pub mod get_bucket_lifecycle_configuration_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6805,12 +6945,12 @@ pub mod get_bucket_location_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6967,12 +7107,12 @@ pub mod get_bucket_logging_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7140,12 +7280,12 @@ pub mod get_bucket_metrics_configuration_input {
             self.id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7313,12 +7453,12 @@ pub mod get_bucket_notification_configuration_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7481,12 +7621,12 @@ pub mod get_bucket_ownership_controls_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7647,12 +7787,12 @@ pub mod get_bucket_policy_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7809,12 +7949,12 @@ pub mod get_bucket_policy_status_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7972,12 +8112,12 @@ pub mod get_bucket_replication_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8135,12 +8275,12 @@ pub mod get_bucket_request_payment_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8301,12 +8441,12 @@ pub mod get_bucket_tagging_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8463,12 +8603,12 @@ pub mod get_bucket_versioning_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8625,12 +8765,12 @@ pub mod get_bucket_website_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8793,12 +8933,13 @@ pub mod get_object_input {
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) part_number: std::option::Option<i32>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) checksum_mode: std::option::Option<crate::model::ChecksumMode>,
     }
     impl Builder {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -8806,27 +8947,27 @@ pub mod get_object_input {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
         pub fn if_modified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_modified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
         pub fn set_if_modified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8834,12 +8975,12 @@ pub mod get_object_input {
             self.if_modified_since = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
         pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_none_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
         pub fn set_if_none_match(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8847,12 +8988,12 @@ pub mod get_object_input {
             self.if_none_match = input;
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
         pub fn if_unmodified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_unmodified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
         pub fn set_if_unmodified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9014,12 +9155,12 @@ pub mod get_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -9037,17 +9178,30 @@ pub mod get_object_input {
             self.part_number = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>To retrieve the checksum, this mode must be enabled.</p>
+        pub fn checksum_mode(mut self, input: crate::model::ChecksumMode) -> Self {
+            self.checksum_mode = Some(input);
+            self
+        }
+        /// <p>To retrieve the checksum, this mode must be enabled.</p>
+        pub fn set_checksum_mode(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumMode>,
+        ) -> Self {
+            self.checksum_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`GetObjectInput`](crate::input::GetObjectInput).
@@ -9075,6 +9229,7 @@ pub mod get_object_input {
                 request_payer: self.request_payer,
                 part_number: self.part_number.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
+                checksum_mode: self.checksum_mode,
             })
         }
     }
@@ -9505,12 +9660,12 @@ pub mod get_object_acl_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -9518,12 +9673,12 @@ pub mod get_object_acl_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9681,6 +9836,323 @@ impl GetObjectAclInput {
     }
 }
 
+/// See [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+pub mod get_object_attributes_input {
+
+    /// A builder for [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) max_parts: std::option::Option<i32>,
+        pub(crate) part_number_marker: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
+        pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
+        pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) object_attributes:
+            std::option::Option<std::vec::Vec<crate::model::ObjectAttributes>>,
+    }
+    impl Builder {
+        /// <p>The name of the bucket that contains the object.</p>
+        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The name of the bucket that contains the object.</p>
+        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The object key.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The object key.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The version ID used to reference a specific version of the object.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        /// <p>The version ID used to reference a specific version of the object.</p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// <p>Sets the maximum number of parts to return.</p>
+        pub fn max_parts(mut self, input: i32) -> Self {
+            self.max_parts = Some(input);
+            self
+        }
+        /// <p>Sets the maximum number of parts to return.</p>
+        pub fn set_max_parts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parts = input;
+            self
+        }
+        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+        pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.part_number_marker = Some(input.into());
+            self
+        }
+        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+        pub fn set_part_number_marker(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.part_number_marker = input;
+            self
+        }
+        /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
+            self
+        }
+        /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+        pub fn set_sse_customer_algorithm(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_algorithm = input;
+            self
+        }
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
+            self
+        }
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        pub fn set_sse_customer_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key = input;
+            self
+        }
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
+            self
+        }
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+        pub fn set_sse_customer_key_md5(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key_md5 = input;
+            self
+        }
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
+            self.request_payer = Some(input);
+            self
+        }
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_request_payer(
+            mut self,
+            input: std::option::Option<crate::model::RequestPayer>,
+        ) -> Self {
+            self.request_payer = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+        pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expected_bucket_owner = Some(input.into());
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+        pub fn set_expected_bucket_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.expected_bucket_owner = input;
+            self
+        }
+        /// Appends an item to `object_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_object_attributes`](Self::set_object_attributes).
+        ///
+        /// <p>An XML header that specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
+        pub fn object_attributes(mut self, input: crate::model::ObjectAttributes) -> Self {
+            let mut v = self.object_attributes.unwrap_or_default();
+            v.push(input);
+            self.object_attributes = Some(v);
+            self
+        }
+        /// <p>An XML header that specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
+        pub fn set_object_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ObjectAttributes>>,
+        ) -> Self {
+            self.object_attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetObjectAttributesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetObjectAttributesInput {
+                bucket: self.bucket,
+                key: self.key,
+                version_id: self.version_id,
+                max_parts: self.max_parts.unwrap_or_default(),
+                part_number_marker: self.part_number_marker,
+                sse_customer_algorithm: self.sse_customer_algorithm,
+                sse_customer_key: self.sse_customer_key,
+                sse_customer_key_md5: self.sse_customer_key_md5,
+                request_payer: self.request_payer,
+                expected_bucket_owner: self.expected_bucket_owner,
+                object_attributes: self.object_attributes,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetObjectAttributesInputOperationOutputAlias = crate::operation::GetObjectAttributes;
+#[doc(hidden)]
+pub type GetObjectAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetObjectAttributesInput {
+    /// Consumes the builder and constructs an Operation<[`GetObjectAttributes`](crate::operation::GetObjectAttributes)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetObjectAttributes,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetObjectAttributesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_85 = &_input.bucket;
+                let input_85 = input_85.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let bucket = aws_smithy_http::label::fmt_string(input_85, false);
+                if bucket.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "bucket",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                let input_86 = &_input.key;
+                let input_86 = input_86.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "key",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let key = aws_smithy_http::label::fmt_string(input_86, true);
+                if key.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "key",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(output, "/{Bucket}/{Key}", Bucket = bucket, Key = key)
+                    .expect("formatting should succeed");
+                Ok(())
+            }
+            fn uri_query(
+                _input: &crate::input::GetObjectAttributesInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let mut query = aws_smithy_http::query::Writer::new(&mut output);
+                query.push_v("attributes");
+                if let Some(inner_87) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                }
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetObjectAttributesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
+                let builder = crate::http_serde::add_headers_get_object_attributes(input, builder)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        signing_config.signing_options.content_sha256_header = true;
+        signing_config.signing_options.double_uri_encode = false;
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetObjectAttributes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetObjectAttributes",
+            "s3",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetObjectAttributesInput`](crate::input::GetObjectAttributesInput).
+    pub fn builder() -> crate::input::get_object_attributes_input::Builder {
+        crate::input::get_object_attributes_input::Builder::default()
+    }
+}
+
 /// See [`GetObjectLegalHoldInput`](crate::input::GetObjectLegalHoldInput).
 pub mod get_object_legal_hold_input {
 
@@ -9694,44 +10166,44 @@ pub mod get_object_legal_hold_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
+        /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
+        /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+        /// <p>The key name for the object whose legal hold status you want to retrieve.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+        /// <p>The key name for the object whose legal hold status you want to retrieve.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
+        /// <p>The version ID of the object whose legal hold status you want to retrieve.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
+        /// <p>The version ID of the object whose legal hold status you want to retrieve.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -9739,12 +10211,12 @@ pub mod get_object_legal_hold_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9791,28 +10263,28 @@ impl GetObjectLegalHoldInput {
                 _input: &crate::input::GetObjectLegalHoldInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_85 = &_input.bucket;
-                let input_85 = input_85.as_ref().ok_or(
+                let input_88 = &_input.bucket;
+                let input_88 = input_88.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_85, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_88, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_86 = &_input.key;
-                let input_86 = input_86.as_ref().ok_or(
+                let input_89 = &_input.key;
+                let input_89 = input_89.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_86, true);
+                let key = aws_smithy_http::label::fmt_string(input_89, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -9829,8 +10301,8 @@ impl GetObjectLegalHoldInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
-                if let Some(inner_87) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_87));
+                if let Some(inner_90) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_90));
                 }
                 Ok(())
             }
@@ -9924,12 +10396,12 @@ pub mod get_object_lock_configuration_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9976,14 +10448,14 @@ impl GetObjectLockConfigurationInput {
                 _input: &crate::input::GetObjectLockConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_88 = &_input.bucket;
-                let input_88 = input_88.as_ref().ok_or(
+                let input_91 = &_input.bucket;
+                let input_91 = input_91.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_88, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_91, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -10115,12 +10587,12 @@ pub mod get_object_retention_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -10128,12 +10600,12 @@ pub mod get_object_retention_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10180,28 +10652,28 @@ impl GetObjectRetentionInput {
                 _input: &crate::input::GetObjectRetentionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_89 = &_input.bucket;
-                let input_89 = input_89.as_ref().ok_or(
+                let input_92 = &_input.bucket;
+                let input_92 = input_92.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_89, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_92, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_90 = &_input.key;
-                let input_90 = input_90.as_ref().ok_or(
+                let input_93 = &_input.key;
+                let input_93 = input_93.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_90, true);
+                let key = aws_smithy_http::label::fmt_string(input_93, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -10218,8 +10690,8 @@ impl GetObjectRetentionInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
-                if let Some(inner_91) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_91));
+                if let Some(inner_94) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_94));
                 }
                 Ok(())
             }
@@ -10306,14 +10778,14 @@ pub mod get_object_tagging_input {
     impl Builder {
         /// <p>The bucket name containing the object for which to get the tagging information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name containing the object for which to get the tagging information. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -10338,12 +10810,12 @@ pub mod get_object_tagging_input {
             self.version_id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10351,12 +10823,12 @@ pub mod get_object_tagging_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -10403,28 +10875,28 @@ impl GetObjectTaggingInput {
                 _input: &crate::input::GetObjectTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_92 = &_input.bucket;
-                let input_92 = input_92.as_ref().ok_or(
+                let input_95 = &_input.bucket;
+                let input_95 = input_95.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_92, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_95, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_93 = &_input.key;
-                let input_93 = input_93.as_ref().ok_or(
+                let input_96 = &_input.key;
+                let input_96 = input_96.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_93, true);
+                let key = aws_smithy_http::label::fmt_string(input_96, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -10441,8 +10913,8 @@ impl GetObjectTaggingInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_94) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_94));
+                if let Some(inner_97) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_97));
                 }
                 Ok(())
             }
@@ -10546,12 +11018,12 @@ pub mod get_object_torrent_input {
             self.key = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -10559,12 +11031,12 @@ pub mod get_object_torrent_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10610,28 +11082,28 @@ impl GetObjectTorrentInput {
                 _input: &crate::input::GetObjectTorrentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_95 = &_input.bucket;
-                let input_95 = input_95.as_ref().ok_or(
+                let input_98 = &_input.bucket;
+                let input_98 = input_98.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_95, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_98, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_96 = &_input.key;
-                let input_96 = input_96.as_ref().ok_or(
+                let input_99 = &_input.key;
+                let input_99 = input_99.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_96, true);
+                let key = aws_smithy_http::label::fmt_string(input_99, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -10738,12 +11210,12 @@ pub mod get_public_access_block_input {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10787,14 +11259,14 @@ impl GetPublicAccessBlockInput {
                 _input: &crate::input::GetPublicAccessBlockInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_97 = &_input.bucket;
-                let input_97 = input_97.as_ref().ok_or(
+                let input_100 = &_input.bucket;
+                let input_100 = input_100.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_97, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_100, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -10893,24 +11365,24 @@ pub mod head_bucket_input {
     impl Builder {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10953,14 +11425,14 @@ impl HeadBucketInput {
                 _input: &crate::input::HeadBucketInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_98 = &_input.bucket;
-                let input_98 = input_98.as_ref().ok_or(
+                let input_101 = &_input.bucket;
+                let input_101 = input_101.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_98, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_101, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -11057,38 +11529,39 @@ pub mod head_object_input {
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) part_number: std::option::Option<i32>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) checksum_mode: std::option::Option<crate::model::ChecksumMode>,
     }
     impl Builder {
         /// <p>The name of the bucket containing the object.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket containing the object.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
         pub fn if_modified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_modified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
         pub fn set_if_modified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11096,12 +11569,12 @@ pub mod head_object_input {
             self.if_modified_since = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
         pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_none_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
         pub fn set_if_none_match(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11109,12 +11582,12 @@ pub mod head_object_input {
             self.if_none_match = input;
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
         pub fn if_unmodified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_unmodified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
         pub fn set_if_unmodified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11191,12 +11664,12 @@ pub mod head_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -11214,17 +11687,32 @@ pub mod head_object_input {
             self.part_number = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>To retrieve the checksum, this parameter must be enabled.</p>
+        /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
+        pub fn checksum_mode(mut self, input: crate::model::ChecksumMode) -> Self {
+            self.checksum_mode = Some(input);
+            self
+        }
+        /// <p>To retrieve the checksum, this parameter must be enabled.</p>
+        /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
+        pub fn set_checksum_mode(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumMode>,
+        ) -> Self {
+            self.checksum_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`HeadObjectInput`](crate::input::HeadObjectInput).
@@ -11246,6 +11734,7 @@ pub mod head_object_input {
                 request_payer: self.request_payer,
                 part_number: self.part_number.unwrap_or_default(),
                 expected_bucket_owner: self.expected_bucket_owner,
+                checksum_mode: self.checksum_mode,
             })
         }
     }
@@ -11274,28 +11763,28 @@ impl HeadObjectInput {
                 _input: &crate::input::HeadObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_99 = &_input.bucket;
-                let input_99 = input_99.as_ref().ok_or(
+                let input_102 = &_input.bucket;
+                let input_102 = input_102.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_99, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_102, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_100 = &_input.key;
-                let input_100 = input_100.as_ref().ok_or(
+                let input_103 = &_input.key;
+                let input_103 = input_103.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_100, true);
+                let key = aws_smithy_http::label::fmt_string(input_103, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -11311,8 +11800,8 @@ impl HeadObjectInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_101) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_101));
+                if let Some(inner_104) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_104));
                 }
                 if _input.part_number != 0 {
                     query.push_kv(
@@ -11424,12 +11913,12 @@ pub mod list_bucket_analytics_configurations_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11478,14 +11967,14 @@ impl ListBucketAnalyticsConfigurationsInput {
                 _input: &crate::input::ListBucketAnalyticsConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_102 = &_input.bucket;
-                let input_102 = input_102.as_ref().ok_or(
+                let input_105 = &_input.bucket;
+                let input_105 = input_105.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_102, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_105, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -11502,10 +11991,10 @@ impl ListBucketAnalyticsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
                 query.push_kv("x-id", "ListBucketAnalyticsConfigurations");
-                if let Some(inner_103) = &_input.continuation_token {
+                if let Some(inner_106) = &_input.continuation_token {
                     query.push_kv(
                         "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_103),
+                        &aws_smithy_http::query::fmt_string(&inner_106),
                     );
                 }
                 Ok(())
@@ -11600,12 +12089,12 @@ pub mod list_bucket_intelligent_tiering_configurations_input {
             self.bucket = input;
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+        /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+        /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11655,14 +12144,14 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 _input: &crate::input::ListBucketIntelligentTieringConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_104 = &_input.bucket;
-                let input_104 = input_104.as_ref().ok_or(
+                let input_107 = &_input.bucket;
+                let input_107 = input_107.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_104, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_107, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -11679,10 +12168,10 @@ impl ListBucketIntelligentTieringConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
                 query.push_kv("x-id", "ListBucketIntelligentTieringConfigurations");
-                if let Some(inner_105) = &_input.continuation_token {
+                if let Some(inner_108) = &_input.continuation_token {
                     query.push_kv(
                         "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_105),
+                        &aws_smithy_http::query::fmt_string(&inner_108),
                     );
                 }
                 Ok(())
@@ -11789,12 +12278,12 @@ pub mod list_bucket_inventory_configurations_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11843,14 +12332,14 @@ impl ListBucketInventoryConfigurationsInput {
                 _input: &crate::input::ListBucketInventoryConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_106 = &_input.bucket;
-                let input_106 = input_106.as_ref().ok_or(
+                let input_109 = &_input.bucket;
+                let input_109 = input_109.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_106, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_109, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -11867,10 +12356,10 @@ impl ListBucketInventoryConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
                 query.push_kv("x-id", "ListBucketInventoryConfigurations");
-                if let Some(inner_107) = &_input.continuation_token {
+                if let Some(inner_110) = &_input.continuation_token {
                     query.push_kv(
                         "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_107),
+                        &aws_smithy_http::query::fmt_string(&inner_110),
                     );
                 }
                 Ok(())
@@ -11979,12 +12468,12 @@ pub mod list_bucket_metrics_configurations_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12033,14 +12522,14 @@ impl ListBucketMetricsConfigurationsInput {
                 _input: &crate::input::ListBucketMetricsConfigurationsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_108 = &_input.bucket;
-                let input_108 = input_108.as_ref().ok_or(
+                let input_111 = &_input.bucket;
+                let input_111 = input_111.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_108, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_111, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -12057,10 +12546,10 @@ impl ListBucketMetricsConfigurationsInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
                 query.push_kv("x-id", "ListBucketMetricsConfigurations");
-                if let Some(inner_109) = &_input.continuation_token {
+                if let Some(inner_112) = &_input.continuation_token {
                     query.push_kv(
                         "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_109),
+                        &aws_smithy_http::query::fmt_string(&inner_112),
                     );
                 }
                 Ok(())
@@ -12262,14 +12751,14 @@ pub mod list_multipart_uploads_input {
     impl Builder {
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -12346,12 +12835,12 @@ pub mod list_multipart_uploads_input {
             self.upload_id_marker = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12401,14 +12890,14 @@ impl ListMultipartUploadsInput {
                 _input: &crate::input::ListMultipartUploadsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_110 = &_input.bucket;
-                let input_110 = input_110.as_ref().ok_or(
+                let input_113 = &_input.bucket;
+                let input_113 = input_113.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_110, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_113, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -12424,19 +12913,19 @@ impl ListMultipartUploadsInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("uploads");
-                if let Some(inner_111) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_111));
+                if let Some(inner_114) = &_input.delimiter {
+                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_114));
                 }
-                if let Some(inner_112) = &_input.encoding_type {
+                if let Some(inner_115) = &_input.encoding_type {
                     query.push_kv(
                         "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_112),
+                        &aws_smithy_http::query::fmt_string(&inner_115),
                     );
                 }
-                if let Some(inner_113) = &_input.key_marker {
+                if let Some(inner_116) = &_input.key_marker {
                     query.push_kv(
                         "key-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_113),
+                        &aws_smithy_http::query::fmt_string(&inner_116),
                     );
                 }
                 if _input.max_uploads != 0 {
@@ -12445,13 +12934,13 @@ impl ListMultipartUploadsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_uploads).encode(),
                     );
                 }
-                if let Some(inner_114) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_114));
+                if let Some(inner_117) = &_input.prefix {
+                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_117));
                 }
-                if let Some(inner_115) = &_input.upload_id_marker {
+                if let Some(inner_118) = &_input.upload_id_marker {
                     query.push_kv(
                         "upload-id-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_115),
+                        &aws_smithy_http::query::fmt_string(&inner_118),
                     );
                 }
                 Ok(())
@@ -12543,14 +13032,14 @@ pub mod list_objects_input {
     impl Builder {
         /// <p>The name of the bucket containing the objects.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket containing the objects.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -12621,12 +13110,12 @@ pub mod list_objects_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12676,14 +13165,14 @@ impl ListObjectsInput {
                 _input: &crate::input::ListObjectsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_116 = &_input.bucket;
-                let input_116 = input_116.as_ref().ok_or(
+                let input_119 = &_input.bucket;
+                let input_119 = input_119.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_116, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_119, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -12698,17 +13187,17 @@ impl ListObjectsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_117) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_117));
+                if let Some(inner_120) = &_input.delimiter {
+                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_120));
                 }
-                if let Some(inner_118) = &_input.encoding_type {
+                if let Some(inner_121) = &_input.encoding_type {
                     query.push_kv(
                         "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_118),
+                        &aws_smithy_http::query::fmt_string(&inner_121),
                     );
                 }
-                if let Some(inner_119) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_119));
+                if let Some(inner_122) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_122));
                 }
                 if _input.max_keys != 0 {
                     query.push_kv(
@@ -12716,8 +13205,8 @@ impl ListObjectsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_120) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_120));
+                if let Some(inner_123) = &_input.prefix {
+                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_123));
                 }
                 Ok(())
             }
@@ -12809,14 +13298,14 @@ pub mod list_objects_v2_input {
     impl Builder {
         /// <p>Bucket name to list. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>Bucket name to list. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -12910,12 +13399,12 @@ pub mod list_objects_v2_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12967,14 +13456,14 @@ impl ListObjectsV2Input {
                 _input: &crate::input::ListObjectsV2Input,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_121 = &_input.bucket;
-                let input_121 = input_121.as_ref().ok_or(
+                let input_124 = &_input.bucket;
+                let input_124 = input_124.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_121, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_124, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -12990,13 +13479,13 @@ impl ListObjectsV2Input {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_kv("list-type", "2");
-                if let Some(inner_122) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_122));
+                if let Some(inner_125) = &_input.delimiter {
+                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_125));
                 }
-                if let Some(inner_123) = &_input.encoding_type {
+                if let Some(inner_126) = &_input.encoding_type {
                     query.push_kv(
                         "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_123),
+                        &aws_smithy_http::query::fmt_string(&inner_126),
                     );
                 }
                 if _input.max_keys != 0 {
@@ -13005,13 +13494,13 @@ impl ListObjectsV2Input {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_124) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_124));
+                if let Some(inner_127) = &_input.prefix {
+                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_127));
                 }
-                if let Some(inner_125) = &_input.continuation_token {
+                if let Some(inner_128) = &_input.continuation_token {
                     query.push_kv(
                         "continuation-token",
-                        &aws_smithy_http::query::fmt_string(&inner_125),
+                        &aws_smithy_http::query::fmt_string(&inner_128),
                     );
                 }
                 if _input.fetch_owner {
@@ -13020,10 +13509,10 @@ impl ListObjectsV2Input {
                         aws_smithy_types::primitive::Encoder::from(_input.fetch_owner).encode(),
                     );
                 }
-                if let Some(inner_126) = &_input.start_after {
+                if let Some(inner_129) = &_input.start_after {
                     query.push_kv(
                         "start-after",
-                        &aws_smithy_http::query::fmt_string(&inner_126),
+                        &aws_smithy_http::query::fmt_string(&inner_129),
                     );
                 }
                 Ok(())
@@ -13192,12 +13681,12 @@ pub mod list_object_versions_input {
             self.version_id_marker = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13247,14 +13736,14 @@ impl ListObjectVersionsInput {
                 _input: &crate::input::ListObjectVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_127 = &_input.bucket;
-                let input_127 = input_127.as_ref().ok_or(
+                let input_130 = &_input.bucket;
+                let input_130 = input_130.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_127, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_130, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -13270,19 +13759,19 @@ impl ListObjectVersionsInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("versions");
-                if let Some(inner_128) = &_input.delimiter {
-                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_128));
+                if let Some(inner_131) = &_input.delimiter {
+                    query.push_kv("delimiter", &aws_smithy_http::query::fmt_string(&inner_131));
                 }
-                if let Some(inner_129) = &_input.encoding_type {
+                if let Some(inner_132) = &_input.encoding_type {
                     query.push_kv(
                         "encoding-type",
-                        &aws_smithy_http::query::fmt_string(&inner_129),
+                        &aws_smithy_http::query::fmt_string(&inner_132),
                     );
                 }
-                if let Some(inner_130) = &_input.key_marker {
+                if let Some(inner_133) = &_input.key_marker {
                     query.push_kv(
                         "key-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_130),
+                        &aws_smithy_http::query::fmt_string(&inner_133),
                     );
                 }
                 if _input.max_keys != 0 {
@@ -13291,13 +13780,13 @@ impl ListObjectVersionsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_keys).encode(),
                     );
                 }
-                if let Some(inner_131) = &_input.prefix {
-                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_131));
+                if let Some(inner_134) = &_input.prefix {
+                    query.push_kv("prefix", &aws_smithy_http::query::fmt_string(&inner_134));
                 }
-                if let Some(inner_132) = &_input.version_id_marker {
+                if let Some(inner_135) = &_input.version_id_marker {
                     query.push_kv(
                         "version-id-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_132),
+                        &aws_smithy_http::query::fmt_string(&inner_135),
                     );
                 }
                 Ok(())
@@ -13383,18 +13872,21 @@ pub mod list_parts_input {
         pub(crate) upload_id: std::option::Option<std::string::String>,
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key: std::option::Option<std::string::String>,
+        pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the bucket to which the parts are being uploaded. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket to which the parts are being uploaded. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -13442,12 +13934,12 @@ pub mod list_parts_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -13455,17 +13947,56 @@ pub mod list_parts_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_algorithm = Some(input.into());
+            self
+        }
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_algorithm(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_algorithm = input;
+            self
+        }
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key = Some(input.into());
+            self
+        }
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key = input;
+            self
+        }
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sse_customer_key_md5 = Some(input.into());
+            self
+        }
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_sse_customer_key_md5(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sse_customer_key_md5 = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPartsInput`](crate::input::ListPartsInput).
@@ -13480,6 +14011,9 @@ pub mod list_parts_input {
                 upload_id: self.upload_id,
                 request_payer: self.request_payer,
                 expected_bucket_owner: self.expected_bucket_owner,
+                sse_customer_algorithm: self.sse_customer_algorithm,
+                sse_customer_key: self.sse_customer_key,
+                sse_customer_key_md5: self.sse_customer_key_md5,
             })
         }
     }
@@ -13508,28 +14042,28 @@ impl ListPartsInput {
                 _input: &crate::input::ListPartsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_133 = &_input.bucket;
-                let input_133 = input_133.as_ref().ok_or(
+                let input_136 = &_input.bucket;
+                let input_136 = input_136.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_133, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_136, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_134 = &_input.key;
-                let input_134 = input_134.as_ref().ok_or(
+                let input_137 = &_input.key;
+                let input_137 = input_137.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_134, true);
+                let key = aws_smithy_http::label::fmt_string(input_137, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -13552,14 +14086,14 @@ impl ListPartsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_parts).encode(),
                     );
                 }
-                if let Some(inner_135) = &_input.part_number_marker {
+                if let Some(inner_138) = &_input.part_number_marker {
                     query.push_kv(
                         "part-number-marker",
-                        &aws_smithy_http::query::fmt_string(&inner_135),
+                        &aws_smithy_http::query::fmt_string(&inner_138),
                     );
                 }
-                if let Some(inner_136) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_136));
+                if let Some(inner_139) = &_input.upload_id {
+                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_139));
                 }
                 Ok(())
             }
@@ -13636,6 +14170,7 @@ pub mod put_bucket_accelerate_configuration_input {
         pub(crate) accelerate_configuration:
             std::option::Option<crate::model::AccelerateConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>The name of the bucket for which the accelerate configuration is set.</p>
@@ -13664,17 +14199,32 @@ pub mod put_bucket_accelerate_configuration_input {
             self.accelerate_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.expected_bucket_owner = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// Consumes the builder and constructs a [`PutBucketAccelerateConfigurationInput`](crate::input::PutBucketAccelerateConfigurationInput).
@@ -13688,6 +14238,7 @@ pub mod put_bucket_accelerate_configuration_input {
                 bucket: self.bucket,
                 accelerate_configuration: self.accelerate_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
+                checksum_algorithm: self.checksum_algorithm,
             })
         }
     }
@@ -13718,14 +14269,14 @@ impl PutBucketAccelerateConfigurationInput {
                 _input: &crate::input::PutBucketAccelerateConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_137 = &_input.bucket;
-                let input_137 = input_137.as_ref().ok_or(
+                let input_140 = &_input.bucket;
+                let input_140 = input_140.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_137, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_140, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -13839,6 +14390,7 @@ pub mod put_bucket_acl_input {
         pub(crate) access_control_policy: std::option::Option<crate::model::AccessControlPolicy>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
         pub(crate) grant_read: std::option::Option<std::string::String>,
         pub(crate) grant_read_acp: std::option::Option<std::string::String>,
@@ -13893,6 +14445,21 @@ pub mod put_bucket_acl_input {
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
@@ -13956,12 +14523,12 @@ pub mod put_bucket_acl_input {
             self.grant_write_acp = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13979,6 +14546,7 @@ pub mod put_bucket_acl_input {
                 access_control_policy: self.access_control_policy,
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
@@ -14013,14 +14581,14 @@ impl PutBucketAclInput {
                 _input: &crate::input::PutBucketAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_138 = &_input.bucket;
-                let input_138 = input_138.as_ref().ok_or(
+                let input_141 = &_input.bucket;
+                let input_141 = input_141.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_138, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_141, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -14074,20 +14642,6 @@ impl PutBucketAclInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14185,12 +14739,12 @@ pub mod put_bucket_analytics_configuration_input {
             self.analytics_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14240,14 +14794,14 @@ impl PutBucketAnalyticsConfigurationInput {
                 _input: &crate::input::PutBucketAnalyticsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_139 = &_input.bucket;
-                let input_139 = input_139.as_ref().ok_or(
+                let input_142 = &_input.bucket;
+                let input_142 = input_142.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_139, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_142, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -14263,8 +14817,8 @@ impl PutBucketAnalyticsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("analytics");
-                if let Some(inner_140) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_140));
+                if let Some(inner_143) = &_input.id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_143));
                 }
                 Ok(())
             }
@@ -14363,6 +14917,7 @@ pub mod put_bucket_cors_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::CorsConfiguration>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -14401,12 +14956,27 @@ pub mod put_bucket_cors_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14423,6 +14993,7 @@ pub mod put_bucket_cors_input {
                 bucket: self.bucket,
                 cors_configuration: self.cors_configuration,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -14452,14 +15023,14 @@ impl PutBucketCorsInput {
                 _input: &crate::input::PutBucketCorsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_141 = &_input.bucket;
-                let input_141 = input_141.as_ref().ok_or(
+                let input_144 = &_input.bucket;
+                let input_144 = input_144.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_141, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_144, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -14513,20 +15084,6 @@ impl PutBucketCorsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14583,6 +15140,7 @@ pub mod put_bucket_encryption_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) server_side_encryption_configuration:
             std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -14610,6 +15168,21 @@ pub mod put_bucket_encryption_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Specifies the default server-side-encryption configuration.</p>
         pub fn server_side_encryption_configuration(
             mut self,
@@ -14626,12 +15199,12 @@ pub mod put_bucket_encryption_input {
             self.server_side_encryption_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14647,6 +15220,7 @@ pub mod put_bucket_encryption_input {
             Ok(crate::input::PutBucketEncryptionInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 server_side_encryption_configuration: self.server_side_encryption_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -14677,14 +15251,14 @@ impl PutBucketEncryptionInput {
                 _input: &crate::input::PutBucketEncryptionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_142 = &_input.bucket;
-                let input_142 = input_142.as_ref().ok_or(
+                let input_145 = &_input.bucket;
+                let input_145 = input_145.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_142, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_145, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -14738,20 +15312,6 @@ impl PutBucketEncryptionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -14891,14 +15451,14 @@ impl PutBucketIntelligentTieringConfigurationInput {
                 _input: &crate::input::PutBucketIntelligentTieringConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_143 = &_input.bucket;
-                let input_143 = input_143.as_ref().ok_or(
+                let input_146 = &_input.bucket;
+                let input_146 = input_146.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_143, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_146, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -14914,8 +15474,8 @@ impl PutBucketIntelligentTieringConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("intelligent-tiering");
-                if let Some(inner_144) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_144));
+                if let Some(inner_147) = &_input.id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_147));
                 }
                 Ok(())
             }
@@ -15048,12 +15608,12 @@ pub mod put_bucket_inventory_configuration_input {
             self.inventory_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15103,14 +15663,14 @@ impl PutBucketInventoryConfigurationInput {
                 _input: &crate::input::PutBucketInventoryConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_145 = &_input.bucket;
-                let input_145 = input_145.as_ref().ok_or(
+                let input_148 = &_input.bucket;
+                let input_148 = input_148.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_145, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_148, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -15126,8 +15686,8 @@ impl PutBucketInventoryConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("inventory");
-                if let Some(inner_146) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_146));
+                if let Some(inner_149) = &_input.id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_149));
                 }
                 Ok(())
             }
@@ -15224,6 +15784,7 @@ pub mod put_bucket_lifecycle_configuration_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) lifecycle_configuration:
             std::option::Option<crate::model::BucketLifecycleConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -15237,6 +15798,21 @@ pub mod put_bucket_lifecycle_configuration_input {
         /// <p>The name of the bucket for which to set the configuration.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
@@ -15255,12 +15831,12 @@ pub mod put_bucket_lifecycle_configuration_input {
             self.lifecycle_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15277,6 +15853,7 @@ pub mod put_bucket_lifecycle_configuration_input {
         > {
             Ok(crate::input::PutBucketLifecycleConfigurationInput {
                 bucket: self.bucket,
+                checksum_algorithm: self.checksum_algorithm,
                 lifecycle_configuration: self.lifecycle_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -15309,14 +15886,14 @@ impl PutBucketLifecycleConfigurationInput {
                 _input: &crate::input::PutBucketLifecycleConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_147 = &_input.bucket;
-                let input_147 = input_147.as_ref().ok_or(
+                let input_150 = &_input.bucket;
+                let input_150 = input_150.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_147, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_150, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -15372,20 +15949,6 @@ impl PutBucketLifecycleConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -15443,6 +16006,7 @@ pub mod put_bucket_logging_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) bucket_logging_status: std::option::Option<crate::model::BucketLoggingStatus>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -15481,12 +16045,27 @@ pub mod put_bucket_logging_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15503,6 +16082,7 @@ pub mod put_bucket_logging_input {
                 bucket: self.bucket,
                 bucket_logging_status: self.bucket_logging_status,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -15532,14 +16112,14 @@ impl PutBucketLoggingInput {
                 _input: &crate::input::PutBucketLoggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_148 = &_input.bucket;
-                let input_148 = input_148.as_ref().ok_or(
+                let input_151 = &_input.bucket;
+                let input_151 = input_151.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_148, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_151, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -15593,20 +16173,6 @@ impl PutBucketLoggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -15700,12 +16266,12 @@ pub mod put_bucket_metrics_configuration_input {
             self.metrics_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15755,14 +16321,14 @@ impl PutBucketMetricsConfigurationInput {
                 _input: &crate::input::PutBucketMetricsConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_149 = &_input.bucket;
-                let input_149 = input_149.as_ref().ok_or(
+                let input_152 = &_input.bucket;
+                let input_152 = input_152.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_149, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_152, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -15778,8 +16344,8 @@ impl PutBucketMetricsConfigurationInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("metrics");
-                if let Some(inner_150) = &_input.id {
-                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_150));
+                if let Some(inner_153) = &_input.id {
+                    query.push_kv("id", &aws_smithy_http::query::fmt_string(&inner_153));
                 }
                 Ok(())
             }
@@ -15908,12 +16474,12 @@ pub mod put_bucket_notification_configuration_input {
             self.notification_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15973,14 +16539,14 @@ impl PutBucketNotificationConfigurationInput {
                 _input: &crate::input::PutBucketNotificationConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_151 = &_input.bucket;
-                let input_151 = input_151.as_ref().ok_or(
+                let input_154 = &_input.bucket;
+                let input_154 = input_154.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_151, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_154, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -16118,12 +16684,12 @@ pub mod put_bucket_ownership_controls_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16185,14 +16751,14 @@ impl PutBucketOwnershipControlsInput {
                 _input: &crate::input::PutBucketOwnershipControlsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_152 = &_input.bucket;
-                let input_152 = input_152.as_ref().ok_or(
+                let input_155 = &_input.bucket;
+                let input_155 = input_155.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_152, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_155, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -16247,20 +16813,6 @@ impl PutBucketOwnershipControlsInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16317,6 +16869,7 @@ pub mod put_bucket_policy_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) confirm_remove_self_bucket_access: std::option::Option<bool>,
         pub(crate) policy: std::option::Option<std::string::String>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -16344,6 +16897,21 @@ pub mod put_bucket_policy_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
         pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
             self.confirm_remove_self_bucket_access = Some(input);
@@ -16367,12 +16935,12 @@ pub mod put_bucket_policy_input {
             self.policy = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16388,6 +16956,7 @@ pub mod put_bucket_policy_input {
             Ok(crate::input::PutBucketPolicyInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 confirm_remove_self_bucket_access: self
                     .confirm_remove_self_bucket_access
                     .unwrap_or_default(),
@@ -16421,14 +16990,14 @@ impl PutBucketPolicyInput {
                 _input: &crate::input::PutBucketPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_153 = &_input.bucket;
-                let input_153 = input_153.as_ref().ok_or(
+                let input_156 = &_input.bucket;
+                let input_156 = input_156.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_153, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_156, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -16480,20 +17049,6 @@ impl PutBucketPolicyInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16550,6 +17105,7 @@ pub mod put_bucket_replication_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) replication_configuration:
             std::option::Option<crate::model::ReplicationConfiguration>,
         pub(crate) token: std::option::Option<std::string::String>,
@@ -16578,6 +17134,21 @@ pub mod put_bucket_replication_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
@@ -16604,12 +17175,12 @@ pub mod put_bucket_replication_input {
             self.token = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16625,6 +17196,7 @@ pub mod put_bucket_replication_input {
             Ok(crate::input::PutBucketReplicationInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 replication_configuration: self.replication_configuration,
                 token: self.token,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -16656,14 +17228,14 @@ impl PutBucketReplicationInput {
                 _input: &crate::input::PutBucketReplicationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_154 = &_input.bucket;
-                let input_154 = input_154.as_ref().ok_or(
+                let input_157 = &_input.bucket;
+                let input_157 = input_157.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_154, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_157, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -16718,20 +17290,6 @@ impl PutBucketReplicationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -16788,6 +17346,7 @@ pub mod put_bucket_request_payment_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) request_payment_configuration:
             std::option::Option<crate::model::RequestPaymentConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -16815,6 +17374,21 @@ pub mod put_bucket_request_payment_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Container for Payer.</p>
         pub fn request_payment_configuration(
             mut self,
@@ -16831,12 +17405,12 @@ pub mod put_bucket_request_payment_input {
             self.request_payment_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16854,6 +17428,7 @@ pub mod put_bucket_request_payment_input {
             Ok(crate::input::PutBucketRequestPaymentInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 request_payment_configuration: self.request_payment_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -16885,14 +17460,14 @@ impl PutBucketRequestPaymentInput {
                 _input: &crate::input::PutBucketRequestPaymentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_155 = &_input.bucket;
-                let input_155 = input_155.as_ref().ok_or(
+                let input_158 = &_input.bucket;
+                let input_158 = input_158.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_155, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_158, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -16947,20 +17522,6 @@ impl PutBucketRequestPaymentInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17017,6 +17578,7 @@ pub mod put_bucket_tagging_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) tagging: std::option::Option<crate::model::Tagging>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
@@ -17043,6 +17605,21 @@ pub mod put_bucket_tagging_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
         pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
             self.tagging = Some(input);
@@ -17053,12 +17630,12 @@ pub mod put_bucket_tagging_input {
             self.tagging = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17074,6 +17651,7 @@ pub mod put_bucket_tagging_input {
             Ok(crate::input::PutBucketTaggingInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 tagging: self.tagging,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -17104,14 +17682,14 @@ impl PutBucketTaggingInput {
                 _input: &crate::input::PutBucketTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_156 = &_input.bucket;
-                let input_156 = input_156.as_ref().ok_or(
+                let input_159 = &_input.bucket;
+                let input_159 = input_159.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_156, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_159, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -17163,20 +17741,6 @@ impl PutBucketTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17233,6 +17797,7 @@ pub mod put_bucket_versioning_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) mfa: std::option::Option<std::string::String>,
         pub(crate) versioning_configuration:
             std::option::Option<crate::model::VersioningConfiguration>,
@@ -17261,6 +17826,21 @@ pub mod put_bucket_versioning_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
         pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
             self.mfa = Some(input.into());
@@ -17287,12 +17867,12 @@ pub mod put_bucket_versioning_input {
             self.versioning_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17308,6 +17888,7 @@ pub mod put_bucket_versioning_input {
             Ok(crate::input::PutBucketVersioningInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 mfa: self.mfa,
                 versioning_configuration: self.versioning_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
@@ -17339,14 +17920,14 @@ impl PutBucketVersioningInput {
                 _input: &crate::input::PutBucketVersioningInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_157 = &_input.bucket;
-                let input_157 = input_157.as_ref().ok_or(
+                let input_160 = &_input.bucket;
+                let input_160 = input_160.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_157, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_160, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -17400,20 +17981,6 @@ impl PutBucketVersioningInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17470,6 +18037,7 @@ pub mod put_bucket_website_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) website_configuration: std::option::Option<crate::model::WebsiteConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
@@ -17496,6 +18064,21 @@ pub mod put_bucket_website_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Container for the request.</p>
         pub fn website_configuration(mut self, input: crate::model::WebsiteConfiguration) -> Self {
             self.website_configuration = Some(input);
@@ -17509,12 +18092,12 @@ pub mod put_bucket_website_input {
             self.website_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17530,6 +18113,7 @@ pub mod put_bucket_website_input {
             Ok(crate::input::PutBucketWebsiteInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 website_configuration: self.website_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -17560,14 +18144,14 @@ impl PutBucketWebsiteInput {
                 _input: &crate::input::PutBucketWebsiteInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_158 = &_input.bucket;
-                let input_158 = input_158.as_ref().ok_or(
+                let input_161 = &_input.bucket;
+                let input_161 = input_161.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_158, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_161, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -17621,20 +18205,6 @@ impl PutBucketWebsiteInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -17699,6 +18269,11 @@ pub mod put_object_input {
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
         pub(crate) grant_read: std::option::Option<std::string::String>,
@@ -17756,14 +18331,14 @@ pub mod put_object_input {
         }
         /// <p>The bucket name to which the PUT action was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name to which the PUT action was initiated. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -17848,6 +18423,73 @@ pub mod put_object_input {
         /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
@@ -18081,12 +18723,12 @@ pub mod put_object_input {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -18146,12 +18788,12 @@ pub mod put_object_input {
             self.object_lock_legal_hold_status = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18174,6 +18816,11 @@ pub mod put_object_input {
                 content_length: self.content_length.unwrap_or_default(),
                 content_md5: self.content_md5,
                 content_type: self.content_type,
+                checksum_algorithm: self.checksum_algorithm,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 expires: self.expires,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
@@ -18224,28 +18871,28 @@ impl PutObjectInput {
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_159 = &_input.bucket;
-                let input_159 = input_159.as_ref().ok_or(
+                let input_162 = &_input.bucket;
+                let input_162 = input_162.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_159, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_162, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_160 = &_input.key;
-                let input_160 = input_160.as_ref().ok_or(
+                let input_163 = &_input.key;
+                let input_163 = input_163.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_160, true);
+                let key = aws_smithy_http::label::fmt_string(input_163, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -18384,28 +19031,28 @@ impl PutObjectInput {
                 _input: &crate::input::PutObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_161 = &_input.bucket;
-                let input_161 = input_161.as_ref().ok_or(
+                let input_164 = &_input.bucket;
+                let input_164 = input_164.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_161, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_164, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_162 = &_input.key;
-                let input_162 = input_162.as_ref().ok_or(
+                let input_165 = &_input.key;
+                let input_165 = input_165.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_162, true);
+                let key = aws_smithy_http::label::fmt_string(input_165, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -18511,6 +19158,7 @@ pub mod put_object_acl_input {
         pub(crate) access_control_policy: std::option::Option<crate::model::AccessControlPolicy>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) grant_full_control: std::option::Option<std::string::String>,
         pub(crate) grant_read: std::option::Option<std::string::String>,
         pub(crate) grant_read_acp: std::option::Option<std::string::String>,
@@ -18570,6 +19218,21 @@ pub mod put_object_acl_input {
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
@@ -18643,24 +19306,24 @@ pub mod put_object_acl_input {
         }
         /// <p>Key for which the PUT action was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>Key for which the PUT action was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -18678,12 +19341,12 @@ pub mod put_object_acl_input {
             self.version_id = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18701,6 +19364,7 @@ pub mod put_object_acl_input {
                 access_control_policy: self.access_control_policy,
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 grant_full_control: self.grant_full_control,
                 grant_read: self.grant_read,
                 grant_read_acp: self.grant_read_acp,
@@ -18738,28 +19402,28 @@ impl PutObjectAclInput {
                 _input: &crate::input::PutObjectAclInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_163 = &_input.bucket;
-                let input_163 = input_163.as_ref().ok_or(
+                let input_166 = &_input.bucket;
+                let input_166 = input_166.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_163, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_166, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_164 = &_input.key;
-                let input_164 = input_164.as_ref().ok_or(
+                let input_167 = &_input.key;
+                let input_167 = input_167.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_164, true);
+                let key = aws_smithy_http::label::fmt_string(input_167, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -18776,8 +19440,8 @@ impl PutObjectAclInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("acl");
-                if let Some(inner_165) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_165));
+                if let Some(inner_168) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_168));
                 }
                 Ok(())
             }
@@ -18817,20 +19481,6 @@ impl PutObjectAclInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -18891,37 +19541,38 @@ pub mod put_object_legal_hold_input {
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
+        /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
+        /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>The key name for the object that you want to place a Legal Hold on.</p>
+        /// <p>The key name for the object that you want to place a legal hold on.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key name for the object that you want to place a Legal Hold on.</p>
+        /// <p>The key name for the object that you want to place a legal hold on.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
+        /// <p>Container element for the legal hold configuration you want to apply to the specified object.</p>
         pub fn legal_hold(mut self, input: crate::model::ObjectLockLegalHold) -> Self {
             self.legal_hold = Some(input);
             self
         }
-        /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
+        /// <p>Container element for the legal hold configuration you want to apply to the specified object.</p>
         pub fn set_legal_hold(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHold>,
@@ -18929,12 +19580,12 @@ pub mod put_object_legal_hold_input {
             self.legal_hold = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -18942,12 +19593,12 @@ pub mod put_object_legal_hold_input {
             self.request_payer = input;
             self
         }
-        /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
+        /// <p>The version ID of the object that you want to place a legal hold on.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
+        /// <p>The version ID of the object that you want to place a legal hold on.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -18964,12 +19615,27 @@ pub mod put_object_legal_hold_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18989,6 +19655,7 @@ pub mod put_object_legal_hold_input {
                 request_payer: self.request_payer,
                 version_id: self.version_id,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -19018,28 +19685,28 @@ impl PutObjectLegalHoldInput {
                 _input: &crate::input::PutObjectLegalHoldInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_166 = &_input.bucket;
-                let input_166 = input_166.as_ref().ok_or(
+                let input_169 = &_input.bucket;
+                let input_169 = input_169.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_166, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_169, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_167 = &_input.key;
-                let input_167 = input_167.as_ref().ok_or(
+                let input_170 = &_input.key;
+                let input_170 = input_170.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_167, true);
+                let key = aws_smithy_http::label::fmt_string(input_170, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -19056,8 +19723,8 @@ impl PutObjectLegalHoldInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("legal-hold");
-                if let Some(inner_168) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_168));
+                if let Some(inner_171) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_171));
                 }
                 Ok(())
             }
@@ -19095,20 +19762,6 @@ impl PutObjectLegalHoldInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19169,6 +19822,7 @@ pub mod put_object_lock_configuration_input {
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
         pub(crate) token: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -19198,12 +19852,12 @@ pub mod put_object_lock_configuration_input {
             self.object_lock_configuration = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -19233,12 +19887,27 @@ pub mod put_object_lock_configuration_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19259,6 +19928,7 @@ pub mod put_object_lock_configuration_input {
                 request_payer: self.request_payer,
                 token: self.token,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -19289,14 +19959,14 @@ impl PutObjectLockConfigurationInput {
                 _input: &crate::input::PutObjectLockConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_169 = &_input.bucket;
-                let input_169 = input_169.as_ref().ok_or(
+                let input_172 = &_input.bucket;
+                let input_172 = input_172.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_169, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_172, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -19351,20 +20021,6 @@ impl PutObjectLockConfigurationInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19426,6 +20082,7 @@ pub mod put_object_retention_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) bypass_governance_retention: std::option::Option<bool>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -19464,12 +20121,12 @@ pub mod put_object_retention_input {
             self.retention = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -19509,12 +20166,27 @@ pub mod put_object_retention_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19535,6 +20207,7 @@ pub mod put_object_retention_input {
                 version_id: self.version_id,
                 bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -19564,28 +20237,28 @@ impl PutObjectRetentionInput {
                 _input: &crate::input::PutObjectRetentionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_170 = &_input.bucket;
-                let input_170 = input_170.as_ref().ok_or(
+                let input_173 = &_input.bucket;
+                let input_173 = input_173.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_170, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_173, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_171 = &_input.key;
-                let input_171 = input_171.as_ref().ok_or(
+                let input_174 = &_input.key;
+                let input_174 = input_174.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_171, true);
+                let key = aws_smithy_http::label::fmt_string(input_174, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -19602,8 +20275,8 @@ impl PutObjectRetentionInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("retention");
-                if let Some(inner_172) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_172));
+                if let Some(inner_175) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_175));
                 }
                 Ok(())
             }
@@ -19641,20 +20314,6 @@ impl PutObjectRetentionInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19713,6 +20372,7 @@ pub mod put_object_tagging_input {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) tagging: std::option::Option<crate::model::Tagging>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
@@ -19720,14 +20380,14 @@ pub mod put_object_tagging_input {
     impl Builder {
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name containing the object. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -19764,6 +20424,21 @@ pub mod put_object_tagging_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
         pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
             self.tagging = Some(input);
@@ -19774,12 +20449,12 @@ pub mod put_object_tagging_input {
             self.tagging = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19787,12 +20462,12 @@ pub mod put_object_tagging_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -19810,6 +20485,7 @@ pub mod put_object_tagging_input {
                 key: self.key,
                 version_id: self.version_id,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 tagging: self.tagging,
                 expected_bucket_owner: self.expected_bucket_owner,
                 request_payer: self.request_payer,
@@ -19841,28 +20517,28 @@ impl PutObjectTaggingInput {
                 _input: &crate::input::PutObjectTaggingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_173 = &_input.bucket;
-                let input_173 = input_173.as_ref().ok_or(
+                let input_176 = &_input.bucket;
+                let input_176 = input_176.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_173, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_176, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_174 = &_input.key;
-                let input_174 = input_174.as_ref().ok_or(
+                let input_177 = &_input.key;
+                let input_177 = input_177.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_174, true);
+                let key = aws_smithy_http::label::fmt_string(input_177, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -19879,8 +20555,8 @@ impl PutObjectTaggingInput {
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("tagging");
-                if let Some(inner_175) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_175));
+                if let Some(inner_178) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_178));
                 }
                 Ok(())
             }
@@ -19918,20 +20594,6 @@ impl PutObjectTaggingInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -19988,6 +20650,7 @@ pub mod put_public_access_block_input {
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
@@ -20015,6 +20678,21 @@ pub mod put_public_access_block_input {
             self.content_md5 = input;
             self
         }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn public_access_block_configuration(
             mut self,
@@ -20031,12 +20709,12 @@ pub mod put_public_access_block_input {
             self.public_access_block_configuration = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20052,6 +20730,7 @@ pub mod put_public_access_block_input {
             Ok(crate::input::PutPublicAccessBlockInput {
                 bucket: self.bucket,
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
                 public_access_block_configuration: self.public_access_block_configuration,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
@@ -20082,14 +20761,14 @@ impl PutPublicAccessBlockInput {
                 _input: &crate::input::PutPublicAccessBlockInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_176 = &_input.bucket;
-                let input_176 = input_176.as_ref().ok_or(
+                let input_179 = &_input.bucket;
+                let input_179 = input_179.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_176, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_179, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
@@ -20144,20 +20823,6 @@ impl PutPublicAccessBlockInput {
         }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
-        request = request.augment(|mut req, _| {
-            let data = req
-                .body()
-                .bytes()
-                .expect("checksum can only be computed for non-streaming operations");
-            let checksum = <md5::Md5 as md5::Digest>::digest(data);
-            req.headers_mut().insert(
-                http::header::HeaderName::from_static("content-md5"),
-                aws_smithy_types::base64::encode(&checksum[..])
-                    .parse()
-                    .expect("checksum is valid header value"),
-            );
-            Result::<_, aws_smithy_http::operation::BuildError>::Ok(req)
-        })?;
         request
             .properties_mut()
             .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
@@ -20217,19 +20882,20 @@ pub mod restore_object_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) restore_request: std::option::Option<crate::model::RestoreRequest>,
         pub(crate) request_payer: std::option::Option<crate::model::RequestPayer>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The bucket name containing the object to restore. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name containing the object to restore. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -20267,12 +20933,12 @@ pub mod restore_object_input {
             self.restore_request = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -20280,12 +20946,27 @@ pub mod restore_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20304,6 +20985,7 @@ pub mod restore_object_input {
                 version_id: self.version_id,
                 restore_request: self.restore_request,
                 request_payer: self.request_payer,
+                checksum_algorithm: self.checksum_algorithm,
                 expected_bucket_owner: self.expected_bucket_owner,
             })
         }
@@ -20333,28 +21015,28 @@ impl RestoreObjectInput {
                 _input: &crate::input::RestoreObjectInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_177 = &_input.bucket;
-                let input_177 = input_177.as_ref().ok_or(
+                let input_180 = &_input.bucket;
+                let input_180 = input_180.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_177, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_180, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_178 = &_input.key;
-                let input_178 = input_178.as_ref().ok_or(
+                let input_181 = &_input.key;
+                let input_181 = input_181.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_178, true);
+                let key = aws_smithy_http::label::fmt_string(input_181, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -20372,8 +21054,8 @@ impl RestoreObjectInput {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 query.push_v("restore");
                 query.push_kv("x-id", "RestoreObject");
-                if let Some(inner_179) = &_input.version_id {
-                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_179));
+                if let Some(inner_182) = &_input.version_id {
+                    query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_182));
                 }
                 Ok(())
             }
@@ -20499,12 +21181,12 @@ pub mod select_object_content_input {
             self.key = input;
             self
         }
-        /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20512,12 +21194,12 @@ pub mod select_object_content_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20525,12 +21207,12 @@ pub mod select_object_content_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20661,12 +21343,12 @@ pub mod select_object_content_input {
             self.scan_range = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20720,28 +21402,28 @@ impl SelectObjectContentInput {
                 _input: &crate::input::SelectObjectContentInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_180 = &_input.bucket;
-                let input_180 = input_180.as_ref().ok_or(
+                let input_183 = &_input.bucket;
+                let input_183 = input_183.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_180, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_183, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_181 = &_input.key;
-                let input_181 = input_181.as_ref().ok_or(
+                let input_184 = &_input.key;
+                let input_184 = input_184.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_181, true);
+                let key = aws_smithy_http::label::fmt_string(input_184, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -20854,6 +21536,11 @@ pub mod upload_part_input {
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_md5: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) part_number: std::option::Option<i32>,
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -20879,14 +21566,14 @@ pub mod upload_part_input {
         }
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -20909,6 +21596,75 @@ pub mod upload_part_input {
         /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+        /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>Object key for which the multipart upload was initiated.</p>
@@ -20980,12 +21736,12 @@ pub mod upload_part_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -20993,12 +21749,12 @@ pub mod upload_part_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21015,6 +21771,11 @@ pub mod upload_part_input {
                 bucket: self.bucket,
                 content_length: self.content_length.unwrap_or_default(),
                 content_md5: self.content_md5,
+                checksum_algorithm: self.checksum_algorithm,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 key: self.key,
                 part_number: self.part_number.unwrap_or_default(),
                 upload_id: self.upload_id,
@@ -21051,28 +21812,28 @@ impl UploadPartInput {
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_182 = &_input.bucket;
-                let input_182 = input_182.as_ref().ok_or(
+                let input_185 = &_input.bucket;
+                let input_185 = input_185.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_182, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_185, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_183 = &_input.key;
-                let input_183 = input_183.as_ref().ok_or(
+                let input_186 = &_input.key;
+                let input_186 = input_186.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_183, true);
+                let key = aws_smithy_http::label::fmt_string(input_186, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -21095,8 +21856,8 @@ impl UploadPartInput {
                         aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
                     );
                 }
-                if let Some(inner_184) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_184));
+                if let Some(inner_187) = &_input.upload_id {
+                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_187));
                 }
                 Ok(())
             }
@@ -21225,28 +21986,28 @@ impl UploadPartInput {
                 _input: &crate::input::UploadPartInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_185 = &_input.bucket;
-                let input_185 = input_185.as_ref().ok_or(
+                let input_188 = &_input.bucket;
+                let input_188 = input_188.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_185, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_188, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_186 = &_input.key;
-                let input_186 = input_186.as_ref().ok_or(
+                let input_189 = &_input.key;
+                let input_189 = input_189.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_186, true);
+                let key = aws_smithy_http::label::fmt_string(input_189, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -21269,8 +22030,8 @@ impl UploadPartInput {
                         aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
                     );
                 }
-                if let Some(inner_187) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_187));
+                if let Some(inner_190) = &_input.upload_id {
+                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_190));
                 }
                 Ok(())
             }
@@ -21385,21 +22146,21 @@ pub mod upload_part_copy_input {
     impl Builder {
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
         /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
         /// <region>
         /// :
@@ -21422,7 +22183,7 @@ pub mod upload_part_copy_input {
         /// <key></key>
         /// </outpost-id>
         /// </account-id>
-        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
         /// </ul>
         /// <p>To copy a specific version of an object, append <code>?versionId=
         /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -21432,7 +22193,7 @@ pub mod upload_part_copy_input {
         }
         /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
         /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
         /// <region>
         /// :
@@ -21455,7 +22216,7 @@ pub mod upload_part_copy_input {
         /// <key></key>
         /// </outpost-id>
         /// </account-id>
-        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
         /// </ul>
         /// <p>To copy a specific version of an object, append <code>?versionId=
         /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -21648,12 +22409,12 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -21661,12 +22422,12 @@ pub mod upload_part_copy_input {
             self.request_payer = input;
             self
         }
-        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21674,7 +22435,7 @@ pub mod upload_part_copy_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn expected_source_bucket_owner(
             mut self,
             input: impl Into<std::string::String>,
@@ -21682,7 +22443,7 @@ pub mod upload_part_copy_input {
             self.expected_source_bucket_owner = Some(input.into());
             self
         }
-        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+        /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
         pub fn set_expected_source_bucket_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21743,28 +22504,28 @@ impl UploadPartCopyInput {
                 _input: &crate::input::UploadPartCopyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_188 = &_input.bucket;
-                let input_188 = input_188.as_ref().ok_or(
+                let input_191 = &_input.bucket;
+                let input_191 = input_191.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let bucket = aws_smithy_http::label::fmt_string(input_188, false);
+                let bucket = aws_smithy_http::label::fmt_string(input_191, false);
                 if bucket.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bucket",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_189 = &_input.key;
-                let input_189 = input_189.as_ref().ok_or(
+                let input_192 = &_input.key;
+                let input_192 = input_192.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let key = aws_smithy_http::label::fmt_string(input_189, true);
+                let key = aws_smithy_http::label::fmt_string(input_192, true);
                 if key.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "key",
@@ -21787,8 +22548,8 @@ impl UploadPartCopyInput {
                         aws_smithy_types::primitive::Encoder::from(_input.part_number).encode(),
                     );
                 }
-                if let Some(inner_190) = &_input.upload_id {
-                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_190));
+                if let Some(inner_193) = &_input.upload_id {
+                    query.push_kv("uploadId", &aws_smithy_http::query::fmt_string(&inner_193));
                 }
                 Ok(())
             }
@@ -21880,6 +22641,10 @@ pub mod write_get_object_response_input {
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) content_range: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) delete_marker: std::option::Option<bool>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
@@ -21949,20 +22714,20 @@ pub mod write_get_object_response_input {
         /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
         /// <p class="title"> <b>Status Codes</b> </p>
         /// <ul>
-        /// <li> <p> <i>200 - OK</i> </p> </li>
-        /// <li> <p> <i>206 - Partial Content</i> </p> </li>
-        /// <li> <p> <i>304 - Not Modified</i> </p> </li>
-        /// <li> <p> <i>400 - Bad Request</i> </p> </li>
-        /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
-        /// <li> <p> <i>403 - Forbidden</i> </p> </li>
-        /// <li> <p> <i>404 - Not Found</i> </p> </li>
-        /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
-        /// <li> <p> <i>409 - Conflict</i> </p> </li>
-        /// <li> <p> <i>411 - Length Required</i> </p> </li>
-        /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
-        /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
-        /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
-        /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
+        /// <li> <p> <code>200 - OK</code> </p> </li>
+        /// <li> <p> <code>206 - Partial Content</code> </p> </li>
+        /// <li> <p> <code>304 - Not Modified</code> </p> </li>
+        /// <li> <p> <code>400 - Bad Request</code> </p> </li>
+        /// <li> <p> <code>401 - Unauthorized</code> </p> </li>
+        /// <li> <p> <code>403 - Forbidden</code> </p> </li>
+        /// <li> <p> <code>404 - Not Found</code> </p> </li>
+        /// <li> <p> <code>405 - Method Not Allowed</code> </p> </li>
+        /// <li> <p> <code>409 - Conflict</code> </p> </li>
+        /// <li> <p> <code>411 - Length Required</code> </p> </li>
+        /// <li> <p> <code>412 - Precondition Failed</code> </p> </li>
+        /// <li> <p> <code>416 - Range Not Satisfiable</code> </p> </li>
+        /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
+        /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
         /// </ul>
         pub fn status_code(mut self, input: i32) -> Self {
             self.status_code = Some(input);
@@ -21971,31 +22736,31 @@ pub mod write_get_object_response_input {
         /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
         /// <p class="title"> <b>Status Codes</b> </p>
         /// <ul>
-        /// <li> <p> <i>200 - OK</i> </p> </li>
-        /// <li> <p> <i>206 - Partial Content</i> </p> </li>
-        /// <li> <p> <i>304 - Not Modified</i> </p> </li>
-        /// <li> <p> <i>400 - Bad Request</i> </p> </li>
-        /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
-        /// <li> <p> <i>403 - Forbidden</i> </p> </li>
-        /// <li> <p> <i>404 - Not Found</i> </p> </li>
-        /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
-        /// <li> <p> <i>409 - Conflict</i> </p> </li>
-        /// <li> <p> <i>411 - Length Required</i> </p> </li>
-        /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
-        /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
-        /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
-        /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
+        /// <li> <p> <code>200 - OK</code> </p> </li>
+        /// <li> <p> <code>206 - Partial Content</code> </p> </li>
+        /// <li> <p> <code>304 - Not Modified</code> </p> </li>
+        /// <li> <p> <code>400 - Bad Request</code> </p> </li>
+        /// <li> <p> <code>401 - Unauthorized</code> </p> </li>
+        /// <li> <p> <code>403 - Forbidden</code> </p> </li>
+        /// <li> <p> <code>404 - Not Found</code> </p> </li>
+        /// <li> <p> <code>405 - Method Not Allowed</code> </p> </li>
+        /// <li> <p> <code>409 - Conflict</code> </p> </li>
+        /// <li> <p> <code>411 - Length Required</code> </p> </li>
+        /// <li> <p> <code>412 - Precondition Failed</code> </p> </li>
+        /// <li> <p> <code>416 - Range Not Satisfiable</code> </p> </li>
+        /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
+        /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
         /// </ul>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
         }
-        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
+        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
+        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -22119,6 +22884,68 @@ pub mod write_get_object_response_input {
             self.content_type = input;
             self
         }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        /// <p></p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        /// <p></p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
         /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
@@ -22152,12 +22979,12 @@ pub mod write_get_object_response_input {
             self.expires = input;
             self
         }
-        /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
@@ -22350,12 +23177,14 @@ pub mod write_get_object_response_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p> The class of storage used to store object in Amazon S3.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p> The class of storage used to store object in Amazon S3.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -22413,6 +23242,10 @@ pub mod write_get_object_response_input {
                 content_length: self.content_length.unwrap_or_default(),
                 content_range: self.content_range,
                 content_type: self.content_type,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 delete_marker: self.delete_marker.unwrap_or_default(),
                 e_tag: self.e_tag,
                 expires: self.expires,
@@ -22585,23 +23418,23 @@ pub struct WriteGetObjectResponseInput {
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
     /// <p class="title"> <b>Status Codes</b> </p>
     /// <ul>
-    /// <li> <p> <i>200 - OK</i> </p> </li>
-    /// <li> <p> <i>206 - Partial Content</i> </p> </li>
-    /// <li> <p> <i>304 - Not Modified</i> </p> </li>
-    /// <li> <p> <i>400 - Bad Request</i> </p> </li>
-    /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
-    /// <li> <p> <i>403 - Forbidden</i> </p> </li>
-    /// <li> <p> <i>404 - Not Found</i> </p> </li>
-    /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
-    /// <li> <p> <i>409 - Conflict</i> </p> </li>
-    /// <li> <p> <i>411 - Length Required</i> </p> </li>
-    /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
-    /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
-    /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
-    /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
+    /// <li> <p> <code>200 - OK</code> </p> </li>
+    /// <li> <p> <code>206 - Partial Content</code> </p> </li>
+    /// <li> <p> <code>304 - Not Modified</code> </p> </li>
+    /// <li> <p> <code>400 - Bad Request</code> </p> </li>
+    /// <li> <p> <code>401 - Unauthorized</code> </p> </li>
+    /// <li> <p> <code>403 - Forbidden</code> </p> </li>
+    /// <li> <p> <code>404 - Not Found</code> </p> </li>
+    /// <li> <p> <code>405 - Method Not Allowed</code> </p> </li>
+    /// <li> <p> <code>409 - Conflict</code> </p> </li>
+    /// <li> <p> <code>411 - Length Required</code> </p> </li>
+    /// <li> <p> <code>412 - Precondition Failed</code> </p> </li>
+    /// <li> <p> <code>416 - Range Not Satisfiable</code> </p> </li>
+    /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
+    /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
     /// </ul>
     pub status_code: i32,
-    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
+    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Contains a generic description of the error condition. Returned in the <message>
     /// tag of the error XML response for a corresponding
@@ -22625,13 +23458,26 @@ pub struct WriteGetObjectResponseInput {
     pub content_range: std::option::Option<std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    /// <p></p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     pub delete_marker: bool,
     /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
     pub expiration: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -22662,7 +23508,8 @@ pub struct WriteGetObjectResponseInput {
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p> The class of storage used to store object in Amazon S3.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>The number of tags, if any, on the object.</p>
     pub tag_count: i32,
@@ -22687,25 +23534,25 @@ impl WriteGetObjectResponseInput {
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
     /// <p class="title"> <b>Status Codes</b> </p>
     /// <ul>
-    /// <li> <p> <i>200 - OK</i> </p> </li>
-    /// <li> <p> <i>206 - Partial Content</i> </p> </li>
-    /// <li> <p> <i>304 - Not Modified</i> </p> </li>
-    /// <li> <p> <i>400 - Bad Request</i> </p> </li>
-    /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
-    /// <li> <p> <i>403 - Forbidden</i> </p> </li>
-    /// <li> <p> <i>404 - Not Found</i> </p> </li>
-    /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
-    /// <li> <p> <i>409 - Conflict</i> </p> </li>
-    /// <li> <p> <i>411 - Length Required</i> </p> </li>
-    /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
-    /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
-    /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
-    /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
+    /// <li> <p> <code>200 - OK</code> </p> </li>
+    /// <li> <p> <code>206 - Partial Content</code> </p> </li>
+    /// <li> <p> <code>304 - Not Modified</code> </p> </li>
+    /// <li> <p> <code>400 - Bad Request</code> </p> </li>
+    /// <li> <p> <code>401 - Unauthorized</code> </p> </li>
+    /// <li> <p> <code>403 - Forbidden</code> </p> </li>
+    /// <li> <p> <code>404 - Not Found</code> </p> </li>
+    /// <li> <p> <code>405 - Method Not Allowed</code> </p> </li>
+    /// <li> <p> <code>409 - Conflict</code> </p> </li>
+    /// <li> <p> <code>411 - Length Required</code> </p> </li>
+    /// <li> <p> <code>412 - Precondition Failed</code> </p> </li>
+    /// <li> <p> <code>416 - Range Not Satisfiable</code> </p> </li>
+    /// <li> <p> <code>500 - Internal Server Error</code> </p> </li>
+    /// <li> <p> <code>503 - Service Unavailable</code> </p> </li>
     /// </ul>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
+    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is <code>"^[A-Z][a-zA-Z]+$"</code>.</code></p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -22749,6 +23596,27 @@ impl WriteGetObjectResponseInput {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    /// <p></p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 160-bit SHA-1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the base64-encoded, 256-bit SHA-256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original <code>GetObject</code> request required checksum validation. For more information about checksums, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
     /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
@@ -22761,7 +23629,7 @@ impl WriteGetObjectResponseInput {
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>If object stored in Amazon S3 expiration is configured (see PUT Bucket lifecycle) it includes expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded. </p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide the object expiration information. The value of the <code>rule-id</code> is URL-encoded. </p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
@@ -22830,7 +23698,8 @@ impl WriteGetObjectResponseInput {
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p> The class of storage used to store object in Amazon S3.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
@@ -22864,6 +23733,10 @@ impl std::fmt::Debug for WriteGetObjectResponseInput {
         formatter.field("content_length", &self.content_length);
         formatter.field("content_range", &self.content_range);
         formatter.field("content_type", &self.content_type);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("delete_marker", &self.delete_marker);
         formatter.field("e_tag", &self.e_tag);
         formatter.field("expires", &self.expires);
@@ -22902,11 +23775,11 @@ impl std::fmt::Debug for WriteGetObjectResponseInput {
 pub struct UploadPartCopyInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -22929,7 +23802,7 @@ pub struct UploadPartCopyInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
     /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -22962,23 +23835,23 @@ pub struct UploadPartCopyInput {
     pub copy_source_sse_customer_key: std::option::Option<std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub copy_source_sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_source_bucket_owner: std::option::Option<std::string::String>,
 }
 impl UploadPartCopyInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -23001,7 +23874,7 @@ impl UploadPartCopyInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
     /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -23068,15 +23941,15 @@ impl UploadPartCopyInput {
     pub fn copy_source_sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_source_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_source_bucket_owner.as_deref()
     }
@@ -23132,12 +24005,24 @@ pub struct UploadPartInput {
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The name of the bucket to which the multipart upload was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically.</p>
     pub content_length: i64,
     /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Part number of part being uploaded. This is a positive integer between 1 and 10,000.</p>
@@ -23150,9 +24035,9 @@ pub struct UploadPartInput {
     pub sse_customer_key: std::option::Option<std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl UploadPartInput {
@@ -23162,7 +24047,7 @@ impl UploadPartInput {
     }
     /// <p>The name of the bucket to which the multipart upload was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -23173,6 +24058,28 @@ impl UploadPartInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn key(&self) -> std::option::Option<&str> {
@@ -23198,11 +24105,11 @@ impl UploadPartInput {
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23214,6 +24121,11 @@ impl std::fmt::Debug for UploadPartInput {
         formatter.field("bucket", &self.bucket);
         formatter.field("content_length", &self.content_length);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("key", &self.key);
         formatter.field("part_number", &self.part_number);
         formatter.field("upload_id", &self.upload_id);
@@ -23234,11 +24146,11 @@ pub struct SelectObjectContentInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>The expression that is used to query the object.</p>
     pub expression: std::option::Option<std::string::String>,
@@ -23276,7 +24188,7 @@ pub struct SelectObjectContentInput {
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub scan_range: std::option::Option<crate::model::ScanRange>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl SelectObjectContentInput {
@@ -23288,15 +24200,15 @@ impl SelectObjectContentInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
@@ -23348,7 +24260,7 @@ impl SelectObjectContentInput {
     pub fn scan_range(&self) -> std::option::Option<&crate::model::ScanRange> {
         self.scan_range.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23378,7 +24290,7 @@ impl std::fmt::Debug for SelectObjectContentInput {
 pub struct RestoreObjectInput {
     /// <p>The bucket name containing the object to restore. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the action was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -23386,15 +24298,18 @@ pub struct RestoreObjectInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Container for restore job parameters.</p>
     pub restore_request: std::option::Option<crate::model::RestoreRequest>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl RestoreObjectInput {
     /// <p>The bucket name containing the object to restore. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -23410,11 +24325,16 @@ impl RestoreObjectInput {
     pub fn restore_request(&self) -> std::option::Option<&crate::model::RestoreRequest> {
         self.restore_request.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23427,6 +24347,7 @@ impl std::fmt::Debug for RestoreObjectInput {
         formatter.field("version_id", &self.version_id);
         formatter.field("restore_request", &self.restore_request);
         formatter.field("request_payer", &self.request_payer);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -23441,10 +24362,13 @@ pub struct PutPublicAccessBlockInput {
     /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutPublicAccessBlockInput {
@@ -23457,13 +24381,18 @@ impl PutPublicAccessBlockInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
         self.public_access_block_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23473,6 +24402,7 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
         let mut formatter = f.debug_struct("PutPublicAccessBlockInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field(
             "public_access_block_configuration",
             &self.public_access_block_configuration,
@@ -23488,7 +24418,7 @@ impl std::fmt::Debug for PutPublicAccessBlockInput {
 pub struct PutObjectTaggingInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Name of the object key.</p>
     pub key: std::option::Option<std::string::String>,
@@ -23497,17 +24427,20 @@ pub struct PutObjectTaggingInput {
     /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
     pub tagging: std::option::Option<crate::model::Tagging>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
 }
 impl PutObjectTaggingInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -23524,15 +24457,20 @@ impl PutObjectTaggingInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
     pub fn tagging(&self) -> std::option::Option<&crate::model::Tagging> {
         self.tagging.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -23544,6 +24482,7 @@ impl std::fmt::Debug for PutObjectTaggingInput {
         formatter.field("key", &self.key);
         formatter.field("version_id", &self.version_id);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("tagging", &self.tagging);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.field("request_payer", &self.request_payer);
@@ -23562,7 +24501,7 @@ pub struct PutObjectRetentionInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The container element for the Object Retention configuration.</p>
     pub retention: std::option::Option<crate::model::ObjectLockRetention>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -23571,7 +24510,10 @@ pub struct PutObjectRetentionInput {
     /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectRetentionInput {
@@ -23588,7 +24530,7 @@ impl PutObjectRetentionInput {
     pub fn retention(&self) -> std::option::Option<&crate::model::ObjectLockRetention> {
         self.retention.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -23605,7 +24547,12 @@ impl PutObjectRetentionInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23623,6 +24570,7 @@ impl std::fmt::Debug for PutObjectRetentionInput {
             &self.bypass_governance_retention,
         );
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -23636,14 +24584,17 @@ pub struct PutObjectLockConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
     pub object_lock_configuration: std::option::Option<crate::model::ObjectLockConfiguration>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
     pub token: std::option::Option<std::string::String>,
     /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectLockConfigurationInput {
@@ -23657,7 +24608,7 @@ impl PutObjectLockConfigurationInput {
     ) -> std::option::Option<&crate::model::ObjectLockConfiguration> {
         self.object_lock_configuration.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -23670,7 +24621,12 @@ impl PutObjectLockConfigurationInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23683,6 +24639,7 @@ impl std::fmt::Debug for PutObjectLockConfigurationInput {
         formatter.field("request_payer", &self.request_payer);
         formatter.field("token", &self.token);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -23692,42 +24649,45 @@ impl std::fmt::Debug for PutObjectLockConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectLegalHoldInput {
-    /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
+    /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The key name for the object that you want to place a Legal Hold on.</p>
+    /// <p>The key name for the object that you want to place a legal hold on.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
+    /// <p>Container element for the legal hold configuration you want to apply to the specified object.</p>
     pub legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
+    /// <p>The version ID of the object that you want to place a legal hold on.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The MD5 hash for the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectLegalHoldInput {
-    /// <p>The bucket name containing the object that you want to place a Legal Hold on. </p>
+    /// <p>The bucket name containing the object that you want to place a legal hold on. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The key name for the object that you want to place a Legal Hold on.</p>
+    /// <p>The key name for the object that you want to place a legal hold on.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
+    /// <p>Container element for the legal hold configuration you want to apply to the specified object.</p>
     pub fn legal_hold(&self) -> std::option::Option<&crate::model::ObjectLockLegalHold> {
         self.legal_hold.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
+    /// <p>The version ID of the object that you want to place a legal hold on.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -23736,7 +24696,12 @@ impl PutObjectLegalHoldInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23750,6 +24715,7 @@ impl std::fmt::Debug for PutObjectLegalHoldInput {
         formatter.field("request_payer", &self.request_payer);
         formatter.field("version_id", &self.version_id);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -23769,6 +24735,9 @@ pub struct PutObjectAclInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
@@ -23786,13 +24755,13 @@ pub struct PutObjectAclInput {
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Key for which the PUT action was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectAclInput {
@@ -23813,6 +24782,11 @@ impl PutObjectAclInput {
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
@@ -23841,11 +24815,11 @@ impl PutObjectAclInput {
     }
     /// <p>Key for which the PUT action was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -23853,7 +24827,7 @@ impl PutObjectAclInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -23865,6 +24839,7 @@ impl std::fmt::Debug for PutObjectAclInput {
         formatter.field("access_control_policy", &self.access_control_policy);
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("grant_full_control", &self.grant_full_control);
         formatter.field("grant_read", &self.grant_read);
         formatter.field("grant_read_acp", &self.grant_read_acp);
@@ -23888,7 +24863,7 @@ pub struct PutObjectInput {
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     pub cache_control: std::option::Option<std::string::String>,
@@ -23904,6 +24879,17 @@ pub struct PutObjectInput {
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
@@ -23947,7 +24933,7 @@ pub struct PutObjectInput {
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
     pub tagging: std::option::Option<std::string::String>,
@@ -23957,7 +24943,7 @@ pub struct PutObjectInput {
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectInput {
@@ -23972,7 +24958,7 @@ impl PutObjectInput {
     }
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -24003,6 +24989,27 @@ impl PutObjectInput {
     /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
@@ -24083,7 +25090,7 @@ impl PutObjectInput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -24107,7 +25114,7 @@ impl PutObjectInput {
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24125,6 +25132,11 @@ impl std::fmt::Debug for PutObjectInput {
         formatter.field("content_length", &self.content_length);
         formatter.field("content_md5", &self.content_md5);
         formatter.field("content_type", &self.content_type);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("expires", &self.expires);
         formatter.field("grant_full_control", &self.grant_full_control);
         formatter.field("grant_read", &self.grant_read);
@@ -24169,9 +25181,12 @@ pub struct PutBucketWebsiteInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Container for the request.</p>
     pub website_configuration: std::option::Option<crate::model::WebsiteConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketWebsiteInput {
@@ -24184,13 +25199,18 @@ impl PutBucketWebsiteInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Container for the request.</p>
     pub fn website_configuration(
         &self,
     ) -> std::option::Option<&crate::model::WebsiteConfiguration> {
         self.website_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24200,6 +25220,7 @@ impl std::fmt::Debug for PutBucketWebsiteInput {
         let mut formatter = f.debug_struct("PutBucketWebsiteInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("website_configuration", &self.website_configuration);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
@@ -24215,11 +25236,14 @@ pub struct PutBucketVersioningInput {
     /// <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub mfa: std::option::Option<std::string::String>,
     /// <p>Container for setting the versioning state.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketVersioningInput {
@@ -24232,6 +25256,11 @@ impl PutBucketVersioningInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub fn mfa(&self) -> std::option::Option<&str> {
         self.mfa.as_deref()
@@ -24242,7 +25271,7 @@ impl PutBucketVersioningInput {
     ) -> std::option::Option<&crate::model::VersioningConfiguration> {
         self.versioning_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24252,6 +25281,7 @@ impl std::fmt::Debug for PutBucketVersioningInput {
         let mut formatter = f.debug_struct("PutBucketVersioningInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("mfa", &self.mfa);
         formatter.field("versioning_configuration", &self.versioning_configuration);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
@@ -24268,9 +25298,12 @@ pub struct PutBucketTaggingInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
     pub tagging: std::option::Option<crate::model::Tagging>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketTaggingInput {
@@ -24283,11 +25316,16 @@ impl PutBucketTaggingInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
     pub fn tagging(&self) -> std::option::Option<&crate::model::Tagging> {
         self.tagging.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24297,6 +25335,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
         let mut formatter = f.debug_struct("PutBucketTaggingInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("tagging", &self.tagging);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
@@ -24312,10 +25351,13 @@ pub struct PutBucketRequestPaymentInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Container for Payer.</p>
     pub request_payment_configuration:
         std::option::Option<crate::model::RequestPaymentConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketRequestPaymentInput {
@@ -24328,13 +25370,18 @@ impl PutBucketRequestPaymentInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Container for Payer.</p>
     pub fn request_payment_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RequestPaymentConfiguration> {
         self.request_payment_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24344,6 +25391,7 @@ impl std::fmt::Debug for PutBucketRequestPaymentInput {
         let mut formatter = f.debug_struct("PutBucketRequestPaymentInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field(
             "request_payment_configuration",
             &self.request_payment_configuration,
@@ -24362,11 +25410,14 @@ pub struct PutBucketReplicationInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
     /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
     pub token: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketReplicationInput {
@@ -24379,6 +25430,11 @@ impl PutBucketReplicationInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub fn replication_configuration(
         &self,
@@ -24389,7 +25445,7 @@ impl PutBucketReplicationInput {
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24399,6 +25455,7 @@ impl std::fmt::Debug for PutBucketReplicationInput {
         let mut formatter = f.debug_struct("PutBucketReplicationInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("replication_configuration", &self.replication_configuration);
         formatter.field("token", &self.token);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
@@ -24415,11 +25472,14 @@ pub struct PutBucketPolicyInput {
     /// <p>The MD5 hash of the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
     pub confirm_remove_self_bucket_access: bool,
     /// <p>The bucket policy as a JSON document.</p>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketPolicyInput {
@@ -24432,6 +25492,11 @@ impl PutBucketPolicyInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
     pub fn confirm_remove_self_bucket_access(&self) -> bool {
         self.confirm_remove_self_bucket_access
@@ -24440,7 +25505,7 @@ impl PutBucketPolicyInput {
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24450,6 +25515,7 @@ impl std::fmt::Debug for PutBucketPolicyInput {
         let mut formatter = f.debug_struct("PutBucketPolicyInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field(
             "confirm_remove_self_bucket_access",
             &self.confirm_remove_self_bucket_access,
@@ -24469,7 +25535,7 @@ pub struct PutBucketOwnershipControlsInput {
     /// <p>The MD5 hash of the <code>OwnershipControls</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
     pub ownership_controls: std::option::Option<crate::model::OwnershipControls>,
@@ -24484,7 +25550,7 @@ impl PutBucketOwnershipControlsInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24512,7 +25578,7 @@ pub struct PutBucketNotificationConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
     /// <p>Skips validation of Amazon SQS, Amazon SNS, and Lambda destinations. True or false value.</p>
     pub skip_destination_validation: bool,
@@ -24528,7 +25594,7 @@ impl PutBucketNotificationConfigurationInput {
     ) -> std::option::Option<&crate::model::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24564,7 +25630,7 @@ pub struct PutBucketMetricsConfigurationInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies the metrics configuration.</p>
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketMetricsConfigurationInput {
@@ -24582,7 +25648,7 @@ impl PutBucketMetricsConfigurationInput {
     ) -> std::option::Option<&crate::model::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24609,7 +25675,10 @@ pub struct PutBucketLoggingInput {
     /// <p>The MD5 hash of the <code>PutBucketLogging</code> request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketLoggingInput {
@@ -24626,7 +25695,12 @@ impl PutBucketLoggingInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24637,6 +25711,7 @@ impl std::fmt::Debug for PutBucketLoggingInput {
         formatter.field("bucket", &self.bucket);
         formatter.field("bucket_logging_status", &self.bucket_logging_status);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -24648,9 +25723,12 @@ impl std::fmt::Debug for PutBucketLoggingInput {
 pub struct PutBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub lifecycle_configuration: std::option::Option<crate::model::BucketLifecycleConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketLifecycleConfigurationInput {
@@ -24658,13 +25736,18 @@ impl PutBucketLifecycleConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn lifecycle_configuration(
         &self,
     ) -> std::option::Option<&crate::model::BucketLifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24673,6 +25756,7 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutBucketLifecycleConfigurationInput");
         formatter.field("bucket", &self.bucket);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
@@ -24689,7 +25773,7 @@ pub struct PutBucketInventoryConfigurationInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies the inventory configuration.</p>
     pub inventory_configuration: std::option::Option<crate::model::InventoryConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketInventoryConfigurationInput {
@@ -24707,7 +25791,7 @@ impl PutBucketInventoryConfigurationInput {
     ) -> std::option::Option<&crate::model::InventoryConfiguration> {
         self.inventory_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24773,10 +25857,13 @@ pub struct PutBucketEncryptionInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketEncryptionInput {
@@ -24789,13 +25876,18 @@ impl PutBucketEncryptionInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24805,6 +25897,7 @@ impl std::fmt::Debug for PutBucketEncryptionInput {
         let mut formatter = f.debug_struct("PutBucketEncryptionInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field(
             "server_side_encryption_configuration",
             &self.server_side_encryption_configuration,
@@ -24825,7 +25918,10 @@ pub struct PutBucketCorsInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketCorsInput {
@@ -24842,7 +25938,12 @@ impl PutBucketCorsInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24853,6 +25954,7 @@ impl std::fmt::Debug for PutBucketCorsInput {
         formatter.field("bucket", &self.bucket);
         formatter.field("cors_configuration", &self.cors_configuration);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
         formatter.finish()
     }
@@ -24868,7 +25970,7 @@ pub struct PutBucketAnalyticsConfigurationInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The configuration and any analyses for the analytics filter.</p>
     pub analytics_configuration: std::option::Option<crate::model::AnalyticsConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketAnalyticsConfigurationInput {
@@ -24886,7 +25988,7 @@ impl PutBucketAnalyticsConfigurationInput {
     ) -> std::option::Option<&crate::model::AnalyticsConfiguration> {
         self.analytics_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24915,6 +26017,9 @@ pub struct PutBucketAclInput {
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
@@ -24926,7 +26031,7 @@ pub struct PutBucketAclInput {
     pub grant_write: std::option::Option<std::string::String>,
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketAclInput {
@@ -24946,6 +26051,11 @@ impl PutBucketAclInput {
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
@@ -24968,7 +26078,7 @@ impl PutBucketAclInput {
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -24980,6 +26090,7 @@ impl std::fmt::Debug for PutBucketAclInput {
         formatter.field("access_control_policy", &self.access_control_policy);
         formatter.field("bucket", &self.bucket);
         formatter.field("content_md5", &self.content_md5);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("grant_full_control", &self.grant_full_control);
         formatter.field("grant_read", &self.grant_read);
         formatter.field("grant_read_acp", &self.grant_read_acp);
@@ -24998,8 +26109,11 @@ pub struct PutBucketAccelerateConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Container for setting the transfer acceleration state.</p>
     pub accelerate_configuration: std::option::Option<crate::model::AccelerateConfiguration>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl PutBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is set.</p>
@@ -25012,9 +26126,14 @@ impl PutBucketAccelerateConfigurationInput {
     ) -> std::option::Option<&crate::model::AccelerateConfiguration> {
         self.accelerate_configuration.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
 }
 impl std::fmt::Debug for PutBucketAccelerateConfigurationInput {
@@ -25023,6 +26142,7 @@ impl std::fmt::Debug for PutBucketAccelerateConfigurationInput {
         formatter.field("bucket", &self.bucket);
         formatter.field("accelerate_configuration", &self.accelerate_configuration);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -25033,7 +26153,7 @@ impl std::fmt::Debug for PutBucketAccelerateConfigurationInput {
 pub struct ListPartsInput {
     /// <p>The name of the bucket to which the parts are being uploaded. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -25043,15 +26163,21 @@ pub struct ListPartsInput {
     pub part_number_marker: std::option::Option<std::string::String>,
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_algorithm: std::option::Option<std::string::String>,
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_key: std::option::Option<std::string::String>,
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_key_md5: std::option::Option<std::string::String>,
 }
 impl ListPartsInput {
     /// <p>The name of the bucket to which the parts are being uploaded. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -25071,13 +26197,25 @@ impl ListPartsInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
+        self.sse_customer_algorithm.as_deref()
+    }
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_key(&self) -> std::option::Option<&str> {
+        self.sse_customer_key.as_deref()
+    }
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
+        self.sse_customer_key_md5.as_deref()
     }
 }
 impl std::fmt::Debug for ListPartsInput {
@@ -25090,6 +26228,9 @@ impl std::fmt::Debug for ListPartsInput {
         formatter.field("upload_id", &self.upload_id);
         formatter.field("request_payer", &self.request_payer);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+        formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.finish()
     }
 }
@@ -25114,7 +26255,7 @@ pub struct ListObjectVersionsInput {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the object version you want to start listing from.</p>
     pub version_id_marker: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListObjectVersionsInput {
@@ -25148,7 +26289,7 @@ impl ListObjectVersionsInput {
     pub fn version_id_marker(&self) -> std::option::Option<&str> {
         self.version_id_marker.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25174,7 +26315,7 @@ impl std::fmt::Debug for ListObjectVersionsInput {
 pub struct ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character you use to group keys.</p>
     pub delimiter: std::option::Option<std::string::String>,
@@ -25192,13 +26333,13 @@ pub struct ListObjectsV2Input {
     pub start_after: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListObjectsV2Input {
     /// <p>Bucket name to list. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -25234,7 +26375,7 @@ impl ListObjectsV2Input {
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25262,7 +26403,7 @@ impl std::fmt::Debug for ListObjectsV2Input {
 pub struct ListObjectsInput {
     /// <p>The name of the bucket containing the objects.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character you use to group keys.</p>
     pub delimiter: std::option::Option<std::string::String>,
@@ -25276,13 +26417,13 @@ pub struct ListObjectsInput {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request. Bucket owners need not specify this parameter in their requests.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListObjectsInput {
     /// <p>The name of the bucket containing the objects.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -25310,7 +26451,7 @@ impl ListObjectsInput {
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25336,7 +26477,7 @@ impl std::fmt::Debug for ListObjectsInput {
 pub struct ListMultipartUploadsInput {
     /// <p>The name of the bucket to which the multipart upload was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Character you use to group keys.</p>
     /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
@@ -25353,13 +26494,13 @@ pub struct ListMultipartUploadsInput {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub upload_id_marker: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListMultipartUploadsInput {
     /// <p>The name of the bucket to which the multipart upload was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -25390,7 +26531,7 @@ impl ListMultipartUploadsInput {
     pub fn upload_id_marker(&self) -> std::option::Option<&str> {
         self.upload_id_marker.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25429,7 +26570,7 @@ pub struct ListBucketMetricsConfigurationsInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListBucketMetricsConfigurationsInput {
@@ -25441,7 +26582,7 @@ impl ListBucketMetricsConfigurationsInput {
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25464,7 +26605,7 @@ pub struct ListBucketInventoryConfigurationsInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListBucketInventoryConfigurationsInput {
@@ -25476,7 +26617,7 @@ impl ListBucketInventoryConfigurationsInput {
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25497,7 +26638,7 @@ impl std::fmt::Debug for ListBucketInventoryConfigurationsInput {
 pub struct ListBucketIntelligentTieringConfigurationsInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
 }
 impl ListBucketIntelligentTieringConfigurationsInput {
@@ -25505,7 +26646,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -25527,7 +26668,7 @@ pub struct ListBucketAnalyticsConfigurationsInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl ListBucketAnalyticsConfigurationsInput {
@@ -25539,7 +26680,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25560,15 +26701,15 @@ impl std::fmt::Debug for ListBucketAnalyticsConfigurationsInput {
 pub struct HeadObjectInput {
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub if_modified_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub if_none_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The object key.</p>
     pub key: std::option::Option<std::string::String>,
@@ -25582,33 +26723,36 @@ pub struct HeadObjectInput {
     pub sse_customer_key: std::option::Option<std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
     pub part_number: i32,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
+    /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
+    pub checksum_mode: std::option::Option<crate::model::ChecksumMode>,
 }
 impl HeadObjectInput {
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub fn if_modified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_modified_since.as_ref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub fn if_none_match(&self) -> std::option::Option<&str> {
         self.if_none_match.as_deref()
     }
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_unmodified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_unmodified_since.as_ref()
     }
@@ -25636,7 +26780,7 @@ impl HeadObjectInput {
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -25644,9 +26788,14 @@ impl HeadObjectInput {
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
+    /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
+    pub fn checksum_mode(&self) -> std::option::Option<&crate::model::ChecksumMode> {
+        self.checksum_mode.as_ref()
     }
 }
 impl std::fmt::Debug for HeadObjectInput {
@@ -25666,6 +26815,7 @@ impl std::fmt::Debug for HeadObjectInput {
         formatter.field("request_payer", &self.request_payer);
         formatter.field("part_number", &self.part_number);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("checksum_mode", &self.checksum_mode);
         formatter.finish()
     }
 }
@@ -25676,19 +26826,19 @@ impl std::fmt::Debug for HeadObjectInput {
 pub struct HeadBucketInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl HeadBucketInput {
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25708,7 +26858,7 @@ impl std::fmt::Debug for HeadBucketInput {
 pub struct GetPublicAccessBlockInput {
     /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetPublicAccessBlockInput {
@@ -25716,7 +26866,7 @@ impl GetPublicAccessBlockInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25738,9 +26888,9 @@ pub struct GetObjectTorrentInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key for which to get the information.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetObjectTorrentInput {
@@ -25752,11 +26902,11 @@ impl GetObjectTorrentInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25778,21 +26928,21 @@ impl std::fmt::Debug for GetObjectTorrentInput {
 pub struct GetObjectTaggingInput {
     /// <p>The bucket name containing the object for which to get the tagging information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which to get the tagging information.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The versionId of the object for which to get the tagging information.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
 }
 impl GetObjectTaggingInput {
     /// <p>The bucket name containing the object for which to get the tagging information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -25804,11 +26954,11 @@ impl GetObjectTaggingInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -25836,9 +26986,9 @@ pub struct GetObjectRetentionInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetObjectRetentionInput {
@@ -25855,11 +27005,11 @@ impl GetObjectRetentionInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25883,7 +27033,7 @@ pub struct GetObjectLockConfigurationInput {
     /// <p>The bucket whose Object Lock configuration you want to retrieve.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetObjectLockConfigurationInput {
@@ -25892,7 +27042,7 @@ impl GetObjectLockConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25910,37 +27060,37 @@ impl std::fmt::Debug for GetObjectLockConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectLegalHoldInput {
-    /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
+    /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+    /// <p>The key name for the object whose legal hold status you want to retrieve.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
+    /// <p>The version ID of the object whose legal hold status you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetObjectLegalHoldInput {
-    /// <p>The bucket name containing the object whose Legal Hold status you want to retrieve. </p>
+    /// <p>The bucket name containing the object whose legal hold status you want to retrieve. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The key name for the object whose Legal Hold status you want to retrieve.</p>
+    /// <p>The key name for the object whose legal hold status you want to retrieve.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
+    /// <p>The version ID of the object whose legal hold status you want to retrieve.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -25960,6 +27110,101 @@ impl std::fmt::Debug for GetObjectLegalHoldInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetObjectAttributesInput {
+    /// <p>The name of the bucket that contains the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The object key.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The version ID used to reference a specific version of the object.</p>
+    pub version_id: std::option::Option<std::string::String>,
+    /// <p>Sets the maximum number of parts to return.</p>
+    pub max_parts: i32,
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    pub part_number_marker: std::option::Option<std::string::String>,
+    /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+    pub sse_customer_algorithm: std::option::Option<std::string::String>,
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    pub sse_customer_key: std::option::Option<std::string::String>,
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub sse_customer_key_md5: std::option::Option<std::string::String>,
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub request_payer: std::option::Option<crate::model::RequestPayer>,
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>An XML header that specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
+    pub object_attributes: std::option::Option<std::vec::Vec<crate::model::ObjectAttributes>>,
+}
+impl GetObjectAttributesInput {
+    /// <p>The name of the bucket that contains the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The object key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The version ID used to reference a specific version of the object.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>Sets the maximum number of parts to return.</p>
+    pub fn max_parts(&self) -> i32 {
+        self.max_parts
+    }
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    pub fn part_number_marker(&self) -> std::option::Option<&str> {
+        self.part_number_marker.as_deref()
+    }
+    /// <p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
+        self.sse_customer_algorithm.as_deref()
+    }
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    pub fn sse_customer_key(&self) -> std::option::Option<&str> {
+        self.sse_customer_key.as_deref()
+    }
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
+        self.sse_customer_key_md5.as_deref()
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
+        self.request_payer.as_ref()
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+        self.expected_bucket_owner.as_deref()
+    }
+    /// <p>An XML header that specifies the fields at the root level that you want returned in the response. Fields that you do not specify are not returned.</p>
+    pub fn object_attributes(&self) -> std::option::Option<&[crate::model::ObjectAttributes]> {
+        self.object_attributes.as_deref()
+    }
+}
+impl std::fmt::Debug for GetObjectAttributesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetObjectAttributesInput");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key", &self.key);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("max_parts", &self.max_parts);
+        formatter.field("part_number_marker", &self.part_number_marker);
+        formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+        formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
+        formatter.field("request_payer", &self.request_payer);
+        formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("object_attributes", &self.object_attributes);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectAclInput {
     /// <p>The bucket name that contains the object for which to get the ACL information. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -25968,9 +27213,9 @@ pub struct GetObjectAclInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetObjectAclInput {
@@ -25987,11 +27232,11 @@ impl GetObjectAclInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26015,15 +27260,15 @@ pub struct GetObjectInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub if_modified_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub if_none_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key of the object to get.</p>
     pub key: std::option::Option<std::string::String>,
@@ -26051,34 +27296,36 @@ pub struct GetObjectInput {
     pub sse_customer_key: std::option::Option<std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
     pub part_number: i32,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>To retrieve the checksum, this mode must be enabled.</p>
+    pub checksum_mode: std::option::Option<crate::model::ChecksumMode>,
 }
 impl GetObjectInput {
     /// <p>The bucket name containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub fn if_modified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_modified_since.as_ref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub fn if_none_match(&self) -> std::option::Option<&str> {
         self.if_none_match.as_deref()
     }
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_unmodified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_unmodified_since.as_ref()
     }
@@ -26132,7 +27379,7 @@ impl GetObjectInput {
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -26140,9 +27387,13 @@ impl GetObjectInput {
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>To retrieve the checksum, this mode must be enabled.</p>
+    pub fn checksum_mode(&self) -> std::option::Option<&crate::model::ChecksumMode> {
+        self.checksum_mode.as_ref()
     }
 }
 impl std::fmt::Debug for GetObjectInput {
@@ -26171,6 +27422,7 @@ impl std::fmt::Debug for GetObjectInput {
         formatter.field("request_payer", &self.request_payer);
         formatter.field("part_number", &self.part_number);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("checksum_mode", &self.checksum_mode);
         formatter.finish()
     }
 }
@@ -26181,7 +27433,7 @@ impl std::fmt::Debug for GetObjectInput {
 pub struct GetBucketWebsiteInput {
     /// <p>The bucket name for which to get the website configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketWebsiteInput {
@@ -26189,7 +27441,7 @@ impl GetBucketWebsiteInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26209,7 +27461,7 @@ impl std::fmt::Debug for GetBucketWebsiteInput {
 pub struct GetBucketVersioningInput {
     /// <p>The name of the bucket for which to get the versioning information.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketVersioningInput {
@@ -26217,7 +27469,7 @@ impl GetBucketVersioningInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26237,7 +27489,7 @@ impl std::fmt::Debug for GetBucketVersioningInput {
 pub struct GetBucketTaggingInput {
     /// <p>The name of the bucket for which to get the tagging information.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketTaggingInput {
@@ -26245,7 +27497,7 @@ impl GetBucketTaggingInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26265,7 +27517,7 @@ impl std::fmt::Debug for GetBucketTaggingInput {
 pub struct GetBucketRequestPaymentInput {
     /// <p>The name of the bucket for which to get the payment request configuration</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketRequestPaymentInput {
@@ -26273,7 +27525,7 @@ impl GetBucketRequestPaymentInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26293,7 +27545,7 @@ impl std::fmt::Debug for GetBucketRequestPaymentInput {
 pub struct GetBucketReplicationInput {
     /// <p>The bucket name for which to get the replication information.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketReplicationInput {
@@ -26301,7 +27553,7 @@ impl GetBucketReplicationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26321,7 +27573,7 @@ impl std::fmt::Debug for GetBucketReplicationInput {
 pub struct GetBucketPolicyStatusInput {
     /// <p>The name of the Amazon S3 bucket whose policy status you want to retrieve.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyStatusInput {
@@ -26329,7 +27581,7 @@ impl GetBucketPolicyStatusInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26349,7 +27601,7 @@ impl std::fmt::Debug for GetBucketPolicyStatusInput {
 pub struct GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketPolicyInput {
@@ -26357,7 +27609,7 @@ impl GetBucketPolicyInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26377,7 +27629,7 @@ impl std::fmt::Debug for GetBucketPolicyInput {
 pub struct GetBucketOwnershipControlsInput {
     /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketOwnershipControlsInput {
@@ -26385,7 +27637,7 @@ impl GetBucketOwnershipControlsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26405,7 +27657,7 @@ impl std::fmt::Debug for GetBucketOwnershipControlsInput {
 pub struct GetBucketNotificationConfigurationInput {
     /// <p>The name of the bucket for which to get the notification configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketNotificationConfigurationInput {
@@ -26413,7 +27665,7 @@ impl GetBucketNotificationConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26435,7 +27687,7 @@ pub struct GetBucketMetricsConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketMetricsConfigurationInput {
@@ -26447,7 +27699,7 @@ impl GetBucketMetricsConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26468,7 +27720,7 @@ impl std::fmt::Debug for GetBucketMetricsConfigurationInput {
 pub struct GetBucketLoggingInput {
     /// <p>The bucket name for which to get the logging information.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketLoggingInput {
@@ -26476,7 +27728,7 @@ impl GetBucketLoggingInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26496,7 +27748,7 @@ impl std::fmt::Debug for GetBucketLoggingInput {
 pub struct GetBucketLocationInput {
     /// <p>The name of the bucket for which to get the location.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketLocationInput {
@@ -26504,7 +27756,7 @@ impl GetBucketLocationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26524,7 +27776,7 @@ impl std::fmt::Debug for GetBucketLocationInput {
 pub struct GetBucketLifecycleConfigurationInput {
     /// <p>The name of the bucket for which to get the lifecycle information.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketLifecycleConfigurationInput {
@@ -26532,7 +27784,7 @@ impl GetBucketLifecycleConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26554,7 +27806,7 @@ pub struct GetBucketInventoryConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketInventoryConfigurationInput {
@@ -26566,7 +27818,7 @@ impl GetBucketInventoryConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26615,7 +27867,7 @@ impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationInput {
 pub struct GetBucketEncryptionInput {
     /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketEncryptionInput {
@@ -26623,7 +27875,7 @@ impl GetBucketEncryptionInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26643,7 +27895,7 @@ impl std::fmt::Debug for GetBucketEncryptionInput {
 pub struct GetBucketCorsInput {
     /// <p>The bucket name for which to get the cors configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketCorsInput {
@@ -26651,7 +27903,7 @@ impl GetBucketCorsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26673,7 +27925,7 @@ pub struct GetBucketAnalyticsConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketAnalyticsConfigurationInput {
@@ -26685,7 +27937,7 @@ impl GetBucketAnalyticsConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26706,7 +27958,7 @@ impl std::fmt::Debug for GetBucketAnalyticsConfigurationInput {
 pub struct GetBucketAclInput {
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketAclInput {
@@ -26714,7 +27966,7 @@ impl GetBucketAclInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26734,7 +27986,7 @@ impl std::fmt::Debug for GetBucketAclInput {
 pub struct GetBucketAccelerateConfigurationInput {
     /// <p>The name of the bucket for which the accelerate configuration is retrieved.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketAccelerateConfigurationInput {
@@ -26742,7 +27994,7 @@ impl GetBucketAccelerateConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26762,7 +28014,7 @@ impl std::fmt::Debug for GetBucketAccelerateConfigurationInput {
 pub struct DeletePublicAccessBlockInput {
     /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeletePublicAccessBlockInput {
@@ -26770,7 +28022,7 @@ impl DeletePublicAccessBlockInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26790,19 +28042,19 @@ impl std::fmt::Debug for DeletePublicAccessBlockInput {
 pub struct DeleteObjectTaggingInput {
     /// <p>The bucket name containing the objects from which to remove the tags. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The key that identifies the object in the bucket from which to remove all tags.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The versionId of the object that the tag-set will be removed from.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteObjectTaggingInput {
     /// <p>The bucket name containing the objects from which to remove the tags. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -26814,7 +28066,7 @@ impl DeleteObjectTaggingInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26836,23 +28088,27 @@ impl std::fmt::Debug for DeleteObjectTaggingInput {
 pub struct DeleteObjectsInput {
     /// <p>The bucket name containing the objects to delete. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Container for the request.</p>
     pub delete: std::option::Option<crate::model::Delete>,
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub mfa: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
     pub bypass_governance_retention: bool,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl DeleteObjectsInput {
     /// <p>The bucket name containing the objects to delete. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -26864,17 +28120,23 @@ impl DeleteObjectsInput {
     pub fn mfa(&self) -> std::option::Option<&str> {
         self.mfa.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
 }
 impl std::fmt::Debug for DeleteObjectsInput {
@@ -26889,6 +28151,7 @@ impl std::fmt::Debug for DeleteObjectsInput {
             &self.bypass_governance_retention,
         );
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -26899,7 +28162,7 @@ impl std::fmt::Debug for DeleteObjectsInput {
 pub struct DeleteObjectInput {
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Key name of the object to delete.</p>
     pub key: std::option::Option<std::string::String>,
@@ -26907,17 +28170,17 @@ pub struct DeleteObjectInput {
     pub mfa: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
     pub bypass_governance_retention: bool,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteObjectInput {
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -26933,15 +28196,15 @@ impl DeleteObjectInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
+    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26969,7 +28232,7 @@ impl std::fmt::Debug for DeleteObjectInput {
 pub struct DeleteBucketWebsiteInput {
     /// <p>The bucket name for which you want to remove the website configuration. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketWebsiteInput {
@@ -26977,7 +28240,7 @@ impl DeleteBucketWebsiteInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -26997,7 +28260,7 @@ impl std::fmt::Debug for DeleteBucketWebsiteInput {
 pub struct DeleteBucketTaggingInput {
     /// <p>The bucket that has the tag set to be removed.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketTaggingInput {
@@ -27005,7 +28268,7 @@ impl DeleteBucketTaggingInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27025,7 +28288,7 @@ impl std::fmt::Debug for DeleteBucketTaggingInput {
 pub struct DeleteBucketReplicationInput {
     /// <p> The bucket name. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketReplicationInput {
@@ -27033,7 +28296,7 @@ impl DeleteBucketReplicationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27053,7 +28316,7 @@ impl std::fmt::Debug for DeleteBucketReplicationInput {
 pub struct DeleteBucketPolicyInput {
     /// <p>The bucket name.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketPolicyInput {
@@ -27061,7 +28324,7 @@ impl DeleteBucketPolicyInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27081,7 +28344,7 @@ impl std::fmt::Debug for DeleteBucketPolicyInput {
 pub struct DeleteBucketOwnershipControlsInput {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketOwnershipControlsInput {
@@ -27089,7 +28352,7 @@ impl DeleteBucketOwnershipControlsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27111,7 +28374,7 @@ pub struct DeleteBucketMetricsConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketMetricsConfigurationInput {
@@ -27123,7 +28386,7 @@ impl DeleteBucketMetricsConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27144,7 +28407,7 @@ impl std::fmt::Debug for DeleteBucketMetricsConfigurationInput {
 pub struct DeleteBucketLifecycleInput {
     /// <p>The bucket name of the lifecycle to delete.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketLifecycleInput {
@@ -27152,7 +28415,7 @@ impl DeleteBucketLifecycleInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27174,7 +28437,7 @@ pub struct DeleteBucketInventoryConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketInventoryConfigurationInput {
@@ -27186,7 +28449,7 @@ impl DeleteBucketInventoryConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27235,7 +28498,7 @@ impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationInput {
 pub struct DeleteBucketEncryptionInput {
     /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketEncryptionInput {
@@ -27243,7 +28506,7 @@ impl DeleteBucketEncryptionInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27263,7 +28526,7 @@ impl std::fmt::Debug for DeleteBucketEncryptionInput {
 pub struct DeleteBucketCorsInput {
     /// <p>Specifies the bucket whose <code>cors</code> configuration is being deleted.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketCorsInput {
@@ -27271,7 +28534,7 @@ impl DeleteBucketCorsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27293,7 +28556,7 @@ pub struct DeleteBucketAnalyticsConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketAnalyticsConfigurationInput {
@@ -27305,7 +28568,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27326,7 +28589,7 @@ impl std::fmt::Debug for DeleteBucketAnalyticsConfigurationInput {
 pub struct DeleteBucketInput {
     /// <p>Specifies the bucket being deleted.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketInput {
@@ -27334,7 +28597,7 @@ impl DeleteBucketInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
@@ -27357,7 +28620,7 @@ pub struct CreateMultipartUploadInput {
     pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The name of the bucket to which to initiate the upload</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub cache_control: std::option::Option<std::string::String>,
@@ -27407,7 +28670,7 @@ pub struct CreateMultipartUploadInput {
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an object action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
     pub tagging: std::option::Option<std::string::String>,
@@ -27415,10 +28678,12 @@ pub struct CreateMultipartUploadInput {
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>Specifies the date and time when you want the Object Lock to expire.</p>
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
+    /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl CreateMultipartUploadInput {
     /// <p>The canned ACL to apply to the object.</p>
@@ -27428,7 +28693,7 @@ impl CreateMultipartUploadInput {
     }
     /// <p>The name of the bucket to which to initiate the upload</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -27526,7 +28791,7 @@ impl CreateMultipartUploadInput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -27544,15 +28809,19 @@ impl CreateMultipartUploadInput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Specifies whether you want to apply a Legal Hold to the uploaded object.</p>
+    /// <p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
     pub fn object_lock_legal_hold_status(
         &self,
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
 }
 impl std::fmt::Debug for CreateMultipartUploadInput {
@@ -27596,6 +28865,7 @@ impl std::fmt::Debug for CreateMultipartUploadInput {
             &self.object_lock_legal_hold_status,
         );
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -27709,10 +28979,12 @@ pub struct CopyObjectInput {
     pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>The name of the destination bucket.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub cache_control: std::option::Option<std::string::String>,
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
@@ -27723,7 +28995,7 @@ pub struct CopyObjectInput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -27746,7 +29018,7 @@ pub struct CopyObjectInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
     /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -27807,7 +29079,7 @@ pub struct CopyObjectInput {
     pub copy_source_sse_customer_key: std::option::Option<std::string::String>,
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub copy_source_sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The tag-set for the object destination object this value must be used in conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query parameters.</p>
     pub tagging: std::option::Option<std::string::String>,
@@ -27815,11 +29087,11 @@ pub struct CopyObjectInput {
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>The date and time when you want the copied object's Object Lock to expire.</p>
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+    /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
-    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_source_bucket_owner: std::option::Option<std::string::String>,
 }
 impl CopyObjectInput {
@@ -27830,13 +29102,17 @@ impl CopyObjectInput {
     }
     /// <p>The name of the destination bucket.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn cache_control(&self) -> std::option::Option<&str> {
         self.cache_control.as_deref()
+    }
+    /// <p>Indicates the algorithm you want Amazon S3 to use to create the checksum for the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
     }
     /// <p>Specifies presentational information for the object.</p>
     pub fn content_disposition(&self) -> std::option::Option<&str> {
@@ -27856,7 +29132,7 @@ impl CopyObjectInput {
     }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
     /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
     /// <region>
     /// :
@@ -27879,7 +29155,7 @@ impl CopyObjectInput {
     /// <key></key>
     /// </outpost-id>
     /// </account-id>
-    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
     /// </ul>
     /// <p>To copy a specific version of an object, append <code>?versionId=
     /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
@@ -28000,7 +29276,7 @@ impl CopyObjectInput {
     pub fn copy_source_sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -28018,17 +29294,17 @@ impl CopyObjectInput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+    /// <p>Specifies whether you want to apply a legal hold to the copied object.</p>
     pub fn object_lock_legal_hold_status(
         &self,
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
-    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_source_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_source_bucket_owner.as_deref()
     }
@@ -28039,6 +29315,7 @@ impl std::fmt::Debug for CopyObjectInput {
         formatter.field("acl", &self.acl);
         formatter.field("bucket", &self.bucket);
         formatter.field("cache_control", &self.cache_control);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("content_disposition", &self.content_disposition);
         formatter.field("content_encoding", &self.content_encoding);
         formatter.field("content_language", &self.content_language);
@@ -28113,7 +29390,7 @@ impl std::fmt::Debug for CopyObjectInput {
 pub struct CompleteMultipartUploadInput {
     /// <p>Name of the bucket to which the multipart upload was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -28121,15 +29398,29 @@ pub struct CompleteMultipartUploadInput {
     pub multipart_upload: std::option::Option<crate::model::CompletedMultipartUpload>,
     /// <p>ID for the initiated multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_algorithm: std::option::Option<std::string::String>,
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_key: std::option::Option<std::string::String>,
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub sse_customer_key_md5: std::option::Option<std::string::String>,
 }
 impl CompleteMultipartUploadInput {
     /// <p>Name of the bucket to which the multipart upload was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -28145,13 +29436,41 @@ impl CompleteMultipartUploadInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
+    }
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
+        self.sse_customer_algorithm.as_deref()
+    }
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_key(&self) -> std::option::Option<&str> {
+        self.sse_customer_key.as_deref()
+    }
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
+        self.sse_customer_key_md5.as_deref()
     }
 }
 impl std::fmt::Debug for CompleteMultipartUploadInput {
@@ -28161,8 +29480,15 @@ impl std::fmt::Debug for CompleteMultipartUploadInput {
         formatter.field("key", &self.key);
         formatter.field("multipart_upload", &self.multipart_upload);
         formatter.field("upload_id", &self.upload_id);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("request_payer", &self.request_payer);
         formatter.field("expected_bucket_owner", &self.expected_bucket_owner);
+        formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
+        formatter.field("sse_customer_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.finish()
     }
 }
@@ -28173,21 +29499,21 @@ impl std::fmt::Debug for CompleteMultipartUploadInput {
 pub struct AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Key of the object for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Upload ID that identifies the multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl AbortMultipartUploadInput {
     /// <p>The bucket name to which the upload was taking place. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -28199,11 +29525,11 @@ impl AbortMultipartUploadInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }

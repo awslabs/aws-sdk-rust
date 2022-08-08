@@ -631,7 +631,7 @@ pub mod create_protection_input {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
         /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
         /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
@@ -645,7 +645,7 @@ pub mod create_protection_input {
         /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
         /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
         /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
         /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
@@ -2078,12 +2078,12 @@ pub mod describe_protection_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.protection_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2091,12 +2091,12 @@ pub mod describe_protection_input {
             self.protection_id = input;
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2499,12 +2499,12 @@ pub mod disable_application_layer_automatic_response_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3196,12 +3196,12 @@ pub mod enable_application_layer_automatic_response_input {
         pub(crate) action: std::option::Option<crate::model::ResponseAction>,
     }
     impl Builder {
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+        /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3805,6 +3805,8 @@ pub mod list_protection_groups_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) inclusion_filters:
+            std::option::Option<crate::model::InclusionProtectionGroupFilters>,
     }
     impl Builder {
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -3835,6 +3837,22 @@ pub mod list_protection_groups_input {
             self.max_results = input;
             self
         }
+        /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+        pub fn inclusion_filters(
+            mut self,
+            input: crate::model::InclusionProtectionGroupFilters,
+        ) -> Self {
+            self.inclusion_filters = Some(input);
+            self
+        }
+        /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+        pub fn set_inclusion_filters(
+            mut self,
+            input: std::option::Option<crate::model::InclusionProtectionGroupFilters>,
+        ) -> Self {
+            self.inclusion_filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProtectionGroupsInput`](crate::input::ListProtectionGroupsInput).
         pub fn build(
             self,
@@ -3843,6 +3861,7 @@ pub mod list_protection_groups_input {
             Ok(crate::input::ListProtectionGroupsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                inclusion_filters: self.inclusion_filters,
             })
         }
     }
@@ -3967,6 +3986,7 @@ pub mod list_protections_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) inclusion_filters: std::option::Option<crate::model::InclusionProtectionFilters>,
     }
     impl Builder {
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -3997,6 +4017,22 @@ pub mod list_protections_input {
             self.max_results = input;
             self
         }
+        /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+        pub fn inclusion_filters(
+            mut self,
+            input: crate::model::InclusionProtectionFilters,
+        ) -> Self {
+            self.inclusion_filters = Some(input);
+            self
+        }
+        /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+        pub fn set_inclusion_filters(
+            mut self,
+            input: std::option::Option<crate::model::InclusionProtectionFilters>,
+        ) -> Self {
+            self.inclusion_filters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProtectionsInput`](crate::input::ListProtectionsInput).
         pub fn build(
             self,
@@ -4005,6 +4041,7 @@ pub mod list_protections_input {
             Ok(crate::input::ListProtectionsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                inclusion_filters: self.inclusion_filters,
             })
         }
     }
@@ -5701,6 +5738,8 @@ pub struct ListProtectionsInput {
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+    pub inclusion_filters: std::option::Option<crate::model::InclusionProtectionFilters>,
 }
 impl ListProtectionsInput {
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -5715,12 +5754,19 @@ impl ListProtectionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+    pub fn inclusion_filters(
+        &self,
+    ) -> std::option::Option<&crate::model::InclusionProtectionFilters> {
+        self.inclusion_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for ListProtectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProtectionsInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("inclusion_filters", &self.inclusion_filters);
         formatter.finish()
     }
 }
@@ -5737,6 +5783,8 @@ pub struct ListProtectionGroupsInput {
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+    pub inclusion_filters: std::option::Option<crate::model::InclusionProtectionGroupFilters>,
 }
 impl ListProtectionGroupsInput {
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
@@ -5751,12 +5799,19 @@ impl ListProtectionGroupsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with specific pattern or aggregation settings. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+    pub fn inclusion_filters(
+        &self,
+    ) -> std::option::Option<&crate::model::InclusionProtectionGroupFilters> {
+        self.inclusion_filters.as_ref()
+    }
 }
 impl std::fmt::Debug for ListProtectionGroupsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListProtectionGroupsInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("inclusion_filters", &self.inclusion_filters);
         formatter.finish()
     }
 }
@@ -5844,13 +5899,13 @@ impl std::fmt::Debug for EnableProactiveEngagementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableApplicationLayerAutomaticResponseInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub action: std::option::Option<crate::model::ResponseAction>,
 }
 impl EnableApplicationLayerAutomaticResponseInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5943,11 +5998,11 @@ impl std::fmt::Debug for DisableProactiveEngagementInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableApplicationLayerAutomaticResponseInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DisableApplicationLayerAutomaticResponseInput {
-    /// <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5996,17 +6051,17 @@ impl std::fmt::Debug for DescribeProtectionGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionInput {
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub protection_id: std::option::Option<std::string::String>,
-    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProtectionInput {
-    /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn protection_id(&self) -> std::option::Option<&str> {
         self.protection_id.as_deref()
     }
-    /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6216,7 +6271,7 @@ pub struct CreateProtectionInput {
     /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
     /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-    /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+    /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
     /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
     /// </ul>
@@ -6235,7 +6290,7 @@ impl CreateProtectionInput {
     /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
     /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
-    /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+    /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
     /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
     /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
     /// </ul>

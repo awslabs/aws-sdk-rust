@@ -5878,6 +5878,7 @@ where
                 crate::error::RegisterCACertificateErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
                 crate::error::RegisterCACertificateErrorKind::RegistrationCodeValidationException(inner) => Error::RegistrationCodeValidationException(inner),
                 crate::error::RegisterCACertificateErrorKind::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::RegisterCACertificateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::RegisterCACertificateErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
                 crate::error::RegisterCACertificateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::RegisterCACertificateErrorKind::UnauthorizedException(inner) => Error::UnauthorizedException(inner),

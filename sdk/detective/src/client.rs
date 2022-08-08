@@ -101,6 +101,33 @@ impl Client {
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation {
         fluent_builders::AcceptInvitation::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`BatchGetGraphMemberDatasources`](crate::client::fluent_builders::BatchGetGraphMemberDatasources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::BatchGetGraphMemberDatasources::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::BatchGetGraphMemberDatasources::set_graph_arn): <p>The ARN of the behavior graph.</p>
+    ///   - [`account_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetGraphMemberDatasources::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetGraphMemberDatasources::set_account_ids): <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    /// - On success, responds with [`BatchGetGraphMemberDatasourcesOutput`](crate::output::BatchGetGraphMemberDatasourcesOutput) with field(s):
+    ///   - [`member_datasources(Option<Vec<MembershipDatasources>>)`](crate::output::BatchGetGraphMemberDatasourcesOutput::member_datasources): <p>Details on the status of data source packages for members of the behavior graph.</p>
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::BatchGetGraphMemberDatasourcesOutput::unprocessed_accounts): <p>Accounts that data source package information could not be retrieved for.</p>
+    /// - On failure, responds with [`SdkError<BatchGetGraphMemberDatasourcesError>`](crate::error::BatchGetGraphMemberDatasourcesError)
+    pub fn batch_get_graph_member_datasources(
+        &self,
+    ) -> fluent_builders::BatchGetGraphMemberDatasources {
+        fluent_builders::BatchGetGraphMemberDatasources::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`BatchGetMembershipDatasources`](crate::client::fluent_builders::BatchGetMembershipDatasources) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arns(Vec<String>)`](crate::client::fluent_builders::BatchGetMembershipDatasources::graph_arns) / [`set_graph_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetMembershipDatasources::set_graph_arns): <p>The ARN of the behavior graph.</p>
+    /// - On success, responds with [`BatchGetMembershipDatasourcesOutput`](crate::output::BatchGetMembershipDatasourcesOutput) with field(s):
+    ///   - [`membership_datasources(Option<Vec<MembershipDatasources>>)`](crate::output::BatchGetMembershipDatasourcesOutput::membership_datasources): <p>Details on the data source package history for an member of the behavior graph.</p>
+    ///   - [`unprocessed_graphs(Option<Vec<UnprocessedGraph>>)`](crate::output::BatchGetMembershipDatasourcesOutput::unprocessed_graphs): <p>Graphs that data source package information could not be retrieved for.</p>
+    /// - On failure, responds with [`SdkError<BatchGetMembershipDatasourcesError>`](crate::error::BatchGetMembershipDatasourcesError)
+    pub fn batch_get_membership_datasources(
+        &self,
+    ) -> fluent_builders::BatchGetMembershipDatasources {
+        fluent_builders::BatchGetMembershipDatasources::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateGraph`](crate::client::fluent_builders::CreateGraph) operation.
     ///
     /// - The fluent builder is configurable:
@@ -205,6 +232,20 @@ impl Client {
     pub fn get_members(&self) -> fluent_builders::GetMembers {
         fluent_builders::GetMembers::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`ListDatasourcePackages`](crate::client::fluent_builders::ListDatasourcePackages) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatasourcePackages::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::ListDatasourcePackages::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::ListDatasourcePackages::set_graph_arn): <p>The ARN of the behavior graph.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasourcePackages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasourcePackages::set_next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasourcePackages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatasourcePackages::set_max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListDatasourcePackagesOutput`](crate::output::ListDatasourcePackagesOutput) with field(s):
+    ///   - [`datasource_packages(Option<HashMap<DatasourcePackage, DatasourcePackageIngestDetail>>)`](crate::output::ListDatasourcePackagesOutput::datasource_packages): <p>Details on the data source packages active in the behavior graph.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasourcePackagesOutput::next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListDatasourcePackagesError>`](crate::error::ListDatasourcePackagesError)
+    pub fn list_datasource_packages(&self) -> fluent_builders::ListDatasourcePackages {
+        fluent_builders::ListDatasourcePackages::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`ListGraphs`](crate::client::fluent_builders::ListGraphs) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGraphs::into_paginator).
     ///
@@ -252,7 +293,7 @@ impl Client {
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_next_token): <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOrganizationAdminAccounts::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
-    ///   - [`administrators(Option<Vec<Administrator>>)`](crate::output::ListOrganizationAdminAccountsOutput::administrators): <p>The list of delegated administrator accounts.</p>
+    ///   - [`administrators(Option<Vec<Administrator>>)`](crate::output::ListOrganizationAdminAccountsOutput::administrators): <p>The list of Detective administrator accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>If there are more accounts remaining in the results, then this is the pagination token to use to request the next page of accounts.</p>
     /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::error::ListOrganizationAdminAccountsError)
     pub fn list_organization_admin_accounts(
@@ -312,6 +353,17 @@ impl Client {
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`UpdateDatasourcePackages`](crate::client::fluent_builders::UpdateDatasourcePackages) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`graph_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDatasourcePackages::graph_arn) / [`set_graph_arn(Option<String>)`](crate::client::fluent_builders::UpdateDatasourcePackages::set_graph_arn): <p>The ARN of the behavior graph.</p>
+    ///   - [`datasource_packages(Vec<DatasourcePackage>)`](crate::client::fluent_builders::UpdateDatasourcePackages::datasource_packages) / [`set_datasource_packages(Option<Vec<DatasourcePackage>>)`](crate::client::fluent_builders::UpdateDatasourcePackages::set_datasource_packages): <p>The data source package start for the behavior graph.</p>
+    /// - On success, responds with [`UpdateDatasourcePackagesOutput`](crate::output::UpdateDatasourcePackagesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatasourcePackagesError>`](crate::error::UpdateDatasourcePackagesError)
+    pub fn update_datasource_packages(&self) -> fluent_builders::UpdateDatasourcePackages {
+        fluent_builders::UpdateDatasourcePackages::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
@@ -388,6 +440,136 @@ pub mod fluent_builders {
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetGraphMemberDatasources`.
+    ///
+    /// <p>Gets data source package information for the behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetGraphMemberDatasources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_graph_member_datasources_input::Builder,
+    }
+    impl BatchGetGraphMemberDatasources {
+        /// Creates a new `BatchGetGraphMemberDatasources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetGraphMemberDatasourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetGraphMemberDatasourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+        /// Appends an item to `AccountIds`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input.into());
+            self
+        }
+        /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_account_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `BatchGetMembershipDatasources`.
+    ///
+    /// <p>Gets information on the data source package history for an account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct BatchGetMembershipDatasources {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::batch_get_membership_datasources_input::Builder,
+    }
+    impl BatchGetMembershipDatasources {
+        /// Creates a new `BatchGetMembershipDatasources`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::BatchGetMembershipDatasourcesOutput,
+            aws_smithy_http::result::SdkError<crate::error::BatchGetMembershipDatasourcesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Appends an item to `GraphArns`.
+        ///
+        /// To override the contents of this collection use [`set_graph_arns`](Self::set_graph_arns).
+        ///
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arns(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_graph_arns(input);
             self
         }
     }
@@ -745,8 +927,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableOrganizationAdminAccount`.
     ///
-    /// <p>Removes the Detective administrator account for the organization in the current Region. Deletes the behavior graph for that account.</p>
-    /// <p>Can only be called by the organization management account. Before you can select a different Detective administrator account, you must remove the Detective administrator account in all Regions.</p>
+    /// <p>Removes the Detective administrator account in the current Region. Deletes the organization behavior graph.</p>
+    /// <p>Can only be called by the organization management account.</p>
+    /// <p>Removing the Detective administrator account does not affect the delegated administrator account for Detective in Organizations.</p>
+    /// <p>To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated administrator account also removes the Detective administrator account in all Regions, except for Regions where the Detective administrator account is the organization management account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableOrganizationAdminAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -848,7 +1032,8 @@ pub mod fluent_builders {
     /// <p>Designates the Detective administrator account for the organization in the current Region.</p>
     /// <p>If the account does not have Detective enabled, then enables Detective for that account and creates a new behavior graph.</p>
     /// <p>Can only be called by the organization management account.</p>
-    /// <p>The Detective administrator account for an organization must be the same in all Regions. If you already designated a Detective administrator account in another Region, then you must designate the same account.</p>
+    /// <p>If the organization has a delegated administrator account in Organizations, then the Detective administrator account must be either the delegated administrator account or the organization management account.</p>
+    /// <p>If the organization does not have a delegated administrator account in Organizations, then you can choose any account in the organization. If you choose an account other than the organization management account, Detective calls Organizations to make that account the delegated administrator account for Detective. The organization management account cannot be the delegated administrator account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableOrganizationAdminAccount {
         handle: std::sync::Arc<super::Handle>,
@@ -968,6 +1153,85 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_account_ids(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListDatasourcePackages`.
+    ///
+    /// <p>Lists data source packages in the behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListDatasourcePackages {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_datasource_packages_input::Builder,
+    }
+    impl ListDatasourcePackages {
+        /// Creates a new `ListDatasourcePackages`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListDatasourcePackagesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListDatasourcePackagesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatasourcePackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatasourcePackagesPaginator {
+            crate::paginator::ListDatasourcePackagesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1584,6 +1848,76 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `UpdateDatasourcePackages`.
+    ///
+    /// <p>Starts a data source packages for the behavior graph.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateDatasourcePackages {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::update_datasource_packages_input::Builder,
+    }
+    impl UpdateDatasourcePackages {
+        /// Creates a new `UpdateDatasourcePackages`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateDatasourcePackagesOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateDatasourcePackagesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.graph_arn(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_graph_arn(input);
+            self
+        }
+        /// Appends an item to `DatasourcePackages`.
+        ///
+        /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
+        ///
+        /// <p>The data source package start for the behavior graph.</p>
+        pub fn datasource_packages(mut self, input: crate::model::DatasourcePackage) -> Self {
+            self.inner = self.inner.datasource_packages(input);
+            self
+        }
+        /// <p>The data source package start for the behavior graph.</p>
+        pub fn set_datasource_packages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatasourcePackage>>,
+        ) -> Self {
+            self.inner = self.inner.set_datasource_packages(input);
             self
         }
     }

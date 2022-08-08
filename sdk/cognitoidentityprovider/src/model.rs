@@ -156,7 +156,7 @@ pub struct UserPoolClientType {
     /// </ul>
     pub explicit_auth_flows:
         std::option::Option<std::vec::Vec<crate::model::ExplicitAuthFlowsType>>,
-    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub supported_identity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
     /// <p>A redirect URI must:</p>
@@ -298,7 +298,7 @@ impl UserPoolClientType {
     ) -> std::option::Option<&[crate::model::ExplicitAuthFlowsType]> {
         self.explicit_auth_flows.as_deref()
     }
-    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
     pub fn supported_identity_providers(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_identity_providers.as_deref()
     }
@@ -674,7 +674,7 @@ pub mod user_pool_client_type {
         ///
         /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
         ///
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn supported_identity_providers(
             mut self,
             input: impl Into<std::string::String>,
@@ -684,7 +684,7 @@ pub mod user_pool_client_type {
             self.supported_identity_providers = Some(v);
             self
         }
-        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+        /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
         pub fn set_supported_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2480,27 +2480,27 @@ impl AsRef<str> for EmailSendingAccountType {
     }
 }
 
-/// <p>The device tracking configuration for a user pool. A user pool with device tracking deactivated returns a null value.</p> <note>
-/// <p>When you provide values for any DeviceConfiguration field, you activate device tracking.</p>
+/// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+/// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceConfigurationType {
     /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-    /// <p>Users that sign in with devices that have not been confirmed or remembered will still have to provide a second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+    /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
     /// </note>
     pub challenge_required_on_new_device: bool,
-    /// <p>When true, users can opt in to remembering their device. Your app code must use callback functions to return the user's choice.</p>
+    /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
     pub device_only_remembered_on_user_prompt: bool,
 }
 impl DeviceConfigurationType {
     /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-    /// <p>Users that sign in with devices that have not been confirmed or remembered will still have to provide a second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+    /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
     /// </note>
     pub fn challenge_required_on_new_device(&self) -> bool {
         self.challenge_required_on_new_device
     }
-    /// <p>When true, users can opt in to remembering their device. Your app code must use callback functions to return the user's choice.</p>
+    /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
     pub fn device_only_remembered_on_user_prompt(&self) -> bool {
         self.device_only_remembered_on_user_prompt
     }
@@ -2530,14 +2530,14 @@ pub mod device_configuration_type {
     }
     impl Builder {
         /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-        /// <p>Users that sign in with devices that have not been confirmed or remembered will still have to provide a second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+        /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
         /// </note>
         pub fn challenge_required_on_new_device(mut self, input: bool) -> Self {
             self.challenge_required_on_new_device = Some(input);
             self
         }
         /// <p>When true, device authentication can replace SMS and time-based one-time password (TOTP) factors for multi-factor authentication (MFA).</p> <note>
-        /// <p>Users that sign in with devices that have not been confirmed or remembered will still have to provide a second factor, whether or not ChallengeRequiredOnNewDevice is true, when your user pool requires MFA.</p>
+        /// <p>Regardless of the value of this field, users that sign in with new devices that have not been confirmed or remembered must provide a second factor if your user pool requires MFA.</p>
         /// </note>
         pub fn set_challenge_required_on_new_device(
             mut self,
@@ -2546,12 +2546,12 @@ pub mod device_configuration_type {
             self.challenge_required_on_new_device = input;
             self
         }
-        /// <p>When true, users can opt in to remembering their device. Your app code must use callback functions to return the user's choice.</p>
+        /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
         pub fn device_only_remembered_on_user_prompt(mut self, input: bool) -> Self {
             self.device_only_remembered_on_user_prompt = Some(input);
             self
         }
-        /// <p>When true, users can opt in to remembering their device. Your app code must use callback functions to return the user's choice.</p>
+        /// <p>When true, Amazon Cognito doesn't remember newly-confirmed devices. Users who want to authenticate with their device can instead opt in to remembering their device. To collect a choice from your user, create an input prompt in your app and return the value that the user chooses in an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a> API request.</p>
         pub fn set_device_only_remembered_on_user_prompt(
             mut self,
             input: std::option::Option<bool>,
@@ -2638,7 +2638,7 @@ impl AsRef<str> for UserPoolMfaType {
     }
 }
 
-/// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+/// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserAttributeUpdateSettingsType {
@@ -8908,7 +8908,7 @@ pub struct UserPoolType {
         std::option::Option<crate::model::VerificationMessageTemplateType>,
     /// <p>The contents of the SMS authentication message.</p>
     pub sms_authentication_message: std::option::Option<std::string::String>,
-    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings:
         std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
     /// <p>Can be one of the following values:</p>
@@ -8918,7 +8918,9 @@ pub struct UserPoolType {
     /// <li> <p> <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.</p> </li>
     /// </ul>
     pub mfa_configuration: std::option::Option<crate::model::UserPoolMfaType>,
-    /// <p>The device configuration.</p>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+    /// </note>
     pub device_configuration: std::option::Option<crate::model::DeviceConfigurationType>,
     /// <p>A number estimating the size of the user pool.</p>
     pub estimated_number_of_users: i32,
@@ -9035,7 +9037,7 @@ impl UserPoolType {
     pub fn sms_authentication_message(&self) -> std::option::Option<&str> {
         self.sms_authentication_message.as_deref()
     }
-    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+    /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
     pub fn user_attribute_update_settings(
         &self,
     ) -> std::option::Option<&crate::model::UserAttributeUpdateSettingsType> {
@@ -9050,7 +9052,9 @@ impl UserPoolType {
     pub fn mfa_configuration(&self) -> std::option::Option<&crate::model::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
-    /// <p>The device configuration.</p>
+    /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+    /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+    /// </note>
     pub fn device_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DeviceConfigurationType> {
@@ -9472,7 +9476,7 @@ pub mod user_pool_type {
             self.sms_authentication_message = input;
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn user_attribute_update_settings(
             mut self,
             input: crate::model::UserAttributeUpdateSettingsType,
@@ -9480,7 +9484,7 @@ pub mod user_pool_type {
             self.user_attribute_update_settings = Some(input);
             self
         }
-        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to to email addresses and phone numbers</a>.</p>
+        /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
         pub fn set_user_attribute_update_settings(
             mut self,
             input: std::option::Option<crate::model::UserAttributeUpdateSettingsType>,
@@ -9511,7 +9515,9 @@ pub mod user_pool_type {
             self.mfa_configuration = input;
             self
         }
-        /// <p>The device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn device_configuration(
             mut self,
             input: crate::model::DeviceConfigurationType,
@@ -9519,7 +9525,9 @@ pub mod user_pool_type {
             self.device_configuration = Some(input);
             self
         }
-        /// <p>The device configuration.</p>
+        /// <p>The device-remembering configuration for a user pool. A null value indicates that you have deactivated device remembering in your user pool.</p> <note>
+        /// <p>When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito device-remembering feature.</p>
+        /// </note>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfigurationType>,

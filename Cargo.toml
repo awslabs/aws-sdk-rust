@@ -245,6 +245,7 @@ members = [
     "sdk/lexruntime",
     "sdk/lexruntimev2",
     "sdk/licensemanager",
+    "sdk/licensemanagerusersubscriptions",
     "sdk/lightsail",
     "sdk/location",
     "sdk/lookoutequipment",

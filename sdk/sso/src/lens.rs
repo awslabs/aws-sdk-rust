@@ -18,3 +18,23 @@ pub(crate) fn reflens_structure_crate_output_list_accounts_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_structure_crate_output_list_account_roles_output_role_list(
+    input: crate::output::ListAccountRolesOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::RoleInfo>> {
+    let input = match input.role_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_structure_crate_output_list_accounts_output_account_list(
+    input: crate::output::ListAccountsOutput,
+) -> std::option::Option<std::vec::Vec<crate::model::AccountInfo>> {
+    let input = match input.account_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

@@ -1791,6 +1791,110 @@ impl std::error::Error for GetQueryResultsError {
     }
 }
 
+/// Error type for the `GetQueryRuntimeStatistics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetQueryRuntimeStatisticsError {
+    /// Kind of error that occurred.
+    pub kind: GetQueryRuntimeStatisticsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetQueryRuntimeStatistics` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetQueryRuntimeStatisticsErrorKind {
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetQueryRuntimeStatisticsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetQueryRuntimeStatisticsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            GetQueryRuntimeStatisticsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            GetQueryRuntimeStatisticsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetQueryRuntimeStatisticsError {
+    fn code(&self) -> Option<&str> {
+        GetQueryRuntimeStatisticsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetQueryRuntimeStatisticsError {
+    /// Creates a new `GetQueryRuntimeStatisticsError`.
+    pub fn new(kind: GetQueryRuntimeStatisticsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetQueryRuntimeStatisticsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetQueryRuntimeStatisticsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetQueryRuntimeStatisticsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetQueryRuntimeStatisticsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetQueryRuntimeStatisticsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryRuntimeStatisticsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetQueryRuntimeStatisticsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetQueryRuntimeStatisticsErrorKind::InvalidRequestException(_)
+        )
+    }
+}
+impl std::error::Error for GetQueryRuntimeStatisticsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetQueryRuntimeStatisticsErrorKind::InternalServerException(_inner) => Some(_inner),
+            GetQueryRuntimeStatisticsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            GetQueryRuntimeStatisticsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetTableMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

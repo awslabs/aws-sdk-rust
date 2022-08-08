@@ -2,6 +2,63 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRevealConfigurationOutput {
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub configuration: std::option::Option<crate::model::RevealConfiguration>,
+}
+impl UpdateRevealConfigurationOutput {
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
+        self.configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateRevealConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRevealConfigurationOutput");
+        formatter.field("configuration", &self.configuration);
+        formatter.finish()
+    }
+}
+/// See [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
+pub mod update_reveal_configuration_output {
+
+    /// A builder for [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<crate::model::RevealConfiguration>,
+    }
+    impl Builder {
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn configuration(mut self, input: crate::model::RevealConfiguration) -> Self {
+            self.configuration = Some(input);
+            self
+        }
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RevealConfiguration>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
+        pub fn build(self) -> crate::output::UpdateRevealConfigurationOutput {
+            crate::output::UpdateRevealConfigurationOutput {
+                configuration: self.configuration,
+            }
+        }
+    }
+}
+impl UpdateRevealConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationOutput`](crate::output::UpdateRevealConfigurationOutput).
+    pub fn builder() -> crate::output::update_reveal_configuration_output::Builder {
+        crate::output::update_reveal_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationOutput {}
 impl std::fmt::Debug for UpdateOrganizationConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1415,6 +1472,334 @@ impl GetUsageStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSensitiveDataOccurrencesAvailabilityOutput {
+    /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+    pub code: std::option::Option<crate::model::AvailabilityCode>,
+    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+    /// <ul>
+    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+    /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+    /// </ul>
+    /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
+    pub reasons: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
+}
+impl GetSensitiveDataOccurrencesAvailabilityOutput {
+    /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+    pub fn code(&self) -> std::option::Option<&crate::model::AvailabilityCode> {
+        self.code.as_ref()
+    }
+    /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+    /// <ul>
+    /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+    /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+    /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+    /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+    /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+    /// </ul>
+    /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
+    pub fn reasons(&self) -> std::option::Option<&[crate::model::UnavailabilityReasonCode]> {
+        self.reasons.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSensitiveDataOccurrencesAvailabilityOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSensitiveDataOccurrencesAvailabilityOutput");
+        formatter.field("code", &self.code);
+        formatter.field("reasons", &self.reasons);
+        formatter.finish()
+    }
+}
+/// See [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
+pub mod get_sensitive_data_occurrences_availability_output {
+
+    /// A builder for [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::AvailabilityCode>,
+        pub(crate) reasons:
+            std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
+    }
+    impl Builder {
+        /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+        pub fn code(mut self, input: crate::model::AvailabilityCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        /// <p>Specifies whether occurrences of sensitive data can be retrieved for the finding. Possible values are: AVAILABLE, the sensitive data can be retrieved; and, UNAVAILABLE, the sensitive data can't be retrieved. If this value is UNAVAILABLE, the reasons array indicates why the data can't be retrieved.</p>
+        pub fn set_code(
+            mut self,
+            input: std::option::Option<crate::model::AvailabilityCode>,
+        ) -> Self {
+            self.code = input;
+            self
+        }
+        /// Appends an item to `reasons`.
+        ///
+        /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
+        ///
+        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// </ul>
+        /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
+        pub fn reasons(mut self, input: crate::model::UnavailabilityReasonCode) -> Self {
+            let mut v = self.reasons.unwrap_or_default();
+            v.push(input);
+            self.reasons = Some(v);
+            self
+        }
+        /// <p>Specifies why occurrences of sensitive data can't be retrieved for the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>INVALID_CLASSIFICATION_RESULT - Amazon Macie can't verify the location of the sensitive data to retrieve. There isn't a corresponding sensitive data discovery result for the finding. Or the sensitive data discovery result specified by the ClassificationDetails.detailedResultsLocation field of the finding isn't available, is malformed or corrupted, or uses an unsupported storage format.</p></li>
+        /// <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the affected S3 object exceeds the size quota for retrieving occurrences of sensitive data.</p></li>
+        /// <li><p>OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have been renamed, moved, or deleted. Or the object was changed after Amazon Macie created the finding.</p></li>
+        /// <li><p>UNSUPPORTED_FINDING_TYPE - The specified finding isn't a sensitive data finding.</p></li>
+        /// <li><p>UNSUPPORTED_OBJECT_TYPE - The affected S3 object uses a file or storage format that Macie doesn't support for retrieving occurrences of sensitive data.</p></li>
+        /// </ul>
+        /// <p>This value is null if sensitive data can be retrieved for the finding.</p>
+        pub fn set_reasons(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
+        ) -> Self {
+            self.reasons = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
+        pub fn build(self) -> crate::output::GetSensitiveDataOccurrencesAvailabilityOutput {
+            crate::output::GetSensitiveDataOccurrencesAvailabilityOutput {
+                code: self.code,
+                reasons: self.reasons,
+            }
+        }
+    }
+}
+impl GetSensitiveDataOccurrencesAvailabilityOutput {
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityOutput`](crate::output::GetSensitiveDataOccurrencesAvailabilityOutput).
+    pub fn builder() -> crate::output::get_sensitive_data_occurrences_availability_output::Builder {
+        crate::output::get_sensitive_data_occurrences_availability_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSensitiveDataOccurrencesOutput {
+    /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+    pub error: std::option::Option<std::string::String>,
+    /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+    pub sensitive_data_occurrences: std::option::Option<
+        std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::DetectedDataDetails>,
+        >,
+    >,
+    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::RevealRequestStatus>,
+}
+impl GetSensitiveDataOccurrencesOutput {
+    /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+    pub fn error(&self) -> std::option::Option<&str> {
+        self.error.as_deref()
+    }
+    /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+    pub fn sensitive_data_occurrences(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            std::string::String,
+            std::vec::Vec<crate::model::DetectedDataDetails>,
+        >,
+    > {
+        self.sensitive_data_occurrences.as_ref()
+    }
+    /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+    /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+    /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::RevealRequestStatus> {
+        self.status.as_ref()
+    }
+}
+impl std::fmt::Debug for GetSensitiveDataOccurrencesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSensitiveDataOccurrencesOutput");
+        formatter.field("error", &self.error);
+        formatter.field(
+            "sensitive_data_occurrences",
+            &self.sensitive_data_occurrences,
+        );
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
+/// See [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
+pub mod get_sensitive_data_occurrences_output {
+
+    /// A builder for [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) error: std::option::Option<std::string::String>,
+        pub(crate) sensitive_data_occurrences: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::vec::Vec<crate::model::DetectedDataDetails>,
+            >,
+        >,
+        pub(crate) status: std::option::Option<crate::model::RevealRequestStatus>,
+    }
+    impl Builder {
+        /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error = Some(input.into());
+            self
+        }
+        /// <p>If an error occurred when Amazon Macie attempted to retrieve occurrences of sensitive data reported by the finding, a description of the error that occurred. This value is null if the status (status) of the request is PROCESSING or SUCCESS.</p>
+        pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error = input;
+            self
+        }
+        /// Adds a key-value pair to `sensitive_data_occurrences`.
+        ///
+        /// To override the contents of this collection use [`set_sensitive_data_occurrences`](Self::set_sensitive_data_occurrences).
+        ///
+        /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+        pub fn sensitive_data_occurrences(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: std::vec::Vec<crate::model::DetectedDataDetails>,
+        ) -> Self {
+            let mut hash_map = self.sensitive_data_occurrences.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.sensitive_data_occurrences = Some(hash_map);
+            self
+        }
+        /// <p>A map that specifies 1-100 types of sensitive data reported by the finding and, for each type, 1-10 occurrences of sensitive data.</p>
+        pub fn set_sensitive_data_occurrences(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<
+                    std::string::String,
+                    std::vec::Vec<crate::model::DetectedDataDetails>,
+                >,
+            >,
+        ) -> Self {
+            self.sensitive_data_occurrences = input;
+            self
+        }
+        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+        /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+        /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::RevealRequestStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the request to retrieve occurrences of sensitive data reported by the finding. Possible values are:</p>
+        /// <ul>
+        /// <li><p>ERROR - An error occurred when Amazon Macie attempted to locate, retrieve, or encrypt the sensitive data. The error value indicates the nature of the error that occurred.</p></li>
+        /// <li><p>PROCESSING - Macie is processing the request.</p></li>
+        /// <li><p>SUCCESS - Macie successfully located, retrieved, and encrypted the sensitive data.</p></li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::RevealRequestStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
+        pub fn build(self) -> crate::output::GetSensitiveDataOccurrencesOutput {
+            crate::output::GetSensitiveDataOccurrencesOutput {
+                error: self.error,
+                sensitive_data_occurrences: self.sensitive_data_occurrences,
+                status: self.status,
+            }
+        }
+    }
+}
+impl GetSensitiveDataOccurrencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesOutput`](crate::output::GetSensitiveDataOccurrencesOutput).
+    pub fn builder() -> crate::output::get_sensitive_data_occurrences_output::Builder {
+        crate::output::get_sensitive_data_occurrences_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRevealConfigurationOutput {
+    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    pub configuration: std::option::Option<crate::model::RevealConfiguration>,
+}
+impl GetRevealConfigurationOutput {
+    /// <p>The current configuration settings and the status of the configuration for the account.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
+        self.configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for GetRevealConfigurationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRevealConfigurationOutput");
+        formatter.field("configuration", &self.configuration);
+        formatter.finish()
+    }
+}
+/// See [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
+pub mod get_reveal_configuration_output {
+
+    /// A builder for [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<crate::model::RevealConfiguration>,
+    }
+    impl Builder {
+        /// <p>The current configuration settings and the status of the configuration for the account.</p>
+        pub fn configuration(mut self, input: crate::model::RevealConfiguration) -> Self {
+            self.configuration = Some(input);
+            self
+        }
+        /// <p>The current configuration settings and the status of the configuration for the account.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RevealConfiguration>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
+        pub fn build(self) -> crate::output::GetRevealConfigurationOutput {
+            crate::output::GetRevealConfigurationOutput {
+                configuration: self.configuration,
+            }
+        }
+    }
+}
+impl GetRevealConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetRevealConfigurationOutput`](crate::output::GetRevealConfigurationOutput).
+    pub fn builder() -> crate::output::get_reveal_configuration_output::Builder {
+        crate::output::get_reveal_configuration_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMemberOutput {
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: std::option::Option<std::string::String>,
@@ -2332,9 +2717,9 @@ pub struct GetCustomDataIdentifierOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     pub maximum_match_distance: i32,
     /// <p>The custom name of the custom data identifier.</p>
     pub name: std::option::Option<std::string::String>,
@@ -2371,11 +2756,11 @@ impl GetCustomDataIdentifierOutput {
     pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_words.as_deref()
     }
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
     pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.keywords.as_deref()
     }
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     pub fn maximum_match_distance(&self) -> i32 {
         self.maximum_match_distance
     }
@@ -2515,14 +2900,14 @@ pub mod get_custom_data_identifier_output {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
             v.push(input.into());
             self.keywords = Some(v);
             self
         }
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2530,12 +2915,12 @@ pub mod get_custom_data_identifier_output {
             self.keywords = input;
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.maximum_match_distance = Some(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_match_distance = input;
             self
@@ -3449,7 +3834,7 @@ pub struct DescribeClassificationJobOutput {
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
     pub last_run_error_status: std::option::Option<crate::model::LastRunErrorStatus>,
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
     pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
     pub managed_data_identifier_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3532,7 +3917,7 @@ impl DescribeClassificationJobOutput {
     pub fn last_run_error_status(&self) -> std::option::Option<&crate::model::LastRunErrorStatus> {
         self.last_run_error_status.as_ref()
     }
-    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
     pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
@@ -3795,12 +4180,12 @@ pub mod describe_classification_job_output {
             self.last_run_error_status = input;
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
         pub fn last_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_run_time = Some(input);
             self
         }
-        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started or, if the job hasn't run yet, when the job was created.</p>
         pub fn set_last_run_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

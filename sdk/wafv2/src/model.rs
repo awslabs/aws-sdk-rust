@@ -1824,6 +1824,7 @@ impl CustomResponse {
 }
 
 /// <p>The processing guidance for a <code>Rule</code>, used by WAF to determine whether a web request matches the rule. </p>
+/// <p>For example specifications, see the examples section of <code>CreateWebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Statement {
@@ -4835,6 +4836,7 @@ impl ManagedRuleGroupStatement {
 /// <p>Additional information that's used by a managed rule group. Most managed rule groups don't require this.</p>
 /// <p>Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide information about the sign-in page of your application. </p>
 /// <p>You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.</p>
+/// <p>For example specifications, see the examples section of <code>CreateWebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ManagedRuleGroupConfig {
@@ -9608,6 +9610,8 @@ pub enum ResourceType {
     ApplicationLoadBalancer,
     #[allow(missing_docs)] // documentation missing in model
     Appsync,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitioUserPool,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -9617,6 +9621,7 @@ impl std::convert::From<&str> for ResourceType {
             "API_GATEWAY" => ResourceType::ApiGateway,
             "APPLICATION_LOAD_BALANCER" => ResourceType::ApplicationLoadBalancer,
             "APPSYNC" => ResourceType::Appsync,
+            "COGNITO_USER_POOL" => ResourceType::CognitioUserPool,
             other => ResourceType::Unknown(other.to_owned()),
         }
     }
@@ -9635,12 +9640,18 @@ impl ResourceType {
             ResourceType::ApiGateway => "API_GATEWAY",
             ResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
             ResourceType::Appsync => "APPSYNC",
+            ResourceType::CognitioUserPool => "COGNITO_USER_POOL",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["API_GATEWAY", "APPLICATION_LOAD_BALANCER", "APPSYNC"]
+        &[
+            "API_GATEWAY",
+            "APPLICATION_LOAD_BALANCER",
+            "APPSYNC",
+            "COGNITO_USER_POOL",
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -10421,7 +10432,7 @@ impl ManagedRuleGroupSummary {
     }
 }
 
-/// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. </p>
+/// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WebAcl {

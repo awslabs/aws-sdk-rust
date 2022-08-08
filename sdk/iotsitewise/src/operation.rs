@@ -371,6 +371,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssetModel {
     }
 }
 
+/// Operation shape for `CreateBulkImportJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_bulk_import_job`](crate::client::Client::create_bulk_import_job).
+///
+/// See [`crate::client::fluent_builders::CreateBulkImportJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBulkImportJob {
+    _private: (),
+}
+impl CreateBulkImportJob {
+    /// Creates a new builder-style object to manufacture [`CreateBulkImportJobInput`](crate::input::CreateBulkImportJobInput).
+    pub fn builder() -> crate::input::create_bulk_import_job_input::Builder {
+        crate::input::create_bulk_import_job_input::Builder::default()
+    }
+    /// Creates a new `CreateBulkImportJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateBulkImportJob {
+    type Output = std::result::Result<
+        crate::output::CreateBulkImportJobOutput,
+        crate::error::CreateBulkImportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_create_bulk_import_job_error(response)
+        } else {
+            crate::operation_deser::parse_create_bulk_import_job_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateDashboard`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -895,6 +929,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAssetProperty {
             crate::operation_deser::parse_describe_asset_property_error(response)
         } else {
             crate::operation_deser::parse_describe_asset_property_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeBulkImportJob`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_bulk_import_job`](crate::client::Client::describe_bulk_import_job).
+///
+/// See [`crate::client::fluent_builders::DescribeBulkImportJob`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeBulkImportJob {
+    _private: (),
+}
+impl DescribeBulkImportJob {
+    /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobInput`](crate::input::DescribeBulkImportJobInput).
+    pub fn builder() -> crate::input::describe_bulk_import_job_input::Builder {
+        crate::input::describe_bulk_import_job_input::Builder::default()
+    }
+    /// Creates a new `DescribeBulkImportJob` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeBulkImportJob {
+    type Output = std::result::Result<
+        crate::output::DescribeBulkImportJobOutput,
+        crate::error::DescribeBulkImportJobError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_bulk_import_job_error(response)
+        } else {
+            crate::operation_deser::parse_describe_bulk_import_job_response(response)
         }
     }
 }
@@ -1579,6 +1647,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedAssets {
             crate::operation_deser::parse_list_associated_assets_error(response)
         } else {
             crate::operation_deser::parse_list_associated_assets_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListBulkImportJobs`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_bulk_import_jobs`](crate::client::Client::list_bulk_import_jobs).
+///
+/// See [`crate::client::fluent_builders::ListBulkImportJobs`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListBulkImportJobs {
+    _private: (),
+}
+impl ListBulkImportJobs {
+    /// Creates a new builder-style object to manufacture [`ListBulkImportJobsInput`](crate::input::ListBulkImportJobsInput).
+    pub fn builder() -> crate::input::list_bulk_import_jobs_input::Builder {
+        crate::input::list_bulk_import_jobs_input::Builder::default()
+    }
+    /// Creates a new `ListBulkImportJobs` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListBulkImportJobs {
+    type Output = std::result::Result<
+        crate::output::ListBulkImportJobsOutput,
+        crate::error::ListBulkImportJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_bulk_import_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_bulk_import_jobs_response(response)
         }
     }
 }

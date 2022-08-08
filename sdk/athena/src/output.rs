@@ -1132,6 +1132,69 @@ impl GetTableMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetQueryRuntimeStatisticsOutput {
+    /// <p>Runtime statistics about the query execution.</p>
+    pub query_runtime_statistics: std::option::Option<crate::model::QueryRuntimeStatistics>,
+}
+impl GetQueryRuntimeStatisticsOutput {
+    /// <p>Runtime statistics about the query execution.</p>
+    pub fn query_runtime_statistics(
+        &self,
+    ) -> std::option::Option<&crate::model::QueryRuntimeStatistics> {
+        self.query_runtime_statistics.as_ref()
+    }
+}
+impl std::fmt::Debug for GetQueryRuntimeStatisticsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetQueryRuntimeStatisticsOutput");
+        formatter.field("query_runtime_statistics", &self.query_runtime_statistics);
+        formatter.finish()
+    }
+}
+/// See [`GetQueryRuntimeStatisticsOutput`](crate::output::GetQueryRuntimeStatisticsOutput).
+pub mod get_query_runtime_statistics_output {
+
+    /// A builder for [`GetQueryRuntimeStatisticsOutput`](crate::output::GetQueryRuntimeStatisticsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_runtime_statistics:
+            std::option::Option<crate::model::QueryRuntimeStatistics>,
+    }
+    impl Builder {
+        /// <p>Runtime statistics about the query execution.</p>
+        pub fn query_runtime_statistics(
+            mut self,
+            input: crate::model::QueryRuntimeStatistics,
+        ) -> Self {
+            self.query_runtime_statistics = Some(input);
+            self
+        }
+        /// <p>Runtime statistics about the query execution.</p>
+        pub fn set_query_runtime_statistics(
+            mut self,
+            input: std::option::Option<crate::model::QueryRuntimeStatistics>,
+        ) -> Self {
+            self.query_runtime_statistics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetQueryRuntimeStatisticsOutput`](crate::output::GetQueryRuntimeStatisticsOutput).
+        pub fn build(self) -> crate::output::GetQueryRuntimeStatisticsOutput {
+            crate::output::GetQueryRuntimeStatisticsOutput {
+                query_runtime_statistics: self.query_runtime_statistics,
+            }
+        }
+    }
+}
+impl GetQueryRuntimeStatisticsOutput {
+    /// Creates a new builder-style object to manufacture [`GetQueryRuntimeStatisticsOutput`](crate::output::GetQueryRuntimeStatisticsOutput).
+    pub fn builder() -> crate::output::get_query_runtime_statistics_output::Builder {
+        crate::output::get_query_runtime_statistics_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryResultsOutput {
     /// <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
     pub update_count: std::option::Option<i64>,

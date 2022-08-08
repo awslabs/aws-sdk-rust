@@ -13,12 +13,16 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::error::NotFoundException),
+    /// <p>The resource that you want to tag couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service encountered an unexpected error.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The service is currently unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The number of customer requests exceeds the request rate limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Too many tags were added to the specified resource.</p>
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The user isn't authorized to request a resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
@@ -34,9 +38,11 @@ impl std::fmt::Display for Error {
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceFailureException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
             Error::UnprocessableEntityException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -400,6 +406,26 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>>
     for Error
 where
@@ -482,6 +508,47 @@ where
                 crate::error::StopMeetingTranscriptionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+                    Error::TooManyTagsException(inner)
+                }
+                crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }

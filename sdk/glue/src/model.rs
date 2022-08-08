@@ -896,6 +896,8 @@ pub enum CrawlState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelling,
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -909,6 +911,7 @@ impl std::convert::From<&str> for CrawlState {
         match s {
             "CANCELLED" => CrawlState::Cancelled,
             "CANCELLING" => CrawlState::Cancelling,
+            "ERROR" => CrawlState::Error,
             "FAILED" => CrawlState::Failed,
             "RUNNING" => CrawlState::Running,
             "SUCCEEDED" => CrawlState::Succeeded,
@@ -929,6 +932,7 @@ impl CrawlState {
         match self {
             CrawlState::Cancelled => "CANCELLED",
             CrawlState::Cancelling => "CANCELLING",
+            CrawlState::Error => "ERROR",
             CrawlState::Failed => "FAILED",
             CrawlState::Running => "RUNNING",
             CrawlState::Succeeded => "SUCCEEDED",
@@ -937,7 +941,14 @@ impl CrawlState {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["CANCELLED", "CANCELLING", "FAILED", "RUNNING", "SUCCEEDED"]
+        &[
+            "CANCELLED",
+            "CANCELLING",
+            "ERROR",
+            "FAILED",
+            "RUNNING",
+            "SUCCEEDED",
+        ]
     }
 }
 impl AsRef<str> for CrawlState {
@@ -959,6 +970,8 @@ impl AsRef<str> for CrawlState {
 )]
 pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
@@ -972,12 +985,15 @@ pub enum JobRunState {
     Succeeded,
     #[allow(missing_docs)] // documentation missing in model
     Timeout,
+    #[allow(missing_docs)] // documentation missing in model
+    Waiting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
 impl std::convert::From<&str> for JobRunState {
     fn from(s: &str) -> Self {
         match s {
+            "ERROR" => JobRunState::Error,
             "FAILED" => JobRunState::Failed,
             "RUNNING" => JobRunState::Running,
             "STARTING" => JobRunState::Starting,
@@ -985,6 +1001,7 @@ impl std::convert::From<&str> for JobRunState {
             "STOPPING" => JobRunState::Stopping,
             "SUCCEEDED" => JobRunState::Succeeded,
             "TIMEOUT" => JobRunState::Timeout,
+            "WAITING" => JobRunState::Waiting,
             other => JobRunState::Unknown(other.to_owned()),
         }
     }
@@ -1000,6 +1017,7 @@ impl JobRunState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobRunState::Error => "ERROR",
             JobRunState::Failed => "FAILED",
             JobRunState::Running => "RUNNING",
             JobRunState::Starting => "STARTING",
@@ -1007,12 +1025,14 @@ impl JobRunState {
             JobRunState::Stopping => "STOPPING",
             JobRunState::Succeeded => "SUCCEEDED",
             JobRunState::Timeout => "TIMEOUT",
+            JobRunState::Waiting => "WAITING",
             JobRunState::Unknown(s) => s.as_ref(),
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
+            "ERROR",
             "FAILED",
             "RUNNING",
             "STARTING",
@@ -1020,6 +1040,7 @@ impl JobRunState {
             "STOPPING",
             "SUCCEEDED",
             "TIMEOUT",
+            "WAITING",
         ]
     }
 }
@@ -3961,6 +3982,10 @@ pub struct JobUpdate {
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl JobUpdate {
     /// <p>Description of the job being defined.</p>
@@ -4065,6 +4090,12 @@ impl JobUpdate {
     > {
         self.code_gen_configuration_nodes.as_ref()
     }
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
+        self.execution_class.as_ref()
+    }
 }
 impl std::fmt::Debug for JobUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4090,6 +4121,7 @@ impl std::fmt::Debug for JobUpdate {
             "code_gen_configuration_nodes",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("execution_class", &self.execution_class);
         formatter.finish()
     }
 }
@@ -4123,6 +4155,7 @@ pub mod job_update {
         pub(crate) code_gen_configuration_nodes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
+        pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
     }
     impl Builder {
         /// <p>Description of the job being defined.</p>
@@ -4404,6 +4437,23 @@ pub mod job_update {
             self.code_gen_configuration_nodes = input;
             self
         }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.execution_class = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.execution_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobUpdate`](crate::model::JobUpdate).
         pub fn build(self) -> crate::model::JobUpdate {
             crate::model::JobUpdate {
@@ -4425,6 +4475,7 @@ pub mod job_update {
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
+                execution_class: self.execution_class,
             }
         }
     }
@@ -4433,6 +4484,61 @@ impl JobUpdate {
     /// Creates a new builder-style object to manufacture [`JobUpdate`](crate::model::JobUpdate).
     pub fn builder() -> crate::model::job_update::Builder {
         crate::model::job_update::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExecutionClass {
+    #[allow(missing_docs)] // documentation missing in model
+    Flex,
+    #[allow(missing_docs)] // documentation missing in model
+    Standard,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExecutionClass {
+    fn from(s: &str) -> Self {
+        match s {
+            "FLEX" => ExecutionClass::Flex,
+            "STANDARD" => ExecutionClass::Standard,
+            other => ExecutionClass::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExecutionClass {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutionClass::from(s))
+    }
+}
+impl ExecutionClass {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutionClass::Flex => "FLEX",
+            ExecutionClass::Standard => "STANDARD",
+            ExecutionClass::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FLEX", "STANDARD"]
+    }
+}
+impl AsRef<str> for ExecutionClass {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -27624,6 +27730,10 @@ pub struct JobRun {
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.</p>
     pub dpu_seconds: std::option::Option<f64>,
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl JobRun {
     /// <p>The ID of this job run.</p>
@@ -27742,6 +27852,12 @@ impl JobRun {
     pub fn dpu_seconds(&self) -> std::option::Option<f64> {
         self.dpu_seconds
     }
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
+        self.execution_class.as_ref()
+    }
 }
 impl std::fmt::Debug for JobRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27769,6 +27885,7 @@ impl std::fmt::Debug for JobRun {
         formatter.field("notification_property", &self.notification_property);
         formatter.field("glue_version", &self.glue_version);
         formatter.field("dpu_seconds", &self.dpu_seconds);
+        formatter.field("execution_class", &self.execution_class);
         formatter.finish()
     }
 }
@@ -27803,6 +27920,7 @@ pub mod job_run {
         pub(crate) notification_property: std::option::Option<crate::model::NotificationProperty>,
         pub(crate) glue_version: std::option::Option<std::string::String>,
         pub(crate) dpu_seconds: std::option::Option<f64>,
+        pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
     }
     impl Builder {
         /// <p>The ID of this job run.</p>
@@ -28127,6 +28245,23 @@ pub mod job_run {
             self.dpu_seconds = input;
             self
         }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.execution_class = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.execution_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`JobRun`](crate::model::JobRun).
         pub fn build(self) -> crate::model::JobRun {
             crate::model::JobRun {
@@ -28153,6 +28288,7 @@ pub mod job_run {
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
                 dpu_seconds: self.dpu_seconds,
+                execution_class: self.execution_class,
             }
         }
     }
@@ -28366,6 +28502,10 @@ pub struct WorkflowRunStatistics {
     pub succeeded_actions: i32,
     /// <p>Total number Actions in running state.</p>
     pub running_actions: i32,
+    /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+    pub errored_actions: i32,
+    /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+    pub waiting_actions: i32,
 }
 impl WorkflowRunStatistics {
     /// <p>Total number of Actions in the workflow run.</p>
@@ -28392,6 +28532,14 @@ impl WorkflowRunStatistics {
     pub fn running_actions(&self) -> i32 {
         self.running_actions
     }
+    /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+    pub fn errored_actions(&self) -> i32 {
+        self.errored_actions
+    }
+    /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+    pub fn waiting_actions(&self) -> i32 {
+        self.waiting_actions
+    }
 }
 impl std::fmt::Debug for WorkflowRunStatistics {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -28402,6 +28550,8 @@ impl std::fmt::Debug for WorkflowRunStatistics {
         formatter.field("stopped_actions", &self.stopped_actions);
         formatter.field("succeeded_actions", &self.succeeded_actions);
         formatter.field("running_actions", &self.running_actions);
+        formatter.field("errored_actions", &self.errored_actions);
+        formatter.field("waiting_actions", &self.waiting_actions);
         formatter.finish()
     }
 }
@@ -28417,6 +28567,8 @@ pub mod workflow_run_statistics {
         pub(crate) stopped_actions: std::option::Option<i32>,
         pub(crate) succeeded_actions: std::option::Option<i32>,
         pub(crate) running_actions: std::option::Option<i32>,
+        pub(crate) errored_actions: std::option::Option<i32>,
+        pub(crate) waiting_actions: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Total number of Actions in the workflow run.</p>
@@ -28479,6 +28631,26 @@ pub mod workflow_run_statistics {
             self.running_actions = input;
             self
         }
+        /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+        pub fn errored_actions(mut self, input: i32) -> Self {
+            self.errored_actions = Some(input);
+            self
+        }
+        /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+        pub fn set_errored_actions(mut self, input: std::option::Option<i32>) -> Self {
+            self.errored_actions = input;
+            self
+        }
+        /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+        pub fn waiting_actions(mut self, input: i32) -> Self {
+            self.waiting_actions = Some(input);
+            self
+        }
+        /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+        pub fn set_waiting_actions(mut self, input: std::option::Option<i32>) -> Self {
+            self.waiting_actions = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkflowRunStatistics`](crate::model::WorkflowRunStatistics).
         pub fn build(self) -> crate::model::WorkflowRunStatistics {
             crate::model::WorkflowRunStatistics {
@@ -28488,6 +28660,8 @@ pub mod workflow_run_statistics {
                 stopped_actions: self.stopped_actions.unwrap_or_default(),
                 succeeded_actions: self.succeeded_actions.unwrap_or_default(),
                 running_actions: self.running_actions.unwrap_or_default(),
+                errored_actions: self.errored_actions.unwrap_or_default(),
+                waiting_actions: self.waiting_actions.unwrap_or_default(),
             }
         }
     }
@@ -34262,6 +34436,10 @@ pub struct Job {
     pub code_gen_configuration_nodes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
     >,
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub execution_class: std::option::Option<crate::model::ExecutionClass>,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
@@ -34380,6 +34558,12 @@ impl Job {
     > {
         self.code_gen_configuration_nodes.as_ref()
     }
+    /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+    /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+    /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+    pub fn execution_class(&self) -> std::option::Option<&crate::model::ExecutionClass> {
+        self.execution_class.as_ref()
+    }
 }
 impl std::fmt::Debug for Job {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34408,6 +34592,7 @@ impl std::fmt::Debug for Job {
             "code_gen_configuration_nodes",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("execution_class", &self.execution_class);
         formatter.finish()
     }
 }
@@ -34444,6 +34629,7 @@ pub mod job {
         pub(crate) code_gen_configuration_nodes: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>,
         >,
+        pub(crate) execution_class: std::option::Option<crate::model::ExecutionClass>,
     }
     impl Builder {
         /// <p>The name you assign to this job definition.</p>
@@ -34765,6 +34951,23 @@ pub mod job {
             self.code_gen_configuration_nodes = input;
             self
         }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.execution_class = Some(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.execution_class = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
@@ -34789,6 +34992,7 @@ pub mod job {
                 notification_property: self.notification_property,
                 glue_version: self.glue_version,
                 code_gen_configuration_nodes: self.code_gen_configuration_nodes,
+                execution_class: self.execution_class,
             }
         }
     }

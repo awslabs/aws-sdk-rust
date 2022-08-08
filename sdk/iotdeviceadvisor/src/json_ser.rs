@@ -107,6 +107,11 @@ pub fn serialize_structure_crate_model_suite_definition_configuration(
             .key("intendedForQualification")
             .boolean(input.intended_for_qualification);
     }
+    if input.is_long_duration_test {
+        object
+            .key("isLongDurationTest")
+            .boolean(input.is_long_duration_test);
+    }
     if let Some(var_25) = &input.root_group {
         object.key("rootGroup").string(var_25.as_str());
     }
@@ -115,6 +120,9 @@ pub fn serialize_structure_crate_model_suite_definition_configuration(
             .key("devicePermissionRoleArn")
             .string(var_26.as_str());
     }
+    if let Some(var_27) = &input.protocol {
+        object.key("protocol").string(var_27.as_str());
+    }
     Ok(())
 }
 
@@ -122,19 +130,19 @@ pub fn serialize_structure_crate_model_suite_run_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SuiteRunConfiguration,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_27) = &input.primary_device {
-        let mut object_28 = object.key("primaryDevice").start_object();
-        crate::json_ser::serialize_structure_crate_model_device_under_test(&mut object_28, var_27)?;
-        object_28.finish();
+    if let Some(var_28) = &input.primary_device {
+        let mut object_29 = object.key("primaryDevice").start_object();
+        crate::json_ser::serialize_structure_crate_model_device_under_test(&mut object_29, var_28)?;
+        object_29.finish();
     }
-    if let Some(var_29) = &input.selected_test_list {
-        let mut array_30 = object.key("selectedTestList").start_array();
-        for item_31 in var_29 {
+    if let Some(var_30) = &input.selected_test_list {
+        let mut array_31 = object.key("selectedTestList").start_array();
+        for item_32 in var_30 {
             {
-                array_30.value().string(item_31.as_str());
+                array_31.value().string(item_32.as_str());
             }
         }
-        array_30.finish();
+        array_31.finish();
     }
     if input.parallel_run {
         object.key("parallelRun").boolean(input.parallel_run);
@@ -146,11 +154,11 @@ pub fn serialize_structure_crate_model_device_under_test(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::DeviceUnderTest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_32) = &input.thing_arn {
-        object.key("thingArn").string(var_32.as_str());
+    if let Some(var_33) = &input.thing_arn {
+        object.key("thingArn").string(var_33.as_str());
     }
-    if let Some(var_33) = &input.certificate_arn {
-        object.key("certificateArn").string(var_33.as_str());
+    if let Some(var_34) = &input.certificate_arn {
+        object.key("certificateArn").string(var_34.as_str());
     }
     Ok(())
 }

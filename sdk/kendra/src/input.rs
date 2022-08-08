@@ -6193,12 +6193,12 @@ pub mod list_access_control_configurations_input {
             self.index_id = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        /// <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+        /// <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -12466,7 +12466,7 @@ impl std::fmt::Debug for ListDataSourcesInput {
 pub struct ListAccessControlConfigurationsInput {
     /// <p>The identifier of the index for the access control configuration.</p>
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    /// <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of access control configurations to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -12476,7 +12476,7 @@ impl ListAccessControlConfigurationsInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
+    /// <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

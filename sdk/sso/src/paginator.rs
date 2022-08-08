@@ -22,6 +22,14 @@ impl ListAccountRolesPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `role_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListAccountRolesPaginatorItems {
+        crate::paginator::ListAccountRolesPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -109,6 +117,14 @@ impl ListAccountsPaginator {
         self
     }
 
+    /// Create a flattened paginator
+    ///
+    /// This paginator automatically flattens results using `account_list`. Queries to the underlying service
+    /// are dispatched lazily.
+    pub fn items(self) -> crate::paginator::ListAccountsPaginatorItems {
+        crate::paginator::ListAccountsPaginatorItems(self)
+    }
+
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
@@ -169,6 +185,60 @@ impl ListAccountsPaginator {
                     }
                 }
             })
+        })
+    }
+}
+
+/// Flattened paginator for `ListAccountRolesPaginator`
+///
+/// This is created with [`.items()`](ListAccountRolesPaginator::items)
+pub struct ListAccountRolesPaginatorItems(ListAccountRolesPaginator);
+
+impl ListAccountRolesPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::RoleInfo,
+            aws_smithy_http::result::SdkError<crate::error::ListAccountRolesError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_account_roles_output_role_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
+    }
+}
+
+/// Flattened paginator for `ListAccountsPaginator`
+///
+/// This is created with [`.items()`](ListAccountsPaginator::items)
+pub struct ListAccountsPaginatorItems(ListAccountsPaginator);
+
+impl ListAccountsPaginatorItems {
+    /// Create the pagination stream
+    ///
+    /// _Note: No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next))._
+    ///
+    /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](tokio_stream::StreamExt::collect).
+    pub fn send(
+        self,
+    ) -> impl tokio_stream::Stream<
+        Item = std::result::Result<
+            crate::model::AccountInfo,
+            aws_smithy_http::result::SdkError<crate::error::ListAccountsError>,
+        >,
+    > + Unpin {
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_structure_crate_output_list_accounts_output_account_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

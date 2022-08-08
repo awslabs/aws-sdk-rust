@@ -299,6 +299,7 @@ impl Client {
     ///   - [`model_version(impl Into<String>)`](crate::client::fluent_builders::StartModel::model_version) / [`set_model_version(Option<String>)`](crate::client::fluent_builders::StartModel::set_model_version): <p>The version of the model that you want to start.</p>
     ///   - [`min_inference_units(i32)`](crate::client::fluent_builders::StartModel::min_inference_units) / [`set_min_inference_units(Option<i32>)`](crate::client::fluent_builders::StartModel::set_min_inference_units): <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartModel::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartModel::set_client_token): <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
+    ///   - [`max_inference_units(i32)`](crate::client::fluent_builders::StartModel::max_inference_units) / [`set_max_inference_units(Option<i32>)`](crate::client::fluent_builders::StartModel::set_max_inference_units): <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
     /// - On success, responds with [`StartModelOutput`](crate::output::StartModelOutput) with field(s):
     ///   - [`status(Option<ModelHostingStatus>)`](crate::output::StartModelOutput::status): <p>The current running status of the model.</p>
     /// - On failure, responds with [`SdkError<StartModelError>`](crate::error::StartModelError)
@@ -1151,9 +1152,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetectAnomalies`.
     ///
     /// <p>Detects anomalies in an image that you supply. </p>
-    /// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction.</p> <note>
+    /// <p>The response from <code>DetectAnomalies</code> includes a boolean prediction that the image contains one or more anomalies and a confidence value for the prediction. If the model is an image segmentation model, the response also includes segmentation information for each type of anomaly found in the image.</p> <note>
     /// <p>Before calling <code>DetectAnomalies</code>, you must first start your model with the <code>StartModel</code> operation. You are charged for the amount of time, in minutes, that a model runs and for the number of anomaly detection units that your model uses. If you are not using a model, use the <code>StopModel</code> operation to stop your model. </p>
     /// </note>
+    /// <p>For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout for Vision developer guide.</p>
     /// <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>
     #[derive(std::fmt::Debug)]
     pub struct DetectAnomalies {
@@ -1557,7 +1559,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProjects`.
     ///
-    /// <p>Lists the Amazon Lookout for Vision projects in your AWS account.</p>
+    /// <p>Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS Region in which you call <code>ListProjects</code>.</p>
     /// <p>The <code>ListProjects</code> operation is eventually consistent. Recent calls to <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear in the response from <code>ListProjects</code>.</p>
     /// <p>This operation requires permissions to perform the <code>lookoutvision:ListProjects</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1772,6 +1774,16 @@ pub mod fluent_builders {
         /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
+            self
+        }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+        pub fn max_inference_units(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_inference_units(input);
+            self
+        }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+        pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_inference_units(input);
             self
         }
     }

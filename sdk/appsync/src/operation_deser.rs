@@ -2057,6 +2057,101 @@ pub fn parse_disassociate_api_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_evaluate_mapping_template_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EvaluateMappingTemplateOutput,
+    crate::error::EvaluateMappingTemplateError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::EvaluateMappingTemplateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::EvaluateMappingTemplateError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::EvaluateMappingTemplateError {
+            meta: generic,
+            kind: crate::error::EvaluateMappingTemplateErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateMappingTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "BadRequestException" => crate::error::EvaluateMappingTemplateError {
+            meta: generic,
+            kind: crate::error::EvaluateMappingTemplateErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateMappingTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::EvaluateMappingTemplateError {
+            meta: generic,
+            kind: crate::error::EvaluateMappingTemplateErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EvaluateMappingTemplateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::EvaluateMappingTemplateError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_evaluate_mapping_template_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::EvaluateMappingTemplateOutput,
+    crate::error::EvaluateMappingTemplateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::evaluate_mapping_template_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_evaluate_mapping_template(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::EvaluateMappingTemplateError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_flush_api_cache_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::FlushApiCacheOutput, crate::error::FlushApiCacheError> {

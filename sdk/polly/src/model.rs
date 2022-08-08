@@ -82,6 +82,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Justin,
     #[allow(missing_docs)] // documentation missing in model
+    Kajal,
+    #[allow(missing_docs)] // documentation missing in model
     Karl,
     #[allow(missing_docs)] // documentation missing in model
     Kendra,
@@ -194,6 +196,7 @@ impl std::convert::From<&str> for VoiceId {
             "Joanna" => VoiceId::Joanna,
             "Joey" => VoiceId::Joey,
             "Justin" => VoiceId::Justin,
+            "Kajal" => VoiceId::Kajal,
             "Karl" => VoiceId::Karl,
             "Kendra" => VoiceId::Kendra,
             "Kevin" => VoiceId::Kevin,
@@ -280,6 +283,7 @@ impl VoiceId {
             VoiceId::Joanna => "Joanna",
             VoiceId::Joey => "Joey",
             VoiceId::Justin => "Justin",
+            VoiceId::Kajal => "Kajal",
             VoiceId::Karl => "Karl",
             VoiceId::Kendra => "Kendra",
             VoiceId::Kevin => "Kevin",
@@ -357,6 +361,7 @@ impl VoiceId {
             "Joanna",
             "Joey",
             "Justin",
+            "Kajal",
             "Karl",
             "Kendra",
             "Kevin",

@@ -27,7 +27,7 @@ version = "0.46.0"
 [dependencies.aws-sdk-kms]
 default-features = false
 path = "../../sdk/kms"
-version = "0.16.0"
+version = "0.17.0"
 
 [dependencies.tokio]
 version = "1"

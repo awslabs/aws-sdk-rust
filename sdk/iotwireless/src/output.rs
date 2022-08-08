@@ -3405,6 +3405,9 @@ pub struct GetResourceEventConfigurationOutput {
     pub join: std::option::Option<crate::model::JoinEventConfiguration>,
     /// <p>Event configuration for the connection status event.</p>
     pub connection_status: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub message_delivery_status:
+        std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
 }
 impl GetResourceEventConfigurationOutput {
     /// <p>Event configuration for the device registration state event.</p>
@@ -3427,6 +3430,12 @@ impl GetResourceEventConfigurationOutput {
     ) -> std::option::Option<&crate::model::ConnectionStatusEventConfiguration> {
         self.connection_status.as_ref()
     }
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub fn message_delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageDeliveryStatusEventConfiguration> {
+        self.message_delivery_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetResourceEventConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3435,6 +3444,7 @@ impl std::fmt::Debug for GetResourceEventConfigurationOutput {
         formatter.field("proximity", &self.proximity);
         formatter.field("join", &self.join);
         formatter.field("connection_status", &self.connection_status);
+        formatter.field("message_delivery_status", &self.message_delivery_status);
         formatter.finish()
     }
 }
@@ -3450,6 +3460,8 @@ pub mod get_resource_event_configuration_output {
         pub(crate) join: std::option::Option<crate::model::JoinEventConfiguration>,
         pub(crate) connection_status:
             std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
+        pub(crate) message_delivery_status:
+            std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
     }
     impl Builder {
         /// <p>Event configuration for the device registration state event.</p>
@@ -3510,6 +3522,22 @@ pub mod get_resource_event_configuration_output {
             self.connection_status = input;
             self
         }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusEventConfiguration,
+        ) -> Self {
+            self.message_delivery_status = Some(input);
+            self
+        }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        ) -> Self {
+            self.message_delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
         pub fn build(self) -> crate::output::GetResourceEventConfigurationOutput {
             crate::output::GetResourceEventConfigurationOutput {
@@ -3517,6 +3545,7 @@ pub mod get_resource_event_configuration_output {
                 proximity: self.proximity,
                 join: self.join,
                 connection_status: self.connection_status,
+                message_delivery_status: self.message_delivery_status,
             }
         }
     }
@@ -4615,6 +4644,9 @@ pub struct GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the connection status event.</p>
     pub connection_status:
         std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+    /// <p>Resource type event configuration object for the message delivery status event.</p>
+    pub message_delivery_status:
+        std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
 }
 impl GetEventConfigurationByResourceTypesOutput {
     /// <p>Resource type event configuration for the device registration state event.</p>
@@ -4640,6 +4672,13 @@ impl GetEventConfigurationByResourceTypesOutput {
     ) -> std::option::Option<&crate::model::ConnectionStatusResourceTypeEventConfiguration> {
         self.connection_status.as_ref()
     }
+    /// <p>Resource type event configuration object for the message delivery status event.</p>
+    pub fn message_delivery_status(
+        &self,
+    ) -> std::option::Option<&crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>
+    {
+        self.message_delivery_status.as_ref()
+    }
 }
 impl std::fmt::Debug for GetEventConfigurationByResourceTypesOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4648,6 +4687,7 @@ impl std::fmt::Debug for GetEventConfigurationByResourceTypesOutput {
         formatter.field("proximity", &self.proximity);
         formatter.field("join", &self.join);
         formatter.field("connection_status", &self.connection_status);
+        formatter.field("message_delivery_status", &self.message_delivery_status);
         formatter.finish()
     }
 }
@@ -4665,6 +4705,8 @@ pub mod get_event_configuration_by_resource_types_output {
         pub(crate) join: std::option::Option<crate::model::JoinResourceTypeEventConfiguration>,
         pub(crate) connection_status:
             std::option::Option<crate::model::ConnectionStatusResourceTypeEventConfiguration>,
+        pub(crate) message_delivery_status:
+            std::option::Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
     }
     impl Builder {
         /// <p>Resource type event configuration for the device registration state event.</p>
@@ -4732,6 +4774,24 @@ pub mod get_event_configuration_by_resource_types_output {
             self.connection_status = input;
             self
         }
+        /// <p>Resource type event configuration object for the message delivery status event.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+        ) -> Self {
+            self.message_delivery_status = Some(input);
+            self
+        }
+        /// <p>Resource type event configuration object for the message delivery status event.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<
+                crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+            >,
+        ) -> Self {
+            self.message_delivery_status = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
         pub fn build(self) -> crate::output::GetEventConfigurationByResourceTypesOutput {
             crate::output::GetEventConfigurationByResourceTypesOutput {
@@ -4739,6 +4799,7 @@ pub mod get_event_configuration_by_resource_types_output {
                 proximity: self.proximity,
                 join: self.join,
                 connection_status: self.connection_status,
+                message_delivery_status: self.message_delivery_status,
             }
         }
     }

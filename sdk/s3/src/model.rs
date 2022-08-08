@@ -380,6 +380,14 @@ pub struct CopyPartResult {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Date and time at which the object was uploaded.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl CopyPartResult {
     /// <p>Entity tag of the object.</p>
@@ -390,12 +398,32 @@ impl CopyPartResult {
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyPartResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyPartResult");
         formatter.field("e_tag", &self.e_tag);
         formatter.field("last_modified", &self.last_modified);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.finish()
     }
 }
@@ -407,6 +435,10 @@ pub mod copy_part_result {
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Entity tag of the object.</p>
@@ -432,11 +464,67 @@ pub mod copy_part_result {
             self.last_modified = input;
             self
         }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CopyPartResult`](crate::model::CopyPartResult).
         pub fn build(self) -> crate::model::CopyPartResult {
             crate::model::CopyPartResult {
                 e_tag: self.e_tag,
                 last_modified: self.last_modified,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
             }
         }
     }
@@ -450,8 +538,8 @@ impl CopyPartResult {
 
 /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
 /// owners need not specify this parameter in their requests. For information about downloading
-/// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-/// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
+/// Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -497,6 +585,69 @@ impl RequestPayer {
     }
 }
 impl AsRef<str> for RequestPayer {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ChecksumAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
+    Crc32,
+    #[allow(missing_docs)] // documentation missing in model
+    Crc32C,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha1,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha256,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ChecksumAlgorithm {
+    fn from(s: &str) -> Self {
+        match s {
+            "CRC32" => ChecksumAlgorithm::Crc32,
+            "CRC32C" => ChecksumAlgorithm::Crc32C,
+            "SHA1" => ChecksumAlgorithm::Sha1,
+            "SHA256" => ChecksumAlgorithm::Sha256,
+            other => ChecksumAlgorithm::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ChecksumAlgorithm {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChecksumAlgorithm::from(s))
+    }
+}
+impl ChecksumAlgorithm {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChecksumAlgorithm::Crc32 => "CRC32",
+            ChecksumAlgorithm::Crc32C => "CRC32C",
+            ChecksumAlgorithm::Sha1 => "SHA1",
+            ChecksumAlgorithm::Sha256 => "SHA256",
+            ChecksumAlgorithm::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CRC32", "CRC32C", "SHA1", "SHA256"]
+    }
+}
+impl AsRef<str> for ChecksumAlgorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -1008,7 +1159,7 @@ impl RecordsEvent {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
     /// <scanrange>
     /// <start>
     /// 50
@@ -1024,7 +1175,7 @@ pub struct ScanRange {
     pub end: i64,
 }
 impl ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
     /// <scanrange>
     /// <start>
     /// 50
@@ -1061,7 +1212,7 @@ pub mod scan_range {
         pub(crate) end: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
         /// <scanrange>
         /// <start>
         /// 50
@@ -1071,7 +1222,7 @@ pub mod scan_range {
             self.start = Some(input);
             self
         }
-        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
         /// <scanrange>
         /// <start>
         /// 50
@@ -1791,7 +1942,7 @@ pub struct CsvInput {
     pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
     pub comments: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
     pub quote_escape_character: std::option::Option<std::string::String>,
     /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub record_delimiter: std::option::Option<std::string::String>,
@@ -1819,7 +1970,7 @@ impl CsvInput {
     pub fn comments(&self) -> std::option::Option<&str> {
         self.comments.as_deref()
     }
-    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
     pub fn quote_escape_character(&self) -> std::option::Option<&str> {
         self.quote_escape_character.as_deref()
     }
@@ -1907,12 +2058,12 @@ pub mod csv_input {
             self.comments = input;
             self
         }
-        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
         pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_escape_character = Some(input.into());
             self
         }
-        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value <code>""" a , b """</code> is parsed as <code>" a , b "</code>.</p>
         pub fn set_quote_escape_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3679,7 +3830,7 @@ impl GlacierJobParameters {
 pub struct PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p>PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public.</p> </li>
     /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
@@ -3698,7 +3849,7 @@ pub struct PublicAccessBlockConfiguration {
 impl PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p>PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public.</p> </li>
     /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
@@ -3746,7 +3897,7 @@ pub mod public_access_block_configuration {
     impl Builder {
         /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p>PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public.</p> </li>
         /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
         /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
@@ -3757,7 +3908,7 @@ pub mod public_access_block_configuration {
         }
         /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p>PUT Bucket ACL and PUT Object ACL calls fail if the specified ACL is public.</p> </li>
         /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
         /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
@@ -4241,15 +4392,15 @@ impl AsRef<str> for ObjectLockEnabled {
     }
 }
 
-/// <p>A Legal Hold configuration for an object.</p>
+/// <p>A legal hold configuration for an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockLegalHold {
-    /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
+    /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHold {
-    /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
+    /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
@@ -4270,12 +4421,12 @@ pub mod object_lock_legal_hold {
         pub(crate) status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
     }
     impl Builder {
-        /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
+        /// <p>Indicates whether the specified object has a legal hold in place.</p>
         pub fn status(mut self, input: crate::model::ObjectLockLegalHoldStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
+        /// <p>Indicates whether the specified object has a legal hold in place.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -8513,7 +8664,7 @@ pub struct MetricsAndOperator {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags used when evaluating an AND predicate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The access point ARN used when evaluating an AND predicate.</p>
+    /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl MetricsAndOperator {
@@ -8525,7 +8676,7 @@ impl MetricsAndOperator {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The access point ARN used when evaluating an AND predicate.</p>
+    /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
         self.access_point_arn.as_deref()
     }
@@ -8579,12 +8730,12 @@ pub mod metrics_and_operator {
             self.tags = input;
             self
         }
-        /// <p>The access point ARN used when evaluating an AND predicate.</p>
+        /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_arn = Some(input.into());
             self
         }
-        /// <p>The access point ARN used when evaluating an AND predicate.</p>
+        /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
         pub fn set_access_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8986,7 +9137,7 @@ pub struct LifecycleRule {
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
+    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
     pub filter: std::option::Option<crate::model::LifecycleRuleFilter>,
     /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
     pub status: std::option::Option<crate::model::ExpirationStatus>,
@@ -9017,7 +9168,7 @@ impl LifecycleRule {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
+    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::LifecycleRuleFilter> {
         self.filter.as_ref()
     }
@@ -9129,12 +9280,12 @@ pub mod lifecycle_rule {
             self.prefix = input;
             self
         }
-        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
+        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
         pub fn filter(mut self, input: crate::model::LifecycleRuleFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
+        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not contain a <code>Prefix</code> element.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::LifecycleRuleFilter>,
@@ -9309,13 +9460,13 @@ impl AbortIncompleteMultipartUpload {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionExpiration {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionExpiration {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn noncurrent_days(&self) -> i32 {
         self.noncurrent_days
     }
@@ -9342,12 +9493,12 @@ pub mod noncurrent_version_expiration {
         pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn noncurrent_days(mut self, input: i32) -> Self {
             self.noncurrent_days = Some(input);
             self
         }
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. The value must be a non-zero positive integer. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
             self.noncurrent_days = input;
             self
@@ -10341,6 +10492,8 @@ pub enum InventoryOptionalField {
     #[allow(missing_docs)] // documentation missing in model
     BucketKeyStatus,
     #[allow(missing_docs)] // documentation missing in model
+    ChecksumAlgorithm,
+    #[allow(missing_docs)] // documentation missing in model
     ETag,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionStatus,
@@ -10369,6 +10522,7 @@ impl std::convert::From<&str> for InventoryOptionalField {
     fn from(s: &str) -> Self {
         match s {
             "BucketKeyStatus" => InventoryOptionalField::BucketKeyStatus,
+            "ChecksumAlgorithm" => InventoryOptionalField::ChecksumAlgorithm,
             "ETag" => InventoryOptionalField::ETag,
             "EncryptionStatus" => InventoryOptionalField::EncryptionStatus,
             "IntelligentTieringAccessTier" => InventoryOptionalField::IntelligentTieringAccessTier,
@@ -10396,6 +10550,7 @@ impl InventoryOptionalField {
     pub fn as_str(&self) -> &str {
         match self {
             InventoryOptionalField::BucketKeyStatus => "BucketKeyStatus",
+            InventoryOptionalField::ChecksumAlgorithm => "ChecksumAlgorithm",
             InventoryOptionalField::ETag => "ETag",
             InventoryOptionalField::EncryptionStatus => "EncryptionStatus",
             InventoryOptionalField::IntelligentTieringAccessTier => "IntelligentTieringAccessTier",
@@ -10414,6 +10569,7 @@ impl InventoryOptionalField {
     pub fn values() -> &'static [&'static str] {
         &[
             "BucketKeyStatus",
+            "ChecksumAlgorithm",
             "ETag",
             "EncryptionStatus",
             "IntelligentTieringAccessTier",
@@ -12923,6 +13079,14 @@ pub struct Part {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
     pub size: i64,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl Part {
     /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
@@ -12941,6 +13105,22 @@ impl Part {
     pub fn size(&self) -> i64 {
         self.size
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
 }
 impl std::fmt::Debug for Part {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12949,6 +13129,10 @@ impl std::fmt::Debug for Part {
         formatter.field("last_modified", &self.last_modified);
         formatter.field("e_tag", &self.e_tag);
         formatter.field("size", &self.size);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.finish()
     }
 }
@@ -12962,6 +13146,10 @@ pub mod part {
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i64>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
@@ -13007,6 +13195,58 @@ pub mod part {
             self.size = input;
             self
         }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Part`](crate::model::Part).
         pub fn build(self) -> crate::model::Part {
             crate::model::Part {
@@ -13014,6 +13254,10 @@ pub mod part {
                 last_modified: self.last_modified,
                 e_tag: self.e_tag,
                 size: self.size.unwrap_or_default(),
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
             }
         }
     }
@@ -13273,6 +13517,8 @@ impl DeleteMarkerEntry {
 pub struct ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub checksum_algorithm: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object.</p>
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
@@ -13292,6 +13538,10 @@ impl ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&[crate::model::ChecksumAlgorithm]> {
+        self.checksum_algorithm.as_deref()
     }
     /// <p>Size in bytes of the object.</p>
     pub fn size(&self) -> i64 {
@@ -13326,6 +13576,7 @@ impl std::fmt::Debug for ObjectVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ObjectVersion");
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("size", &self.size);
         formatter.field("storage_class", &self.storage_class);
         formatter.field("key", &self.key);
@@ -13343,6 +13594,8 @@ pub mod object_version {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm:
+            std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
         pub(crate) size: std::option::Option<i64>,
         pub(crate) storage_class: std::option::Option<crate::model::ObjectVersionStorageClass>,
         pub(crate) key: std::option::Option<std::string::String>,
@@ -13360,6 +13613,25 @@ pub mod object_version {
         /// <p>The entity tag is an MD5 hash of that version of the object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// Appends an item to `checksum_algorithm`.
+        ///
+        /// To override the contents of this collection use [`set_checksum_algorithm`](Self::set_checksum_algorithm).
+        ///
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            let mut v = self.checksum_algorithm.unwrap_or_default();
+            v.push(input);
+            self.checksum_algorithm = Some(v);
+            self
+        }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Size in bytes of the object.</p>
@@ -13442,6 +13714,7 @@ pub mod object_version {
         pub fn build(self) -> crate::model::ObjectVersion {
             crate::model::ObjectVersion {
                 e_tag: self.e_tag,
+                checksum_algorithm: self.checksum_algorithm,
                 size: self.size.unwrap_or_default(),
                 storage_class: self.storage_class,
                 key: self.key,
@@ -13523,9 +13796,11 @@ pub struct Object {
     /// <ul>
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub checksum_algorithm: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object</p>
     pub size: i64,
     /// <p>The class of storage used to store the object.</p>
@@ -13546,10 +13821,14 @@ impl Object {
     /// <ul>
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
     /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
-    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
     /// </ul>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&[crate::model::ChecksumAlgorithm]> {
+        self.checksum_algorithm.as_deref()
     }
     /// <p>Size in bytes of the object</p>
     pub fn size(&self) -> i64 {
@@ -13570,6 +13849,7 @@ impl std::fmt::Debug for Object {
         formatter.field("key", &self.key);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("size", &self.size);
         formatter.field("storage_class", &self.storage_class);
         formatter.field("owner", &self.owner);
@@ -13585,6 +13865,8 @@ pub mod object {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_algorithm:
+            std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
         pub(crate) size: std::option::Option<i64>,
         pub(crate) storage_class: std::option::Option<crate::model::ObjectStorageClass>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
@@ -13617,7 +13899,7 @@ pub mod object {
         /// <ul>
         /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
         /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
-        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
+        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
         /// </ul>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
@@ -13627,10 +13909,29 @@ pub mod object {
         /// <ul>
         /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
         /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
-        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
+        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
         /// </ul>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// Appends an item to `checksum_algorithm`.
+        ///
+        /// To override the contents of this collection use [`set_checksum_algorithm`](Self::set_checksum_algorithm).
+        ///
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            let mut v = self.checksum_algorithm.unwrap_or_default();
+            v.push(input);
+            self.checksum_algorithm = Some(v);
+            self
+        }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChecksumAlgorithm>>,
+        ) -> Self {
+            self.checksum_algorithm = input;
             self
         }
         /// <p>Size in bytes of the object</p>
@@ -13672,6 +13973,7 @@ pub mod object {
                 key: self.key,
                 last_modified: self.last_modified,
                 e_tag: self.e_tag,
+                checksum_algorithm: self.checksum_algorithm,
                 size: self.size.unwrap_or_default(),
                 storage_class: self.storage_class,
                 owner: self.owner,
@@ -13795,6 +14097,8 @@ pub struct MultipartUpload {
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>Identifies who initiated the multipart upload.</p>
     pub initiator: std::option::Option<crate::model::Initiator>,
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl MultipartUpload {
     /// <p>Upload ID that identifies the multipart upload.</p>
@@ -13821,6 +14125,10 @@ impl MultipartUpload {
     pub fn initiator(&self) -> std::option::Option<&crate::model::Initiator> {
         self.initiator.as_ref()
     }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for MultipartUpload {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13831,6 +14139,7 @@ impl std::fmt::Debug for MultipartUpload {
         formatter.field("storage_class", &self.storage_class);
         formatter.field("owner", &self.owner);
         formatter.field("initiator", &self.initiator);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -13846,6 +14155,7 @@ pub mod multipart_upload {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) initiator: std::option::Option<crate::model::Initiator>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>Upload ID that identifies the multipart upload.</p>
@@ -13917,6 +14227,19 @@ pub mod multipart_upload {
             self.initiator = input;
             self
         }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// Consumes the builder and constructs a [`MultipartUpload`](crate::model::MultipartUpload).
         pub fn build(self) -> crate::model::MultipartUpload {
             crate::model::MultipartUpload {
@@ -13926,6 +14249,7 @@ pub mod multipart_upload {
                 storage_class: self.storage_class,
                 owner: self.owner,
                 initiator: self.initiator,
+                checksum_algorithm: self.checksum_algorithm,
             }
         }
     }
@@ -14063,6 +14387,578 @@ impl ArchiveStatus {
     }
 }
 impl AsRef<str> for ArchiveStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ChecksumMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ChecksumMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENABLED" => ChecksumMode::Enabled,
+            other => ChecksumMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ChecksumMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChecksumMode::from(s))
+    }
+}
+impl ChecksumMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChecksumMode::Enabled => "ENABLED",
+            ChecksumMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ENABLED"]
+    }
+}
+impl AsRef<str> for ChecksumMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>A collection of parts associated with a multipart upload.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetObjectAttributesParts {
+    /// <p>The total number of parts.</p>
+    pub total_parts_count: i32,
+    /// <p>The marker for the current part.</p>
+    pub part_number_marker: std::option::Option<std::string::String>,
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+    pub next_part_number_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of parts allowed in the response.</p>
+    pub max_parts: i32,
+    /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+    pub is_truncated: bool,
+    /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+    pub parts: std::option::Option<std::vec::Vec<crate::model::ObjectPart>>,
+}
+impl GetObjectAttributesParts {
+    /// <p>The total number of parts.</p>
+    pub fn total_parts_count(&self) -> i32 {
+        self.total_parts_count
+    }
+    /// <p>The marker for the current part.</p>
+    pub fn part_number_marker(&self) -> std::option::Option<&str> {
+        self.part_number_marker.as_deref()
+    }
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+    pub fn next_part_number_marker(&self) -> std::option::Option<&str> {
+        self.next_part_number_marker.as_deref()
+    }
+    /// <p>The maximum number of parts allowed in the response.</p>
+    pub fn max_parts(&self) -> i32 {
+        self.max_parts
+    }
+    /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+    pub fn is_truncated(&self) -> bool {
+        self.is_truncated
+    }
+    /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+    pub fn parts(&self) -> std::option::Option<&[crate::model::ObjectPart]> {
+        self.parts.as_deref()
+    }
+}
+impl std::fmt::Debug for GetObjectAttributesParts {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetObjectAttributesParts");
+        formatter.field("total_parts_count", &self.total_parts_count);
+        formatter.field("part_number_marker", &self.part_number_marker);
+        formatter.field("next_part_number_marker", &self.next_part_number_marker);
+        formatter.field("max_parts", &self.max_parts);
+        formatter.field("is_truncated", &self.is_truncated);
+        formatter.field("parts", &self.parts);
+        formatter.finish()
+    }
+}
+/// See [`GetObjectAttributesParts`](crate::model::GetObjectAttributesParts).
+pub mod get_object_attributes_parts {
+
+    /// A builder for [`GetObjectAttributesParts`](crate::model::GetObjectAttributesParts).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) total_parts_count: std::option::Option<i32>,
+        pub(crate) part_number_marker: std::option::Option<std::string::String>,
+        pub(crate) next_part_number_marker: std::option::Option<std::string::String>,
+        pub(crate) max_parts: std::option::Option<i32>,
+        pub(crate) is_truncated: std::option::Option<bool>,
+        pub(crate) parts: std::option::Option<std::vec::Vec<crate::model::ObjectPart>>,
+    }
+    impl Builder {
+        /// <p>The total number of parts.</p>
+        pub fn total_parts_count(mut self, input: i32) -> Self {
+            self.total_parts_count = Some(input);
+            self
+        }
+        /// <p>The total number of parts.</p>
+        pub fn set_total_parts_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_parts_count = input;
+            self
+        }
+        /// <p>The marker for the current part.</p>
+        pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.part_number_marker = Some(input.into());
+            self
+        }
+        /// <p>The marker for the current part.</p>
+        pub fn set_part_number_marker(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.part_number_marker = input;
+            self
+        }
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+        pub fn next_part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_part_number_marker = Some(input.into());
+            self
+        }
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
+        pub fn set_next_part_number_marker(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_part_number_marker = input;
+            self
+        }
+        /// <p>The maximum number of parts allowed in the response.</p>
+        pub fn max_parts(mut self, input: i32) -> Self {
+            self.max_parts = Some(input);
+            self
+        }
+        /// <p>The maximum number of parts allowed in the response.</p>
+        pub fn set_max_parts(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_parts = input;
+            self
+        }
+        /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
+            self
+        }
+        /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
+            self
+        }
+        /// Appends an item to `parts`.
+        ///
+        /// To override the contents of this collection use [`set_parts`](Self::set_parts).
+        ///
+        /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+        pub fn parts(mut self, input: crate::model::ObjectPart) -> Self {
+            let mut v = self.parts.unwrap_or_default();
+            v.push(input);
+            self.parts = Some(v);
+            self
+        }
+        /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
+        pub fn set_parts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ObjectPart>>,
+        ) -> Self {
+            self.parts = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetObjectAttributesParts`](crate::model::GetObjectAttributesParts).
+        pub fn build(self) -> crate::model::GetObjectAttributesParts {
+            crate::model::GetObjectAttributesParts {
+                total_parts_count: self.total_parts_count.unwrap_or_default(),
+                part_number_marker: self.part_number_marker,
+                next_part_number_marker: self.next_part_number_marker,
+                max_parts: self.max_parts.unwrap_or_default(),
+                is_truncated: self.is_truncated.unwrap_or_default(),
+                parts: self.parts,
+            }
+        }
+    }
+}
+impl GetObjectAttributesParts {
+    /// Creates a new builder-style object to manufacture [`GetObjectAttributesParts`](crate::model::GetObjectAttributesParts).
+    pub fn builder() -> crate::model::get_object_attributes_parts::Builder {
+        crate::model::get_object_attributes_parts::Builder::default()
+    }
+}
+
+/// <p>A container for elements related to an individual part.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ObjectPart {
+    /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
+    pub part_number: i32,
+    /// <p>The size of the uploaded part in bytes.</p>
+    pub size: i64,
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
+}
+impl ObjectPart {
+    /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
+    pub fn part_number(&self) -> i32 {
+        self.part_number
+    }
+    /// <p>The size of the uploaded part in bytes.</p>
+    pub fn size(&self) -> i64 {
+        self.size
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
+}
+impl std::fmt::Debug for ObjectPart {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ObjectPart");
+        formatter.field("part_number", &self.part_number);
+        formatter.field("size", &self.size);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.finish()
+    }
+}
+/// See [`ObjectPart`](crate::model::ObjectPart).
+pub mod object_part {
+
+    /// A builder for [`ObjectPart`](crate::model::ObjectPart).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) part_number: std::option::Option<i32>,
+        pub(crate) size: std::option::Option<i64>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
+            self
+        }
+        /// <p>The part number identifying the part. This value is a positive integer between 1 and 10,000.</p>
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
+            self
+        }
+        /// <p>The size of the uploaded part in bytes.</p>
+        pub fn size(mut self, input: i64) -> Self {
+            self.size = Some(input);
+            self
+        }
+        /// <p>The size of the uploaded part in bytes.</p>
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.size = input;
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ObjectPart`](crate::model::ObjectPart).
+        pub fn build(self) -> crate::model::ObjectPart {
+            crate::model::ObjectPart {
+                part_number: self.part_number.unwrap_or_default(),
+                size: self.size.unwrap_or_default(),
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
+            }
+        }
+    }
+}
+impl ObjectPart {
+    /// Creates a new builder-style object to manufacture [`ObjectPart`](crate::model::ObjectPart).
+    pub fn builder() -> crate::model::object_part::Builder {
+        crate::model::object_part::Builder::default()
+    }
+}
+
+/// <p>Contains all the possible checksum or digest values for an object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Checksum {
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
+}
+impl Checksum {
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
+}
+impl std::fmt::Debug for Checksum {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Checksum");
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
+        formatter.finish()
+    }
+}
+/// See [`Checksum`](crate::model::Checksum).
+pub mod checksum {
+
+    /// A builder for [`Checksum`](crate::model::Checksum).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Checksum`](crate::model::Checksum).
+        pub fn build(self) -> crate::model::Checksum {
+            crate::model::Checksum {
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
+            }
+        }
+    }
+}
+impl Checksum {
+    /// Creates a new builder-style object to manufacture [`Checksum`](crate::model::Checksum).
+    pub fn builder() -> crate::model::checksum::Builder {
+        crate::model::checksum::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ObjectAttributes {
+    #[allow(missing_docs)] // documentation missing in model
+    Checksum,
+    #[allow(missing_docs)] // documentation missing in model
+    Etag,
+    #[allow(missing_docs)] // documentation missing in model
+    ObjectParts,
+    #[allow(missing_docs)] // documentation missing in model
+    ObjectSize,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageClass,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ObjectAttributes {
+    fn from(s: &str) -> Self {
+        match s {
+            "Checksum" => ObjectAttributes::Checksum,
+            "ETag" => ObjectAttributes::Etag,
+            "ObjectParts" => ObjectAttributes::ObjectParts,
+            "ObjectSize" => ObjectAttributes::ObjectSize,
+            "StorageClass" => ObjectAttributes::StorageClass,
+            other => ObjectAttributes::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ObjectAttributes {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ObjectAttributes::from(s))
+    }
+}
+impl ObjectAttributes {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ObjectAttributes::Checksum => "Checksum",
+            ObjectAttributes::Etag => "ETag",
+            ObjectAttributes::ObjectParts => "ObjectParts",
+            ObjectAttributes::ObjectSize => "ObjectSize",
+            ObjectAttributes::StorageClass => "StorageClass",
+            ObjectAttributes::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "Checksum",
+            "ETag",
+            "ObjectParts",
+            "ObjectSize",
+            "StorageClass",
+        ]
+    }
+}
+impl AsRef<str> for ObjectAttributes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -17288,6 +18184,14 @@ pub struct CopyObjectResult {
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
 }
 impl CopyObjectResult {
     /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
@@ -17298,12 +18202,32 @@ impl CopyObjectResult {
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
 }
 impl std::fmt::Debug for CopyObjectResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CopyObjectResult");
         formatter.field("e_tag", &self.e_tag);
         formatter.field("last_modified", &self.last_modified);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.finish()
     }
 }
@@ -17315,6 +18239,10 @@ pub mod copy_object_result {
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
@@ -17340,11 +18268,67 @@ pub mod copy_object_result {
             self.last_modified = input;
             self
         }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CopyObjectResult`](crate::model::CopyObjectResult).
         pub fn build(self) -> crate::model::CopyObjectResult {
             crate::model::CopyObjectResult {
                 e_tag: self.e_tag,
                 last_modified: self.last_modified,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
             }
         }
     }
@@ -17537,6 +18521,14 @@ impl CompletedMultipartUpload {
 pub struct CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
     pub part_number: i32,
 }
@@ -17544,6 +18536,22 @@ impl CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
@@ -17554,6 +18562,10 @@ impl std::fmt::Debug for CompletedPart {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CompletedPart");
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("part_number", &self.part_number);
         formatter.finish()
     }
@@ -17565,6 +18577,10 @@ pub mod completed_part {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) part_number: std::option::Option<i32>,
     }
     impl Builder {
@@ -17576,6 +18592,58 @@ pub mod completed_part {
         /// <p>Entity tag returned when the part was uploaded.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
@@ -17592,6 +18660,10 @@ pub mod completed_part {
         pub fn build(self) -> crate::model::CompletedPart {
             crate::model::CompletedPart {
                 e_tag: self.e_tag,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 part_number: self.part_number.unwrap_or_default(),
             }
         }

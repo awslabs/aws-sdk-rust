@@ -589,6 +589,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApi {
     }
 }
 
+/// Operation shape for `EvaluateMappingTemplate`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`evaluate_mapping_template`](crate::client::Client::evaluate_mapping_template).
+///
+/// See [`crate::client::fluent_builders::EvaluateMappingTemplate`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EvaluateMappingTemplate {
+    _private: (),
+}
+impl EvaluateMappingTemplate {
+    /// Creates a new builder-style object to manufacture [`EvaluateMappingTemplateInput`](crate::input::EvaluateMappingTemplateInput).
+    pub fn builder() -> crate::input::evaluate_mapping_template_input::Builder {
+        crate::input::evaluate_mapping_template_input::Builder::default()
+    }
+    /// Creates a new `EvaluateMappingTemplate` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EvaluateMappingTemplate {
+    type Output = std::result::Result<
+        crate::output::EvaluateMappingTemplateOutput,
+        crate::error::EvaluateMappingTemplateError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_evaluate_mapping_template_error(response)
+        } else {
+            crate::operation_deser::parse_evaluate_mapping_template_response(response)
+        }
+    }
+}
+
 /// Operation shape for `FlushApiCache`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

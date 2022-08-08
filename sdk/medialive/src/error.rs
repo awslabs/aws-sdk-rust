@@ -6570,6 +6570,173 @@ impl std::error::Error for PurchaseOfferingError {
     }
 }
 
+/// Error type for the `RebootInputDevice` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RebootInputDeviceError {
+    /// Kind of error that occurred.
+    pub kind: RebootInputDeviceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `RebootInputDevice` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RebootInputDeviceErrorKind {
+    /// Placeholder documentation for BadGatewayException
+    BadGatewayException(crate::error::BadGatewayException),
+    /// Placeholder documentation for BadRequestException
+    BadRequestException(crate::error::BadRequestException),
+    /// Placeholder documentation for ForbiddenException
+    ForbiddenException(crate::error::ForbiddenException),
+    /// Placeholder documentation for GatewayTimeoutException
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// Placeholder documentation for InternalServerErrorException
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// Placeholder documentation for NotFoundException
+    NotFoundException(crate::error::NotFoundException),
+    /// Placeholder documentation for TooManyRequestsException
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// Placeholder documentation for UnprocessableEntityException
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RebootInputDeviceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RebootInputDeviceErrorKind::BadGatewayException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::GatewayTimeoutException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::UnprocessableEntityException(_inner) => _inner.fmt(f),
+            RebootInputDeviceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for RebootInputDeviceError {
+    fn code(&self) -> Option<&str> {
+        RebootInputDeviceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RebootInputDeviceError {
+    /// Creates a new `RebootInputDeviceError`.
+    pub fn new(kind: RebootInputDeviceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `RebootInputDeviceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RebootInputDeviceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `RebootInputDeviceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RebootInputDeviceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::BadGatewayException`.
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::BadGatewayException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, RebootInputDeviceErrorKind::NotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `RebootInputDeviceErrorKind::UnprocessableEntityException`.
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootInputDeviceErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for RebootInputDeviceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RebootInputDeviceErrorKind::BadGatewayException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::BadRequestException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::ForbiddenException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::GatewayTimeoutException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::InternalServerErrorException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::NotFoundException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
+            RebootInputDeviceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `RejectInputDeviceTransfer` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6910,6 +7077,199 @@ impl std::error::Error for StartChannelError {
             StartChannelErrorKind::NotFoundException(_inner) => Some(_inner),
             StartChannelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             StartChannelErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `StartInputDeviceMaintenanceWindow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartInputDeviceMaintenanceWindowError {
+    /// Kind of error that occurred.
+    pub kind: StartInputDeviceMaintenanceWindowErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartInputDeviceMaintenanceWindow` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartInputDeviceMaintenanceWindowErrorKind {
+    /// Placeholder documentation for BadGatewayException
+    BadGatewayException(crate::error::BadGatewayException),
+    /// Placeholder documentation for BadRequestException
+    BadRequestException(crate::error::BadRequestException),
+    /// Placeholder documentation for ForbiddenException
+    ForbiddenException(crate::error::ForbiddenException),
+    /// Placeholder documentation for GatewayTimeoutException
+    GatewayTimeoutException(crate::error::GatewayTimeoutException),
+    /// Placeholder documentation for InternalServerErrorException
+    InternalServerErrorException(crate::error::InternalServerErrorException),
+    /// Placeholder documentation for NotFoundException
+    NotFoundException(crate::error::NotFoundException),
+    /// Placeholder documentation for TooManyRequestsException
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// Placeholder documentation for UnprocessableEntityException
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartInputDeviceMaintenanceWindowError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::BadRequestException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartInputDeviceMaintenanceWindowError {
+    fn code(&self) -> Option<&str> {
+        StartInputDeviceMaintenanceWindowError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartInputDeviceMaintenanceWindowError {
+    /// Creates a new `StartInputDeviceMaintenanceWindowError`.
+    pub fn new(
+        kind: StartInputDeviceMaintenanceWindowErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartInputDeviceMaintenanceWindowError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartInputDeviceMaintenanceWindowErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartInputDeviceMaintenanceWindowError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartInputDeviceMaintenanceWindowErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException`.
+    pub fn is_bad_gateway_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::BadRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException`.
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException`.
+    pub fn is_gateway_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException`.
+    pub fn is_internal_server_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::NotFoundException`.
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException`.
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for StartInputDeviceMaintenanceWindowError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException(_inner) => Some(_inner),
+            StartInputDeviceMaintenanceWindowErrorKind::BadRequestException(_inner) => Some(_inner),
+            StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException(_inner) => {
+                Some(_inner)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
+            StartInputDeviceMaintenanceWindowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

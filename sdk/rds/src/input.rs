@@ -1717,29 +1717,31 @@ pub mod copy_db_cluster_snapshot_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
-        /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed URL request must contain the following parameter values:</p>
+        /// <p>When you are copying a DB cluster snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API operation in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. Use the <code>PreSignedUrl</code> parameter when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
         /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
-        /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed URL request must contain the following parameter values:</p>
+        /// <p>When you are copying a DB cluster snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API operation in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. Use the <code>PreSignedUrl</code> parameter when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
         /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn set_pre_signed_url(
             mut self,
@@ -2144,7 +2146,7 @@ pub mod copy_db_snapshot_input {
         /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
         /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
         /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-        /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region, and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.</p>
+        /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
@@ -2162,7 +2164,7 @@ pub mod copy_db_snapshot_input {
         /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
         /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
         /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-        /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region, and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.</p>
+        /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
@@ -2255,31 +2257,33 @@ pub mod copy_db_snapshot_input {
             self.copy_tags = input;
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+        /// <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
         /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+        /// <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
         /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         pub fn set_pre_signed_url(
             mut self,
@@ -3510,32 +3514,32 @@ pub mod create_db_cluster_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
-        /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
-        /// <p>The pre-signed URL request must contain the following parameter values:</p>
+        /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
+        /// <p>The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will be created in.</p> </li>
         /// <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
-        /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
-        /// <p>The pre-signed URL request must contain the following parameter values:</p>
+        /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
+        /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
+        /// <p>The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will be created in.</p> </li>
         /// <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
         /// </note>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_pre_signed_url(
@@ -3546,14 +3550,14 @@ pub mod create_db_cluster_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
@@ -3632,13 +3636,15 @@ pub mod create_db_cluster_input {
         /// <p>The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.</p>
         /// <p>The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x versions.</p>
         /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
+        /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
         /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.</p>
         /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
         /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"> Limitations of Aurora Serverless v1</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"> Limitations of Parallel Query</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"> Limitations of Aurora Global Databases</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"> Limitations of Multi-Master Clusters</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of Parallel Query</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora Global Databases</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations of Multi-Master Clusters</a> </p> </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3649,13 +3655,15 @@ pub mod create_db_cluster_input {
         /// <p>The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.</p>
         /// <p>The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x versions.</p>
         /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
+        /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
         /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.</p>
         /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
         /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"> Limitations of Aurora Serverless v1</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"> Limitations of Parallel Query</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"> Limitations of Aurora Global Databases</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"> Limitations of Multi-Master Clusters</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of Parallel Query</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora Global Databases</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations of Multi-Master Clusters</a> </p> </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3970,13 +3978,39 @@ pub mod create_db_cluster_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -5196,12 +5230,12 @@ pub mod create_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn set_db_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5338,7 +5372,7 @@ pub mod create_db_instance_input {
         /// To override the contents of this collection use [`set_db_security_groups`](Self::set_db_security_groups).
         ///
         /// <p>A list of DB security groups to associate with this DB instance.</p>
-        /// <p>Default: The default DB security group for the database engine.</p>
+        /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
         pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
             v.push(input.into());
@@ -5346,7 +5380,7 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>A list of DB security groups to associate with this DB instance.</p>
-        /// <p>Default: The default DB security group for the database engine.</p>
+        /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
         pub fn set_db_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5478,7 +5512,7 @@ pub mod create_db_instance_input {
         /// <ul>
         /// <li> <p>Must be a value from 0 to 35</p> </li>
         /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
-        /// <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle DB instance</p> </li>
+        /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
         /// </ul>
         pub fn backup_retention_period(mut self, input: i32) -> Self {
             self.backup_retention_period = Some(input);
@@ -5492,7 +5526,7 @@ pub mod create_db_instance_input {
         /// <ul>
         /// <li> <p>Must be a value from 0 to 35</p> </li>
         /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
-        /// <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle DB instance</p> </li>
+        /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
         /// </ul>
         pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_period = input;
@@ -5585,18 +5619,22 @@ pub mod create_db_instance_input {
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
         pub fn multi_az(mut self, input: bool) -> Self {
             self.multi_az = Some(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
         }
         /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+        /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
         /// <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
@@ -5619,7 +5657,7 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>The version number of the database engine to use.</p>
-        /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+        /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
         /// <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
         /// <p> <b>Amazon Aurora</b> </p>
         /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
@@ -5659,6 +5697,8 @@ pub mod create_db_instance_input {
         /// <p>License model information for this DB instance.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_model = Some(input.into());
             self
@@ -5666,6 +5706,8 @@ pub mod create_db_instance_input {
         /// <p>License model information for this DB instance.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5675,12 +5717,16 @@ pub mod create_db_instance_input {
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -5688,6 +5734,8 @@ pub mod create_db_instance_input {
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.option_group_name = Some(input.into());
             self
@@ -5695,6 +5743,8 @@ pub mod create_db_instance_input {
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn set_option_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5810,6 +5860,8 @@ pub mod create_db_instance_input {
         /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
         /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.storage_type = Some(input.into());
             self
@@ -5818,18 +5870,24 @@ pub mod create_db_instance_input {
         /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
         /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tde_credential_arn = Some(input.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn set_tde_credential_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5893,6 +5951,8 @@ pub mod create_db_instance_input {
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. The domain is managed by the DB cluster.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain = Some(input.into());
             self
@@ -5900,6 +5960,8 @@ pub mod create_db_instance_input {
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. The domain is managed by the DB cluster.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -5953,12 +6015,16 @@ pub mod create_db_instance_input {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. The domain is managed by the DB cluster.</p>
         pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_iam_role_name = Some(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. The domain is managed by the DB cluster.</p>
         pub fn set_domain_iam_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5993,15 +6059,19 @@ pub mod create_db_instance_input {
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
         pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
             self.enable_iam_database_authentication = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-        /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
         pub fn set_enable_iam_database_authentication(
             mut self,
             input: std::option::Option<bool>,
@@ -6043,13 +6113,39 @@ pub mod create_db_instance_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -6114,6 +6210,8 @@ pub mod create_db_instance_input {
         ///
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn processor_features(mut self, input: crate::model::ProcessorFeature) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
             v.push(input);
@@ -6122,6 +6220,8 @@ pub mod create_db_instance_input {
         }
         /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable.</p>
         pub fn set_processor_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
@@ -6146,6 +6246,8 @@ pub mod create_db_instance_input {
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn max_allocated_storage(mut self, input: i32) -> Self {
             self.max_allocated_storage = Some(input);
             self
@@ -6153,6 +6255,8 @@ pub mod create_db_instance_input {
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
+        /// <p> <b>Amazon Aurora</b> </p>
+        /// <p>Not applicable. Storage is managed by the DB cluster.</p>
         pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.max_allocated_storage = input;
             self
@@ -6610,7 +6714,7 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
-        /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It isn't supported for RDS Custom.</p>
+        /// <p>Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
@@ -6623,7 +6727,7 @@ pub mod create_db_instance_read_replica_input {
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
-        /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It isn't supported for RDS Custom.</p>
+        /// <p>Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't supported for RDS Custom.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
@@ -6811,34 +6915,36 @@ pub mod create_db_instance_read_replica_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
         /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> operation is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
-        /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support cross-Region read replicas.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+        /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
         /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
-        /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
+        /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
         /// <ul>
-        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-        /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+        /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> operation is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
         /// <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p> </li>
         /// </ul>
         /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
-        /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support cross-Region read replicas.</p>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+        /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_pre_signed_url(
@@ -6901,13 +7007,39 @@ pub mod create_db_instance_read_replica_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -7538,12 +7670,12 @@ pub mod create_db_proxy_input {
             self.db_proxy_name = input;
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
         pub fn engine_family(mut self, input: crate::model::EngineFamily) -> Self {
             self.engine_family = Some(input);
             self
         }
-        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+        /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
         pub fn set_engine_family(
             mut self,
             input: std::option::Option<crate::model::EngineFamily>,
@@ -8980,12 +9112,12 @@ pub mod create_global_cluster_input {
             self.deletion_protection = input;
             self
         }
-        /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
+        /// <p>The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
+        /// <p>The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16500,7 +16632,7 @@ pub mod describe_db_snapshots_input {
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.</p>
+        /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -16509,7 +16641,7 @@ pub mod describe_db_snapshots_input {
             self.db_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.</p>
+        /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -16521,7 +16653,7 @@ pub mod describe_db_snapshots_input {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>A specific DB snapshot identifier to describe. This parameter can't be used in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.</p>
+        /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
@@ -16531,7 +16663,7 @@ pub mod describe_db_snapshots_input {
             self.db_snapshot_identifier = Some(input.into());
             self
         }
-        /// <p>A specific DB snapshot identifier to describe. This parameter can't be used in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.</p>
+        /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
         /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
@@ -19153,14 +19285,14 @@ pub mod describe_orderable_db_instance_options_input {
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
         /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        /// <p>Constraints: Minimum 20, maximum 10000.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
         /// <p>Default: 100</p>
-        /// <p>Constraints: Minimum 20, maximum 100.</p>
+        /// <p>Constraints: Minimum 20, maximum 10000.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -21104,6 +21236,158 @@ impl ListTagsForResourceInput {
     }
 }
 
+/// See [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
+pub mod modify_activity_stream_input {
+
+    /// A builder for [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) audit_policy_state: std::option::Option<crate::model::AuditPolicyState>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+        pub fn audit_policy_state(mut self, input: crate::model::AuditPolicyState) -> Self {
+            self.audit_policy_state = Some(input);
+            self
+        }
+        /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+        pub fn set_audit_policy_state(
+            mut self,
+            input: std::option::Option<crate::model::AuditPolicyState>,
+        ) -> Self {
+            self.audit_policy_state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ModifyActivityStreamInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ModifyActivityStreamInput {
+                resource_arn: self.resource_arn,
+                audit_policy_state: self.audit_policy_state,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ModifyActivityStreamInputOperationOutputAlias = crate::operation::ModifyActivityStream;
+#[doc(hidden)]
+pub type ModifyActivityStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ModifyActivityStreamInput {
+    /// Consumes the builder and constructs an Operation<[`ModifyActivityStream`](crate::operation::ModifyActivityStream)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ModifyActivityStream,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ModifyActivityStreamInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ModifyActivityStreamInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_modify_activity_stream(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyActivityStream::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyActivityStream",
+            "rds",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ModifyActivityStreamInput`](crate::input::ModifyActivityStreamInput).
+    pub fn builder() -> crate::input::modify_activity_stream_input::Builder {
+        crate::input::modify_activity_stream_input::Builder::default()
+    }
+}
+
 /// See [`ModifyCertificatesInput`](crate::input::ModifyCertificatesInput).
 pub mod modify_certificates_input {
 
@@ -22351,13 +22635,39 @@ pub mod modify_db_cluster_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -22940,7 +23250,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
         /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
-        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
         /// </note>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
@@ -22948,7 +23258,7 @@ pub mod modify_db_cluster_snapshot_attribute_input {
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
         /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
-        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
         /// </note>
         pub fn set_attribute_name(
             mut self,
@@ -23214,7 +23524,7 @@ pub mod modify_db_instance_input {
             self.allocated_storage = input;
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
         /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
         /// <p>Default: Uses existing setting</p>
@@ -23222,7 +23532,7 @@ pub mod modify_db_instance_input {
             self.db_instance_class = Some(input.into());
             self
         }
-        /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+        /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
         /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
         /// <p>Default: Uses existing setting</p>
@@ -23344,7 +23654,7 @@ pub mod modify_db_instance_input {
         /// <p>Constraints: Must contain from 8 to 30 characters.</p>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p> <note>
-        /// <p>Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+        /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
         /// </note>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -23366,7 +23676,7 @@ pub mod modify_db_instance_input {
         /// <p>Constraints: Must contain from 8 to 30 characters.</p>
         /// <p> <b>PostgreSQL</b> </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p> <note>
-        /// <p>Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+        /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
         /// </note>
         pub fn set_master_user_password(
             mut self,
@@ -23405,7 +23715,7 @@ pub mod modify_db_instance_input {
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.</p> </li>
+        /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
         /// <li> <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
         /// <li> <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5.</p> </li>
         /// </ul>
@@ -23422,7 +23732,7 @@ pub mod modify_db_instance_input {
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.</p> </li>
+        /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
         /// <li> <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
         /// <li> <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5.</p> </li>
         /// </ul>
@@ -23888,14 +24198,14 @@ pub mod modify_db_instance_input {
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn enable_performance_insights(mut self, input: bool) -> Self {
             self.enable_performance_insights = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_performance_insights = input;
@@ -23923,13 +24233,39 @@ pub mod modify_db_instance_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
@@ -24932,12 +25268,12 @@ pub mod modify_db_proxy_target_group_input {
         pub(crate) new_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the new target group to assign to the proxy.</p>
+        /// <p>The name of the target group to modify.</p>
         pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the new target group to assign to the proxy.</p>
+        /// <p>The name of the target group to modify.</p>
         pub fn set_target_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24945,12 +25281,12 @@ pub mod modify_db_proxy_target_group_input {
             self.target_group_name = input;
             self
         }
-        /// <p>The name of the new proxy to which to assign the target group.</p>
+        /// <p>The name of the proxy.</p>
         pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_proxy_name = Some(input.into());
             self
         }
-        /// <p>The name of the new proxy to which to assign the target group.</p>
+        /// <p>The name of the proxy.</p>
         pub fn set_db_proxy_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25331,7 +25667,7 @@ pub mod modify_db_snapshot_attribute_input {
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
         /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
-        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
         /// </note>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
@@ -25339,7 +25675,7 @@ pub mod modify_db_snapshot_attribute_input {
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
         /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
-        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
         /// </note>
         pub fn set_attribute_name(
             mut self,
@@ -28762,13 +29098,13 @@ pub mod restore_db_cluster_from_s3_input {
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code> </p>
+        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
         pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine = Some(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code> </p>
+        /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -28778,12 +29114,8 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
         /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
         /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
         /// <p> <b>Aurora MySQL</b> </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-        /// <p> <b>Aurora PostgreSQL</b> </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
@@ -28793,12 +29125,8 @@ pub mod restore_db_cluster_from_s3_input {
         /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
         /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
         /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-        /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
         /// <p> <b>Aurora MySQL</b> </p>
-        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-        /// <p> <b>Aurora PostgreSQL</b> </p>
-        /// <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+        /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29686,7 +30014,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p> <b>Aurora PostgreSQL</b> </p>
         /// <p>Possible value is <code>postgresql</code>.</p>
-        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn enable_cloudwatch_logs_exports(
@@ -29707,7 +30035,7 @@ pub mod restore_db_cluster_from_snapshot_input {
         /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p> <b>Aurora PostgreSQL</b> </p>
         /// <p>Possible value is <code>postgresql</code>.</p>
-        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_enable_cloudwatch_logs_exports(
@@ -30413,7 +30741,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p> <b>Aurora PostgreSQL</b> </p>
         /// <p>Possible value is <code>postgresql</code>.</p>
-        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn enable_cloudwatch_logs_exports(
@@ -30434,7 +30762,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
         /// <p> <b>Aurora PostgreSQL</b> </p>
         /// <p>Possible value is <code>postgresql</code>.</p>
-        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn set_enable_cloudwatch_logs_exports(
@@ -32216,13 +32544,13 @@ pub mod restore_db_instance_from_s3_input {
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn enable_performance_insights(mut self, input: bool) -> Self {
             self.enable_performance_insights = Some(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
         pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_performance_insights = input;
             self
@@ -32247,12 +32575,38 @@ pub mod restore_db_instance_from_s3_input {
             self.performance_insights_kms_key_id = input;
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
             self.performance_insights_retention_period = Some(input);
             self
         }
-        /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+        /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+        /// <ul>
+        /// <li> <p>7</p> </li>
+        /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>For example, the following values are valid:</p>
+        /// <ul>
+        /// <li> <p>93 (3 months * 31)</p> </li>
+        /// <li> <p>341 (11 months * 31)</p> </li>
+        /// <li> <p>589 (19 months * 31)</p> </li>
+        /// <li> <p>731</p> </li>
+        /// </ul>
+        /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
         pub fn set_performance_insights_retention_period(
             mut self,
             input: std::option::Option<i32>,
@@ -34125,12 +34479,20 @@ pub mod start_db_instance_automated_backups_replication_input {
             self.kms_key_id = input;
             self
         }
-        /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>In an Amazon Web Services GovCloud (US) Region, an URL that contains a Signature Version 4 signed request for the <code>StartDBInstanceAutomatedBackupsReplication</code> operation to call in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the <code>StartDBInstanceAutomatedBackupsReplication</code> API operation that can run in the Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+        /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+        /// </note>
         pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.pre_signed_url = Some(input.into());
             self
         }
-        /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>In an Amazon Web Services GovCloud (US) Region, an URL that contains a Signature Version 4 signed request for the <code>StartDBInstanceAutomatedBackupsReplication</code> operation to call in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the <code>StartDBInstanceAutomatedBackupsReplication</code> API operation that can run in the Amazon Web Services Region that contains the source DB instance.</p>
+        /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+        /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
+        /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+        /// </note>
         pub fn set_pre_signed_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -35306,7 +35668,11 @@ pub struct StartDbInstanceAutomatedBackupsReplicationInput {
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>In an Amazon Web Services GovCloud (US) Region, an URL that contains a Signature Version 4 signed request for the <code>StartDBInstanceAutomatedBackupsReplication</code> operation to call in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the <code>StartDBInstanceAutomatedBackupsReplication</code> API operation that can run in the Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationInput {
@@ -35322,7 +35688,11 @@ impl StartDbInstanceAutomatedBackupsReplicationInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>In an Amazon Web Services GovCloud (US) Region, an URL that contains a Signature Version 4 signed request for the <code>StartDBInstanceAutomatedBackupsReplication</code> operation to call in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the <code>StartDBInstanceAutomatedBackupsReplication</code> API operation that can run in the Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// </note>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
@@ -36130,13 +36500,26 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.</p>
     pub s3_ingestion_role_arn: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub enable_performance_insights: std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -36364,7 +36747,7 @@ impl RestoreDbInstanceFromS3Input {
         self.s3_ingestion_role_arn.as_deref()
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
         self.enable_performance_insights
     }
@@ -36374,7 +36757,20 @@ impl RestoreDbInstanceFromS3Input {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
     }
@@ -37027,7 +37423,7 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>Possible value is <code>postgresql</code>.</p>
-    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37214,7 +37610,7 @@ impl RestoreDbClusterToPointInTimeInput {
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>Possible value is <code>postgresql</code>.</p>
-    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
@@ -37468,7 +37864,7 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>Possible value is <code>postgresql</code>.</p>
-    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -37668,7 +38064,7 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
     /// <p> <b>Aurora PostgreSQL</b> </p>
     /// <p>Possible value is <code>postgresql</code>.</p>
-    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
@@ -37852,19 +38248,15 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code> </p>
+    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
     /// <p>Default: <code>3306</code> </p>
@@ -38005,7 +38397,7 @@ impl RestoreDbClusterFromS3Input {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The name of the database engine to be used for this DB cluster.</p>
-    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code> </p>
+    /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)</p>
     pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -38014,12 +38406,8 @@ impl RestoreDbClusterFromS3Input {
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
-    /// <p>To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p> <b>Aurora MySQL</b> </p>
-    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>, <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> </p>
-    /// <p> <b>Aurora PostgreSQL</b> </p>
-    /// <p>Example: <code>9.6.3</code>, <code>10.7</code> </p>
+    /// <p>Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>, <code>8.0.mysql_aurora.3.02.0</code> </p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
@@ -38962,7 +39350,7 @@ pub struct ModifyDbSnapshotAttributeInput {
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DB snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
-    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of DB snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
@@ -38979,7 +39367,7 @@ impl ModifyDbSnapshotAttributeInput {
     }
     /// <p>The name of the DB snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB snapshot, set this value to <code>restore</code>.</p> <note>
-    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
@@ -39073,9 +39461,9 @@ impl std::fmt::Debug for ModifyDbSnapshotInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyDbProxyTargetGroupInput {
-    /// <p>The name of the new target group to assign to the proxy.</p>
+    /// <p>The name of the target group to modify.</p>
     pub target_group_name: std::option::Option<std::string::String>,
-    /// <p>The name of the new proxy to which to assign the target group.</p>
+    /// <p>The name of the proxy.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     pub connection_pool_config: std::option::Option<crate::model::ConnectionPoolConfiguration>,
@@ -39083,11 +39471,11 @@ pub struct ModifyDbProxyTargetGroupInput {
     pub new_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbProxyTargetGroupInput {
-    /// <p>The name of the new target group to assign to the proxy.</p>
+    /// <p>The name of the target group to modify.</p>
     pub fn target_group_name(&self) -> std::option::Option<&str> {
         self.target_group_name.as_deref()
     }
-    /// <p>The name of the new proxy to which to assign the target group.</p>
+    /// <p>The name of the proxy.</p>
     pub fn db_proxy_name(&self) -> std::option::Option<&str> {
         self.db_proxy_name.as_deref()
     }
@@ -39285,7 +39673,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
     /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
     /// <p>Default: Uses existing setting</p>
@@ -39331,7 +39719,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Constraints: Must contain from 8 to 30 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p> <note>
-    /// <p>Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+    /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group to apply to the DB instance.</p>
@@ -39349,7 +39737,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
     /// <li> <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
     /// <li> <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5.</p> </li>
     /// </ul>
@@ -39495,7 +39883,7 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub enable_performance_insights: std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -39503,7 +39891,20 @@ pub struct ModifyDbInstanceInput {
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance.</p>
@@ -39577,7 +39978,7 @@ impl ModifyDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.</p>
     /// <p>This setting doesn't apply to RDS Custom for Oracle.</p>
     /// <p>Default: Uses existing setting</p>
@@ -39633,7 +40034,7 @@ impl ModifyDbInstanceInput {
     /// <p>Constraints: Must contain from 8 to 30 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p> <note>
-    /// <p>Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+    /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -39655,7 +40056,7 @@ impl ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.</p> </li>
+    /// <li> <p>It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
     /// <li> <p>It can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later.</p> </li>
     /// <li> <p>It can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5.</p> </li>
     /// </ul>
@@ -39849,7 +40250,7 @@ impl ModifyDbInstanceInput {
         self.enable_iam_database_authentication
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
         self.enable_performance_insights
@@ -39861,7 +40262,20 @@ impl ModifyDbInstanceInput {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -40049,7 +40463,7 @@ pub struct ModifyDbClusterSnapshotAttributeInput {
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>The name of the DB cluster snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
-    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
@@ -40066,7 +40480,7 @@ impl ModifyDbClusterSnapshotAttributeInput {
     }
     /// <p>The name of the DB cluster snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
-    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
     /// </note>
     pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
@@ -40366,7 +40780,20 @@ pub struct ModifyDbClusterInput {
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
@@ -40626,7 +41053,20 @@ impl ModifyDbClusterInput {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -40883,6 +41323,34 @@ impl std::fmt::Debug for ModifyCertificatesInput {
         let mut formatter = f.debug_struct("ModifyCertificatesInput");
         formatter.field("certificate_identifier", &self.certificate_identifier);
         formatter.field("remove_customer_override", &self.remove_customer_override);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyActivityStreamInput {
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+    pub audit_policy_state: std::option::Option<crate::model::AuditPolicyState>,
+}
+impl ModifyActivityStreamInput {
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle DB instance, for example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
+    /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+    pub fn audit_policy_state(&self) -> std::option::Option<&crate::model::AuditPolicyState> {
+        self.audit_policy_state.as_ref()
+    }
+}
+impl std::fmt::Debug for ModifyActivityStreamInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyActivityStreamInput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("audit_policy_state", &self.audit_policy_state);
         formatter.finish()
     }
 }
@@ -41433,7 +41901,7 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 10000.</p>
     pub max_records: std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -41490,7 +41958,7 @@ impl DescribeOrderableDbInstanceOptionsInput {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 10000.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
@@ -42234,13 +42702,13 @@ impl std::fmt::Debug for DescribeDbSubnetGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDbSnapshotsInput {
-    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.</p>
+    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>A specific DB snapshot identifier to describe. This parameter can't be used in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.</p>
+    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
@@ -42286,7 +42754,7 @@ pub struct DescribeDbSnapshotsInput {
     pub dbi_resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeDbSnapshotsInput {
-    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter isn't case-sensitive.</p>
+    /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>
@@ -42294,7 +42762,7 @@ impl DescribeDbSnapshotsInput {
     pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
-    /// <p>A specific DB snapshot identifier to describe. This parameter can't be used in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.</p>
+    /// <p>A specific DB snapshot identifier to describe. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>If supplied, must match the identifier of an existing DBSnapshot.</p> </li>
@@ -44412,7 +44880,7 @@ pub struct CreateGlobalClusterInput {
     pub engine_version: std::option::Option<std::string::String>,
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub storage_encrypted: std::option::Option<bool>,
@@ -44438,7 +44906,7 @@ impl CreateGlobalClusterInput {
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
+    /// <p>The name for your database of up to 64 alphanumeric characters. If you do not provide a name, Amazon Aurora will not create a database in the global database cluster you are creating.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -44787,7 +45255,7 @@ impl std::fmt::Debug for CreateDbProxyEndpointInput {
 pub struct CreateDbProxyInput {
     /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub db_proxy_name: std::option::Option<std::string::String>,
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
     pub engine_family: std::option::Option<crate::model::EngineFamily>,
     /// <p>The authorization mechanism that the proxy uses.</p>
     pub auth: std::option::Option<std::vec::Vec<crate::model::UserAuthConfig>>,
@@ -44811,7 +45279,7 @@ impl CreateDbProxyInput {
     pub fn db_proxy_name(&self) -> std::option::Option<&str> {
         self.db_proxy_name.as_deref()
     }
-    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
+    /// <p>The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify <code>POSTGRESQL</code>.</p>
     pub fn engine_family(&self) -> std::option::Option<&crate::model::EngineFamily> {
         self.engine_family.as_ref()
     }
@@ -45018,7 +45486,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
-    /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It isn't supported for RDS Custom.</p>
+    /// <p>Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't supported for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
@@ -45074,17 +45542,18 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> operation is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
-    /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support cross-Region read replicas.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
@@ -45101,7 +45570,20 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>The list of logs that the new DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -45213,7 +45695,7 @@ impl CreateDbInstanceReadReplicaInput {
     }
     /// <p>The name of the DB parameter group to associate with this DB instance.</p>
     /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a same Region read replica, or the default <code>DBParameterGroup</code> for the specified DB engine for a cross-Region read replica.</p>
-    /// <p>Specifying a parameter group for this operation is only supported for Oracle DB instances. It isn't supported for RDS Custom.</p>
+    /// <p>Specifying a parameter group for this operation is only supported for MySQL and Oracle DB instances. It isn't supported for RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
@@ -45289,17 +45771,18 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>When you are creating a read replica from one Amazon Web Services GovCloud (US) Region to another or from one China Amazon Web Services Region to another, the URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web Services Region that contains the source DB instance.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web Services Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the same Amazon Web Services Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> operation is called that contains this presigned URL.</p> <p>For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the read replica in the destination Amazon Web Services Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
-    /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support cross-Region read replicas.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
+    /// <p> <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't support cross-Region read replicas.</p>
     /// </note>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
@@ -45324,7 +45807,20 @@ impl CreateDbInstanceReadReplicaInput {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -45596,7 +46092,7 @@ pub struct CreateDbInstanceInput {
     /// </ul> </li>
     /// </ul>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Not every database engine is available for every Amazon Web Services Region.</p>
@@ -45649,7 +46145,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
-    /// <p>Default: The default DB security group for the database engine.</p>
+    /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
     pub db_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
@@ -45690,7 +46186,7 @@ pub struct CreateDbInstanceInput {
     /// <ul>
     /// <li> <p>Must be a value from 0 to 35</p> </li>
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
-    /// <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle DB instance</p> </li>
+    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
     pub backup_retention_period: std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -45730,9 +46226,11 @@ pub struct CreateDbInstanceInput {
     pub port: std::option::Option<i32>,
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub multi_az: std::option::Option<bool>,
     /// <p>The version number of the database engine to use.</p>
-    /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+    /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
     /// <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
@@ -45757,13 +46255,19 @@ pub struct CreateDbInstanceInput {
     /// <p>License model information for this DB instance.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub license_model: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub iops: std::option::Option<i32>,
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>For supported engines, this value indicates that the DB instance should be associated with the specified <code>CharacterSet</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set, you can change it on the database itself.</p>
@@ -45797,9 +46301,13 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
     /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub tde_credential_arn: std::option::Option<std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -45820,6 +46328,8 @@ pub struct CreateDbInstanceInput {
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p> <b>Amazon Aurora</b> </p>
@@ -45836,6 +46346,8 @@ pub struct CreateDbInstanceInput {
     pub monitoring_role_arn: std::option::Option<std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     pub domain_iam_role_name: std::option::Option<std::string::String>,
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -45845,8 +46357,10 @@ pub struct CreateDbInstanceInput {
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
     pub timezone: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -45856,7 +46370,20 @@ pub struct CreateDbInstanceInput {
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -45877,6 +46404,8 @@ pub struct CreateDbInstanceInput {
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub processor_features: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
@@ -45885,6 +46414,8 @@ pub struct CreateDbInstanceInput {
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub max_allocated_storage: std::option::Option<i32>,
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
@@ -46049,7 +46580,7 @@ impl CreateDbInstanceInput {
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
@@ -46110,7 +46641,7 @@ impl CreateDbInstanceInput {
         self.master_user_password.as_deref()
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
-    /// <p>Default: The default DB security group for the database engine.</p>
+    /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
     pub fn db_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.db_security_groups.as_deref()
     }
@@ -46163,7 +46694,7 @@ impl CreateDbInstanceInput {
     /// <ul>
     /// <li> <p>Must be a value from 0 to 35</p> </li>
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
-    /// <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle DB instance</p> </li>
+    /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
     pub fn backup_retention_period(&self) -> std::option::Option<i32> {
         self.backup_retention_period
@@ -46209,11 +46740,13 @@ impl CreateDbInstanceInput {
     }
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn multi_az(&self) -> std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The version number of the database engine to use.</p>
-    /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+    /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
     /// <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster.</p>
@@ -46242,17 +46775,23 @@ impl CreateDbInstanceInput {
     /// <p>License model information for this DB instance.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub fn option_group_name(&self) -> std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
@@ -46298,11 +46837,15 @@ impl CreateDbInstanceInput {
     /// <p>Valid values: <code>standard | gp2 | io1</code> </p>
     /// <p>If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub fn tde_credential_arn(&self) -> std::option::Option<&str> {
         self.tde_credential_arn.as_deref()
     }
@@ -46331,6 +46874,8 @@ impl CreateDbInstanceInput {
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -46355,6 +46900,8 @@ impl CreateDbInstanceInput {
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
@@ -46370,8 +46917,10 @@ impl CreateDbInstanceInput {
         self.timezone.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
@@ -46387,7 +46936,20 @@ impl CreateDbInstanceInput {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -46412,6 +46974,8 @@ impl CreateDbInstanceInput {
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable.</p>
     pub fn processor_features(&self) -> std::option::Option<&[crate::model::ProcessorFeature]> {
         self.processor_features.as_deref()
     }
@@ -46424,6 +46988,8 @@ impl CreateDbInstanceInput {
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p> <b>Amazon Aurora</b> </p>
+    /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub fn max_allocated_storage(&self) -> std::option::Option<i32> {
         self.max_allocated_storage
     }
@@ -46912,21 +47478,21 @@ pub struct CreateDbClusterInput {
     /// <p>If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, you must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
-    /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
-    /// <p>The pre-signed URL request must contain the following parameter values:</p>
+    /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
+    /// <p>The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will be created in.</p> </li>
     /// <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: std::option::Option<bool>,
     /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
@@ -46954,13 +47520,15 @@ pub struct CreateDbClusterInput {
     /// <p>The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.</p>
     /// <p>The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x versions.</p>
     /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
     /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.</p>
     /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"> Limitations of Aurora Serverless v1</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"> Limitations of Parallel Query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"> Limitations of Aurora Global Databases</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"> Limitations of Multi-Master Clusters</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of Parallel Query</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora Global Databases</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations of Multi-Master Clusters</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub engine_mode: std::option::Option<std::string::String>,
@@ -47052,7 +47620,20 @@ pub struct CreateDbClusterInput {
     /// <p>If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub performance_insights_retention_period: std::option::Option<i32>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
@@ -47240,23 +47821,23 @@ impl CreateDbClusterInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
-    /// <p>The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.</p>
-    /// <p>The pre-signed URL request must contain the following parameter values:</p>
+    /// <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.</p>
+    /// <p>The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that Aurora read replica will be created in.</p> </li>
     /// <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code> would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
         self.enable_iam_database_authentication
@@ -47290,13 +47871,15 @@ impl CreateDbClusterInput {
     /// <p>The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.</p>
     /// <p>The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x versions.</p>
     /// <p>The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.</p>
+    /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
     /// <p>For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.</p>
     /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"> Limitations of Aurora Serverless v1</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"> Limitations of Parallel Query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"> Limitations of Aurora Global Databases</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"> Limitations of Multi-Master Clusters</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of Parallel Query</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora Global Databases</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations of Multi-Master Clusters</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
@@ -47428,7 +48011,20 @@ impl CreateDbClusterInput {
     pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
-    /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
+    /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
+    /// <ul>
+    /// <li> <p>7</p> </li>
+    /// <li> <p> <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>For example, the following values are valid:</p>
+    /// <ul>
+    /// <li> <p>93 (3 months * 31)</p> </li>
+    /// <li> <p>341 (11 months * 31)</p> </li>
+    /// <li> <p>589 (19 months * 31)</p> </li>
+    /// <li> <p>731</p> </li>
+    /// </ul>
+    /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
         self.performance_insights_retention_period
@@ -47757,7 +48353,7 @@ pub struct CopyDbSnapshotInput {
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region, and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.</p>
+    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
@@ -47785,16 +48381,17 @@ pub struct CopyDbSnapshotInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
     pub copy_tags: std::option::Option<bool>,
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+    /// <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>The name of an option group to associate with the copy of the snapshot.</p>
@@ -47809,7 +48406,7 @@ impl CopyDbSnapshotInput {
     /// <p>If the source snapshot is in the same Amazon Web Services Region as the copy, specify a valid DB snapshot identifier. For example, you might specify <code>rds:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If the source snapshot is in a different Amazon Web Services Region than the copy, specify a valid DB snapshot ARN. For example, you might specify <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.</p>
     /// <p>If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p>
-    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region, and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.</p>
+    /// <p>If you are copying an encrypted snapshot this parameter must be in the ARN format for the source Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
@@ -47847,16 +48444,17 @@ impl CopyDbSnapshotInput {
     pub fn copy_tags(&self) -> std::option::Option<bool> {
         self.copy_tags
     }
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+    /// <p>When you are copying a snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API operation in the source Amazon Web Services Region that contains the source DB snapshot to copy.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
     /// <p>You must specify this parameter when you copy an encrypted DB snapshot from another Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB snapshot in the same Amazon Web Services Region.</p>
-    /// <p>The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB snapshot to be copied. The presigned URL request must contain the following parameter values:</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> action in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the presigned URL.</p> </li>
+    /// <li> <p> <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted DB snapshot is copied to. This Amazon Web Services Region is the same one where the <code>CopyDBSnapshot</code> operation is called that contains this presigned URL.</p> <p>For example, if you copy an encrypted DB snapshot from the us-west-2 Amazon Web Services Region to the us-east-1 Amazon Web Services Region, then you call the <code>CopyDBSnapshot</code> operation in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code> operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()
@@ -48000,15 +48598,16 @@ pub struct CopyDbClusterSnapshotInput {
     /// <p>To copy an encrypted DB cluster snapshot to another Amazon Web Services Region, you must set <code>KmsKeyId</code> to the Amazon Web Services KMS key identifier you want to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an error is returned.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
-    /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed URL request must contain the following parameter values:</p>
+    /// <p>When you are copying a DB cluster snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API operation in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. Use the <code>PreSignedUrl</code> parameter when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
     /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub pre_signed_url: std::option::Option<std::string::String>,
     /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By default, tags are not copied.</p>
@@ -48048,15 +48647,16 @@ impl CopyDbClusterSnapshotInput {
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
-    /// <p>The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed URL request must contain the following parameter values:</p>
+    /// <p>When you are copying a DB cluster snapshot from one Amazon Web Services GovCloud (US) Region to another, the URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API operation in the Amazon Web Services Region that contains the source DB cluster snapshot to copy. Use the <code>PreSignedUrl</code> parameter when copying an encrypted DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code> when copying an encrypted DB cluster snapshot in the same Amazon Web Services Region.</p>
+    /// <p>This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored in other Amazon Web Services Regions.</p>
+    /// <p>The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster snapshot to copy. The presigned URL request must contain the following parameter values:</p>
     /// <ul>
-    /// <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web Services Region, and the action contained in the pre-signed URL.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.</p> </li>
     /// <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be created in.</p> </li>
     /// <li> <p> <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p> </li>
     /// </ul>
     /// <p>To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process</a>.</p> <note>
-    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be executed in the source Amazon Web Services Region.</p>
+    /// <p>If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.</p>
     /// </note>
     pub fn pre_signed_url(&self) -> std::option::Option<&str> {
         self.pre_signed_url.as_deref()

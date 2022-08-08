@@ -3,11 +3,9 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-AWS Single Sign-On Portal is a web service that makes it easy for you to assign user access to AWS SSO resources such as the user portal. Users can get AWS account applications and roles assigned to them and get federated into the application.
+Amazon Web Services Single Sign On Portal is a web service that makes it easy for you to assign user access to Amazon Web Services SSO resources such as the AWS access portal. Users can get Amazon Web Services account applications and roles assigned to them and get federated into the application.
 
-For general information about AWS SSO, see [What is AWS Single Sign-On?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the _AWS SSO User Guide_.
-
-This API reference guide describes the AWS SSO Portal operations that you can call programatically and includes detailed information on data types and errors.
+This API reference guide describes the Amazon Web Services SSO Portal operations that you can call programatically and includes detailed information on data types and errors.
 
 ## Getting Started
 
@@ -21,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.46.0"
-aws-sdk-sso = "0.16.0"
+aws-sdk-sso = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

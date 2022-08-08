@@ -1262,6 +1262,81 @@ pub fn parse_delete_threat_intel_set_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_malware_scans_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeMalwareScansOutput,
+    crate::error::DescribeMalwareScansError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeMalwareScansError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeMalwareScansError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::DescribeMalwareScansError {
+            meta: generic,
+            kind: crate::error::DescribeMalwareScansErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMalwareScansError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerErrorException" => crate::error::DescribeMalwareScansError {
+            meta: generic,
+            kind: crate::error::DescribeMalwareScansErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMalwareScansError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeMalwareScansError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_malware_scans_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeMalwareScansOutput,
+    crate::error::DescribeMalwareScansError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_malware_scans_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_malware_scans(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeMalwareScansError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_organization_configuration_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2283,6 +2358,85 @@ pub fn parse_get_ip_set_response(
             output,
         )
         .map_err(crate::error::GetIPSetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_malware_scan_settings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMalwareScanSettingsOutput,
+    crate::error::GetMalwareScanSettingsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetMalwareScanSettingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetMalwareScanSettingsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetMalwareScanSettingsError {
+            meta: generic,
+            kind: crate::error::GetMalwareScanSettingsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMalwareScanSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerErrorException" => crate::error::GetMalwareScanSettingsError {
+            meta: generic,
+            kind: crate::error::GetMalwareScanSettingsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMalwareScanSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::GetMalwareScanSettingsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_malware_scan_settings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMalwareScanSettingsOutput,
+    crate::error::GetMalwareScanSettingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_malware_scan_settings_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_get_malware_scan_settings(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMalwareScanSettingsError::unhandled)?;
         output.build()
     })
 }
@@ -4138,6 +4292,80 @@ pub fn parse_update_ip_set_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_ip_set_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_malware_scan_settings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateMalwareScanSettingsOutput,
+    crate::error::UpdateMalwareScanSettingsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateMalwareScanSettingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateMalwareScanSettingsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::UpdateMalwareScanSettingsError {
+            meta: generic,
+            kind: crate::error::UpdateMalwareScanSettingsErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMalwareScanSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalServerErrorException" => crate::error::UpdateMalwareScanSettingsError {
+            meta: generic,
+            kind: crate::error::UpdateMalwareScanSettingsErrorKind::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_server_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMalwareScanSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateMalwareScanSettingsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_malware_scan_settings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateMalwareScanSettingsOutput,
+    crate::error::UpdateMalwareScanSettingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_malware_scan_settings_output::Builder::default();
         let _ = response;
         output.build()
     })

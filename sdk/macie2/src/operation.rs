@@ -1176,6 +1176,112 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMember {
     }
 }
 
+/// Operation shape for `GetRevealConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_reveal_configuration`](crate::client::Client::get_reveal_configuration).
+///
+/// See [`crate::client::fluent_builders::GetRevealConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetRevealConfiguration {
+    _private: (),
+}
+impl GetRevealConfiguration {
+    /// Creates a new builder-style object to manufacture [`GetRevealConfigurationInput`](crate::input::GetRevealConfigurationInput).
+    pub fn builder() -> crate::input::get_reveal_configuration_input::Builder {
+        crate::input::get_reveal_configuration_input::Builder::default()
+    }
+    /// Creates a new `GetRevealConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetRevealConfiguration {
+    type Output = std::result::Result<
+        crate::output::GetRevealConfigurationOutput,
+        crate::error::GetRevealConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_reveal_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_get_reveal_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetSensitiveDataOccurrences`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_sensitive_data_occurrences`](crate::client::Client::get_sensitive_data_occurrences).
+///
+/// See [`crate::client::fluent_builders::GetSensitiveDataOccurrences`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSensitiveDataOccurrences {
+    _private: (),
+}
+impl GetSensitiveDataOccurrences {
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesInput`](crate::input::GetSensitiveDataOccurrencesInput).
+    pub fn builder() -> crate::input::get_sensitive_data_occurrences_input::Builder {
+        crate::input::get_sensitive_data_occurrences_input::Builder::default()
+    }
+    /// Creates a new `GetSensitiveDataOccurrences` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurrences {
+    type Output = std::result::Result<
+        crate::output::GetSensitiveDataOccurrencesOutput,
+        crate::error::GetSensitiveDataOccurrencesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sensitive_data_occurrences_error(response)
+        } else {
+            crate::operation_deser::parse_get_sensitive_data_occurrences_response(response)
+        }
+    }
+}
+
+/// Operation shape for `GetSensitiveDataOccurrencesAvailability`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_sensitive_data_occurrences_availability`](crate::client::Client::get_sensitive_data_occurrences_availability).
+///
+/// See [`crate::client::fluent_builders::GetSensitiveDataOccurrencesAvailability`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSensitiveDataOccurrencesAvailability {
+    _private: (),
+}
+impl GetSensitiveDataOccurrencesAvailability {
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
+    pub fn builder() -> crate::input::get_sensitive_data_occurrences_availability_input::Builder {
+        crate::input::get_sensitive_data_occurrences_availability_input::Builder::default()
+    }
+    /// Creates a new `GetSensitiveDataOccurrencesAvailability` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurrencesAvailability {
+    type Output = std::result::Result<
+        crate::output::GetSensitiveDataOccurrencesAvailabilityOutput,
+        crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_sensitive_data_occurrences_availability_error(
+                response,
+            )
+        } else {
+            crate::operation_deser::parse_get_sensitive_data_occurrences_availability_response(
+                response,
+            )
+        }
+    }
+}
+
 /// Operation shape for `GetUsageStatistics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -1910,6 +2016,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationConfig
             crate::operation_deser::parse_update_organization_configuration_error(response)
         } else {
             crate::operation_deser::parse_update_organization_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateRevealConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_reveal_configuration`](crate::client::Client::update_reveal_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateRevealConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateRevealConfiguration {
+    _private: (),
+}
+impl UpdateRevealConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
+    pub fn builder() -> crate::input::update_reveal_configuration_input::Builder {
+        crate::input::update_reveal_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateRevealConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateRevealConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateRevealConfigurationOutput,
+        crate::error::UpdateRevealConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_reveal_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_reveal_configuration_response(response)
         }
     }
 }

@@ -4691,6 +4691,9 @@ pub mod put_composite_alarm_input {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) actions_suppressor: std::option::Option<std::string::String>,
+        pub(crate) actions_suppressor_wait_period: std::option::Option<i32>,
+        pub(crate) actions_suppressor_extension_period: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
@@ -4856,6 +4859,53 @@ pub mod put_composite_alarm_input {
             self.tags = input;
             self
         }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn actions_suppressor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.actions_suppressor = Some(input.into());
+            self
+        }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn set_actions_suppressor(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.actions_suppressor = input;
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_wait_period(mut self, input: i32) -> Self {
+            self.actions_suppressor_wait_period = Some(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_wait_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.actions_suppressor_wait_period = input;
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_extension_period(mut self, input: i32) -> Self {
+            self.actions_suppressor_extension_period = Some(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_extension_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.actions_suppressor_extension_period = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PutCompositeAlarmInput`](crate::input::PutCompositeAlarmInput).
         pub fn build(
             self,
@@ -4870,6 +4920,9 @@ pub mod put_composite_alarm_input {
                 insufficient_data_actions: self.insufficient_data_actions,
                 ok_actions: self.ok_actions,
                 tags: self.tags,
+                actions_suppressor: self.actions_suppressor,
+                actions_suppressor_wait_period: self.actions_suppressor_wait_period,
+                actions_suppressor_extension_period: self.actions_suppressor_extension_period,
             })
         }
     }
@@ -7708,6 +7761,16 @@ pub struct PutCompositeAlarmInput {
     /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    pub actions_suppressor: std::option::Option<std::string::String>,
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub actions_suppressor_wait_period: std::option::Option<i32>,
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub actions_suppressor_extension_period: std::option::Option<i32>,
 }
 impl PutCompositeAlarmInput {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
@@ -7764,6 +7827,22 @@ impl PutCompositeAlarmInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
+    /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    pub fn actions_suppressor(&self) -> std::option::Option<&str> {
+        self.actions_suppressor.as_deref()
+    }
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub fn actions_suppressor_wait_period(&self) -> std::option::Option<i32> {
+        self.actions_suppressor_wait_period
+    }
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub fn actions_suppressor_extension_period(&self) -> std::option::Option<i32> {
+        self.actions_suppressor_extension_period
+    }
 }
 impl std::fmt::Debug for PutCompositeAlarmInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7776,6 +7855,15 @@ impl std::fmt::Debug for PutCompositeAlarmInput {
         formatter.field("insufficient_data_actions", &self.insufficient_data_actions);
         formatter.field("ok_actions", &self.ok_actions);
         formatter.field("tags", &self.tags);
+        formatter.field("actions_suppressor", &self.actions_suppressor);
+        formatter.field(
+            "actions_suppressor_wait_period",
+            &self.actions_suppressor_wait_period,
+        );
+        formatter.field(
+            "actions_suppressor_extension_period",
+            &self.actions_suppressor_extension_period,
+        );
         formatter.finish()
     }
 }

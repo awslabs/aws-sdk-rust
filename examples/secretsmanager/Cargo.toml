@@ -11,7 +11,7 @@ version = "0.46.0"
 
 [dependencies.aws-sdk-secretsmanager]
 path = "../../sdk/secretsmanager"
-version = "0.16.0"
+version = "0.17.0"
 
 [dependencies.tokio]
 version = "1"

@@ -20,11 +20,11 @@ pub enum AddCustomRoutingEndpointsErrorKind {
     EndpointAlreadyExistsException(crate::error::EndpointAlreadyExistsException),
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -189,7 +189,7 @@ pub enum AdvertiseByoipCidrErrorKind {
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
     /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -320,7 +320,9 @@ pub struct AllowCustomRoutingTrafficError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AllowCustomRoutingTrafficErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>The endpoint group that you specified doesn't exist.</p>
+    EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -330,6 +332,9 @@ pub enum AllowCustomRoutingTrafficErrorKind {
 impl std::fmt::Display for AllowCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
                 _inner.fmt(f)
             }
@@ -388,6 +393,13 @@ impl AllowCustomRoutingTrafficError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException`.
+    pub fn is_endpoint_group_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
@@ -406,6 +418,9 @@ impl AllowCustomRoutingTrafficError {
 impl std::error::Error for AllowCustomRoutingTrafficError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+                Some(_inner)
+            }
             AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
                 Some(_inner)
             }
@@ -428,11 +443,11 @@ pub struct CreateAcceleratorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAcceleratorErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -545,11 +560,11 @@ pub struct CreateCustomRoutingAcceleratorError {
 pub enum CreateCustomRoutingAcceleratorErrorKind {
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -688,13 +703,13 @@ pub enum CreateCustomRoutingEndpointGroupErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The endpoint group that you specified already exists.</p>
     EndpointGroupAlreadyExistsException(crate::error::EndpointGroupAlreadyExistsException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -889,13 +904,13 @@ pub struct CreateCustomRoutingListenerError {
 pub enum CreateCustomRoutingListenerErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1040,11 +1055,11 @@ pub enum CreateEndpointGroupErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The endpoint group that you specified already exists.</p>
     EndpointGroupAlreadyExistsException(crate::error::EndpointGroupAlreadyExistsException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -1199,13 +1214,13 @@ pub struct CreateListenerError {
 pub enum CreateListenerErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1340,7 +1355,7 @@ pub enum DeleteAcceleratorErrorKind {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1477,7 +1492,7 @@ pub enum DeleteCustomRoutingAcceleratorErrorKind {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an accelerator before you can delete it.</p>
     AssociatedListenerFoundException(crate::error::AssociatedListenerFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1633,7 +1648,7 @@ pub struct DeleteCustomRoutingEndpointGroupError {
 pub enum DeleteCustomRoutingEndpointGroupErrorKind {
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1763,7 +1778,7 @@ pub struct DeleteCustomRoutingListenerError {
 pub enum DeleteCustomRoutingListenerErrorKind {
     /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -1899,7 +1914,7 @@ pub struct DeleteEndpointGroupError {
 pub enum DeleteEndpointGroupErrorKind {
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2014,7 +2029,7 @@ pub struct DeleteListenerError {
 pub enum DeleteListenerErrorKind {
     /// <p>The listener that you specified has an endpoint group associated with it. You must remove all dependent resources from a listener before you can delete it.</p>
     AssociatedEndpointGroupFoundException(crate::error::AssociatedEndpointGroupFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2138,7 +2153,9 @@ pub struct DenyCustomRoutingTrafficError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DenyCustomRoutingTrafficErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>The endpoint group that you specified doesn't exist.</p>
+    EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2148,6 +2165,9 @@ pub enum DenyCustomRoutingTrafficErrorKind {
 impl std::fmt::Display for DenyCustomRoutingTrafficError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
             DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
                 _inner.fmt(f)
             }
@@ -2206,6 +2226,13 @@ impl DenyCustomRoutingTrafficError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException`.
+    pub fn is_endpoint_group_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
@@ -2224,6 +2251,9 @@ impl DenyCustomRoutingTrafficError {
 impl std::error::Error for DenyCustomRoutingTrafficError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(_inner) => {
+                Some(_inner)
+            }
             DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(_inner) => {
                 Some(_inner)
             }
@@ -2252,7 +2282,7 @@ pub enum DeprovisionByoipCidrErrorKind {
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
     /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2385,7 +2415,7 @@ pub struct DescribeAcceleratorError {
 pub enum DescribeAcceleratorErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2500,7 +2530,7 @@ pub struct DescribeAcceleratorAttributesError {
 pub enum DescribeAcceleratorAttributesErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2630,7 +2660,7 @@ pub struct DescribeCustomRoutingAcceleratorError {
 pub enum DescribeCustomRoutingAcceleratorErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2760,7 +2790,7 @@ pub struct DescribeCustomRoutingAcceleratorAttributesError {
 pub enum DescribeCustomRoutingAcceleratorAttributesErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2892,7 +2922,7 @@ pub struct DescribeCustomRoutingEndpointGroupError {
 pub enum DescribeCustomRoutingEndpointGroupErrorKind {
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3020,7 +3050,7 @@ pub struct DescribeCustomRoutingListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCustomRoutingListenerErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3152,7 +3182,7 @@ pub struct DescribeEndpointGroupError {
 pub enum DescribeEndpointGroupErrorKind {
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3265,7 +3295,7 @@ pub struct DescribeListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeListenerErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3380,7 +3410,7 @@ pub struct ListAcceleratorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAcceleratorsErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3497,7 +3527,7 @@ pub struct ListByoipCidrsError {
 pub enum ListByoipCidrsErrorKind {
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3621,7 +3651,7 @@ pub struct ListCustomRoutingAcceleratorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCustomRoutingAcceleratorsErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3751,7 +3781,7 @@ pub struct ListCustomRoutingEndpointGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCustomRoutingEndpointGroupsErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3898,7 +3928,7 @@ pub struct ListCustomRoutingListenersError {
 pub enum ListCustomRoutingListenersErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4034,7 +4064,7 @@ pub enum ListCustomRoutingPortMappingsErrorKind {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4192,7 +4222,7 @@ pub struct ListCustomRoutingPortMappingsByDestinationError {
 pub enum ListCustomRoutingPortMappingsByDestinationErrorKind {
     /// <p>The endpoint that you specified doesn't exist.</p>
     EndpointNotFoundException(crate::error::EndpointNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4337,7 +4367,7 @@ pub struct ListEndpointGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEndpointGroupsErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4465,7 +4495,7 @@ pub struct ListListenersError {
 pub enum ListListenersErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4591,7 +4621,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4708,11 +4738,11 @@ pub enum ProvisionByoipCidrErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4849,7 +4879,7 @@ pub enum RemoveCustomRoutingEndpointsErrorKind {
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
     /// <p>The endpoint that you specified doesn't exist.</p>
     EndpointNotFoundException(crate::error::EndpointNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5005,7 +5035,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5120,7 +5150,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5235,7 +5265,9 @@ pub struct UpdateAcceleratorError {
 pub enum UpdateAcceleratorErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>You don't have access permission.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5246,6 +5278,7 @@ impl std::fmt::Display for UpdateAcceleratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
             UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) => _inner.fmt(f),
             UpdateAcceleratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5309,6 +5342,13 @@ impl UpdateAcceleratorError {
             UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAcceleratorErrorKind::AccessDeniedException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateAcceleratorErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
         matches!(
@@ -5328,6 +5368,7 @@ impl std::error::Error for UpdateAcceleratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateAcceleratorErrorKind::AcceleratorNotFoundException(_inner) => Some(_inner),
+            UpdateAcceleratorErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateAcceleratorErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
             UpdateAcceleratorErrorKind::InvalidArgumentException(_inner) => Some(_inner),
             UpdateAcceleratorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5352,7 +5393,7 @@ pub enum UpdateAcceleratorAttributesErrorKind {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5484,7 +5525,7 @@ pub struct UpdateCustomRoutingAcceleratorError {
 pub enum UpdateCustomRoutingAcceleratorErrorKind {
     /// <p>The accelerator that you specified doesn't exist.</p>
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5616,7 +5657,7 @@ pub enum UpdateCustomRoutingAcceleratorAttributesErrorKind {
     AcceleratorNotFoundException(crate::error::AcceleratorNotFoundException),
     /// <p>You don't have access permission.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5759,13 +5800,13 @@ pub struct UpdateCustomRoutingListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomRoutingListenerErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -5908,11 +5949,11 @@ pub enum UpdateEndpointGroupErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The endpoint group that you specified doesn't exist.</p>
     EndpointGroupNotFoundException(crate::error::EndpointGroupNotFoundException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6041,13 +6082,13 @@ pub struct UpdateListenerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateListenerErrorKind {
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -6184,7 +6225,7 @@ pub enum WithdrawByoipCidrErrorKind {
     ByoipCidrNotFoundException(crate::error::ByoipCidrNotFoundException),
     /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -6366,7 +6407,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>There was an internal error for AWS Global Accelerator.</p>
+/// <p>There was an internal error for Global Accelerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceErrorException {
@@ -6686,7 +6727,7 @@ impl ListenerNotFoundException {
     }
 }
 
-/// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+/// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

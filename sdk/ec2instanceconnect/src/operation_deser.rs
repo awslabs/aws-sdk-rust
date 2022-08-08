@@ -75,6 +75,20 @@ pub fn parse_send_serial_console_ssh_public_key_error(
                                                     }
             tmp
         })},
+        "EC2InstanceUnavailableException" => crate::error::SendSerialConsoleSSHPublicKeyError { meta: generic, kind: crate::error::SendSerialConsoleSSHPublicKeyErrorKind::Ec2InstanceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::ec2_instance_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InvalidArgsException" => crate::error::SendSerialConsoleSSHPublicKeyError { meta: generic, kind: crate::error::SendSerialConsoleSSHPublicKeyErrorKind::InvalidArgsException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -249,6 +263,24 @@ pub fn parse_send_ssh_public_key_error(
                         crate::error::ec2_instance_state_invalid_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_ec2_instance_state_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "EC2InstanceUnavailableException" => crate::error::SendSSHPublicKeyError {
+            meta: generic,
+            kind: crate::error::SendSSHPublicKeyErrorKind::Ec2InstanceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::ec2_instance_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_ec2_instance_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendSSHPublicKeyError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

@@ -571,6 +571,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
     }
 }
 
+/// Operation shape for `GetQueryRuntimeStatistics`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`get_query_runtime_statistics`](crate::client::Client::get_query_runtime_statistics).
+///
+/// See [`crate::client::fluent_builders::GetQueryRuntimeStatistics`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetQueryRuntimeStatistics {
+    _private: (),
+}
+impl GetQueryRuntimeStatistics {
+    /// Creates a new builder-style object to manufacture [`GetQueryRuntimeStatisticsInput`](crate::input::GetQueryRuntimeStatisticsInput).
+    pub fn builder() -> crate::input::get_query_runtime_statistics_input::Builder {
+        crate::input::get_query_runtime_statistics_input::Builder::default()
+    }
+    /// Creates a new `GetQueryRuntimeStatistics` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for GetQueryRuntimeStatistics {
+    type Output = std::result::Result<
+        crate::output::GetQueryRuntimeStatisticsOutput,
+        crate::error::GetQueryRuntimeStatisticsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_query_runtime_statistics_error(response)
+        } else {
+            crate::operation_deser::parse_get_query_runtime_statistics_response(response)
+        }
+    }
+}
+
 /// Operation shape for `GetTableMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

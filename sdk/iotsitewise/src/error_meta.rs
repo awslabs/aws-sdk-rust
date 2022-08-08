@@ -364,6 +364,44 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBulkImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateBulkImportJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateBulkImportJobErrorKind::ConflictingOperationException(
+                    inner,
+                ) => Error::ConflictingOperationException(inner),
+                crate::error::CreateBulkImportJobErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::CreateBulkImportJobErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateBulkImportJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateBulkImportJobErrorKind::ResourceAlreadyExistsException(
+                    inner,
+                ) => Error::ResourceAlreadyExistsException(inner),
+                crate::error::CreateBulkImportJobErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateBulkImportJobErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateBulkImportJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDashboardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -807,6 +845,36 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DescribeAssetPropertyErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBulkImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeBulkImportJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeBulkImportJobErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DescribeBulkImportJobErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeBulkImportJobErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeBulkImportJobErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeBulkImportJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1354,6 +1422,35 @@ where
                     Error::ThrottlingException(inner)
                 }
                 crate::error::ListAssociatedAssetsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBulkImportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListBulkImportJobsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListBulkImportJobsErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::ListBulkImportJobsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListBulkImportJobsErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListBulkImportJobsErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListBulkImportJobsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

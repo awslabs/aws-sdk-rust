@@ -2456,6 +2456,33 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyActivityStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ModifyActivityStreamError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifyActivityStreamErrorKind::DbInstanceNotFoundFault(inner) => {
+                    Error::DbInstanceNotFoundFault(inner)
+                }
+                crate::error::ModifyActivityStreamErrorKind::InvalidDbInstanceStateFault(inner) => {
+                    Error::InvalidDbInstanceStateFault(inner)
+                }
+                crate::error::ModifyActivityStreamErrorKind::ResourceNotFoundFault(inner) => {
+                    Error::ResourceNotFoundFault(inner)
+                }
+                crate::error::ModifyActivityStreamErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyCertificatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

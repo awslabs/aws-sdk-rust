@@ -734,14 +734,14 @@ pub mod create_custom_data_identifier_input {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
             v.push(input.into());
             self.keywords = Some(v);
             self
         }
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -749,12 +749,12 @@ pub mod create_custom_data_identifier_input {
             self.keywords = input;
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.maximum_match_distance = Some(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_match_distance = input;
             self
@@ -5291,6 +5291,400 @@ impl GetMemberInput {
     }
 }
 
+/// See [`GetRevealConfigurationInput`](crate::input::GetRevealConfigurationInput).
+pub mod get_reveal_configuration_input {
+
+    /// A builder for [`GetRevealConfigurationInput`](crate::input::GetRevealConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`GetRevealConfigurationInput`](crate::input::GetRevealConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::GetRevealConfigurationInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::GetRevealConfigurationInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetRevealConfigurationInputOperationOutputAlias = crate::operation::GetRevealConfiguration;
+#[doc(hidden)]
+pub type GetRevealConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetRevealConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`GetRevealConfiguration`](crate::operation::GetRevealConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetRevealConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetRevealConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/reveal-configuration").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetRevealConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRevealConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRevealConfiguration",
+            "macie2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetRevealConfigurationInput`](crate::input::GetRevealConfigurationInput).
+    pub fn builder() -> crate::input::get_reveal_configuration_input::Builder {
+        crate::input::get_reveal_configuration_input::Builder::default()
+    }
+}
+
+/// See [`GetSensitiveDataOccurrencesInput`](crate::input::GetSensitiveDataOccurrencesInput).
+pub mod get_sensitive_data_occurrences_input {
+
+    /// A builder for [`GetSensitiveDataOccurrencesInput`](crate::input::GetSensitiveDataOccurrencesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the finding.</p>
+        pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.finding_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesInput`](crate::input::GetSensitiveDataOccurrencesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetSensitiveDataOccurrencesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetSensitiveDataOccurrencesInput {
+                finding_id: self.finding_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetSensitiveDataOccurrencesInputOperationOutputAlias =
+    crate::operation::GetSensitiveDataOccurrences;
+#[doc(hidden)]
+pub type GetSensitiveDataOccurrencesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetSensitiveDataOccurrencesInput {
+    /// Consumes the builder and constructs an Operation<[`GetSensitiveDataOccurrences`](crate::operation::GetSensitiveDataOccurrences)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSensitiveDataOccurrences,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSensitiveDataOccurrencesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_10 = &_input.finding_id;
+                let input_10 = input_10.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "finding_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let finding_id = aws_smithy_http::label::fmt_string(input_10, false);
+                if finding_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "finding_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/findings/{findingId}/reveal",
+                    findingId = finding_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSensitiveDataOccurrencesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSensitiveDataOccurrences::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSensitiveDataOccurrences",
+            "macie2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesInput`](crate::input::GetSensitiveDataOccurrencesInput).
+    pub fn builder() -> crate::input::get_sensitive_data_occurrences_input::Builder {
+        crate::input::get_sensitive_data_occurrences_input::Builder::default()
+    }
+}
+
+/// See [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
+pub mod get_sensitive_data_occurrences_availability_input {
+
+    /// A builder for [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) finding_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the finding.</p>
+        pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.finding_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the finding.</p>
+        pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.finding_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::GetSensitiveDataOccurrencesAvailabilityInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetSensitiveDataOccurrencesAvailabilityInput {
+                finding_id: self.finding_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetSensitiveDataOccurrencesAvailabilityInputOperationOutputAlias =
+    crate::operation::GetSensitiveDataOccurrencesAvailability;
+#[doc(hidden)]
+pub type GetSensitiveDataOccurrencesAvailabilityInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl GetSensitiveDataOccurrencesAvailabilityInput {
+    /// Consumes the builder and constructs an Operation<[`GetSensitiveDataOccurrencesAvailability`](crate::operation::GetSensitiveDataOccurrencesAvailability)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetSensitiveDataOccurrencesAvailability,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::GetSensitiveDataOccurrencesAvailabilityInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                let input_11 = &_input.finding_id;
+                let input_11 = input_11.as_ref().ok_or(
+                    aws_smithy_http::operation::BuildError::MissingField {
+                        field: "finding_id",
+                        details: "cannot be empty or unset",
+                    },
+                )?;
+                let finding_id = aws_smithy_http::label::fmt_string(input_11, false);
+                if finding_id.is_empty() {
+                    return Err(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "finding_id",
+                        details: "cannot be empty or unset",
+                    });
+                }
+                write!(
+                    output,
+                    "/findings/{findingId}/reveal/availability",
+                    findingId = finding_id
+                )
+                .expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::GetSensitiveDataOccurrencesAvailabilityInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("GET").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetSensitiveDataOccurrencesAvailability::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetSensitiveDataOccurrencesAvailability",
+            "macie2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesAvailabilityInput`](crate::input::GetSensitiveDataOccurrencesAvailabilityInput).
+    pub fn builder() -> crate::input::get_sensitive_data_occurrences_availability_input::Builder {
+        crate::input::get_sensitive_data_occurrences_availability_input::Builder::default()
+    }
+}
+
 /// See [`GetUsageStatisticsInput`](crate::input::GetUsageStatisticsInput).
 pub mod get_usage_statistics_input {
 
@@ -5552,8 +5946,8 @@ impl GetUsageTotalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_10) = &_input.time_range {
-                    query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_10));
+                if let Some(inner_12) = &_input.time_range {
+                    query.push_kv("timeRange", &aws_smithy_http::query::fmt_string(&inner_12));
                 }
                 Ok(())
             }
@@ -6210,8 +6604,8 @@ impl ListFindingsFiltersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_11) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
+                if let Some(inner_13) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
                 }
                 Ok(())
             }
@@ -6360,8 +6754,8 @@ impl ListInvitationsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_12) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_12));
+                if let Some(inner_14) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_14));
                 }
                 Ok(())
             }
@@ -6663,13 +7057,13 @@ impl ListMembersInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_13) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_13));
+                if let Some(inner_15) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
                 }
-                if let Some(inner_14) = &_input.only_associated {
+                if let Some(inner_16) = &_input.only_associated {
                     query.push_kv(
                         "onlyAssociated",
-                        &aws_smithy_http::query::fmt_string(&inner_14),
+                        &aws_smithy_http::query::fmt_string(&inner_16),
                     );
                 }
                 Ok(())
@@ -6823,8 +7217,8 @@ impl ListOrganizationAdminAccountsInput {
                         aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                     );
                 }
-                if let Some(inner_15) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
+                if let Some(inner_17) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
                 }
                 Ok(())
             }
@@ -6947,14 +7341,14 @@ impl ListTagsForResourceInput {
                 _input: &crate::input::ListTagsForResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_16 = &_input.resource_arn;
-                let input_16 = input_16.as_ref().ok_or(
+                let input_18 = &_input.resource_arn;
+                let input_18 = input_18.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_16, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -7602,14 +7996,14 @@ impl TagResourceInput {
                 _input: &crate::input::TagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_17 = &_input.resource_arn;
-                let input_17 = input_17.as_ref().ok_or(
+                let input_19 = &_input.resource_arn;
+                let input_19 = input_19.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -7734,14 +8128,14 @@ pub mod test_custom_data_identifier_input {
         ///
         /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
         ///
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keywords.unwrap_or_default();
             v.push(input.into());
             self.keywords = Some(v);
             self
         }
-        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+        /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
         pub fn set_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7749,12 +8143,12 @@ pub mod test_custom_data_identifier_input {
             self.keywords = input;
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn maximum_match_distance(mut self, input: i32) -> Self {
             self.maximum_match_distance = Some(input);
             self
         }
-        /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+        /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
         pub fn set_maximum_match_distance(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_match_distance = input;
             self
@@ -7979,14 +8373,14 @@ impl UntagResourceInput {
                 _input: &crate::input::UntagResourceInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_18 = &_input.resource_arn;
-                let input_18 = input_18.as_ref().ok_or(
+                let input_20 = &_input.resource_arn;
+                let input_20 = input_20.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
                 if resource_arn.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
@@ -8002,9 +8396,9 @@ impl UntagResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_19) = &_input.tag_keys {
-                    for inner_20 in inner_19 {
-                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_20));
+                if let Some(inner_21) = &_input.tag_keys {
+                    for inner_22 in inner_21 {
+                        query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_22));
                     }
                 }
                 Ok(())
@@ -8156,14 +8550,14 @@ impl UpdateClassificationJobInput {
                 _input: &crate::input::UpdateClassificationJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_21 = &_input.job_id;
-                let input_21 = input_21.as_ref().ok_or(
+                let input_23 = &_input.job_id;
+                let input_23 = input_23.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_23, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -8392,14 +8786,14 @@ impl UpdateFindingsFilterInput {
                 _input: &crate::input::UpdateFindingsFilterInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_22 = &_input.id;
-                let input_22 = input_22.as_ref().ok_or(
+                let input_24 = &_input.id;
+                let input_24 = input_24.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_22, false);
+                let id = aws_smithy_http::label::fmt_string(input_24, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -8710,14 +9104,14 @@ impl UpdateMemberSessionInput {
                 _input: &crate::input::UpdateMemberSessionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_23 = &_input.id;
-                let input_23 = input_23.as_ref().ok_or(
+                let input_25 = &_input.id;
+                let input_25 = input_25.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let id = aws_smithy_http::label::fmt_string(input_23, false);
+                let id = aws_smithy_http::label::fmt_string(input_25, false);
                 if id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
@@ -8943,6 +9337,170 @@ impl UpdateOrganizationConfigurationInput {
     }
 }
 
+/// See [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
+pub mod update_reveal_configuration_input {
+
+    /// A builder for [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) configuration: std::option::Option<crate::model::RevealConfiguration>,
+    }
+    impl Builder {
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn configuration(mut self, input: crate::model::RevealConfiguration) -> Self {
+            self.configuration = Some(input);
+            self
+        }
+        /// <p>The new configuration settings and the status of the configuration for the account.</p>
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::RevealConfiguration>,
+        ) -> Self {
+            self.configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateRevealConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateRevealConfigurationInput {
+                configuration: self.configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateRevealConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateRevealConfiguration;
+#[doc(hidden)]
+pub type UpdateRevealConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateRevealConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRevealConfiguration`](crate::operation::UpdateRevealConfiguration)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateRevealConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateRevealConfigurationInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/reveal-configuration").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateRevealConfigurationInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("PUT").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_reveal_configuration(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRevealConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRevealConfiguration",
+            "macie2",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateRevealConfigurationInput`](crate::input::UpdateRevealConfigurationInput).
+    pub fn builder() -> crate::input::update_reveal_configuration_input::Builder {
+        crate::input::update_reveal_configuration_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRevealConfigurationInput {
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub configuration: std::option::Option<crate::model::RevealConfiguration>,
+}
+impl UpdateRevealConfigurationInput {
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn configuration(&self) -> std::option::Option<&crate::model::RevealConfiguration> {
+        self.configuration.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateRevealConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRevealConfigurationInput");
+        formatter.field("configuration", &self.configuration);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9164,9 +9722,9 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TestCustomDataIdentifierInput {
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub maximum_match_distance: i32,
     /// <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
     pub regex: std::option::Option<std::string::String>,
@@ -9178,11 +9736,11 @@ impl TestCustomDataIdentifierInput {
     pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_words.as_deref()
     }
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
     pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.keywords.as_deref()
     }
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub fn maximum_match_distance(&self) -> i32 {
         self.maximum_match_distance
     }
@@ -9680,6 +10238,59 @@ impl std::fmt::Debug for GetUsageStatisticsInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("sort_by", &self.sort_by);
         formatter.field("time_range", &self.time_range);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSensitiveDataOccurrencesAvailabilityInput {
+    /// <p>The unique identifier for the finding.</p>
+    pub finding_id: std::option::Option<std::string::String>,
+}
+impl GetSensitiveDataOccurrencesAvailabilityInput {
+    /// <p>The unique identifier for the finding.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSensitiveDataOccurrencesAvailabilityInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSensitiveDataOccurrencesAvailabilityInput");
+        formatter.field("finding_id", &self.finding_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetSensitiveDataOccurrencesInput {
+    /// <p>The unique identifier for the finding.</p>
+    pub finding_id: std::option::Option<std::string::String>,
+}
+impl GetSensitiveDataOccurrencesInput {
+    /// <p>The unique identifier for the finding.</p>
+    pub fn finding_id(&self) -> std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
+}
+impl std::fmt::Debug for GetSensitiveDataOccurrencesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetSensitiveDataOccurrencesInput");
+        formatter.field("finding_id", &self.finding_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetRevealConfigurationInput {}
+impl std::fmt::Debug for GetRevealConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetRevealConfigurationInput");
         formatter.finish()
     }
 }
@@ -10429,9 +11040,9 @@ pub struct CreateCustomDataIdentifierInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
     pub ignore_words: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub maximum_match_distance: i32,
     /// <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
@@ -10460,11 +11071,11 @@ impl CreateCustomDataIdentifierInput {
     pub fn ignore_words(&self) -> std::option::Option<&[std::string::String]> {
         self.ignore_words.as_deref()
     }
-    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    /// <p>An array that lists specific character sequences (<i>keywords</i>), one of which must precede and be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
     pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.keywords.as_deref()
     }
-    /// <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. The distance can be 1-300 characters. The default value is 50.</p>
     pub fn maximum_match_distance(&self) -> i32 {
         self.maximum_match_distance
     }

@@ -4941,6 +4941,87 @@ pub fn parse_list_aggregate_discovered_resources_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_conformance_pack_compliance_scores_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListConformancePackComplianceScoresOutput,
+    crate::error::ListConformancePackComplianceScoresError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListConformancePackComplianceScoresError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListConformancePackComplianceScoresError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidLimitException" => crate::error::ListConformancePackComplianceScoresError { meta: generic, kind: crate::error::ListConformancePackComplianceScoresErrorKind::InvalidLimitException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_limit_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_limit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConformancePackComplianceScoresError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidNextTokenException" => crate::error::ListConformancePackComplianceScoresError { meta: generic, kind: crate::error::ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConformancePackComplianceScoresError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::ListConformancePackComplianceScoresError { meta: generic, kind: crate::error::ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConformancePackComplianceScoresError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListConformancePackComplianceScoresError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_conformance_pack_compliance_scores_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListConformancePackComplianceScoresOutput,
+    crate::error::ListConformancePackComplianceScoresError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_conformance_pack_compliance_scores_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_conformance_pack_compliance_scores(response.body().as_ref(), output).map_err(crate::error::ListConformancePackComplianceScoresError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_discovered_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

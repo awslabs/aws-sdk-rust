@@ -325,6 +325,18 @@ impl Client {
     pub fn disassociate_api(&self) -> fluent_builders::DisassociateApi {
         fluent_builders::DisassociateApi::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`EvaluateMappingTemplate`](crate::client::fluent_builders::EvaluateMappingTemplate) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`template(impl Into<String>)`](crate::client::fluent_builders::EvaluateMappingTemplate::template) / [`set_template(Option<String>)`](crate::client::fluent_builders::EvaluateMappingTemplate::set_template): <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    ///   - [`context(impl Into<String>)`](crate::client::fluent_builders::EvaluateMappingTemplate::context) / [`set_context(Option<String>)`](crate::client::fluent_builders::EvaluateMappingTemplate::set_context): <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    /// - On success, responds with [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput) with field(s):
+    ///   - [`evaluation_result(Option<String>)`](crate::output::EvaluateMappingTemplateOutput::evaluation_result): <p>The mapping template; this can be a request or response template.</p>
+    ///   - [`error(Option<ErrorDetail>)`](crate::output::EvaluateMappingTemplateOutput::error): <p>The <code>ErrorDetail</code> object.</p>
+    /// - On failure, responds with [`SdkError<EvaluateMappingTemplateError>`](crate::error::EvaluateMappingTemplateError)
+    pub fn evaluate_mapping_template(&self) -> fluent_builders::EvaluateMappingTemplate {
+        fluent_builders::EvaluateMappingTemplate::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`FlushApiCache`](crate::client::fluent_builders::FlushApiCache) operation.
     ///
     /// - The fluent builder is configurable:
@@ -2408,6 +2420,71 @@ pub mod fluent_builders {
         /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `EvaluateMappingTemplate`.
+    ///
+    /// <p>Evaluates a given template and returns the response. The mapping template can be a request or response template.</p>
+    /// <p>Request templates take the incoming request after a GraphQL operation is parsed and convert it into a request configuration for the selected data source operation. Response templates interpret responses from the data source and map it to the shape of the GraphQL field output type.</p>
+    /// <p>Mapping templates are written in the Apache Velocity Template Language (VTL).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct EvaluateMappingTemplate {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::evaluate_mapping_template_input::Builder,
+    }
+    impl EvaluateMappingTemplate {
+        /// Creates a new `EvaluateMappingTemplate`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::EvaluateMappingTemplateOutput,
+            aws_smithy_http::result::SdkError<crate::error::EvaluateMappingTemplateError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
+            self
+        }
+        /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+        pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template(input);
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context(input.into());
+            self
+        }
+        /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+        pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_context(input);
             self
         }
     }

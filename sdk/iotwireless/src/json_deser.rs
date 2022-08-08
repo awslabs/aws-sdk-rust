@@ -1116,6 +1116,11 @@ pub fn deser_operation_crate_operation_get_event_configuration_by_resource_types
                             crate::json_deser::deser_structure_crate_model_join_resource_type_event_configuration(tokens)?
                         );
                     }
+                    "MessageDeliveryStatus" => {
+                        builder = builder.set_message_delivery_status(
+                            crate::json_deser::deser_structure_crate_model_message_delivery_status_resource_type_event_configuration(tokens)?
+                        );
+                    }
                     "Proximity" => {
                         builder = builder.set_proximity(
                             crate::json_deser::deser_structure_crate_model_proximity_resource_type_event_configuration(tokens)?
@@ -1736,6 +1741,11 @@ pub fn deser_operation_crate_operation_get_resource_event_configuration(
                     "Join" => {
                         builder = builder.set_join(
                             crate::json_deser::deser_structure_crate_model_join_event_configuration(tokens)?
+                        );
+                    }
+                    "MessageDeliveryStatus" => {
+                        builder = builder.set_message_delivery_status(
+                            crate::json_deser::deser_structure_crate_model_message_delivery_status_event_configuration(tokens)?
                         );
                     }
                     "Proximity" => {
@@ -3830,6 +3840,55 @@ where
     }
 }
 
+pub fn deser_structure_crate_model_message_delivery_status_resource_type_event_configuration<
+    'a,
+    I,
+>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::MessageDeliveryStatusResourceTypeEventConfiguration>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder =
+                crate::model::MessageDeliveryStatusResourceTypeEventConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Sidewalk" => {
+                                builder = builder.set_sidewalk(
+                                    crate::json_deser::deser_structure_crate_model_sidewalk_resource_type_event_configuration(tokens)?
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_crate_model_proximity_resource_type_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
@@ -4637,6 +4696,66 @@ where
                             "LoRaWAN" => {
                                 builder = builder.set_lo_ra_wan(
                                     crate::json_deser::deser_structure_crate_model_lo_ra_wan_join_event_notification_configurations(tokens)?
+                                );
+                            }
+                            "WirelessDeviceIdEventTopic" => {
+                                builder = builder.set_wireless_device_id_event_topic(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::EventNotificationTopicStatus::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    other => {
+                        return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                            "expected object key or end object, found: {:?}",
+                            other
+                        )))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(aws_smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
+pub fn deser_structure_crate_model_message_delivery_status_event_configuration<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<
+    Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+    aws_smithy_json::deserialize::Error,
+>
+where
+    I: Iterator<
+        Item = Result<aws_smithy_json::deserialize::Token<'a>, aws_smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::MessageDeliveryStatusEventConfiguration::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "Sidewalk" => {
+                                builder = builder.set_sidewalk(
+                                    crate::json_deser::deser_structure_crate_model_sidewalk_event_notification_configurations(tokens)?
                                 );
                             }
                             "WirelessDeviceIdEventTopic" => {
@@ -8708,6 +8827,11 @@ where
                             "ConnectionStatus" => {
                                 builder = builder.set_connection_status(
                                     crate::json_deser::deser_structure_crate_model_connection_status_event_configuration(tokens)?
+                                );
+                            }
+                            "MessageDeliveryStatus" => {
+                                builder = builder.set_message_delivery_status(
+                                    crate::json_deser::deser_structure_crate_model_message_delivery_status_event_configuration(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

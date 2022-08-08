@@ -12837,7 +12837,7 @@ pub struct TableStatistics {
     /// <p>The last time a table was updated.</p>
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state of the tables described.</p>
-    /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
+    /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     pub table_state: std::option::Option<std::string::String>,
     /// <p>The number of records that have yet to be validated.</p>
     pub validation_pending_records: i64,
@@ -12918,7 +12918,7 @@ impl TableStatistics {
         self.last_update_time.as_ref()
     }
     /// <p>The state of the tables described.</p>
-    /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
+    /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     pub fn table_state(&self) -> std::option::Option<&str> {
         self.table_state.as_deref()
     }
@@ -13161,13 +13161,13 @@ pub mod table_statistics {
             self
         }
         /// <p>The state of the tables described.</p>
-        /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
+        /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
         pub fn table_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_state = Some(input.into());
             self
         }
         /// <p>The state of the tables described.</p>
-        /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
+        /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
         pub fn set_table_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_state = input;
             self

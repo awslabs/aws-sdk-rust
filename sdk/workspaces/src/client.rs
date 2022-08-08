@@ -214,6 +214,26 @@ impl Client {
     pub fn create_workspace_bundle(&self) -> fluent_builders::CreateWorkspaceBundle {
         fluent_builders::CreateWorkspaceBundle::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateWorkspaceImage`](crate::client::fluent_builders::CreateWorkspaceImage) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::set_name): <p>The name of the new WorkSpace image.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::set_description): <p>The description of the new WorkSpace image.</p>
+    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceImage::set_workspace_id): <p>The identifier of the source WorkSpace</p>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateWorkspaceImage::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateWorkspaceImage::set_tags): <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+    /// - On success, responds with [`CreateWorkspaceImageOutput`](crate::output::CreateWorkspaceImageOutput) with field(s):
+    ///   - [`image_id(Option<String>)`](crate::output::CreateWorkspaceImageOutput::image_id): <p>The identifier of the new WorkSpace image.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateWorkspaceImageOutput::name): <p>The name of the image.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateWorkspaceImageOutput::description): <p>The description of the image.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::CreateWorkspaceImageOutput::operating_system): <p>The operating system that the image is running.</p>
+    ///   - [`state(Option<WorkspaceImageState>)`](crate::output::CreateWorkspaceImageOutput::state): <p>The availability status of the image.</p>
+    ///   - [`required_tenancy(Option<WorkspaceImageRequiredTenancy>)`](crate::output::CreateWorkspaceImageOutput::required_tenancy): <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a> </p>
+    ///   - [`created(Option<DateTime>)`](crate::output::CreateWorkspaceImageOutput::created): <p>The date when the image was created.</p>
+    ///   - [`owner_account_id(Option<String>)`](crate::output::CreateWorkspaceImageOutput::owner_account_id): <p>The identifier of the AWS account that owns the image.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkspaceImageError>`](crate::error::CreateWorkspaceImageError)
+    pub fn create_workspace_image(&self) -> fluent_builders::CreateWorkspaceImage {
+        fluent_builders::CreateWorkspaceImage::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateWorkspaces`](crate::client::fluent_builders::CreateWorkspaces) operation.
     ///
     /// - The fluent builder is configurable:
@@ -626,6 +646,18 @@ impl Client {
     /// - On failure, responds with [`SdkError<ModifyClientPropertiesError>`](crate::error::ModifyClientPropertiesError)
     pub fn modify_client_properties(&self) -> fluent_builders::ModifyClientProperties {
         fluent_builders::ModifyClientProperties::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ModifySamlProperties`](crate::client::fluent_builders::ModifySamlProperties) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ModifySamlProperties::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ModifySamlProperties::set_resource_id): <p>The directory identifier for which you want to configure SAML properties.</p>
+    ///   - [`saml_properties(SamlProperties)`](crate::client::fluent_builders::ModifySamlProperties::saml_properties) / [`set_saml_properties(Option<SamlProperties>)`](crate::client::fluent_builders::ModifySamlProperties::set_saml_properties): <p>The properties for configuring SAML 2.0 authentication.</p>
+    ///   - [`properties_to_delete(Vec<DeletableSamlProperty>)`](crate::client::fluent_builders::ModifySamlProperties::properties_to_delete) / [`set_properties_to_delete(Option<Vec<DeletableSamlProperty>>)`](crate::client::fluent_builders::ModifySamlProperties::set_properties_to_delete): <p>The SAML properties to delete as part of your request.</p>  <p>Specify one of the following options:</p>  <ul>   <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>   <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>  </ul>
+    /// - On success, responds with [`ModifySamlPropertiesOutput`](crate::output::ModifySamlPropertiesOutput)
+
+    /// - On failure, responds with [`SdkError<ModifySamlPropertiesError>`](crate::error::ModifySamlPropertiesError)
+    pub fn modify_saml_properties(&self) -> fluent_builders::ModifySamlProperties {
+        fluent_builders::ModifySamlProperties::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ModifySelfservicePermissions`](crate::client::fluent_builders::ModifySelfservicePermissions) operation.
     ///
@@ -1710,6 +1742,96 @@ pub mod fluent_builders {
         /// <p>The tags associated with the bundle.</p> <note>
         /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
         /// </note>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `CreateWorkspaceImage`.
+    ///
+    /// <p>Creates a new WorkSpace image from an existing WorkSpace.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateWorkspaceImage {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_workspace_image_input::Builder,
+    }
+    impl CreateWorkspaceImage {
+        /// Creates a new `CreateWorkspaceImage`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateWorkspaceImageOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceImageError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the new WorkSpace image.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the new WorkSpace image.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the new WorkSpace image.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the new WorkSpace image.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The identifier of the source WorkSpace</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
+            self
+        }
+        /// <p>The identifier of the source WorkSpace</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_workspace_id(input);
+            self
+        }
+        /// Appends an item to `Tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
+            self
+        }
+        /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4128,6 +4250,99 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ClientProperties>,
         ) -> Self {
             self.inner = self.inner.set_client_properties(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ModifySamlProperties`.
+    ///
+    /// <p>Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ModifySamlProperties {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::modify_saml_properties_input::Builder,
+    }
+    impl ModifySamlProperties {
+        /// Creates a new `ModifySamlProperties`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ModifySamlPropertiesOutput,
+            aws_smithy_http::result::SdkError<crate::error::ModifySamlPropertiesError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The directory identifier for which you want to configure SAML properties.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
+            self
+        }
+        /// <p>The directory identifier for which you want to configure SAML properties.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_id(input);
+            self
+        }
+        /// <p>The properties for configuring SAML 2.0 authentication.</p>
+        pub fn saml_properties(mut self, input: crate::model::SamlProperties) -> Self {
+            self.inner = self.inner.saml_properties(input);
+            self
+        }
+        /// <p>The properties for configuring SAML 2.0 authentication.</p>
+        pub fn set_saml_properties(
+            mut self,
+            input: std::option::Option<crate::model::SamlProperties>,
+        ) -> Self {
+            self.inner = self.inner.set_saml_properties(input);
+            self
+        }
+        /// Appends an item to `PropertiesToDelete`.
+        ///
+        /// To override the contents of this collection use [`set_properties_to_delete`](Self::set_properties_to_delete).
+        ///
+        /// <p>The SAML properties to delete as part of your request.</p>
+        /// <p>Specify one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+        /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+        /// </ul>
+        pub fn properties_to_delete(mut self, input: crate::model::DeletableSamlProperty) -> Self {
+            self.inner = self.inner.properties_to_delete(input);
+            self
+        }
+        /// <p>The SAML properties to delete as part of your request.</p>
+        /// <p>Specify one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+        /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+        /// </ul>
+        pub fn set_properties_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeletableSamlProperty>>,
+        ) -> Self {
+            self.inner = self.inner.set_properties_to_delete(input);
             self
         }
     }

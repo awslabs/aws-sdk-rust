@@ -15067,7 +15067,7 @@ pub struct CreateFileSystemOpenZfsConfiguration {
     pub automatic_backup_retention_days: std::option::Option<i32>,
     /// <p>A Boolean value indicating whether tags for the file system should be copied to backups. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
     pub copy_tags_to_backups: std::option::Option<bool>,
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are copied from the file system, regardless of this value.</p>
     pub copy_tags_to_volumes: std::option::Option<bool>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
@@ -15095,7 +15095,7 @@ impl CreateFileSystemOpenZfsConfiguration {
     pub fn copy_tags_to_backups(&self) -> std::option::Option<bool> {
         self.copy_tags_to_backups
     }
-    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    /// <p>A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are copied from the file system, regardless of this value.</p>
     pub fn copy_tags_to_volumes(&self) -> std::option::Option<bool> {
         self.copy_tags_to_volumes
     }
@@ -15197,12 +15197,12 @@ pub mod create_file_system_open_zfs_configuration {
             self.copy_tags_to_backups = input;
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are copied from the file system, regardless of this value.</p>
         pub fn copy_tags_to_volumes(mut self, input: bool) -> Self {
             self.copy_tags_to_volumes = Some(input);
             self
         }
-        /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+        /// <p>A Boolean value indicating whether tags for the file system should be copied to volumes. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the file system are copied to volumes where the user doesn't specify tags. If this value is <code>true</code>, and you specify one or more tags, only the specified tags are copied to volumes. If you specify one or more tags when creating the volume, no tags are copied from the file system, regardless of this value.</p>
         pub fn set_copy_tags_to_volumes(mut self, input: std::option::Option<bool>) -> Self {
             self.copy_tags_to_volumes = input;
             self

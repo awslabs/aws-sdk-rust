@@ -892,6 +892,8 @@ pub enum CreateAssessmentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -903,6 +905,7 @@ impl std::fmt::Display for CreateAssessmentError {
             CreateAssessmentErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateAssessmentErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateAssessmentErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAssessmentErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateAssessmentErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateAssessmentErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -979,6 +982,13 @@ impl CreateAssessmentError {
             CreateAssessmentErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAssessmentErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssessmentErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAssessmentErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -993,6 +1003,7 @@ impl std::error::Error for CreateAssessmentError {
             CreateAssessmentErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAssessmentErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::ValidationException(_inner) => Some(_inner),
             CreateAssessmentErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1018,6 +1029,8 @@ pub enum CreateAssessmentFrameworkErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1029,6 +1042,9 @@ impl std::fmt::Display for CreateAssessmentFrameworkError {
             CreateAssessmentFrameworkErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateAssessmentFrameworkErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateAssessmentFrameworkErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             CreateAssessmentFrameworkErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateAssessmentFrameworkErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1105,6 +1121,13 @@ impl CreateAssessmentFrameworkError {
             CreateAssessmentFrameworkErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateAssessmentFrameworkErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -1119,6 +1142,9 @@ impl std::error::Error for CreateAssessmentFrameworkError {
             CreateAssessmentFrameworkErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateAssessmentFrameworkErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateAssessmentFrameworkErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAssessmentFrameworkErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
             CreateAssessmentFrameworkErrorKind::ValidationException(_inner) => Some(_inner),
             CreateAssessmentFrameworkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -1270,6 +1296,8 @@ pub enum CreateControlErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -1281,6 +1309,7 @@ impl std::fmt::Display for CreateControlError {
             CreateControlErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateControlErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             CreateControlErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateControlErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             CreateControlErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateControlErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -1354,6 +1383,13 @@ impl CreateControlError {
             CreateControlErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `CreateControlErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateControlErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `CreateControlErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(&self.kind, CreateControlErrorKind::ValidationException(_))
@@ -1365,6 +1401,7 @@ impl std::error::Error for CreateControlError {
             CreateControlErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateControlErrorKind::InternalServerException(_inner) => Some(_inner),
             CreateControlErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateControlErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             CreateControlErrorKind::ValidationException(_inner) => Some(_inner),
             CreateControlErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -7258,6 +7295,8 @@ pub enum UpdateAssessmentStatusErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request has invalid or missing parameters. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -7269,6 +7308,7 @@ impl std::fmt::Display for UpdateAssessmentStatusError {
             UpdateAssessmentStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             UpdateAssessmentStatusErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             UpdateAssessmentStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             UpdateAssessmentStatusErrorKind::ValidationException(_inner) => _inner.fmt(f),
             UpdateAssessmentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -7345,6 +7385,13 @@ impl UpdateAssessmentStatusError {
             UpdateAssessmentStatusErrorKind::ResourceNotFoundException(_)
         )
     }
+    /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     /// Returns `true` if the error kind is `UpdateAssessmentStatusErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(
@@ -7359,6 +7406,7 @@ impl std::error::Error for UpdateAssessmentStatusError {
             UpdateAssessmentStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::InternalServerException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateAssessmentStatusErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::ValidationException(_inner) => Some(_inner),
             UpdateAssessmentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
@@ -8092,6 +8140,70 @@ impl AccessDeniedException {
     }
 }
 
+/// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+pub mod service_quota_exceeded_exception {
+
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8115,8 +8227,8 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }

@@ -1915,6 +1915,82 @@ impl FlushApiCacheOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EvaluateMappingTemplateOutput {
+    /// <p>The mapping template; this can be a request or response template.</p>
+    pub evaluation_result: std::option::Option<std::string::String>,
+    /// <p>The <code>ErrorDetail</code> object.</p>
+    pub error: std::option::Option<crate::model::ErrorDetail>,
+}
+impl EvaluateMappingTemplateOutput {
+    /// <p>The mapping template; this can be a request or response template.</p>
+    pub fn evaluation_result(&self) -> std::option::Option<&str> {
+        self.evaluation_result.as_deref()
+    }
+    /// <p>The <code>ErrorDetail</code> object.</p>
+    pub fn error(&self) -> std::option::Option<&crate::model::ErrorDetail> {
+        self.error.as_ref()
+    }
+}
+impl std::fmt::Debug for EvaluateMappingTemplateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluateMappingTemplateOutput");
+        formatter.field("evaluation_result", &self.evaluation_result);
+        formatter.field("error", &self.error);
+        formatter.finish()
+    }
+}
+/// See [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput).
+pub mod evaluate_mapping_template_output {
+
+    /// A builder for [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) evaluation_result: std::option::Option<std::string::String>,
+        pub(crate) error: std::option::Option<crate::model::ErrorDetail>,
+    }
+    impl Builder {
+        /// <p>The mapping template; this can be a request or response template.</p>
+        pub fn evaluation_result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.evaluation_result = Some(input.into());
+            self
+        }
+        /// <p>The mapping template; this can be a request or response template.</p>
+        pub fn set_evaluation_result(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.evaluation_result = input;
+            self
+        }
+        /// <p>The <code>ErrorDetail</code> object.</p>
+        pub fn error(mut self, input: crate::model::ErrorDetail) -> Self {
+            self.error = Some(input);
+            self
+        }
+        /// <p>The <code>ErrorDetail</code> object.</p>
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetail>) -> Self {
+            self.error = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput).
+        pub fn build(self) -> crate::output::EvaluateMappingTemplateOutput {
+            crate::output::EvaluateMappingTemplateOutput {
+                evaluation_result: self.evaluation_result,
+                error: self.error,
+            }
+        }
+    }
+}
+impl EvaluateMappingTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`EvaluateMappingTemplateOutput`](crate::output::EvaluateMappingTemplateOutput).
+    pub fn builder() -> crate::output::evaluate_mapping_template_output::Builder {
+        crate::output::evaluate_mapping_template_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApiOutput {}
 impl std::fmt::Debug for DisassociateApiOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

@@ -56,6 +56,66 @@ impl UpdateAttendeeCapabilitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+pub mod untag_resource_output {
+
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
+pub mod tag_resource_output {
+
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopMeetingTranscriptionOutput {}
 impl std::fmt::Debug for StopMeetingTranscriptionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -110,6 +170,67 @@ impl StartMeetingTranscriptionOutput {
     /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput).
     pub fn builder() -> crate::output::start_meeting_transcription_output::Builder {
         crate::output::start_meeting_transcription_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>The tags requested for the specified resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags requested for the specified resource.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+pub mod list_tags_for_resource_output {
+
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags requested for the specified resource.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags requested for the specified resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
 

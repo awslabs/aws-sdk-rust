@@ -6474,3 +6474,37 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceConnectorGrou
         }
     }
 }
+
+/// Operation shape for `ValidateE911Address`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`validate_e911_address`](crate::client::Client::validate_e911_address).
+///
+/// See [`crate::client::fluent_builders::ValidateE911Address`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ValidateE911Address {
+    _private: (),
+}
+impl ValidateE911Address {
+    /// Creates a new builder-style object to manufacture [`ValidateE911AddressInput`](crate::input::ValidateE911AddressInput).
+    pub fn builder() -> crate::input::validate_e911_address_input::Builder {
+        crate::input::validate_e911_address_input::Builder::default()
+    }
+    /// Creates a new `ValidateE911Address` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ValidateE911Address {
+    type Output = std::result::Result<
+        crate::output::ValidateE911AddressOutput,
+        crate::error::ValidateE911AddressError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_validate_e911_address_error(response)
+        } else {
+            crate::operation_deser::parse_validate_e911_address_response(response)
+        }
+    }
+}

@@ -11496,6 +11496,18 @@ where
                                     crate::json_deser::deser_map_com_amazonaws_glue_code_gen_configuration_nodes(tokens)?
                                 );
                             }
+                            "ExecutionClass" => {
+                                builder = builder.set_execution_class(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ExecutionClass::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -11821,6 +11833,18 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_f64()),
+                                );
+                            }
+                            "ExecutionClass" => {
+                                builder = builder.set_execution_class(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::model::ExecutionClass::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -18769,6 +18793,22 @@ where
                             }
                             "RunningActions" => {
                                 builder = builder.set_running_actions(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "ErroredActions" => {
+                                builder = builder.set_errored_actions(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "WaitingActions" => {
+                                builder = builder.set_waiting_actions(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

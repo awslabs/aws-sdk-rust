@@ -322,6 +322,79 @@ impl AsRef<str> for MediaCapabilities {
     }
 }
 
+/// <p>A key-value pair that you define.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Tag {
+    /// <p>The tag's key.</p>
+    pub key: std::option::Option<std::string::String>,
+    /// <p>The tag's value.</p>
+    pub value: std::option::Option<std::string::String>,
+}
+impl Tag {
+    /// <p>The tag's key.</p>
+    pub fn key(&self) -> std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// <p>The tag's value.</p>
+    pub fn value(&self) -> std::option::Option<&str> {
+        self.value.as_deref()
+    }
+}
+impl std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("key", &self.key);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`Tag`](crate::model::Tag).
+pub mod tag {
+
+    /// A builder for [`Tag`](crate::model::Tag).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The tag's key.</p>
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
+            self
+        }
+        /// <p>The tag's key.</p>
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
+            self
+        }
+        /// <p>The tag's value.</p>
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
+            self
+        }
+        /// <p>The tag's value.</p>
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
+        pub fn build(self) -> crate::model::Tag {
+            crate::model::Tag {
+                key: self.key,
+                value: self.value,
+            }
+        }
+    }
+}
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1756,6 +1829,8 @@ pub struct Meeting {
     pub primary_meeting_id: std::option::Option<std::string::String>,
     /// <p>Array of strings.</p>
     pub tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the meeting.</p>
+    pub meeting_arn: std::option::Option<std::string::String>,
 }
 impl Meeting {
     /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1793,6 +1868,10 @@ impl Meeting {
     pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.tenant_ids.as_deref()
     }
+    /// <p>The ARN of the meeting.</p>
+    pub fn meeting_arn(&self) -> std::option::Option<&str> {
+        self.meeting_arn.as_deref()
+    }
 }
 impl std::fmt::Debug for Meeting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1805,6 +1884,7 @@ impl std::fmt::Debug for Meeting {
         formatter.field("meeting_features", &self.meeting_features);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
+        formatter.field("meeting_arn", &self.meeting_arn);
         formatter.finish()
     }
 }
@@ -1823,6 +1903,7 @@ pub mod meeting {
             std::option::Option<crate::model::MeetingFeaturesConfiguration>,
         pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
         pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) meeting_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1934,6 +2015,16 @@ pub mod meeting {
             self.tenant_ids = input;
             self
         }
+        /// <p>The ARN of the meeting.</p>
+        pub fn meeting_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.meeting_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the meeting.</p>
+        pub fn set_meeting_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.meeting_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Meeting`](crate::model::Meeting).
         pub fn build(self) -> crate::model::Meeting {
             crate::model::Meeting {
@@ -1945,6 +2036,7 @@ pub mod meeting {
                 meeting_features: self.meeting_features,
                 primary_meeting_id: self.primary_meeting_id,
                 tenant_ids: self.tenant_ids,
+                meeting_arn: self.meeting_arn,
             }
         }
     }

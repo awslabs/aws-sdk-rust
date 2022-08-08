@@ -29,7 +29,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.46.0"
-aws-sdk-autoscalingplans = "0.16.0"
+aws-sdk-autoscalingplans = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

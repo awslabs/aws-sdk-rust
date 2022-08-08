@@ -321,6 +321,26 @@ pub fn parse_allow_custom_routing_traffic_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "EndpointGroupNotFoundException" => crate::error::AllowCustomRoutingTrafficError {
+            meta: generic,
+            kind: crate::error::AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::endpoint_group_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServiceErrorException" => crate::error::AllowCustomRoutingTrafficError {
             meta: generic,
             kind: crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(
@@ -1762,6 +1782,26 @@ pub fn parse_deny_custom_routing_traffic_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "EndpointGroupNotFoundException" => crate::error::DenyCustomRoutingTrafficError {
+            meta: generic,
+            kind: crate::error::DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::endpoint_group_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "InternalServiceErrorException" => crate::error::DenyCustomRoutingTrafficError {
             meta: generic,
             kind: crate::error::DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException({
@@ -4201,6 +4241,23 @@ pub fn parse_update_accelerator_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "AccessDeniedException" => crate::error::UpdateAcceleratorError {
+            meta: generic,
+            kind: crate::error::UpdateAcceleratorErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

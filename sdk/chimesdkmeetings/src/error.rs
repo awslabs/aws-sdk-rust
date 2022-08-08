@@ -1553,6 +1553,99 @@ impl std::error::Error for ListAttendeesError {
     }
 }
 
+/// Error type for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListTagsForResourceError {
+    /// Kind of error that occurred.
+    pub kind: ListTagsForResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListTagsForResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListTagsForResourceErrorKind {
+    /// <p>The resource that you want to tag couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListTagsForResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
+    fn code(&self) -> Option<&str> {
+        ListTagsForResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListTagsForResourceError {
+    /// Creates a new `ListTagsForResourceError`.
+    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListTagsForResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for ListTagsForResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListTagsForResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartMeetingTranscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1908,6 +2001,216 @@ impl std::error::Error for StopMeetingTranscriptionError {
             StopMeetingTranscriptionErrorKind::UnauthorizedException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
             StopMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct TagResourceError {
+    /// Kind of error that occurred.
+    pub kind: TagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `TagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum TagResourceErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The resource that you want to tag couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p>Too many tags were added to the specified resource.</p>
+    TooManyTagsException(crate::error::TooManyTagsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for TagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
+    fn code(&self) -> Option<&str> {
+        TagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl TagResourceError {
+    /// Creates a new `TagResourceError`.
+    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: TagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyTagsException(_))
+    }
+}
+impl std::error::Error for TagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            TagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
+            TagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UntagResourceError {
+    /// Kind of error that occurred.
+    pub kind: UntagResourceErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `UntagResource` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UntagResourceErrorKind {
+    /// <p>The input parameters don't match the service's restrictions.</p>
+    BadRequestException(crate::error::BadRequestException),
+    /// <p>The resource that you want to tag couldn't be found.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UntagResourceError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
+    fn code(&self) -> Option<&str> {
+        UntagResourceError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UntagResourceError {
+    /// Creates a new `UntagResourceError`.
+    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UntagResourceErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UntagResourceError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
+            UntagResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2510,7 +2813,7 @@ pub struct ConflictException {
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the request involved in the conflict.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ConflictException {
@@ -2518,7 +2821,7 @@ impl ConflictException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the request involved in the conflict.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -2579,12 +2882,12 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the request involved in the conflict.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the request involved in the conflict.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2710,6 +3013,258 @@ impl BadRequestException {
     }
 }
 
+/// <p>The resource that you want to tag couldn't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The ID of the resource that couldn't be found.</p>
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The name of the resource that couldn't be found.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl ResourceNotFoundException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The ID of the resource that couldn't be found.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the resource that couldn't be found.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ResourceNotFoundException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.field("resource_name", &self.resource_name);
+        formatter.finish()
+    }
+}
+impl ResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+pub mod resource_not_found_exception {
+
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The ID of the resource that couldn't be found.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the resource that couldn't be found.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The name of the resource that couldn't be found.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the resource that couldn't be found.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+        pub fn build(self) -> crate::error::ResourceNotFoundException {
+            crate::error::ResourceNotFoundException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+                resource_name: self.resource_name,
+            }
+        }
+    }
+}
+impl ResourceNotFoundException {
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
+    pub fn builder() -> crate::error::resource_not_found_exception::Builder {
+        crate::error::resource_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>Too many tags were added to the specified resource.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+    /// <p>The ID of the request that contains too many tags.</p>
+    pub request_id: std::option::Option<std::string::String>,
+    /// <p>The name of the resource that received too many tags.</p>
+    pub resource_name: std::option::Option<std::string::String>,
+}
+impl TooManyTagsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn code(&self) -> std::option::Option<&str> {
+        self.code.as_deref()
+    }
+    /// <p>The ID of the request that contains too many tags.</p>
+    pub fn request_id(&self) -> std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
+    /// <p>The name of the resource that received too many tags.</p>
+    pub fn resource_name(&self) -> std::option::Option<&str> {
+        self.resource_name.as_deref()
+    }
+}
+impl std::fmt::Debug for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyTagsException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.field("request_id", &self.request_id);
+        formatter.field("resource_name", &self.resource_name);
+        formatter.finish()
+    }
+}
+impl TooManyTagsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyTagsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyTagsException")?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyTagsException {}
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
+pub mod too_many_tags_exception {
+
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+        pub(crate) request_id: std::option::Option<std::string::String>,
+        pub(crate) resource_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// <p>The ID of the request that contains too many tags.</p>
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the request that contains too many tags.</p>
+        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.request_id = input;
+            self
+        }
+        /// <p>The name of the resource that received too many tags.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the resource that received too many tags.</p>
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
+        pub fn build(self) -> crate::error::TooManyTagsException {
+            crate::error::TooManyTagsException {
+                code: self.code,
+                message: self.message,
+                request_id: self.request_id,
+                resource_name: self.resource_name,
+            }
+        }
+    }
+}
+impl TooManyTagsException {
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
+    pub fn builder() -> crate::error::too_many_tags_exception::Builder {
+        crate::error::too_many_tags_exception::Builder::default()
+    }
+}
+
 /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2749,8 +3304,8 @@ impl UnprocessableEntityException {
 impl std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnprocessableEntityException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
         }
         Ok(())
     }
@@ -2822,7 +3377,7 @@ pub struct ThrottlingException {
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the request that exceeded the throttling limit.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
@@ -2830,7 +3385,7 @@ impl ThrottlingException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the request that exceeded the throttling limit.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -2853,8 +3408,8 @@ impl ThrottlingException {
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
-        if let Some(inner_8) = &self.message {
-            write!(f, ": {}", inner_8)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -2891,12 +3446,12 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the request that exceeded the throttling limit.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the request that exceeded the throttling limit.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -2926,7 +3481,7 @@ pub struct ServiceFailureException {
     pub code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the failed request.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ServiceFailureException {
@@ -2934,7 +3489,7 @@ impl ServiceFailureException {
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ID of the failed request.</p>
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -2957,8 +3512,8 @@ impl ServiceFailureException {
 impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -2995,12 +3550,12 @@ pub mod service_failure_exception {
             self.message = input;
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the failed request.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
         }
-        #[allow(missing_docs)] // documentation missing in model
+        /// <p>The ID of the failed request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -3061,8 +3616,8 @@ impl LimitExceededException {
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }

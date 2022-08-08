@@ -27,7 +27,7 @@ pub enum Error {
     EndpointNotFoundException(crate::error::EndpointNotFoundException),
     /// <p>The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be incorrect for this action.</p>
     IncorrectCidrStateException(crate::error::IncorrectCidrStateException),
-    /// <p>There was an internal error for AWS Global Accelerator.</p>
+    /// <p>There was an internal error for Global Accelerator.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>An argument that you specified is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -35,7 +35,7 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The port numbers that you specified are not valid numbers or are not unique for this accelerator.</p>
     InvalidPortRangeException(crate::error::InvalidPortRangeException),
-    /// <p>Processing your request would cause you to exceed an AWS Global Accelerator limit.</p>
+    /// <p>Processing your request would cause you to exceed an Global Accelerator limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The listener that you specified doesn't exist.</p>
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
@@ -131,17 +131,12 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AllowCustomRoutingTrafficError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(
-                    inner,
-                ) => Error::InternalServiceErrorException(inner),
-                crate::error::AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(
-                    inner,
-                ) => Error::InvalidArgumentException(inner),
-                crate::error::AllowCustomRoutingTrafficErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
+                crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+                crate::error::AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+                crate::error::AllowCustomRoutingTrafficErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -472,6 +467,9 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
+                    inner,
+                ) => Error::EndpointGroupNotFoundException(inner),
                 crate::error::DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(
                     inner,
                 ) => Error::InternalServiceErrorException(inner),
@@ -1062,6 +1060,9 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateAcceleratorErrorKind::AcceleratorNotFoundException(inner) => {
                     Error::AcceleratorNotFoundException(inner)
+                }
+                crate::error::UpdateAcceleratorErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
                 }
                 crate::error::UpdateAcceleratorErrorKind::InternalServiceErrorException(inner) => {
                     Error::InternalServiceErrorException(inner)

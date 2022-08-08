@@ -255,6 +255,22 @@ impl Client {
     pub fn create_asset_model(&self) -> fluent_builders::CreateAssetModel {
         fluent_builders::CreateAssetModel::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the [`CreateBulkImportJob`](crate::client::fluent_builders::CreateBulkImportJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::CreateBulkImportJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::CreateBulkImportJob::set_job_name): <p>The unique name that helps identify the job request.</p>
+    ///   - [`job_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateBulkImportJob::job_role_arn) / [`set_job_role_arn(Option<String>)`](crate::client::fluent_builders::CreateBulkImportJob::set_job_role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    ///   - [`files(Vec<File>)`](crate::client::fluent_builders::CreateBulkImportJob::files) / [`set_files(Option<Vec<File>>)`](crate::client::fluent_builders::CreateBulkImportJob::set_files): <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    ///   - [`error_report_location(ErrorReportLocation)`](crate::client::fluent_builders::CreateBulkImportJob::error_report_location) / [`set_error_report_location(Option<ErrorReportLocation>)`](crate::client::fluent_builders::CreateBulkImportJob::set_error_report_location): <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    ///   - [`job_configuration(JobConfiguration)`](crate::client::fluent_builders::CreateBulkImportJob::job_configuration) / [`set_job_configuration(Option<JobConfiguration>)`](crate::client::fluent_builders::CreateBulkImportJob::set_job_configuration): <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    /// - On success, responds with [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreateBulkImportJobOutput::job_id): <p>The ID of the job.</p>
+    ///   - [`job_name(Option<String>)`](crate::output::CreateBulkImportJobOutput::job_name): <p>The unique name that helps identify the job request.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::CreateBulkImportJobOutput::job_status): <p>The status of the bulk import job can be one of following values.</p>  <ul>   <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>   <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>   <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>   <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>   <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>   <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateBulkImportJobError>`](crate::error::CreateBulkImportJobError)
+    pub fn create_bulk_import_job(&self) -> fluent_builders::CreateBulkImportJob {
+        fluent_builders::CreateBulkImportJob::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the [`CreateDashboard`](crate::client::fluent_builders::CreateDashboard) operation.
     ///
     /// - The fluent builder is configurable:
@@ -480,6 +496,24 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeAssetPropertyError>`](crate::error::DescribeAssetPropertyError)
     pub fn describe_asset_property(&self) -> fluent_builders::DescribeAssetProperty {
         fluent_builders::DescribeAssetProperty::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`DescribeBulkImportJob`](crate::client::fluent_builders::DescribeBulkImportJob) operation.
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBulkImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeBulkImportJob::set_job_id): <p>The ID of the job.</p>
+    /// - On success, responds with [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeBulkImportJobOutput::job_id): <p>The ID of the job.</p>
+    ///   - [`job_name(Option<String>)`](crate::output::DescribeBulkImportJobOutput::job_name): <p>The unique name that helps identify the job request.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::DescribeBulkImportJobOutput::job_status): <p>The status of the bulk import job can be one of following values.</p>  <ul>   <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>   <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>   <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>   <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>   <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>   <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>  </ul>
+    ///   - [`job_role_arn(Option<String>)`](crate::output::DescribeBulkImportJobOutput::job_role_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    ///   - [`files(Option<Vec<File>>)`](crate::output::DescribeBulkImportJobOutput::files): <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    ///   - [`error_report_location(Option<ErrorReportLocation>)`](crate::output::DescribeBulkImportJobOutput::error_report_location): <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    ///   - [`job_configuration(Option<JobConfiguration>)`](crate::output::DescribeBulkImportJobOutput::job_configuration): <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    ///   - [`job_creation_date(Option<DateTime>)`](crate::output::DescribeBulkImportJobOutput::job_creation_date): <p>The date the job was created, in Unix epoch TIME.</p>
+    ///   - [`job_last_update_date(Option<DateTime>)`](crate::output::DescribeBulkImportJobOutput::job_last_update_date): <p>The date the job was last updated, in Unix epoch time.</p>
+    /// - On failure, responds with [`SdkError<DescribeBulkImportJobError>`](crate::error::DescribeBulkImportJobError)
+    pub fn describe_bulk_import_job(&self) -> fluent_builders::DescribeBulkImportJob {
+        fluent_builders::DescribeBulkImportJob::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeDashboard`](crate::client::fluent_builders::DescribeDashboard) operation.
     ///
@@ -814,6 +848,20 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListAssociatedAssetsError>`](crate::error::ListAssociatedAssetsError)
     pub fn list_associated_assets(&self) -> fluent_builders::ListAssociatedAssets {
         fluent_builders::ListAssociatedAssets::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the [`ListBulkImportJobs`](crate::client::fluent_builders::ListBulkImportJobs) operation.
+    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBulkImportJobs::into_paginator).
+    ///
+    /// - The fluent builder is configurable:
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBulkImportJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBulkImportJobs::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBulkImportJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBulkImportJobs::set_max_results): <p>The maximum number of results to return for each paginated request.</p>
+    ///   - [`filter(ListBulkImportJobsFilter)`](crate::client::fluent_builders::ListBulkImportJobs::filter) / [`set_filter(Option<ListBulkImportJobsFilter>)`](crate::client::fluent_builders::ListBulkImportJobs::set_filter): <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
+    /// - On success, responds with [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput) with field(s):
+    ///   - [`job_summaries(Option<Vec<JobSummary>>)`](crate::output::ListBulkImportJobsOutput::job_summaries): <p>One or more job summaries to list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBulkImportJobsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListBulkImportJobsError>`](crate::error::ListBulkImportJobsError)
+    pub fn list_bulk_import_jobs(&self) -> fluent_builders::ListBulkImportJobs {
+        fluent_builders::ListBulkImportJobs::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListDashboards`](crate::client::fluent_builders::ListDashboards) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
@@ -2185,6 +2233,117 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateBulkImportJob`.
+    ///
+    /// <note>
+    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
+    /// </note>
+    /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important>
+    /// <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+    /// </important>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateBulkImportJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::create_bulk_import_job_input::Builder,
+    }
+    impl CreateBulkImportJob {
+        /// Creates a new `CreateBulkImportJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBulkImportJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateBulkImportJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+        pub fn job_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_role_arn(input.into());
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+        pub fn set_job_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_role_arn(input);
+            self
+        }
+        /// Appends an item to `files`.
+        ///
+        /// To override the contents of this collection use [`set_files`](Self::set_files).
+        ///
+        /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+        pub fn files(mut self, input: crate::model::File) -> Self {
+            self.inner = self.inner.files(input);
+            self
+        }
+        /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+        pub fn set_files(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::File>>,
+        ) -> Self {
+            self.inner = self.inner.set_files(input);
+            self
+        }
+        /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+        pub fn error_report_location(mut self, input: crate::model::ErrorReportLocation) -> Self {
+            self.inner = self.inner.error_report_location(input);
+            self
+        }
+        /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+        pub fn set_error_report_location(
+            mut self,
+            input: std::option::Option<crate::model::ErrorReportLocation>,
+        ) -> Self {
+            self.inner = self.inner.set_error_report_location(input);
+            self
+        }
+        /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+        pub fn job_configuration(mut self, input: crate::model::JobConfiguration) -> Self {
+            self.inner = self.inner.job_configuration(input);
+            self
+        }
+        /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+        pub fn set_job_configuration(
+            mut self,
+            input: std::option::Option<crate::model::JobConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_job_configuration(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateDashboard`.
     ///
     /// <p>Creates a dashboard in an IoT SiteWise Monitor project.</p>
@@ -3458,6 +3617,62 @@ pub mod fluent_builders {
         /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_property_id(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeBulkImportJob`.
+    ///
+    /// <note>
+    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
+    /// </note>
+    /// <p>Retrieves information about a bulk import job request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeBulkImportJob {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::describe_bulk_import_job_input::Builder,
+    }
+    impl DescribeBulkImportJob {
+        /// Creates a new `DescribeBulkImportJob`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeBulkImportJobOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeBulkImportJobError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
+            self
+        }
+        /// <p>The ID of the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
     }
@@ -5311,6 +5526,91 @@ pub mod fluent_builders {
         /// <p>Default: 50</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `ListBulkImportJobs`.
+    ///
+    /// <note>
+    /// <p>This API operation is in preview release for IoT SiteWise and is subject to change. We recommend that you use this operation only with test data, and not in production environments.</p>
+    /// </note>
+    /// <p>Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListBulkImportJobs {
+        handle: std::sync::Arc<super::Handle>,
+        inner: crate::input::list_bulk_import_jobs_input::Builder,
+    }
+    impl ListBulkImportJobs {
+        /// Creates a new `ListBulkImportJobs`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListBulkImportJobsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListBulkImportJobsError>,
+        > {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBulkImportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBulkImportJobsPaginator {
+            crate::paginator::ListBulkImportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The token to be used for the next set of paginated results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum number of results to return for each paginated request.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
+        pub fn filter(mut self, input: crate::model::ListBulkImportJobsFilter) -> Self {
+            self.inner = self.inner.filter(input);
+            self
+        }
+        /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::ListBulkImportJobsFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_filter(input);
             self
         }
     }

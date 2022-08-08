@@ -1070,14 +1070,22 @@ pub mod create_data_repository_task_input {
         ///
         /// To override the contents of this collection use [`set_paths`](Self::set_paths).
         ///
-        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+        /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+        /// <ul>
+        /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+        /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+        /// </ul>
         pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.paths.unwrap_or_default();
             v.push(input.into());
             self.paths = Some(v);
             self
         }
-        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+        /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+        /// <ul>
+        /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+        /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+        /// </ul>
         pub fn set_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9301,7 +9309,11 @@ impl std::fmt::Debug for CreateFileSystemInput {
 pub struct CreateDataRepositoryTaskInput {
     /// <p>Specifies the type of data repository task to create.</p>
     pub r#type: std::option::Option<crate::model::DataRepositoryTaskType>,
-    /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <ul>
+    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// </ul>
     pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub file_system_id: std::option::Option<std::string::String>,
@@ -9317,7 +9329,11 @@ impl CreateDataRepositoryTaskInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DataRepositoryTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+    /// <p>A list of paths for the data repository task to use when the task is processed. If a path that you provide isn't valid, the task fails.</p>
+    /// <ul>
+    /// <li> <p>For export tasks, the list contains paths on the Amazon FSx file system from which the files are exported to the Amazon S3 bucket. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>.</p> </li>
+    /// <li> <p>For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX metadata changes are imported to the Amazon FSx file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).</p> </li>
+    /// </ul>
     pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
         self.paths.as_deref()
     }

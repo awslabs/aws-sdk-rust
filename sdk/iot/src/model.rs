@@ -3911,6 +3911,8 @@ pub struct ThingIndexingConfiguration {
     pub managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
     /// <p>Contains custom field names and their data type.</p>
     pub custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    pub filter: std::option::Option<crate::model::IndexingFilter>,
 }
 impl ThingIndexingConfiguration {
     /// <p>Thing indexing mode. Valid values are:</p>
@@ -3962,6 +3964,10 @@ impl ThingIndexingConfiguration {
     pub fn custom_fields(&self) -> std::option::Option<&[crate::model::Field]> {
         self.custom_fields.as_deref()
     }
+    /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+    pub fn filter(&self) -> std::option::Option<&crate::model::IndexingFilter> {
+        self.filter.as_ref()
+    }
 }
 impl std::fmt::Debug for ThingIndexingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3981,6 +3987,7 @@ impl std::fmt::Debug for ThingIndexingConfiguration {
         );
         formatter.field("managed_fields", &self.managed_fields);
         formatter.field("custom_fields", &self.custom_fields);
+        formatter.field("filter", &self.filter);
         formatter.finish()
     }
 }
@@ -3999,6 +4006,7 @@ pub mod thing_indexing_configuration {
             std::option::Option<crate::model::NamedShadowIndexingMode>,
         pub(crate) managed_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
         pub(crate) custom_fields: std::option::Option<std::vec::Vec<crate::model::Field>>,
+        pub(crate) filter: std::option::Option<crate::model::IndexingFilter>,
     }
     impl Builder {
         /// <p>Thing indexing mode. Valid values are:</p>
@@ -4138,6 +4146,19 @@ pub mod thing_indexing_configuration {
             self.custom_fields = input;
             self
         }
+        /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+        pub fn filter(mut self, input: crate::model::IndexingFilter) -> Self {
+            self.filter = Some(input);
+            self
+        }
+        /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::IndexingFilter>,
+        ) -> Self {
+            self.filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ThingIndexingConfiguration`](crate::model::ThingIndexingConfiguration).
         pub fn build(self) -> crate::model::ThingIndexingConfiguration {
             crate::model::ThingIndexingConfiguration {
@@ -4147,6 +4168,7 @@ pub mod thing_indexing_configuration {
                 named_shadow_indexing_mode: self.named_shadow_indexing_mode,
                 managed_fields: self.managed_fields,
                 custom_fields: self.custom_fields,
+                filter: self.filter,
             }
         }
     }
@@ -4155,6 +4177,69 @@ impl ThingIndexingConfiguration {
     /// Creates a new builder-style object to manufacture [`ThingIndexingConfiguration`](crate::model::ThingIndexingConfiguration).
     pub fn builder() -> crate::model::thing_indexing_configuration::Builder {
         crate::model::thing_indexing_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IndexingFilter {
+    /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub named_shadow_names: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl IndexingFilter {
+    /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn named_shadow_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.named_shadow_names.as_deref()
+    }
+}
+impl std::fmt::Debug for IndexingFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IndexingFilter");
+        formatter.field("named_shadow_names", &self.named_shadow_names);
+        formatter.finish()
+    }
+}
+/// See [`IndexingFilter`](crate::model::IndexingFilter).
+pub mod indexing_filter {
+
+    /// A builder for [`IndexingFilter`](crate::model::IndexingFilter).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) named_shadow_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `named_shadow_names`.
+        ///
+        /// To override the contents of this collection use [`set_named_shadow_names`](Self::set_named_shadow_names).
+        ///
+        /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+        pub fn named_shadow_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.named_shadow_names.unwrap_or_default();
+            v.push(input.into());
+            self.named_shadow_names = Some(v);
+            self
+        }
+        /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+        pub fn set_named_shadow_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.named_shadow_names = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IndexingFilter`](crate::model::IndexingFilter).
+        pub fn build(self) -> crate::model::IndexingFilter {
+            crate::model::IndexingFilter {
+                named_shadow_names: self.named_shadow_names,
+            }
+        }
+    }
+}
+impl IndexingFilter {
+    /// Creates a new builder-style object to manufacture [`IndexingFilter`](crate::model::IndexingFilter).
+    pub fn builder() -> crate::model::indexing_filter::Builder {
+        crate::model::indexing_filter::Builder::default()
     }
 }
 
@@ -5197,6 +5282,8 @@ pub struct RegistrationConfig {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The ARN of the role.</p>
     pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the provisioning template.</p>
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl RegistrationConfig {
     /// <p>The template body.</p>
@@ -5207,12 +5294,17 @@ impl RegistrationConfig {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for RegistrationConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RegistrationConfig");
         formatter.field("template_body", &self.template_body);
         formatter.field("role_arn", &self.role_arn);
+        formatter.field("template_name", &self.template_name);
         formatter.finish()
     }
 }
@@ -5224,6 +5316,7 @@ pub mod registration_config {
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) template_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The template body.</p>
@@ -5249,11 +5342,25 @@ pub mod registration_config {
             self.role_arn = input;
             self
         }
+        /// <p>The name of the provisioning template.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the provisioning template.</p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`RegistrationConfig`](crate::model::RegistrationConfig).
         pub fn build(self) -> crate::model::RegistrationConfig {
             crate::model::RegistrationConfig {
                 template_body: self.template_body,
                 role_arn: self.role_arn,
+                template_name: self.template_name,
             }
         }
     }
@@ -14642,9 +14749,9 @@ impl ScheduledAuditMetadata {
 pub struct ProvisioningTemplateVersionSummary {
     /// <p>The ID of the fleet privisioning template version.</p>
     pub version_id: std::option::Option<i32>,
-    /// <p>The date when the fleet provisioning template version was created</p>
+    /// <p>The date when the provisioning template version was created</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+    /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub is_default_version: bool,
 }
 impl ProvisioningTemplateVersionSummary {
@@ -14652,11 +14759,11 @@ impl ProvisioningTemplateVersionSummary {
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
-    /// <p>The date when the fleet provisioning template version was created</p>
+    /// <p>The date when the provisioning template version was created</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+    /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
     }
@@ -14691,12 +14798,12 @@ pub mod provisioning_template_version_summary {
             self.version_id = input;
             self
         }
-        /// <p>The date when the fleet provisioning template version was created</p>
+        /// <p>The date when the provisioning template version was created</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template version was created</p>
+        /// <p>The date when the provisioning template version was created</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14704,12 +14811,12 @@ pub mod provisioning_template_version_summary {
             self.creation_date = input;
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+        /// <p>True if the provisioning template version is the default version, otherwise false.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+        /// <p>True if the provisioning template version is the default version, otherwise false.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -14731,47 +14838,53 @@ impl ProvisioningTemplateVersionSummary {
     }
 }
 
-/// <p>A summary of information about a fleet provisioning template.</p>
+/// <p>A summary of information about a provisioning template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisioningTemplateSummary {
-    /// <p>The ARN of the fleet provisioning template.</p>
+    /// <p>The ARN of the provisioning template.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The date when the fleet provisioning template summary was created.</p>
+    /// <p>The date when the provisioning template summary was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date when the fleet provisioning template summary was last modified.</p>
+    /// <p>The date when the provisioning template summary was last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub enabled: bool,
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub r#type: std::option::Option<crate::model::TemplateType>,
 }
 impl ProvisioningTemplateSummary {
-    /// <p>The ARN of the fleet provisioning template.</p>
+    /// <p>The ARN of the provisioning template.</p>
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date when the fleet provisioning template summary was created.</p>
+    /// <p>The date when the provisioning template summary was created.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The date when the fleet provisioning template summary was last modified.</p>
+    /// <p>The date when the provisioning template summary was last modified.</p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
+    }
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.r#type.as_ref()
     }
 }
 impl std::fmt::Debug for ProvisioningTemplateSummary {
@@ -14783,6 +14896,7 @@ impl std::fmt::Debug for ProvisioningTemplateSummary {
         formatter.field("creation_date", &self.creation_date);
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.field("enabled", &self.enabled);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }
@@ -14798,24 +14912,25 @@ pub mod provisioning_template_summary {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) r#type: std::option::Option<crate::model::TemplateType>,
     }
     impl Builder {
-        /// <p>The ARN of the fleet provisioning template.</p>
+        /// <p>The ARN of the provisioning template.</p>
         pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the fleet provisioning template.</p>
+        /// <p>The ARN of the provisioning template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_arn = input;
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14823,22 +14938,22 @@ pub mod provisioning_template_summary {
             self.template_name = input;
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The date when the fleet provisioning template summary was created.</p>
+        /// <p>The date when the provisioning template summary was created.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template summary was created.</p>
+        /// <p>The date when the provisioning template summary was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14846,12 +14961,12 @@ pub mod provisioning_template_summary {
             self.creation_date = input;
             self
         }
-        /// <p>The date when the fleet provisioning template summary was last modified.</p>
+        /// <p>The date when the provisioning template summary was last modified.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// <p>The date when the fleet provisioning template summary was last modified.</p>
+        /// <p>The date when the provisioning template summary was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14869,6 +14984,16 @@ pub mod provisioning_template_summary {
             self.enabled = input;
             self
         }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn r#type(mut self, input: crate::model::TemplateType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.r#type = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ProvisioningTemplateSummary`](crate::model::ProvisioningTemplateSummary).
         pub fn build(self) -> crate::model::ProvisioningTemplateSummary {
             crate::model::ProvisioningTemplateSummary {
@@ -14878,6 +15003,7 @@ pub mod provisioning_template_summary {
                 creation_date: self.creation_date,
                 last_modified_date: self.last_modified_date,
                 enabled: self.enabled.unwrap_or_default(),
+                r#type: self.r#type,
             }
         }
     }
@@ -14886,6 +15012,61 @@ impl ProvisioningTemplateSummary {
     /// Creates a new builder-style object to manufacture [`ProvisioningTemplateSummary`](crate::model::ProvisioningTemplateSummary).
     pub fn builder() -> crate::model::provisioning_template_summary::Builder {
         crate::model::provisioning_template_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TemplateType {
+    #[allow(missing_docs)] // documentation missing in model
+    FleetProvisioning,
+    #[allow(missing_docs)] // documentation missing in model
+    Jitp,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TemplateType {
+    fn from(s: &str) -> Self {
+        match s {
+            "FLEET_PROVISIONING" => TemplateType::FleetProvisioning,
+            "JITP" => TemplateType::Jitp,
+            other => TemplateType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TemplateType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TemplateType::from(s))
+    }
+}
+impl TemplateType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TemplateType::FleetProvisioning => "FLEET_PROVISIONING",
+            TemplateType::Jitp => "JITP",
+            TemplateType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FLEET_PROVISIONING", "JITP"]
+    }
+}
+impl AsRef<str> for TemplateType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

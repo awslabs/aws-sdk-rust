@@ -1955,6 +1955,7 @@ pub mod create_db_instance_input {
         pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) promotion_tier: std::option::Option<i32>,
         pub(crate) enable_performance_insights: std::option::Option<bool>,
         pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
@@ -2097,6 +2098,16 @@ pub mod create_db_instance_input {
             self.db_cluster_identifier = input;
             self
         }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
+            self
+        }
         /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         /// <p>Default: 1</p>
         /// <p>Valid values: 0-15</p>
@@ -2155,6 +2166,7 @@ pub mod create_db_instance_input {
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade,
                 tags: self.tags,
                 db_cluster_identifier: self.db_cluster_identifier,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 promotion_tier: self.promotion_tier,
                 enable_performance_insights: self.enable_performance_insights,
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
@@ -8507,6 +8519,7 @@ pub mod modify_db_instance_input {
         pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
         pub(crate) new_db_instance_identifier: std::option::Option<std::string::String>,
         pub(crate) ca_certificate_identifier: std::option::Option<std::string::String>,
+        pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
         pub(crate) promotion_tier: std::option::Option<i32>,
         pub(crate) enable_performance_insights: std::option::Option<bool>,
         pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
@@ -8638,6 +8651,16 @@ pub mod modify_db_instance_input {
             self.ca_certificate_identifier = input;
             self
         }
+        /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
+            self
+        }
+        /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
+            self
+        }
         /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
         /// <p>Default: 1</p>
         /// <p>Valid values: 0-15</p>
@@ -8695,6 +8718,7 @@ pub mod modify_db_instance_input {
                 auto_minor_version_upgrade: self.auto_minor_version_upgrade,
                 new_db_instance_identifier: self.new_db_instance_identifier,
                 ca_certificate_identifier: self.ca_certificate_identifier,
+                copy_tags_to_snapshot: self.copy_tags_to_snapshot,
                 promotion_tier: self.promotion_tier,
                 enable_performance_insights: self.enable_performance_insights,
                 performance_insights_kms_key_id: self.performance_insights_kms_key_id,
@@ -10568,6 +10592,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
+        pub(crate) restore_type: std::option::Option<std::string::String>,
         pub(crate) source_db_cluster_identifier: std::option::Option<std::string::String>,
         pub(crate) restore_to_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) use_latest_restorable_time: std::option::Option<bool>,
@@ -10604,6 +10629,28 @@ pub mod restore_db_cluster_to_point_in_time_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.db_cluster_identifier = input;
+            self
+        }
+        /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+        /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+        /// </ul>
+        /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+        /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+        pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.restore_type = Some(input.into());
+            self
+        }
+        /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+        /// <ul>
+        /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+        /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+        /// </ul>
+        /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+        /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+        pub fn set_restore_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restore_type = input;
             self
         }
         /// <p>The identifier of the source cluster from which to restore.</p>
@@ -10811,6 +10858,7 @@ pub mod restore_db_cluster_to_point_in_time_input {
         > {
             Ok(crate::input::RestoreDbClusterToPointInTimeInput {
                 db_cluster_identifier: self.db_cluster_identifier,
+                restore_type: self.restore_type,
                 source_db_cluster_identifier: self.source_db_cluster_identifier,
                 restore_to_time: self.restore_to_time,
                 use_latest_restorable_time: self.use_latest_restorable_time.unwrap_or_default(),
@@ -11261,6 +11309,14 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// </ul>
+    /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+    /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+    pub restore_type: std::option::Option<std::string::String>,
     /// <p>The identifier of the source cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -11319,6 +11375,16 @@ impl RestoreDbClusterToPointInTimeInput {
     /// </ul>
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
+    }
+    /// <p>The type of restore to be performed. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>
+    /// <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>
+    /// </ul>
+    /// <p>Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is earlier than 1.11.</p>
+    /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+    pub fn restore_type(&self) -> std::option::Option<&str> {
+        self.restore_type.as_deref()
     }
     /// <p>The identifier of the source cluster from which to restore.</p>
     /// <p>Constraints:</p>
@@ -11392,6 +11458,7 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RestoreDbClusterToPointInTimeInput");
         formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("restore_type", &self.restore_type);
         formatter.field(
             "source_db_cluster_identifier",
             &self.source_db_cluster_identifier,
@@ -11908,6 +11975,8 @@ pub struct ModifyDbInstanceInput {
     pub new_db_instance_identifier: std::option::Option<std::string::String>,
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
     pub ca_certificate_identifier: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
@@ -11967,6 +12036,10 @@ impl ModifyDbInstanceInput {
     pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
+    /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
@@ -12003,6 +12076,7 @@ impl std::fmt::Debug for ModifyDbInstanceInput {
             &self.new_db_instance_identifier,
         );
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("promotion_tier", &self.promotion_tier);
         formatter.field(
             "enable_performance_insights",
@@ -13800,6 +13874,8 @@ pub struct CreateDbInstanceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The identifier of the cluster that the instance will belong to.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
+    /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub copy_tags_to_snapshot: std::option::Option<bool>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
@@ -13859,6 +13935,10 @@ impl CreateDbInstanceInput {
     pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
+    /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+        self.copy_tags_to_snapshot
+    }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid values: 0-15</p>
@@ -13893,6 +13973,7 @@ impl std::fmt::Debug for CreateDbInstanceInput {
         );
         formatter.field("tags", &self.tags);
         formatter.field("db_cluster_identifier", &self.db_cluster_identifier);
+        formatter.field("copy_tags_to_snapshot", &self.copy_tags_to_snapshot);
         formatter.field("promotion_tier", &self.promotion_tier);
         formatter.field(
             "enable_performance_insights",

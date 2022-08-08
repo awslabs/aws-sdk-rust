@@ -15,6 +15,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Provides information about an error that occurred because too many requests were sent during a certain amount of time.</p>
     ThrottlingException(crate::error::ThrottlingException),
+    /// <p>Provides information about an error that occurred due to an unprocessable entity.</p>
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
     /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
@@ -29,6 +31,7 @@ impl std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::UnprocessableEntityException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -1226,6 +1229,86 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRevealConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetRevealConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetRevealConfigurationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::GetRevealConfigurationErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::GetRevealConfigurationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::GetRevealConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::GetRevealConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSensitiveDataOccurrencesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::GetSensitiveDataOccurrencesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetSensitiveDataOccurrencesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+                crate::error::GetSensitiveDataOccurrencesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::GetSensitiveDataOccurrencesAvailabilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetSensitiveDataOccurrencesAvailabilityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUsageStatisticsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1912,6 +1995,36 @@ where
                 crate::error::UpdateOrganizationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::UpdateOrganizationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRevealConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::UpdateRevealConfigurationError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateRevealConfigurationErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::UpdateRevealConfigurationErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::UpdateRevealConfigurationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateRevealConfigurationErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::UpdateRevealConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }

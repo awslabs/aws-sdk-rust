@@ -4652,6 +4652,23 @@ pub fn parse_associate_software_token_error(
                 tmp
             }),
         },
+        "ForbiddenException" => crate::error::AssociateSoftwareTokenError {
+            meta: generic,
+            kind: crate::error::AssociateSoftwareTokenErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateSoftwareTokenError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::AssociateSoftwareTokenError {
             meta: generic,
             kind: crate::error::AssociateSoftwareTokenErrorKind::InternalErrorException({
@@ -4778,6 +4795,23 @@ pub fn parse_change_password_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::ChangePasswordError {
+            meta: generic,
+            kind: crate::error::ChangePasswordErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::ChangePasswordError {
             meta: generic,
             kind: crate::error::ChangePasswordErrorKind::InternalErrorException({
@@ -4978,6 +5012,23 @@ pub fn parse_confirm_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::ConfirmDeviceError {
+            meta: generic,
+            kind: crate::error::ConfirmDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmDeviceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::ConfirmDeviceError {
             meta: generic,
             kind: crate::error::ConfirmDeviceErrorKind::InternalErrorException({
@@ -5248,6 +5299,23 @@ pub fn parse_confirm_forgot_password_error(
                     let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmForgotPasswordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::ConfirmForgotPasswordError {
+            meta: generic,
+            kind: crate::error::ConfirmForgotPasswordErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmForgotPasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -5555,6 +5623,23 @@ pub fn parse_confirm_sign_up_error(
                     let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSignUpError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::ConfirmSignUpError {
+            meta: generic,
+            kind: crate::error::ConfirmSignUpErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSignUpError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -7271,6 +7356,23 @@ pub fn parse_delete_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::DeleteUserError {
+            meta: generic,
+            kind: crate::error::DeleteUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::DeleteUserError {
             meta: generic,
             kind: crate::error::DeleteUserErrorKind::InternalErrorException({
@@ -7440,6 +7542,23 @@ pub fn parse_delete_user_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::DeleteUserAttributesError {
+            meta: generic,
+            kind: crate::error::DeleteUserAttributesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserAttributesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::DeleteUserAttributesError {
             meta: generic,
             kind: crate::error::DeleteUserAttributesErrorKind::InternalErrorException({
@@ -8874,6 +8993,23 @@ pub fn parse_forget_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::ForgetDeviceError {
+            meta: generic,
+            kind: crate::error::ForgetDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgetDeviceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::ForgetDeviceError {
             meta: generic,
             kind: crate::error::ForgetDeviceErrorKind::InternalErrorException({
@@ -9068,6 +9204,23 @@ pub fn parse_forgot_password_error(
                         crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::ForgotPasswordError {
+            meta: generic,
+            kind: crate::error::ForgotPasswordErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ForgotPasswordError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -9456,6 +9609,23 @@ pub fn parse_get_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::GetDeviceError {
+            meta: generic,
+            kind: crate::error::GetDeviceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::GetDeviceError {
             meta: generic,
             kind: crate::error::GetDeviceErrorKind::InternalErrorException({
@@ -10116,6 +10286,23 @@ pub fn parse_get_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::GetUserError {
+            meta: generic,
+            kind: crate::error::GetUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::GetUserError {
             meta: generic,
             kind: crate::error::GetUserErrorKind::InternalErrorException({
@@ -10298,6 +10485,20 @@ pub fn parse_get_user_attribute_verification_code_error(
                     #[allow(unused_mut)]let mut output = crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ForbiddenException" => crate::error::GetUserAttributeVerificationCodeError { meta: generic, kind: crate::error::GetUserAttributeVerificationCodeErrorKind::ForbiddenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUserAttributeVerificationCodeError::unhandled)?;
                     output.build()
                 }
             ;
@@ -10675,6 +10876,23 @@ pub fn parse_global_sign_out_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::GlobalSignOutError {
+            meta: generic,
+            kind: crate::error::GlobalSignOutErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GlobalSignOutError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::GlobalSignOutError {
             meta: generic,
             kind: crate::error::GlobalSignOutErrorKind::InternalErrorException({
@@ -10824,6 +11042,23 @@ pub fn parse_initiate_auth_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::InitiateAuthError {
+            meta: generic,
+            kind: crate::error::InitiateAuthErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateAuthError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::InitiateAuthError {
             meta: generic,
             kind: crate::error::InitiateAuthErrorKind::InternalErrorException({
@@ -11100,6 +11335,23 @@ pub fn parse_list_devices_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::ListDevicesError {
+            meta: generic,
+            kind: crate::error::ListDevicesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::ListDevicesError {
             meta: generic,
             kind: crate::error::ListDevicesErrorKind::InternalErrorException({
@@ -12396,6 +12648,20 @@ pub fn parse_resend_confirmation_code_error(
                                                     }
             tmp
         })},
+        "ForbiddenException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::ForbiddenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResendConfirmationCodeError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "InternalErrorException" => crate::error::ResendConfirmationCodeError { meta: generic, kind: crate::error::ResendConfirmationCodeErrorKind::InternalErrorException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -12656,6 +12922,20 @@ pub fn parse_respond_to_auth_challenge_error(
                     #[allow(unused_mut)]let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ForbiddenException" => crate::error::RespondToAuthChallengeError { meta: generic, kind: crate::error::RespondToAuthChallengeErrorKind::ForbiddenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RespondToAuthChallengeError::unhandled)?;
                     output.build()
                 }
             ;
@@ -12939,6 +13219,23 @@ pub fn parse_revoke_token_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::RevokeTokenError {
+            meta: generic,
+            kind: crate::error::RevokeTokenErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeTokenError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::RevokeTokenError {
             meta: generic,
             kind: crate::error::RevokeTokenErrorKind::InternalErrorException({
@@ -13380,6 +13677,23 @@ pub fn parse_set_user_mfa_preference_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::SetUserMFAPreferenceError {
+            meta: generic,
+            kind: crate::error::SetUserMFAPreferenceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserMFAPreferenceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::SetUserMFAPreferenceError {
             meta: generic,
             kind: crate::error::SetUserMFAPreferenceErrorKind::InternalErrorException({
@@ -13670,6 +13984,23 @@ pub fn parse_set_user_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::SetUserSettingsError {
+            meta: generic,
+            kind: crate::error::SetUserSettingsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetUserSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::SetUserSettingsError {
             meta: generic,
             kind: crate::error::SetUserSettingsErrorKind::InternalErrorException({
@@ -13829,6 +14160,23 @@ pub fn parse_sign_up_error(
                         crate::error::code_delivery_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_delivery_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::SignUpError {
+            meta: generic,
+            kind: crate::error::SignUpErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignUpError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -14770,6 +15118,23 @@ pub fn parse_update_device_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ForbiddenException" => crate::error::UpdateDeviceStatusError {
+            meta: generic,
+            kind: crate::error::UpdateDeviceStatusErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDeviceStatusError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::UpdateDeviceStatusError {
             meta: generic,
             kind: crate::error::UpdateDeviceStatusErrorKind::InternalErrorException({
@@ -15400,6 +15765,20 @@ pub fn parse_update_user_attributes_error(
                     #[allow(unused_mut)]let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ForbiddenException" => crate::error::UpdateUserAttributesError { meta: generic, kind: crate::error::UpdateUserAttributesErrorKind::ForbiddenException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserAttributesError::unhandled)?;
                     output.build()
                 }
             ;
@@ -16205,6 +16584,23 @@ pub fn parse_verify_software_token_error(
                 tmp
             }),
         },
+        "ForbiddenException" => crate::error::VerifySoftwareTokenError {
+            meta: generic,
+            kind: crate::error::VerifySoftwareTokenErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifySoftwareTokenError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InternalErrorException" => crate::error::VerifySoftwareTokenError {
             meta: generic,
             kind: crate::error::VerifySoftwareTokenErrorKind::InternalErrorException({
@@ -16461,6 +16857,23 @@ pub fn parse_verify_user_attribute_error(
                     let mut output = crate::error::expired_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyUserAttributeError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::VerifyUserAttributeError {
+            meta: generic,
+            kind: crate::error::VerifyUserAttributeErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyUserAttributeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

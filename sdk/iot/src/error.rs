@@ -26063,6 +26063,8 @@ pub enum RegisterCACertificateErrorKind {
     RegistrationCodeValidationException(crate::error::RegistrationCodeValidationException),
     /// <p>The resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    /// <p>The specified resource does not exist.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The service is temporarily unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
@@ -26083,6 +26085,7 @@ impl std::fmt::Display for RegisterCACertificateError {
                 _inner.fmt(f)
             }
             RegisterCACertificateErrorKind::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
+            RegisterCACertificateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             RegisterCACertificateErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             RegisterCACertificateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             RegisterCACertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -26182,6 +26185,13 @@ impl RegisterCACertificateError {
             RegisterCACertificateErrorKind::ResourceAlreadyExistsException(_)
         )
     }
+    /// Returns `true` if the error kind is `RegisterCACertificateErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterCACertificateErrorKind::ResourceNotFoundException(_)
+        )
+    }
     /// Returns `true` if the error kind is `RegisterCACertificateErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
         matches!(
@@ -26215,6 +26225,7 @@ impl std::error::Error for RegisterCACertificateError {
                 Some(_inner)
             }
             RegisterCACertificateErrorKind::ResourceAlreadyExistsException(_inner) => Some(_inner),
+            RegisterCACertificateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             RegisterCACertificateErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             RegisterCACertificateErrorKind::ThrottlingException(_inner) => Some(_inner),
             RegisterCACertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),

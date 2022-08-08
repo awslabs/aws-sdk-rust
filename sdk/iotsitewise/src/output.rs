@@ -1385,6 +1385,88 @@ impl ListDashboardsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListBulkImportJobsOutput {
+    /// <p>One or more job summaries to list.</p>
+    pub job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListBulkImportJobsOutput {
+    /// <p>One or more job summaries to list.</p>
+    pub fn job_summaries(&self) -> std::option::Option<&[crate::model::JobSummary]> {
+        self.job_summaries.as_deref()
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListBulkImportJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListBulkImportJobsOutput");
+        formatter.field("job_summaries", &self.job_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
+pub mod list_bulk_import_jobs_output {
+
+    /// A builder for [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `job_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_job_summaries`](Self::set_job_summaries).
+        ///
+        /// <p>One or more job summaries to list.</p>
+        pub fn job_summaries(mut self, input: crate::model::JobSummary) -> Self {
+            let mut v = self.job_summaries.unwrap_or_default();
+            v.push(input);
+            self.job_summaries = Some(v);
+            self
+        }
+        /// <p>One or more job summaries to list.</p>
+        pub fn set_job_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
+        ) -> Self {
+            self.job_summaries = input;
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
+        pub fn build(self) -> crate::output::ListBulkImportJobsOutput {
+            crate::output::ListBulkImportJobsOutput {
+                job_summaries: self.job_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListBulkImportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBulkImportJobsOutput`](crate::output::ListBulkImportJobsOutput).
+    pub fn builder() -> crate::output::list_bulk_import_jobs_output::Builder {
+        crate::output::list_bulk_import_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedAssetsOutput {
     /// <p>A list that summarizes the associated assets.</p>
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::model::AssociatedAssetsSummary>>,
@@ -3877,6 +3959,268 @@ impl DescribeDashboardOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeBulkImportJobOutput {
+    /// <p>The ID of the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The unique name that helps identify the job request.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    pub job_role_arn: std::option::Option<std::string::String>,
+    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    pub files: std::option::Option<std::vec::Vec<crate::model::File>>,
+    /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    pub error_report_location: std::option::Option<crate::model::ErrorReportLocation>,
+    /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    pub job_configuration: std::option::Option<crate::model::JobConfiguration>,
+    /// <p>The date the job was created, in Unix epoch TIME.</p>
+    pub job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The date the job was last updated, in Unix epoch time.</p>
+    pub job_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl DescribeBulkImportJobOutput {
+    /// <p>The ID of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+    pub fn job_role_arn(&self) -> std::option::Option<&str> {
+        self.job_role_arn.as_deref()
+    }
+    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    pub fn files(&self) -> std::option::Option<&[crate::model::File]> {
+        self.files.as_deref()
+    }
+    /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+    pub fn error_report_location(&self) -> std::option::Option<&crate::model::ErrorReportLocation> {
+        self.error_report_location.as_ref()
+    }
+    /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+    pub fn job_configuration(&self) -> std::option::Option<&crate::model::JobConfiguration> {
+        self.job_configuration.as_ref()
+    }
+    /// <p>The date the job was created, in Unix epoch TIME.</p>
+    pub fn job_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_creation_date.as_ref()
+    }
+    /// <p>The date the job was last updated, in Unix epoch time.</p>
+    pub fn job_last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.job_last_update_date.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeBulkImportJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeBulkImportJobOutput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.field("job_role_arn", &self.job_role_arn);
+        formatter.field("files", &self.files);
+        formatter.field("error_report_location", &self.error_report_location);
+        formatter.field("job_configuration", &self.job_configuration);
+        formatter.field("job_creation_date", &self.job_creation_date);
+        formatter.field("job_last_update_date", &self.job_last_update_date);
+        formatter.finish()
+    }
+}
+/// See [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
+pub mod describe_bulk_import_job_output {
+
+    /// A builder for [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        pub(crate) job_role_arn: std::option::Option<std::string::String>,
+        pub(crate) files: std::option::Option<std::vec::Vec<crate::model::File>>,
+        pub(crate) error_report_location: std::option::Option<crate::model::ErrorReportLocation>,
+        pub(crate) job_configuration: std::option::Option<crate::model::JobConfiguration>,
+        pub(crate) job_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) job_last_update_date: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The ID of the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+        pub fn job_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_role_arn = Some(input.into());
+            self
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
+        pub fn set_job_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_role_arn = input;
+            self
+        }
+        /// Appends an item to `files`.
+        ///
+        /// To override the contents of this collection use [`set_files`](Self::set_files).
+        ///
+        /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+        pub fn files(mut self, input: crate::model::File) -> Self {
+            let mut v = self.files.unwrap_or_default();
+            v.push(input);
+            self.files = Some(v);
+            self
+        }
+        /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+        pub fn set_files(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::File>>,
+        ) -> Self {
+            self.files = input;
+            self
+        }
+        /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+        pub fn error_report_location(mut self, input: crate::model::ErrorReportLocation) -> Self {
+            self.error_report_location = Some(input);
+            self
+        }
+        /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
+        pub fn set_error_report_location(
+            mut self,
+            input: std::option::Option<crate::model::ErrorReportLocation>,
+        ) -> Self {
+            self.error_report_location = input;
+            self
+        }
+        /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+        pub fn job_configuration(mut self, input: crate::model::JobConfiguration) -> Self {
+            self.job_configuration = Some(input);
+            self
+        }
+        /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
+        pub fn set_job_configuration(
+            mut self,
+            input: std::option::Option<crate::model::JobConfiguration>,
+        ) -> Self {
+            self.job_configuration = input;
+            self
+        }
+        /// <p>The date the job was created, in Unix epoch TIME.</p>
+        pub fn job_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_creation_date = Some(input);
+            self
+        }
+        /// <p>The date the job was created, in Unix epoch TIME.</p>
+        pub fn set_job_creation_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_creation_date = input;
+            self
+        }
+        /// <p>The date the job was last updated, in Unix epoch time.</p>
+        pub fn job_last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.job_last_update_date = Some(input);
+            self
+        }
+        /// <p>The date the job was last updated, in Unix epoch time.</p>
+        pub fn set_job_last_update_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.job_last_update_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
+        pub fn build(self) -> crate::output::DescribeBulkImportJobOutput {
+            crate::output::DescribeBulkImportJobOutput {
+                job_id: self.job_id,
+                job_name: self.job_name,
+                job_status: self.job_status,
+                job_role_arn: self.job_role_arn,
+                files: self.files,
+                error_report_location: self.error_report_location,
+                job_configuration: self.job_configuration,
+                job_creation_date: self.job_creation_date,
+                job_last_update_date: self.job_last_update_date,
+            }
+        }
+    }
+}
+impl DescribeBulkImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBulkImportJobOutput`](crate::output::DescribeBulkImportJobOutput).
+    pub fn builder() -> crate::output::describe_bulk_import_job_output::Builder {
+        crate::output::describe_bulk_import_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssetPropertyOutput {
     /// <p>The ID of the asset.</p>
     pub asset_id: std::option::Option<std::string::String>,
@@ -5515,6 +5859,133 @@ impl CreateDashboardOutput {
     /// Creates a new builder-style object to manufacture [`CreateDashboardOutput`](crate::output::CreateDashboardOutput).
     pub fn builder() -> crate::output::create_dashboard_output::Builder {
         crate::output::create_dashboard_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBulkImportJobOutput {
+    /// <p>The ID of the job.</p>
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>The unique name that helps identify the job request.</p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub job_status: std::option::Option<crate::model::JobStatus>,
+}
+impl CreateBulkImportJobOutput {
+    /// <p>The ID of the job.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+        self.job_status.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateBulkImportJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBulkImportJobOutput");
+        formatter.field("job_id", &self.job_id);
+        formatter.field("job_name", &self.job_name);
+        formatter.field("job_status", &self.job_status);
+        formatter.finish()
+    }
+}
+/// See [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
+pub mod create_bulk_import_job_output {
+
+    /// A builder for [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_id: std::option::Option<std::string::String>,
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+    }
+    impl Builder {
+        /// <p>The ID of the job.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the job.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The unique name that helps identify the job request.</p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
+            self
+        }
+        /// <p>The status of the bulk import job can be one of following values.</p>
+        /// <ul>
+        /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+        /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+        /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+        /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+        /// </ul>
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
+        pub fn build(self) -> crate::output::CreateBulkImportJobOutput {
+            crate::output::CreateBulkImportJobOutput {
+                job_id: self.job_id,
+                job_name: self.job_name,
+                job_status: self.job_status,
+            }
+        }
+    }
+}
+impl CreateBulkImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBulkImportJobOutput`](crate::output::CreateBulkImportJobOutput).
+    pub fn builder() -> crate::output::create_bulk_import_job_output::Builder {
+        crate::output::create_bulk_import_job_output::Builder::default()
     }
 }
 

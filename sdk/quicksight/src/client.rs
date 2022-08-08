@@ -1079,7 +1079,7 @@ impl Client {
     ///   - [`session_tags(Vec<SessionTag>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::session_tags) / [`set_session_tags(Option<Vec<SessionTag>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_session_tags): <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>  <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
     ///   - [`authorized_resource_arns(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::authorized_resource_arns) / [`set_authorized_resource_arns(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_authorized_resource_arns): <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     ///   - [`experience_configuration(AnonymousUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::experience_configuration) / [`set_experience_configuration(Option<AnonymousUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_experience_configuration): <p>The configuration of the experience that you are embedding.</p>
-    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForAnonymousUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     /// - On success, responds with [`GenerateEmbedUrlForAnonymousUserOutput`](crate::output::GenerateEmbedUrlForAnonymousUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::embed_url): <p>The embed URL for the dashboard.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForAnonymousUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1097,7 +1097,7 @@ impl Client {
     ///   - [`session_lifetime_in_minutes(i64)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::session_lifetime_in_minutes) / [`set_session_lifetime_in_minutes(Option<i64>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_session_lifetime_in_minutes): <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
     ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_user_arn): <p>The Amazon Resource Name for the registered user.</p>
     ///   - [`experience_configuration(RegisteredUserEmbeddingExperienceConfiguration)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::experience_configuration) / [`set_experience_configuration(Option<RegisteredUserEmbeddingExperienceConfiguration>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_experience_configuration): <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
-    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+    ///   - [`allowed_domains(Vec<String>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::allowed_domains) / [`set_allowed_domains(Option<Vec<String>>)`](crate::client::fluent_builders::GenerateEmbedUrlForRegisteredUser::set_allowed_domains): <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>  <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
     /// - On success, responds with [`GenerateEmbedUrlForRegisteredUserOutput`](crate::output::GenerateEmbedUrlForRegisteredUserOutput) with field(s):
     ///   - [`embed_url(Option<String>)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::embed_url): <p>The embed URL for the Amazon QuickSight dashboard or console.</p>
     ///   - [`status(i32)`](crate::output::GenerateEmbedUrlForRegisteredUserOutput::status): <p>The HTTP status of the request.</p>
@@ -1347,11 +1347,11 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamespaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamespaces::set_next_token): <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNamespaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNamespaces::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListNamespacesOutput`](crate::output::ListNamespacesOutput) with field(s):
     ///   - [`namespaces(Option<Vec<NamespaceInfoV2>>)`](crate::output::ListNamespacesOutput::namespaces): <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListNamespacesOutput::next_token): <p>A pagination token that can be used in a subsequent request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNamespacesOutput::next_token): <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     ///   - [`request_id(Option<String>)`](crate::output::ListNamespacesOutput::request_id): <p>The Amazon Web Services request ID for this operation.</p>
     ///   - [`status(i32)`](crate::output::ListNamespacesOutput::status): <p>The HTTP status of the request.</p>
     /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::error::ListNamespacesError)
@@ -3522,7 +3522,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates an Amazon QuickSight group.</p>
+    /// <p>Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000 groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.</p>
     /// <p>The permissions resource is <code>arn:aws:quicksight:
     /// <your-region>
     /// :
@@ -7835,14 +7835,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
         ///
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.allowed_domains(input.into());
             self
         }
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn set_allowed_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7956,14 +7956,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_allowed_domains`](Self::set_allowed_domains).
         ///
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn allowed_domains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.allowed_domains(input.into());
             self
         }
-        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
-        /// <p>To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
+        /// <p>The domains that you want to add to the allow list for access to the generated URL that is then embedded. This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead, it allows only the domains that you include in this parameter. You can list up to three domains or subdomains in each API call.</p>
+        /// <p>To include all subdomains under a specific domain to the allow list, use <code>*</code>. For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under <code>https://sapp.amazon.com</code>.</p>
         pub fn set_allowed_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7974,13 +7974,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDashboardEmbedUrl`.
     ///
-    /// <p>Generates a temporary session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions. </p>
+    /// <p>Generates a temporary session URL and authorization code(bearer token) that you can use to embed an Amazon QuickSight read-only dashboard in your website or application. Before you use this command, make sure that you have configured the dashboards and permissions. </p>
     /// <p>Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The following rules apply to the generated URL:</p>
     /// <ul>
     /// <li> <p>They must be used together.</p> </li>
     /// <li> <p>They can be used one time only.</p> </li>
     /// <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
-    /// <li> <p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customi session duration.</p> </li>
+    /// <li> <p>You are charged only when the URL is used or there is interaction with Amazon QuickSight.</p> </li>
+    /// <li> <p>The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize session duration.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
@@ -9321,7 +9322,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNamespaces`.
     ///
-    /// <p>Lists the namespaces for the specified Amazon Web Services account.</p>
+    /// <p>Lists the namespaces for the specified Amazon Web Services account. This operation doesn't list deleted namespaces.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamespaces {
         handle: std::sync::Arc<super::Handle>,
@@ -9380,12 +9381,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.</p>
+        /// <p>A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self

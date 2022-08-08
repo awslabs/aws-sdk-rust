@@ -1013,6 +1013,126 @@ impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
     }
 }
 
+/// <p>Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InclusionProtectionFilters {
+    /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+    pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The name of the protection that you want to retrieve. </p>
+    pub protection_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The type of protected resource whose protections you want to retrieve. </p>
+    pub resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+}
+impl InclusionProtectionFilters {
+    /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.resource_arns.as_deref()
+    }
+    /// <p>The name of the protection that you want to retrieve. </p>
+    pub fn protection_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.protection_names.as_deref()
+    }
+    /// <p>The type of protected resource whose protections you want to retrieve. </p>
+    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ProtectedResourceType]> {
+        self.resource_types.as_deref()
+    }
+}
+impl std::fmt::Debug for InclusionProtectionFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InclusionProtectionFilters");
+        formatter.field("resource_arns", &self.resource_arns);
+        formatter.field("protection_names", &self.protection_names);
+        formatter.field("resource_types", &self.resource_types);
+        formatter.finish()
+    }
+}
+/// See [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+pub mod inclusion_protection_filters {
+
+    /// A builder for [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) protection_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) resource_types:
+            std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+    }
+    impl Builder {
+        /// Appends an item to `resource_arns`.
+        ///
+        /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+        ///
+        /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.resource_arns.unwrap_or_default();
+            v.push(input.into());
+            self.resource_arns = Some(v);
+            self
+        }
+        /// <p>The ARN (Amazon Resource Name) of the resource whose protection you want to retrieve. </p>
+        pub fn set_resource_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.resource_arns = input;
+            self
+        }
+        /// Appends an item to `protection_names`.
+        ///
+        /// To override the contents of this collection use [`set_protection_names`](Self::set_protection_names).
+        ///
+        /// <p>The name of the protection that you want to retrieve. </p>
+        pub fn protection_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.protection_names.unwrap_or_default();
+            v.push(input.into());
+            self.protection_names = Some(v);
+            self
+        }
+        /// <p>The name of the protection that you want to retrieve. </p>
+        pub fn set_protection_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.protection_names = input;
+            self
+        }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The type of protected resource whose protections you want to retrieve. </p>
+        pub fn resource_types(mut self, input: crate::model::ProtectedResourceType) -> Self {
+            let mut v = self.resource_types.unwrap_or_default();
+            v.push(input);
+            self.resource_types = Some(v);
+            self
+        }
+        /// <p>The type of protected resource whose protections you want to retrieve. </p>
+        pub fn set_resource_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+        ) -> Self {
+            self.resource_types = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+        pub fn build(self) -> crate::model::InclusionProtectionFilters {
+            crate::model::InclusionProtectionFilters {
+                resource_arns: self.resource_arns,
+                protection_names: self.protection_names,
+                resource_types: self.resource_types,
+            }
+        }
+    }
+}
+impl InclusionProtectionFilters {
+    /// Creates a new builder-style object to manufacture [`InclusionProtectionFilters`](crate::model::InclusionProtectionFilters).
+    pub fn builder() -> crate::model::inclusion_protection_filters::Builder {
+        crate::model::inclusion_protection_filters::Builder::default()
+    }
+}
+
 /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1026,11 +1146,11 @@ pub struct ProtectionGroup {
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
-    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
     pub pattern: std::option::Option<crate::model::ProtectionGroupPattern>,
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub resource_type: std::option::Option<crate::model::ProtectedResourceType>,
-    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
     pub protection_group_arn: std::option::Option<std::string::String>,
@@ -1049,7 +1169,7 @@ impl ProtectionGroup {
     pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
         self.aggregation.as_ref()
     }
-    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
     pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
         self.pattern.as_ref()
     }
@@ -1057,7 +1177,7 @@ impl ProtectionGroup {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn members(&self) -> std::option::Option<&[std::string::String]> {
         self.members.as_deref()
     }
@@ -1128,12 +1248,12 @@ pub mod protection_group {
             self.aggregation = input;
             self
         }
-        /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+        /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
         pub fn pattern(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
             self.pattern = Some(input);
             self
         }
-        /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+        /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
         pub fn set_pattern(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupPattern>,
@@ -1158,14 +1278,14 @@ pub mod protection_group {
         ///
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.members.unwrap_or_default();
             v.push(input.into());
             self.members = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1203,6 +1323,156 @@ impl ProtectionGroup {
     /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup).
     pub fn builder() -> crate::model::protection_group::Builder {
         crate::model::protection_group::Builder::default()
+    }
+}
+
+/// <p>Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InclusionProtectionGroupFilters {
+    /// <p>The ID of the protection group that you want to retrieve. </p>
+    pub protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+    pub patterns: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
+    /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+    pub resource_types: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+    /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+    pub aggregations: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
+}
+impl InclusionProtectionGroupFilters {
+    /// <p>The ID of the protection group that you want to retrieve. </p>
+    pub fn protection_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.protection_group_ids.as_deref()
+    }
+    /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+    pub fn patterns(&self) -> std::option::Option<&[crate::model::ProtectionGroupPattern]> {
+        self.patterns.as_deref()
+    }
+    /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+    pub fn resource_types(&self) -> std::option::Option<&[crate::model::ProtectedResourceType]> {
+        self.resource_types.as_deref()
+    }
+    /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+    pub fn aggregations(&self) -> std::option::Option<&[crate::model::ProtectionGroupAggregation]> {
+        self.aggregations.as_deref()
+    }
+}
+impl std::fmt::Debug for InclusionProtectionGroupFilters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InclusionProtectionGroupFilters");
+        formatter.field("protection_group_ids", &self.protection_group_ids);
+        formatter.field("patterns", &self.patterns);
+        formatter.field("resource_types", &self.resource_types);
+        formatter.field("aggregations", &self.aggregations);
+        formatter.finish()
+    }
+}
+/// See [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+pub mod inclusion_protection_group_filters {
+
+    /// A builder for [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) protection_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) patterns:
+            std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
+        pub(crate) resource_types:
+            std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+        pub(crate) aggregations:
+            std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
+    }
+    impl Builder {
+        /// Appends an item to `protection_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_protection_group_ids`](Self::set_protection_group_ids).
+        ///
+        /// <p>The ID of the protection group that you want to retrieve. </p>
+        pub fn protection_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.protection_group_ids.unwrap_or_default();
+            v.push(input.into());
+            self.protection_group_ids = Some(v);
+            self
+        }
+        /// <p>The ID of the protection group that you want to retrieve. </p>
+        pub fn set_protection_group_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.protection_group_ids = input;
+            self
+        }
+        /// Appends an item to `patterns`.
+        ///
+        /// To override the contents of this collection use [`set_patterns`](Self::set_patterns).
+        ///
+        /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+        pub fn patterns(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
+            let mut v = self.patterns.unwrap_or_default();
+            v.push(input);
+            self.patterns = Some(v);
+            self
+        }
+        /// <p>The pattern specification of the protection groups that you want to retrieve. </p>
+        pub fn set_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupPattern>>,
+        ) -> Self {
+            self.patterns = input;
+            self
+        }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+        pub fn resource_types(mut self, input: crate::model::ProtectedResourceType) -> Self {
+            let mut v = self.resource_types.unwrap_or_default();
+            v.push(input);
+            self.resource_types = Some(v);
+            self
+        }
+        /// <p>The resource type configuration of the protection groups that you want to retrieve. In the protection group configuration, you specify the resource type when you set the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. </p>
+        pub fn set_resource_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectedResourceType>>,
+        ) -> Self {
+            self.resource_types = input;
+            self
+        }
+        /// Appends an item to `aggregations`.
+        ///
+        /// To override the contents of this collection use [`set_aggregations`](Self::set_aggregations).
+        ///
+        /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+        pub fn aggregations(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
+            let mut v = self.aggregations.unwrap_or_default();
+            v.push(input);
+            self.aggregations = Some(v);
+            self
+        }
+        /// <p>The aggregation setting of the protection groups that you want to retrieve. </p>
+        pub fn set_aggregations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroupAggregation>>,
+        ) -> Self {
+            self.aggregations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+        pub fn build(self) -> crate::model::InclusionProtectionGroupFilters {
+            crate::model::InclusionProtectionGroupFilters {
+                protection_group_ids: self.protection_group_ids,
+                patterns: self.patterns,
+                resource_types: self.resource_types,
+                aggregations: self.aggregations,
+            }
+        }
+    }
+}
+impl InclusionProtectionGroupFilters {
+    /// Creates a new builder-style object to manufacture [`InclusionProtectionGroupFilters`](crate::model::InclusionProtectionGroupFilters).
+    pub fn builder() -> crate::model::inclusion_protection_group_filters::Builder {
+        crate::model::inclusion_protection_group_filters::Builder::default()
     }
 }
 

@@ -4769,10 +4769,26 @@ pub struct CompositeAlarm {
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub state_reason_data: std::option::Option<std::string::String>,
-    /// <p>The time stamp of the last update to the alarm state.</p>
+    /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
     pub state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The state value for the alarm.</p>
     pub state_value: std::option::Option<crate::model::StateValue>,
+    /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
+    pub state_transitioned_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
+    pub actions_suppressed_by: std::option::Option<crate::model::ActionsSuppressedBy>,
+    /// <p> Captures the reason for action suppression. </p>
+    pub actions_suppressed_reason: std::option::Option<std::string::String>,
+    /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    pub actions_suppressor: std::option::Option<std::string::String>,
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub actions_suppressor_wait_period: std::option::Option<i32>,
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub actions_suppressor_extension_period: std::option::Option<i32>,
 }
 impl CompositeAlarm {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -4821,13 +4837,41 @@ impl CompositeAlarm {
     pub fn state_reason_data(&self) -> std::option::Option<&str> {
         self.state_reason_data.as_deref()
     }
-    /// <p>The time stamp of the last update to the alarm state.</p>
+    /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
     pub fn state_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.state_updated_timestamp.as_ref()
     }
     /// <p>The state value for the alarm.</p>
     pub fn state_value(&self) -> std::option::Option<&crate::model::StateValue> {
         self.state_value.as_ref()
+    }
+    /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
+    pub fn state_transitioned_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.state_transitioned_timestamp.as_ref()
+    }
+    /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
+    pub fn actions_suppressed_by(&self) -> std::option::Option<&crate::model::ActionsSuppressedBy> {
+        self.actions_suppressed_by.as_ref()
+    }
+    /// <p> Captures the reason for action suppression. </p>
+    pub fn actions_suppressed_reason(&self) -> std::option::Option<&str> {
+        self.actions_suppressed_reason.as_deref()
+    }
+    /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+    pub fn actions_suppressor(&self) -> std::option::Option<&str> {
+        self.actions_suppressor.as_deref()
+    }
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub fn actions_suppressor_wait_period(&self) -> std::option::Option<i32> {
+        self.actions_suppressor_wait_period
+    }
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// </important>
+    pub fn actions_suppressor_extension_period(&self) -> std::option::Option<i32> {
+        self.actions_suppressor_extension_period
     }
 }
 impl std::fmt::Debug for CompositeAlarm {
@@ -4849,6 +4893,21 @@ impl std::fmt::Debug for CompositeAlarm {
         formatter.field("state_reason_data", &self.state_reason_data);
         formatter.field("state_updated_timestamp", &self.state_updated_timestamp);
         formatter.field("state_value", &self.state_value);
+        formatter.field(
+            "state_transitioned_timestamp",
+            &self.state_transitioned_timestamp,
+        );
+        formatter.field("actions_suppressed_by", &self.actions_suppressed_by);
+        formatter.field("actions_suppressed_reason", &self.actions_suppressed_reason);
+        formatter.field("actions_suppressor", &self.actions_suppressor);
+        formatter.field(
+            "actions_suppressor_wait_period",
+            &self.actions_suppressor_wait_period,
+        );
+        formatter.field(
+            "actions_suppressor_extension_period",
+            &self.actions_suppressor_extension_period,
+        );
         formatter.finish()
     }
 }
@@ -4873,6 +4932,12 @@ pub mod composite_alarm {
         pub(crate) state_reason_data: std::option::Option<std::string::String>,
         pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state_value: std::option::Option<crate::model::StateValue>,
+        pub(crate) state_transitioned_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) actions_suppressed_by: std::option::Option<crate::model::ActionsSuppressedBy>,
+        pub(crate) actions_suppressed_reason: std::option::Option<std::string::String>,
+        pub(crate) actions_suppressor: std::option::Option<std::string::String>,
+        pub(crate) actions_suppressor_wait_period: std::option::Option<i32>,
+        pub(crate) actions_suppressor_extension_period: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -5024,12 +5089,12 @@ pub mod composite_alarm {
             self.state_reason_data = input;
             self
         }
-        /// <p>The time stamp of the last update to the alarm state.</p>
+        /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
         pub fn state_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
-        /// <p>The time stamp of the last update to the alarm state.</p>
+        /// <p>Tracks the timestamp of any state update, even if <code>StateValue</code> doesn't change.</p>
         pub fn set_state_updated_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5050,6 +5115,92 @@ pub mod composite_alarm {
             self.state_value = input;
             self
         }
+        /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
+        pub fn state_transitioned_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.state_transitioned_timestamp = Some(input);
+            self
+        }
+        /// <p> The timestamp of the last change to the alarm's <code>StateValue</code>. </p>
+        pub fn set_state_transitioned_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.state_transitioned_timestamp = input;
+            self
+        }
+        /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
+        pub fn actions_suppressed_by(mut self, input: crate::model::ActionsSuppressedBy) -> Self {
+            self.actions_suppressed_by = Some(input);
+            self
+        }
+        /// <p> When the value is <code>ALARM</code>, it means that the actions are suppressed because the suppressor alarm is in <code>ALARM</code> When the value is <code>WaitPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting for the suppressor alarm to go into into the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorWaitPeriod</code>. After this time, the composite alarm performs its actions. When the value is <code>ExtensionPeriod</code>, it means that the actions are suppressed because the composite alarm is waiting after the suppressor alarm went out of the <code>ALARM</code> state. The maximum waiting time is as specified in <code>ActionsSuppressorExtensionPeriod</code>. After this time, the composite alarm performs its actions. </p>
+        pub fn set_actions_suppressed_by(
+            mut self,
+            input: std::option::Option<crate::model::ActionsSuppressedBy>,
+        ) -> Self {
+            self.actions_suppressed_by = input;
+            self
+        }
+        /// <p> Captures the reason for action suppression. </p>
+        pub fn actions_suppressed_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.actions_suppressed_reason = Some(input.into());
+            self
+        }
+        /// <p> Captures the reason for action suppression. </p>
+        pub fn set_actions_suppressed_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.actions_suppressed_reason = input;
+            self
+        }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn actions_suppressor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.actions_suppressor = Some(input.into());
+            self
+        }
+        /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
+        pub fn set_actions_suppressor(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.actions_suppressor = input;
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_wait_period(mut self, input: i32) -> Self {
+            self.actions_suppressor_wait_period = Some(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_wait_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.actions_suppressor_wait_period = input;
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn actions_suppressor_extension_period(mut self, input: i32) -> Self {
+            self.actions_suppressor_extension_period = Some(input);
+            self
+        }
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// </important>
+        pub fn set_actions_suppressor_extension_period(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.actions_suppressor_extension_period = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CompositeAlarm`](crate::model::CompositeAlarm).
         pub fn build(self) -> crate::model::CompositeAlarm {
             crate::model::CompositeAlarm {
@@ -5066,6 +5217,12 @@ pub mod composite_alarm {
                 state_reason_data: self.state_reason_data,
                 state_updated_timestamp: self.state_updated_timestamp,
                 state_value: self.state_value,
+                state_transitioned_timestamp: self.state_transitioned_timestamp,
+                actions_suppressed_by: self.actions_suppressed_by,
+                actions_suppressed_reason: self.actions_suppressed_reason,
+                actions_suppressor: self.actions_suppressor,
+                actions_suppressor_wait_period: self.actions_suppressor_wait_period,
+                actions_suppressor_extension_period: self.actions_suppressor_extension_period,
             }
         }
     }
@@ -5074,6 +5231,65 @@ impl CompositeAlarm {
     /// Creates a new builder-style object to manufacture [`CompositeAlarm`](crate::model::CompositeAlarm).
     pub fn builder() -> crate::model::composite_alarm::Builder {
         crate::model::composite_alarm::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ActionsSuppressedBy {
+    #[allow(missing_docs)] // documentation missing in model
+    Alarm,
+    #[allow(missing_docs)] // documentation missing in model
+    ExtensionPeriod,
+    #[allow(missing_docs)] // documentation missing in model
+    WaitPeriod,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ActionsSuppressedBy {
+    fn from(s: &str) -> Self {
+        match s {
+            "Alarm" => ActionsSuppressedBy::Alarm,
+            "ExtensionPeriod" => ActionsSuppressedBy::ExtensionPeriod,
+            "WaitPeriod" => ActionsSuppressedBy::WaitPeriod,
+            other => ActionsSuppressedBy::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ActionsSuppressedBy {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ActionsSuppressedBy::from(s))
+    }
+}
+impl ActionsSuppressedBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ActionsSuppressedBy::Alarm => "Alarm",
+            ActionsSuppressedBy::ExtensionPeriod => "ExtensionPeriod",
+            ActionsSuppressedBy::WaitPeriod => "WaitPeriod",
+            ActionsSuppressedBy::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Alarm", "ExtensionPeriod", "WaitPeriod"]
+    }
+}
+impl AsRef<str> for ActionsSuppressedBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

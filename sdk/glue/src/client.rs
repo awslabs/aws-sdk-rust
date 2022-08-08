@@ -462,6 +462,7 @@ impl Client {
     ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::CreateJob::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::CreateJob::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::CreateJob::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::CreateJob::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
     ///   - [`code_gen_configuration_nodes(HashMap<String, CodeGenConfigurationNode>)`](crate::client::fluent_builders::CreateJob::code_gen_configuration_nodes) / [`set_code_gen_configuration_nodes(Option<HashMap<String, CodeGenConfigurationNode>>)`](crate::client::fluent_builders::CreateJob::set_code_gen_configuration_nodes): <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
+    ///   - [`execution_class(ExecutionClass)`](crate::client::fluent_builders::CreateJob::execution_class) / [`set_execution_class(Option<ExecutionClass>)`](crate::client::fluent_builders::CreateJob::set_execution_class): <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>  <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>  <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::CreateJobOutput::name): <p>The unique name that was provided for this job definition.</p>
     /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
@@ -2231,6 +2232,7 @@ impl Client {
     ///   - [`notification_property(NotificationProperty)`](crate::client::fluent_builders::StartJobRun::notification_property) / [`set_notification_property(Option<NotificationProperty>)`](crate::client::fluent_builders::StartJobRun::set_notification_property): <p>Specifies configuration properties of a job run notification.</p>
     ///   - [`worker_type(WorkerType)`](crate::client::fluent_builders::StartJobRun::worker_type) / [`set_worker_type(Option<WorkerType>)`](crate::client::fluent_builders::StartJobRun::set_worker_type): <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>  <ul>   <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>   <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>   <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>  </ul>
     ///   - [`number_of_workers(i32)`](crate::client::fluent_builders::StartJobRun::number_of_workers) / [`set_number_of_workers(Option<i32>)`](crate::client::fluent_builders::StartJobRun::set_number_of_workers): <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
+    ///   - [`execution_class(ExecutionClass)`](crate::client::fluent_builders::StartJobRun::execution_class) / [`set_execution_class(Option<ExecutionClass>)`](crate::client::fluent_builders::StartJobRun::set_execution_class): <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>  <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>  <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
     ///   - [`job_run_id(Option<String>)`](crate::output::StartJobRunOutput::job_run_id): <p>The ID assigned to this job run.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::error::StartJobRunError)
@@ -5306,6 +5308,23 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_code_gen_configuration_nodes(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.inner = self.inner.execution_class(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_class(input);
             self
         }
     }
@@ -16357,6 +16376,23 @@ pub mod fluent_builders {
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn execution_class(mut self, input: crate::model::ExecutionClass) -> Self {
+            self.inner = self.inner.execution_class(input);
+            self
+        }
+        /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
+        /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
+        /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        pub fn set_execution_class(
+            mut self,
+            input: std::option::Option<crate::model::ExecutionClass>,
+        ) -> Self {
+            self.inner = self.inner.set_execution_class(input);
             self
         }
     }

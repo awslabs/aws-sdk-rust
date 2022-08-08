@@ -1708,12 +1708,12 @@ pub mod create_document_input {
             self.display_name = input;
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -15649,9 +15649,10 @@ pub mod get_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.setting_id = Some(input.into());
@@ -15662,9 +15663,10 @@ pub mod get_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.setting_id = input;
@@ -21209,9 +21211,10 @@ pub mod reset_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.setting_id = Some(input.into());
@@ -21222,9 +21225,10 @@ pub mod reset_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.setting_id = input;
@@ -23008,12 +23012,12 @@ pub mod start_session_input {
             self.target = input;
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27103,9 +27107,10 @@ pub mod update_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.setting_id = Some(input.into());
@@ -27116,9 +27121,10 @@ pub mod update_service_setting_input {
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
         /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.setting_id = input;
@@ -27126,13 +27132,13 @@ pub mod update_service_setting_input {
         }
         /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
         /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
         /// </ul>
         pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.setting_value = Some(input.into());
@@ -27140,13 +27146,13 @@ pub mod update_service_setting_input {
         }
         /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
         /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
         /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
         /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+        /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
         /// </ul>
         pub fn set_setting_value(
             mut self,
@@ -27288,20 +27294,21 @@ pub struct UpdateServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub setting_id: std::option::Option<std::string::String>,
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
     /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
     pub setting_value: std::option::Option<std::string::String>,
 }
@@ -27311,22 +27318,23 @@ impl UpdateServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub fn setting_id(&self) -> std::option::Option<&str> {
         self.setting_id.as_deref()
     }
     /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
     /// <ul>
-    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
-    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
     /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+    /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
     /// </ul>
     pub fn setting_value(&self) -> std::option::Option<&str> {
         self.setting_value.as_deref()
@@ -28542,7 +28550,7 @@ impl std::fmt::Debug for StopAutomationExecutionInput {
 pub struct StartSessionInput {
     /// <p>The managed node to connect to for the session.</p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+    /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
     pub reason: std::option::Option<std::string::String>,
@@ -28556,7 +28564,7 @@ impl StartSessionInput {
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+    /// <p>The name of the SSM document you want to use to define the type of session, input parameters, or preferences for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html">Start a session</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn document_name(&self) -> std::option::Option<&str> {
         self.document_name.as_deref()
     }
@@ -29100,9 +29108,10 @@ pub struct ResetServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub setting_id: std::option::Option<std::string::String>,
 }
@@ -29112,9 +29121,10 @@ impl ResetServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub fn setting_id(&self) -> std::option::Option<&str> {
         self.setting_id.as_deref()
@@ -30656,9 +30666,10 @@ pub struct GetServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub setting_id: std::option::Option<std::string::String>,
 }
@@ -30668,9 +30679,10 @@ impl GetServiceSettingInput {
     /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
     /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
     /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
+    /// <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
-    /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
     /// </ul>
     pub fn setting_id(&self) -> std::option::Option<&str> {
         self.setting_id.as_deref()
@@ -33853,7 +33865,7 @@ pub struct CreateDocumentInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The type of document to create.</p> <note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
@@ -33906,7 +33918,7 @@ impl CreateDocumentInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }

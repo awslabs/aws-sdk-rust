@@ -138,6 +138,312 @@ impl AcceptInvitationInput {
     }
 }
 
+/// See [`BatchGetGraphMemberDatasourcesInput`](crate::input::BatchGetGraphMemberDatasourcesInput).
+pub mod batch_get_graph_member_datasources_input {
+
+    /// A builder for [`BatchGetGraphMemberDatasourcesInput`](crate::input::BatchGetGraphMemberDatasourcesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arn: std::option::Option<std::string::String>,
+        pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.graph_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.graph_arn = input;
+            self
+        }
+        /// Appends an item to `account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+        ///
+        /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+        pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.account_ids.unwrap_or_default();
+            v.push(input.into());
+            self.account_ids = Some(v);
+            self
+        }
+        /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+        pub fn set_account_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.account_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetGraphMemberDatasourcesInput`](crate::input::BatchGetGraphMemberDatasourcesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchGetGraphMemberDatasourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetGraphMemberDatasourcesInput {
+                graph_arn: self.graph_arn,
+                account_ids: self.account_ids,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetGraphMemberDatasourcesInputOperationOutputAlias =
+    crate::operation::BatchGetGraphMemberDatasources;
+#[doc(hidden)]
+pub type BatchGetGraphMemberDatasourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetGraphMemberDatasourcesInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetGraphMemberDatasources`](crate::operation::BatchGetGraphMemberDatasources)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetGraphMemberDatasources,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetGraphMemberDatasourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/graph/datasources/get").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetGraphMemberDatasourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_graph_member_datasources(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetGraphMemberDatasources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetGraphMemberDatasources",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetGraphMemberDatasourcesInput`](crate::input::BatchGetGraphMemberDatasourcesInput).
+    pub fn builder() -> crate::input::batch_get_graph_member_datasources_input::Builder {
+        crate::input::batch_get_graph_member_datasources_input::Builder::default()
+    }
+}
+
+/// See [`BatchGetMembershipDatasourcesInput`](crate::input::BatchGetMembershipDatasourcesInput).
+pub mod batch_get_membership_datasources_input {
+
+    /// A builder for [`BatchGetMembershipDatasourcesInput`](crate::input::BatchGetMembershipDatasourcesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// Appends an item to `graph_arns`.
+        ///
+        /// To override the contents of this collection use [`set_graph_arns`](Self::set_graph_arns).
+        ///
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.graph_arns.unwrap_or_default();
+            v.push(input.into());
+            self.graph_arns = Some(v);
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.graph_arns = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BatchGetMembershipDatasourcesInput`](crate::input::BatchGetMembershipDatasourcesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::BatchGetMembershipDatasourcesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::BatchGetMembershipDatasourcesInput {
+                graph_arns: self.graph_arns,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type BatchGetMembershipDatasourcesInputOperationOutputAlias =
+    crate::operation::BatchGetMembershipDatasources;
+#[doc(hidden)]
+pub type BatchGetMembershipDatasourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl BatchGetMembershipDatasourcesInput {
+    /// Consumes the builder and constructs an Operation<[`BatchGetMembershipDatasources`](crate::operation::BatchGetMembershipDatasources)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::BatchGetMembershipDatasources,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::BatchGetMembershipDatasourcesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/membership/datasources/get").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::BatchGetMembershipDatasourcesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_batch_get_membership_datasources(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::BatchGetMembershipDatasources::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "BatchGetMembershipDatasources",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesInput`](crate::input::BatchGetMembershipDatasourcesInput).
+    pub fn builder() -> crate::input::batch_get_membership_datasources_input::Builder {
+        crate::input::batch_get_membership_datasources_input::Builder::default()
+    }
+}
+
 /// See [`CreateGraphInput`](crate::input::CreateGraphInput).
 pub mod create_graph_input {
 
@@ -1442,6 +1748,167 @@ impl GetMembersInput {
     /// Creates a new builder-style object to manufacture [`GetMembersInput`](crate::input::GetMembersInput).
     pub fn builder() -> crate::input::get_members_input::Builder {
         crate::input::get_members_input::Builder::default()
+    }
+}
+
+/// See [`ListDatasourcePackagesInput`](crate::input::ListDatasourcePackagesInput).
+pub mod list_datasource_packages_input {
+
+    /// A builder for [`ListDatasourcePackagesInput`](crate::input::ListDatasourcePackagesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arn: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.graph_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.graph_arn = input;
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListDatasourcePackagesInput`](crate::input::ListDatasourcePackagesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListDatasourcePackagesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListDatasourcePackagesInput {
+                graph_arn: self.graph_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListDatasourcePackagesInputOperationOutputAlias = crate::operation::ListDatasourcePackages;
+#[doc(hidden)]
+pub type ListDatasourcePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListDatasourcePackagesInput {
+    /// Consumes the builder and constructs an Operation<[`ListDatasourcePackages`](crate::operation::ListDatasourcePackages)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListDatasourcePackages,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListDatasourcePackagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/graph/datasources/list").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListDatasourcePackagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_datasource_packages(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasourcePackages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasourcePackages",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesInput`](crate::input::ListDatasourcePackagesInput).
+    pub fn builder() -> crate::input::list_datasource_packages_input::Builder {
+        crate::input::list_datasource_packages_input::Builder::default()
     }
 }
 
@@ -2820,6 +3287,168 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateDatasourcePackagesInput`](crate::input::UpdateDatasourcePackagesInput).
+pub mod update_datasource_packages_input {
+
+    /// A builder for [`UpdateDatasourcePackagesInput`](crate::input::UpdateDatasourcePackagesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arn: std::option::Option<std::string::String>,
+        pub(crate) datasource_packages:
+            std::option::Option<std::vec::Vec<crate::model::DatasourcePackage>>,
+    }
+    impl Builder {
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.graph_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.graph_arn = input;
+            self
+        }
+        /// Appends an item to `datasource_packages`.
+        ///
+        /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
+        ///
+        /// <p>The data source package start for the behavior graph.</p>
+        pub fn datasource_packages(mut self, input: crate::model::DatasourcePackage) -> Self {
+            let mut v = self.datasource_packages.unwrap_or_default();
+            v.push(input);
+            self.datasource_packages = Some(v);
+            self
+        }
+        /// <p>The data source package start for the behavior graph.</p>
+        pub fn set_datasource_packages(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatasourcePackage>>,
+        ) -> Self {
+            self.datasource_packages = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateDatasourcePackagesInput`](crate::input::UpdateDatasourcePackagesInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::UpdateDatasourcePackagesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateDatasourcePackagesInput {
+                graph_arn: self.graph_arn,
+                datasource_packages: self.datasource_packages,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateDatasourcePackagesInputOperationOutputAlias =
+    crate::operation::UpdateDatasourcePackages;
+#[doc(hidden)]
+pub type UpdateDatasourcePackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateDatasourcePackagesInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateDatasourcePackages`](crate::operation::UpdateDatasourcePackages)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateDatasourcePackages,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateDatasourcePackagesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/graph/datasources/update").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateDatasourcePackagesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/json",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_datasource_packages(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateDatasourcePackages::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDatasourcePackages",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesInput`](crate::input::UpdateDatasourcePackagesInput).
+    pub fn builder() -> crate::input::update_datasource_packages_input::Builder {
+        crate::input::update_datasource_packages_input::Builder::default()
+    }
+}
+
 /// See [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput).
 pub mod update_organization_configuration_input {
 
@@ -2995,6 +3624,34 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
         let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
         formatter.field("graph_arn", &self.graph_arn);
         formatter.field("auto_enable", &self.auto_enable);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateDatasourcePackagesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+    /// <p>The data source package start for the behavior graph.</p>
+    pub datasource_packages: std::option::Option<std::vec::Vec<crate::model::DatasourcePackage>>,
+}
+impl UpdateDatasourcePackagesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The data source package start for the behavior graph.</p>
+    pub fn datasource_packages(&self) -> std::option::Option<&[crate::model::DatasourcePackage]> {
+        self.datasource_packages.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateDatasourcePackagesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateDatasourcePackagesInput");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("datasource_packages", &self.datasource_packages);
         formatter.finish()
     }
 }
@@ -3255,6 +3912,41 @@ impl std::fmt::Debug for ListGraphsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListDatasourcePackagesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListDatasourcePackagesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListDatasourcePackagesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListDatasourcePackagesInput");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMembersInput {
     /// <p>The ARN of the behavior graph for which to request the member details.</p>
     pub graph_arn: std::option::Option<std::string::String>,
@@ -3475,6 +4167,55 @@ impl std::fmt::Debug for CreateGraphInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGraphInput");
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetMembershipDatasourcesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub graph_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetMembershipDatasourcesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn graph_arns(&self) -> std::option::Option<&[std::string::String]> {
+        self.graph_arns.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetMembershipDatasourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetMembershipDatasourcesInput");
+        formatter.field("graph_arns", &self.graph_arns);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BatchGetGraphMemberDatasourcesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+    /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl BatchGetGraphMemberDatasourcesInput {
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The list of Amazon Web Services accounts to get data source package information on.</p>
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.account_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for BatchGetGraphMemberDatasourcesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchGetGraphMemberDatasourcesInput");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("account_ids", &self.account_ids);
         formatter.finish()
     }
 }

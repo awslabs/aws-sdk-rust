@@ -574,17 +574,18 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateProvisioningTemplate`](crate::client::fluent_builders::CreateProvisioningTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_description): <p>The description of the fleet provisioning template.</p>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
-    ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_provisioning_role_arn): <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_name): <p>The name of the provisioning template.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_description): <p>The description of the provisioning template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_template_body): <p>The JSON formatted contents of the provisioning template.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_enabled): <p>True to enable the provisioning template, otherwise false.</p>
+    ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_provisioning_role_arn): <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::CreateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_pre_provisioning_hook): <p>Creates a pre-provisioning hook template.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProvisioningTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_tags): <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProvisioningTemplate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_tags): <p>Metadata which can be used to manage the provisioning template.</p> <note>   <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>   <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>   <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>  </note>
+    ///   - [`r#type(TemplateType)`](crate::client::fluent_builders::CreateProvisioningTemplate::type) / [`set_type(Option<TemplateType>)`](crate::client::fluent_builders::CreateProvisioningTemplate::set_type): <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     /// - On success, responds with [`CreateProvisioningTemplateOutput`](crate::output::CreateProvisioningTemplateOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::output::CreateProvisioningTemplateOutput::template_arn): <p>The ARN that identifies the provisioning template.</p>
-    ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateOutput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`default_version_id(Option<i32>)`](crate::output::CreateProvisioningTemplateOutput::default_version_id): <p>The default version of the fleet provisioning template.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateOutput::template_name): <p>The name of the provisioning template.</p>
+    ///   - [`default_version_id(Option<i32>)`](crate::output::CreateProvisioningTemplateOutput::default_version_id): <p>The default version of the provisioning template.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningTemplateError>`](crate::error::CreateProvisioningTemplateError)
     pub fn create_provisioning_template(&self) -> fluent_builders::CreateProvisioningTemplate {
         fluent_builders::CreateProvisioningTemplate::new(self.handle.clone())
@@ -592,14 +593,14 @@ impl Client {
     /// Constructs a fluent builder for the [`CreateProvisioningTemplateVersion`](crate::client::fluent_builders::CreateProvisioningTemplateVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_name): <p>The name of the provisioning template.</p>
+    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_template_body): <p>The JSON formatted contents of the provisioning template.</p>
     ///   - [`set_as_default(bool)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_as_default) / [`set_set_as_default(bool)`](crate::client::fluent_builders::CreateProvisioningTemplateVersion::set_set_as_default): <p>Sets a fleet provision template version as the default version.</p>
     /// - On success, responds with [`CreateProvisioningTemplateVersionOutput`](crate::output::CreateProvisioningTemplateVersionOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::output::CreateProvisioningTemplateVersionOutput::template_arn): <p>The ARN that identifies the provisioning template.</p>
-    ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateVersionOutput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`version_id(Option<i32>)`](crate::output::CreateProvisioningTemplateVersionOutput::version_id): <p>The version of the fleet provisioning template.</p>
-    ///   - [`is_default_version(bool)`](crate::output::CreateProvisioningTemplateVersionOutput::is_default_version): <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::CreateProvisioningTemplateVersionOutput::template_name): <p>The name of the provisioning template.</p>
+    ///   - [`version_id(Option<i32>)`](crate::output::CreateProvisioningTemplateVersionOutput::version_id): <p>The version of the provisioning template.</p>
+    ///   - [`is_default_version(bool)`](crate::output::CreateProvisioningTemplateVersionOutput::is_default_version): <p>True if the provisioning template version is the default version, otherwise false.</p>
     /// - On failure, responds with [`SdkError<CreateProvisioningTemplateVersionError>`](crate::error::CreateProvisioningTemplateVersionError)
     pub fn create_provisioning_template_version(
         &self,
@@ -944,8 +945,8 @@ impl Client {
     /// Constructs a fluent builder for the [`DeleteProvisioningTemplateVersion`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_template_name): <p>The name of the fleet provisioning template version to delete.</p>
-    ///   - [`version_id(i32)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_version_id): <p>The fleet provisioning template version ID to delete.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_template_name): <p>The name of the provisioning template version to delete.</p>
+    ///   - [`version_id(i32)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DeleteProvisioningTemplateVersion::set_version_id): <p>The provisioning template version ID to delete.</p>
     /// - On success, responds with [`DeleteProvisioningTemplateVersionOutput`](crate::output::DeleteProvisioningTemplateVersionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteProvisioningTemplateVersionError>`](crate::error::DeleteProvisioningTemplateVersionError)
@@ -1403,18 +1404,19 @@ impl Client {
     /// Constructs a fluent builder for the [`DescribeProvisioningTemplate`](crate::client::fluent_builders::DescribeProvisioningTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplate::set_template_name): <p>The name of the provisioning template.</p>
     /// - On success, responds with [`DescribeProvisioningTemplateOutput`](crate::output::DescribeProvisioningTemplateOutput) with field(s):
-    ///   - [`template_arn(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_arn): <p>The ARN of the fleet provisioning template.</p>
-    ///   - [`template_name(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::description): <p>The description of the fleet provisioning template.</p>
-    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateOutput::creation_date): <p>The date when the fleet provisioning template was created.</p>
-    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateOutput::last_modified_date): <p>The date when the fleet provisioning template was last modified.</p>
+    ///   - [`template_arn(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_arn): <p>The ARN of the provisioning template.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_name): <p>The name of the provisioning template.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::description): <p>The description of the provisioning template.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateOutput::creation_date): <p>The date when the provisioning template was created.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateOutput::last_modified_date): <p>The date when the provisioning template was last modified.</p>
     ///   - [`default_version_id(Option<i32>)`](crate::output::DescribeProvisioningTemplateOutput::default_version_id): <p>The default fleet template version ID.</p>
-    ///   - [`template_body(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_body): <p>The JSON formatted contents of the fleet provisioning template.</p>
-    ///   - [`enabled(bool)`](crate::output::DescribeProvisioningTemplateOutput::enabled): <p>True if the fleet provisioning template is enabled, otherwise false.</p>
+    ///   - [`template_body(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::template_body): <p>The JSON formatted contents of the provisioning template.</p>
+    ///   - [`enabled(bool)`](crate::output::DescribeProvisioningTemplateOutput::enabled): <p>True if the provisioning template is enabled, otherwise false.</p>
     ///   - [`provisioning_role_arn(Option<String>)`](crate::output::DescribeProvisioningTemplateOutput::provisioning_role_arn): <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     ///   - [`pre_provisioning_hook(Option<ProvisioningHook>)`](crate::output::DescribeProvisioningTemplateOutput::pre_provisioning_hook): <p>Gets information about a pre-provisioned hook.</p>
+    ///   - [`r#type(Option<TemplateType>)`](crate::output::DescribeProvisioningTemplateOutput::type): <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningTemplateError>`](crate::error::DescribeProvisioningTemplateError)
     pub fn describe_provisioning_template(&self) -> fluent_builders::DescribeProvisioningTemplate {
         fluent_builders::DescribeProvisioningTemplate::new(self.handle.clone())
@@ -1423,12 +1425,12 @@ impl Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::set_template_name): <p>The template name.</p>
-    ///   - [`version_id(i32)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::set_version_id): <p>The fleet provisioning template version ID.</p>
+    ///   - [`version_id(i32)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::version_id) / [`set_version_id(Option<i32>)`](crate::client::fluent_builders::DescribeProvisioningTemplateVersion::set_version_id): <p>The provisioning template version ID.</p>
     /// - On success, responds with [`DescribeProvisioningTemplateVersionOutput`](crate::output::DescribeProvisioningTemplateVersionOutput) with field(s):
-    ///   - [`version_id(Option<i32>)`](crate::output::DescribeProvisioningTemplateVersionOutput::version_id): <p>The fleet provisioning template version ID.</p>
-    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateVersionOutput::creation_date): <p>The date when the fleet provisioning template version was created.</p>
-    ///   - [`template_body(Option<String>)`](crate::output::DescribeProvisioningTemplateVersionOutput::template_body): <p>The JSON formatted contents of the fleet provisioning template version.</p>
-    ///   - [`is_default_version(bool)`](crate::output::DescribeProvisioningTemplateVersionOutput::is_default_version): <p>True if the fleet provisioning template version is the default version.</p>
+    ///   - [`version_id(Option<i32>)`](crate::output::DescribeProvisioningTemplateVersionOutput::version_id): <p>The provisioning template version ID.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeProvisioningTemplateVersionOutput::creation_date): <p>The date when the provisioning template version was created.</p>
+    ///   - [`template_body(Option<String>)`](crate::output::DescribeProvisioningTemplateVersionOutput::template_body): <p>The JSON formatted contents of the provisioning template version.</p>
+    ///   - [`is_default_version(bool)`](crate::output::DescribeProvisioningTemplateVersionOutput::is_default_version): <p>True if the provisioning template version is the default version.</p>
     /// - On failure, responds with [`SdkError<DescribeProvisioningTemplateVersionError>`](crate::error::DescribeProvisioningTemplateVersionError)
     pub fn describe_provisioning_template_version(
         &self,
@@ -1987,6 +1989,7 @@ impl Client {
     ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCACertificates::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCACertificates::set_page_size): <p>The result page size.</p>
     ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCACertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCACertificates::set_marker): <p>The marker for the next set of results.</p>
     ///   - [`ascending_order(bool)`](crate::client::fluent_builders::ListCACertificates::ascending_order) / [`set_ascending_order(bool)`](crate::client::fluent_builders::ListCACertificates::set_ascending_order): <p>Determines the order of the results.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListCACertificates::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListCACertificates::set_template_name): <p>The name of the provisioning template.</p>
     /// - On success, responds with [`ListCaCertificatesOutput`](crate::output::ListCaCertificatesOutput) with field(s):
     ///   - [`certificates(Option<Vec<CaCertificate>>)`](crate::output::ListCaCertificatesOutput::certificates): <p>The CA certificates registered in your Amazon Web Services account.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListCaCertificatesOutput::next_marker): <p>The current position within the list of CA certificates.</p>
@@ -2338,7 +2341,7 @@ impl Client {
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProvisioningTemplates::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProvisioningTemplates::set_max_results): <p>The maximum number of results to return at one time.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplates::set_next_token): <p>A token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListProvisioningTemplatesOutput`](crate::output::ListProvisioningTemplatesOutput) with field(s):
-    ///   - [`templates(Option<Vec<ProvisioningTemplateSummary>>)`](crate::output::ListProvisioningTemplatesOutput::templates): <p>A list of fleet provisioning templates</p>
+    ///   - [`templates(Option<Vec<ProvisioningTemplateSummary>>)`](crate::output::ListProvisioningTemplatesOutput::templates): <p>A list of provisioning templates</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProvisioningTemplatesOutput::next_token): <p>A token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningTemplatesError>`](crate::error::ListProvisioningTemplatesError)
     pub fn list_provisioning_templates(&self) -> fluent_builders::ListProvisioningTemplates {
@@ -2348,11 +2351,11 @@ impl Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningTemplateVersions::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_template_name): <p>The name of the fleet provisioning template.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_template_name): <p>The name of the provisioning template.</p>
     ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_max_results): <p>The maximum number of results to return at one time.</p>
     ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProvisioningTemplateVersions::set_next_token): <p>A token to retrieve the next set of results.</p>
     /// - On success, responds with [`ListProvisioningTemplateVersionsOutput`](crate::output::ListProvisioningTemplateVersionsOutput) with field(s):
-    ///   - [`versions(Option<Vec<ProvisioningTemplateVersionSummary>>)`](crate::output::ListProvisioningTemplateVersionsOutput::versions): <p>The list of fleet provisioning template versions.</p>
+    ///   - [`versions(Option<Vec<ProvisioningTemplateVersionSummary>>)`](crate::output::ListProvisioningTemplateVersionsOutput::versions): <p>The list of provisioning template versions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProvisioningTemplateVersionsOutput::next_token): <p>A token to retrieve the next set of results.</p>
     /// - On failure, responds with [`SdkError<ListProvisioningTemplateVersionsError>`](crate::error::ListProvisioningTemplateVersionsError)
     pub fn list_provisioning_template_versions(
@@ -3211,9 +3214,9 @@ impl Client {
     /// Constructs a fluent builder for the [`UpdateProvisioningTemplate`](crate::client::fluent_builders::UpdateProvisioningTemplate) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_template_name): <p>The name of the fleet provisioning template.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_description): <p>The description of the fleet provisioning template.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_enabled): <p>True to enable the fleet provisioning template, otherwise false.</p>
+    ///   - [`template_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::template_name) / [`set_template_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_template_name): <p>The name of the provisioning template.</p>
+    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_description): <p>The description of the provisioning template.</p>
+    ///   - [`enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::enabled) / [`set_enabled(bool)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_enabled): <p>True to enable the provisioning template, otherwise false.</p>
     ///   - [`default_version_id(i32)`](crate::client::fluent_builders::UpdateProvisioningTemplate::default_version_id) / [`set_default_version_id(Option<i32>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_default_version_id): <p>The ID of the default provisioning template version.</p>
     ///   - [`provisioning_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::provisioning_role_arn) / [`set_provisioning_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_provisioning_role_arn): <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     ///   - [`pre_provisioning_hook(ProvisioningHook)`](crate::client::fluent_builders::UpdateProvisioningTemplate::pre_provisioning_hook) / [`set_pre_provisioning_hook(Option<ProvisioningHook>)`](crate::client::fluent_builders::UpdateProvisioningTemplate::set_pre_provisioning_hook): <p>Updates the pre-provisioning hook template.</p>
@@ -3799,7 +3802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachPrincipalPolicy`.
     ///
     /// <p>Attaches the specified policy to the specified principal (certificate or other credential).</p>
-    /// <p> <b>Note:</b> This action is deprecated. Please use <code>AttachPolicy</code> instead.</p>
+    /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>AttachPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPrincipalPolicy {
@@ -6727,7 +6730,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProvisioningTemplate`.
     ///
-    /// <p>Creates a fleet provisioning template.</p>
+    /// <p>Creates a provisioning template.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisioningTemplate {
@@ -6768,12 +6771,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6781,22 +6784,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6804,22 +6807,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_body(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enabled(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provisioning_role_arn(input.into());
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6844,7 +6847,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
         /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
         /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
         /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -6853,7 +6856,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
         /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
         /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
         /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -6865,10 +6868,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn r#type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `CreateProvisioningTemplateVersion`.
     ///
-    /// <p>Creates a new version of a fleet provisioning template.</p>
+    /// <p>Creates a new version of a provisioning template.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProvisioningTemplateVersion {
@@ -6909,12 +6922,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6922,12 +6935,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_body(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9068,7 +9081,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProvisioningTemplate`.
     ///
-    /// <p>Deletes a fleet provisioning template.</p>
+    /// <p>Deletes a provisioning template.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisioningTemplate {
@@ -9125,7 +9138,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProvisioningTemplateVersion`.
     ///
-    /// <p>Deletes a fleet provisioning template version.</p>
+    /// <p>Deletes a provisioning template version.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProvisioningTemplateVersion {
@@ -9166,12 +9179,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the fleet provisioning template version to delete.</p>
+        /// <p>The name of the provisioning template version to delete.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template version to delete.</p>
+        /// <p>The name of the provisioning template version to delete.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9179,12 +9192,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The fleet provisioning template version ID to delete.</p>
+        /// <p>The provisioning template version ID to delete.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.inner = self.inner.version_id(input);
             self
         }
-        /// <p>The fleet provisioning template version ID to delete.</p>
+        /// <p>The provisioning template version ID to delete.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -11206,7 +11219,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProvisioningTemplate`.
     ///
-    /// <p>Returns information about a fleet provisioning template.</p>
+    /// <p>Returns information about a provisioning template.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningTemplate {
@@ -11247,12 +11260,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11263,7 +11276,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProvisioningTemplateVersion`.
     ///
-    /// <p>Returns information about a fleet provisioning template version.</p>
+    /// <p>Returns information about a provisioning template version.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProvisioningTemplateVersion {
@@ -11319,12 +11332,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.inner = self.inner.version_id(input);
             self
         }
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -11842,9 +11855,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachPrincipalPolicy`.
     ///
-    /// <p>Removes the specified policy from the specified certificate.</p> <note>
-    /// <p>This action is deprecated. Please use <code>DetachPolicy</code> instead.</p>
-    /// </note>
+    /// <p>Removes the specified policy from the specified certificate.</p>
+    /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>DetachPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachPrincipalPolicy {
@@ -14314,6 +14326,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ascending_order(input);
             self
         }
+        /// <p>The name of the provisioning template.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
+            self
+        }
+        /// <p>The name of the provisioning template.</p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_name(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `ListCertificates`.
     ///
@@ -16058,7 +16083,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicyPrincipals`.
     ///
     /// <p>Lists the principals associated with the specified policy.</p>
-    /// <p> <b>Note:</b> This action is deprecated. Please use <code>ListTargetsForPolicy</code> instead.</p>
+    /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListTargetsForPolicy</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyPrincipals</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicyPrincipals {
@@ -16203,7 +16228,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPrincipalPolicies`.
     ///
     /// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p>
-    /// <p> <b>Note:</b> This action is deprecated. Please use <code>ListAttachedPolicies</code> instead.</p>
+    /// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipalPolicies {
@@ -16373,7 +16398,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProvisioningTemplates`.
     ///
-    /// <p>Lists the fleet provisioning templates in your Amazon Web Services account.</p>
+    /// <p>Lists the provisioning templates in your Amazon Web Services account.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningTemplates {
@@ -16443,7 +16468,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProvisioningTemplateVersions`.
     ///
-    /// <p>A list of fleet provisioning template versions.</p>
+    /// <p>A list of provisioning template versions.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProvisioningTemplateVersions {
@@ -16493,12 +16518,12 @@ pub mod fluent_builders {
                 self.inner,
             )
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22034,7 +22059,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProvisioningTemplate`.
     ///
-    /// <p>Updates a fleet provisioning template.</p>
+    /// <p>Updates a provisioning template.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProvisioningTemplate {
@@ -22075,12 +22100,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_name(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22088,22 +22113,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enabled(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self

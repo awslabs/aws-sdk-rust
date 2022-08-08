@@ -33,6 +33,74 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInvitation {
     }
 }
 
+/// Operation shape for `BatchGetGraphMemberDatasources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_graph_member_datasources`](crate::client::Client::batch_get_graph_member_datasources).
+///
+/// See [`crate::client::fluent_builders::BatchGetGraphMemberDatasources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetGraphMemberDatasources {
+    _private: (),
+}
+impl BatchGetGraphMemberDatasources {
+    /// Creates a new builder-style object to manufacture [`BatchGetGraphMemberDatasourcesInput`](crate::input::BatchGetGraphMemberDatasourcesInput).
+    pub fn builder() -> crate::input::batch_get_graph_member_datasources_input::Builder {
+        crate::input::batch_get_graph_member_datasources_input::Builder::default()
+    }
+    /// Creates a new `BatchGetGraphMemberDatasources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetGraphMemberDatasources {
+    type Output = std::result::Result<
+        crate::output::BatchGetGraphMemberDatasourcesOutput,
+        crate::error::BatchGetGraphMemberDatasourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_graph_member_datasources_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_graph_member_datasources_response(response)
+        }
+    }
+}
+
+/// Operation shape for `BatchGetMembershipDatasources`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`batch_get_membership_datasources`](crate::client::Client::batch_get_membership_datasources).
+///
+/// See [`crate::client::fluent_builders::BatchGetMembershipDatasources`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetMembershipDatasources {
+    _private: (),
+}
+impl BatchGetMembershipDatasources {
+    /// Creates a new builder-style object to manufacture [`BatchGetMembershipDatasourcesInput`](crate::input::BatchGetMembershipDatasourcesInput).
+    pub fn builder() -> crate::input::batch_get_membership_datasources_input::Builder {
+        crate::input::batch_get_membership_datasources_input::Builder::default()
+    }
+    /// Creates a new `BatchGetMembershipDatasources` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for BatchGetMembershipDatasources {
+    type Output = std::result::Result<
+        crate::output::BatchGetMembershipDatasourcesOutput,
+        crate::error::BatchGetMembershipDatasourcesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_membership_datasources_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_membership_datasources_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateGraph`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -325,6 +393,40 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMembers {
             crate::operation_deser::parse_get_members_error(response)
         } else {
             crate::operation_deser::parse_get_members_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListDatasourcePackages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_datasource_packages`](crate::client::Client::list_datasource_packages).
+///
+/// See [`crate::client::fluent_builders::ListDatasourcePackages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListDatasourcePackages {
+    _private: (),
+}
+impl ListDatasourcePackages {
+    /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesInput`](crate::input::ListDatasourcePackagesInput).
+    pub fn builder() -> crate::input::list_datasource_packages_input::Builder {
+        crate::input::list_datasource_packages_input::Builder::default()
+    }
+    /// Creates a new `ListDatasourcePackages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListDatasourcePackages {
+    type Output = std::result::Result<
+        crate::output::ListDatasourcePackagesOutput,
+        crate::error::ListDatasourcePackagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_datasource_packages_error(response)
+        } else {
+            crate::operation_deser::parse_list_datasource_packages_response(response)
         }
     }
 }
@@ -623,6 +725,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateDatasourcePackages`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_datasource_packages`](crate::client::Client::update_datasource_packages).
+///
+/// See [`crate::client::fluent_builders::UpdateDatasourcePackages`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateDatasourcePackages {
+    _private: (),
+}
+impl UpdateDatasourcePackages {
+    /// Creates a new builder-style object to manufacture [`UpdateDatasourcePackagesInput`](crate::input::UpdateDatasourcePackagesInput).
+    pub fn builder() -> crate::input::update_datasource_packages_input::Builder {
+        crate::input::update_datasource_packages_input::Builder::default()
+    }
+    /// Creates a new `UpdateDatasourcePackages` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateDatasourcePackages {
+    type Output = std::result::Result<
+        crate::output::UpdateDatasourcePackagesOutput,
+        crate::error::UpdateDatasourcePackagesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_datasource_packages_error(response)
+        } else {
+            crate::operation_deser::parse_update_datasource_packages_response(response)
         }
     }
 }

@@ -3,8 +3,6 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-_This is prerelease documentation for Amazon Redshift Serverless, which is in preview release. The documentation and the feature are both subject to change. We recommend that you use this feature only in test environments, and not in production environments. For preview terms and conditions, see Beta Service Participation in [Amazon Web Services Service Terms](https://docs.aws.amazon.com/https:/aws.amazon.com/service-terms)._
-
 This is an interface reference for Amazon Redshift Serverless. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift Serverless.
 
 Amazon Redshift Serverless automatically provisions data warehouse capacity and intelligently scales the underlying resources based on workload demands. Amazon Redshift Serverless adjusts capacity in seconds to deliver consistently high performance and simplified operations for even the most demanding and volatile workloads. Amazon Redshift Serverless lets you focus on using your data to acquire new insights for your business and customers.
@@ -23,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.46.0"
-aws-sdk-redshiftserverless = "0.16.0"
+aws-sdk-redshiftserverless = "0.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -130,6 +130,225 @@ impl UpdateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateProfileOutput {
+    /// <p>Returns the identifier for the profile that's being updated.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+}
+impl UpdateProfileOutput {
+    /// <p>Returns the identifier for the profile that's being updated.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateProfileOutput");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+pub mod update_profile_output {
+
+    /// A builder for [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the identifier for the profile that's being updated.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the identifier for the profile that's being updated.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+        pub fn build(self) -> crate::output::UpdateProfileOutput {
+            crate::output::UpdateProfileOutput {
+                profile_id: self.profile_id,
+            }
+        }
+    }
+}
+impl UpdateProfileOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateProfileOutput`](crate::output::UpdateProfileOutput).
+    pub fn builder() -> crate::output::update_profile_output::Builder {
+        crate::output::update_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectorOutput {
+    /// <p>Returns the identifier of the connector object that you are updating.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+}
+impl UpdateConnectorOutput {
+    /// <p>Returns the identifier of the connector object that you are updating.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectorOutput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
+pub mod update_connector_output {
+
+    /// A builder for [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the identifier of the connector object that you are updating.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the identifier of the connector object that you are updating.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
+        pub fn build(self) -> crate::output::UpdateConnectorOutput {
+            crate::output::UpdateConnectorOutput {
+                connector_id: self.connector_id,
+            }
+        }
+    }
+}
+impl UpdateConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
+    pub fn builder() -> crate::output::update_connector_output::Builder {
+        crate::output::update_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCertificateOutput {
+    /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+}
+impl UpdateCertificateOutput {
+    /// <p>Returns the identifier of the certificate object that you are updating.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateCertificateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCertificateOutput");
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
+pub mod update_certificate_output {
+
+    /// A builder for [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the identifier of the certificate object that you are updating.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the identifier of the certificate object that you are updating.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
+        pub fn build(self) -> crate::output::UpdateCertificateOutput {
+            crate::output::UpdateCertificateOutput {
+                certificate_id: self.certificate_id,
+            }
+        }
+    }
+}
+impl UpdateCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCertificateOutput`](crate::output::UpdateCertificateOutput).
+    pub fn builder() -> crate::output::update_certificate_output::Builder {
+        crate::output::update_certificate_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAgreementOutput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+}
+impl UpdateAgreementOutput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAgreementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAgreementOutput");
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.finish()
+    }
+}
+/// See [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
+pub mod update_agreement_output {
+
+    /// A builder for [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
+        pub fn build(self) -> crate::output::UpdateAgreementOutput {
+            crate::output::UpdateAgreementOutput {
+                agreement_id: self.agreement_id,
+            }
+        }
+    }
+}
+impl UpdateAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAgreementOutput`](crate::output::UpdateAgreementOutput).
+    pub fn builder() -> crate::output::update_agreement_output::Builder {
+        crate::output::update_agreement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -436,6 +655,60 @@ impl StartServerOutput {
     /// Creates a new builder-style object to manufacture [`StartServerOutput`](crate::output::StartServerOutput).
     pub fn builder() -> crate::output::start_server_output::Builder {
         crate::output::start_server_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFileTransferOutput {
+    /// <p>Returns the unique identifier for this file transfer. </p>
+    pub transfer_id: std::option::Option<std::string::String>,
+}
+impl StartFileTransferOutput {
+    /// <p>Returns the unique identifier for this file transfer. </p>
+    pub fn transfer_id(&self) -> std::option::Option<&str> {
+        self.transfer_id.as_deref()
+    }
+}
+impl std::fmt::Debug for StartFileTransferOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartFileTransferOutput");
+        formatter.field("transfer_id", &self.transfer_id);
+        formatter.finish()
+    }
+}
+/// See [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
+pub mod start_file_transfer_output {
+
+    /// A builder for [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transfer_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Returns the unique identifier for this file transfer. </p>
+        pub fn transfer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transfer_id = Some(input.into());
+            self
+        }
+        /// <p>Returns the unique identifier for this file transfer. </p>
+        pub fn set_transfer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transfer_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
+        pub fn build(self) -> crate::output::StartFileTransferOutput {
+            crate::output::StartFileTransferOutput {
+                transfer_id: self.transfer_id,
+            }
+        }
+    }
+}
+impl StartFileTransferOutput {
+    /// Creates a new builder-style object to manufacture [`StartFileTransferOutput`](crate::output::StartFileTransferOutput).
+    pub fn builder() -> crate::output::start_file_transfer_output::Builder {
+        crate::output::start_file_transfer_output::Builder::default()
     }
 }
 
@@ -920,6 +1193,88 @@ impl ListSecurityPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListProfilesOutput {
+    /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns an array, where each item contains the details of a profile.</p>
+    pub profiles: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
+}
+impl ListProfilesOutput {
+    /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns an array, where each item contains the details of a profile.</p>
+    pub fn profiles(&self) -> std::option::Option<&[crate::model::ListedProfile]> {
+        self.profiles.as_deref()
+    }
+}
+impl std::fmt::Debug for ListProfilesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProfilesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("profiles", &self.profiles);
+        formatter.finish()
+    }
+}
+/// See [`ListProfilesOutput`](crate::output::ListProfilesOutput).
+pub mod list_profiles_output {
+
+    /// A builder for [`ListProfilesOutput`](crate::output::ListProfilesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) profiles: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
+    }
+    impl Builder {
+        /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Returns a token that you can use to call <code>ListProfiles</code> again and receive additional results, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `profiles`.
+        ///
+        /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
+        ///
+        /// <p>Returns an array, where each item contains the details of a profile.</p>
+        pub fn profiles(mut self, input: crate::model::ListedProfile) -> Self {
+            let mut v = self.profiles.unwrap_or_default();
+            v.push(input);
+            self.profiles = Some(v);
+            self
+        }
+        /// <p>Returns an array, where each item contains the details of a profile.</p>
+        pub fn set_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedProfile>>,
+        ) -> Self {
+            self.profiles = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListProfilesOutput`](crate::output::ListProfilesOutput).
+        pub fn build(self) -> crate::output::ListProfilesOutput {
+            crate::output::ListProfilesOutput {
+                next_token: self.next_token,
+                profiles: self.profiles,
+            }
+        }
+    }
+}
+impl ListProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`ListProfilesOutput`](crate::output::ListProfilesOutput).
+    pub fn builder() -> crate::output::list_profiles_output::Builder {
+        crate::output::list_profiles_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -1039,6 +1394,253 @@ impl ListExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
     pub fn builder() -> crate::output::list_executions_output::Builder {
         crate::output::list_executions_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectorsOutput {
+    /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns an array, where each item contains the details of a connector.</p>
+    pub connectors: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
+}
+impl ListConnectorsOutput {
+    /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns an array, where each item contains the details of a connector.</p>
+    pub fn connectors(&self) -> std::option::Option<&[crate::model::ListedConnector]> {
+        self.connectors.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConnectorsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConnectorsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("connectors", &self.connectors);
+        formatter.finish()
+    }
+}
+/// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
+pub mod list_connectors_output {
+
+    /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
+    }
+    impl Builder {
+        /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `connectors`.
+        ///
+        /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
+        ///
+        /// <p>Returns an array, where each item contains the details of a connector.</p>
+        pub fn connectors(mut self, input: crate::model::ListedConnector) -> Self {
+            let mut v = self.connectors.unwrap_or_default();
+            v.push(input);
+            self.connectors = Some(v);
+            self
+        }
+        /// <p>Returns an array, where each item contains the details of a connector.</p>
+        pub fn set_connectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedConnector>>,
+        ) -> Self {
+            self.connectors = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
+        pub fn build(self) -> crate::output::ListConnectorsOutput {
+            crate::output::ListConnectorsOutput {
+                next_token: self.next_token,
+                connectors: self.connectors,
+            }
+        }
+    }
+}
+impl ListConnectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
+    pub fn builder() -> crate::output::list_connectors_output::Builder {
+        crate::output::list_connectors_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCertificatesOutput {
+    /// <p>Returns the next token, which you can use to list the next certificate.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+    pub certificates: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
+}
+impl ListCertificatesOutput {
+    /// <p>Returns the next token, which you can use to list the next certificate.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+    pub fn certificates(&self) -> std::option::Option<&[crate::model::ListedCertificate]> {
+        self.certificates.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCertificatesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCertificatesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("certificates", &self.certificates);
+        formatter.finish()
+    }
+}
+/// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
+pub mod list_certificates_output {
+
+    /// A builder for [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) certificates:
+            std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
+    }
+    impl Builder {
+        /// <p>Returns the next token, which you can use to list the next certificate.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Returns the next token, which you can use to list the next certificate.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `certificates`.
+        ///
+        /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+        ///
+        /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+        pub fn certificates(mut self, input: crate::model::ListedCertificate) -> Self {
+            let mut v = self.certificates.unwrap_or_default();
+            v.push(input);
+            self.certificates = Some(v);
+            self
+        }
+        /// <p>Returns an array of the certificates that are specified in the <code>ListCertificates</code> call.</p>
+        pub fn set_certificates(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedCertificate>>,
+        ) -> Self {
+            self.certificates = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
+        pub fn build(self) -> crate::output::ListCertificatesOutput {
+            crate::output::ListCertificatesOutput {
+                next_token: self.next_token,
+                certificates: self.certificates,
+            }
+        }
+    }
+}
+impl ListCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
+    pub fn builder() -> crate::output::list_certificates_output::Builder {
+        crate::output::list_certificates_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAgreementsOutput {
+    /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Returns an array, where each item contains the details of an agreement.</p>
+    pub agreements: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
+}
+impl ListAgreementsOutput {
+    /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Returns an array, where each item contains the details of an agreement.</p>
+    pub fn agreements(&self) -> std::option::Option<&[crate::model::ListedAgreement]> {
+        self.agreements.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAgreementsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAgreementsOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("agreements", &self.agreements);
+        formatter.finish()
+    }
+}
+/// See [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
+pub mod list_agreements_output {
+
+    /// A builder for [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
+    }
+    impl Builder {
+        /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `agreements`.
+        ///
+        /// To override the contents of this collection use [`set_agreements`](Self::set_agreements).
+        ///
+        /// <p>Returns an array, where each item contains the details of an agreement.</p>
+        pub fn agreements(mut self, input: crate::model::ListedAgreement) -> Self {
+            let mut v = self.agreements.unwrap_or_default();
+            v.push(input);
+            self.agreements = Some(v);
+            self
+        }
+        /// <p>Returns an array, where each item contains the details of an agreement.</p>
+        pub fn set_agreements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ListedAgreement>>,
+        ) -> Self {
+            self.agreements = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
+        pub fn build(self) -> crate::output::ListAgreementsOutput {
+            crate::output::ListAgreementsOutput {
+                next_token: self.next_token,
+                agreements: self.agreements,
+            }
+        }
+    }
+}
+impl ListAgreementsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAgreementsOutput`](crate::output::ListAgreementsOutput).
+    pub fn builder() -> crate::output::list_agreements_output::Builder {
+        crate::output::list_agreements_output::Builder::default()
     }
 }
 
@@ -1235,6 +1837,63 @@ impl ImportSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput).
     pub fn builder() -> crate::output::import_ssh_public_key_output::Builder {
         crate::output::import_ssh_public_key_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportCertificateOutput {
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+}
+impl ImportCertificateOutput {
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportCertificateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportCertificateOutput");
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.finish()
+    }
+}
+/// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
+pub mod import_certificate_output {
+
+    /// A builder for [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
+        pub fn build(self) -> crate::output::ImportCertificateOutput {
+            crate::output::ImportCertificateOutput {
+                certificate_id: self.certificate_id,
+            }
+        }
+    }
+}
+impl ImportCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
+    pub fn builder() -> crate::output::import_certificate_output::Builder {
+        crate::output::import_certificate_output::Builder::default()
     }
 }
 
@@ -1485,6 +2144,63 @@ impl DescribeSecurityPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeProfileOutput {
+    /// <p>The details of the specified profile, returned as an object.</p>
+    pub profile: std::option::Option<crate::model::DescribedProfile>,
+}
+impl DescribeProfileOutput {
+    /// <p>The details of the specified profile, returned as an object.</p>
+    pub fn profile(&self) -> std::option::Option<&crate::model::DescribedProfile> {
+        self.profile.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeProfileOutput");
+        formatter.field("profile", &self.profile);
+        formatter.finish()
+    }
+}
+/// See [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
+pub mod describe_profile_output {
+
+    /// A builder for [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile: std::option::Option<crate::model::DescribedProfile>,
+    }
+    impl Builder {
+        /// <p>The details of the specified profile, returned as an object.</p>
+        pub fn profile(mut self, input: crate::model::DescribedProfile) -> Self {
+            self.profile = Some(input);
+            self
+        }
+        /// <p>The details of the specified profile, returned as an object.</p>
+        pub fn set_profile(
+            mut self,
+            input: std::option::Option<crate::model::DescribedProfile>,
+        ) -> Self {
+            self.profile = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
+        pub fn build(self) -> crate::output::DescribeProfileOutput {
+            crate::output::DescribeProfileOutput {
+                profile: self.profile,
+            }
+        }
+    }
+}
+impl DescribeProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeProfileOutput`](crate::output::DescribeProfileOutput).
+    pub fn builder() -> crate::output::describe_profile_output::Builder {
+        crate::output::describe_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: std::option::Option<std::string::String>,
@@ -1555,6 +2271,177 @@ impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
     pub fn builder() -> crate::output::describe_execution_output::Builder {
         crate::output::describe_execution_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorOutput {
+    /// <p>The structure that contains the details of the connector.</p>
+    pub connector: std::option::Option<crate::model::DescribedConnector>,
+}
+impl DescribeConnectorOutput {
+    /// <p>The structure that contains the details of the connector.</p>
+    pub fn connector(&self) -> std::option::Option<&crate::model::DescribedConnector> {
+        self.connector.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeConnectorOutput");
+        formatter.field("connector", &self.connector);
+        formatter.finish()
+    }
+}
+/// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
+pub mod describe_connector_output {
+
+    /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector: std::option::Option<crate::model::DescribedConnector>,
+    }
+    impl Builder {
+        /// <p>The structure that contains the details of the connector.</p>
+        pub fn connector(mut self, input: crate::model::DescribedConnector) -> Self {
+            self.connector = Some(input);
+            self
+        }
+        /// <p>The structure that contains the details of the connector.</p>
+        pub fn set_connector(
+            mut self,
+            input: std::option::Option<crate::model::DescribedConnector>,
+        ) -> Self {
+            self.connector = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
+        pub fn build(self) -> crate::output::DescribeConnectorOutput {
+            crate::output::DescribeConnectorOutput {
+                connector: self.connector,
+            }
+        }
+    }
+}
+impl DescribeConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
+    pub fn builder() -> crate::output::describe_connector_output::Builder {
+        crate::output::describe_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCertificateOutput {
+    /// <p>The details for the specified certificate, returned as an object.</p>
+    pub certificate: std::option::Option<crate::model::DescribedCertificate>,
+}
+impl DescribeCertificateOutput {
+    /// <p>The details for the specified certificate, returned as an object.</p>
+    pub fn certificate(&self) -> std::option::Option<&crate::model::DescribedCertificate> {
+        self.certificate.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeCertificateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeCertificateOutput");
+        formatter.field("certificate", &self.certificate);
+        formatter.finish()
+    }
+}
+/// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
+pub mod describe_certificate_output {
+
+    /// A builder for [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate: std::option::Option<crate::model::DescribedCertificate>,
+    }
+    impl Builder {
+        /// <p>The details for the specified certificate, returned as an object.</p>
+        pub fn certificate(mut self, input: crate::model::DescribedCertificate) -> Self {
+            self.certificate = Some(input);
+            self
+        }
+        /// <p>The details for the specified certificate, returned as an object.</p>
+        pub fn set_certificate(
+            mut self,
+            input: std::option::Option<crate::model::DescribedCertificate>,
+        ) -> Self {
+            self.certificate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
+        pub fn build(self) -> crate::output::DescribeCertificateOutput {
+            crate::output::DescribeCertificateOutput {
+                certificate: self.certificate,
+            }
+        }
+    }
+}
+impl DescribeCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
+    pub fn builder() -> crate::output::describe_certificate_output::Builder {
+        crate::output::describe_certificate_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAgreementOutput {
+    /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+    pub agreement: std::option::Option<crate::model::DescribedAgreement>,
+}
+impl DescribeAgreementOutput {
+    /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+    pub fn agreement(&self) -> std::option::Option<&crate::model::DescribedAgreement> {
+        self.agreement.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeAgreementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAgreementOutput");
+        formatter.field("agreement", &self.agreement);
+        formatter.finish()
+    }
+}
+/// See [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
+pub mod describe_agreement_output {
+
+    /// A builder for [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement: std::option::Option<crate::model::DescribedAgreement>,
+    }
+    impl Builder {
+        /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+        pub fn agreement(mut self, input: crate::model::DescribedAgreement) -> Self {
+            self.agreement = Some(input);
+            self
+        }
+        /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+        pub fn set_agreement(
+            mut self,
+            input: std::option::Option<crate::model::DescribedAgreement>,
+        ) -> Self {
+            self.agreement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
+        pub fn build(self) -> crate::output::DescribeAgreementOutput {
+            crate::output::DescribeAgreementOutput {
+                agreement: self.agreement,
+            }
+        }
+    }
+}
+impl DescribeAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAgreementOutput`](crate::output::DescribeAgreementOutput).
+    pub fn builder() -> crate::output::describe_agreement_output::Builder {
+        crate::output::describe_agreement_output::Builder::default()
     }
 }
 
@@ -1751,6 +2638,126 @@ impl DeleteServerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServerOutput`](crate::output::DeleteServerOutput).
     pub fn builder() -> crate::output::delete_server_output::Builder {
         crate::output::delete_server_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteProfileOutput {}
+impl std::fmt::Debug for DeleteProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteProfileOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+pub mod delete_profile_output {
+
+    /// A builder for [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+        pub fn build(self) -> crate::output::DeleteProfileOutput {
+            crate::output::DeleteProfileOutput {}
+        }
+    }
+}
+impl DeleteProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteProfileOutput`](crate::output::DeleteProfileOutput).
+    pub fn builder() -> crate::output::delete_profile_output::Builder {
+        crate::output::delete_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectorOutput {}
+impl std::fmt::Debug for DeleteConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteConnectorOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
+pub mod delete_connector_output {
+
+    /// A builder for [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
+        pub fn build(self) -> crate::output::DeleteConnectorOutput {
+            crate::output::DeleteConnectorOutput {}
+        }
+    }
+}
+impl DeleteConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
+    pub fn builder() -> crate::output::delete_connector_output::Builder {
+        crate::output::delete_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCertificateOutput {}
+impl std::fmt::Debug for DeleteCertificateOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCertificateOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+pub mod delete_certificate_output {
+
+    /// A builder for [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+        pub fn build(self) -> crate::output::DeleteCertificateOutput {
+            crate::output::DeleteCertificateOutput {}
+        }
+    }
+}
+impl DeleteCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+    pub fn builder() -> crate::output::delete_certificate_output::Builder {
+        crate::output::delete_certificate_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAgreementOutput {}
+impl std::fmt::Debug for DeleteAgreementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAgreementOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
+pub mod delete_agreement_output {
+
+    /// A builder for [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
+        pub fn build(self) -> crate::output::DeleteAgreementOutput {
+            crate::output::DeleteAgreementOutput {}
+        }
+    }
+}
+impl DeleteAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAgreementOutput`](crate::output::DeleteAgreementOutput).
+    pub fn builder() -> crate::output::delete_agreement_output::Builder {
+        crate::output::delete_agreement_output::Builder::default()
     }
 }
 
@@ -1968,10 +2975,172 @@ impl CreateServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateProfileOutput {
+    /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+}
+impl CreateProfileOutput {
+    /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateProfileOutput");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+pub mod create_profile_output {
+
+    /// A builder for [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+        pub fn build(self) -> crate::output::CreateProfileOutput {
+            crate::output::CreateProfileOutput {
+                profile_id: self.profile_id,
+            }
+        }
+    }
+}
+impl CreateProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateProfileOutput`](crate::output::CreateProfileOutput).
+    pub fn builder() -> crate::output::create_profile_output::Builder {
+        crate::output::create_profile_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectorOutput {
+    /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+}
+impl CreateConnectorOutput {
+    /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateConnectorOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectorOutput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
+pub mod create_connector_output {
+
+    /// A builder for [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector, returned after the API call succeeds.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
+        pub fn build(self) -> crate::output::CreateConnectorOutput {
+            crate::output::CreateConnectorOutput {
+                connector_id: self.connector_id,
+            }
+        }
+    }
+}
+impl CreateConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
+    pub fn builder() -> crate::output::create_connector_output::Builder {
+        crate::output::create_connector_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAgreementOutput {
+    /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+}
+impl CreateAgreementOutput {
+    /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAgreementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAgreementOutput");
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
+pub mod create_agreement_output {
+
+    /// A builder for [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
+        pub fn build(self) -> crate::output::CreateAgreementOutput {
+            crate::output::CreateAgreementOutput {
+                agreement_id: self.agreement_id,
+            }
+        }
+    }
+}
+impl CreateAgreementOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAgreementOutput`](crate::output::CreateAgreementOutput).
+    pub fn builder() -> crate::output::create_agreement_output::Builder {
+        crate::output::create_agreement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessOutput {
     /// <p>The ID of the server that the user is attached to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessOutput {
@@ -1979,7 +3148,7 @@ impl CreateAccessOutput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+    /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -2012,12 +3181,12 @@ pub mod create_access_output {
             self.server_id = input;
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self

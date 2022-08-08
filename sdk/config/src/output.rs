@@ -1471,6 +1471,98 @@ impl ListDiscoveredResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConformancePackComplianceScoresOutput {
+    /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+    pub conformance_pack_compliance_scores:
+        std::option::Option<std::vec::Vec<crate::model::ConformancePackComplianceScore>>,
+}
+impl ListConformancePackComplianceScoresOutput {
+    /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+    pub fn conformance_pack_compliance_scores(
+        &self,
+    ) -> std::option::Option<&[crate::model::ConformancePackComplianceScore]> {
+        self.conformance_pack_compliance_scores.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConformancePackComplianceScoresOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConformancePackComplianceScoresOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "conformance_pack_compliance_scores",
+            &self.conformance_pack_compliance_scores,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListConformancePackComplianceScoresOutput`](crate::output::ListConformancePackComplianceScoresOutput).
+pub mod list_conformance_pack_compliance_scores_output {
+
+    /// A builder for [`ListConformancePackComplianceScoresOutput`](crate::output::ListConformancePackComplianceScoresOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) conformance_pack_compliance_scores:
+            std::option::Option<std::vec::Vec<crate::model::ConformancePackComplianceScore>>,
+    }
+    impl Builder {
+        /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> string that you can use to get the next page of results in a paginated response.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Appends an item to `conformance_pack_compliance_scores`.
+        ///
+        /// To override the contents of this collection use [`set_conformance_pack_compliance_scores`](Self::set_conformance_pack_compliance_scores).
+        ///
+        /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+        pub fn conformance_pack_compliance_scores(
+            mut self,
+            input: crate::model::ConformancePackComplianceScore,
+        ) -> Self {
+            let mut v = self.conformance_pack_compliance_scores.unwrap_or_default();
+            v.push(input);
+            self.conformance_pack_compliance_scores = Some(v);
+            self
+        }
+        /// <p>A list of <code>ConformancePackComplianceScore</code> objects.</p>
+        pub fn set_conformance_pack_compliance_scores(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConformancePackComplianceScore>>,
+        ) -> Self {
+            self.conformance_pack_compliance_scores = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConformancePackComplianceScoresOutput`](crate::output::ListConformancePackComplianceScoresOutput).
+        pub fn build(self) -> crate::output::ListConformancePackComplianceScoresOutput {
+            crate::output::ListConformancePackComplianceScoresOutput {
+                next_token: self.next_token,
+                conformance_pack_compliance_scores: self.conformance_pack_compliance_scores,
+            }
+        }
+    }
+}
+impl ListConformancePackComplianceScoresOutput {
+    /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresOutput`](crate::output::ListConformancePackComplianceScoresOutput).
+    pub fn builder() -> crate::output::list_conformance_pack_compliance_scores_output::Builder {
+        crate::output::list_conformance_pack_compliance_scores_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAggregateDiscoveredResourcesOutput {
     /// <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
     pub resource_identifiers:

@@ -6798,14 +6798,15 @@ pub mod create_provisioning_template_input {
         pub(crate) provisioning_role_arn: std::option::Option<std::string::String>,
         pub(crate) pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) r#type: std::option::Option<crate::model::TemplateType>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6813,22 +6814,22 @@ pub mod create_provisioning_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6836,22 +6837,22 @@ pub mod create_provisioning_template_input {
             self.template_body = input;
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6876,7 +6877,7 @@ pub mod create_provisioning_template_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
         /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
         /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
         /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -6887,7 +6888,7 @@ pub mod create_provisioning_template_input {
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
         /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
         /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
         /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -6897,6 +6898,16 @@ pub mod create_provisioning_template_input {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn r#type(mut self, input: crate::model::TemplateType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TemplateType>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateProvisioningTemplateInput`](crate::input::CreateProvisioningTemplateInput).
@@ -6914,6 +6925,7 @@ pub mod create_provisioning_template_input {
                 provisioning_role_arn: self.provisioning_role_arn,
                 pre_provisioning_hook: self.pre_provisioning_hook,
                 tags: self.tags,
+                r#type: self.r#type,
             })
         }
     }
@@ -7037,12 +7049,12 @@ pub mod create_provisioning_template_version_input {
         pub(crate) set_as_default: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7050,12 +7062,12 @@ pub mod create_provisioning_template_version_input {
             self.template_name = input;
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_body = Some(input.into());
             self
         }
-        /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+        /// <p>The JSON formatted contents of the provisioning template.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12174,12 +12186,12 @@ pub mod delete_provisioning_template_version_input {
         pub(crate) version_id: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template version to delete.</p>
+        /// <p>The name of the provisioning template version to delete.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template version to delete.</p>
+        /// <p>The name of the provisioning template version to delete.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12187,12 +12199,12 @@ pub mod delete_provisioning_template_version_input {
             self.template_name = input;
             self
         }
-        /// <p>The fleet provisioning template version ID to delete.</p>
+        /// <p>The provisioning template version ID to delete.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.version_id = Some(input);
             self
         }
-        /// <p>The fleet provisioning template version ID to delete.</p>
+        /// <p>The provisioning template version ID to delete.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.version_id = input;
             self
@@ -17376,12 +17388,12 @@ pub mod describe_provisioning_template_input {
         pub(crate) template_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17537,12 +17549,12 @@ pub mod describe_provisioning_template_version_input {
             self.template_name = input;
             self
         }
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn version_id(mut self, input: i32) -> Self {
             self.version_id = Some(input);
             self
         }
-        /// <p>The fleet provisioning template version ID.</p>
+        /// <p>The provisioning template version ID.</p>
         pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
             self.version_id = input;
             self
@@ -24056,6 +24068,7 @@ pub mod list_ca_certificates_input {
         pub(crate) page_size: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) ascending_order: std::option::Option<bool>,
+        pub(crate) template_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The result page size.</p>
@@ -24088,6 +24101,19 @@ pub mod list_ca_certificates_input {
             self.ascending_order = input;
             self
         }
+        /// <p>The name of the provisioning template.</p>
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the provisioning template.</p>
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCaCertificatesInput`](crate::input::ListCaCertificatesInput).
         pub fn build(
             self,
@@ -24097,6 +24123,7 @@ pub mod list_ca_certificates_input {
                 page_size: self.page_size,
                 marker: self.marker,
                 ascending_order: self.ascending_order.unwrap_or_default(),
+                template_name: self.template_name,
             })
         }
     }
@@ -24146,6 +24173,12 @@ impl ListCaCertificatesInput {
                     query.push_kv(
                         "isAscendingOrder",
                         aws_smithy_types::primitive::Encoder::from(_input.ascending_order).encode(),
+                    );
+                }
+                if let Some(inner_169) = &_input.template_name {
+                    query.push_kv(
+                        "templateName",
+                        &aws_smithy_http::query::fmt_string(&inner_169),
                     );
                 }
                 Ok(())
@@ -24301,14 +24334,14 @@ impl ListCertificatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_169) = &_input.page_size {
+                if let Some(inner_170) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_169).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_170).encode(),
                     );
                 }
-                if let Some(inner_170) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_170));
+                if let Some(inner_171) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_171));
                 }
                 if _input.ascending_order {
                     query.push_kv(
@@ -24476,14 +24509,14 @@ impl ListCertificatesByCaInput {
                 _input: &crate::input::ListCertificatesByCaInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_171 = &_input.ca_certificate_id;
-                let input_171 = input_171.as_ref().ok_or(
+                let input_172 = &_input.ca_certificate_id;
+                let input_172 = input_172.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "ca_certificate_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let ca_certificate_id = aws_smithy_http::label::fmt_string(input_171, false);
+                let ca_certificate_id = aws_smithy_http::label::fmt_string(input_172, false);
                 if ca_certificate_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ca_certificate_id",
@@ -24503,14 +24536,14 @@ impl ListCertificatesByCaInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_172) = &_input.page_size {
+                if let Some(inner_173) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_172).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_173).encode(),
                     );
                 }
-                if let Some(inner_173) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_173));
+                if let Some(inner_174) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_174));
                 }
                 if _input.ascending_order {
                     query.push_kv(
@@ -24659,13 +24692,13 @@ impl ListCustomMetricsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_174) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_174));
+                if let Some(inner_175) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_175));
                 }
-                if let Some(inner_175) = &_input.max_results {
+                if let Some(inner_176) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_175).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_176).encode(),
                     );
                 }
                 Ok(())
@@ -24880,44 +24913,44 @@ impl ListDetectMitigationActionsExecutionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_176) = &_input.task_id {
-                    query.push_kv("taskId", &aws_smithy_http::query::fmt_string(&inner_176));
+                if let Some(inner_177) = &_input.task_id {
+                    query.push_kv("taskId", &aws_smithy_http::query::fmt_string(&inner_177));
                 }
-                if let Some(inner_177) = &_input.violation_id {
+                if let Some(inner_178) = &_input.violation_id {
                     query.push_kv(
                         "violationId",
-                        &aws_smithy_http::query::fmt_string(&inner_177),
+                        &aws_smithy_http::query::fmt_string(&inner_178),
                     );
                 }
-                if let Some(inner_178) = &_input.thing_name {
-                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_178));
+                if let Some(inner_179) = &_input.thing_name {
+                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_179));
                 }
-                if let Some(inner_179) = &_input.start_time {
+                if let Some(inner_180) = &_input.start_time {
                     query.push_kv(
                         "startTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_179,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_180) = &_input.end_time {
-                    query.push_kv(
-                        "endTime",
                         &aws_smithy_http::query::fmt_timestamp(
                             inner_180,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_181) = &_input.max_results {
+                if let Some(inner_181) = &_input.end_time {
                     query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_181).encode(),
+                        "endTime",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_181,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
                     );
                 }
-                if let Some(inner_182) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_182));
+                if let Some(inner_182) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_182).encode(),
+                    );
+                }
+                if let Some(inner_183) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_183));
                 }
                 Ok(())
             }
@@ -25095,29 +25128,29 @@ impl ListDetectMitigationActionsTasksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_183) = &_input.max_results {
+                if let Some(inner_184) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_183).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_184).encode(),
                     );
                 }
-                if let Some(inner_184) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_184));
+                if let Some(inner_185) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_185));
                 }
-                if let Some(inner_185) = &_input.start_time {
+                if let Some(inner_186) = &_input.start_time {
                     query.push_kv(
                         "startTime",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_185,
+                            inner_186,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_186) = &_input.end_time {
+                if let Some(inner_187) = &_input.end_time {
                     query.push_kv(
                         "endTime",
                         &aws_smithy_http::query::fmt_timestamp(
-                            inner_186,
+                            inner_187,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
@@ -25263,13 +25296,13 @@ impl ListDimensionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_187) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_187));
+                if let Some(inner_188) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_188));
                 }
-                if let Some(inner_188) = &_input.max_results {
+                if let Some(inner_189) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_188).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_189).encode(),
                     );
                 }
                 Ok(())
@@ -25431,19 +25464,19 @@ impl ListDomainConfigurationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_189) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_189));
+                if let Some(inner_190) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_190));
                 }
-                if let Some(inner_190) = &_input.page_size {
+                if let Some(inner_191) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_190).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_191).encode(),
                     );
                 }
-                if let Some(inner_191) = &_input.service_type {
+                if let Some(inner_192) = &_input.service_type {
                     query.push_kv(
                         "serviceType",
-                        &aws_smithy_http::query::fmt_string(&inner_191),
+                        &aws_smithy_http::query::fmt_string(&inner_192),
                     );
                 }
                 Ok(())
@@ -25587,13 +25620,13 @@ impl ListFleetMetricsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_192) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_192));
+                if let Some(inner_193) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_193));
                 }
-                if let Some(inner_193) = &_input.max_results {
+                if let Some(inner_194) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_193).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_194).encode(),
                     );
                 }
                 Ok(())
@@ -25737,13 +25770,13 @@ impl ListIndicesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_194) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_194));
+                if let Some(inner_195) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_195));
                 }
-                if let Some(inner_195) = &_input.max_results {
+                if let Some(inner_196) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_195).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_196).encode(),
                     );
                 }
                 Ok(())
@@ -25909,14 +25942,14 @@ impl ListJobExecutionsForJobInput {
                 _input: &crate::input::ListJobExecutionsForJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_196 = &_input.job_id;
-                let input_196 = input_196.as_ref().ok_or(
+                let input_197 = &_input.job_id;
+                let input_197 = input_197.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_196, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_197, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -25932,17 +25965,17 @@ impl ListJobExecutionsForJobInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_197) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_197));
+                if let Some(inner_198) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_198));
                 }
-                if let Some(inner_198) = &_input.max_results {
+                if let Some(inner_199) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_198).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_199).encode(),
                     );
                 }
-                if let Some(inner_199) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_199));
+                if let Some(inner_200) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_200));
                 }
                 Ok(())
             }
@@ -26139,14 +26172,14 @@ impl ListJobExecutionsForThingInput {
                 _input: &crate::input::ListJobExecutionsForThingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_200 = &_input.thing_name;
-                let input_200 = input_200.as_ref().ok_or(
+                let input_201 = &_input.thing_name;
+                let input_201 = input_201.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_200, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_201, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -26162,26 +26195,26 @@ impl ListJobExecutionsForThingInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_201) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_201));
+                if let Some(inner_202) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_202));
                 }
-                if let Some(inner_202) = &_input.namespace_id {
+                if let Some(inner_203) = &_input.namespace_id {
                     query.push_kv(
                         "namespaceId",
-                        &aws_smithy_http::query::fmt_string(&inner_202),
+                        &aws_smithy_http::query::fmt_string(&inner_203),
                     );
                 }
-                if let Some(inner_203) = &_input.max_results {
+                if let Some(inner_204) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_203).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_204).encode(),
                     );
                 }
-                if let Some(inner_204) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_204));
+                if let Some(inner_205) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_205));
                 }
-                if let Some(inner_205) = &_input.job_id {
-                    query.push_kv("jobId", &aws_smithy_http::query::fmt_string(&inner_205));
+                if let Some(inner_206) = &_input.job_id {
+                    query.push_kv("jobId", &aws_smithy_http::query::fmt_string(&inner_206));
                 }
                 Ok(())
             }
@@ -26404,40 +26437,40 @@ impl ListJobsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_206) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_206));
+                if let Some(inner_207) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_207));
                 }
-                if let Some(inner_207) = &_input.target_selection {
+                if let Some(inner_208) = &_input.target_selection {
                     query.push_kv(
                         "targetSelection",
-                        &aws_smithy_http::query::fmt_string(&inner_207),
+                        &aws_smithy_http::query::fmt_string(&inner_208),
                     );
                 }
-                if let Some(inner_208) = &_input.max_results {
+                if let Some(inner_209) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_208).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_209).encode(),
                     );
                 }
-                if let Some(inner_209) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_209));
+                if let Some(inner_210) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_210));
                 }
-                if let Some(inner_210) = &_input.thing_group_name {
+                if let Some(inner_211) = &_input.thing_group_name {
                     query.push_kv(
                         "thingGroupName",
-                        &aws_smithy_http::query::fmt_string(&inner_210),
-                    );
-                }
-                if let Some(inner_211) = &_input.thing_group_id {
-                    query.push_kv(
-                        "thingGroupId",
                         &aws_smithy_http::query::fmt_string(&inner_211),
                     );
                 }
-                if let Some(inner_212) = &_input.namespace_id {
+                if let Some(inner_212) = &_input.thing_group_id {
+                    query.push_kv(
+                        "thingGroupId",
+                        &aws_smithy_http::query::fmt_string(&inner_212),
+                    );
+                }
+                if let Some(inner_213) = &_input.namespace_id {
                     query.push_kv(
                         "namespaceId",
-                        &aws_smithy_http::query::fmt_string(&inner_212),
+                        &aws_smithy_http::query::fmt_string(&inner_213),
                     );
                 }
                 Ok(())
@@ -26576,14 +26609,14 @@ impl ListJobTemplatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_213) = &_input.max_results {
+                if let Some(inner_214) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_213).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_214).encode(),
                     );
                 }
-                if let Some(inner_214) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_214));
+                if let Some(inner_215) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_215));
                 }
                 Ok(())
             }
@@ -26744,20 +26777,20 @@ impl ListManagedJobTemplatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_215) = &_input.template_name {
+                if let Some(inner_216) = &_input.template_name {
                     query.push_kv(
                         "templateName",
-                        &aws_smithy_http::query::fmt_string(&inner_215),
+                        &aws_smithy_http::query::fmt_string(&inner_216),
                     );
                 }
-                if let Some(inner_216) = &_input.max_results {
+                if let Some(inner_217) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_216).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_217).encode(),
                     );
                 }
-                if let Some(inner_217) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_217));
+                if let Some(inner_218) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_218));
                 }
                 Ok(())
             }
@@ -26988,53 +27021,53 @@ impl ListMetricValuesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_218) = &_input.thing_name {
-                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_218));
+                if let Some(inner_219) = &_input.thing_name {
+                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_219));
                 }
-                if let Some(inner_219) = &_input.metric_name {
+                if let Some(inner_220) = &_input.metric_name {
                     query.push_kv(
                         "metricName",
-                        &aws_smithy_http::query::fmt_string(&inner_219),
-                    );
-                }
-                if let Some(inner_220) = &_input.dimension_name {
-                    query.push_kv(
-                        "dimensionName",
                         &aws_smithy_http::query::fmt_string(&inner_220),
                     );
                 }
-                if let Some(inner_221) = &_input.dimension_value_operator {
+                if let Some(inner_221) = &_input.dimension_name {
                     query.push_kv(
-                        "dimensionValueOperator",
+                        "dimensionName",
                         &aws_smithy_http::query::fmt_string(&inner_221),
                     );
                 }
-                if let Some(inner_222) = &_input.start_time {
+                if let Some(inner_222) = &_input.dimension_value_operator {
                     query.push_kv(
-                        "startTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_222,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
+                        "dimensionValueOperator",
+                        &aws_smithy_http::query::fmt_string(&inner_222),
                     );
                 }
-                if let Some(inner_223) = &_input.end_time {
+                if let Some(inner_223) = &_input.start_time {
                     query.push_kv(
-                        "endTime",
+                        "startTime",
                         &aws_smithy_http::query::fmt_timestamp(
                             inner_223,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_224) = &_input.max_results {
+                if let Some(inner_224) = &_input.end_time {
                     query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_224).encode(),
+                        "endTime",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_224,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
                     );
                 }
-                if let Some(inner_225) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_225));
+                if let Some(inner_225) = &_input.max_results {
+                    query.push_kv(
+                        "maxResults",
+                        aws_smithy_types::primitive::Encoder::from(*inner_225).encode(),
+                    );
+                }
+                if let Some(inner_226) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_226));
                 }
                 Ok(())
             }
@@ -27192,20 +27225,20 @@ impl ListMitigationActionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_226) = &_input.action_type {
+                if let Some(inner_227) = &_input.action_type {
                     query.push_kv(
                         "actionType",
-                        &aws_smithy_http::query::fmt_string(&inner_226),
+                        &aws_smithy_http::query::fmt_string(&inner_227),
                     );
                 }
-                if let Some(inner_227) = &_input.max_results {
+                if let Some(inner_228) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_227).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_228).encode(),
                     );
                 }
-                if let Some(inner_228) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_228));
+                if let Some(inner_229) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_229));
                 }
                 Ok(())
             }
@@ -27363,19 +27396,19 @@ impl ListOtaUpdatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_229) = &_input.max_results {
+                if let Some(inner_230) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_229).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_230).encode(),
                     );
                 }
-                if let Some(inner_230) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_230));
+                if let Some(inner_231) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_231));
                 }
-                if let Some(inner_231) = &_input.ota_update_status {
+                if let Some(inner_232) = &_input.ota_update_status {
                     query.push_kv(
                         "otaUpdateStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_231),
+                        &aws_smithy_http::query::fmt_string(&inner_232),
                     );
                 }
                 Ok(())
@@ -27534,14 +27567,14 @@ impl ListOutgoingCertificatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_232) = &_input.page_size {
+                if let Some(inner_233) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_232).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_233).encode(),
                     );
                 }
-                if let Some(inner_233) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_233));
+                if let Some(inner_234) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_234));
                 }
                 if _input.ascending_order {
                     query.push_kv(
@@ -27702,13 +27735,13 @@ impl ListPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_234) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_234));
+                if let Some(inner_235) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_235));
                 }
-                if let Some(inner_235) = &_input.page_size {
+                if let Some(inner_236) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_235).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_236).encode(),
                     );
                 }
                 if _input.ascending_order {
@@ -27882,13 +27915,13 @@ impl ListPolicyPrincipalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_236) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_236));
+                if let Some(inner_237) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_237));
                 }
-                if let Some(inner_237) = &_input.page_size {
+                if let Some(inner_238) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_237).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_238).encode(),
                     );
                 }
                 if _input.ascending_order {
@@ -28020,14 +28053,14 @@ impl ListPolicyVersionsInput {
                 _input: &crate::input::ListPolicyVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_238 = &_input.policy_name;
-                let input_238 = input_238.as_ref().ok_or(
+                let input_239 = &_input.policy_name;
+                let input_239 = input_239.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let policy_name = aws_smithy_http::label::fmt_string(input_238, false);
+                let policy_name = aws_smithy_http::label::fmt_string(input_239, false);
                 if policy_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
@@ -28204,13 +28237,13 @@ impl ListPrincipalPoliciesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_239) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_239));
+                if let Some(inner_240) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_240));
                 }
-                if let Some(inner_240) = &_input.page_size {
+                if let Some(inner_241) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_240).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_241).encode(),
                     );
                 }
                 if _input.ascending_order {
@@ -28374,13 +28407,13 @@ impl ListPrincipalThingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_241) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_241));
+                if let Some(inner_242) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_242));
                 }
-                if let Some(inner_242) = &_input.max_results {
+                if let Some(inner_243) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_242).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_243).encode(),
                     );
                 }
                 Ok(())
@@ -28528,14 +28561,14 @@ impl ListProvisioningTemplatesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_243) = &_input.max_results {
+                if let Some(inner_244) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_243).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_244).encode(),
                     );
                 }
-                if let Some(inner_244) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_244));
+                if let Some(inner_245) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_245));
                 }
                 Ok(())
             }
@@ -28615,12 +28648,12 @@ pub mod list_provisioning_template_versions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28689,14 +28722,14 @@ impl ListProvisioningTemplateVersionsInput {
                 _input: &crate::input::ListProvisioningTemplateVersionsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_245 = &_input.template_name;
-                let input_245 = input_245.as_ref().ok_or(
+                let input_246 = &_input.template_name;
+                let input_246 = input_246.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_name = aws_smithy_http::label::fmt_string(input_245, false);
+                let template_name = aws_smithy_http::label::fmt_string(input_246, false);
                 if template_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
@@ -28716,14 +28749,14 @@ impl ListProvisioningTemplateVersionsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_246) = &_input.max_results {
+                if let Some(inner_247) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_246).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_247).encode(),
                     );
                 }
-                if let Some(inner_247) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_247));
+                if let Some(inner_248) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_248));
                 }
                 Ok(())
             }
@@ -28878,14 +28911,14 @@ impl ListRoleAliasesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_248) = &_input.page_size {
+                if let Some(inner_249) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_248).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_249).encode(),
                     );
                 }
-                if let Some(inner_249) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_249));
+                if let Some(inner_250) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_250));
                 }
                 if _input.ascending_order {
                     query.push_kv(
@@ -29034,13 +29067,13 @@ impl ListScheduledAuditsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_250) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_250));
+                if let Some(inner_251) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_251));
                 }
-                if let Some(inner_251) = &_input.max_results {
+                if let Some(inner_252) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_251).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_252).encode(),
                     );
                 }
                 Ok(())
@@ -29211,25 +29244,25 @@ impl ListSecurityProfilesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_252) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_252));
+                if let Some(inner_253) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_253));
                 }
-                if let Some(inner_253) = &_input.max_results {
+                if let Some(inner_254) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_253).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_254).encode(),
                     );
                 }
-                if let Some(inner_254) = &_input.dimension_name {
+                if let Some(inner_255) = &_input.dimension_name {
                     query.push_kv(
                         "dimensionName",
-                        &aws_smithy_http::query::fmt_string(&inner_254),
+                        &aws_smithy_http::query::fmt_string(&inner_255),
                     );
                 }
-                if let Some(inner_255) = &_input.metric_name {
+                if let Some(inner_256) = &_input.metric_name {
                     query.push_kv(
                         "metricName",
-                        &aws_smithy_http::query::fmt_string(&inner_255),
+                        &aws_smithy_http::query::fmt_string(&inner_256),
                     );
                 }
                 Ok(())
@@ -29407,13 +29440,13 @@ impl ListSecurityProfilesForTargetInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_256) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_256));
+                if let Some(inner_257) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_257));
                 }
-                if let Some(inner_257) = &_input.max_results {
+                if let Some(inner_258) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_257).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_258).encode(),
                     );
                 }
                 if _input.recursive {
@@ -29422,10 +29455,10 @@ impl ListSecurityProfilesForTargetInput {
                         aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
                     );
                 }
-                if let Some(inner_258) = &_input.security_profile_target_arn {
+                if let Some(inner_259) = &_input.security_profile_target_arn {
                     query.push_kv(
                         "securityProfileTargetArn",
-                        &aws_smithy_http::query::fmt_string(&inner_258),
+                        &aws_smithy_http::query::fmt_string(&inner_259),
                     );
                 }
                 Ok(())
@@ -29581,14 +29614,14 @@ impl ListStreamsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_259) = &_input.max_results {
+                if let Some(inner_260) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_259).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_260).encode(),
                     );
                 }
-                if let Some(inner_260) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_260));
+                if let Some(inner_261) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_261));
                 }
                 if _input.ascending_order {
                     query.push_kv(
@@ -29737,14 +29770,14 @@ impl ListTagsForResourceInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_261) = &_input.resource_arn {
+                if let Some(inner_262) = &_input.resource_arn {
                     query.push_kv(
                         "resourceArn",
-                        &aws_smithy_http::query::fmt_string(&inner_261),
+                        &aws_smithy_http::query::fmt_string(&inner_262),
                     );
                 }
-                if let Some(inner_262) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_262));
+                if let Some(inner_263) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_263));
                 }
                 Ok(())
             }
@@ -29891,14 +29924,14 @@ impl ListTargetsForPolicyInput {
                 _input: &crate::input::ListTargetsForPolicyInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_263 = &_input.policy_name;
-                let input_263 = input_263.as_ref().ok_or(
+                let input_264 = &_input.policy_name;
+                let input_264 = input_264.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let policy_name = aws_smithy_http::label::fmt_string(input_263, false);
+                let policy_name = aws_smithy_http::label::fmt_string(input_264, false);
                 if policy_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
@@ -29918,13 +29951,13 @@ impl ListTargetsForPolicyInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_264) = &_input.marker {
-                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_264));
+                if let Some(inner_265) = &_input.marker {
+                    query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_265));
                 }
-                if let Some(inner_265) = &_input.page_size {
+                if let Some(inner_266) = &_input.page_size {
                     query.push_kv(
                         "pageSize",
-                        aws_smithy_types::primitive::Encoder::from(*inner_265).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_266).encode(),
                     );
                 }
                 Ok(())
@@ -30079,14 +30112,14 @@ impl ListTargetsForSecurityProfileInput {
                 _input: &crate::input::ListTargetsForSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_266 = &_input.security_profile_name;
-                let input_266 = input_266.as_ref().ok_or(
+                let input_267 = &_input.security_profile_name;
+                let input_267 = input_267.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_name = aws_smithy_http::label::fmt_string(input_266, false);
+                let security_profile_name = aws_smithy_http::label::fmt_string(input_267, false);
                 if security_profile_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
@@ -30106,13 +30139,13 @@ impl ListTargetsForSecurityProfileInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_267) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_267));
+                if let Some(inner_268) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_268));
                 }
-                if let Some(inner_268) = &_input.max_results {
+                if let Some(inner_269) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_268).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_269).encode(),
                     );
                 }
                 Ok(())
@@ -30295,31 +30328,31 @@ impl ListThingGroupsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_269) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_269));
+                if let Some(inner_270) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_270));
                 }
-                if let Some(inner_270) = &_input.max_results {
+                if let Some(inner_271) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_270).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_271).encode(),
                     );
                 }
-                if let Some(inner_271) = &_input.parent_group {
+                if let Some(inner_272) = &_input.parent_group {
                     query.push_kv(
                         "parentGroup",
-                        &aws_smithy_http::query::fmt_string(&inner_271),
-                    );
-                }
-                if let Some(inner_272) = &_input.name_prefix_filter {
-                    query.push_kv(
-                        "namePrefixFilter",
                         &aws_smithy_http::query::fmt_string(&inner_272),
                     );
                 }
-                if let Some(inner_273) = &_input.recursive {
+                if let Some(inner_273) = &_input.name_prefix_filter {
+                    query.push_kv(
+                        "namePrefixFilter",
+                        &aws_smithy_http::query::fmt_string(&inner_273),
+                    );
+                }
+                if let Some(inner_274) = &_input.recursive {
                     query.push_kv(
                         "recursive",
-                        aws_smithy_types::primitive::Encoder::from(*inner_273).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_274).encode(),
                     );
                 }
                 Ok(())
@@ -30470,14 +30503,14 @@ impl ListThingGroupsForThingInput {
                 _input: &crate::input::ListThingGroupsForThingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_274 = &_input.thing_name;
-                let input_274 = input_274.as_ref().ok_or(
+                let input_275 = &_input.thing_name;
+                let input_275 = input_275.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_274, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_275, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -30497,13 +30530,13 @@ impl ListThingGroupsForThingInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_275) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_275));
+                if let Some(inner_276) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_276));
                 }
-                if let Some(inner_276) = &_input.max_results {
+                if let Some(inner_277) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_276).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_277).encode(),
                     );
                 }
                 Ok(())
@@ -30651,14 +30684,14 @@ impl ListThingPrincipalsInput {
                 _input: &crate::input::ListThingPrincipalsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_277 = &_input.thing_name;
-                let input_277 = input_277.as_ref().ok_or(
+                let input_278 = &_input.thing_name;
+                let input_278 = input_278.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_277, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_278, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -30678,13 +30711,13 @@ impl ListThingPrincipalsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_278) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_278));
+                if let Some(inner_279) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_279));
                 }
-                if let Some(inner_279) = &_input.max_results {
+                if let Some(inner_280) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_279).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_280).encode(),
                     );
                 }
                 Ok(())
@@ -30851,14 +30884,14 @@ impl ListThingRegistrationTaskReportsInput {
                 _input: &crate::input::ListThingRegistrationTaskReportsInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_280 = &_input.task_id;
-                let input_280 = input_280.as_ref().ok_or(
+                let input_281 = &_input.task_id;
+                let input_281 = input_281.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let task_id = aws_smithy_http::label::fmt_string(input_280, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_281, false);
                 if task_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
@@ -30878,19 +30911,19 @@ impl ListThingRegistrationTaskReportsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_281) = &_input.report_type {
+                if let Some(inner_282) = &_input.report_type {
                     query.push_kv(
                         "reportType",
-                        &aws_smithy_http::query::fmt_string(&inner_281),
+                        &aws_smithy_http::query::fmt_string(&inner_282),
                     );
                 }
-                if let Some(inner_282) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_282));
+                if let Some(inner_283) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_283));
                 }
-                if let Some(inner_283) = &_input.max_results {
+                if let Some(inner_284) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_283).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_284).encode(),
                     );
                 }
                 Ok(())
@@ -31049,17 +31082,17 @@ impl ListThingRegistrationTasksInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_284) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_284));
+                if let Some(inner_285) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_285));
                 }
-                if let Some(inner_285) = &_input.max_results {
+                if let Some(inner_286) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_285).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_286).encode(),
                     );
                 }
-                if let Some(inner_286) = &_input.status {
-                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_286));
+                if let Some(inner_287) = &_input.status {
+                    query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_287));
                 }
                 Ok(())
             }
@@ -31260,31 +31293,31 @@ impl ListThingsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_287) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_287));
+                if let Some(inner_288) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_288));
                 }
-                if let Some(inner_288) = &_input.max_results {
+                if let Some(inner_289) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_288).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_289).encode(),
                     );
                 }
-                if let Some(inner_289) = &_input.attribute_name {
+                if let Some(inner_290) = &_input.attribute_name {
                     query.push_kv(
                         "attributeName",
-                        &aws_smithy_http::query::fmt_string(&inner_289),
-                    );
-                }
-                if let Some(inner_290) = &_input.attribute_value {
-                    query.push_kv(
-                        "attributeValue",
                         &aws_smithy_http::query::fmt_string(&inner_290),
                     );
                 }
-                if let Some(inner_291) = &_input.thing_type_name {
+                if let Some(inner_291) = &_input.attribute_value {
+                    query.push_kv(
+                        "attributeValue",
+                        &aws_smithy_http::query::fmt_string(&inner_291),
+                    );
+                }
+                if let Some(inner_292) = &_input.thing_type_name {
                     query.push_kv(
                         "thingTypeName",
-                        &aws_smithy_http::query::fmt_string(&inner_291),
+                        &aws_smithy_http::query::fmt_string(&inner_292),
                     );
                 }
                 if _input.use_prefix_attribute_value {
@@ -31447,14 +31480,14 @@ impl ListThingsInBillingGroupInput {
                 _input: &crate::input::ListThingsInBillingGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_292 = &_input.billing_group_name;
-                let input_292 = input_292.as_ref().ok_or(
+                let input_293 = &_input.billing_group_name;
+                let input_293 = input_293.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let billing_group_name = aws_smithy_http::label::fmt_string(input_292, false);
+                let billing_group_name = aws_smithy_http::label::fmt_string(input_293, false);
                 if billing_group_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
@@ -31474,13 +31507,13 @@ impl ListThingsInBillingGroupInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_293) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_293));
+                if let Some(inner_294) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_294));
                 }
-                if let Some(inner_294) = &_input.max_results {
+                if let Some(inner_295) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_294).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_295).encode(),
                     );
                 }
                 Ok(())
@@ -31643,14 +31676,14 @@ impl ListThingsInThingGroupInput {
                 _input: &crate::input::ListThingsInThingGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_295 = &_input.thing_group_name;
-                let input_295 = input_295.as_ref().ok_or(
+                let input_296 = &_input.thing_group_name;
+                let input_296 = input_296.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_group_name = aws_smithy_http::label::fmt_string(input_295, false);
+                let thing_group_name = aws_smithy_http::label::fmt_string(input_296, false);
                 if thing_group_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
@@ -31676,13 +31709,13 @@ impl ListThingsInThingGroupInput {
                         aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
                     );
                 }
-                if let Some(inner_296) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_296));
+                if let Some(inner_297) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_297));
                 }
-                if let Some(inner_297) = &_input.max_results {
+                if let Some(inner_298) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_297).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_298).encode(),
                     );
                 }
                 Ok(())
@@ -31841,19 +31874,19 @@ impl ListThingTypesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_298) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_298));
+                if let Some(inner_299) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_299));
                 }
-                if let Some(inner_299) = &_input.max_results {
+                if let Some(inner_300) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_299).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_300).encode(),
                     );
                 }
-                if let Some(inner_300) = &_input.thing_type_name {
+                if let Some(inner_301) = &_input.thing_type_name {
                     query.push_kv(
                         "thingTypeName",
-                        &aws_smithy_http::query::fmt_string(&inner_300),
+                        &aws_smithy_http::query::fmt_string(&inner_301),
                     );
                 }
                 Ok(())
@@ -32000,14 +32033,14 @@ impl ListTopicRuleDestinationsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_301) = &_input.max_results {
+                if let Some(inner_302) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_301).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_302).encode(),
                     );
                 }
-                if let Some(inner_302) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_302));
+                if let Some(inner_303) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_303));
                 }
                 Ok(())
             }
@@ -32174,22 +32207,22 @@ impl ListTopicRulesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_303) = &_input.topic {
-                    query.push_kv("topic", &aws_smithy_http::query::fmt_string(&inner_303));
+                if let Some(inner_304) = &_input.topic {
+                    query.push_kv("topic", &aws_smithy_http::query::fmt_string(&inner_304));
                 }
-                if let Some(inner_304) = &_input.max_results {
+                if let Some(inner_305) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_304).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_305).encode(),
                     );
                 }
-                if let Some(inner_305) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_305));
+                if let Some(inner_306) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_306));
                 }
-                if let Some(inner_306) = &_input.rule_disabled {
+                if let Some(inner_307) = &_input.rule_disabled {
                     query.push_kv(
                         "ruleDisabled",
-                        aws_smithy_types::primitive::Encoder::from(*inner_306).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_307).encode(),
                     );
                 }
                 Ok(())
@@ -32348,19 +32381,19 @@ impl ListV2LoggingLevelsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_307) = &_input.target_type {
+                if let Some(inner_308) = &_input.target_type {
                     query.push_kv(
                         "targetType",
-                        &aws_smithy_http::query::fmt_string(&inner_307),
+                        &aws_smithy_http::query::fmt_string(&inner_308),
                     );
                 }
-                if let Some(inner_308) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_308));
+                if let Some(inner_309) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_309));
                 }
-                if let Some(inner_309) = &_input.max_results {
+                if let Some(inner_310) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_309).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_310).encode(),
                     );
                 }
                 Ok(())
@@ -32603,58 +32636,58 @@ impl ListViolationEventsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_310) = &_input.start_time {
+                if let Some(inner_311) = &_input.start_time {
                     query.push_kv(
                         "startTime",
-                        &aws_smithy_http::query::fmt_timestamp(
-                            inner_310,
-                            aws_smithy_types::date_time::Format::DateTime,
-                        )?,
-                    );
-                }
-                if let Some(inner_311) = &_input.end_time {
-                    query.push_kv(
-                        "endTime",
                         &aws_smithy_http::query::fmt_timestamp(
                             inner_311,
                             aws_smithy_types::date_time::Format::DateTime,
                         )?,
                     );
                 }
-                if let Some(inner_312) = &_input.thing_name {
-                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_312));
-                }
-                if let Some(inner_313) = &_input.security_profile_name {
+                if let Some(inner_312) = &_input.end_time {
                     query.push_kv(
-                        "securityProfileName",
-                        &aws_smithy_http::query::fmt_string(&inner_313),
+                        "endTime",
+                        &aws_smithy_http::query::fmt_timestamp(
+                            inner_312,
+                            aws_smithy_types::date_time::Format::DateTime,
+                        )?,
                     );
                 }
-                if let Some(inner_314) = &_input.behavior_criteria_type {
+                if let Some(inner_313) = &_input.thing_name {
+                    query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_313));
+                }
+                if let Some(inner_314) = &_input.security_profile_name {
                     query.push_kv(
-                        "behaviorCriteriaType",
+                        "securityProfileName",
                         &aws_smithy_http::query::fmt_string(&inner_314),
                     );
                 }
-                if let Some(inner_315) = &_input.list_suppressed_alerts {
+                if let Some(inner_315) = &_input.behavior_criteria_type {
+                    query.push_kv(
+                        "behaviorCriteriaType",
+                        &aws_smithy_http::query::fmt_string(&inner_315),
+                    );
+                }
+                if let Some(inner_316) = &_input.list_suppressed_alerts {
                     query.push_kv(
                         "listSuppressedAlerts",
-                        aws_smithy_types::primitive::Encoder::from(*inner_315).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_316).encode(),
                     );
                 }
-                if let Some(inner_316) = &_input.verification_state {
+                if let Some(inner_317) = &_input.verification_state {
                     query.push_kv(
                         "verificationState",
-                        &aws_smithy_http::query::fmt_string(&inner_316),
+                        &aws_smithy_http::query::fmt_string(&inner_317),
                     );
                 }
-                if let Some(inner_317) = &_input.next_token {
-                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_317));
+                if let Some(inner_318) = &_input.next_token {
+                    query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_318));
                 }
-                if let Some(inner_318) = &_input.max_results {
+                if let Some(inner_319) = &_input.max_results {
                     query.push_kv(
                         "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(*inner_318).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_319).encode(),
                     );
                 }
                 Ok(())
@@ -32815,14 +32848,14 @@ impl PutVerificationStateOnViolationInput {
                 _input: &crate::input::PutVerificationStateOnViolationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_319 = &_input.violation_id;
-                let input_319 = input_319.as_ref().ok_or(
+                let input_320 = &_input.violation_id;
+                let input_320 = input_320.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "violation_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let violation_id = aws_smithy_http::label::fmt_string(input_319, false);
+                let violation_id = aws_smithy_http::label::fmt_string(input_320, false);
                 if violation_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "violation_id",
@@ -33284,10 +33317,10 @@ impl RegisterCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_320) = &_input.set_as_active {
+                if let Some(inner_321) = &_input.set_as_active {
                     query.push_kv(
                         "setAsActive",
-                        aws_smithy_types::primitive::Encoder::from(*inner_320).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_321).encode(),
                     );
                 }
                 Ok(())
@@ -33769,14 +33802,14 @@ impl RejectCertificateTransferInput {
                 _input: &crate::input::RejectCertificateTransferInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_321 = &_input.certificate_id;
-                let input_321 = input_321.as_ref().ok_or(
+                let input_322 = &_input.certificate_id;
+                let input_322 = input_322.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let certificate_id = aws_smithy_http::label::fmt_string(input_321, false);
+                let certificate_id = aws_smithy_http::label::fmt_string(input_322, false);
                 if certificate_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
@@ -34300,14 +34333,14 @@ impl ReplaceTopicRuleInput {
                 _input: &crate::input::ReplaceTopicRuleInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_322 = &_input.rule_name;
-                let input_322 = input_322.as_ref().ok_or(
+                let input_323 = &_input.rule_name;
+                let input_323 = input_323.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "rule_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let rule_name = aws_smithy_http::label::fmt_string(input_322, false);
+                let rule_name = aws_smithy_http::label::fmt_string(input_323, false);
                 if rule_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "rule_name",
@@ -34796,28 +34829,28 @@ impl SetDefaultPolicyVersionInput {
                 _input: &crate::input::SetDefaultPolicyVersionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_323 = &_input.policy_name;
-                let input_323 = input_323.as_ref().ok_or(
+                let input_324 = &_input.policy_name;
+                let input_324 = input_324.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let policy_name = aws_smithy_http::label::fmt_string(input_323, false);
+                let policy_name = aws_smithy_http::label::fmt_string(input_324, false);
                 if policy_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     });
                 }
-                let input_324 = &_input.policy_version_id;
-                let input_324 = input_324.as_ref().ok_or(
+                let input_325 = &_input.policy_version_id;
+                let input_325 = input_325.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let policy_version_id = aws_smithy_http::label::fmt_string(input_324, false);
+                let policy_version_id = aws_smithy_http::label::fmt_string(input_325, false);
                 if policy_version_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
@@ -35475,14 +35508,14 @@ impl StartAuditMitigationActionsTaskInput {
                 _input: &crate::input::StartAuditMitigationActionsTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_325 = &_input.task_id;
-                let input_325 = input_325.as_ref().ok_or(
+                let input_326 = &_input.task_id;
+                let input_326 = input_326.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let task_id = aws_smithy_http::label::fmt_string(input_325, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_326, false);
                 if task_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
@@ -35732,14 +35765,14 @@ impl StartDetectMitigationActionsTaskInput {
                 _input: &crate::input::StartDetectMitigationActionsTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_326 = &_input.task_id;
-                let input_326 = input_326.as_ref().ok_or(
+                let input_327 = &_input.task_id;
+                let input_327 = input_327.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let task_id = aws_smithy_http::label::fmt_string(input_326, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_327, false);
                 if task_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
@@ -36216,14 +36249,14 @@ impl StopThingRegistrationTaskInput {
                 _input: &crate::input::StopThingRegistrationTaskInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_327 = &_input.task_id;
-                let input_327 = input_327.as_ref().ok_or(
+                let input_328 = &_input.task_id;
+                let input_328 = input_328.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let task_id = aws_smithy_http::label::fmt_string(input_327, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_328, false);
                 if task_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
@@ -36610,8 +36643,8 @@ impl TestAuthorizationInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_328) = &_input.client_id {
-                    query.push_kv("clientId", &aws_smithy_http::query::fmt_string(&inner_328));
+                if let Some(inner_329) = &_input.client_id {
+                    query.push_kv("clientId", &aws_smithy_http::query::fmt_string(&inner_329));
                 }
                 Ok(())
             }
@@ -36823,14 +36856,14 @@ impl TestInvokeAuthorizerInput {
                 _input: &crate::input::TestInvokeAuthorizerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_329 = &_input.authorizer_name;
-                let input_329 = input_329.as_ref().ok_or(
+                let input_330 = &_input.authorizer_name;
+                let input_330 = input_330.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let authorizer_name = aws_smithy_http::label::fmt_string(input_329, false);
+                let authorizer_name = aws_smithy_http::label::fmt_string(input_330, false);
                 if authorizer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
@@ -37012,14 +37045,14 @@ impl TransferCertificateInput {
                 _input: &crate::input::TransferCertificateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_330 = &_input.certificate_id;
-                let input_330 = input_330.as_ref().ok_or(
+                let input_331 = &_input.certificate_id;
+                let input_331 = input_331.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let certificate_id = aws_smithy_http::label::fmt_string(input_330, false);
+                let certificate_id = aws_smithy_http::label::fmt_string(input_331, false);
                 if certificate_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
@@ -37039,10 +37072,10 @@ impl TransferCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_331) = &_input.target_aws_account {
+                if let Some(inner_332) = &_input.target_aws_account {
                     query.push_kv(
                         "targetAwsAccount",
-                        &aws_smithy_http::query::fmt_string(&inner_331),
+                        &aws_smithy_http::query::fmt_string(&inner_332),
                     );
                 }
                 Ok(())
@@ -37830,14 +37863,14 @@ impl UpdateAuthorizerInput {
                 _input: &crate::input::UpdateAuthorizerInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_332 = &_input.authorizer_name;
-                let input_332 = input_332.as_ref().ok_or(
+                let input_333 = &_input.authorizer_name;
+                let input_333 = input_333.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let authorizer_name = aws_smithy_http::label::fmt_string(input_332, false);
+                let authorizer_name = aws_smithy_http::label::fmt_string(input_333, false);
                 if authorizer_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
@@ -38018,14 +38051,14 @@ impl UpdateBillingGroupInput {
                 _input: &crate::input::UpdateBillingGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_333 = &_input.billing_group_name;
-                let input_333 = input_333.as_ref().ok_or(
+                let input_334 = &_input.billing_group_name;
+                let input_334 = input_334.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let billing_group_name = aws_smithy_http::label::fmt_string(input_333, false);
+                let billing_group_name = aws_smithy_http::label::fmt_string(input_334, false);
                 if billing_group_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
@@ -38238,14 +38271,14 @@ impl UpdateCaCertificateInput {
                 _input: &crate::input::UpdateCaCertificateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_334 = &_input.certificate_id;
-                let input_334 = input_334.as_ref().ok_or(
+                let input_335 = &_input.certificate_id;
+                let input_335 = input_335.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let certificate_id = aws_smithy_http::label::fmt_string(input_334, false);
+                let certificate_id = aws_smithy_http::label::fmt_string(input_335, false);
                 if certificate_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
@@ -38265,13 +38298,13 @@ impl UpdateCaCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_335) = &_input.new_status {
-                    query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_335));
+                if let Some(inner_336) = &_input.new_status {
+                    query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_336));
                 }
-                if let Some(inner_336) = &_input.new_auto_registration_status {
+                if let Some(inner_337) = &_input.new_auto_registration_status {
                     query.push_kv(
                         "newAutoRegistrationStatus",
-                        &aws_smithy_http::query::fmt_string(&inner_336),
+                        &aws_smithy_http::query::fmt_string(&inner_337),
                     );
                 }
                 Ok(())
@@ -38431,14 +38464,14 @@ impl UpdateCertificateInput {
                 _input: &crate::input::UpdateCertificateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_337 = &_input.certificate_id;
-                let input_337 = input_337.as_ref().ok_or(
+                let input_338 = &_input.certificate_id;
+                let input_338 = input_338.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let certificate_id = aws_smithy_http::label::fmt_string(input_337, false);
+                let certificate_id = aws_smithy_http::label::fmt_string(input_338, false);
                 if certificate_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
@@ -38458,8 +38491,8 @@ impl UpdateCertificateInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_338) = &_input.new_status {
-                    query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_338));
+                if let Some(inner_339) = &_input.new_status {
+                    query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_339));
                 }
                 Ok(())
             }
@@ -38594,14 +38627,14 @@ impl UpdateCustomMetricInput {
                 _input: &crate::input::UpdateCustomMetricInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_339 = &_input.metric_name;
-                let input_339 = input_339.as_ref().ok_or(
+                let input_340 = &_input.metric_name;
+                let input_340 = input_340.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let metric_name = aws_smithy_http::label::fmt_string(input_339, false);
+                let metric_name = aws_smithy_http::label::fmt_string(input_340, false);
                 if metric_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
@@ -38769,14 +38802,14 @@ impl UpdateDimensionInput {
                 _input: &crate::input::UpdateDimensionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_340 = &_input.name;
-                let input_340 = input_340.as_ref().ok_or(
+                let input_341 = &_input.name;
+                let input_341 = input_341.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let name = aws_smithy_http::label::fmt_string(input_340, false);
+                let name = aws_smithy_http::label::fmt_string(input_341, false);
                 if name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
@@ -38971,15 +39004,15 @@ impl UpdateDomainConfigurationInput {
                 _input: &crate::input::UpdateDomainConfigurationInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_341 = &_input.domain_configuration_name;
-                let input_341 = input_341.as_ref().ok_or(
+                let input_342 = &_input.domain_configuration_name;
+                let input_342 = input_342.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_configuration_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
                 let domain_configuration_name =
-                    aws_smithy_http::label::fmt_string(input_341, false);
+                    aws_smithy_http::label::fmt_string(input_342, false);
                 if domain_configuration_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_configuration_name",
@@ -39208,14 +39241,14 @@ impl UpdateDynamicThingGroupInput {
                 _input: &crate::input::UpdateDynamicThingGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_342 = &_input.thing_group_name;
-                let input_342 = input_342.as_ref().ok_or(
+                let input_343 = &_input.thing_group_name;
+                let input_343 = input_343.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_group_name = aws_smithy_http::label::fmt_string(input_342, false);
+                let thing_group_name = aws_smithy_http::label::fmt_string(input_343, false);
                 if thing_group_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
@@ -39641,14 +39674,14 @@ impl UpdateFleetMetricInput {
                 _input: &crate::input::UpdateFleetMetricInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_343 = &_input.metric_name;
-                let input_343 = input_343.as_ref().ok_or(
+                let input_344 = &_input.metric_name;
+                let input_344 = input_344.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let metric_name = aws_smithy_http::label::fmt_string(input_343, false);
+                let metric_name = aws_smithy_http::label::fmt_string(input_344, false);
                 if metric_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
@@ -40072,14 +40105,14 @@ impl UpdateJobInput {
                 _input: &crate::input::UpdateJobInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_344 = &_input.job_id;
-                let input_344 = input_344.as_ref().ok_or(
+                let input_345 = &_input.job_id;
+                let input_345 = input_345.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let job_id = aws_smithy_http::label::fmt_string(input_344, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_345, false);
                 if job_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
@@ -40094,10 +40127,10 @@ impl UpdateJobInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_345) = &_input.namespace_id {
+                if let Some(inner_346) = &_input.namespace_id {
                     query.push_kv(
                         "namespaceId",
-                        &aws_smithy_http::query::fmt_string(&inner_345),
+                        &aws_smithy_http::query::fmt_string(&inner_346),
                     );
                 }
                 Ok(())
@@ -40260,14 +40293,14 @@ impl UpdateMitigationActionInput {
                 _input: &crate::input::UpdateMitigationActionInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_346 = &_input.action_name;
-                let input_346 = input_346.as_ref().ok_or(
+                let input_347 = &_input.action_name;
+                let input_347 = input_347.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "action_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let action_name = aws_smithy_http::label::fmt_string(input_346, false);
+                let action_name = aws_smithy_http::label::fmt_string(input_347, false);
                 if action_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "action_name",
@@ -40377,12 +40410,12 @@ pub mod update_provisioning_template_input {
         pub(crate) remove_pre_provisioning_hook: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the fleet provisioning template.</p>
+        /// <p>The name of the provisioning template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40390,22 +40423,22 @@ pub mod update_provisioning_template_input {
             self.template_name = input;
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the fleet provisioning template.</p>
+        /// <p>The description of the provisioning template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+        /// <p>True to enable the provisioning template, otherwise false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -40503,14 +40536,14 @@ impl UpdateProvisioningTemplateInput {
                 _input: &crate::input::UpdateProvisioningTemplateInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_347 = &_input.template_name;
-                let input_347 = input_347.as_ref().ok_or(
+                let input_348 = &_input.template_name;
+                let input_348 = input_348.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let template_name = aws_smithy_http::label::fmt_string(input_347, false);
+                let template_name = aws_smithy_http::label::fmt_string(input_348, false);
                 if template_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
@@ -40685,14 +40718,14 @@ impl UpdateRoleAliasInput {
                 _input: &crate::input::UpdateRoleAliasInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_348 = &_input.role_alias;
-                let input_348 = input_348.as_ref().ok_or(
+                let input_349 = &_input.role_alias;
+                let input_349 = input_349.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "role_alias",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let role_alias = aws_smithy_http::label::fmt_string(input_348, false);
+                let role_alias = aws_smithy_http::label::fmt_string(input_349, false);
                 if role_alias.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "role_alias",
@@ -40901,14 +40934,14 @@ impl UpdateScheduledAuditInput {
                 _input: &crate::input::UpdateScheduledAuditInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_349 = &_input.scheduled_audit_name;
-                let input_349 = input_349.as_ref().ok_or(
+                let input_350 = &_input.scheduled_audit_name;
+                let input_350 = input_350.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "scheduled_audit_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let scheduled_audit_name = aws_smithy_http::label::fmt_string(input_349, false);
+                let scheduled_audit_name = aws_smithy_http::label::fmt_string(input_350, false);
                 if scheduled_audit_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "scheduled_audit_name",
@@ -41233,14 +41266,14 @@ impl UpdateSecurityProfileInput {
                 _input: &crate::input::UpdateSecurityProfileInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_350 = &_input.security_profile_name;
-                let input_350 = input_350.as_ref().ok_or(
+                let input_351 = &_input.security_profile_name;
+                let input_351 = input_351.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let security_profile_name = aws_smithy_http::label::fmt_string(input_350, false);
+                let security_profile_name = aws_smithy_http::label::fmt_string(input_351, false);
                 if security_profile_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
@@ -41260,10 +41293,10 @@ impl UpdateSecurityProfileInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
-                if let Some(inner_351) = &_input.expected_version {
+                if let Some(inner_352) = &_input.expected_version {
                     query.push_kv(
                         "expectedVersion",
-                        aws_smithy_types::primitive::Encoder::from(*inner_351).encode(),
+                        aws_smithy_types::primitive::Encoder::from(*inner_352).encode(),
                     );
                 }
                 Ok(())
@@ -41448,14 +41481,14 @@ impl UpdateStreamInput {
                 _input: &crate::input::UpdateStreamInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_352 = &_input.stream_id;
-                let input_352 = input_352.as_ref().ok_or(
+                let input_353 = &_input.stream_id;
+                let input_353 = input_353.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "stream_id",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let stream_id = aws_smithy_http::label::fmt_string(input_352, false);
+                let stream_id = aws_smithy_http::label::fmt_string(input_353, false);
                 if stream_id.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stream_id",
@@ -41658,14 +41691,14 @@ impl UpdateThingInput {
                 _input: &crate::input::UpdateThingInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_353 = &_input.thing_name;
-                let input_353 = input_353.as_ref().ok_or(
+                let input_354 = &_input.thing_name;
+                let input_354 = input_354.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_353, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_354, false);
                 if thing_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
@@ -41838,14 +41871,14 @@ impl UpdateThingGroupInput {
                 _input: &crate::input::UpdateThingGroupInput,
                 output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::BuildError> {
-                let input_354 = &_input.thing_group_name;
-                let input_354 = input_354.as_ref().ok_or(
+                let input_355 = &_input.thing_group_name;
+                let input_355 = input_355.as_ref().ok_or(
                     aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     },
                 )?;
-                let thing_group_name = aws_smithy_http::label::fmt_string(input_354, false);
+                let thing_group_name = aws_smithy_http::label::fmt_string(input_355, false);
                 if thing_group_name.is_empty() {
                     return Err(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
@@ -42959,11 +42992,11 @@ impl std::fmt::Debug for UpdateRoleAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    /// <p>True to enable the provisioning template, otherwise false.</p>
     pub enabled: bool,
     /// <p>The ID of the default provisioning template version.</p>
     pub default_version_id: std::option::Option<i32>,
@@ -42975,15 +43008,15 @@ pub struct UpdateProvisioningTemplateInput {
     pub remove_pre_provisioning_hook: std::option::Option<bool>,
 }
 impl UpdateProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -45552,7 +45585,7 @@ impl std::fmt::Debug for ListRoleAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisioningTemplateVersionsInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -45560,7 +45593,7 @@ pub struct ListProvisioningTemplateVersionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProvisioningTemplateVersionsInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -46546,6 +46579,8 @@ pub struct ListCaCertificatesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>Determines the order of the results.</p>
     pub ascending_order: bool,
+    /// <p>The name of the provisioning template.</p>
+    pub template_name: std::option::Option<std::string::String>,
 }
 impl ListCaCertificatesInput {
     /// <p>The result page size.</p>
@@ -46560,6 +46595,10 @@ impl ListCaCertificatesInput {
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn template_name(&self) -> std::option::Option<&str> {
+        self.template_name.as_deref()
+    }
 }
 impl std::fmt::Debug for ListCaCertificatesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46567,6 +46606,7 @@ impl std::fmt::Debug for ListCaCertificatesInput {
         formatter.field("page_size", &self.page_size);
         formatter.field("marker", &self.marker);
         formatter.field("ascending_order", &self.ascending_order);
+        formatter.field("template_name", &self.template_name);
         formatter.finish()
     }
 }
@@ -47810,7 +47850,7 @@ impl std::fmt::Debug for DescribeRoleAliasInput {
 pub struct DescribeProvisioningTemplateVersionInput {
     /// <p>The template name.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The fleet provisioning template version ID.</p>
+    /// <p>The provisioning template version ID.</p>
     pub version_id: std::option::Option<i32>,
 }
 impl DescribeProvisioningTemplateVersionInput {
@@ -47818,7 +47858,7 @@ impl DescribeProvisioningTemplateVersionInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The fleet provisioning template version ID.</p>
+    /// <p>The provisioning template version ID.</p>
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
@@ -47836,11 +47876,11 @@ impl std::fmt::Debug for DescribeProvisioningTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
 }
 impl DescribeProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -48641,17 +48681,17 @@ impl std::fmt::Debug for DeleteRegistrationCodeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProvisioningTemplateVersionInput {
-    /// <p>The name of the fleet provisioning template version to delete.</p>
+    /// <p>The name of the provisioning template version to delete.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The fleet provisioning template version ID to delete.</p>
+    /// <p>The provisioning template version ID to delete.</p>
     pub version_id: std::option::Option<i32>,
 }
 impl DeleteProvisioningTemplateVersionInput {
-    /// <p>The name of the fleet provisioning template version to delete.</p>
+    /// <p>The name of the provisioning template version to delete.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The fleet provisioning template version ID to delete.</p>
+    /// <p>The provisioning template version ID to delete.</p>
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
@@ -49629,19 +49669,19 @@ impl std::fmt::Debug for CreateRoleAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningTemplateVersionInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Sets a fleet provision template version as the default version.</p>
     pub set_as_default: bool,
 }
 impl CreateProvisioningTemplateVersionInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
@@ -49664,43 +49704,45 @@ impl std::fmt::Debug for CreateProvisioningTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub template_body: std::option::Option<std::string::String>,
-    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    /// <p>True to enable the provisioning template, otherwise false.</p>
     pub enabled: bool,
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Creates a pre-provisioning hook template.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub r#type: std::option::Option<crate::model::TemplateType>,
 }
 impl CreateProvisioningTemplateInput {
-    /// <p>The name of the fleet provisioning template.</p>
+    /// <p>The name of the provisioning template.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>The description of the fleet provisioning template.</p>
+    /// <p>The description of the provisioning template.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The JSON formatted contents of the fleet provisioning template.</p>
+    /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
-    /// <p>True to enable the fleet provisioning template, otherwise false.</p>
+    /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -49708,13 +49750,17 @@ impl CreateProvisioningTemplateInput {
     pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub fn r#type(&self) -> std::option::Option<&crate::model::TemplateType> {
+        self.r#type.as_ref()
     }
 }
 impl std::fmt::Debug for CreateProvisioningTemplateInput {
@@ -49727,6 +49773,7 @@ impl std::fmt::Debug for CreateProvisioningTemplateInput {
         formatter.field("provisioning_role_arn", &self.provisioning_role_arn);
         formatter.field("pre_provisioning_hook", &self.pre_provisioning_hook);
         formatter.field("tags", &self.tags);
+        formatter.field("r#type", &self.r#type);
         formatter.finish()
     }
 }

@@ -10,10 +10,14 @@ pub struct SuiteDefinitionConfiguration {
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
     /// <p>Gets the tests intended for qualification in a suite.</p>
     pub intended_for_qualification: bool,
+    /// <p> Verifies if the test suite is a long duration test. </p>
+    pub is_long_duration_test: bool,
     /// <p>Gets test suite root group.</p>
     pub root_group: std::option::Option<std::string::String>,
     /// <p>Gets the device permission ARN.</p>
     pub device_permission_role_arn: std::option::Option<std::string::String>,
+    /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    pub protocol: std::option::Option<crate::model::Protocol>,
 }
 impl SuiteDefinitionConfiguration {
     /// <p>Gets Suite Definition Configuration name.</p>
@@ -28,6 +32,10 @@ impl SuiteDefinitionConfiguration {
     pub fn intended_for_qualification(&self) -> bool {
         self.intended_for_qualification
     }
+    /// <p> Verifies if the test suite is a long duration test. </p>
+    pub fn is_long_duration_test(&self) -> bool {
+        self.is_long_duration_test
+    }
     /// <p>Gets test suite root group.</p>
     pub fn root_group(&self) -> std::option::Option<&str> {
         self.root_group.as_deref()
@@ -35,6 +43,10 @@ impl SuiteDefinitionConfiguration {
     /// <p>Gets the device permission ARN.</p>
     pub fn device_permission_role_arn(&self) -> std::option::Option<&str> {
         self.device_permission_role_arn.as_deref()
+    }
+    /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
     }
 }
 impl std::fmt::Debug for SuiteDefinitionConfiguration {
@@ -46,11 +58,13 @@ impl std::fmt::Debug for SuiteDefinitionConfiguration {
             "intended_for_qualification",
             &self.intended_for_qualification,
         );
+        formatter.field("is_long_duration_test", &self.is_long_duration_test);
         formatter.field("root_group", &self.root_group);
         formatter.field(
             "device_permission_role_arn",
             &self.device_permission_role_arn,
         );
+        formatter.field("protocol", &self.protocol);
         formatter.finish()
     }
 }
@@ -63,8 +77,10 @@ pub mod suite_definition_configuration {
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
         pub(crate) intended_for_qualification: std::option::Option<bool>,
+        pub(crate) is_long_duration_test: std::option::Option<bool>,
         pub(crate) root_group: std::option::Option<std::string::String>,
         pub(crate) device_permission_role_arn: std::option::Option<std::string::String>,
+        pub(crate) protocol: std::option::Option<crate::model::Protocol>,
     }
     impl Builder {
         /// <p>Gets Suite Definition Configuration name.</p>
@@ -109,6 +125,16 @@ pub mod suite_definition_configuration {
             self.intended_for_qualification = input;
             self
         }
+        /// <p> Verifies if the test suite is a long duration test. </p>
+        pub fn is_long_duration_test(mut self, input: bool) -> Self {
+            self.is_long_duration_test = Some(input);
+            self
+        }
+        /// <p> Verifies if the test suite is a long duration test. </p>
+        pub fn set_is_long_duration_test(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_long_duration_test = input;
+            self
+        }
         /// <p>Gets test suite root group.</p>
         pub fn root_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.root_group = Some(input.into());
@@ -132,14 +158,26 @@ pub mod suite_definition_configuration {
             self.device_permission_role_arn = input;
             self
         }
+        /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.protocol = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
         pub fn build(self) -> crate::model::SuiteDefinitionConfiguration {
             crate::model::SuiteDefinitionConfiguration {
                 suite_definition_name: self.suite_definition_name,
                 devices: self.devices,
                 intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
+                is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
                 root_group: self.root_group,
                 device_permission_role_arn: self.device_permission_role_arn,
+                protocol: self.protocol,
             }
         }
     }
@@ -148,6 +186,61 @@ impl SuiteDefinitionConfiguration {
     /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
     pub fn builder() -> crate::model::suite_definition_configuration::Builder {
         crate::model::suite_definition_configuration::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum Protocol {
+    #[allow(missing_docs)] // documentation missing in model
+    MqttV311,
+    #[allow(missing_docs)] // documentation missing in model
+    MqttV5,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for Protocol {
+    fn from(s: &str) -> Self {
+        match s {
+            "MqttV3_1_1" => Protocol::MqttV311,
+            "MqttV5" => Protocol::MqttV5,
+            other => Protocol::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for Protocol {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Protocol::from(s))
+    }
+}
+impl Protocol {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Protocol::MqttV311 => "MqttV3_1_1",
+            Protocol::MqttV5 => "MqttV5",
+            Protocol::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["MqttV3_1_1", "MqttV5"]
+    }
+}
+impl AsRef<str> for Protocol {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -683,6 +776,10 @@ pub struct SuiteDefinitionInformation {
     pub default_devices: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub intended_for_qualification: bool,
+    /// <p> Verifies if the test suite is a long duration test. </p>
+    pub is_long_duration_test: bool,
+    /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    pub protocol: std::option::Option<crate::model::Protocol>,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -703,6 +800,14 @@ impl SuiteDefinitionInformation {
     pub fn intended_for_qualification(&self) -> bool {
         self.intended_for_qualification
     }
+    /// <p> Verifies if the test suite is a long duration test. </p>
+    pub fn is_long_duration_test(&self) -> bool {
+        self.is_long_duration_test
+    }
+    /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+    pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
+        self.protocol.as_ref()
+    }
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -718,6 +823,8 @@ impl std::fmt::Debug for SuiteDefinitionInformation {
             "intended_for_qualification",
             &self.intended_for_qualification,
         );
+        formatter.field("is_long_duration_test", &self.is_long_duration_test);
+        formatter.field("protocol", &self.protocol);
         formatter.field("created_at", &self.created_at);
         formatter.finish()
     }
@@ -733,6 +840,8 @@ pub mod suite_definition_information {
         pub(crate) default_devices:
             std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
         pub(crate) intended_for_qualification: std::option::Option<bool>,
+        pub(crate) is_long_duration_test: std::option::Option<bool>,
+        pub(crate) protocol: std::option::Option<crate::model::Protocol>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -791,6 +900,26 @@ pub mod suite_definition_information {
             self.intended_for_qualification = input;
             self
         }
+        /// <p> Verifies if the test suite is a long duration test. </p>
+        pub fn is_long_duration_test(mut self, input: bool) -> Self {
+            self.is_long_duration_test = Some(input);
+            self
+        }
+        /// <p> Verifies if the test suite is a long duration test. </p>
+        pub fn set_is_long_duration_test(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_long_duration_test = input;
+            self
+        }
+        /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.protocol = Some(input);
+            self
+        }
+        /// <p> Gets the MQTT protocol that is configured in the suite definition.</p>
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.protocol = input;
+            self
+        }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_at = Some(input);
@@ -811,6 +940,8 @@ pub mod suite_definition_information {
                 suite_definition_name: self.suite_definition_name,
                 default_devices: self.default_devices,
                 intended_for_qualification: self.intended_for_qualification.unwrap_or_default(),
+                is_long_duration_test: self.is_long_duration_test.unwrap_or_default(),
+                protocol: self.protocol,
                 created_at: self.created_at,
             }
         }
@@ -1019,6 +1150,8 @@ pub struct TestCaseRun {
     pub warnings: std::option::Option<std::string::String>,
     /// <p>Provides test case run failure result.</p>
     pub failure: std::option::Option<std::string::String>,
+    /// <p> Provides the test scenarios for the test case run. </p>
+    pub test_scenarios: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
 }
 impl TestCaseRun {
     /// <p>Provides the test case run ID.</p>
@@ -1067,6 +1200,10 @@ impl TestCaseRun {
     pub fn failure(&self) -> std::option::Option<&str> {
         self.failure.as_deref()
     }
+    /// <p> Provides the test scenarios for the test case run. </p>
+    pub fn test_scenarios(&self) -> std::option::Option<&[crate::model::TestCaseScenario]> {
+        self.test_scenarios.as_deref()
+    }
 }
 impl std::fmt::Debug for TestCaseRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1080,6 +1217,7 @@ impl std::fmt::Debug for TestCaseRun {
         formatter.field("log_url", &self.log_url);
         formatter.field("warnings", &self.warnings);
         formatter.field("failure", &self.failure);
+        formatter.field("test_scenarios", &self.test_scenarios);
         formatter.finish()
     }
 }
@@ -1098,6 +1236,8 @@ pub mod test_case_run {
         pub(crate) log_url: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::string::String>,
         pub(crate) failure: std::option::Option<std::string::String>,
+        pub(crate) test_scenarios:
+            std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
     }
     impl Builder {
         /// <p>Provides the test case run ID.</p>
@@ -1225,6 +1365,25 @@ pub mod test_case_run {
             self.failure = input;
             self
         }
+        /// Appends an item to `test_scenarios`.
+        ///
+        /// To override the contents of this collection use [`set_test_scenarios`](Self::set_test_scenarios).
+        ///
+        /// <p> Provides the test scenarios for the test case run. </p>
+        pub fn test_scenarios(mut self, input: crate::model::TestCaseScenario) -> Self {
+            let mut v = self.test_scenarios.unwrap_or_default();
+            v.push(input);
+            self.test_scenarios = Some(v);
+            self
+        }
+        /// <p> Provides the test scenarios for the test case run. </p>
+        pub fn set_test_scenarios(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TestCaseScenario>>,
+        ) -> Self {
+            self.test_scenarios = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TestCaseRun`](crate::model::TestCaseRun).
         pub fn build(self) -> crate::model::TestCaseRun {
             crate::model::TestCaseRun {
@@ -1237,6 +1396,7 @@ pub mod test_case_run {
                 log_url: self.log_url,
                 warnings: self.warnings,
                 failure: self.failure,
+                test_scenarios: self.test_scenarios,
             }
         }
     }
@@ -1245,6 +1405,357 @@ impl TestCaseRun {
     /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun).
     pub fn builder() -> crate::model::test_case_run::Builder {
         crate::model::test_case_run::Builder::default()
+    }
+}
+
+/// <p>Provides test case scenario.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TestCaseScenario {
+    /// <p>Provides test case scenario ID.</p>
+    pub test_case_scenario_id: std::option::Option<std::string::String>,
+    /// <p>Provides test case scenario type. Type is one of the following:</p>
+    /// <ul>
+    /// <li> <p>Advanced</p> </li>
+    /// <li> <p>Basic</p> </li>
+    /// </ul>
+    pub test_case_scenario_type: std::option::Option<crate::model::TestCaseScenarioType>,
+    /// <p>Provides the test case scenario status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// </ul>
+    pub status: std::option::Option<crate::model::TestCaseScenarioStatus>,
+    /// <p>Provides test case scenario failure result.</p>
+    pub failure: std::option::Option<std::string::String>,
+    /// <p> </p>
+    pub system_message: std::option::Option<std::string::String>,
+}
+impl TestCaseScenario {
+    /// <p>Provides test case scenario ID.</p>
+    pub fn test_case_scenario_id(&self) -> std::option::Option<&str> {
+        self.test_case_scenario_id.as_deref()
+    }
+    /// <p>Provides test case scenario type. Type is one of the following:</p>
+    /// <ul>
+    /// <li> <p>Advanced</p> </li>
+    /// <li> <p>Basic</p> </li>
+    /// </ul>
+    pub fn test_case_scenario_type(
+        &self,
+    ) -> std::option::Option<&crate::model::TestCaseScenarioType> {
+        self.test_case_scenario_type.as_ref()
+    }
+    /// <p>Provides the test case scenario status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// </ul>
+    pub fn status(&self) -> std::option::Option<&crate::model::TestCaseScenarioStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Provides test case scenario failure result.</p>
+    pub fn failure(&self) -> std::option::Option<&str> {
+        self.failure.as_deref()
+    }
+    /// <p> </p>
+    pub fn system_message(&self) -> std::option::Option<&str> {
+        self.system_message.as_deref()
+    }
+}
+impl std::fmt::Debug for TestCaseScenario {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TestCaseScenario");
+        formatter.field("test_case_scenario_id", &self.test_case_scenario_id);
+        formatter.field("test_case_scenario_type", &self.test_case_scenario_type);
+        formatter.field("status", &self.status);
+        formatter.field("failure", &self.failure);
+        formatter.field("system_message", &self.system_message);
+        formatter.finish()
+    }
+}
+/// See [`TestCaseScenario`](crate::model::TestCaseScenario).
+pub mod test_case_scenario {
+
+    /// A builder for [`TestCaseScenario`](crate::model::TestCaseScenario).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) test_case_scenario_id: std::option::Option<std::string::String>,
+        pub(crate) test_case_scenario_type: std::option::Option<crate::model::TestCaseScenarioType>,
+        pub(crate) status: std::option::Option<crate::model::TestCaseScenarioStatus>,
+        pub(crate) failure: std::option::Option<std::string::String>,
+        pub(crate) system_message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Provides test case scenario ID.</p>
+        pub fn test_case_scenario_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.test_case_scenario_id = Some(input.into());
+            self
+        }
+        /// <p>Provides test case scenario ID.</p>
+        pub fn set_test_case_scenario_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.test_case_scenario_id = input;
+            self
+        }
+        /// <p>Provides test case scenario type. Type is one of the following:</p>
+        /// <ul>
+        /// <li> <p>Advanced</p> </li>
+        /// <li> <p>Basic</p> </li>
+        /// </ul>
+        pub fn test_case_scenario_type(
+            mut self,
+            input: crate::model::TestCaseScenarioType,
+        ) -> Self {
+            self.test_case_scenario_type = Some(input);
+            self
+        }
+        /// <p>Provides test case scenario type. Type is one of the following:</p>
+        /// <ul>
+        /// <li> <p>Advanced</p> </li>
+        /// <li> <p>Basic</p> </li>
+        /// </ul>
+        pub fn set_test_case_scenario_type(
+            mut self,
+            input: std::option::Option<crate::model::TestCaseScenarioType>,
+        ) -> Self {
+            self.test_case_scenario_type = input;
+            self
+        }
+        /// <p>Provides the test case scenario status. Status is one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// </ul>
+        pub fn status(mut self, input: crate::model::TestCaseScenarioStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>Provides the test case scenario status. Status is one of the following:</p>
+        /// <ul>
+        /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+        /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+        /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+        /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+        /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+        /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+        /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+        /// </ul>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::TestCaseScenarioStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>Provides test case scenario failure result.</p>
+        pub fn failure(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure = Some(input.into());
+            self
+        }
+        /// <p>Provides test case scenario failure result.</p>
+        pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure = input;
+            self
+        }
+        /// <p> </p>
+        pub fn system_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.system_message = Some(input.into());
+            self
+        }
+        /// <p> </p>
+        pub fn set_system_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.system_message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TestCaseScenario`](crate::model::TestCaseScenario).
+        pub fn build(self) -> crate::model::TestCaseScenario {
+            crate::model::TestCaseScenario {
+                test_case_scenario_id: self.test_case_scenario_id,
+                test_case_scenario_type: self.test_case_scenario_type,
+                status: self.status,
+                failure: self.failure,
+                system_message: self.system_message,
+            }
+        }
+    }
+}
+impl TestCaseScenario {
+    /// Creates a new builder-style object to manufacture [`TestCaseScenario`](crate::model::TestCaseScenario).
+    pub fn builder() -> crate::model::test_case_scenario::Builder {
+        crate::model::test_case_scenario::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TestCaseScenarioStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Canceled,
+    #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Fail,
+    #[allow(missing_docs)] // documentation missing in model
+    Pass,
+    #[allow(missing_docs)] // documentation missing in model
+    PassWithWarnings,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopped,
+    #[allow(missing_docs)] // documentation missing in model
+    Stopping,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TestCaseScenarioStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CANCELED" => TestCaseScenarioStatus::Canceled,
+            "ERROR" => TestCaseScenarioStatus::Error,
+            "FAIL" => TestCaseScenarioStatus::Fail,
+            "PASS" => TestCaseScenarioStatus::Pass,
+            "PASS_WITH_WARNINGS" => TestCaseScenarioStatus::PassWithWarnings,
+            "PENDING" => TestCaseScenarioStatus::Pending,
+            "RUNNING" => TestCaseScenarioStatus::Running,
+            "STOPPED" => TestCaseScenarioStatus::Stopped,
+            "STOPPING" => TestCaseScenarioStatus::Stopping,
+            other => TestCaseScenarioStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TestCaseScenarioStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TestCaseScenarioStatus::from(s))
+    }
+}
+impl TestCaseScenarioStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TestCaseScenarioStatus::Canceled => "CANCELED",
+            TestCaseScenarioStatus::Error => "ERROR",
+            TestCaseScenarioStatus::Fail => "FAIL",
+            TestCaseScenarioStatus::Pass => "PASS",
+            TestCaseScenarioStatus::PassWithWarnings => "PASS_WITH_WARNINGS",
+            TestCaseScenarioStatus::Pending => "PENDING",
+            TestCaseScenarioStatus::Running => "RUNNING",
+            TestCaseScenarioStatus::Stopped => "STOPPED",
+            TestCaseScenarioStatus::Stopping => "STOPPING",
+            TestCaseScenarioStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CANCELED",
+            "ERROR",
+            "FAIL",
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "PENDING",
+            "RUNNING",
+            "STOPPED",
+            "STOPPING",
+        ]
+    }
+}
+impl AsRef<str> for TestCaseScenarioStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TestCaseScenarioType {
+    #[allow(missing_docs)] // documentation missing in model
+    Advanced,
+    #[allow(missing_docs)] // documentation missing in model
+    Basic,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TestCaseScenarioType {
+    fn from(s: &str) -> Self {
+        match s {
+            "Advanced" => TestCaseScenarioType::Advanced,
+            "Basic" => TestCaseScenarioType::Basic,
+            other => TestCaseScenarioType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TestCaseScenarioType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TestCaseScenarioType::from(s))
+    }
+}
+impl TestCaseScenarioType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TestCaseScenarioType::Advanced => "Advanced",
+            TestCaseScenarioType::Basic => "Basic",
+            TestCaseScenarioType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["Advanced", "Basic"]
+    }
+}
+impl AsRef<str> for TestCaseScenarioType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

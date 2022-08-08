@@ -247,6 +247,14 @@ pub struct UploadPartOutput {
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
@@ -268,6 +276,22 @@ impl UploadPartOutput {
     /// <p>Entity tag for the uploaded object.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
@@ -295,6 +319,10 @@ impl std::fmt::Debug for UploadPartOutput {
         let mut formatter = f.debug_struct("UploadPartOutput");
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
         formatter.field("sse_customer_key_md5", &self.sse_customer_key_md5);
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
@@ -311,6 +339,10 @@ pub mod upload_part_output {
     pub struct Builder {
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
         pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
         pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
@@ -339,6 +371,58 @@ pub mod upload_part_output {
         /// <p>Entity tag for the uploaded object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
@@ -408,6 +492,10 @@ pub mod upload_part_output {
             crate::output::UploadPartOutput {
                 server_side_encryption: self.server_side_encryption,
                 e_tag: self.e_tag,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 sse_customer_algorithm: self.sse_customer_algorithm,
                 sse_customer_key_md5: self.sse_customer_key_md5,
                 ssekms_key_id: self.ssekms_key_id,
@@ -908,10 +996,18 @@ impl PutObjectAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectOutput {
-    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
+    /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Version of the object.</p>
@@ -930,13 +1026,29 @@ pub struct PutObjectOutput {
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectOutput {
-    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
+    /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
     /// <p>Entity tag for the uploaded object.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub fn server_side_encryption(
@@ -978,6 +1090,10 @@ impl std::fmt::Debug for PutObjectOutput {
         let mut formatter = f.debug_struct("PutObjectOutput");
         formatter.field("expiration", &self.expiration);
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("version_id", &self.version_id);
         formatter.field("sse_customer_algorithm", &self.sse_customer_algorithm);
@@ -1000,6 +1116,10 @@ pub mod put_object_output {
     pub struct Builder {
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
@@ -1010,12 +1130,12 @@ pub mod put_object_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
+        /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
+        /// <p>If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs that provide information about object expiration. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
@@ -1028,6 +1148,58 @@ pub mod put_object_output {
         /// <p>Entity tag for the uploaded object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
@@ -1133,6 +1305,10 @@ pub mod put_object_output {
             crate::output::PutObjectOutput {
                 expiration: self.expiration,
                 e_tag: self.e_tag,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 server_side_encryption: self.server_side_encryption,
                 version_id: self.version_id,
                 sse_customer_algorithm: self.sse_customer_algorithm,
@@ -1726,6 +1902,8 @@ pub struct ListPartsOutput {
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl ListPartsOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
@@ -1785,6 +1963,10 @@ impl ListPartsOutput {
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for ListPartsOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1803,6 +1985,7 @@ impl std::fmt::Debug for ListPartsOutput {
         formatter.field("owner", &self.owner);
         formatter.field("storage_class", &self.storage_class);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -1826,6 +2009,7 @@ pub mod list_parts_output {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
@@ -2000,6 +2184,19 @@ pub mod list_parts_output {
             self.request_charged = input;
             self
         }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPartsOutput`](crate::output::ListPartsOutput).
         pub fn build(self) -> crate::output::ListPartsOutput {
             crate::output::ListPartsOutput {
@@ -2017,6 +2214,7 @@ pub mod list_parts_output {
                 owner: self.owner,
                 storage_class: self.storage_class,
                 request_charged: self.request_charged,
+                checksum_algorithm: self.checksum_algorithm,
             }
         }
     }
@@ -2368,7 +2566,7 @@ pub struct ListObjectsV2Output {
     pub contents: std::option::Option<std::vec::Vec<crate::model::Object>>,
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p> Keys that begin with the indicated prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
@@ -2406,7 +2604,7 @@ impl ListObjectsV2Output {
     }
     /// <p>The bucket name.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -2522,14 +2720,14 @@ pub mod list_objects_v2_output {
         }
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
         /// <p>The bucket name.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3247,13 +3445,13 @@ impl ListMultipartUploadsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketsOutput {
-    /// <p>The list of buckets owned by the requestor.</p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
     /// <p>The owner of the buckets listed.</p>
     pub owner: std::option::Option<crate::model::Owner>,
 }
 impl ListBucketsOutput {
-    /// <p>The list of buckets owned by the requestor.</p>
+    /// <p>The list of buckets owned by the requester.</p>
     pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
         self.buckets.as_deref()
     }
@@ -3284,14 +3482,14 @@ pub mod list_buckets_output {
         ///
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
-        /// <p>The list of buckets owned by the requestor.</p>
+        /// <p>The list of buckets owned by the requester.</p>
         pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
             v.push(input);
             self.buckets = Some(v);
             self
         }
-        /// <p>The list of buckets owned by the requestor.</p>
+        /// <p>The list of buckets owned by the requester.</p>
         pub fn set_buckets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
@@ -3601,9 +3799,9 @@ impl ListBucketInventoryConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketIntelligentTieringConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
     pub is_truncated: bool,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
@@ -3612,11 +3810,11 @@ pub struct ListBucketIntelligentTieringConfigurationsOutput {
         std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
 }
 impl ListBucketIntelligentTieringConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -3657,22 +3855,22 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
     }
     impl Builder {
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+        /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
+        /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3882,7 +4080,7 @@ pub struct HeadObjectOutput {
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
     /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
     /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
@@ -3896,7 +4094,15 @@ pub struct HeadObjectOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
+    /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub missing_meta: i32,
@@ -3937,13 +4143,13 @@ pub struct HeadObjectOutput {
     /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
     /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
     /// <ul>
-    /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
-    /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
-    /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub replication_status: std::option::Option<crate::model::ReplicationStatus>,
-    /// <p>The count of parts this object has.</p>
+    /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub parts_count: i32,
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
@@ -3961,7 +4167,7 @@ impl HeadObjectOutput {
     pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
@@ -3985,7 +4191,23 @@ impl HeadObjectOutput {
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
+    }
+    /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -4066,15 +4288,15 @@ impl HeadObjectOutput {
     /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
     /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
     /// <ul>
-    /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
-    /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
-    /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub fn replication_status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.replication_status.as_ref()
     }
-    /// <p>The count of parts this object has.</p>
+    /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub fn parts_count(&self) -> i32 {
         self.parts_count
     }
@@ -4105,6 +4327,10 @@ impl std::fmt::Debug for HeadObjectOutput {
         formatter.field("archive_status", &self.archive_status);
         formatter.field("last_modified", &self.last_modified);
         formatter.field("content_length", &self.content_length);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("e_tag", &self.e_tag);
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("version_id", &self.version_id);
@@ -4150,6 +4376,10 @@ pub mod head_object_output {
         pub(crate) archive_status: std::option::Option<crate::model::ArchiveStatus>,
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_length: std::option::Option<i64>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) missing_meta: std::option::Option<i32>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -4201,12 +4431,12 @@ pub mod head_object_output {
             self.accept_ranges = input;
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
@@ -4265,12 +4495,64 @@ pub mod head_object_output {
             self.content_length = input;
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
+            self
+        }
+        /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4501,9 +4783,9 @@ pub mod head_object_output {
         /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
         /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
         /// <ul>
-        /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
-        /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
-        /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+        /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+        /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+        /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
@@ -4513,9 +4795,9 @@ pub mod head_object_output {
         /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
         /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
         /// <ul>
-        /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
-        /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
-        /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+        /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+        /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+        /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
         pub fn set_replication_status(
@@ -4525,12 +4807,12 @@ pub mod head_object_output {
             self.replication_status = input;
             self
         }
-        /// <p>The count of parts this object has.</p>
+        /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
         pub fn parts_count(mut self, input: i32) -> Self {
             self.parts_count = Some(input);
             self
         }
-        /// <p>The count of parts this object has.</p>
+        /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
         pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
             self.parts_count = input;
             self
@@ -4587,6 +4869,10 @@ pub mod head_object_output {
                 archive_status: self.archive_status,
                 last_modified: self.last_modified,
                 content_length: self.content_length.unwrap_or_default(),
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 e_tag: self.e_tag,
                 missing_meta: self.missing_meta.unwrap_or_default(),
                 version_id: self.version_id,
@@ -5002,11 +5288,11 @@ impl GetObjectLockConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectLegalHoldOutput {
-    /// <p>The current Legal Hold status for the specified object.</p>
+    /// <p>The current legal hold status for the specified object.</p>
     pub legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
 }
 impl GetObjectLegalHoldOutput {
-    /// <p>The current Legal Hold status for the specified object.</p>
+    /// <p>The current legal hold status for the specified object.</p>
     pub fn legal_hold(&self) -> std::option::Option<&crate::model::ObjectLockLegalHold> {
         self.legal_hold.as_ref()
     }
@@ -5027,12 +5313,12 @@ pub mod get_object_legal_hold_output {
         pub(crate) legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
     }
     impl Builder {
-        /// <p>The current Legal Hold status for the specified object.</p>
+        /// <p>The current legal hold status for the specified object.</p>
         pub fn legal_hold(mut self, input: crate::model::ObjectLockLegalHold) -> Self {
             self.legal_hold = Some(input);
             self
         }
-        /// <p>The current Legal Hold status for the specified object.</p>
+        /// <p>The current legal hold status for the specified object.</p>
         pub fn set_legal_hold(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHold>,
@@ -5052,6 +5338,228 @@ impl GetObjectLegalHoldOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectLegalHoldOutput`](crate::output::GetObjectLegalHoldOutput).
     pub fn builder() -> crate::output::get_object_legal_hold_output::Builder {
         crate::output::get_object_legal_hold_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetObjectAttributesOutput {
+    /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
+    pub delete_marker: bool,
+    /// <p>The creation date of the object.</p>
+    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The version ID of the object.</p>
+    pub version_id: std::option::Option<std::string::String>,
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The checksum or digest of the object.</p>
+    pub checksum: std::option::Option<crate::model::Checksum>,
+    /// <p>A collection of parts associated with a multipart upload.</p>
+    pub object_parts: std::option::Option<crate::model::GetObjectAttributesParts>,
+    /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+    pub storage_class: std::option::Option<crate::model::StorageClass>,
+    /// <p>The size of the object in bytes.</p>
+    pub object_size: i64,
+}
+impl GetObjectAttributesOutput {
+    /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
+    pub fn delete_marker(&self) -> bool {
+        self.delete_marker
+    }
+    /// <p>The creation date of the object.</p>
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_modified.as_ref()
+    }
+    /// <p>The version ID of the object.</p>
+    pub fn version_id(&self) -> std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
+        self.request_charged.as_ref()
+    }
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    pub fn e_tag(&self) -> std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
+    /// <p>The checksum or digest of the object.</p>
+    pub fn checksum(&self) -> std::option::Option<&crate::model::Checksum> {
+        self.checksum.as_ref()
+    }
+    /// <p>A collection of parts associated with a multipart upload.</p>
+    pub fn object_parts(&self) -> std::option::Option<&crate::model::GetObjectAttributesParts> {
+        self.object_parts.as_ref()
+    }
+    /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+        self.storage_class.as_ref()
+    }
+    /// <p>The size of the object in bytes.</p>
+    pub fn object_size(&self) -> i64 {
+        self.object_size
+    }
+}
+impl std::fmt::Debug for GetObjectAttributesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetObjectAttributesOutput");
+        formatter.field("delete_marker", &self.delete_marker);
+        formatter.field("last_modified", &self.last_modified);
+        formatter.field("version_id", &self.version_id);
+        formatter.field("request_charged", &self.request_charged);
+        formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum", &self.checksum);
+        formatter.field("object_parts", &self.object_parts);
+        formatter.field("storage_class", &self.storage_class);
+        formatter.field("object_size", &self.object_size);
+        formatter.finish()
+    }
+}
+/// See [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
+pub mod get_object_attributes_output {
+
+    /// A builder for [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) delete_marker: std::option::Option<bool>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) version_id: std::option::Option<std::string::String>,
+        pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum: std::option::Option<crate::model::Checksum>,
+        pub(crate) object_parts: std::option::Option<crate::model::GetObjectAttributesParts>,
+        pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
+        pub(crate) object_size: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
+            self
+        }
+        /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
+            self
+        }
+        /// <p>The creation date of the object.</p>
+        pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_modified = Some(input);
+            self
+        }
+        /// <p>The creation date of the object.</p>
+        pub fn set_last_modified(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_modified = input;
+            self
+        }
+        /// <p>The version ID of the object.</p>
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
+            self
+        }
+        /// <p>The version ID of the object.</p>
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
+            self
+        }
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+        pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
+            self.request_charged = Some(input);
+            self
+        }
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+        pub fn set_request_charged(
+            mut self,
+            input: std::option::Option<crate::model::RequestCharged>,
+        ) -> Self {
+            self.request_charged = input;
+            self
+        }
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
+            self
+        }
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
+            self
+        }
+        /// <p>The checksum or digest of the object.</p>
+        pub fn checksum(mut self, input: crate::model::Checksum) -> Self {
+            self.checksum = Some(input);
+            self
+        }
+        /// <p>The checksum or digest of the object.</p>
+        pub fn set_checksum(mut self, input: std::option::Option<crate::model::Checksum>) -> Self {
+            self.checksum = input;
+            self
+        }
+        /// <p>A collection of parts associated with a multipart upload.</p>
+        pub fn object_parts(mut self, input: crate::model::GetObjectAttributesParts) -> Self {
+            self.object_parts = Some(input);
+            self
+        }
+        /// <p>A collection of parts associated with a multipart upload.</p>
+        pub fn set_object_parts(
+            mut self,
+            input: std::option::Option<crate::model::GetObjectAttributesParts>,
+        ) -> Self {
+            self.object_parts = input;
+            self
+        }
+        /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
+            self
+        }
+        /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+        pub fn set_storage_class(
+            mut self,
+            input: std::option::Option<crate::model::StorageClass>,
+        ) -> Self {
+            self.storage_class = input;
+            self
+        }
+        /// <p>The size of the object in bytes.</p>
+        pub fn object_size(mut self, input: i64) -> Self {
+            self.object_size = Some(input);
+            self
+        }
+        /// <p>The size of the object in bytes.</p>
+        pub fn set_object_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.object_size = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
+        pub fn build(self) -> crate::output::GetObjectAttributesOutput {
+            crate::output::GetObjectAttributesOutput {
+                delete_marker: self.delete_marker.unwrap_or_default(),
+                last_modified: self.last_modified,
+                version_id: self.version_id,
+                request_charged: self.request_charged,
+                e_tag: self.e_tag,
+                checksum: self.checksum,
+                object_parts: self.object_parts,
+                storage_class: self.storage_class,
+                object_size: self.object_size.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl GetObjectAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`GetObjectAttributesOutput`](crate::output::GetObjectAttributesOutput).
+    pub fn builder() -> crate::output::get_object_attributes_output::Builder {
+        crate::output::get_object_attributes_output::Builder::default()
     }
 }
 
@@ -5168,7 +5676,7 @@ pub struct GetObjectOutput {
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
     pub restore: std::option::Option<std::string::String>,
@@ -5176,8 +5684,16 @@ pub struct GetObjectOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub missing_meta: i32,
     /// <p>Version of the object.</p>
@@ -5217,7 +5733,7 @@ pub struct GetObjectOutput {
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
     /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
     pub replication_status: std::option::Option<crate::model::ReplicationStatus>,
-    /// <p>The count of parts this object has.</p>
+    /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub parts_count: i32,
     /// <p>The number of tags, if any, on the object.</p>
     pub tag_count: i32,
@@ -5241,7 +5757,7 @@ impl GetObjectOutput {
     pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
@@ -5257,9 +5773,25 @@ impl GetObjectOutput {
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(&self) -> i32 {
@@ -5342,7 +5874,7 @@ impl GetObjectOutput {
     pub fn replication_status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.replication_status.as_ref()
     }
-    /// <p>The count of parts this object has.</p>
+    /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub fn parts_count(&self) -> i32 {
         self.parts_count
     }
@@ -5378,6 +5910,10 @@ impl std::fmt::Debug for GetObjectOutput {
         formatter.field("last_modified", &self.last_modified);
         formatter.field("content_length", &self.content_length);
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("missing_meta", &self.missing_meta);
         formatter.field("version_id", &self.version_id);
         formatter.field("cache_control", &self.cache_control);
@@ -5425,6 +5961,10 @@ pub mod get_object_output {
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) missing_meta: std::option::Option<i32>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
@@ -5490,12 +6030,12 @@ pub mod get_object_output {
             self.accept_ranges = input;
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
@@ -5533,14 +6073,66 @@ pub mod get_object_output {
             self.content_length = input;
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+        /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
@@ -5790,12 +6382,12 @@ pub mod get_object_output {
             self.replication_status = input;
             self
         }
-        /// <p>The count of parts this object has.</p>
+        /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
         pub fn parts_count(mut self, input: i32) -> Self {
             self.parts_count = Some(input);
             self
         }
-        /// <p>The count of parts this object has.</p>
+        /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
         pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
             self.parts_count = input;
             self
@@ -5863,6 +6455,10 @@ pub mod get_object_output {
                 last_modified: self.last_modified,
                 content_length: self.content_length.unwrap_or_default(),
                 e_tag: self.e_tag,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 missing_meta: self.missing_meta.unwrap_or_default(),
                 version_id: self.version_id,
                 cache_control: self.cache_control,
@@ -8016,7 +8612,7 @@ pub struct CreateMultipartUploadOutput {
     pub abort_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -8036,6 +8632,8 @@ pub struct CreateMultipartUploadOutput {
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
 }
 impl CreateMultipartUploadOutput {
     /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
@@ -8049,7 +8647,7 @@ impl CreateMultipartUploadOutput {
     }
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -8091,6 +8689,10 @@ impl CreateMultipartUploadOutput {
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::model::ChecksumAlgorithm> {
+        self.checksum_algorithm.as_ref()
+    }
 }
 impl std::fmt::Debug for CreateMultipartUploadOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8110,6 +8712,7 @@ impl std::fmt::Debug for CreateMultipartUploadOutput {
         );
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.finish()
     }
 }
@@ -8131,6 +8734,7 @@ pub mod create_multipart_upload_output {
         pub(crate) ssekms_encryption_context: std::option::Option<std::string::String>,
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
+        pub(crate) checksum_algorithm: std::option::Option<crate::model::ChecksumAlgorithm>,
     }
     impl Builder {
         /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
@@ -8163,14 +8767,14 @@ pub mod create_multipart_upload_output {
         }
         /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -8283,6 +8887,19 @@ pub mod create_multipart_upload_output {
             self.request_charged = input;
             self
         }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn checksum_algorithm(mut self, input: crate::model::ChecksumAlgorithm) -> Self {
+            self.checksum_algorithm = Some(input);
+            self
+        }
+        /// <p>The algorithm that was used to create a checksum of the object.</p>
+        pub fn set_checksum_algorithm(
+            mut self,
+            input: std::option::Option<crate::model::ChecksumAlgorithm>,
+        ) -> Self {
+            self.checksum_algorithm = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMultipartUploadOutput`](crate::output::CreateMultipartUploadOutput).
         pub fn build(self) -> crate::output::CreateMultipartUploadOutput {
             crate::output::CreateMultipartUploadOutput {
@@ -8298,6 +8915,7 @@ pub mod create_multipart_upload_output {
                 ssekms_encryption_context: self.ssekms_encryption_context,
                 bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
                 request_charged: self.request_charged,
+                checksum_algorithm: self.checksum_algorithm,
             }
         }
     }
@@ -8313,11 +8931,11 @@ impl CreateMultipartUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketOutput {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
+    /// <p>A forward slash followed by the name of the bucket.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateBucketOutput {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
+    /// <p>A forward slash followed by the name of the bucket.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -8338,12 +8956,12 @@ pub mod create_bucket_output {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
+        /// <p>A forward slash followed by the name of the bucket.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
+        /// <p>A forward slash followed by the name of the bucket.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -8644,14 +9262,22 @@ pub struct CompleteMultipartUploadOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key of the newly created object.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
-    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
+    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub e_tag: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_crc32_c: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha1: std::option::Option<std::string::String>,
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub checksum_sha256: std::option::Option<std::string::String>,
     /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p>
@@ -8670,7 +9296,7 @@ impl CompleteMultipartUploadOutput {
     }
     /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -8678,13 +9304,29 @@ impl CompleteMultipartUploadOutput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
-    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
+    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
+        self.checksum_crc32.as_deref()
+    }
+    /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
+        self.checksum_crc32_c.as_deref()
+    }
+    /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
+        self.checksum_sha1.as_deref()
+    }
+    /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
+        self.checksum_sha256.as_deref()
     }
     /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub fn server_side_encryption(
@@ -8717,6 +9359,10 @@ impl std::fmt::Debug for CompleteMultipartUploadOutput {
         formatter.field("key", &self.key);
         formatter.field("expiration", &self.expiration);
         formatter.field("e_tag", &self.e_tag);
+        formatter.field("checksum_crc32", &self.checksum_crc32);
+        formatter.field("checksum_crc32_c", &self.checksum_crc32_c);
+        formatter.field("checksum_sha1", &self.checksum_sha1);
+        formatter.field("checksum_sha256", &self.checksum_sha256);
         formatter.field("server_side_encryption", &self.server_side_encryption);
         formatter.field("version_id", &self.version_id);
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
@@ -8736,6 +9382,10 @@ pub mod complete_multipart_upload_output {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) expiration: std::option::Option<std::string::String>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32: std::option::Option<std::string::String>,
+        pub(crate) checksum_crc32_c: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha1: std::option::Option<std::string::String>,
+        pub(crate) checksum_sha256: std::option::Option<std::string::String>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
@@ -8755,14 +9405,14 @@ pub mod complete_multipart_upload_output {
         }
         /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -8777,24 +9427,76 @@ pub mod complete_multipart_upload_output {
             self.key = input;
             self
         }
-        /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured, this will contain the expiration date (<code>expiry-date</code>) and rule ID (<code>rule-id</code>). The value of <code>rule-id</code> is URL-encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
         }
-        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
+        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
+        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits. For more information about how the entity tag is calculated, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32 = input;
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_crc32_c = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_crc32_c(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_crc32_c = input;
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha1 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha1(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha1 = input;
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+            self.checksum_sha256 = Some(input.into());
+            self
+        }
+        /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn set_checksum_sha256(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.checksum_sha256 = input;
             self
         }
         /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
@@ -8864,6 +9566,10 @@ pub mod complete_multipart_upload_output {
                 key: self.key,
                 expiration: self.expiration,
                 e_tag: self.e_tag,
+                checksum_crc32: self.checksum_crc32,
+                checksum_crc32_c: self.checksum_crc32_c,
+                checksum_sha1: self.checksum_sha1,
+                checksum_sha256: self.checksum_sha256,
                 server_side_encryption: self.server_side_encryption,
                 version_id: self.version_id,
                 ssekms_key_id: self.ssekms_key_id,

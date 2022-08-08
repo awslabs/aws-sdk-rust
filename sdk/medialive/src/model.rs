@@ -39571,6 +39571,61 @@ impl MaintenanceUpdateSettings {
     }
 }
 
+/// Whether or not to force reboot the input device.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RebootInputDeviceForce {
+    #[allow(missing_docs)] // documentation missing in model
+    No,
+    #[allow(missing_docs)] // documentation missing in model
+    Yes,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RebootInputDeviceForce {
+    fn from(s: &str) -> Self {
+        match s {
+            "NO" => RebootInputDeviceForce::No,
+            "YES" => RebootInputDeviceForce::Yes,
+            other => RebootInputDeviceForce::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RebootInputDeviceForce {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RebootInputDeviceForce::from(s))
+    }
+}
+impl RebootInputDeviceForce {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RebootInputDeviceForce::No => "NO",
+            RebootInputDeviceForce::Yes => "YES",
+            RebootInputDeviceForce::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NO", "YES"]
+    }
+}
+impl AsRef<str> for RebootInputDeviceForce {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Reserved resources available for purchase
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

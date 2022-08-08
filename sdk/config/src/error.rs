@@ -1381,10 +1381,10 @@ pub enum DeleteRemediationConfigurationErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -7815,6 +7815,138 @@ impl std::error::Error for ListAggregateDiscoveredResourcesError {
     }
 }
 
+/// Error type for the `ListConformancePackComplianceScores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListConformancePackComplianceScoresError {
+    /// Kind of error that occurred.
+    pub kind: ListConformancePackComplianceScoresErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListConformancePackComplianceScores` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListConformancePackComplianceScoresErrorKind {
+    /// <p>The specified limit is outside the allowable range.</p>
+    InvalidLimitException(crate::error::InvalidLimitException),
+    /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
+    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
+    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListConformancePackComplianceScoresError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListConformancePackComplianceScoresErrorKind::InvalidLimitException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListConformancePackComplianceScoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListConformancePackComplianceScoresError {
+    fn code(&self) -> Option<&str> {
+        ListConformancePackComplianceScoresError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListConformancePackComplianceScoresError {
+    /// Creates a new `ListConformancePackComplianceScoresError`.
+    pub fn new(
+        kind: ListConformancePackComplianceScoresErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListConformancePackComplianceScoresError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListConformancePackComplianceScoresErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListConformancePackComplianceScoresError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListConformancePackComplianceScoresErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListConformancePackComplianceScoresErrorKind::InvalidLimitException`.
+    pub fn is_invalid_limit_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConformancePackComplianceScoresErrorKind::InvalidLimitException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException`.
+    pub fn is_invalid_next_token_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException(_)
+        )
+    }
+}
+impl std::error::Error for ListConformancePackComplianceScoresError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListConformancePackComplianceScoresErrorKind::InvalidLimitException(_inner) => {
+                Some(_inner)
+            }
+            ListConformancePackComplianceScoresErrorKind::InvalidNextTokenException(_inner) => {
+                Some(_inner)
+            }
+            ListConformancePackComplianceScoresErrorKind::InvalidParameterValueException(
+                _inner,
+            ) => Some(_inner),
+            ListConformancePackComplianceScoresErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
 /// Error type for the `ListDiscoveredResources` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8297,10 +8429,10 @@ pub enum PutConfigRuleErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -8791,10 +8923,10 @@ pub enum PutConformancePackErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -9364,10 +9496,10 @@ pub enum PutOrganizationConfigRuleErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -9604,10 +9736,10 @@ pub enum PutOrganizationConformancePackErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -9841,10 +9973,10 @@ pub enum PutRemediationConfigurationsErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -9963,10 +10095,10 @@ pub enum PutRemediationExceptionsErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -10085,10 +10217,10 @@ pub enum PutResourceConfigErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -10972,10 +11104,10 @@ pub enum StartRemediationExecutionErrorKind {
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
     /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
     /// <ul>
-    /// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+    /// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
     /// <li> <p>To read Amazon S3 bucket.</p> </li>
     /// </ul> </li>
     /// </ul>
@@ -11793,10 +11925,10 @@ impl InvalidParameterValueException {
 /// <ul>
 /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
 /// <li> <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p> </li>
-/// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+/// <li> <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
 /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have permissions: </p>
 /// <ul>
-/// <li> <p>To call IAM <code>GetRole</code> action or create a service linked role.</p> </li>
+/// <li> <p>To call IAM <code>GetRole</code> action or create a service-linked role.</p> </li>
 /// <li> <p>To read Amazon S3 bucket.</p> </li>
 /// </ul> </li>
 /// </ul>

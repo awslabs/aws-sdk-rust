@@ -592,6 +592,7 @@ impl Client {
     ///   - [`proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::proximity): <p>Resource type event configuration for the proximity event.</p>
     ///   - [`join(Option<JoinResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::join): <p>Resource type event configuration for the join event.</p>
     ///   - [`connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::connection_status): <p>Resource type event configuration for the connection status event.</p>
+    ///   - [`message_delivery_status(Option<MessageDeliveryStatusResourceTypeEventConfiguration>)`](crate::output::GetEventConfigurationByResourceTypesOutput::message_delivery_status): <p>Resource type event configuration object for the message delivery status event.</p>
     /// - On failure, responds with [`SdkError<GetEventConfigurationByResourceTypesError>`](crate::error::GetEventConfigurationByResourceTypesError)
     pub fn get_event_configuration_by_resource_types(
         &self,
@@ -722,6 +723,7 @@ impl Client {
     ///   - [`proximity(Option<ProximityEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::proximity): <p>Event configuration for the proximity event.</p>
     ///   - [`join(Option<JoinEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::join): <p>Event configuration for the join event.</p>
     ///   - [`connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::connection_status): <p>Event configuration for the connection status event.</p>
+    ///   - [`message_delivery_status(Option<MessageDeliveryStatusEventConfiguration>)`](crate::output::GetResourceEventConfigurationOutput::message_delivery_status): <p>Event configuration for the message delivery status event.</p>
     /// - On failure, responds with [`SdkError<GetResourceEventConfigurationError>`](crate::error::GetResourceEventConfigurationError)
     pub fn get_resource_event_configuration(
         &self,
@@ -1265,6 +1267,7 @@ impl Client {
     ///   - [`proximity(ProximityResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::proximity) / [`set_proximity(Option<ProximityResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_proximity): <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     ///   - [`join(JoinResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::join) / [`set_join(Option<JoinResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_join): <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
     ///   - [`connection_status(ConnectionStatusResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::connection_status) / [`set_connection_status(Option<ConnectionStatusResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_connection_status): <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
+    ///   - [`message_delivery_status(MessageDeliveryStatusResourceTypeEventConfiguration)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::message_delivery_status) / [`set_message_delivery_status(Option<MessageDeliveryStatusResourceTypeEventConfiguration>)`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes::set_message_delivery_status): <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     /// - On success, responds with [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
 
     /// - On failure, responds with [`SdkError<UpdateEventConfigurationByResourceTypesError>`](crate::error::UpdateEventConfigurationByResourceTypesError)
@@ -1367,6 +1370,7 @@ impl Client {
     ///   - [`proximity(ProximityEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::proximity) / [`set_proximity(Option<ProximityEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_proximity): <p>Event configuration for the proximity event.</p>
     ///   - [`join(JoinEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::join) / [`set_join(Option<JoinEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_join): <p>Event configuration for the join event.</p>
     ///   - [`connection_status(ConnectionStatusEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::connection_status) / [`set_connection_status(Option<ConnectionStatusEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_connection_status): <p>Event configuration for the connection status event.</p>
+    ///   - [`message_delivery_status(MessageDeliveryStatusEventConfiguration)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::message_delivery_status) / [`set_message_delivery_status(Option<MessageDeliveryStatusEventConfiguration>)`](crate::client::fluent_builders::UpdateResourceEventConfiguration::set_message_delivery_status): <p>Event configuration for the message delivery status event.</p>
     /// - On success, responds with [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateResourceEventConfigurationError>`](crate::error::UpdateResourceEventConfigurationError)
@@ -7748,6 +7752,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_status(input);
             self
         }
+        /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.message_delivery_status(input);
+            self
+        }
+        /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<
+                crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_message_delivery_status(input);
+            self
+        }
     }
     /// Fluent builder constructing a request to `UpdateFuotaTask`.
     ///
@@ -8494,6 +8516,22 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::ConnectionStatusEventConfiguration>,
         ) -> Self {
             self.inner = self.inner.set_connection_status(input);
+            self
+        }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn message_delivery_status(
+            mut self,
+            input: crate::model::MessageDeliveryStatusEventConfiguration,
+        ) -> Self {
+            self.inner = self.inner.message_delivery_status(input);
+            self
+        }
+        /// <p>Event configuration for the message delivery status event.</p>
+        pub fn set_message_delivery_status(
+            mut self,
+            input: std::option::Option<crate::model::MessageDeliveryStatusEventConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_message_delivery_status(input);
             self
         }
     }

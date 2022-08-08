@@ -2968,6 +2968,7 @@ pub mod start_model_input {
         pub(crate) model_version: std::option::Option<std::string::String>,
         pub(crate) min_inference_units: std::option::Option<i32>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        pub(crate) max_inference_units: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The name of the project that contains the model that you want to start.</p>
@@ -3017,6 +3018,16 @@ pub mod start_model_input {
             self.client_token = input;
             self
         }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+        pub fn max_inference_units(mut self, input: i32) -> Self {
+            self.max_inference_units = Some(input);
+            self
+        }
+        /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+        pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_inference_units = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartModelInput`](crate::input::StartModelInput).
         pub fn build(
             self,
@@ -3026,6 +3037,7 @@ pub mod start_model_input {
                 model_version: self.model_version,
                 min_inference_units: self.min_inference_units,
                 client_token: self.client_token,
+                max_inference_units: self.max_inference_units,
             })
         }
     }
@@ -4371,6 +4383,8 @@ pub struct StartModelInput {
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
     pub client_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+    pub max_inference_units: std::option::Option<i32>,
 }
 impl StartModelInput {
     /// <p>The name of the project that contains the model that you want to start.</p>
@@ -4391,6 +4405,10 @@ impl StartModelInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
+    pub fn max_inference_units(&self) -> std::option::Option<i32> {
+        self.max_inference_units
+    }
 }
 impl std::fmt::Debug for StartModelInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4399,6 +4417,7 @@ impl std::fmt::Debug for StartModelInput {
         formatter.field("model_version", &self.model_version);
         formatter.field("min_inference_units", &self.min_inference_units);
         formatter.field("client_token", &self.client_token);
+        formatter.field("max_inference_units", &self.max_inference_units);
         formatter.finish()
     }
 }

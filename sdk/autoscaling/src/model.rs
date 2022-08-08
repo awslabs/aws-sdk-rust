@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MixedInstancesPolicy {
-    /// <p>Specifies the launch template to use and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.</p>
+    /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     pub launch_template: std::option::Option<crate::model::LaunchTemplate>,
-    /// <p>Specifies the instances distribution.</p>
+    /// <p>The instances distribution.</p>
     pub instances_distribution: std::option::Option<crate::model::InstancesDistribution>,
 }
 impl MixedInstancesPolicy {
-    /// <p>Specifies the launch template to use and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.</p>
+    /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     pub fn launch_template(&self) -> std::option::Option<&crate::model::LaunchTemplate> {
         self.launch_template.as_ref()
     }
-    /// <p>Specifies the instances distribution.</p>
+    /// <p>The instances distribution.</p>
     pub fn instances_distribution(
         &self,
     ) -> std::option::Option<&crate::model::InstancesDistribution> {
@@ -39,12 +39,12 @@ pub mod mixed_instances_policy {
         pub(crate) instances_distribution: std::option::Option<crate::model::InstancesDistribution>,
     }
     impl Builder {
-        /// <p>Specifies the launch template to use and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.</p>
+        /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplate) -> Self {
             self.launch_template = Some(input);
             self
         }
-        /// <p>Specifies the launch template to use and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.</p>
+        /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplate>,
@@ -52,7 +52,7 @@ pub mod mixed_instances_policy {
             self.launch_template = input;
             self
         }
-        /// <p>Specifies the instances distribution.</p>
+        /// <p>The instances distribution.</p>
         pub fn instances_distribution(
             mut self,
             input: crate::model::InstancesDistribution,
@@ -60,7 +60,7 @@ pub mod mixed_instances_policy {
             self.instances_distribution = Some(input);
             self
         }
-        /// <p>Specifies the instances distribution.</p>
+        /// <p>The instances distribution.</p>
         pub fn set_instances_distribution(
             mut self,
             input: std::option::Option<crate::model::InstancesDistribution>,
@@ -92,6 +92,7 @@ pub struct InstancesDistribution {
     /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
     /// <p>If you specify <code>prioritized</code>, Amazon EC2 Auto Scaling uses the priority that you assigned to each launch template override, launching the highest priority first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on.</p>
     /// <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify <code>InstanceRequirements</code> in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.</p>
+    /// <p>Valid values: <code>lowest-price</code> | <code>prioritized</code> </p>
     pub on_demand_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales.</p>
     /// <p>If you specify weights for the instance types in the overrides, the base capacity is measured in the same unit of measurement as the instance types. If you specify <code>InstanceRequirements</code> in the overrides, the base capacity is measured in the same unit of measurement as your group's desired capacity.</p>
@@ -104,11 +105,15 @@ pub struct InstancesDistribution {
     /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you specify. </p>
     /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for capacity first. </p>
     /// <p>Default: <code>lowest-price</code> </p>
+    /// <p>Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code> </p>
     pub spot_allocation_strategy: std::option::Option<std::string::String>,
     /// <p>The number of Spot Instance pools across which to allocate your Spot Instances. The Spot pools are determined from the different instance types in the overrides. Valid only when the Spot allocation strategy is <code>lowest-price</code>. Value must be in the range of 1–20.</p>
     /// <p>Default: <code>2</code> </p>
     pub spot_instance_pools: std::option::Option<i32>,
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched.</p>
+    /// </important>
+    /// <p>Valid Range: Minimum value of 0.001</p>
     pub spot_max_price: std::option::Option<std::string::String>,
 }
 impl InstancesDistribution {
@@ -116,6 +121,7 @@ impl InstancesDistribution {
     /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
     /// <p>If you specify <code>prioritized</code>, Amazon EC2 Auto Scaling uses the priority that you assigned to each launch template override, launching the highest priority first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on.</p>
     /// <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify <code>InstanceRequirements</code> in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.</p>
+    /// <p>Valid values: <code>lowest-price</code> | <code>prioritized</code> </p>
     pub fn on_demand_allocation_strategy(&self) -> std::option::Option<&str> {
         self.on_demand_allocation_strategy.as_deref()
     }
@@ -134,6 +140,7 @@ impl InstancesDistribution {
     /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you specify. </p>
     /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for capacity first. </p>
     /// <p>Default: <code>lowest-price</code> </p>
+    /// <p>Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code> </p>
     pub fn spot_allocation_strategy(&self) -> std::option::Option<&str> {
         self.spot_allocation_strategy.as_deref()
     }
@@ -142,7 +149,10 @@ impl InstancesDistribution {
     pub fn spot_instance_pools(&self) -> std::option::Option<i32> {
         self.spot_instance_pools
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p>
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+    /// <p>If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched.</p>
+    /// </important>
+    /// <p>Valid Range: Minimum value of 0.001</p>
     pub fn spot_max_price(&self) -> std::option::Option<&str> {
         self.spot_max_price.as_deref()
     }
@@ -183,6 +193,7 @@ pub mod instances_distribution {
         /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
         /// <p>If you specify <code>prioritized</code>, Amazon EC2 Auto Scaling uses the priority that you assigned to each launch template override, launching the highest priority first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on.</p>
         /// <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify <code>InstanceRequirements</code> in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.</p>
+        /// <p>Valid values: <code>lowest-price</code> | <code>prioritized</code> </p>
         pub fn on_demand_allocation_strategy(
             mut self,
             input: impl Into<std::string::String>,
@@ -194,6 +205,7 @@ pub mod instances_distribution {
         /// <p>If you specify <code>lowest-price</code>, Amazon EC2 Auto Scaling uses price to determine the order, launching the lowest price first. </p>
         /// <p>If you specify <code>prioritized</code>, Amazon EC2 Auto Scaling uses the priority that you assigned to each launch template override, launching the highest priority first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on.</p>
         /// <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify <code>InstanceRequirements</code> in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.</p>
+        /// <p>Valid values: <code>lowest-price</code> | <code>prioritized</code> </p>
         pub fn set_on_demand_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,6 +246,7 @@ pub mod instances_distribution {
         /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you specify. </p>
         /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for capacity first. </p>
         /// <p>Default: <code>lowest-price</code> </p>
+        /// <p>Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code> </p>
         pub fn spot_allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
             self.spot_allocation_strategy = Some(input.into());
             self
@@ -242,6 +255,7 @@ pub mod instances_distribution {
         /// <p>If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you specify. </p>
         /// <p>If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for capacity first. </p>
         /// <p>Default: <code>lowest-price</code> </p>
+        /// <p>Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code> </p>
         pub fn set_spot_allocation_strategy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -261,12 +275,18 @@ pub mod instances_distribution {
             self.spot_instance_pools = input;
             self
         }
-        /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p>
+        /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+        /// <p>If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched.</p>
+        /// </important>
+        /// <p>Valid Range: Minimum value of 0.001</p>
         pub fn spot_max_price(mut self, input: impl Into<std::string::String>) -> Self {
             self.spot_max_price = Some(input.into());
             self
         }
-        /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p>
+        /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the On-Demand price as the maximum Spot price. To remove a value that you previously set, include the property but specify an empty string ("") for the value.</p> <important>
+        /// <p>If your maximum price is lower than the Spot price for the instance types that you selected, your Spot Instances are not launched.</p>
+        /// </important>
+        /// <p>Valid Range: Minimum value of 0.001</p>
         pub fn set_spot_max_price(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -563,11 +583,11 @@ pub struct InstanceRequirements {
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub instance_generations: std::option::Option<std::vec::Vec<crate::model::InstanceGeneration>>,
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
     pub spot_max_price_percentage_over_lowest_price: std::option::Option<i32>,
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
     pub on_demand_max_price_percentage_over_lowest_price: std::option::Option<i32>,
@@ -589,7 +609,7 @@ pub struct InstanceRequirements {
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
     /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.</p> </li>
+    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub local_storage_types: std::option::Option<std::vec::Vec<crate::model::LocalStorageType>>,
@@ -682,13 +702,13 @@ impl InstanceRequirements {
     pub fn instance_generations(&self) -> std::option::Option<&[crate::model::InstanceGeneration]> {
         self.instance_generations.as_deref()
     }
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>100</code> </p>
     pub fn spot_max_price_percentage_over_lowest_price(&self) -> std::option::Option<i32> {
         self.spot_max_price_percentage_over_lowest_price
     }
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
     /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
     /// <p>Default: <code>20</code> </p>
     pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> std::option::Option<i32> {
@@ -726,7 +746,7 @@ impl InstanceRequirements {
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
     /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.</p> </li>
+    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub fn local_storage_types(&self) -> std::option::Option<&[crate::model::LocalStorageType]> {
@@ -1007,14 +1027,14 @@ pub mod instance_requirements {
             self.instance_generations = input;
             self
         }
-        /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
         /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>100</code> </p>
         pub fn spot_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
             self.spot_max_price_percentage_over_lowest_price = Some(input);
             self
         }
-        /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
         /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>100</code> </p>
         pub fn set_spot_max_price_percentage_over_lowest_price(
@@ -1024,14 +1044,14 @@ pub mod instance_requirements {
             self.spot_max_price_percentage_over_lowest_price = input;
             self
         }
-        /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
         /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>20</code> </p>
         pub fn on_demand_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
             self.on_demand_max_price_percentage_over_lowest_price = Some(input);
             self
         }
-        /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the cheapest M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
+        /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>. </p>
         /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price. </p>
         /// <p>Default: <code>20</code> </p>
         pub fn set_on_demand_max_price_percentage_over_lowest_price(
@@ -1123,7 +1143,7 @@ pub mod instance_requirements {
         /// <p>Indicates the type of local storage that is required.</p>
         /// <ul>
         /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-        /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.</p> </li>
+        /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
         /// </ul>
         /// <p>Default: Any local storage type</p>
         pub fn local_storage_types(mut self, input: crate::model::LocalStorageType) -> Self {
@@ -1135,7 +1155,7 @@ pub mod instance_requirements {
         /// <p>Indicates the type of local storage that is required.</p>
         /// <ul>
         /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-        /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.</p> </li>
+        /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
         /// </ul>
         /// <p>Default: Any local storage type</p>
         pub fn set_local_storage_types(
@@ -5504,7 +5524,7 @@ impl TargetTrackingConfiguration {
 /// <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling.</p>
 /// <p>To create your customized metric specification:</p>
 /// <ul>
-/// <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
+/// <li> <p>Add values for each required property from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
 /// <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases.</p> </li>
 /// </ul>
 /// <p>For more information about the CloudWatch terminology below, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch concepts</a>.</p> <note>
@@ -5988,6 +6008,7 @@ pub struct StepAdjustment {
     /// <p>The upper bound must be greater than the lower bound.</p>
     pub metric_interval_upper_bound: std::option::Option<f64>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+    /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
     pub scaling_adjustment: std::option::Option<i32>,
 }
 impl StepAdjustment {
@@ -6001,6 +6022,7 @@ impl StepAdjustment {
         self.metric_interval_upper_bound
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+    /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
     pub fn scaling_adjustment(&self) -> std::option::Option<i32> {
         self.scaling_adjustment
     }
@@ -6054,11 +6076,13 @@ pub mod step_adjustment {
             self
         }
         /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+        /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
         pub fn scaling_adjustment(mut self, input: i32) -> Self {
             self.scaling_adjustment = Some(input);
             self
         }
         /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+        /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -7009,7 +7033,7 @@ impl TagDescription {
 
 /// <p>Describes a filter that is used to return a more specific list of results from a describe operation.</p>
 /// <p>If you specify multiple filters, the filters are automatically logically joined with an <code>AND</code>, and the request returns only the results that match all of the specified filters. </p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -7173,7 +7197,7 @@ pub struct ScheduledUpdateGroupAction {
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub scheduled_action_arn: std::option::Option<std::string::String>,
-    /// <p>This parameter is no longer used.</p>
+    /// <p>This property is no longer used.</p>
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7204,7 +7228,7 @@ impl ScheduledUpdateGroupAction {
     pub fn scheduled_action_arn(&self) -> std::option::Option<&str> {
         self.scheduled_action_arn.as_deref()
     }
-    /// <p>This parameter is no longer used.</p>
+    /// <p>This property is no longer used.</p>
     pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
@@ -7313,12 +7337,12 @@ pub mod scheduled_update_group_action {
             self.scheduled_action_arn = input;
             self
         }
-        /// <p>This parameter is no longer used.</p>
+        /// <p>This property is no longer used.</p>
         pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.time = Some(input);
             self
         }
-        /// <p>This parameter is no longer used.</p>
+        /// <p>This property is no longer used.</p>
         pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.time = input;
             self
@@ -8490,23 +8514,21 @@ pub struct LifecycleHook {
     pub lifecycle_hook_name: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group for the lifecycle hook.</p>
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
-    /// <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:</p>
-    /// <ul>
-    /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-    /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
-    /// </ul>
+    /// <p>The lifecycle transition.</p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
     pub lifecycle_transition: std::option::Option<std::string::String>,
-    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
     pub notification_target_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target (an Amazon SNS topic or an Amazon SQS queue).</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Additional information that is included any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
     pub notification_metadata: std::option::Option<std::string::String>,
-    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter.</p>
+    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
     pub heartbeat_timeout: std::option::Option<i32>,
     /// <p>The maximum time, in seconds, that an instance can remain in a wait state. The maximum is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever is smaller.</p>
     pub global_timeout: std::option::Option<i32>,
-    /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and <code>ABANDON</code>.</p>
+    /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub default_result: std::option::Option<std::string::String>,
 }
 impl LifecycleHook {
@@ -8518,15 +8540,12 @@ impl LifecycleHook {
     pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:</p>
-    /// <ul>
-    /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-    /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
-    /// </ul>
+    /// <p>The lifecycle transition.</p>
+    /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
     pub fn lifecycle_transition(&self) -> std::option::Option<&str> {
         self.lifecycle_transition.as_deref()
     }
-    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
     pub fn notification_target_arn(&self) -> std::option::Option<&str> {
         self.notification_target_arn.as_deref()
     }
@@ -8538,7 +8557,7 @@ impl LifecycleHook {
     pub fn notification_metadata(&self) -> std::option::Option<&str> {
         self.notification_metadata.as_deref()
     }
-    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter.</p>
+    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
     pub fn heartbeat_timeout(&self) -> std::option::Option<i32> {
         self.heartbeat_timeout
     }
@@ -8546,7 +8565,8 @@ impl LifecycleHook {
     pub fn global_timeout(&self) -> std::option::Option<i32> {
         self.global_timeout
     }
-    /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and <code>ABANDON</code>.</p>
+    /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(&self) -> std::option::Option<&str> {
         self.default_result.as_deref()
     }
@@ -8609,20 +8629,14 @@ pub mod lifecycle_hook {
             self.auto_scaling_group_name = input;
             self
         }
-        /// <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:</p>
-        /// <ul>
-        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
-        /// </ul>
+        /// <p>The lifecycle transition.</p>
+        /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
         pub fn lifecycle_transition(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_transition = Some(input.into());
             self
         }
-        /// <p>The state of the EC2 instance to which to attach the lifecycle hook. The following are possible values:</p>
-        /// <ul>
-        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
-        /// </ul>
+        /// <p>The lifecycle transition.</p>
+        /// <p>Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p>
         pub fn set_lifecycle_transition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8630,12 +8644,12 @@ pub mod lifecycle_hook {
             self.lifecycle_transition = input;
             self
         }
-        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
         pub fn notification_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8666,12 +8680,12 @@ pub mod lifecycle_hook {
             self.notification_metadata = input;
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
         pub fn heartbeat_timeout(mut self, input: i32) -> Self {
             self.heartbeat_timeout = Some(input);
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> property.</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_timeout = input;
             self
@@ -8686,12 +8700,14 @@ pub mod lifecycle_hook {
             self.global_timeout = input;
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and <code>ABANDON</code>.</p>
+        /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
+        /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
         pub fn default_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_result = Some(input.into());
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The possible values are <code>CONTINUE</code> and <code>ABANDON</code>.</p>
+        /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs.</p>
+        /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8730,29 +8746,28 @@ pub struct LaunchConfiguration {
     pub launch_configuration_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
     pub launch_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
     pub classic_link_vpc_id: std::option::Option<std::string::String>,
-    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
     pub classic_link_vpc_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
     pub user_data: std::option::Option<std::string::String>,
-    /// <p>The instance type for the instances.</p>
-    /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the kernel associated with the AMI.</p>
     pub kernel_id: std::option::Option<std::string::String>,
     /// <p>The ID of the RAM disk associated with the AMI.</p>
     pub ramdisk_id: std::option::Option<std::string::String>,
-    /// <p>A block device mapping, which specifies the block devices for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -8765,7 +8780,7 @@ pub struct LaunchConfiguration {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub ebs_optimized: std::option::Option<bool>,
-    /// <p>For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub associate_public_ip_address: std::option::Option<bool>,
     /// <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -8782,7 +8797,7 @@ impl LaunchConfiguration {
     pub fn launch_configuration_arn(&self) -> std::option::Option<&str> {
         self.launch_configuration_arn.as_deref()
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -8795,12 +8810,12 @@ impl LaunchConfiguration {
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
     pub fn classic_link_vpc_id(&self) -> std::option::Option<&str> {
         self.classic_link_vpc_id.as_deref()
     }
-    /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+    /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
     /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
     pub fn classic_link_vpc_security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.classic_link_vpc_security_groups.as_deref()
@@ -8809,8 +8824,7 @@ impl LaunchConfiguration {
     pub fn user_data(&self) -> std::option::Option<&str> {
         self.user_data.as_deref()
     }
-    /// <p>The instance type for the instances.</p>
-    /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -8822,7 +8836,7 @@ impl LaunchConfiguration {
     pub fn ramdisk_id(&self) -> std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
-    /// <p>A block device mapping, which specifies the block devices for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn block_device_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::BlockDeviceMapping]> {
@@ -8849,7 +8863,7 @@ impl LaunchConfiguration {
     pub fn ebs_optimized(&self) -> std::option::Option<bool> {
         self.ebs_optimized
     }
-    /// <p>For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn associate_public_ip_address(&self) -> std::option::Option<bool> {
         self.associate_public_ip_address
     }
@@ -8951,12 +8965,12 @@ pub mod launch_configuration {
             self.launch_configuration_arn = input;
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Find a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -8992,13 +9006,13 @@ pub mod launch_configuration {
             self.security_groups = input;
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
         /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
         pub fn classic_link_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.classic_link_vpc_id = Some(input.into());
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
         /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
@@ -9011,7 +9025,7 @@ pub mod launch_configuration {
         ///
         /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
         ///
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
         /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
@@ -9022,7 +9036,7 @@ pub mod launch_configuration {
             self.classic_link_vpc_security_groups = Some(v);
             self
         }
-        /// <p> <i>EC2-Classic retires on August 15, 2022. This parameter is not supported after that date.</i> </p>
+        /// <p> <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
         /// <p>The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
@@ -9041,14 +9055,12 @@ pub mod launch_configuration {
             self.user_data = input;
             self
         }
-        /// <p>The instance type for the instances.</p>
-        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type for the instances.</p>
-        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The instance type for the instances. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9080,14 +9092,14 @@ pub mod launch_configuration {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
-        /// <p>A block device mapping, which specifies the block devices for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
             v.push(input);
             self.block_device_mappings = Some(v);
             self
         }
-        /// <p>A block device mapping, which specifies the block devices for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -9156,12 +9168,12 @@ pub mod launch_configuration {
             self.ebs_optimized = input;
             self
         }
-        /// <p>For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
             self.associate_public_ip_address = Some(input);
             self
         }
-        /// <p>For Auto Scaling groups that are running in a VPC, specifies whether to assign a public IP address to the group's instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.associate_public_ip_address = input;
             self
@@ -9521,37 +9533,35 @@ impl InstanceMonitoring {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockDeviceMapping {
-    /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-    /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+    /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
     pub virtual_name: std::option::Option<std::string::String>,
-    /// <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+    /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
+    /// </note>
     pub device_name: std::option::Option<std::string::String>,
-    /// <p>Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-    /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+    /// <p>Information to attach an EBS volume to an instance at launch.</p>
     pub ebs: std::option::Option<crate::model::Ebs>,
-    /// <p>Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of the AMI.</p>
+    /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-    /// <p>If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.</p>
     pub no_device: std::option::Option<bool>,
 }
 impl BlockDeviceMapping {
-    /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-    /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+    /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
     pub fn virtual_name(&self) -> std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
-    /// <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+    /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+    /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
+    /// </note>
     pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-    /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+    /// <p>Information to attach an EBS volume to an instance at launch.</p>
     pub fn ebs(&self) -> std::option::Option<&crate::model::Ebs> {
         self.ebs.as_ref()
     }
-    /// <p>Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of the AMI.</p>
+    /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-    /// <p>If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.</p>
     pub fn no_device(&self) -> std::option::Option<bool> {
         self.no_device
     }
@@ -9578,50 +9588,48 @@ pub mod block_device_mapping {
         pub(crate) no_device: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+        /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
         pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.virtual_name = Some(input.into());
             self
         }
-        /// <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
-        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+        /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
         pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_name = input;
             self
         }
-        /// <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+        /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
+        /// </note>
         pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_name = Some(input.into());
             self
         }
-        /// <p>The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
+        /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
+        /// </note>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
         }
-        /// <p>Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+        /// <p>Information to attach an EBS volume to an instance at launch.</p>
         pub fn ebs(mut self, input: crate::model::Ebs) -> Self {
             self.ebs = Some(input);
             self
         }
-        /// <p>Parameters used to automatically set up EBS volumes when an instance is launched.</p>
-        /// <p>You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.</p>
+        /// <p>Information to attach an EBS volume to an instance at launch.</p>
         pub fn set_ebs(mut self, input: std::option::Option<crate::model::Ebs>) -> Self {
             self.ebs = input;
             self
         }
-        /// <p>Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of the AMI.</p>
+        /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
         /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-        /// <p>If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.</p>
         pub fn no_device(mut self, input: bool) -> Self {
             self.no_device = Some(input);
             self
         }
-        /// <p>Setting this value to <code>true</code> suppresses the specified device included in the block device mapping of the AMI.</p>
+        /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
         /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-        /// <p>If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.</p>
         pub fn set_no_device(mut self, input: std::option::Option<bool>) -> Self {
             self.no_device = input;
             self
@@ -9661,7 +9669,7 @@ pub struct Ebs {
     /// <p>You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
     pub volume_size: std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub volume_type: std::option::Option<std::string::String>,
     /// <p>Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto Scaling, the default value is <code>true</code>.</p>
     pub delete_on_termination: std::option::Option<bool>,
@@ -9677,7 +9685,7 @@ pub struct Ebs {
     /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
     /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub encrypted: std::option::Option<bool>,
     /// <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
@@ -9701,7 +9709,7 @@ impl Ebs {
         self.volume_size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    /// <p>Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+    /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
     pub fn volume_type(&self) -> std::option::Option<&str> {
         self.volume_type.as_deref()
     }
@@ -9723,7 +9731,7 @@ impl Ebs {
     /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
     /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
     /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </note>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
@@ -9798,13 +9806,13 @@ pub mod ebs {
             self
         }
         /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+        /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
         pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_type = Some(input.into());
             self
         }
         /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
+        /// <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
         pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_type = input;
             self
@@ -9846,7 +9854,7 @@ pub mod ebs {
         /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
         /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
         /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </note>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
@@ -9855,7 +9863,7 @@ pub mod ebs {
         /// <p>Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances that support Amazon EBS encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>. If your AMI uses encrypted volumes, you can also only launch it on supported instance types.</p> <note>
         /// <p>If you are creating a volume from a snapshot, you cannot create an unencrypted volume from an encrypted snapshot. Also, you cannot specify a KMS key ID when using a launch configuration.</p>
         /// <p>If you enable encryption by default, the EBS volumes that you create are always encrypted, either using the Amazon Web Services managed KMS key or a customer-managed KMS key, regardless of whether the snapshot was encrypted. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </note>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
@@ -10531,7 +10539,7 @@ pub struct AutoScalingInstanceDetails {
     /// <p>The Availability Zone for the instance.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    /// <p>Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
+    /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
     pub lifecycle_state: std::option::Option<std::string::String>,
     /// <p>The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace it.</p>
     pub health_status: std::option::Option<std::string::String>,
@@ -10563,7 +10571,7 @@ impl AutoScalingInstanceDetails {
         self.availability_zone.as_deref()
     }
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-    /// <p>Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
+    /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
     pub fn lifecycle_state(&self) -> std::option::Option<&str> {
         self.lifecycle_state.as_deref()
     }
@@ -10675,13 +10683,13 @@ pub mod auto_scaling_instance_details {
             self
         }
         /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-        /// <p>Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
+        /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
         pub fn lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_state = Some(input.into());
             self
         }
         /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
-        /// <p>Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
+        /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
         pub fn set_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11568,7 +11576,7 @@ impl AutoScalingGroup {
     }
 }
 
-/// <p>Describes an enabled metric.</p>
+/// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnabledMetric {
@@ -11595,6 +11603,7 @@ pub struct EnabledMetric {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub metric: std::option::Option<std::string::String>,
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     pub granularity: std::option::Option<std::string::String>,
@@ -11623,6 +11632,7 @@ impl EnabledMetric {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
@@ -11672,6 +11682,7 @@ pub mod enabled_metric {
         /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
         /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric = Some(input.into());
             self
@@ -11699,6 +11710,7 @@ pub mod enabled_metric {
         /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
         /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
@@ -12003,23 +12015,23 @@ impl Tag {
 pub struct LifecycleHookSpecification {
     /// <p>The name of the lifecycle hook.</p>
     pub lifecycle_hook_name: std::option::Option<std::string::String>,
-    /// <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The valid values are:</p>
+    /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-    /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     pub lifecycle_transition: std::option::Option<std::string::String>,
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
     pub notification_metadata: std::option::Option<std::string::String>,
-    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out.</p>
-    /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling <code>RecordLifecycleActionHeartbeat</code>.</p>
+    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
     pub heartbeat_timeout: std::option::Option<i32>,
-    /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+    /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub default_result: std::option::Option<std::string::String>,
-    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
     pub notification_target_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
-    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LifecycleHookSpecification {
@@ -12027,10 +12039,10 @@ impl LifecycleHookSpecification {
     pub fn lifecycle_hook_name(&self) -> std::option::Option<&str> {
         self.lifecycle_hook_name.as_deref()
     }
-    /// <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The valid values are:</p>
+    /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-    /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+    /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
     /// </ul>
     pub fn lifecycle_transition(&self) -> std::option::Option<&str> {
         self.lifecycle_transition.as_deref()
@@ -12039,21 +12051,21 @@ impl LifecycleHookSpecification {
     pub fn notification_metadata(&self) -> std::option::Option<&str> {
         self.notification_metadata.as_deref()
     }
-    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out.</p>
-    /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling <code>RecordLifecycleActionHeartbeat</code>.</p>
+    /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
     pub fn heartbeat_timeout(&self) -> std::option::Option<i32> {
         self.heartbeat_timeout
     }
-    /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+    /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
+    /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
     pub fn default_result(&self) -> std::option::Option<&str> {
         self.default_result.as_deref()
     }
-    /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
     pub fn notification_target_arn(&self) -> std::option::Option<&str> {
         self.notification_target_arn.as_deref()
     }
-    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
-    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+    /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -12099,19 +12111,19 @@ pub mod lifecycle_hook_specification {
             self.lifecycle_hook_name = input;
             self
         }
-        /// <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The valid values are:</p>
+        /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
         /// <ul>
-        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
+        /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+        /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
         /// </ul>
         pub fn lifecycle_transition(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_transition = Some(input.into());
             self
         }
-        /// <p>The state of the EC2 instance to which you want to attach the lifecycle hook. The valid values are:</p>
+        /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
         /// <ul>
-        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
-        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
+        /// <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>
+        /// <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>
         /// </ul>
         pub fn set_lifecycle_transition(
             mut self,
@@ -12133,24 +12145,24 @@ pub mod lifecycle_hook_specification {
             self.notification_metadata = input;
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out.</p>
-        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling <code>RecordLifecycleActionHeartbeat</code>.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
         pub fn heartbeat_timeout(mut self, input: i32) -> Self {
             self.heartbeat_timeout = Some(input);
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out.</p>
-        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling <code>RecordLifecycleActionHeartbeat</code>.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_timeout = input;
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+        /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
+        /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
         pub fn default_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_result = Some(input.into());
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+        /// <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>
+        /// <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12158,12 +12170,12 @@ pub mod lifecycle_hook_specification {
             self.default_result = input;
             self
         }
-        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
         pub fn notification_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_target_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an instance is in the transition state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.</p>
+        /// <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling sends notifications to when an instance is in a wait state for the lifecycle hook. You can specify an Amazon SNS topic or an Amazon SQS queue.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12171,14 +12183,14 @@ pub mod lifecycle_hook_specification {
             self.notification_target_arn = input;
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
-        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>
-        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self

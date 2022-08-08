@@ -2,6 +2,130 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ValidateE911AddressOutput {
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    pub validation_result: i32,
+    /// <p>The ID that represents the address.</p>
+    pub address_external_id: std::option::Option<std::string::String>,
+    /// <p>The validated address.</p>
+    pub address: std::option::Option<crate::model::Address>,
+    /// <p>The list of address suggestions.</p>
+    pub candidate_address_list: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
+}
+impl ValidateE911AddressOutput {
+    /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+    pub fn validation_result(&self) -> i32 {
+        self.validation_result
+    }
+    /// <p>The ID that represents the address.</p>
+    pub fn address_external_id(&self) -> std::option::Option<&str> {
+        self.address_external_id.as_deref()
+    }
+    /// <p>The validated address.</p>
+    pub fn address(&self) -> std::option::Option<&crate::model::Address> {
+        self.address.as_ref()
+    }
+    /// <p>The list of address suggestions.</p>
+    pub fn candidate_address_list(&self) -> std::option::Option<&[crate::model::CandidateAddress]> {
+        self.candidate_address_list.as_deref()
+    }
+}
+impl std::fmt::Debug for ValidateE911AddressOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ValidateE911AddressOutput");
+        formatter.field("validation_result", &self.validation_result);
+        formatter.field("address_external_id", &self.address_external_id);
+        formatter.field("address", &self.address);
+        formatter.field("candidate_address_list", &self.candidate_address_list);
+        formatter.finish()
+    }
+}
+/// See [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
+pub mod validate_e911_address_output {
+
+    /// A builder for [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) validation_result: std::option::Option<i32>,
+        pub(crate) address_external_id: std::option::Option<std::string::String>,
+        pub(crate) address: std::option::Option<crate::model::Address>,
+        pub(crate) candidate_address_list:
+            std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
+    }
+    impl Builder {
+        /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+        pub fn validation_result(mut self, input: i32) -> Self {
+            self.validation_result = Some(input);
+            self
+        }
+        /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
+        pub fn set_validation_result(mut self, input: std::option::Option<i32>) -> Self {
+            self.validation_result = input;
+            self
+        }
+        /// <p>The ID that represents the address.</p>
+        pub fn address_external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.address_external_id = Some(input.into());
+            self
+        }
+        /// <p>The ID that represents the address.</p>
+        pub fn set_address_external_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.address_external_id = input;
+            self
+        }
+        /// <p>The validated address.</p>
+        pub fn address(mut self, input: crate::model::Address) -> Self {
+            self.address = Some(input);
+            self
+        }
+        /// <p>The validated address.</p>
+        pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
+            self.address = input;
+            self
+        }
+        /// Appends an item to `candidate_address_list`.
+        ///
+        /// To override the contents of this collection use [`set_candidate_address_list`](Self::set_candidate_address_list).
+        ///
+        /// <p>The list of address suggestions.</p>
+        pub fn candidate_address_list(mut self, input: crate::model::CandidateAddress) -> Self {
+            let mut v = self.candidate_address_list.unwrap_or_default();
+            v.push(input);
+            self.candidate_address_list = Some(v);
+            self
+        }
+        /// <p>The list of address suggestions.</p>
+        pub fn set_candidate_address_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CandidateAddress>>,
+        ) -> Self {
+            self.candidate_address_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
+        pub fn build(self) -> crate::output::ValidateE911AddressOutput {
+            crate::output::ValidateE911AddressOutput {
+                validation_result: self.validation_result.unwrap_or_default(),
+                address_external_id: self.address_external_id,
+                address: self.address,
+                candidate_address_list: self.candidate_address_list,
+            }
+        }
+    }
+}
+impl ValidateE911AddressOutput {
+    /// Creates a new builder-style object to manufacture [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput).
+    pub fn builder() -> crate::output::validate_e911_address_output::Builder {
+        crate::output::validate_e911_address_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVoiceConnectorGroupOutput {
     /// <p>The updated Amazon Chime Voice Connector group details.</p>
     pub voice_connector_group: std::option::Option<crate::model::VoiceConnectorGroup>,

@@ -1739,6 +1739,8 @@ pub struct DatasetImportJobSummary {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, the reason behind the failure.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+    pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl DatasetImportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -1769,6 +1771,10 @@ impl DatasetImportJobSummary {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
+        self.import_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetImportJobSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1779,6 +1785,7 @@ impl std::fmt::Debug for DatasetImportJobSummary {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("import_mode", &self.import_mode);
         formatter.finish()
     }
 }
@@ -1794,6 +1801,7 @@ pub mod dataset_import_job_summary {
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) import_mode: std::option::Option<crate::model::ImportMode>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -1876,6 +1884,19 @@ pub mod dataset_import_job_summary {
             self.failure_reason = input;
             self
         }
+        /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+        pub fn import_mode(mut self, input: crate::model::ImportMode) -> Self {
+            self.import_mode = Some(input);
+            self
+        }
+        /// <p>The import mode the dataset import job used to update the data in the dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating existing bulk data</a>. </p>
+        pub fn set_import_mode(
+            mut self,
+            input: std::option::Option<crate::model::ImportMode>,
+        ) -> Self {
+            self.import_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
         pub fn build(self) -> crate::model::DatasetImportJobSummary {
             crate::model::DatasetImportJobSummary {
@@ -1885,6 +1906,7 @@ pub mod dataset_import_job_summary {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 failure_reason: self.failure_reason,
+                import_mode: self.import_mode,
             }
         }
     }
@@ -1893,6 +1915,61 @@ impl DatasetImportJobSummary {
     /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
     pub fn builder() -> crate::model::dataset_import_job_summary::Builder {
         crate::model::dataset_import_job_summary::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ImportMode {
+    #[allow(missing_docs)] // documentation missing in model
+    Full,
+    #[allow(missing_docs)] // documentation missing in model
+    Incremental,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ImportMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "FULL" => ImportMode::Full,
+            "INCREMENTAL" => ImportMode::Incremental,
+            other => ImportMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ImportMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ImportMode::from(s))
+    }
+}
+impl ImportMode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ImportMode::Full => "FULL",
+            ImportMode::Incremental => "INCREMENTAL",
+            ImportMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["FULL", "INCREMENTAL"]
+    }
+}
+impl AsRef<str> for ImportMode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -6442,6 +6519,8 @@ pub struct DatasetImportJob {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If a dataset import job fails, provides the reason why.</p>
     pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The import mode used by the dataset import job to import new records.</p>
+    pub import_mode: std::option::Option<crate::model::ImportMode>,
 }
 impl DatasetImportJob {
     /// <p>The name of the import job.</p>
@@ -6484,6 +6563,10 @@ impl DatasetImportJob {
     pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The import mode used by the dataset import job to import new records.</p>
+    pub fn import_mode(&self) -> std::option::Option<&crate::model::ImportMode> {
+        self.import_mode.as_ref()
+    }
 }
 impl std::fmt::Debug for DatasetImportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6497,6 +6580,7 @@ impl std::fmt::Debug for DatasetImportJob {
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_updated_date_time", &self.last_updated_date_time);
         formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("import_mode", &self.import_mode);
         formatter.finish()
     }
 }
@@ -6515,6 +6599,7 @@ pub mod dataset_import_job {
         pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) import_mode: std::option::Option<crate::model::ImportMode>,
     }
     impl Builder {
         /// <p>The name of the import job.</p>
@@ -6630,6 +6715,19 @@ pub mod dataset_import_job {
             self.failure_reason = input;
             self
         }
+        /// <p>The import mode used by the dataset import job to import new records.</p>
+        pub fn import_mode(mut self, input: crate::model::ImportMode) -> Self {
+            self.import_mode = Some(input);
+            self
+        }
+        /// <p>The import mode used by the dataset import job to import new records.</p>
+        pub fn set_import_mode(
+            mut self,
+            input: std::option::Option<crate::model::ImportMode>,
+        ) -> Self {
+            self.import_mode = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DatasetImportJob`](crate::model::DatasetImportJob).
         pub fn build(self) -> crate::model::DatasetImportJob {
             crate::model::DatasetImportJob {
@@ -6642,6 +6740,7 @@ pub mod dataset_import_job {
                 creation_date_time: self.creation_date_time,
                 last_updated_date_time: self.last_updated_date_time,
                 failure_reason: self.failure_reason,
+                import_mode: self.import_mode,
             }
         }
     }

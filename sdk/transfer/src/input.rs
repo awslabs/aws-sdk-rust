@@ -33,12 +33,12 @@ pub mod create_access_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -50,7 +50,7 @@ pub mod create_access_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -65,7 +65,7 @@ pub mod create_access_input {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -78,21 +78,21 @@ pub mod create_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
@@ -111,12 +111,12 @@ pub mod create_access_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -131,18 +131,18 @@ pub mod create_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -275,6 +275,650 @@ impl CreateAccessInput {
     }
 }
 
+/// See [`CreateAgreementInput`](crate::input::CreateAgreementInput).
+pub mod create_agreement_input {
+
+    /// A builder for [`CreateAgreementInput`](crate::input::CreateAgreementInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) local_profile_id: std::option::Option<std::string::String>,
+        pub(crate) partner_profile_id: std::option::Option<std::string::String>,
+        pub(crate) base_directory: std::option::Option<std::string::String>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AgreementStatusType>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>A name or short description to identify the agreement. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A name or short description to identify the agreement. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>A unique identifier for the AS2 local profile.</p>
+        pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the AS2 local profile.</p>
+        pub fn set_local_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.local_profile_id = input;
+            self
+        }
+        /// <p>A unique identifier for the partner profile used in the agreement.</p>
+        pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partner_profile_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the partner profile used in the agreement.</p>
+        pub fn set_partner_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partner_profile_id = input;
+            self
+        }
+        /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_directory = Some(input.into());
+            self
+        }
+        /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+        /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        pub fn set_base_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.base_directory = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn status(mut self, input: crate::model::AgreementStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AgreementStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAgreementInput`](crate::input::CreateAgreementInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateAgreementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateAgreementInput {
+                description: self.description,
+                server_id: self.server_id,
+                local_profile_id: self.local_profile_id,
+                partner_profile_id: self.partner_profile_id,
+                base_directory: self.base_directory,
+                access_role: self.access_role,
+                status: self.status,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateAgreementInputOperationOutputAlias = crate::operation::CreateAgreement;
+#[doc(hidden)]
+pub type CreateAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateAgreementInput {
+    /// Consumes the builder and constructs an Operation<[`CreateAgreement`](crate::operation::CreateAgreement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateAgreement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateAgreementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateAgreementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.CreateAgreement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_agreement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAgreement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAgreement",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateAgreementInput`](crate::input::CreateAgreementInput).
+    pub fn builder() -> crate::input::create_agreement_input::Builder {
+        crate::input::create_agreement_input::Builder::default()
+    }
+}
+
+/// See [`CreateConnectorInput`](crate::input::CreateConnectorInput).
+pub mod create_connector_input {
+
+    /// A builder for [`CreateConnectorInput`](crate::input::CreateConnectorInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+        pub(crate) logging_role: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn as2_config(mut self, input: crate::model::As2ConnectorConfig) -> Self {
+            self.as2_config = Some(input);
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn set_as2_config(
+            mut self,
+            input: std::option::Option<crate::model::As2ConnectorConfig>,
+        ) -> Self {
+            self.as2_config = input;
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logging_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logging_role = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::input::CreateConnectorInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateConnectorInput {
+                url: self.url,
+                as2_config: self.as2_config,
+                access_role: self.access_role,
+                logging_role: self.logging_role,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateConnectorInputOperationOutputAlias = crate::operation::CreateConnector;
+#[doc(hidden)]
+pub type CreateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`CreateConnector`](crate::operation::CreateConnector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.CreateConnector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_connector(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateConnector",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateConnectorInput`](crate::input::CreateConnectorInput).
+    pub fn builder() -> crate::input::create_connector_input::Builder {
+        crate::input::create_connector_input::Builder::default()
+    }
+}
+
+/// See [`CreateProfileInput`](crate::input::CreateProfileInput).
+pub mod create_profile_input {
+
+    /// A builder for [`CreateProfileInput`](crate::input::CreateProfileInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) as2_id: std::option::Option<std::string::String>,
+        pub(crate) profile_type: std::option::Option<crate::model::ProfileType>,
+        pub(crate) certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+        pub fn as2_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.as2_id = Some(input.into());
+            self
+        }
+        /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+        pub fn set_as2_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.as2_id = input;
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
+            self.profile_type = Some(input);
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn set_profile_type(
+            mut self,
+            input: std::option::Option<crate::model::ProfileType>,
+        ) -> Self {
+            self.profile_type = input;
+            self
+        }
+        /// Appends an item to `certificate_ids`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
+        ///
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.certificate_ids.unwrap_or_default();
+            v.push(input.into());
+            self.certificate_ids = Some(v);
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.certificate_ids = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateProfileInput`](crate::input::CreateProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateProfileInput {
+                as2_id: self.as2_id,
+                profile_type: self.profile_type,
+                certificate_ids: self.certificate_ids,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateProfileInputOperationOutputAlias = crate::operation::CreateProfile;
+#[doc(hidden)]
+pub type CreateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateProfileInput {
+    /// Consumes the builder and constructs an Operation<[`CreateProfile`](crate::operation::CreateProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateProfile,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.CreateProfile",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_profile(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateProfile",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateProfileInput`](crate::input::CreateProfileInput).
+    pub fn builder() -> crate::input::create_profile_input::Builder {
+        crate::input::create_profile_input::Builder::default()
+    }
+}
+
 /// See [`CreateServerInput`](crate::input::CreateServerInput).
 pub mod create_server_input {
 
@@ -299,10 +943,10 @@ pub mod create_server_input {
         pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
         /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
         /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
@@ -317,10 +961,10 @@ pub mod create_server_input {
             self.certificate = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
         /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
         /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
@@ -349,12 +993,12 @@ pub mod create_server_input {
             self.domain = input;
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             self.endpoint_details = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -386,7 +1030,7 @@ pub mod create_server_input {
         /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-        /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+        /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
         /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -395,7 +1039,7 @@ pub mod create_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
@@ -403,7 +1047,7 @@ pub mod create_server_input {
         /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-        /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+        /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
         /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -412,7 +1056,7 @@ pub mod create_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -433,18 +1077,18 @@ pub mod create_server_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -452,17 +1096,17 @@ pub mod create_server_input {
             self.identity_provider_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn post_authentication_login_banner(
@@ -472,7 +1116,7 @@ pub mod create_server_input {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn set_post_authentication_login_banner(
@@ -482,7 +1126,7 @@ pub mod create_server_input {
             self.post_authentication_login_banner = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
@@ -491,7 +1135,7 @@ pub mod create_server_input {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
@@ -509,11 +1153,15 @@ pub mod create_server_input {
         /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
         /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
         /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
         /// </ul> <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+        /// </ul>
         /// </note>
         pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
@@ -526,11 +1174,15 @@ pub mod create_server_input {
         /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
         /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
         /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
         /// </ul> <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+        /// <ul>
+        /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+        /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+        /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+        /// </ul>
         /// </note>
         pub fn set_protocols(
             mut self,
@@ -541,9 +1193,10 @@ pub mod create_server_input {
         }
         /// <p>The protocol settings that are configured for your server.</p>
         /// <ul>
-        /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-        /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-        /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
         /// </ul>
         pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
             self.protocol_details = Some(input);
@@ -551,9 +1204,10 @@ pub mod create_server_input {
         }
         /// <p>The protocol settings that are configured for your server.</p>
         /// <ul>
-        /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-        /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-        /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
         /// </ul>
         pub fn set_protocol_details(
             mut self,
@@ -594,12 +1248,12 @@ pub mod create_server_input {
             self.tags = input;
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -776,12 +1430,12 @@ pub mod create_user_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -793,7 +1447,7 @@ pub mod create_user_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -808,7 +1462,7 @@ pub mod create_user_input {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -821,9 +1475,9 @@ pub mod create_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
@@ -831,9 +1485,9 @@ pub mod create_user_input {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
@@ -854,12 +1508,12 @@ pub mod create_user_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -1077,14 +1731,14 @@ pub mod create_workflow_input {
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
         /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul> <note>
         /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
-        /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+        /// <p> For file location, you specify either the S3 bucket and key, or the EFS file system ID and path. </p>
         pub fn steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input);
@@ -1094,14 +1748,14 @@ pub mod create_workflow_input {
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
         /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-        /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-        /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-        /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+        /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+        /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+        /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+        /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
         /// </ul> <note>
         /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
-        /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+        /// <p> For file location, you specify either the S3 bucket and key, or the EFS file system ID and path. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
@@ -1295,18 +1949,18 @@ pub mod delete_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1430,6 +2084,581 @@ impl DeleteAccessInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessInput`](crate::input::DeleteAccessInput).
     pub fn builder() -> crate::input::delete_access_input::Builder {
         crate::input::delete_access_input::Builder::default()
+    }
+}
+
+/// See [`DeleteAgreementInput`](crate::input::DeleteAgreementInput).
+pub mod delete_agreement_input {
+
+    /// A builder for [`DeleteAgreementInput`](crate::input::DeleteAgreementInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>The server ID associated with the agreement that you are deleting.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAgreementInput`](crate::input::DeleteAgreementInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteAgreementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteAgreementInput {
+                agreement_id: self.agreement_id,
+                server_id: self.server_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteAgreementInputOperationOutputAlias = crate::operation::DeleteAgreement;
+#[doc(hidden)]
+pub type DeleteAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteAgreementInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteAgreement`](crate::operation::DeleteAgreement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteAgreement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteAgreementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteAgreementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DeleteAgreement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_agreement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAgreement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAgreement",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteAgreementInput`](crate::input::DeleteAgreementInput).
+    pub fn builder() -> crate::input::delete_agreement_input::Builder {
+        crate::input::delete_agreement_input::Builder::default()
+    }
+}
+
+/// See [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+pub mod delete_certificate_input {
+
+    /// A builder for [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the certificate object that you are deleting.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the certificate object that you are deleting.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteCertificateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteCertificateInput {
+                certificate_id: self.certificate_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteCertificateInputOperationOutputAlias = crate::operation::DeleteCertificate;
+#[doc(hidden)]
+pub type DeleteCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteCertificate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteCertificateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteCertificateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DeleteCertificate",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteCertificate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteCertificate",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
+    pub fn builder() -> crate::input::delete_certificate_input::Builder {
+        crate::input::delete_certificate_input::Builder::default()
+    }
+}
+
+/// See [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
+pub mod delete_connector_input {
+
+    /// A builder for [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the connector.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteConnectorInput {
+                connector_id: self.connector_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteConnectorInputOperationOutputAlias = crate::operation::DeleteConnector;
+#[doc(hidden)]
+pub type DeleteConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteConnector`](crate::operation::DeleteConnector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DeleteConnector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_connector(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteConnector",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
+    pub fn builder() -> crate::input::delete_connector_input::Builder {
+        crate::input::delete_connector_input::Builder::default()
+    }
+}
+
+/// See [`DeleteProfileInput`](crate::input::DeleteProfileInput).
+pub mod delete_profile_input {
+
+    /// A builder for [`DeleteProfileInput`](crate::input::DeleteProfileInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the profile that you are deleting.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the profile that you are deleting.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::input::DeleteProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DeleteProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DeleteProfileInput {
+                profile_id: self.profile_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteProfileInputOperationOutputAlias = crate::operation::DeleteProfile;
+#[doc(hidden)]
+pub type DeleteProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteProfileInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteProfile`](crate::operation::DeleteProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteProfile,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DeleteProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DeleteProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DeleteProfile",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_delete_profile(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteProfile",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteProfileInput`](crate::input::DeleteProfileInput).
+    pub fn builder() -> crate::input::delete_profile_input::Builder {
+        crate::input::delete_profile_input::Builder::default()
     }
 }
 
@@ -2051,18 +3280,18 @@ pub mod describe_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -2186,6 +3415,441 @@ impl DescribeAccessInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessInput`](crate::input::DescribeAccessInput).
     pub fn builder() -> crate::input::describe_access_input::Builder {
         crate::input::describe_access_input::Builder::default()
+    }
+}
+
+/// See [`DescribeAgreementInput`](crate::input::DescribeAgreementInput).
+pub mod describe_agreement_input {
+
+    /// A builder for [`DescribeAgreementInput`](crate::input::DescribeAgreementInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// <p>The server ID that's associated with the agreement.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>The server ID that's associated with the agreement.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAgreementInput`](crate::input::DescribeAgreementInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeAgreementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeAgreementInput {
+                agreement_id: self.agreement_id,
+                server_id: self.server_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeAgreementInputOperationOutputAlias = crate::operation::DescribeAgreement;
+#[doc(hidden)]
+pub type DescribeAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeAgreementInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeAgreement`](crate::operation::DescribeAgreement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeAgreement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeAgreementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeAgreementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DescribeAgreement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_agreement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeAgreement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeAgreement",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeAgreementInput`](crate::input::DescribeAgreementInput).
+    pub fn builder() -> crate::input::describe_agreement_input::Builder {
+        crate::input::describe_agreement_input::Builder::default()
+    }
+}
+
+/// See [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+pub mod describe_certificate_input {
+
+    /// A builder for [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeCertificateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeCertificateInput {
+                certificate_id: self.certificate_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeCertificateInputOperationOutputAlias = crate::operation::DescribeCertificate;
+#[doc(hidden)]
+pub type DescribeCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeCertificate`](crate::operation::DescribeCertificate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeCertificate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeCertificateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeCertificateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DescribeCertificate",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeCertificate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeCertificate",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
+    pub fn builder() -> crate::input::describe_certificate_input::Builder {
+        crate::input::describe_certificate_input::Builder::default()
+    }
+}
+
+/// See [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+pub mod describe_connector_input {
+
+    /// A builder for [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the connector.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeConnectorInput {
+                connector_id: self.connector_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeConnectorInputOperationOutputAlias = crate::operation::DescribeConnector;
+#[doc(hidden)]
+pub type DescribeConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeConnector`](crate::operation::DescribeConnector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DescribeConnector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_connector(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeConnector",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
+    pub fn builder() -> crate::input::describe_connector_input::Builder {
+        crate::input::describe_connector_input::Builder::default()
     }
 }
 
@@ -2338,6 +4002,146 @@ impl DescribeExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::input::DescribeExecutionInput).
     pub fn builder() -> crate::input::describe_execution_input::Builder {
         crate::input::describe_execution_input::Builder::default()
+    }
+}
+
+/// See [`DescribeProfileInput`](crate::input::DescribeProfileInput).
+pub mod describe_profile_input {
+
+    /// A builder for [`DescribeProfileInput`](crate::input::DescribeProfileInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the profile that you want described.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the profile that you want described.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeProfileInput`](crate::input::DescribeProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::DescribeProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::DescribeProfileInput {
+                profile_id: self.profile_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeProfileInputOperationOutputAlias = crate::operation::DescribeProfile;
+#[doc(hidden)]
+pub type DescribeProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeProfileInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeProfile`](crate::operation::DescribeProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeProfile,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::DescribeProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::DescribeProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.DescribeProfile",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_describe_profile(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeProfile",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeProfileInput`](crate::input::DescribeProfileInput).
+    pub fn builder() -> crate::input::describe_profile_input::Builder {
+        crate::input::describe_profile_input::Builder::default()
     }
 }
 
@@ -2646,12 +4450,12 @@ pub mod describe_user_input {
             self.server_id = input;
             self
         }
-        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2915,6 +4719,251 @@ impl DescribeWorkflowInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput).
     pub fn builder() -> crate::input::describe_workflow_input::Builder {
         crate::input::describe_workflow_input::Builder::default()
+    }
+}
+
+/// See [`ImportCertificateInput`](crate::input::ImportCertificateInput).
+pub mod import_certificate_input {
+
+    /// A builder for [`ImportCertificateInput`](crate::input::ImportCertificateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) usage: std::option::Option<crate::model::CertificateUsageType>,
+        pub(crate) certificate: std::option::Option<std::string::String>,
+        pub(crate) certificate_chain: std::option::Option<std::string::String>,
+        pub(crate) private_key: std::option::Option<std::string::String>,
+        pub(crate) active_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn usage(mut self, input: crate::model::CertificateUsageType) -> Self {
+            self.usage = Some(input);
+            self
+        }
+        /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+        pub fn set_usage(
+            mut self,
+            input: std::option::Option<crate::model::CertificateUsageType>,
+        ) -> Self {
+            self.usage = input;
+            self
+        }
+        /// <p>The file that contains the certificate to import.</p>
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate = Some(input.into());
+            self
+        }
+        /// <p>The file that contains the certificate to import.</p>
+        pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate = input;
+            self
+        }
+        /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_chain = Some(input.into());
+            self
+        }
+        /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
+        pub fn set_certificate_chain(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_chain = input;
+            self
+        }
+        /// <p>The file that contains the private key for the certificate that's being imported.</p>
+        pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.private_key = Some(input.into());
+            self
+        }
+        /// <p>The file that contains the private key for the certificate that's being imported.</p>
+        pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_key = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.active_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn set_active_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.active_date = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inactive_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn set_inactive_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inactive_date = input;
+            self
+        }
+        /// <p>A short description that helps identify the certificate. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A short description that helps identify the certificate. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::input::ImportCertificateInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ImportCertificateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ImportCertificateInput {
+                usage: self.usage,
+                certificate: self.certificate,
+                certificate_chain: self.certificate_chain,
+                private_key: self.private_key,
+                active_date: self.active_date,
+                inactive_date: self.inactive_date,
+                description: self.description,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportCertificateInputOperationOutputAlias = crate::operation::ImportCertificate;
+#[doc(hidden)]
+pub type ImportCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ImportCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ImportCertificate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ImportCertificateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ImportCertificateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ImportCertificate",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ImportCertificate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ImportCertificate",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::input::ImportCertificateInput).
+    pub fn builder() -> crate::input::import_certificate_input::Builder {
+        crate::input::import_certificate_input::Builder::default()
     }
 }
 
@@ -3251,6 +5300,474 @@ impl ListAccessesInput {
     }
 }
 
+/// See [`ListAgreementsInput`](crate::input::ListAgreementsInput).
+pub mod list_agreements_input {
+
+    /// A builder for [`ListAgreementsInput`](crate::input::ListAgreementsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of agreements to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of agreements to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The identifier of the server for which you want a list of agreements.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the server for which you want a list of agreements.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAgreementsInput`](crate::input::ListAgreementsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListAgreementsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListAgreementsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                server_id: self.server_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAgreementsInputOperationOutputAlias = crate::operation::ListAgreements;
+#[doc(hidden)]
+pub type ListAgreementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListAgreementsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAgreements`](crate::operation::ListAgreements)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListAgreements,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListAgreementsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListAgreementsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ListAgreements",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_agreements(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAgreements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAgreements",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListAgreementsInput`](crate::input::ListAgreementsInput).
+    pub fn builder() -> crate::input::list_agreements_input::Builder {
+        crate::input::list_agreements_input::Builder::default()
+    }
+}
+
+/// See [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+pub mod list_certificates_input {
+
+    /// A builder for [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of certificates to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of certificates to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListCertificatesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListCertificatesInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListCertificatesInputOperationOutputAlias = crate::operation::ListCertificates;
+#[doc(hidden)]
+pub type ListCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListCertificatesInput {
+    /// Consumes the builder and constructs an Operation<[`ListCertificates`](crate::operation::ListCertificates)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListCertificates,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListCertificatesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListCertificatesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ListCertificates",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCertificates::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCertificates",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::input::ListCertificatesInput).
+    pub fn builder() -> crate::input::list_certificates_input::Builder {
+        crate::input::list_certificates_input::Builder::default()
+    }
+}
+
+/// See [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+pub mod list_connectors_input {
+
+    /// A builder for [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The maximum number of connectors to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of connectors to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional connectors.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional connectors.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListConnectorsInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListConnectorsInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListConnectorsInputOperationOutputAlias = crate::operation::ListConnectors;
+#[doc(hidden)]
+pub type ListConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListConnectorsInput {
+    /// Consumes the builder and constructs an Operation<[`ListConnectors`](crate::operation::ListConnectors)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListConnectors,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListConnectorsInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListConnectorsInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ListConnectors",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_connectors(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListConnectors::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListConnectors",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput).
+    pub fn builder() -> crate::input::list_connectors_input::Builder {
+        crate::input::list_connectors_input::Builder::default()
+    }
+}
+
 /// See [`ListExecutionsInput`](crate::input::ListExecutionsInput).
 pub mod list_executions_input {
 
@@ -3262,20 +5779,20 @@ pub mod list_executions_input {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the aximum number of executions to return.</p>
+        /// <p>Specifies the maximum number of executions to return.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the aximum number of executions to return.</p>
+        /// <p>Specifies the maximum number of executions to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
         /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
         /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
-        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received: </p>
         /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
         /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3283,9 +5800,9 @@ pub mod list_executions_input {
             self
         }
         /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
         /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
-        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received: </p>
         /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
         /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3422,6 +5939,173 @@ impl ListExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput).
     pub fn builder() -> crate::input::list_executions_input::Builder {
         crate::input::list_executions_input::Builder::default()
+    }
+}
+
+/// See [`ListProfilesInput`](crate::input::ListProfilesInput).
+pub mod list_profiles_input {
+
+    /// A builder for [`ListProfilesInput`](crate::input::ListProfilesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) profile_type: std::option::Option<crate::model::ProfileType>,
+    }
+    impl Builder {
+        /// <p>The maximum number of profiles to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of profiles to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn profile_type(mut self, input: crate::model::ProfileType) -> Self {
+            self.profile_type = Some(input);
+            self
+        }
+        /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+        pub fn set_profile_type(
+            mut self,
+            input: std::option::Option<crate::model::ProfileType>,
+        ) -> Self {
+            self.profile_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListProfilesInput`](crate::input::ListProfilesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ListProfilesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ListProfilesInput {
+                max_results: self.max_results,
+                next_token: self.next_token,
+                profile_type: self.profile_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListProfilesInputOperationOutputAlias = crate::operation::ListProfiles;
+#[doc(hidden)]
+pub type ListProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListProfilesInput {
+    /// Consumes the builder and constructs an Operation<[`ListProfiles`](crate::operation::ListProfiles)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListProfiles,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListProfilesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListProfilesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.ListProfiles",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_profiles(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListProfiles::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListProfiles",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListProfilesInput`](crate::input::ListProfilesInput).
+    pub fn builder() -> crate::input::list_profiles_input::Builder {
+        crate::input::list_profiles_input::Builder::default()
     }
 }
 
@@ -4391,6 +7075,167 @@ impl SendWorkflowStepStateInput {
     }
 }
 
+/// See [`StartFileTransferInput`](crate::input::StartFileTransferInput).
+pub mod start_file_transfer_input {
+
+    /// A builder for [`StartFileTransferInput`](crate::input::StartFileTransferInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+        pub(crate) send_file_paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the connector. </p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector. </p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// Appends an item to `send_file_paths`.
+        ///
+        /// To override the contents of this collection use [`set_send_file_paths`](Self::set_send_file_paths).
+        ///
+        /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+        pub fn send_file_paths(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.send_file_paths.unwrap_or_default();
+            v.push(input.into());
+            self.send_file_paths = Some(v);
+            self
+        }
+        /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+        pub fn set_send_file_paths(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.send_file_paths = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::input::StartFileTransferInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::StartFileTransferInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::StartFileTransferInput {
+                connector_id: self.connector_id,
+                send_file_paths: self.send_file_paths,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartFileTransferInputOperationOutputAlias = crate::operation::StartFileTransfer;
+#[doc(hidden)]
+pub type StartFileTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StartFileTransferInput {
+    /// Consumes the builder and constructs an Operation<[`StartFileTransfer`](crate::operation::StartFileTransfer)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartFileTransfer,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::StartFileTransferInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::StartFileTransferInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.StartFileTransfer",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_start_file_transfer(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartFileTransfer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartFileTransfer",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`StartFileTransferInput`](crate::input::StartFileTransferInput).
+    pub fn builder() -> crate::input::start_file_transfer_input::Builder {
+        crate::input::start_file_transfer_input::Builder::default()
+    }
+}
+
 /// See [`StartServerInput`](crate::input::StartServerInput).
 pub mod start_server_input {
 
@@ -5232,12 +8077,12 @@ pub mod update_access_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -5249,7 +8094,7 @@ pub mod update_access_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -5264,7 +8109,7 @@ pub mod update_access_input {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -5277,9 +8122,9 @@ pub mod update_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
         /// </note>
@@ -5287,9 +8132,9 @@ pub mod update_access_input {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
         /// </note>
@@ -5310,12 +8155,12 @@ pub mod update_access_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -5330,18 +8175,18 @@ pub mod update_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
         /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -5474,6 +8319,779 @@ impl UpdateAccessInput {
     }
 }
 
+/// See [`UpdateAgreementInput`](crate::input::UpdateAgreementInput).
+pub mod update_agreement_input {
+
+    /// A builder for [`UpdateAgreementInput`](crate::input::UpdateAgreementInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agreement_id: std::option::Option<std::string::String>,
+        pub(crate) server_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::AgreementStatusType>,
+        pub(crate) local_profile_id: std::option::Option<std::string::String>,
+        pub(crate) partner_profile_id: std::option::Option<std::string::String>,
+        pub(crate) base_directory: std::option::Option<std::string::String>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn agreement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agreement_id = Some(input.into());
+            self
+        }
+        /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+        pub fn set_agreement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agreement_id = input;
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_id = Some(input.into());
+            self
+        }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+        pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_id = input;
+            self
+        }
+        /// <p>To replace the existing description, provide a short description for the agreement. </p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>To replace the existing description, provide a short description for the agreement. </p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
+        pub fn status(mut self, input: crate::model::AgreementStatusType) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::AgreementStatusType>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>To change the local profile identifier, provide a new value here.</p>
+        pub fn local_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.local_profile_id = Some(input.into());
+            self
+        }
+        /// <p>To change the local profile identifier, provide a new value here.</p>
+        pub fn set_local_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.local_profile_id = input;
+            self
+        }
+        /// <p>To change the partner profile identifier, provide a new value here.</p>
+        pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partner_profile_id = Some(input.into());
+            self
+        }
+        /// <p>To change the partner profile identifier, provide a new value here.</p>
+        pub fn set_partner_profile_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partner_profile_id = input;
+            self
+        }
+        /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_directory = Some(input.into());
+            self
+        }
+        /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+        pub fn set_base_directory(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.base_directory = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::input::UpdateAgreementInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateAgreementInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateAgreementInput {
+                agreement_id: self.agreement_id,
+                server_id: self.server_id,
+                description: self.description,
+                status: self.status,
+                local_profile_id: self.local_profile_id,
+                partner_profile_id: self.partner_profile_id,
+                base_directory: self.base_directory,
+                access_role: self.access_role,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateAgreementInputOperationOutputAlias = crate::operation::UpdateAgreement;
+#[doc(hidden)]
+pub type UpdateAgreementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateAgreementInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateAgreement`](crate::operation::UpdateAgreement)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateAgreement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateAgreementInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateAgreementInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.UpdateAgreement",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_agreement(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAgreement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAgreement",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateAgreementInput`](crate::input::UpdateAgreementInput).
+    pub fn builder() -> crate::input::update_agreement_input::Builder {
+        crate::input::update_agreement_input::Builder::default()
+    }
+}
+
+/// See [`UpdateCertificateInput`](crate::input::UpdateCertificateInput).
+pub mod update_certificate_input {
+
+    /// A builder for [`UpdateCertificateInput`](crate::input::UpdateCertificateInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) certificate_id: std::option::Option<std::string::String>,
+        pub(crate) active_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the certificate object that you are updating.</p>
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the certificate object that you are updating.</p>
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.active_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes active.</p>
+        pub fn set_active_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.active_date = input;
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inactive_date = Some(input);
+            self
+        }
+        /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+        pub fn set_inactive_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.inactive_date = input;
+            self
+        }
+        /// <p>A short description to help identify the certificate.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>A short description to help identify the certificate.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::input::UpdateCertificateInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateCertificateInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateCertificateInput {
+                certificate_id: self.certificate_id,
+                active_date: self.active_date,
+                inactive_date: self.inactive_date,
+                description: self.description,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateCertificateInputOperationOutputAlias = crate::operation::UpdateCertificate;
+#[doc(hidden)]
+pub type UpdateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateCertificateInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateCertificate`](crate::operation::UpdateCertificate)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateCertificate,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateCertificateInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateCertificateInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.UpdateCertificate",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_certificate(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateCertificate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateCertificate",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateCertificateInput`](crate::input::UpdateCertificateInput).
+    pub fn builder() -> crate::input::update_certificate_input::Builder {
+        crate::input::update_certificate_input::Builder::default()
+    }
+}
+
+/// See [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
+pub mod update_connector_input {
+
+    /// A builder for [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) connector_id: std::option::Option<std::string::String>,
+        pub(crate) url: std::option::Option<std::string::String>,
+        pub(crate) as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+        pub(crate) access_role: std::option::Option<std::string::String>,
+        pub(crate) logging_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The unique identifier for the connector.</p>
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connector_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier for the connector.</p>
+        pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_id = input;
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
+            self
+        }
+        /// <p>The URL of the partner's AS2 endpoint.</p>
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn as2_config(mut self, input: crate::model::As2ConnectorConfig) -> Self {
+            self.as2_config = Some(input);
+            self
+        }
+        /// <p>A structure that contains the parameters for a connector object.</p>
+        pub fn set_as2_config(
+            mut self,
+            input: std::option::Option<crate::model::As2ConnectorConfig>,
+        ) -> Self {
+            self.as2_config = input;
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_role = Some(input.into());
+            self
+        }
+        /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+        pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_role = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.logging_role = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+        pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.logging_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateConnectorInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateConnectorInput {
+                connector_id: self.connector_id,
+                url: self.url,
+                as2_config: self.as2_config,
+                access_role: self.access_role,
+                logging_role: self.logging_role,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateConnectorInputOperationOutputAlias = crate::operation::UpdateConnector;
+#[doc(hidden)]
+pub type UpdateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateConnectorInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateConnector`](crate::operation::UpdateConnector)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateConnector,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateConnectorInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateConnectorInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.UpdateConnector",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_connector(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateConnector::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateConnector",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
+    pub fn builder() -> crate::input::update_connector_input::Builder {
+        crate::input::update_connector_input::Builder::default()
+    }
+}
+
+/// See [`UpdateProfileInput`](crate::input::UpdateProfileInput).
+pub mod update_profile_input {
+
+    /// A builder for [`UpdateProfileInput`](crate::input::UpdateProfileInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) profile_id: std::option::Option<std::string::String>,
+        pub(crate) certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the profile object that you are updating.</p>
+        pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.profile_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the profile object that you are updating.</p>
+        pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.profile_id = input;
+            self
+        }
+        /// Appends an item to `certificate_ids`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
+        ///
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn certificate_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.certificate_ids.unwrap_or_default();
+            v.push(input.into());
+            self.certificate_ids = Some(v);
+            self
+        }
+        /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+        pub fn set_certificate_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.certificate_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::input::UpdateProfileInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::UpdateProfileInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateProfileInput {
+                profile_id: self.profile_id,
+                certificate_ids: self.certificate_ids,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateProfileInputOperationOutputAlias = crate::operation::UpdateProfile;
+#[doc(hidden)]
+pub type UpdateProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateProfileInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateProfile`](crate::operation::UpdateProfile)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateProfile,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::UpdateProfileInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::UpdateProfileInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "TransferService.UpdateProfile",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_update_profile(&self)?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateProfile",
+            "transfer",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateProfileInput`](crate::input::UpdateProfileInput).
+    pub fn builder() -> crate::input::update_profile_input::Builder {
+        crate::input::update_profile_input::Builder::default()
+    }
+}
+
 /// See [`UpdateServerInput`](crate::input::UpdateServerInput).
 pub mod update_server_input {
 
@@ -5534,9 +9152,10 @@ pub mod update_server_input {
         }
         /// <p>The protocol settings that are configured for your server.</p>
         /// <ul>
-        /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-        /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-        /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
         /// </ul>
         pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
             self.protocol_details = Some(input);
@@ -5544,9 +9163,10 @@ pub mod update_server_input {
         }
         /// <p>The protocol settings that are configured for your server.</p>
         /// <ul>
-        /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-        /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-        /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+        /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+        /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+        /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+        /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
         /// </ul>
         pub fn set_protocol_details(
             mut self,
@@ -5555,12 +9175,12 @@ pub mod update_server_input {
             self.protocol_details = input;
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             self.endpoint_details = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -5592,7 +9212,7 @@ pub mod update_server_input {
         /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-        /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+        /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
         /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -5601,7 +9221,7 @@ pub mod update_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
@@ -5609,7 +9229,7 @@ pub mod update_server_input {
         /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
         /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-        /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+        /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
         /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
         /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
         /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -5618,7 +9238,7 @@ pub mod update_server_input {
         /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -5639,17 +9259,17 @@ pub mod update_server_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn post_authentication_login_banner(
@@ -5659,7 +9279,7 @@ pub mod update_server_input {
             self.post_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
         /// <p>The SFTP protocol does not support post-authentication display banners.</p>
         /// </note>
         pub fn set_post_authentication_login_banner(
@@ -5669,7 +9289,7 @@ pub mod update_server_input {
             self.post_authentication_login_banner = input;
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn pre_authentication_login_banner(
             mut self,
@@ -5678,7 +9298,7 @@ pub mod update_server_input {
             self.pre_authentication_login_banner = Some(input.into());
             self
         }
-        /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+        /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
         /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
         pub fn set_pre_authentication_login_banner(
             mut self,
@@ -5749,14 +9369,14 @@ pub mod update_server_input {
             self.server_id = input;
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
             self.workflow_details = Some(input);
             self
         }
-        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
         /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
         /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
         pub fn set_workflow_details(
@@ -5931,12 +9551,12 @@ pub mod update_user_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -5948,7 +9568,7 @@ pub mod update_user_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -5963,7 +9583,7 @@ pub mod update_user_input {
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
         /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
         /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -5976,9 +9596,9 @@ pub mod update_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
@@ -5986,9 +9606,9 @@ pub mod update_user_input {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+        /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+        /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
@@ -6009,12 +9629,12 @@ pub mod update_user_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -6173,9 +9793,9 @@ pub struct UpdateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -6183,16 +9803,16 @@ pub struct UpdateUserInput {
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -6205,11 +9825,11 @@ impl UpdateUserInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -6220,9 +9840,9 @@ impl UpdateUserInput {
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
@@ -6233,7 +9853,7 @@ impl UpdateUserInput {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -6282,12 +9902,13 @@ pub struct UpdateServerInput {
     pub certificate: std::option::Option<std::string::String>,
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-    /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-    /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
     /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
     /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
@@ -6298,7 +9919,7 @@ pub struct UpdateServerInput {
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-    /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+    /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
     /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -6307,17 +9928,17 @@ pub struct UpdateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
     /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
@@ -6336,7 +9957,7 @@ pub struct UpdateServerInput {
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
@@ -6361,14 +9982,15 @@ impl UpdateServerInput {
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-    /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-    /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
     pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
@@ -6383,7 +10005,7 @@ impl UpdateServerInput {
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-    /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+    /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
     /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -6392,7 +10014,7 @@ impl UpdateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
@@ -6402,17 +10024,17 @@ impl UpdateServerInput {
     ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
@@ -6439,7 +10061,7 @@ impl UpdateServerInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the following example.</p>
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
@@ -6475,13 +10097,202 @@ impl std::fmt::Debug for UpdateServerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateProfileInput {
+    /// <p>The identifier of the profile object that you are updating.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl UpdateProfileInput {
+    /// <p>The identifier of the profile object that you are updating.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_ids.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateProfileInput");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.field("certificate_ids", &self.certificate_ids);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub url: std::option::Option<std::string::String>,
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub access_role: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub logging_role: std::option::Option<std::string::String>,
+}
+impl UpdateConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub fn as2_config(&self) -> std::option::Option<&crate::model::As2ConnectorConfig> {
+        self.as2_config.as_ref()
+    }
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateConnectorInput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("url", &self.url);
+        formatter.field("as2_config", &self.as2_config);
+        formatter.field("access_role", &self.access_role);
+        formatter.field("logging_role", &self.logging_role);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCertificateInput {
+    /// <p>The identifier of the certificate object that you are updating.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub active_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A short description to help identify the certificate.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl UpdateCertificateInput {
+    /// <p>The identifier of the certificate object that you are updating.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.active_date.as_ref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.inactive_date.as_ref()
+    }
+    /// <p>A short description to help identify the certificate.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateCertificateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCertificateInput");
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.field("active_date", &self.active_date);
+        formatter.field("inactive_date", &self.inactive_date);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>To replace the existing description, provide a short description for the agreement. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
+    pub status: std::option::Option<crate::model::AgreementStatusType>,
+    /// <p>To change the local profile identifier, provide a new value here.</p>
+    pub local_profile_id: std::option::Option<std::string::String>,
+    /// <p>To change the partner profile identifier, provide a new value here.</p>
+    pub partner_profile_id: std::option::Option<std::string::String>,
+    /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    pub base_directory: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub access_role: std::option::Option<std::string::String>,
+}
+impl UpdateAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>To replace the existing description, provide a short description for the agreement. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>You can update the status for the agreement, either activating an inactive agreement or the reverse.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgreementStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>To change the local profile identifier, provide a new value here.</p>
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
+        self.local_profile_id.as_deref()
+    }
+    /// <p>To change the partner profile identifier, provide a new value here.</p>
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
+        self.partner_profile_id.as_deref()
+    }
+    /// <p>To change the landing directory (folder) for files that are transferred, provide the bucket folder that you want to use; for example, <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    pub fn base_directory(&self) -> std::option::Option<&str> {
+        self.base_directory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateAgreementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAgreementInput");
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("description", &self.description);
+        formatter.field("status", &self.status);
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("base_directory", &self.base_directory);
+        formatter.field("access_role", &self.access_role);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -6489,23 +10300,23 @@ pub struct UpdateAccessInput {
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl UpdateAccessInput {
@@ -6514,11 +10325,11 @@ impl UpdateAccessInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -6529,9 +10340,9 @@ impl UpdateAccessInput {
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
     /// </note>
@@ -6542,7 +10353,7 @@ impl UpdateAccessInput {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -6550,10 +10361,10 @@ impl UpdateAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -6728,6 +10539,34 @@ impl std::fmt::Debug for StartServerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartServerInput");
         formatter.field("server_id", &self.server_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartFileTransferInput {
+    /// <p>The unique identifier for the connector. </p>
+    pub connector_id: std::option::Option<std::string::String>,
+    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    pub send_file_paths: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl StartFileTransferInput {
+    /// <p>The unique identifier for the connector. </p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+    /// <p>An array of strings. Each string represents the absolute path for one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>. </p>
+    pub fn send_file_paths(&self) -> std::option::Option<&[std::string::String]> {
+        self.send_file_paths.as_deref()
+    }
+}
+impl std::fmt::Debug for StartFileTransferInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartFileTransferInput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("send_file_paths", &self.send_file_paths);
         formatter.finish()
     }
 }
@@ -6931,13 +10770,48 @@ impl std::fmt::Debug for ListSecurityPoliciesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListProfilesInput {
+    /// <p>The maximum number of profiles to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub profile_type: std::option::Option<crate::model::ProfileType>,
+}
+impl ListProfilesInput {
+    /// <p>The maximum number of profiles to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
+        self.profile_type.as_ref()
+    }
+}
+impl std::fmt::Debug for ListProfilesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListProfilesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("profile_type", &self.profile_type);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsInput {
-    /// <p>Specifies the aximum number of executions to return.</p>
+    /// <p>Specifies the maximum number of executions to return.</p>
     pub max_results: std::option::Option<i32>,
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
     /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
-    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received: </p>
     /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
     /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6945,14 +10819,14 @@ pub struct ListExecutionsInput {
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl ListExecutionsInput {
-    /// <p>Specifies the aximum number of executions to return.</p>
+    /// <p>Specifies the maximum number of executions to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
-    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
     /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
-    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received: </p>
     /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
     /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -6969,6 +10843,97 @@ impl std::fmt::Debug for ListExecutionsInput {
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
         formatter.field("workflow_id", &self.workflow_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConnectorsInput {
+    /// <p>The maximum number of connectors to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional connectors.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConnectorsInput {
+    /// <p>The maximum number of connectors to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional connectors.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConnectorsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConnectorsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCertificatesInput {
+    /// <p>The maximum number of certificates to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListCertificatesInput {
+    /// <p>The maximum number of certificates to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When you can get additional results from the <code>ListCertificates</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional certificates.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListCertificatesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCertificatesInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAgreementsInput {
+    /// <p>The maximum number of agreements to return.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The identifier of the server for which you want a list of agreements.</p>
+    pub server_id: std::option::Option<std::string::String>,
+}
+impl ListAgreementsInput {
+    /// <p>The maximum number of agreements to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional agreements.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The identifier of the server for which you want a list of agreements.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
+impl std::fmt::Debug for ListAgreementsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAgreementsInput");
+        formatter.field("max_results", &self.max_results);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("server_id", &self.server_id);
         formatter.finish()
     }
 }
@@ -7048,6 +11013,76 @@ impl std::fmt::Debug for ImportSshPublicKeyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportCertificateInput {
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub usage: std::option::Option<crate::model::CertificateUsageType>,
+    /// <p>The file that contains the certificate to import.</p>
+    pub certificate: std::option::Option<std::string::String>,
+    /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
+    pub certificate_chain: std::option::Option<std::string::String>,
+    /// <p>The file that contains the private key for the certificate that's being imported.</p>
+    pub private_key: std::option::Option<std::string::String>,
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub active_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub inactive_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A short description that helps identify the certificate. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl ImportCertificateInput {
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub fn usage(&self) -> std::option::Option<&crate::model::CertificateUsageType> {
+        self.usage.as_ref()
+    }
+    /// <p>The file that contains the certificate to import.</p>
+    pub fn certificate(&self) -> std::option::Option<&str> {
+        self.certificate.as_deref()
+    }
+    /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+        self.certificate_chain.as_deref()
+    }
+    /// <p>The file that contains the private key for the certificate that's being imported.</p>
+    pub fn private_key(&self) -> std::option::Option<&str> {
+        self.private_key.as_deref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.active_date.as_ref()
+    }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.inactive_date.as_ref()
+    }
+    /// <p>A short description that helps identify the certificate. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for ImportCertificateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportCertificateInput");
+        formatter.field("usage", &self.usage);
+        formatter.field("certificate", &"*** Sensitive Data Redacted ***");
+        formatter.field("certificate_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("active_date", &self.active_date);
+        formatter.field("inactive_date", &self.inactive_date);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: std::option::Option<std::string::String>,
@@ -7072,7 +11107,7 @@ impl std::fmt::Debug for DescribeWorkflowInput {
 pub struct DescribeUserInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
@@ -7080,7 +11115,7 @@ impl DescribeUserInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -7139,6 +11174,27 @@ impl std::fmt::Debug for DescribeSecurityPolicyInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeProfileInput {
+    /// <p>The identifier of the profile that you want described.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+}
+impl DescribeProfileInput {
+    /// <p>The identifier of the profile that you want described.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeProfileInput");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionInput {
     /// <p>A unique identifier for the execution of a workflow.</p>
     pub execution_id: std::option::Option<std::string::String>,
@@ -7167,13 +11223,83 @@ impl std::fmt::Debug for DescribeExecutionInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+}
+impl DescribeConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeConnectorInput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeCertificateInput {
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DescribeCertificateInput {
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeCertificateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeCertificateInput");
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+    /// <p>The server ID that's associated with the agreement.</p>
+    pub server_id: std::option::Option<std::string::String>,
+}
+impl DescribeAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+    /// <p>The server ID that's associated with the agreement.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeAgreementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAgreementInput");
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.field("server_id", &self.server_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessInput {
@@ -7181,10 +11307,10 @@ impl DescribeAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -7306,13 +11432,104 @@ impl std::fmt::Debug for DeleteServerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteProfileInput {
+    /// <p>The ID of the profile that you are deleting.</p>
+    pub profile_id: std::option::Option<std::string::String>,
+}
+impl DeleteProfileInput {
+    /// <p>The ID of the profile that you are deleting.</p>
+    pub fn profile_id(&self) -> std::option::Option<&str> {
+        self.profile_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteProfileInput");
+        formatter.field("profile_id", &self.profile_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub connector_id: std::option::Option<std::string::String>,
+}
+impl DeleteConnectorInput {
+    /// <p>The unique identifier for the connector.</p>
+    pub fn connector_id(&self) -> std::option::Option<&str> {
+        self.connector_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteConnectorInput");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCertificateInput {
+    /// <p>The ID of the certificate object that you are deleting.</p>
+    pub certificate_id: std::option::Option<std::string::String>,
+}
+impl DeleteCertificateInput {
+    /// <p>The ID of the certificate object that you are deleting.</p>
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
+        self.certificate_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteCertificateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCertificateInput");
+        formatter.field("certificate_id", &self.certificate_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub agreement_id: std::option::Option<std::string::String>,
+    /// <p>The server ID associated with the agreement that you are deleting.</p>
+    pub server_id: std::option::Option<std::string::String>,
+}
+impl DeleteAgreementInput {
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn agreement_id(&self) -> std::option::Option<&str> {
+        self.agreement_id.as_deref()
+    }
+    /// <p>The server ID associated with the agreement that you are deleting.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteAgreementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAgreementInput");
+        formatter.field("agreement_id", &self.agreement_id);
+        formatter.field("server_id", &self.server_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessInput {
@@ -7320,10 +11537,10 @@ impl DeleteAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -7346,14 +11563,14 @@ pub struct CreateWorkflowInput {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul> <note>
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
-    /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+    /// <p> For file location, you specify either the S3 bucket and key, or the EFS file system ID and path. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
     /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
@@ -7370,14 +11587,14 @@ impl CreateWorkflowInput {
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
     /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li> <p> <i>COPY</i>: copy the file to another location</p> </li>
-    /// <li> <p> <i>CUSTOM</i>: custom step with a lambda target</p> </li>
-    /// <li> <p> <i>DELETE</i>: delete the file</p> </li>
-    /// <li> <p> <i>TAG</i>: add a tag to the file</p> </li>
+    /// <li> <p> <i>COPY</i>: Copy the file to another location.</p> </li>
+    /// <li> <p> <i>CUSTOM</i>: Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <i>DELETE</i>: Delete the file.</p> </li>
+    /// <li> <p> <i>TAG</i>: Add a tag to the file.</p> </li>
     /// </ul> <note>
     /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
-    /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+    /// <p> For file location, you specify either the S3 bucket and key, or the EFS file system ID and path. </p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::WorkflowStep]> {
         self.steps.as_deref()
     }
@@ -7410,9 +11627,9 @@ pub struct CreateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -7420,16 +11637,16 @@ pub struct CreateUserInput {
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -7447,11 +11664,11 @@ impl CreateUserInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
@@ -7462,9 +11679,9 @@ impl CreateUserInput {
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
@@ -7475,7 +11692,7 @@ impl CreateUserInput {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -7518,10 +11735,10 @@ impl std::fmt::Debug for CreateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
     /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
@@ -7537,7 +11754,7 @@ pub struct CreateServerInput {
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
     pub domain: std::option::Option<crate::model::Domain>,
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
     /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
     /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
@@ -7548,7 +11765,7 @@ pub struct CreateServerInput {
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-    /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+    /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
     /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -7557,22 +11774,22 @@ pub struct CreateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub post_authentication_login_banner: std::option::Option<std::string::String>,
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub pre_authentication_login_banner: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
@@ -7580,32 +11797,37 @@ pub struct CreateServerInput {
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
     /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
     /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
     /// </ul> <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
     /// </note>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-    /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-    /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl CreateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
     /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
     /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
@@ -7625,7 +11847,7 @@ impl CreateServerInput {
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
@@ -7640,7 +11862,7 @@ impl CreateServerInput {
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
-    /// <p>Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger key using 3072 or 4096.</p>
+    /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
     /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
     /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
     /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
@@ -7649,7 +11871,7 @@ impl CreateServerInput {
     /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
@@ -7659,26 +11881,26 @@ impl CreateServerInput {
     ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
-    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn post_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.post_authentication_login_banner.as_deref()
     }
-    /// <p>Specify a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system.</p>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(&self) -> std::option::Option<&str> {
         self.pre_authentication_login_banner.as_deref()
@@ -7688,20 +11910,25 @@ impl CreateServerInput {
     /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
     /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
     /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
     /// </ul> <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
     /// </note>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li> <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
-    /// <li> <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and upload files without needing to make any changes to your SFTP client. Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so you can determine when the client is making a SETSTAT call.</p> </li>
-    /// <li> <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p> </li>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
     /// </ul>
     pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
         self.protocol_details.as_ref()
@@ -7714,7 +11941,7 @@ impl CreateServerInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     pub fn workflow_details(&self) -> std::option::Option<&crate::model::WorkflowDetails> {
         self.workflow_details.as_ref()
     }
@@ -7750,13 +11977,176 @@ impl std::fmt::Debug for CreateServerInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateProfileInput {
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    pub as2_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub profile_type: std::option::Option<crate::model::ProfileType>,
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub certificate_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateProfileInput {
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    pub fn as2_id(&self) -> std::option::Option<&str> {
+        self.as2_id.as_deref()
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn profile_type(&self) -> std::option::Option<&crate::model::ProfileType> {
+        self.profile_type.as_ref()
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn certificate_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.certificate_ids.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for AS2 profiles.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateProfileInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateProfileInput");
+        formatter.field("as2_id", &self.as2_id);
+        formatter.field("profile_type", &self.profile_type);
+        formatter.field("certificate_ids", &self.certificate_ids);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateConnectorInput {
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub url: std::option::Option<std::string::String>,
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub as2_config: std::option::Option<crate::model::As2ConnectorConfig>,
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub access_role: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub logging_role: std::option::Option<std::string::String>,
+    /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateConnectorInput {
+    /// <p>The URL of the partner's AS2 endpoint.</p>
+    pub fn url(&self) -> std::option::Option<&str> {
+        self.url.as_deref()
+    }
+    /// <p>A structure that contains the parameters for a connector object.</p>
+    pub fn as2_config(&self) -> std::option::Option<&crate::model::As2ConnectorConfig> {
+        self.as2_config.as_ref()
+    }
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub fn logging_role(&self) -> std::option::Option<&str> {
+        self.logging_role.as_deref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateConnectorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateConnectorInput");
+        formatter.field("url", &self.url);
+        formatter.field("as2_config", &self.as2_config);
+        formatter.field("access_role", &self.access_role);
+        formatter.field("logging_role", &self.logging_role);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAgreementInput {
+    /// <p>A name or short description to identify the agreement. </p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    pub server_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the AS2 local profile.</p>
+    pub local_profile_id: std::option::Option<std::string::String>,
+    /// <p>A unique identifier for the partner profile used in the agreement.</p>
+    pub partner_profile_id: std::option::Option<std::string::String>,
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    pub base_directory: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub access_role: std::option::Option<std::string::String>,
+    /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub status: std::option::Option<crate::model::AgreementStatusType>,
+    /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateAgreementInput {
+    /// <p>A name or short description to identify the agreement. </p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that the agreement uses.</p>
+    pub fn server_id(&self) -> std::option::Option<&str> {
+        self.server_id.as_deref()
+    }
+    /// <p>A unique identifier for the AS2 local profile.</p>
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
+        self.local_profile_id.as_deref()
+    }
+    /// <p>A unique identifier for the partner profile used in the agreement.</p>
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
+        self.partner_profile_id.as_deref()
+    }
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+    /// <p>A <code>BaseDirectory</code> example is <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+    pub fn base_directory(&self) -> std::option::Option<&str> {
+        self.base_directory.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3 buckets.</p>
+    pub fn access_role(&self) -> std::option::Option<&str> {
+        self.access_role.as_deref()
+    }
+    /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn status(&self) -> std::option::Option<&crate::model::AgreementStatusType> {
+        self.status.as_ref()
+    }
+    /// <p>Key-value pairs that can be used to group and search for agreements.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateAgreementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAgreementInput");
+        formatter.field("description", &self.description);
+        formatter.field("server_id", &self.server_id);
+        formatter.field("local_profile_id", &self.local_profile_id);
+        formatter.field("partner_profile_id", &self.partner_profile_id);
+        formatter.field("base_directory", &self.base_directory);
+        formatter.field("access_role", &self.access_role);
+        formatter.field("status", &self.status);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -7764,23 +12154,23 @@ pub struct CreateAccessInput {
     /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessInput {
@@ -7789,11 +12179,11 @@ impl CreateAccessInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
     /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
@@ -7804,11 +12194,11 @@ impl CreateAccessInput {
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
-    /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Security Token Service API Reference</i>.</p>
     /// </note>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
@@ -7817,7 +12207,7 @@ impl CreateAccessInput {
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -7825,10 +12215,10 @@ impl CreateAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
     /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }

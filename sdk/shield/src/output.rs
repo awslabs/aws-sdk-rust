@@ -988,11 +988,11 @@ impl DescribeProtectionGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectionOutput {
-    /// <p>The <code>Protection</code> object that is described.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub protection: std::option::Option<crate::model::Protection>,
 }
 impl DescribeProtectionOutput {
-    /// <p>The <code>Protection</code> object that is described.</p>
+    /// <p>The <code>Protection</code> that you requested. </p>
     pub fn protection(&self) -> std::option::Option<&crate::model::Protection> {
         self.protection.as_ref()
     }
@@ -1013,12 +1013,12 @@ pub mod describe_protection_output {
         pub(crate) protection: std::option::Option<crate::model::Protection>,
     }
     impl Builder {
-        /// <p>The <code>Protection</code> object that is described.</p>
+        /// <p>The <code>Protection</code> that you requested. </p>
         pub fn protection(mut self, input: crate::model::Protection) -> Self {
             self.protection = Some(input);
             self
         }
-        /// <p>The <code>Protection</code> object that is described.</p>
+        /// <p>The <code>Protection</code> that you requested. </p>
         pub fn set_protection(
             mut self,
             input: std::option::Option<crate::model::Protection>,
@@ -1191,13 +1191,13 @@ impl DescribeDrtAccessOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackStatisticsOutput {
-    /// <p>The time range. </p>
+    /// <p>The time range of the attack.</p>
     pub time_range: std::option::Option<crate::model::TimeRange>,
     /// <p>The data that describes the attacks detected during the time period.</p>
     pub data_items: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
 }
 impl DescribeAttackStatisticsOutput {
-    /// <p>The time range. </p>
+    /// <p>The time range of the attack.</p>
     pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.time_range.as_ref()
     }
@@ -1225,12 +1225,12 @@ pub mod describe_attack_statistics_output {
             std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
     }
     impl Builder {
-        /// <p>The time range. </p>
+        /// <p>The time range of the attack.</p>
         pub fn time_range(mut self, input: crate::model::TimeRange) -> Self {
             self.time_range = Some(input);
             self
         }
-        /// <p>The time range. </p>
+        /// <p>The time range of the attack.</p>
         pub fn set_time_range(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -1277,11 +1277,11 @@ impl DescribeAttackStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttackOutput {
-    /// <p>The attack that is described.</p>
+    /// <p>The attack that you requested. </p>
     pub attack: std::option::Option<crate::model::AttackDetail>,
 }
 impl DescribeAttackOutput {
-    /// <p>The attack that is described.</p>
+    /// <p>The attack that you requested. </p>
     pub fn attack(&self) -> std::option::Option<&crate::model::AttackDetail> {
         self.attack.as_ref()
     }
@@ -1302,12 +1302,12 @@ pub mod describe_attack_output {
         pub(crate) attack: std::option::Option<crate::model::AttackDetail>,
     }
     impl Builder {
-        /// <p>The attack that is described.</p>
+        /// <p>The attack that you requested. </p>
         pub fn attack(mut self, input: crate::model::AttackDetail) -> Self {
             self.attack = Some(input);
             self
         }
-        /// <p>The attack that is described.</p>
+        /// <p>The attack that you requested. </p>
         pub fn set_attack(
             mut self,
             input: std::option::Option<crate::model::AttackDetail>,

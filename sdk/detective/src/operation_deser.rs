@@ -101,6 +101,201 @@ pub fn parse_accept_invitation_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_graph_member_datasources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetGraphMemberDatasourcesOutput,
+    crate::error::BatchGetGraphMemberDatasourcesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::BatchGetGraphMemberDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetGraphMemberDatasourcesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::BatchGetGraphMemberDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetGraphMemberDatasourcesErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ValidationException" => crate::error::BatchGetGraphMemberDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetGraphMemberDatasourcesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetGraphMemberDatasourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_graph_member_datasources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetGraphMemberDatasourcesOutput,
+    crate::error::BatchGetGraphMemberDatasourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::batch_get_graph_member_datasources_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_batch_get_graph_member_datasources(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::BatchGetGraphMemberDatasourcesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_membership_datasources_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetMembershipDatasourcesOutput,
+    crate::error::BatchGetMembershipDatasourcesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::BatchGetMembershipDatasourcesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::BatchGetMembershipDatasourcesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::BatchGetMembershipDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetMembershipDatasourcesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetMembershipDatasourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::BatchGetMembershipDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetMembershipDatasourcesErrorKind::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetMembershipDatasourcesError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ValidationException" => crate::error::BatchGetMembershipDatasourcesError {
+            meta: generic,
+            kind: crate::error::BatchGetMembershipDatasourcesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetMembershipDatasourcesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::BatchGetMembershipDatasourcesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_batch_get_membership_datasources_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::BatchGetMembershipDatasourcesOutput,
+    crate::error::BatchGetMembershipDatasourcesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::batch_get_membership_datasources_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_batch_get_membership_datasources(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::BatchGetMembershipDatasourcesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_graph_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGraphOutput, crate::error::CreateGraphError> {
@@ -955,6 +1150,101 @@ pub fn parse_get_members_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_datasource_packages_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDatasourcePackagesOutput,
+    crate::error::ListDatasourcePackagesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListDatasourcePackagesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListDatasourcePackagesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::ListDatasourcePackagesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::ListDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::ListDatasourcePackagesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::ListDatasourcePackagesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListDatasourcePackagesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_datasource_packages_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListDatasourcePackagesOutput,
+    crate::error::ListDatasourcePackagesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_datasource_packages_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_datasource_packages(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListDatasourcePackagesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_graphs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGraphsOutput, crate::error::ListGraphsError> {
@@ -1741,6 +2031,114 @@ pub fn parse_untag_resource_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_datasource_packages_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDatasourcePackagesOutput,
+    crate::error::UpdateDatasourcePackagesError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateDatasourcePackagesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateDatasourcePackagesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::UpdateDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasourcePackagesErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::UpdateDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasourcePackagesErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceQuotaExceededException" => crate::error::UpdateDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasourcePackagesErrorKind::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::UpdateDatasourcePackagesError {
+            meta: generic,
+            kind: crate::error::UpdateDatasourcePackagesErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatasourcePackagesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UpdateDatasourcePackagesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_datasource_packages_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateDatasourcePackagesOutput,
+    crate::error::UpdateDatasourcePackagesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_datasource_packages_output::Builder::default();
         let _ = response;
         output.build()
     })

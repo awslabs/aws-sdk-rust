@@ -23515,6 +23515,23 @@ pub fn parse_register_ca_certificate_error(
                 tmp
             }),
         },
+        "ResourceNotFoundException" => crate::error::RegisterCACertificateError {
+            meta: generic,
+            kind: crate::error::RegisterCACertificateErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterCACertificateError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceUnavailableException" => crate::error::RegisterCACertificateError {
             meta: generic,
             kind: crate::error::RegisterCACertificateErrorKind::ServiceUnavailableException({

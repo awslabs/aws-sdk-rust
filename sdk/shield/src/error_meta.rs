@@ -21,7 +21,7 @@ pub enum Error {
     LimitsExceededException(crate::error::LimitsExceededException),
     /// <p>You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are attempting to change <code>AutoRenew</code> prior to that period.</p>
     LockedSubscriptionException(crate::error::LockedSubscriptionException),
-    /// <p>The ARN of the role that you specifed does not exist.</p>
+    /// <p>The ARN of the role that you specified does not exist.</p>
     NoAssociatedRoleException(crate::error::NoAssociatedRoleException),
     /// <p>Exception that indicates that the resource state has been modified by another client. Retrieve the resource and then retry your request.</p>
     OptimisticLockException(crate::error::OptimisticLockException),

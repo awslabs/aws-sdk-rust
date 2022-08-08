@@ -288,6 +288,8 @@ impl AsRef<str> for ModelVersionStatus {
 )]
 pub enum ModelTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
+    AccountTakeoverInsights,
+    #[allow(missing_docs)] // documentation missing in model
     OnlineFraudInsights,
     #[allow(missing_docs)] // documentation missing in model
     TransactionFraudInsights,
@@ -297,6 +299,7 @@ pub enum ModelTypeEnum {
 impl std::convert::From<&str> for ModelTypeEnum {
     fn from(s: &str) -> Self {
         match s {
+            "ACCOUNT_TAKEOVER_INSIGHTS" => ModelTypeEnum::AccountTakeoverInsights,
             "ONLINE_FRAUD_INSIGHTS" => ModelTypeEnum::OnlineFraudInsights,
             "TRANSACTION_FRAUD_INSIGHTS" => ModelTypeEnum::TransactionFraudInsights,
             other => ModelTypeEnum::Unknown(other.to_owned()),
@@ -314,6 +317,7 @@ impl ModelTypeEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ModelTypeEnum::AccountTakeoverInsights => "ACCOUNT_TAKEOVER_INSIGHTS",
             ModelTypeEnum::OnlineFraudInsights => "ONLINE_FRAUD_INSIGHTS",
             ModelTypeEnum::TransactionFraudInsights => "TRANSACTION_FRAUD_INSIGHTS",
             ModelTypeEnum::Unknown(s) => s.as_ref(),
@@ -321,7 +325,11 @@ impl ModelTypeEnum {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["ONLINE_FRAUD_INSIGHTS", "TRANSACTION_FRAUD_INSIGHTS"]
+        &[
+            "ACCOUNT_TAKEOVER_INSIGHTS",
+            "ONLINE_FRAUD_INSIGHTS",
+            "TRANSACTION_FRAUD_INSIGHTS",
+        ]
     }
 }
 impl AsRef<str> for ModelTypeEnum {
@@ -4121,6 +4129,10 @@ pub struct PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
     pub variable_impact_explanations:
         std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
+    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub aggregated_variables_impact_explanations:
+        std::option::Option<std::vec::Vec<crate::model::AggregatedVariablesImpactExplanation>>,
 }
 impl PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
@@ -4129,6 +4141,13 @@ impl PredictionExplanations {
     ) -> std::option::Option<&[crate::model::VariableImpactExplanation]> {
         self.variable_impact_explanations.as_deref()
     }
+    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub fn aggregated_variables_impact_explanations(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregatedVariablesImpactExplanation]> {
+        self.aggregated_variables_impact_explanations.as_deref()
+    }
 }
 impl std::fmt::Debug for PredictionExplanations {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4136,6 +4155,10 @@ impl std::fmt::Debug for PredictionExplanations {
         formatter.field(
             "variable_impact_explanations",
             &self.variable_impact_explanations,
+        );
+        formatter.field(
+            "aggregated_variables_impact_explanations",
+            &self.aggregated_variables_impact_explanations,
         );
         formatter.finish()
     }
@@ -4148,6 +4171,8 @@ pub mod prediction_explanations {
     pub struct Builder {
         pub(crate) variable_impact_explanations:
             std::option::Option<std::vec::Vec<crate::model::VariableImpactExplanation>>,
+        pub(crate) aggregated_variables_impact_explanations:
+            std::option::Option<std::vec::Vec<crate::model::AggregatedVariablesImpactExplanation>>,
     }
     impl Builder {
         /// Appends an item to `variable_impact_explanations`.
@@ -4172,10 +4197,40 @@ pub mod prediction_explanations {
             self.variable_impact_explanations = input;
             self
         }
+        /// Appends an item to `aggregated_variables_impact_explanations`.
+        ///
+        /// To override the contents of this collection use [`set_aggregated_variables_impact_explanations`](Self::set_aggregated_variables_impact_explanations).
+        ///
+        /// <p> The details of the aggregated variables impact on the prediction score. </p>
+        /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+        pub fn aggregated_variables_impact_explanations(
+            mut self,
+            input: crate::model::AggregatedVariablesImpactExplanation,
+        ) -> Self {
+            let mut v = self
+                .aggregated_variables_impact_explanations
+                .unwrap_or_default();
+            v.push(input);
+            self.aggregated_variables_impact_explanations = Some(v);
+            self
+        }
+        /// <p> The details of the aggregated variables impact on the prediction score. </p>
+        /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+        pub fn set_aggregated_variables_impact_explanations(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AggregatedVariablesImpactExplanation>,
+            >,
+        ) -> Self {
+            self.aggregated_variables_impact_explanations = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PredictionExplanations`](crate::model::PredictionExplanations).
         pub fn build(self) -> crate::model::PredictionExplanations {
             crate::model::PredictionExplanations {
                 variable_impact_explanations: self.variable_impact_explanations,
+                aggregated_variables_impact_explanations: self
+                    .aggregated_variables_impact_explanations,
             }
         }
     }
@@ -4184,6 +4239,127 @@ impl PredictionExplanations {
     /// Creates a new builder-style object to manufacture [`PredictionExplanations`](crate::model::PredictionExplanations).
     pub fn builder() -> crate::model::prediction_explanations::Builder {
         crate::model::prediction_explanations::Builder::default()
+    }
+}
+
+/// <p> The details of the impact of aggregated variables on the prediction score. </p>
+/// <p>Account Takeover Insights (ATI) model uses the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, the model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedVariablesImpactExplanation {
+    /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+    pub event_variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+    pub relative_impact: std::option::Option<std::string::String>,
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
+    /// </ul>
+    pub log_odds_impact: std::option::Option<f32>,
+}
+impl AggregatedVariablesImpactExplanation {
+    /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+    pub fn event_variable_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.event_variable_names.as_deref()
+    }
+    /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+    pub fn relative_impact(&self) -> std::option::Option<&str> {
+        self.relative_impact.as_deref()
+    }
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
+    /// </ul>
+    pub fn log_odds_impact(&self) -> std::option::Option<f32> {
+        self.log_odds_impact
+    }
+}
+impl std::fmt::Debug for AggregatedVariablesImpactExplanation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedVariablesImpactExplanation");
+        formatter.field("event_variable_names", &self.event_variable_names);
+        formatter.field("relative_impact", &self.relative_impact);
+        formatter.field("log_odds_impact", &self.log_odds_impact);
+        formatter.finish()
+    }
+}
+/// See [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
+pub mod aggregated_variables_impact_explanation {
+
+    /// A builder for [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) relative_impact: std::option::Option<std::string::String>,
+        pub(crate) log_odds_impact: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// Appends an item to `event_variable_names`.
+        ///
+        /// To override the contents of this collection use [`set_event_variable_names`](Self::set_event_variable_names).
+        ///
+        /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+        pub fn event_variable_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.event_variable_names.unwrap_or_default();
+            v.push(input.into());
+            self.event_variable_names = Some(v);
+            self
+        }
+        /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+        pub fn set_event_variable_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.event_variable_names = input;
+            self
+        }
+        /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+        pub fn relative_impact(mut self, input: impl Into<std::string::String>) -> Self {
+            self.relative_impact = Some(input.into());
+            self
+        }
+        /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+        pub fn set_relative_impact(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.relative_impact = input;
+            self
+        }
+        /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
+        /// <ul>
+        /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
+        /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
+        /// </ul>
+        pub fn log_odds_impact(mut self, input: f32) -> Self {
+            self.log_odds_impact = Some(input);
+            self
+        }
+        /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
+        /// <ul>
+        /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
+        /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
+        /// </ul>
+        pub fn set_log_odds_impact(mut self, input: std::option::Option<f32>) -> Self {
+            self.log_odds_impact = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
+        pub fn build(self) -> crate::model::AggregatedVariablesImpactExplanation {
+            crate::model::AggregatedVariablesImpactExplanation {
+                event_variable_names: self.event_variable_names,
+                relative_impact: self.relative_impact,
+                log_odds_impact: self.log_odds_impact,
+            }
+        }
+    }
+}
+impl AggregatedVariablesImpactExplanation {
+    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImpactExplanation`](crate::model::AggregatedVariablesImpactExplanation).
+    pub fn builder() -> crate::model::aggregated_variables_impact_explanation::Builder {
+        crate::model::aggregated_variables_impact_explanation::Builder::default()
     }
 }
 
@@ -6233,6 +6409,8 @@ pub struct ModelVersionDetail {
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The model version ARN.</p>
     pub arn: std::option::Option<std::string::String>,
+    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    pub training_result_v2: std::option::Option<crate::model::TrainingResultV2>,
 }
 impl ModelVersionDetail {
     /// <p>The model ID.</p>
@@ -6289,6 +6467,10 @@ impl ModelVersionDetail {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    pub fn training_result_v2(&self) -> std::option::Option<&crate::model::TrainingResultV2> {
+        self.training_result_v2.as_ref()
+    }
 }
 impl std::fmt::Debug for ModelVersionDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6305,6 +6487,7 @@ impl std::fmt::Debug for ModelVersionDetail {
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
         formatter.field("arn", &self.arn);
+        formatter.field("training_result_v2", &self.training_result_v2);
         formatter.finish()
     }
 }
@@ -6326,6 +6509,7 @@ pub mod model_version_detail {
         pub(crate) last_updated_time: std::option::Option<std::string::String>,
         pub(crate) created_time: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) training_result_v2: std::option::Option<crate::model::TrainingResultV2>,
     }
     impl Builder {
         /// <p>The model ID.</p>
@@ -6472,6 +6656,19 @@ pub mod model_version_detail {
             self.arn = input;
             self
         }
+        /// <p> The training result details. The details include the relative importance of the variables. </p>
+        pub fn training_result_v2(mut self, input: crate::model::TrainingResultV2) -> Self {
+            self.training_result_v2 = Some(input);
+            self
+        }
+        /// <p> The training result details. The details include the relative importance of the variables. </p>
+        pub fn set_training_result_v2(
+            mut self,
+            input: std::option::Option<crate::model::TrainingResultV2>,
+        ) -> Self {
+            self.training_result_v2 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ModelVersionDetail`](crate::model::ModelVersionDetail).
         pub fn build(self) -> crate::model::ModelVersionDetail {
             crate::model::ModelVersionDetail {
@@ -6487,6 +6684,7 @@ pub mod model_version_detail {
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
                 arn: self.arn,
+                training_result_v2: self.training_result_v2,
             }
         }
     }
@@ -6498,61 +6696,78 @@ impl ModelVersionDetail {
     }
 }
 
-/// <p>The training result details.</p>
+/// <p> The training result details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TrainingResult {
-    /// <p>The validation metrics.</p>
+pub struct TrainingResultV2 {
+    /// <p>The model training data validation metrics.</p>
     pub data_validation_metrics: std::option::Option<crate::model::DataValidationMetrics>,
-    /// <p>The training metric details.</p>
-    pub training_metrics: std::option::Option<crate::model::TrainingMetrics>,
-    /// <p>The variable importance metrics.</p>
+    /// <p> The training metric details. </p>
+    pub training_metrics_v2: std::option::Option<crate::model::TrainingMetricsV2>,
+    /// <p>The variable importance metrics details.</p>
     pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
+    /// <p> The variable importance metrics of the aggregated variables. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub aggregated_variables_importance_metrics:
+        std::option::Option<crate::model::AggregatedVariablesImportanceMetrics>,
 }
-impl TrainingResult {
-    /// <p>The validation metrics.</p>
+impl TrainingResultV2 {
+    /// <p>The model training data validation metrics.</p>
     pub fn data_validation_metrics(
         &self,
     ) -> std::option::Option<&crate::model::DataValidationMetrics> {
         self.data_validation_metrics.as_ref()
     }
-    /// <p>The training metric details.</p>
-    pub fn training_metrics(&self) -> std::option::Option<&crate::model::TrainingMetrics> {
-        self.training_metrics.as_ref()
+    /// <p> The training metric details. </p>
+    pub fn training_metrics_v2(&self) -> std::option::Option<&crate::model::TrainingMetricsV2> {
+        self.training_metrics_v2.as_ref()
     }
-    /// <p>The variable importance metrics.</p>
+    /// <p>The variable importance metrics details.</p>
     pub fn variable_importance_metrics(
         &self,
     ) -> std::option::Option<&crate::model::VariableImportanceMetrics> {
         self.variable_importance_metrics.as_ref()
     }
+    /// <p> The variable importance metrics of the aggregated variables. </p>
+    /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+    pub fn aggregated_variables_importance_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::AggregatedVariablesImportanceMetrics> {
+        self.aggregated_variables_importance_metrics.as_ref()
+    }
 }
-impl std::fmt::Debug for TrainingResult {
+impl std::fmt::Debug for TrainingResultV2 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingResult");
+        let mut formatter = f.debug_struct("TrainingResultV2");
         formatter.field("data_validation_metrics", &self.data_validation_metrics);
-        formatter.field("training_metrics", &self.training_metrics);
+        formatter.field("training_metrics_v2", &self.training_metrics_v2);
         formatter.field(
             "variable_importance_metrics",
             &self.variable_importance_metrics,
         );
+        formatter.field(
+            "aggregated_variables_importance_metrics",
+            &self.aggregated_variables_importance_metrics,
+        );
         formatter.finish()
     }
 }
-/// See [`TrainingResult`](crate::model::TrainingResult).
-pub mod training_result {
+/// See [`TrainingResultV2`](crate::model::TrainingResultV2).
+pub mod training_result_v2 {
 
-    /// A builder for [`TrainingResult`](crate::model::TrainingResult).
+    /// A builder for [`TrainingResultV2`](crate::model::TrainingResultV2).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_validation_metrics:
             std::option::Option<crate::model::DataValidationMetrics>,
-        pub(crate) training_metrics: std::option::Option<crate::model::TrainingMetrics>,
+        pub(crate) training_metrics_v2: std::option::Option<crate::model::TrainingMetricsV2>,
         pub(crate) variable_importance_metrics:
             std::option::Option<crate::model::VariableImportanceMetrics>,
+        pub(crate) aggregated_variables_importance_metrics:
+            std::option::Option<crate::model::AggregatedVariablesImportanceMetrics>,
     }
     impl Builder {
-        /// <p>The validation metrics.</p>
+        /// <p>The model training data validation metrics.</p>
         pub fn data_validation_metrics(
             mut self,
             input: crate::model::DataValidationMetrics,
@@ -6560,7 +6775,7 @@ pub mod training_result {
             self.data_validation_metrics = Some(input);
             self
         }
-        /// <p>The validation metrics.</p>
+        /// <p>The model training data validation metrics.</p>
         pub fn set_data_validation_metrics(
             mut self,
             input: std::option::Option<crate::model::DataValidationMetrics>,
@@ -6568,20 +6783,20 @@ pub mod training_result {
             self.data_validation_metrics = input;
             self
         }
-        /// <p>The training metric details.</p>
-        pub fn training_metrics(mut self, input: crate::model::TrainingMetrics) -> Self {
-            self.training_metrics = Some(input);
+        /// <p> The training metric details. </p>
+        pub fn training_metrics_v2(mut self, input: crate::model::TrainingMetricsV2) -> Self {
+            self.training_metrics_v2 = Some(input);
             self
         }
-        /// <p>The training metric details.</p>
-        pub fn set_training_metrics(
+        /// <p> The training metric details. </p>
+        pub fn set_training_metrics_v2(
             mut self,
-            input: std::option::Option<crate::model::TrainingMetrics>,
+            input: std::option::Option<crate::model::TrainingMetricsV2>,
         ) -> Self {
-            self.training_metrics = input;
+            self.training_metrics_v2 = input;
             self
         }
-        /// <p>The variable importance metrics.</p>
+        /// <p>The variable importance metrics details.</p>
         pub fn variable_importance_metrics(
             mut self,
             input: crate::model::VariableImportanceMetrics,
@@ -6589,7 +6804,7 @@ pub mod training_result {
             self.variable_importance_metrics = Some(input);
             self
         }
-        /// <p>The variable importance metrics.</p>
+        /// <p>The variable importance metrics details.</p>
         pub fn set_variable_importance_metrics(
             mut self,
             input: std::option::Option<crate::model::VariableImportanceMetrics>,
@@ -6597,20 +6812,196 @@ pub mod training_result {
             self.variable_importance_metrics = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrainingResult`](crate::model::TrainingResult).
-        pub fn build(self) -> crate::model::TrainingResult {
-            crate::model::TrainingResult {
+        /// <p> The variable importance metrics of the aggregated variables. </p>
+        /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+        pub fn aggregated_variables_importance_metrics(
+            mut self,
+            input: crate::model::AggregatedVariablesImportanceMetrics,
+        ) -> Self {
+            self.aggregated_variables_importance_metrics = Some(input);
+            self
+        }
+        /// <p> The variable importance metrics of the aggregated variables. </p>
+        /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+        pub fn set_aggregated_variables_importance_metrics(
+            mut self,
+            input: std::option::Option<crate::model::AggregatedVariablesImportanceMetrics>,
+        ) -> Self {
+            self.aggregated_variables_importance_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrainingResultV2`](crate::model::TrainingResultV2).
+        pub fn build(self) -> crate::model::TrainingResultV2 {
+            crate::model::TrainingResultV2 {
                 data_validation_metrics: self.data_validation_metrics,
-                training_metrics: self.training_metrics,
+                training_metrics_v2: self.training_metrics_v2,
                 variable_importance_metrics: self.variable_importance_metrics,
+                aggregated_variables_importance_metrics: self
+                    .aggregated_variables_importance_metrics,
             }
         }
     }
 }
-impl TrainingResult {
-    /// Creates a new builder-style object to manufacture [`TrainingResult`](crate::model::TrainingResult).
-    pub fn builder() -> crate::model::training_result::Builder {
-        crate::model::training_result::Builder::default()
+impl TrainingResultV2 {
+    /// Creates a new builder-style object to manufacture [`TrainingResultV2`](crate::model::TrainingResultV2).
+    pub fn builder() -> crate::model::training_result_v2::Builder {
+        crate::model::training_result_v2::Builder::default()
+    }
+}
+
+/// <p>The details of the relative importance of the aggregated variables.</p>
+/// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedVariablesImportanceMetrics {
+    /// <p> List of variables' metrics. </p>
+    pub log_odds_metrics: std::option::Option<std::vec::Vec<crate::model::AggregatedLogOddsMetric>>,
+}
+impl AggregatedVariablesImportanceMetrics {
+    /// <p> List of variables' metrics. </p>
+    pub fn log_odds_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::model::AggregatedLogOddsMetric]> {
+        self.log_odds_metrics.as_deref()
+    }
+}
+impl std::fmt::Debug for AggregatedVariablesImportanceMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedVariablesImportanceMetrics");
+        formatter.field("log_odds_metrics", &self.log_odds_metrics);
+        formatter.finish()
+    }
+}
+/// See [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
+pub mod aggregated_variables_importance_metrics {
+
+    /// A builder for [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) log_odds_metrics:
+            std::option::Option<std::vec::Vec<crate::model::AggregatedLogOddsMetric>>,
+    }
+    impl Builder {
+        /// Appends an item to `log_odds_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_log_odds_metrics`](Self::set_log_odds_metrics).
+        ///
+        /// <p> List of variables' metrics. </p>
+        pub fn log_odds_metrics(mut self, input: crate::model::AggregatedLogOddsMetric) -> Self {
+            let mut v = self.log_odds_metrics.unwrap_or_default();
+            v.push(input);
+            self.log_odds_metrics = Some(v);
+            self
+        }
+        /// <p> List of variables' metrics. </p>
+        pub fn set_log_odds_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AggregatedLogOddsMetric>>,
+        ) -> Self {
+            self.log_odds_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
+        pub fn build(self) -> crate::model::AggregatedVariablesImportanceMetrics {
+            crate::model::AggregatedVariablesImportanceMetrics {
+                log_odds_metrics: self.log_odds_metrics,
+            }
+        }
+    }
+}
+impl AggregatedVariablesImportanceMetrics {
+    /// Creates a new builder-style object to manufacture [`AggregatedVariablesImportanceMetrics`](crate::model::AggregatedVariablesImportanceMetrics).
+    pub fn builder() -> crate::model::aggregated_variables_importance_metrics::Builder {
+        crate::model::aggregated_variables_importance_metrics::Builder::default()
+    }
+}
+
+/// <p>The log odds metric details.</p>
+/// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AggregatedLogOddsMetric {
+    /// <p> The names of all the variables. </p>
+    pub variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
+    pub aggregated_variables_importance: std::option::Option<f32>,
+}
+impl AggregatedLogOddsMetric {
+    /// <p> The names of all the variables. </p>
+    pub fn variable_names(&self) -> std::option::Option<&[std::string::String]> {
+        self.variable_names.as_deref()
+    }
+    /// <p> The relative importance of the variables in the list to the other event variable. </p>
+    pub fn aggregated_variables_importance(&self) -> std::option::Option<f32> {
+        self.aggregated_variables_importance
+    }
+}
+impl std::fmt::Debug for AggregatedLogOddsMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AggregatedLogOddsMetric");
+        formatter.field("variable_names", &self.variable_names);
+        formatter.field(
+            "aggregated_variables_importance",
+            &self.aggregated_variables_importance,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
+pub mod aggregated_log_odds_metric {
+
+    /// A builder for [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) variable_names: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) aggregated_variables_importance: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// Appends an item to `variable_names`.
+        ///
+        /// To override the contents of this collection use [`set_variable_names`](Self::set_variable_names).
+        ///
+        /// <p> The names of all the variables. </p>
+        pub fn variable_names(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.variable_names.unwrap_or_default();
+            v.push(input.into());
+            self.variable_names = Some(v);
+            self
+        }
+        /// <p> The names of all the variables. </p>
+        pub fn set_variable_names(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.variable_names = input;
+            self
+        }
+        /// <p> The relative importance of the variables in the list to the other event variable. </p>
+        pub fn aggregated_variables_importance(mut self, input: f32) -> Self {
+            self.aggregated_variables_importance = Some(input);
+            self
+        }
+        /// <p> The relative importance of the variables in the list to the other event variable. </p>
+        pub fn set_aggregated_variables_importance(
+            mut self,
+            input: std::option::Option<f32>,
+        ) -> Self {
+            self.aggregated_variables_importance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
+        pub fn build(self) -> crate::model::AggregatedLogOddsMetric {
+            crate::model::AggregatedLogOddsMetric {
+                variable_names: self.variable_names,
+                aggregated_variables_importance: self.aggregated_variables_importance,
+            }
+        }
+    }
+}
+impl AggregatedLogOddsMetric {
+    /// Creates a new builder-style object to manufacture [`AggregatedLogOddsMetric`](crate::model::AggregatedLogOddsMetric).
+    pub fn builder() -> crate::model::aggregated_log_odds_metric::Builder {
+        crate::model::aggregated_log_odds_metric::Builder::default()
     }
 }
 
@@ -6776,123 +7167,528 @@ impl LogOddsMetric {
     }
 }
 
-/// <p>The training metric details.</p>
+/// <p> The training metrics details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TrainingMetrics {
-    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
-    pub auc: std::option::Option<f32>,
-    /// <p>The data points details.</p>
-    pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+pub struct TrainingMetricsV2 {
+    /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+    pub ofi: std::option::Option<crate::model::OfiTrainingMetricsValue>,
+    /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+    pub tfi: std::option::Option<crate::model::TfiTrainingMetricsValue>,
+    /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+    pub ati: std::option::Option<crate::model::AtiTrainingMetricsValue>,
 }
-impl TrainingMetrics {
-    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
-    pub fn auc(&self) -> std::option::Option<f32> {
-        self.auc
+impl TrainingMetricsV2 {
+    /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+    pub fn ofi(&self) -> std::option::Option<&crate::model::OfiTrainingMetricsValue> {
+        self.ofi.as_ref()
     }
-    /// <p>The data points details.</p>
-    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::MetricDataPoint]> {
-        self.metric_data_points.as_deref()
+    /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+    pub fn tfi(&self) -> std::option::Option<&crate::model::TfiTrainingMetricsValue> {
+        self.tfi.as_ref()
+    }
+    /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+    pub fn ati(&self) -> std::option::Option<&crate::model::AtiTrainingMetricsValue> {
+        self.ati.as_ref()
     }
 }
-impl std::fmt::Debug for TrainingMetrics {
+impl std::fmt::Debug for TrainingMetricsV2 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TrainingMetrics");
-        formatter.field("auc", &self.auc);
-        formatter.field("metric_data_points", &self.metric_data_points);
+        let mut formatter = f.debug_struct("TrainingMetricsV2");
+        formatter.field("ofi", &self.ofi);
+        formatter.field("tfi", &self.tfi);
+        formatter.field("ati", &self.ati);
         formatter.finish()
     }
 }
-/// See [`TrainingMetrics`](crate::model::TrainingMetrics).
-pub mod training_metrics {
+/// See [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
+pub mod training_metrics_v2 {
 
-    /// A builder for [`TrainingMetrics`](crate::model::TrainingMetrics).
+    /// A builder for [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) auc: std::option::Option<f32>,
-        pub(crate) metric_data_points:
-            std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+        pub(crate) ofi: std::option::Option<crate::model::OfiTrainingMetricsValue>,
+        pub(crate) tfi: std::option::Option<crate::model::TfiTrainingMetricsValue>,
+        pub(crate) ati: std::option::Option<crate::model::AtiTrainingMetricsValue>,
     }
     impl Builder {
-        /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
-        pub fn auc(mut self, input: f32) -> Self {
-            self.auc = Some(input);
+        /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+        pub fn ofi(mut self, input: crate::model::OfiTrainingMetricsValue) -> Self {
+            self.ofi = Some(input);
             self
         }
-        /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
-        pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
-            self.auc = input;
+        /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+        pub fn set_ofi(
+            mut self,
+            input: std::option::Option<crate::model::OfiTrainingMetricsValue>,
+        ) -> Self {
+            self.ofi = input;
             self
         }
+        /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+        pub fn tfi(mut self, input: crate::model::TfiTrainingMetricsValue) -> Self {
+            self.tfi = Some(input);
+            self
+        }
+        /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+        pub fn set_tfi(
+            mut self,
+            input: std::option::Option<crate::model::TfiTrainingMetricsValue>,
+        ) -> Self {
+            self.tfi = input;
+            self
+        }
+        /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+        pub fn ati(mut self, input: crate::model::AtiTrainingMetricsValue) -> Self {
+            self.ati = Some(input);
+            self
+        }
+        /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+        pub fn set_ati(
+            mut self,
+            input: std::option::Option<crate::model::AtiTrainingMetricsValue>,
+        ) -> Self {
+            self.ati = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
+        pub fn build(self) -> crate::model::TrainingMetricsV2 {
+            crate::model::TrainingMetricsV2 {
+                ofi: self.ofi,
+                tfi: self.tfi,
+                ati: self.ati,
+            }
+        }
+    }
+}
+impl TrainingMetricsV2 {
+    /// Creates a new builder-style object to manufacture [`TrainingMetricsV2`](crate::model::TrainingMetricsV2).
+    pub fn builder() -> crate::model::training_metrics_v2::Builder {
+        crate::model::training_metrics_v2::Builder::default()
+    }
+}
+
+/// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AtiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::AtiMetricDataPoint>>,
+    /// <p> The model's overall performance scores. </p>
+    pub model_performance: std::option::Option<crate::model::AtiModelPerformance>,
+}
+impl AtiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::AtiMetricDataPoint]> {
+        self.metric_data_points.as_deref()
+    }
+    /// <p> The model's overall performance scores. </p>
+    pub fn model_performance(&self) -> std::option::Option<&crate::model::AtiModelPerformance> {
+        self.model_performance.as_ref()
+    }
+}
+impl std::fmt::Debug for AtiTrainingMetricsValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AtiTrainingMetricsValue");
+        formatter.field("metric_data_points", &self.metric_data_points);
+        formatter.field("model_performance", &self.model_performance);
+        formatter.finish()
+    }
+}
+/// See [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
+pub mod ati_training_metrics_value {
+
+    /// A builder for [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_data_points:
+            std::option::Option<std::vec::Vec<crate::model::AtiMetricDataPoint>>,
+        pub(crate) model_performance: std::option::Option<crate::model::AtiModelPerformance>,
+    }
+    impl Builder {
         /// Appends an item to `metric_data_points`.
         ///
         /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
         ///
-        /// <p>The data points details.</p>
-        pub fn metric_data_points(mut self, input: crate::model::MetricDataPoint) -> Self {
+        /// <p> The model's performance metrics data points. </p>
+        pub fn metric_data_points(mut self, input: crate::model::AtiMetricDataPoint) -> Self {
             let mut v = self.metric_data_points.unwrap_or_default();
             v.push(input);
             self.metric_data_points = Some(v);
             self
         }
-        /// <p>The data points details.</p>
+        /// <p> The model's performance metrics data points. </p>
         pub fn set_metric_data_points(
             mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AtiMetricDataPoint>>,
         ) -> Self {
             self.metric_data_points = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrainingMetrics`](crate::model::TrainingMetrics).
-        pub fn build(self) -> crate::model::TrainingMetrics {
-            crate::model::TrainingMetrics {
-                auc: self.auc,
+        /// <p> The model's overall performance scores. </p>
+        pub fn model_performance(mut self, input: crate::model::AtiModelPerformance) -> Self {
+            self.model_performance = Some(input);
+            self
+        }
+        /// <p> The model's overall performance scores. </p>
+        pub fn set_model_performance(
+            mut self,
+            input: std::option::Option<crate::model::AtiModelPerformance>,
+        ) -> Self {
+            self.model_performance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
+        pub fn build(self) -> crate::model::AtiTrainingMetricsValue {
+            crate::model::AtiTrainingMetricsValue {
                 metric_data_points: self.metric_data_points,
+                model_performance: self.model_performance,
             }
         }
     }
 }
-impl TrainingMetrics {
-    /// Creates a new builder-style object to manufacture [`TrainingMetrics`](crate::model::TrainingMetrics).
-    pub fn builder() -> crate::model::training_metrics::Builder {
-        crate::model::training_metrics::Builder::default()
+impl AtiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`AtiTrainingMetricsValue`](crate::model::AtiTrainingMetricsValue).
+    pub fn builder() -> crate::model::ati_training_metrics_value::Builder {
+        crate::model::ati_training_metrics_value::Builder::default()
     }
 }
 
-/// <p>Model performance metrics data points.</p>
+/// <p> The Account Takeover Insights (ATI) model performance score. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MetricDataPoint {
-    /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+pub struct AtiModelPerformance {
+    /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
+    pub asi: std::option::Option<f32>,
+}
+impl AtiModelPerformance {
+    /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
+    pub fn asi(&self) -> std::option::Option<f32> {
+        self.asi
+    }
+}
+impl std::fmt::Debug for AtiModelPerformance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AtiModelPerformance");
+        formatter.field("asi", &self.asi);
+        formatter.finish()
+    }
+}
+/// See [`AtiModelPerformance`](crate::model::AtiModelPerformance).
+pub mod ati_model_performance {
+
+    /// A builder for [`AtiModelPerformance`](crate::model::AtiModelPerformance).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) asi: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
+        pub fn asi(mut self, input: f32) -> Self {
+            self.asi = Some(input);
+            self
+        }
+        /// <p> The anomaly separation index (ASI) score. This metric summarizes the overall ability of the model to separate anomalous activities from the normal behavior. Depending on the business, a large fraction of these anomalous activities can be malicious and correspond to the account takeover attacks. A model with no separability power will have the lowest possible ASI score of 0.5, whereas the a model with a high separability power will have the highest possible ASI score of 1.0 </p>
+        pub fn set_asi(mut self, input: std::option::Option<f32>) -> Self {
+            self.asi = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AtiModelPerformance`](crate::model::AtiModelPerformance).
+        pub fn build(self) -> crate::model::AtiModelPerformance {
+            crate::model::AtiModelPerformance { asi: self.asi }
+        }
+    }
+}
+impl AtiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`AtiModelPerformance`](crate::model::AtiModelPerformance).
+    pub fn builder() -> crate::model::ati_model_performance::Builder {
+        crate::model::ati_model_performance::Builder::default()
+    }
+}
+
+/// <p> The Account Takeover Insights (ATI) model performance metrics data points. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AtiMetricDataPoint {
+    /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+    pub cr: std::option::Option<f32>,
+    /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+    pub adr: std::option::Option<f32>,
+    /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub threshold: std::option::Option<f32>,
+    /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+    pub atodr: std::option::Option<f32>,
+}
+impl AtiMetricDataPoint {
+    /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+    pub fn cr(&self) -> std::option::Option<f32> {
+        self.cr
+    }
+    /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+    pub fn adr(&self) -> std::option::Option<f32> {
+        self.adr
+    }
+    /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub fn threshold(&self) -> std::option::Option<f32> {
+        self.threshold
+    }
+    /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+    pub fn atodr(&self) -> std::option::Option<f32> {
+        self.atodr
+    }
+}
+impl std::fmt::Debug for AtiMetricDataPoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AtiMetricDataPoint");
+        formatter.field("cr", &self.cr);
+        formatter.field("adr", &self.adr);
+        formatter.field("threshold", &self.threshold);
+        formatter.field("atodr", &self.atodr);
+        formatter.finish()
+    }
+}
+/// See [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
+pub mod ati_metric_data_point {
+
+    /// A builder for [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cr: std::option::Option<f32>,
+        pub(crate) adr: std::option::Option<f32>,
+        pub(crate) threshold: std::option::Option<f32>,
+        pub(crate) atodr: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+        pub fn cr(mut self, input: f32) -> Self {
+            self.cr = Some(input);
+            self
+        }
+        /// <p> The challenge rate. This indicates the percentage of login events that the model recommends to challenge such as one-time password, multi-factor authentication, and investigations. </p>
+        pub fn set_cr(mut self, input: std::option::Option<f32>) -> Self {
+            self.cr = input;
+            self
+        }
+        /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+        pub fn adr(mut self, input: f32) -> Self {
+            self.adr = Some(input);
+            self
+        }
+        /// <p> The anomaly discovery rate. This metric quantifies the percentage of anomalies that can be detected by the model at the selected score threshold. A lower score threshold increases the percentage of anomalies captured by the model, but would also require challenging a larger percentage of login events, leading to a higher customer friction. </p>
+        pub fn set_adr(mut self, input: std::option::Option<f32>) -> Self {
+            self.adr = input;
+            self
+        }
+        /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+        pub fn threshold(mut self, input: f32) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        /// <p> The model's threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+        pub fn set_threshold(mut self, input: std::option::Option<f32>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+        pub fn atodr(mut self, input: f32) -> Self {
+            self.atodr = Some(input);
+            self
+        }
+        /// <p> The account takeover discovery rate. This metric quantifies the percentage of account compromise events that can be detected by the model at the selected score threshold. This metric is only available if 50 or more entities with at-least one labeled account takeover event is present in the ingested dataset. </p>
+        pub fn set_atodr(mut self, input: std::option::Option<f32>) -> Self {
+            self.atodr = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
+        pub fn build(self) -> crate::model::AtiMetricDataPoint {
+            crate::model::AtiMetricDataPoint {
+                cr: self.cr,
+                adr: self.adr,
+                threshold: self.threshold,
+                atodr: self.atodr,
+            }
+        }
+    }
+}
+impl AtiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`AtiMetricDataPoint`](crate::model::AtiMetricDataPoint).
+    pub fn builder() -> crate::model::ati_metric_data_point::Builder {
+        crate::model::ati_metric_data_point::Builder::default()
+    }
+}
+
+/// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TfiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::TfiMetricDataPoint>>,
+    /// <p> The model performance score. </p>
+    pub model_performance: std::option::Option<crate::model::TfiModelPerformance>,
+}
+impl TfiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::TfiMetricDataPoint]> {
+        self.metric_data_points.as_deref()
+    }
+    /// <p> The model performance score. </p>
+    pub fn model_performance(&self) -> std::option::Option<&crate::model::TfiModelPerformance> {
+        self.model_performance.as_ref()
+    }
+}
+impl std::fmt::Debug for TfiTrainingMetricsValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TfiTrainingMetricsValue");
+        formatter.field("metric_data_points", &self.metric_data_points);
+        formatter.field("model_performance", &self.model_performance);
+        formatter.finish()
+    }
+}
+/// See [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
+pub mod tfi_training_metrics_value {
+
+    /// A builder for [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_data_points:
+            std::option::Option<std::vec::Vec<crate::model::TfiMetricDataPoint>>,
+        pub(crate) model_performance: std::option::Option<crate::model::TfiModelPerformance>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_data_points`.
+        ///
+        /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
+        ///
+        /// <p> The model's performance metrics data points. </p>
+        pub fn metric_data_points(mut self, input: crate::model::TfiMetricDataPoint) -> Self {
+            let mut v = self.metric_data_points.unwrap_or_default();
+            v.push(input);
+            self.metric_data_points = Some(v);
+            self
+        }
+        /// <p> The model's performance metrics data points. </p>
+        pub fn set_metric_data_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::TfiMetricDataPoint>>,
+        ) -> Self {
+            self.metric_data_points = input;
+            self
+        }
+        /// <p> The model performance score. </p>
+        pub fn model_performance(mut self, input: crate::model::TfiModelPerformance) -> Self {
+            self.model_performance = Some(input);
+            self
+        }
+        /// <p> The model performance score. </p>
+        pub fn set_model_performance(
+            mut self,
+            input: std::option::Option<crate::model::TfiModelPerformance>,
+        ) -> Self {
+            self.model_performance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
+        pub fn build(self) -> crate::model::TfiTrainingMetricsValue {
+            crate::model::TfiTrainingMetricsValue {
+                metric_data_points: self.metric_data_points,
+                model_performance: self.model_performance,
+            }
+        }
+    }
+}
+impl TfiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`TfiTrainingMetricsValue`](crate::model::TfiTrainingMetricsValue).
+    pub fn builder() -> crate::model::tfi_training_metrics_value::Builder {
+        crate::model::tfi_training_metrics_value::Builder::default()
+    }
+}
+
+/// <p> The Transaction Fraud Insights (TFI) model performance score. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TfiModelPerformance {
+    /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    pub auc: std::option::Option<f32>,
+}
+impl TfiModelPerformance {
+    /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    pub fn auc(&self) -> std::option::Option<f32> {
+        self.auc
+    }
+}
+impl std::fmt::Debug for TfiModelPerformance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TfiModelPerformance");
+        formatter.field("auc", &self.auc);
+        formatter.finish()
+    }
+}
+/// See [`TfiModelPerformance`](crate::model::TfiModelPerformance).
+pub mod tfi_model_performance {
+
+    /// A builder for [`TfiModelPerformance`](crate::model::TfiModelPerformance).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auc: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+        pub fn auc(mut self, input: f32) -> Self {
+            self.auc = Some(input);
+            self
+        }
+        /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+        pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
+            self.auc = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TfiModelPerformance`](crate::model::TfiModelPerformance).
+        pub fn build(self) -> crate::model::TfiModelPerformance {
+            crate::model::TfiModelPerformance { auc: self.auc }
+        }
+    }
+}
+impl TfiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`TfiModelPerformance`](crate::model::TfiModelPerformance).
+    pub fn builder() -> crate::model::tfi_model_performance::Builder {
+        crate::model::tfi_model_performance::Builder::default()
+    }
+}
+
+/// <p> The performance metrics data points for Transaction Fraud Insights (TFI) model. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TfiMetricDataPoint {
+    /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
     pub fpr: std::option::Option<f32>,
-    /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
     pub precision: std::option::Option<f32>,
-    /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
     pub tpr: std::option::Option<f32>,
-    /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub threshold: std::option::Option<f32>,
 }
-impl MetricDataPoint {
-    /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+impl TfiMetricDataPoint {
+    /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
     pub fn fpr(&self) -> std::option::Option<f32> {
         self.fpr
     }
-    /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
     pub fn precision(&self) -> std::option::Option<f32> {
         self.precision
     }
-    /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
     pub fn tpr(&self) -> std::option::Option<f32> {
         self.tpr
     }
-    /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub fn threshold(&self) -> std::option::Option<f32> {
         self.threshold
     }
 }
-impl std::fmt::Debug for MetricDataPoint {
+impl std::fmt::Debug for TfiMetricDataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("MetricDataPoint");
+        let mut formatter = f.debug_struct("TfiMetricDataPoint");
         formatter.field("fpr", &self.fpr);
         formatter.field("precision", &self.precision);
         formatter.field("tpr", &self.tpr);
@@ -6900,10 +7696,10 @@ impl std::fmt::Debug for MetricDataPoint {
         formatter.finish()
     }
 }
-/// See [`MetricDataPoint`](crate::model::MetricDataPoint).
-pub mod metric_data_point {
+/// See [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
+pub mod tfi_metric_data_point {
 
-    /// A builder for [`MetricDataPoint`](crate::model::MetricDataPoint).
+    /// A builder for [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fpr: std::option::Option<f32>,
@@ -6912,49 +7708,49 @@ pub mod metric_data_point {
         pub(crate) threshold: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+        /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
         pub fn fpr(mut self, input: f32) -> Self {
             self.fpr = Some(input);
             self
         }
-        /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+        /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
         pub fn set_fpr(mut self, input: std::option::Option<f32>) -> Self {
             self.fpr = input;
             self
         }
-        /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+        /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
         pub fn precision(mut self, input: f32) -> Self {
             self.precision = Some(input);
             self
         }
-        /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+        /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
         pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
             self.precision = input;
             self
         }
-        /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+        /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
         pub fn tpr(mut self, input: f32) -> Self {
             self.tpr = Some(input);
             self
         }
-        /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+        /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
         pub fn set_tpr(mut self, input: std::option::Option<f32>) -> Self {
             self.tpr = input;
             self
         }
-        /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+        /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
         pub fn threshold(mut self, input: f32) -> Self {
             self.threshold = Some(input);
             self
         }
-        /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+        /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
         pub fn set_threshold(mut self, input: std::option::Option<f32>) -> Self {
             self.threshold = input;
             self
         }
-        /// Consumes the builder and constructs a [`MetricDataPoint`](crate::model::MetricDataPoint).
-        pub fn build(self) -> crate::model::MetricDataPoint {
-            crate::model::MetricDataPoint {
+        /// Consumes the builder and constructs a [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
+        pub fn build(self) -> crate::model::TfiMetricDataPoint {
+            crate::model::TfiMetricDataPoint {
                 fpr: self.fpr,
                 precision: self.precision,
                 tpr: self.tpr,
@@ -6963,18 +7759,267 @@ pub mod metric_data_point {
         }
     }
 }
-impl MetricDataPoint {
-    /// Creates a new builder-style object to manufacture [`MetricDataPoint`](crate::model::MetricDataPoint).
-    pub fn builder() -> crate::model::metric_data_point::Builder {
-        crate::model::metric_data_point::Builder::default()
+impl TfiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`TfiMetricDataPoint`](crate::model::TfiMetricDataPoint).
+    pub fn builder() -> crate::model::tfi_metric_data_point::Builder {
+        crate::model::tfi_metric_data_point::Builder::default()
     }
 }
 
-/// <p>The model training validation messages.</p>
+/// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OfiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::OfiMetricDataPoint>>,
+    /// <p> The model's overall performance score. </p>
+    pub model_performance: std::option::Option<crate::model::OfiModelPerformance>,
+}
+impl OfiTrainingMetricsValue {
+    /// <p> The model's performance metrics data points. </p>
+    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::OfiMetricDataPoint]> {
+        self.metric_data_points.as_deref()
+    }
+    /// <p> The model's overall performance score. </p>
+    pub fn model_performance(&self) -> std::option::Option<&crate::model::OfiModelPerformance> {
+        self.model_performance.as_ref()
+    }
+}
+impl std::fmt::Debug for OfiTrainingMetricsValue {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OfiTrainingMetricsValue");
+        formatter.field("metric_data_points", &self.metric_data_points);
+        formatter.field("model_performance", &self.model_performance);
+        formatter.finish()
+    }
+}
+/// See [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
+pub mod ofi_training_metrics_value {
+
+    /// A builder for [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_data_points:
+            std::option::Option<std::vec::Vec<crate::model::OfiMetricDataPoint>>,
+        pub(crate) model_performance: std::option::Option<crate::model::OfiModelPerformance>,
+    }
+    impl Builder {
+        /// Appends an item to `metric_data_points`.
+        ///
+        /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
+        ///
+        /// <p> The model's performance metrics data points. </p>
+        pub fn metric_data_points(mut self, input: crate::model::OfiMetricDataPoint) -> Self {
+            let mut v = self.metric_data_points.unwrap_or_default();
+            v.push(input);
+            self.metric_data_points = Some(v);
+            self
+        }
+        /// <p> The model's performance metrics data points. </p>
+        pub fn set_metric_data_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::OfiMetricDataPoint>>,
+        ) -> Self {
+            self.metric_data_points = input;
+            self
+        }
+        /// <p> The model's overall performance score. </p>
+        pub fn model_performance(mut self, input: crate::model::OfiModelPerformance) -> Self {
+            self.model_performance = Some(input);
+            self
+        }
+        /// <p> The model's overall performance score. </p>
+        pub fn set_model_performance(
+            mut self,
+            input: std::option::Option<crate::model::OfiModelPerformance>,
+        ) -> Self {
+            self.model_performance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
+        pub fn build(self) -> crate::model::OfiTrainingMetricsValue {
+            crate::model::OfiTrainingMetricsValue {
+                metric_data_points: self.metric_data_points,
+                model_performance: self.model_performance,
+            }
+        }
+    }
+}
+impl OfiTrainingMetricsValue {
+    /// Creates a new builder-style object to manufacture [`OfiTrainingMetricsValue`](crate::model::OfiTrainingMetricsValue).
+    pub fn builder() -> crate::model::ofi_training_metrics_value::Builder {
+        crate::model::ofi_training_metrics_value::Builder::default()
+    }
+}
+
+/// <p> The Online Fraud Insights (OFI) model performance score. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OfiModelPerformance {
+    /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    pub auc: std::option::Option<f32>,
+}
+impl OfiModelPerformance {
+    /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    pub fn auc(&self) -> std::option::Option<f32> {
+        self.auc
+    }
+}
+impl std::fmt::Debug for OfiModelPerformance {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OfiModelPerformance");
+        formatter.field("auc", &self.auc);
+        formatter.finish()
+    }
+}
+/// See [`OfiModelPerformance`](crate::model::OfiModelPerformance).
+pub mod ofi_model_performance {
+
+    /// A builder for [`OfiModelPerformance`](crate::model::OfiModelPerformance).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auc: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+        pub fn auc(mut self, input: f32) -> Self {
+            self.auc = Some(input);
+            self
+        }
+        /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+        pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
+            self.auc = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OfiModelPerformance`](crate::model::OfiModelPerformance).
+        pub fn build(self) -> crate::model::OfiModelPerformance {
+            crate::model::OfiModelPerformance { auc: self.auc }
+        }
+    }
+}
+impl OfiModelPerformance {
+    /// Creates a new builder-style object to manufacture [`OfiModelPerformance`](crate::model::OfiModelPerformance).
+    pub fn builder() -> crate::model::ofi_model_performance::Builder {
+        crate::model::ofi_model_performance::Builder::default()
+    }
+}
+
+/// <p> The Online Fraud Insights (OFI) model performance metrics data points. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OfiMetricDataPoint {
+    /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+    pub fpr: std::option::Option<f32>,
+    /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+    pub precision: std::option::Option<f32>,
+    /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+    pub tpr: std::option::Option<f32>,
+    /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub threshold: std::option::Option<f32>,
+}
+impl OfiMetricDataPoint {
+    /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+    pub fn fpr(&self) -> std::option::Option<f32> {
+        self.fpr
+    }
+    /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+    pub fn precision(&self) -> std::option::Option<f32> {
+        self.precision
+    }
+    /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+    pub fn tpr(&self) -> std::option::Option<f32> {
+        self.tpr
+    }
+    /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub fn threshold(&self) -> std::option::Option<f32> {
+        self.threshold
+    }
+}
+impl std::fmt::Debug for OfiMetricDataPoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OfiMetricDataPoint");
+        formatter.field("fpr", &self.fpr);
+        formatter.field("precision", &self.precision);
+        formatter.field("tpr", &self.tpr);
+        formatter.field("threshold", &self.threshold);
+        formatter.finish()
+    }
+}
+/// See [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
+pub mod ofi_metric_data_point {
+
+    /// A builder for [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fpr: std::option::Option<f32>,
+        pub(crate) precision: std::option::Option<f32>,
+        pub(crate) tpr: std::option::Option<f32>,
+        pub(crate) threshold: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+        pub fn fpr(mut self, input: f32) -> Self {
+            self.fpr = Some(input);
+            self
+        }
+        /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+        pub fn set_fpr(mut self, input: std::option::Option<f32>) -> Self {
+            self.fpr = input;
+            self
+        }
+        /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+        pub fn precision(mut self, input: f32) -> Self {
+            self.precision = Some(input);
+            self
+        }
+        /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+        pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
+            self.precision = input;
+            self
+        }
+        /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+        pub fn tpr(mut self, input: f32) -> Self {
+            self.tpr = Some(input);
+            self
+        }
+        /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+        pub fn set_tpr(mut self, input: std::option::Option<f32>) -> Self {
+            self.tpr = input;
+            self
+        }
+        /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+        pub fn threshold(mut self, input: f32) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+        pub fn set_threshold(mut self, input: std::option::Option<f32>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
+        pub fn build(self) -> crate::model::OfiMetricDataPoint {
+            crate::model::OfiMetricDataPoint {
+                fpr: self.fpr,
+                precision: self.precision,
+                tpr: self.tpr,
+                threshold: self.threshold,
+            }
+        }
+    }
+}
+impl OfiMetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`OfiMetricDataPoint`](crate::model::OfiMetricDataPoint).
+    pub fn builder() -> crate::model::ofi_metric_data_point::Builder {
+        crate::model::ofi_metric_data_point::Builder::default()
+    }
+}
+
+/// <p>The model training data validation metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataValidationMetrics {
-    /// <p>The file-specific model training validation messages.</p>
+    /// <p>The file-specific model training data validation messages.</p>
     pub file_level_messages:
         std::option::Option<std::vec::Vec<crate::model::FileValidationMessage>>,
     /// <p>The field-specific model training validation messages.</p>
@@ -6982,7 +8027,7 @@ pub struct DataValidationMetrics {
         std::option::Option<std::vec::Vec<crate::model::FieldValidationMessage>>,
 }
 impl DataValidationMetrics {
-    /// <p>The file-specific model training validation messages.</p>
+    /// <p>The file-specific model training data validation messages.</p>
     pub fn file_level_messages(
         &self,
     ) -> std::option::Option<&[crate::model::FileValidationMessage]> {
@@ -7019,14 +8064,14 @@ pub mod data_validation_metrics {
         ///
         /// To override the contents of this collection use [`set_file_level_messages`](Self::set_file_level_messages).
         ///
-        /// <p>The file-specific model training validation messages.</p>
+        /// <p>The file-specific model training data validation messages.</p>
         pub fn file_level_messages(mut self, input: crate::model::FileValidationMessage) -> Self {
             let mut v = self.file_level_messages.unwrap_or_default();
             v.push(input);
             self.file_level_messages = Some(v);
             self
         }
-        /// <p>The file-specific model training validation messages.</p>
+        /// <p>The file-specific model training data validation messages.</p>
         pub fn set_file_level_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FileValidationMessage>>,
@@ -7288,6 +8333,316 @@ impl FileValidationMessage {
     /// Creates a new builder-style object to manufacture [`FileValidationMessage`](crate::model::FileValidationMessage).
     pub fn builder() -> crate::model::file_validation_message::Builder {
         crate::model::file_validation_message::Builder::default()
+    }
+}
+
+/// <p>The training result details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TrainingResult {
+    /// <p>The validation metrics.</p>
+    pub data_validation_metrics: std::option::Option<crate::model::DataValidationMetrics>,
+    /// <p>The training metric details.</p>
+    pub training_metrics: std::option::Option<crate::model::TrainingMetrics>,
+    /// <p>The variable importance metrics.</p>
+    pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
+}
+impl TrainingResult {
+    /// <p>The validation metrics.</p>
+    pub fn data_validation_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::DataValidationMetrics> {
+        self.data_validation_metrics.as_ref()
+    }
+    /// <p>The training metric details.</p>
+    pub fn training_metrics(&self) -> std::option::Option<&crate::model::TrainingMetrics> {
+        self.training_metrics.as_ref()
+    }
+    /// <p>The variable importance metrics.</p>
+    pub fn variable_importance_metrics(
+        &self,
+    ) -> std::option::Option<&crate::model::VariableImportanceMetrics> {
+        self.variable_importance_metrics.as_ref()
+    }
+}
+impl std::fmt::Debug for TrainingResult {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TrainingResult");
+        formatter.field("data_validation_metrics", &self.data_validation_metrics);
+        formatter.field("training_metrics", &self.training_metrics);
+        formatter.field(
+            "variable_importance_metrics",
+            &self.variable_importance_metrics,
+        );
+        formatter.finish()
+    }
+}
+/// See [`TrainingResult`](crate::model::TrainingResult).
+pub mod training_result {
+
+    /// A builder for [`TrainingResult`](crate::model::TrainingResult).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_validation_metrics:
+            std::option::Option<crate::model::DataValidationMetrics>,
+        pub(crate) training_metrics: std::option::Option<crate::model::TrainingMetrics>,
+        pub(crate) variable_importance_metrics:
+            std::option::Option<crate::model::VariableImportanceMetrics>,
+    }
+    impl Builder {
+        /// <p>The validation metrics.</p>
+        pub fn data_validation_metrics(
+            mut self,
+            input: crate::model::DataValidationMetrics,
+        ) -> Self {
+            self.data_validation_metrics = Some(input);
+            self
+        }
+        /// <p>The validation metrics.</p>
+        pub fn set_data_validation_metrics(
+            mut self,
+            input: std::option::Option<crate::model::DataValidationMetrics>,
+        ) -> Self {
+            self.data_validation_metrics = input;
+            self
+        }
+        /// <p>The training metric details.</p>
+        pub fn training_metrics(mut self, input: crate::model::TrainingMetrics) -> Self {
+            self.training_metrics = Some(input);
+            self
+        }
+        /// <p>The training metric details.</p>
+        pub fn set_training_metrics(
+            mut self,
+            input: std::option::Option<crate::model::TrainingMetrics>,
+        ) -> Self {
+            self.training_metrics = input;
+            self
+        }
+        /// <p>The variable importance metrics.</p>
+        pub fn variable_importance_metrics(
+            mut self,
+            input: crate::model::VariableImportanceMetrics,
+        ) -> Self {
+            self.variable_importance_metrics = Some(input);
+            self
+        }
+        /// <p>The variable importance metrics.</p>
+        pub fn set_variable_importance_metrics(
+            mut self,
+            input: std::option::Option<crate::model::VariableImportanceMetrics>,
+        ) -> Self {
+            self.variable_importance_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrainingResult`](crate::model::TrainingResult).
+        pub fn build(self) -> crate::model::TrainingResult {
+            crate::model::TrainingResult {
+                data_validation_metrics: self.data_validation_metrics,
+                training_metrics: self.training_metrics,
+                variable_importance_metrics: self.variable_importance_metrics,
+            }
+        }
+    }
+}
+impl TrainingResult {
+    /// Creates a new builder-style object to manufacture [`TrainingResult`](crate::model::TrainingResult).
+    pub fn builder() -> crate::model::training_result::Builder {
+        crate::model::training_result::Builder::default()
+    }
+}
+
+/// <p>The training metric details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TrainingMetrics {
+    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+    pub auc: std::option::Option<f32>,
+    /// <p>The data points details.</p>
+    pub metric_data_points: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+}
+impl TrainingMetrics {
+    /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+    pub fn auc(&self) -> std::option::Option<f32> {
+        self.auc
+    }
+    /// <p>The data points details.</p>
+    pub fn metric_data_points(&self) -> std::option::Option<&[crate::model::MetricDataPoint]> {
+        self.metric_data_points.as_deref()
+    }
+}
+impl std::fmt::Debug for TrainingMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TrainingMetrics");
+        formatter.field("auc", &self.auc);
+        formatter.field("metric_data_points", &self.metric_data_points);
+        formatter.finish()
+    }
+}
+/// See [`TrainingMetrics`](crate::model::TrainingMetrics).
+pub mod training_metrics {
+
+    /// A builder for [`TrainingMetrics`](crate::model::TrainingMetrics).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auc: std::option::Option<f32>,
+        pub(crate) metric_data_points:
+            std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+    }
+    impl Builder {
+        /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+        pub fn auc(mut self, input: f32) -> Self {
+            self.auc = Some(input);
+            self
+        }
+        /// <p>The area under the curve. This summarizes true positive rate (TPR) and false positive rate (FPR) across all possible model score thresholds. A model with no predictive power has an AUC of 0.5, whereas a perfect model has a score of 1.0.</p>
+        pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
+            self.auc = input;
+            self
+        }
+        /// Appends an item to `metric_data_points`.
+        ///
+        /// To override the contents of this collection use [`set_metric_data_points`](Self::set_metric_data_points).
+        ///
+        /// <p>The data points details.</p>
+        pub fn metric_data_points(mut self, input: crate::model::MetricDataPoint) -> Self {
+            let mut v = self.metric_data_points.unwrap_or_default();
+            v.push(input);
+            self.metric_data_points = Some(v);
+            self
+        }
+        /// <p>The data points details.</p>
+        pub fn set_metric_data_points(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDataPoint>>,
+        ) -> Self {
+            self.metric_data_points = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TrainingMetrics`](crate::model::TrainingMetrics).
+        pub fn build(self) -> crate::model::TrainingMetrics {
+            crate::model::TrainingMetrics {
+                auc: self.auc,
+                metric_data_points: self.metric_data_points,
+            }
+        }
+    }
+}
+impl TrainingMetrics {
+    /// Creates a new builder-style object to manufacture [`TrainingMetrics`](crate::model::TrainingMetrics).
+    pub fn builder() -> crate::model::training_metrics::Builder {
+        crate::model::training_metrics::Builder::default()
+    }
+}
+
+/// <p>Model performance metrics data points.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricDataPoint {
+    /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+    pub fpr: std::option::Option<f32>,
+    /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    pub precision: std::option::Option<f32>,
+    /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    pub tpr: std::option::Option<f32>,
+    /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    pub threshold: std::option::Option<f32>,
+}
+impl MetricDataPoint {
+    /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+    pub fn fpr(&self) -> std::option::Option<f32> {
+        self.fpr
+    }
+    /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+    pub fn precision(&self) -> std::option::Option<f32> {
+        self.precision
+    }
+    /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+    pub fn tpr(&self) -> std::option::Option<f32> {
+        self.tpr
+    }
+    /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+    pub fn threshold(&self) -> std::option::Option<f32> {
+        self.threshold
+    }
+}
+impl std::fmt::Debug for MetricDataPoint {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricDataPoint");
+        formatter.field("fpr", &self.fpr);
+        formatter.field("precision", &self.precision);
+        formatter.field("tpr", &self.tpr);
+        formatter.field("threshold", &self.threshold);
+        formatter.finish()
+    }
+}
+/// See [`MetricDataPoint`](crate::model::MetricDataPoint).
+pub mod metric_data_point {
+
+    /// A builder for [`MetricDataPoint`](crate::model::MetricDataPoint).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) fpr: std::option::Option<f32>,
+        pub(crate) precision: std::option::Option<f32>,
+        pub(crate) tpr: std::option::Option<f32>,
+        pub(crate) threshold: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+        pub fn fpr(mut self, input: f32) -> Self {
+            self.fpr = Some(input);
+            self
+        }
+        /// <p>The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud.</p>
+        pub fn set_fpr(mut self, input: std::option::Option<f32>) -> Self {
+            self.fpr = input;
+            self
+        }
+        /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+        pub fn precision(mut self, input: f32) -> Self {
+            self.precision = Some(input);
+            self
+        }
+        /// <p>The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent.</p>
+        pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
+            self.precision = input;
+            self
+        }
+        /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+        pub fn tpr(mut self, input: f32) -> Self {
+            self.tpr = Some(input);
+            self
+        }
+        /// <p>The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate.</p>
+        pub fn set_tpr(mut self, input: std::option::Option<f32>) -> Self {
+            self.tpr = input;
+            self
+        }
+        /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+        pub fn threshold(mut self, input: f32) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        /// <p>The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud.</p>
+        pub fn set_threshold(mut self, input: std::option::Option<f32>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDataPoint`](crate::model::MetricDataPoint).
+        pub fn build(self) -> crate::model::MetricDataPoint {
+            crate::model::MetricDataPoint {
+                fpr: self.fpr,
+                precision: self.precision,
+                tpr: self.tpr,
+                threshold: self.threshold,
+            }
+        }
+    }
+}
+impl MetricDataPoint {
+    /// Creates a new builder-style object to manufacture [`MetricDataPoint`](crate::model::MetricDataPoint).
+    pub fn builder() -> crate::model::metric_data_point::Builder {
+        crate::model::metric_data_point::Builder::default()
     }
 }
 

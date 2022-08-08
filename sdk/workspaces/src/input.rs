@@ -1809,6 +1809,193 @@ impl CreateWorkspaceBundleInput {
     }
 }
 
+/// See [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+pub mod create_workspace_image_input {
+
+    /// A builder for [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) workspace_id: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the new WorkSpace image.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the new WorkSpace image.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the new WorkSpace image.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the new WorkSpace image.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The identifier of the source WorkSpace</p>
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.workspace_id = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the source WorkSpace</p>
+        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.workspace_id = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::CreateWorkspaceImageInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::CreateWorkspaceImageInput {
+                name: self.name,
+                description: self.description,
+                workspace_id: self.workspace_id,
+                tags: self.tags,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateWorkspaceImageInputOperationOutputAlias = crate::operation::CreateWorkspaceImage;
+#[doc(hidden)]
+pub type CreateWorkspaceImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateWorkspaceImageInput {
+    /// Consumes the builder and constructs an Operation<[`CreateWorkspaceImage`](crate::operation::CreateWorkspaceImage)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateWorkspaceImage,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::CreateWorkspaceImageInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::CreateWorkspaceImageInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.CreateWorkspaceImage",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_create_workspace_image(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateWorkspaceImage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateWorkspaceImage",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageInput`](crate::input::CreateWorkspaceImageInput).
+    pub fn builder() -> crate::input::create_workspace_image_input::Builder {
+        crate::input::create_workspace_image_input::Builder::default()
+    }
+}
+
 /// See [`CreateWorkspacesInput`](crate::input::CreateWorkspacesInput).
 pub mod create_workspaces_input {
 
@@ -7226,6 +7413,195 @@ impl ModifyClientPropertiesInput {
     }
 }
 
+/// See [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+pub mod modify_saml_properties_input {
+
+    /// A builder for [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_id: std::option::Option<std::string::String>,
+        pub(crate) saml_properties: std::option::Option<crate::model::SamlProperties>,
+        pub(crate) properties_to_delete:
+            std::option::Option<std::vec::Vec<crate::model::DeletableSamlProperty>>,
+    }
+    impl Builder {
+        /// <p>The directory identifier for which you want to configure SAML properties.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
+            self
+        }
+        /// <p>The directory identifier for which you want to configure SAML properties.</p>
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
+            self
+        }
+        /// <p>The properties for configuring SAML 2.0 authentication.</p>
+        pub fn saml_properties(mut self, input: crate::model::SamlProperties) -> Self {
+            self.saml_properties = Some(input);
+            self
+        }
+        /// <p>The properties for configuring SAML 2.0 authentication.</p>
+        pub fn set_saml_properties(
+            mut self,
+            input: std::option::Option<crate::model::SamlProperties>,
+        ) -> Self {
+            self.saml_properties = input;
+            self
+        }
+        /// Appends an item to `properties_to_delete`.
+        ///
+        /// To override the contents of this collection use [`set_properties_to_delete`](Self::set_properties_to_delete).
+        ///
+        /// <p>The SAML properties to delete as part of your request.</p>
+        /// <p>Specify one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+        /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+        /// </ul>
+        pub fn properties_to_delete(mut self, input: crate::model::DeletableSamlProperty) -> Self {
+            let mut v = self.properties_to_delete.unwrap_or_default();
+            v.push(input);
+            self.properties_to_delete = Some(v);
+            self
+        }
+        /// <p>The SAML properties to delete as part of your request.</p>
+        /// <p>Specify one of the following options:</p>
+        /// <ul>
+        /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+        /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+        /// </ul>
+        pub fn set_properties_to_delete(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DeletableSamlProperty>>,
+        ) -> Self {
+            self.properties_to_delete = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+        pub fn build(
+            self,
+        ) -> Result<crate::input::ModifySamlPropertiesInput, aws_smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::ModifySamlPropertiesInput {
+                resource_id: self.resource_id,
+                saml_properties: self.saml_properties,
+                properties_to_delete: self.properties_to_delete,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ModifySamlPropertiesInputOperationOutputAlias = crate::operation::ModifySamlProperties;
+#[doc(hidden)]
+pub type ModifySamlPropertiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ModifySamlPropertiesInput {
+    /// Consumes the builder and constructs an Operation<[`ModifySamlProperties`](crate::operation::ModifySamlProperties)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ModifySamlProperties,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ModifySamlPropertiesInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ModifySamlPropertiesInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkspacesService.ModifySamlProperties",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]
+        let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_modify_saml_properties(
+                &self,
+            )?,
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifySamlProperties::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifySamlProperties",
+            "workspaces",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesInput`](crate::input::ModifySamlPropertiesInput).
+    pub fn builder() -> crate::input::modify_saml_properties_input::Builder {
+        crate::input::modify_saml_properties_input::Builder::default()
+    }
+}
+
 /// See [`ModifySelfservicePermissionsInput`](crate::input::ModifySelfservicePermissionsInput).
 pub mod modify_selfservice_permissions_input {
 
@@ -10688,6 +11064,54 @@ impl std::fmt::Debug for ModifySelfservicePermissionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifySamlPropertiesInput {
+    /// <p>The directory identifier for which you want to configure SAML properties.</p>
+    pub resource_id: std::option::Option<std::string::String>,
+    /// <p>The properties for configuring SAML 2.0 authentication.</p>
+    pub saml_properties: std::option::Option<crate::model::SamlProperties>,
+    /// <p>The SAML properties to delete as part of your request.</p>
+    /// <p>Specify one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+    /// </ul>
+    pub properties_to_delete:
+        std::option::Option<std::vec::Vec<crate::model::DeletableSamlProperty>>,
+}
+impl ModifySamlPropertiesInput {
+    /// <p>The directory identifier for which you want to configure SAML properties.</p>
+    pub fn resource_id(&self) -> std::option::Option<&str> {
+        self.resource_id.as_deref()
+    }
+    /// <p>The properties for configuring SAML 2.0 authentication.</p>
+    pub fn saml_properties(&self) -> std::option::Option<&crate::model::SamlProperties> {
+        self.saml_properties.as_ref()
+    }
+    /// <p>The SAML properties to delete as part of your request.</p>
+    /// <p>Specify one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.</p> </li>
+    /// <li> <p> <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state parameter name.</p> </li>
+    /// </ul>
+    pub fn properties_to_delete(
+        &self,
+    ) -> std::option::Option<&[crate::model::DeletableSamlProperty]> {
+        self.properties_to_delete.as_deref()
+    }
+}
+impl std::fmt::Debug for ModifySamlPropertiesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifySamlPropertiesInput");
+        formatter.field("resource_id", &self.resource_id);
+        formatter.field("saml_properties", &self.saml_properties);
+        formatter.field("properties_to_delete", &self.properties_to_delete);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClientPropertiesInput {
     /// <p>The resource identifiers, in the form of directory IDs.</p>
     pub resource_id: std::option::Option<std::string::String>,
@@ -11706,6 +12130,48 @@ impl std::fmt::Debug for CreateWorkspacesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspacesInput");
         formatter.field("workspaces", &self.workspaces);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateWorkspaceImageInput {
+    /// <p>The name of the new WorkSpace image.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the new WorkSpace image.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The identifier of the source WorkSpace</p>
+    pub workspace_id: std::option::Option<std::string::String>,
+    /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateWorkspaceImageInput {
+    /// <p>The name of the new WorkSpace image.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the new WorkSpace image.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The identifier of the source WorkSpace</p>
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
+        self.workspace_id.as_deref()
+    }
+    /// <p>The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use <code>workspaces:CreateTags</code>.</p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateWorkspaceImageInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateWorkspaceImageInput");
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("workspace_id", &self.workspace_id);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

@@ -126,6 +126,420 @@ impl AsRef<str> for ErrorCode {
     }
 }
 
+/// <p>A suggested address.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CandidateAddress {
+    /// <p>The street information of a candidate address</p>
+    pub street_info: std::option::Option<std::string::String>,
+    /// <p>The numeric portion of a candidate address.</p>
+    pub street_number: std::option::Option<std::string::String>,
+    /// <p>The city of a candidate address.</p>
+    pub city: std::option::Option<std::string::String>,
+    /// <p>The state of a candidate address.</p>
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The postal code of a candidate address.</p>
+    pub postal_code: std::option::Option<std::string::String>,
+    /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+    pub postal_code_plus4: std::option::Option<std::string::String>,
+    /// <p>The country of a candidate address.</p>
+    pub country: std::option::Option<std::string::String>,
+}
+impl CandidateAddress {
+    /// <p>The street information of a candidate address</p>
+    pub fn street_info(&self) -> std::option::Option<&str> {
+        self.street_info.as_deref()
+    }
+    /// <p>The numeric portion of a candidate address.</p>
+    pub fn street_number(&self) -> std::option::Option<&str> {
+        self.street_number.as_deref()
+    }
+    /// <p>The city of a candidate address.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The state of a candidate address.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The postal code of a candidate address.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+    /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+    pub fn postal_code_plus4(&self) -> std::option::Option<&str> {
+        self.postal_code_plus4.as_deref()
+    }
+    /// <p>The country of a candidate address.</p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+}
+impl std::fmt::Debug for CandidateAddress {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CandidateAddress");
+        formatter.field("street_info", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code_plus4", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`CandidateAddress`](crate::model::CandidateAddress).
+pub mod candidate_address {
+
+    /// A builder for [`CandidateAddress`](crate::model::CandidateAddress).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) street_info: std::option::Option<std::string::String>,
+        pub(crate) street_number: std::option::Option<std::string::String>,
+        pub(crate) city: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) postal_code: std::option::Option<std::string::String>,
+        pub(crate) postal_code_plus4: std::option::Option<std::string::String>,
+        pub(crate) country: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The street information of a candidate address</p>
+        pub fn street_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_info = Some(input.into());
+            self
+        }
+        /// <p>The street information of a candidate address</p>
+        pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_info = input;
+            self
+        }
+        /// <p>The numeric portion of a candidate address.</p>
+        pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_number = Some(input.into());
+            self
+        }
+        /// <p>The numeric portion of a candidate address.</p>
+        pub fn set_street_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.street_number = input;
+            self
+        }
+        /// <p>The city of a candidate address.</p>
+        pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
+            self.city = Some(input.into());
+            self
+        }
+        /// <p>The city of a candidate address.</p>
+        pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.city = input;
+            self
+        }
+        /// <p>The state of a candidate address.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p>The state of a candidate address.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The postal code of a candidate address.</p>
+        pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.postal_code = Some(input.into());
+            self
+        }
+        /// <p>The postal code of a candidate address.</p>
+        pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.postal_code = input;
+            self
+        }
+        /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+        pub fn postal_code_plus4(mut self, input: impl Into<std::string::String>) -> Self {
+            self.postal_code_plus4 = Some(input.into());
+            self
+        }
+        /// <p>The Zip + 4 or postal code + 4 of a candidate address.</p>
+        pub fn set_postal_code_plus4(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.postal_code_plus4 = input;
+            self
+        }
+        /// <p>The country of a candidate address.</p>
+        pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country = Some(input.into());
+            self
+        }
+        /// <p>The country of a candidate address.</p>
+        pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CandidateAddress`](crate::model::CandidateAddress).
+        pub fn build(self) -> crate::model::CandidateAddress {
+            crate::model::CandidateAddress {
+                street_info: self.street_info,
+                street_number: self.street_number,
+                city: self.city,
+                state: self.state,
+                postal_code: self.postal_code,
+                postal_code_plus4: self.postal_code_plus4,
+                country: self.country,
+            }
+        }
+    }
+}
+impl CandidateAddress {
+    /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
+    pub fn builder() -> crate::model::candidate_address::Builder {
+        crate::model::candidate_address::Builder::default()
+    }
+}
+
+/// <p>A validated address.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Address {
+    /// <p>The address street, such as <code>8th Avenue</code>.</p>
+    pub street_name: std::option::Option<std::string::String>,
+    /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+    pub street_suffix: std::option::Option<std::string::String>,
+    /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+    pub post_directional: std::option::Option<std::string::String>,
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+    pub pre_directional: std::option::Option<std::string::String>,
+    /// <p>The numeric portion of an address.</p>
+    pub street_number: std::option::Option<std::string::String>,
+    /// <p>The city of an address.</p>
+    pub city: std::option::Option<std::string::String>,
+    /// <p>The state of an address.</p>
+    pub state: std::option::Option<std::string::String>,
+    /// <p>The postal code of an address.</p>
+    pub postal_code: std::option::Option<std::string::String>,
+    /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+    pub postal_code_plus4: std::option::Option<std::string::String>,
+    /// <p>The country of an address. </p>
+    pub country: std::option::Option<std::string::String>,
+}
+impl Address {
+    /// <p>The address street, such as <code>8th Avenue</code>.</p>
+    pub fn street_name(&self) -> std::option::Option<&str> {
+        self.street_name.as_deref()
+    }
+    /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+    pub fn street_suffix(&self) -> std::option::Option<&str> {
+        self.street_suffix.as_deref()
+    }
+    /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+    pub fn post_directional(&self) -> std::option::Option<&str> {
+        self.post_directional.as_deref()
+    }
+    /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+    pub fn pre_directional(&self) -> std::option::Option<&str> {
+        self.pre_directional.as_deref()
+    }
+    /// <p>The numeric portion of an address.</p>
+    pub fn street_number(&self) -> std::option::Option<&str> {
+        self.street_number.as_deref()
+    }
+    /// <p>The city of an address.</p>
+    pub fn city(&self) -> std::option::Option<&str> {
+        self.city.as_deref()
+    }
+    /// <p>The state of an address.</p>
+    pub fn state(&self) -> std::option::Option<&str> {
+        self.state.as_deref()
+    }
+    /// <p>The postal code of an address.</p>
+    pub fn postal_code(&self) -> std::option::Option<&str> {
+        self.postal_code.as_deref()
+    }
+    /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+    pub fn postal_code_plus4(&self) -> std::option::Option<&str> {
+        self.postal_code_plus4.as_deref()
+    }
+    /// <p>The country of an address. </p>
+    pub fn country(&self) -> std::option::Option<&str> {
+        self.country.as_deref()
+    }
+}
+impl std::fmt::Debug for Address {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Address");
+        formatter.field("street_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_suffix", &"*** Sensitive Data Redacted ***");
+        formatter.field("post_directional", &"*** Sensitive Data Redacted ***");
+        formatter.field("pre_directional", &"*** Sensitive Data Redacted ***");
+        formatter.field("street_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code_plus4", &"*** Sensitive Data Redacted ***");
+        formatter.field("country", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
+/// See [`Address`](crate::model::Address).
+pub mod address {
+
+    /// A builder for [`Address`](crate::model::Address).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) street_name: std::option::Option<std::string::String>,
+        pub(crate) street_suffix: std::option::Option<std::string::String>,
+        pub(crate) post_directional: std::option::Option<std::string::String>,
+        pub(crate) pre_directional: std::option::Option<std::string::String>,
+        pub(crate) street_number: std::option::Option<std::string::String>,
+        pub(crate) city: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<std::string::String>,
+        pub(crate) postal_code: std::option::Option<std::string::String>,
+        pub(crate) postal_code_plus4: std::option::Option<std::string::String>,
+        pub(crate) country: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The address street, such as <code>8th Avenue</code>.</p>
+        pub fn street_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_name = Some(input.into());
+            self
+        }
+        /// <p>The address street, such as <code>8th Avenue</code>.</p>
+        pub fn set_street_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_name = input;
+            self
+        }
+        /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+        pub fn street_suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_suffix = Some(input.into());
+            self
+        }
+        /// <p>The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.</p>
+        pub fn set_street_suffix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.street_suffix = input;
+            self
+        }
+        /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+        pub fn post_directional(mut self, input: impl Into<std::string::String>) -> Self {
+            self.post_directional = Some(input.into());
+            self
+        }
+        /// <p>An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park S. Unit A</code>.</p>
+        pub fn set_post_directional(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.post_directional = input;
+            self
+        }
+        /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+        pub fn pre_directional(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pre_directional = Some(input.into());
+            self
+        }
+        /// <p>An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>.</p>
+        pub fn set_pre_directional(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pre_directional = input;
+            self
+        }
+        /// <p>The numeric portion of an address.</p>
+        pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.street_number = Some(input.into());
+            self
+        }
+        /// <p>The numeric portion of an address.</p>
+        pub fn set_street_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.street_number = input;
+            self
+        }
+        /// <p>The city of an address.</p>
+        pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
+            self.city = Some(input.into());
+            self
+        }
+        /// <p>The city of an address.</p>
+        pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.city = input;
+            self
+        }
+        /// <p>The state of an address.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        /// <p>The state of an address.</p>
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
+            self
+        }
+        /// <p>The postal code of an address.</p>
+        pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.postal_code = Some(input.into());
+            self
+        }
+        /// <p>The postal code of an address.</p>
+        pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.postal_code = input;
+            self
+        }
+        /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+        pub fn postal_code_plus4(mut self, input: impl Into<std::string::String>) -> Self {
+            self.postal_code_plus4 = Some(input.into());
+            self
+        }
+        /// <p>The Zip + 4 or postal code + 4 of an address.</p>
+        pub fn set_postal_code_plus4(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.postal_code_plus4 = input;
+            self
+        }
+        /// <p>The country of an address. </p>
+        pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country = Some(input.into());
+            self
+        }
+        /// <p>The country of an address. </p>
+        pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Address`](crate::model::Address).
+        pub fn build(self) -> crate::model::Address {
+            crate::model::Address {
+                street_name: self.street_name,
+                street_suffix: self.street_suffix,
+                post_directional: self.post_directional,
+                pre_directional: self.pre_directional,
+                street_number: self.street_number,
+                city: self.city,
+                state: self.state,
+                postal_code: self.postal_code,
+                postal_code_plus4: self.postal_code_plus4,
+                country: self.country,
+            }
+        }
+    }
+}
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// <p>The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7534,17 +7948,17 @@ impl AsRef<str> for OriginationRouteProtocol {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingConfiguration {
-    /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
+    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
     pub enable_sip_logs: std::option::Option<bool>,
-    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
     pub enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfiguration {
-    /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
+    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
     pub fn enable_sip_logs(&self) -> std::option::Option<bool> {
         self.enable_sip_logs
     }
-    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
     pub fn enable_media_metric_logs(&self) -> std::option::Option<bool> {
         self.enable_media_metric_logs
     }
@@ -7567,22 +7981,22 @@ pub mod logging_configuration {
         pub(crate) enable_media_metric_logs: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
+        /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
         pub fn enable_sip_logs(mut self, input: bool) -> Self {
             self.enable_sip_logs = Some(input);
             self
         }
-        /// <p>Boolean that enables SIP message logs to CloudWatch logs.</p>
+        /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
         pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_sip_logs = input;
             self
         }
-        /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+        /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
         pub fn enable_media_metric_logs(mut self, input: bool) -> Self {
             self.enable_media_metric_logs = Some(input);
             self
         }
-        /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to CloudWatch logs.</p>
+        /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
         pub fn set_enable_media_metric_logs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_media_metric_logs = input;
             self

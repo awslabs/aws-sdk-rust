@@ -10642,6 +10642,211 @@ impl ListAggregateDiscoveredResourcesInput {
     }
 }
 
+/// See [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+pub mod list_conformance_pack_compliance_scores_input {
+
+    /// A builder for [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) filters:
+            std::option::Option<crate::model::ConformancePackComplianceScoresFilters>,
+        pub(crate) sort_order: std::option::Option<crate::model::SortOrder>,
+        pub(crate) sort_by: std::option::Option<crate::model::SortBy>,
+        pub(crate) limit: std::option::Option<i32>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+        pub fn filters(
+            mut self,
+            input: crate::model::ConformancePackComplianceScoresFilters,
+        ) -> Self {
+            self.filters = Some(input);
+            self
+        }
+        /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+        pub fn set_filters(
+            mut self,
+            input: std::option::Option<crate::model::ConformancePackComplianceScoresFilters>,
+        ) -> Self {
+            self.filters = input;
+            self
+        }
+        /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
+        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
+            self
+        }
+        /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
+        /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
+            self
+        }
+        /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.sort_by = Some(input);
+            self
+        }
+        /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
+        /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+        pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SortBy>) -> Self {
+            self.sort_by = input;
+            self
+        }
+        /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+        pub fn build(
+            self,
+        ) -> Result<
+            crate::input::ListConformancePackComplianceScoresInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListConformancePackComplianceScoresInput {
+                filters: self.filters,
+                sort_order: self.sort_order,
+                sort_by: self.sort_by,
+                limit: self.limit.unwrap_or_default(),
+                next_token: self.next_token,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListConformancePackComplianceScoresInputOperationOutputAlias =
+    crate::operation::ListConformancePackComplianceScores;
+#[doc(hidden)]
+pub type ListConformancePackComplianceScoresInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListConformancePackComplianceScoresInput {
+    /// Consumes the builder and constructs an Operation<[`ListConformancePackComplianceScores`](crate::operation::ListConformancePackComplianceScores)>
+    #[allow(unused_mut)]
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListConformancePackComplianceScores,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        let mut request = {
+            fn uri_base(
+                _input: &crate::input::ListConformancePackComplianceScoresInput,
+                output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::BuildError> {
+                write!(output, "/").expect("formatting should succeed");
+                Ok(())
+            }
+            #[allow(clippy::unnecessary_wraps)]
+            fn update_http_builder(
+                input: &crate::input::ListConformancePackComplianceScoresInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+            {
+                let mut uri = String::new();
+                uri_base(input, &mut uri)?;
+                Ok(builder.method("POST").uri(uri))
+            }
+            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "StarlingDoveService.ListConformancePackComplianceScores",
+            );
+            builder
+        };
+        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        #[allow(clippy::useless_conversion)]let body = aws_smithy_http::body::SdkBody::from(
+            crate::operation_ser::serialize_operation_crate_operation_list_conformance_pack_compliance_scores(&self)?
+        );
+        if let Some(content_length) = body.content_length() {
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        let request = request.body(body).expect("should be valid request");
+        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListConformancePackComplianceScores::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListConformancePackComplianceScores",
+            "configservice",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresInput`](crate::input::ListConformancePackComplianceScoresInput).
+    pub fn builder() -> crate::input::list_conformance_pack_compliance_scores_input::Builder {
+        crate::input::list_conformance_pack_compliance_scores_input::Builder::default()
+    }
+}
+
 /// See [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
 pub mod list_discovered_resources_input {
 
@@ -12648,7 +12853,7 @@ pub mod put_organization_config_rule_input {
             self.organization_config_rule_name = input;
             self
         }
-        /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+        /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
         pub fn organization_managed_rule_metadata(
             mut self,
             input: crate::model::OrganizationManagedRuleMetadata,
@@ -12656,7 +12861,7 @@ pub mod put_organization_config_rule_input {
             self.organization_managed_rule_metadata = Some(input);
             self
         }
-        /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+        /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
         pub fn set_organization_managed_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::OrganizationManagedRuleMetadata>,
@@ -12664,7 +12869,7 @@ pub mod put_organization_config_rule_input {
             self.organization_managed_rule_metadata = input;
             self
         }
-        /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+        /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
         pub fn organization_custom_rule_metadata(
             mut self,
             input: crate::model::OrganizationCustomRuleMetadata,
@@ -12672,7 +12877,7 @@ pub mod put_organization_config_rule_input {
             self.organization_custom_rule_metadata = Some(input);
             self
         }
-        /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+        /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
         pub fn set_organization_custom_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
@@ -12699,7 +12904,7 @@ pub mod put_organization_config_rule_input {
             self.excluded_accounts = input;
             self
         }
-        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
         pub fn organization_custom_policy_rule_metadata(
             mut self,
             input: crate::model::OrganizationCustomPolicyRuleMetadata,
@@ -12707,7 +12912,7 @@ pub mod put_organization_config_rule_input {
             self.organization_custom_policy_rule_metadata = Some(input);
             self
         }
-        /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+        /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
         pub fn set_organization_custom_policy_rule_metadata(
             mut self,
             input: std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
@@ -15867,15 +16072,15 @@ impl std::fmt::Debug for PutOrganizationConformancePackInput {
 pub struct PutOrganizationConfigRuleInput {
     /// <p>The name that you assign to an organization Config rule.</p>
     pub organization_config_rule_name: std::option::Option<std::string::String>,
-    /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+    /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
     pub organization_managed_rule_metadata:
         std::option::Option<crate::model::OrganizationManagedRuleMetadata>,
-    /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+    /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
     pub organization_custom_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomRuleMetadata>,
     /// <p>A comma-separated list of accounts that you want to exclude from an organization Config rule.</p>
     pub excluded_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub organization_custom_policy_rule_metadata:
         std::option::Option<crate::model::OrganizationCustomPolicyRuleMetadata>,
 }
@@ -15884,13 +16089,13 @@ impl PutOrganizationConfigRuleInput {
     pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
-    /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
+    /// <p>An <code>OrganizationManagedRuleMetadata</code> object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
     pub fn organization_managed_rule_metadata(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationManagedRuleMetadata> {
         self.organization_managed_rule_metadata.as_ref()
     }
-    /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
+    /// <p>An <code>OrganizationCustomRuleMetadata</code> object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
     pub fn organization_custom_rule_metadata(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationCustomRuleMetadata> {
@@ -15900,7 +16105,7 @@ impl PutOrganizationConfigRuleInput {
     pub fn excluded_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.excluded_accounts.as_deref()
     }
-    /// <p>An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
+    /// <p>An <code>OrganizationCustomPolicyRuleMetadata</code> object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.</p>
     pub fn organization_custom_policy_rule_metadata(
         &self,
     ) -> std::option::Option<&crate::model::OrganizationCustomPolicyRuleMetadata> {
@@ -16354,6 +16559,61 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
         formatter.field("resource_name", &self.resource_name);
         formatter.field("limit", &self.limit);
         formatter.field("include_deleted_resources", &self.include_deleted_resources);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConformancePackComplianceScoresInput {
+    /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+    pub filters: std::option::Option<crate::model::ConformancePackComplianceScoresFilters>,
+    /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
+    /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+    pub sort_order: std::option::Option<crate::model::SortOrder>,
+    /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    pub sort_by: std::option::Option<crate::model::SortBy>,
+    /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+    pub limit: i32,
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListConformancePackComplianceScoresInput {
+    /// <p>Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.</p>
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::model::ConformancePackComplianceScoresFilters> {
+        self.filters.as_ref()
+    }
+    /// <p>Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.</p>
+    /// <p>Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by ascending order and last when sorting by descending order.</p>
+    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+        self.sort_order.as_ref()
+    }
+    /// <p>Sorts your conformance pack compliance scores in either ascending or descending order, depending on <code>SortOrder</code>.</p>
+    /// <p>By default, conformance pack compliance scores are sorted in ascending order by compliance score and alphabetically by name of the conformance pack if there is more than one conformance pack with the same compliance score.</p>
+    pub fn sort_by(&self) -> std::option::Option<&crate::model::SortBy> {
+        self.sort_by.as_ref()
+    }
+    /// <p>The maximum number of conformance pack compliance scores returned on each page.</p>
+    pub fn limit(&self) -> i32 {
+        self.limit
+    }
+    /// <p>The <code>nextToken</code> string in a prior request that you can use to get the paginated response for next set of conformance pack compliance scores.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListConformancePackComplianceScoresInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConformancePackComplianceScoresInput");
+        formatter.field("filters", &self.filters);
+        formatter.field("sort_order", &self.sort_order);
+        formatter.field("sort_by", &self.sort_by);
+        formatter.field("limit", &self.limit);
         formatter.field("next_token", &self.next_token);
         formatter.finish()
     }
